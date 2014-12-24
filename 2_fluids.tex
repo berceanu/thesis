@@ -1,0 +1,244 @@
+% Hello! Here's how this works:
+%
+% You edit the source code here on the left, and the preview on the
+% right shows you the result within a few seconds.
+%
+% Bookmark this page and share the URL with your co-authors. They can
+% edit at the same time!
+%
+% You can upload figures, bibliographies, custom classes and
+% styles using the files menu.
+%
+% If you're new to LaTeX, the wikibook at
+% http://en.wikibooks.org/wiki/LaTeX
+% is a great place to start, and there are some examples in this
+% document, too.
+
+% Enjoy!
+
+\documentclass[12pt]{article}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+
+\usepackage{fullpage}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{bm}% bold math
+
+\title{2 fluids}
+\author{You}
+
+\begin{document}
+
+%\maketitle
+
+%\begin{abstract}
+%Your abstract.
+%\end{abstract}
+
+\section{Introduction}
+
+The starting equation is
+
+\begin{equation}
+i\partial_{t}\psi(r,t)=\left[-\frac{\nabla^{2}}{2m}+g\left|\psi(r,t)\right|^{2}+V_{d}(r)\right]\psi(r,t)
+\end{equation}
+
+and the ansatz
+
+
+\begin{equation}
+\psi(r,t)=\sum_{j=1,2}e^{-i \omega_i t}(\psi^\text{ss}_je^{i k_j r}+\theta_j(r,t))
+\end{equation}
+
+with
+
+\begin{equation}
+\theta_j(r,t)=\int_{\mathbb{R}^{2}}\mathrm{d}k \left(\tilde{u}_j(k) e^{i (k  r - \omega t)}+\tilde{v}_j^{\star}(k) e^{-i \left[(k-2 k_j) r -\omega t\right] }\right)
+\end{equation}
+
+
+\section{Calculation}
+\label{sec:examples}
+
+%\[
+%(\omega_1+\omega)e^{-i t (\omega_1+\omega)}u_1(r)+ (\omega_2+\omega)e^{-i t
+%   (\omega_2+\omega)}u_2(r) + (\omega_1-\omega)e^{-i t (\omega_1-%\omega)}v_1^{\star}(r)+(\omega_2-\omega)e^{-i t(\omega_2-\omega)}v_2^{\star}(r)
+%\]
+
+%And now for the right-hand side.
+
+%\subsection{Kinetic part}
+
+%\[
+%-\frac{\nabla^2u_1(r)}{2m} e^{-i t (\omega_1+\omega)} -\frac{\nabla^2 u_2(r)}%{2m} e^{-i t (\omega_2+\omega)}-\frac{\nabla^2 v_1^{\star}(r)}{2m} e^{-i t (\omega_1-\omega)}-\frac{\nabla^2 v_2^{\star}(r)}{2m} e^{-i t (\omega_2-\omega)}
+%\]
+
+%\subsection{Defect potential part}
+%\[
+%\psi^{\text{ss}}_1 V_d(r) e^{i (k_1 r- \omega_1 t)}+\psi^{\text{ss}}_2 V_d(r) e^{i (k_2 r- \omega_2 t)}
+%\]
+
+%\subsection{Interaction term}
+We neglect the terms oscillating at the frequencies $2 \omega_1 - \omega_2 \pm \omega$ and $2 \omega_2 - \omega_1 \pm \omega$, and keep only terms oscillating at $\omega_1 \pm \omega$ and $\omega_2 \pm \omega$ that are linear in $u$ and $v$.
+
+Let us focus now on the equation for the term oscillating at frequency $\omega_2-\omega$. We introduce the Fourier transforms for $u$ and $v$ to get:
+
+
+
+%\begin{multline}
+%(\omega_{2}-\omega)v_{2}^{\star}(r)=-\frac{\nabla^{2}v_{2}^{\star}(r)}{2m} +2g\psi_{2}^{\text{ss}}\psi_{1}^{\text{ss}\star}v_{1}^{\star}(r)e^{ik_{2}r-ik_{1}r}+2g\left(\lvert\psi_{1}^{\text{ss}}\rvert^{2}+\lvert\psi_{2}^{\text{ss}}\rvert^{2}\right)v_{2}^{\star}(r)+\\
+%+2g\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}}u_{1}^{\star}(r)e^{ik_{1}r+ik_{2}r}+g\psi_{2}^{\text{ss}2}e^{2ik_{2}r}u_{2}^{\star}(r)
+%\end{multline}
+
+%\begin{multline}
+%0=\left(-\omega+\omega_{2}+\frac{\nabla^{2}}{2m}-2g\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right)\right)v_{2}(r)-\\
+%-2g\psi_{1}^{\text{ss}\star}\psi_{2}^{\text{ss}\star}e^{-ik_{1}r-ik_{2}r}u_{1}(r)-g\psi_{2}^{\text{ss}2\star}e^{-2ik_{2}r}u_{2}(r)-2g\psi_{2}^{\text{ss}\star}\psi_{1}^{\text{ss}}e^{-ik_{2}r+ik_{1}r}v_{1}(r)
+%\end{multline}
+
+
+\begin{multline}
+\label{eq:starteq}
+\int_{\mathbb{R}^{2}}\mathrm{d}k\left(-\omega+\omega_{2}-\frac{(k-2k_{2})^{2}}{2m}-2g\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right)\right)\tilde{v}_{2}(k)e^{i(k-2k_{2})r}-2g\psi_{1}^{\text{ss}\star}\psi_{2}^{\text{ss}\star}\int_{\mathbb{R}^{2}}\mathrm{d}k\tilde{u}_{1}(k)e^{i(k-k_{1}-k_{2})r}-\\
+-g\psi_{2}^{\text{ss}^2\star}\int_{\mathbb{R}^{2}}\mathrm{d}k \tilde{u}_{2}(k)e^{i(k-2k_{2})r}-2g\psi_{2}^{\text{ss}\star}\psi_{1}^{\text{ss}}\int_{\mathbb{R}^{2}}\mathrm{d}k \tilde{v}_{1}(k)e^{i(k-k_{1}-k_{2})r}=0
+\end{multline}
+
+\subsection{Option 1}
+We make the change of variables (whose Jacobian is 1) $k = k^{\prime}-k_1+k_2$ in the first and third integral.
+We are left with an expression of the form $\int_{\mathbb{R}^{2}}\mathrm{d}k f(k) e^{ikr}$ =0, which means $f(k)=0$, for all values of $k$. To see this formally, it suffices to multiply both sides of the equality by $e^{-i k^{\prime} r}$ and integrate over $r$ (that is, do the inverse Fourier transform to momentum space). One then gets a $\delta$ function that takes care of the integration over $k$, selecting only the component $k=k^{\prime}$.
+
+Similar algebraic manipulations in the remaining 3 equations result in a linear system of 4 coupled equations with 4 unknowns, which one can write in matrix form as (for a $\delta$-like defect potential):
+
+\begin{equation}
+\mathcal{L}(k,k_1,k_2)
+\left(\begin{array}{c}
+\tilde{u}_{1}(k)\\
+\tilde{u}_{2}(k-k_{1}+k_{2})\\
+\tilde{v}_{1}(k)\\
+\tilde{v}_{2}(k-k_{1}+k_{2})
+\end{array}\right)
++g_V
+\left(\begin{array}{c}
+\psi_{1}^{\text{ss}}\\
+\psi_{2}^{\text{ss}}\\
+-\psi_{1}^{\text{ss}\star}\\
+-\psi_{2}^{\text{ss}\star}
+\end{array}\right)=0
+\end{equation}
+
+with the matrix $\mathcal{L}_1(k,k_1,k_2)=$
+\small
+\begin{equation}
+\left(\begin{array}{cccc}
+\frac{k^{2}}{2m}-\text{\ensuremath{\omega_{1}}}+2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right) & 2\mathit{g}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}\star} & \mathit{g}\psi_{1}^{\text{ss}^{2}} & 2\mathit{g}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}}\\
+2\mathit{g}\psi_{2}^{\text{ss}}\psi_{1}^{\text{ss}\star} & \frac{(k-k_{1}+k_{2})^{2}}{2m}-\text{\ensuremath{\omega_{2}}}+2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right) & 2\mathit{g}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}} & \mathit{g}\psi_{2}^{\text{ss}^{2}}\\
+-\mathit{g}\psi_{1}^{\text{ss}^{2}\star} & -2\mathit{g}\psi_{1}^{\text{ss}\star}\psi_{2}^{\text{ss}\star} & -\frac{(k-2k_{1})^{2}}{2m}+\text{\ensuremath{\omega_{1}}}-2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right) & -2\mathit{g}\psi_{2}^{\text{ss}}\psi_{1}^{\text{ss}\star}\\
+-2\mathit{g}\psi_{1}^{\text{ss}\star}\psi_{2}^{\text{ss}\star} & -\mathit{g}\psi_{2}^{\text{ss}^{2}\star} & -2\mathit{g}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}\star} & -\frac{(k-k_{1}-k_{2})^{2}}{2m}+\text{\ensuremath{\omega_{2}}}-2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right)
+\end{array}\right)
+\end{equation}
+\normalsize
+
+Note that the exact same matrix we can obtain by working in momentum space directly (starting from the equation and ansatz written in momemntum space).
+
+\subsection{Option 2}
+We start from Eq.~\eqref{eq:starteq}, factoring out the exponential $e^{i (k-2k_2)r}$:
+
+\small
+\begin{equation}
+\int_{\mathbb{R}^{2}}\mathrm{d}k\left[\left(-\omega+\omega_{2}-\frac{(k-2k_{2})^{2}}{2m}-2g\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right)\right)\tilde{v}_{2}(k)-2g\psi_{1}^{\text{ss}\star}\psi_{2}^{\text{ss}\star}\tilde{u}_{1}(k)e^{-i(k_{1}-k_{2})r}-g\psi_{2}^{\text{ss}^{2}\star}\tilde{u}_{2}(k)-2g\psi_{2}^{\text{ss}\star}\psi_{1}^{\text{ss}}\tilde{v}_{1}(k)e^{-i(k_{1}-k_{2})r}\right]e^{i(k-2k_{2})r}=0
+\end{equation}
+\normalsize
+
+Similar algebraic manipulations in the remaining 3 equations result in a linear system of 4 coupled equations with 4 unknowns, which one can write in matrix form as:
+
+\begin{equation}
+\int_{\mathbb{R}^{2}}\mathrm{d}k\left[\mathcal{L}_2
+\left(\begin{array}{c}
+\tilde{u}_{1}(k)\\
+\tilde{u}_{2}(k)\\
+\tilde{v}_{1}(k)\\
+\tilde{v}_{2}(k)
+\end{array}\right)
+\right]+
+\left(\begin{array}{c}
+\tilde{V}_d(k)\psi_{1}^{\text{ss}}\\
+\tilde{V}_d(k)\psi_{2}^{\text{ss}}\\
+-\tilde{V}_d(k-2k_1)\psi_{1}^{\text{ss}\star}\\
+-\tilde{V}_d(k-2k_2)\psi_{2}^{\text{ss}\star}
+\end{array}\right)
+=0
+\end{equation}
+
+with the matrix $\mathcal{L}_2=$
+\small
+\begin{equation}
+\left(\begin{array}{cccc}
+\frac{k^{2}}{2m}-\text{\ensuremath{\omega_{1}}}+2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right) & 2\mathit{g}e^{i(k_{1}-k_{2})r}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}\star} & \mathit{g}\psi_{1}^{\text{ss}^{2}} & 2\mathit{g}e^{i(k_{1}-k_{2})r}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}}\\
+2\mathit{g}e^{-i(k_{1}-k_{2})r}\psi_{2}^{\text{ss}}\psi_{1}^{\text{ss}\star} & \frac{k^{2}}{2m}-\text{\ensuremath{\omega_{2}}}+2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right) & 2\mathit{g}e^{-i(k_{1}-k_{2})r}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}} & \mathit{g}\psi_{2}^{\text{ss}^{2}}\\
+-\mathit{g}\psi_{1}^{\text{ss}^{2}\star} & -2\mathit{g}e^{i(k_{1}-k_{2})r}\psi_{1}^{\text{ss}\star}\psi_{2}^{\text{ss}\star} & -\frac{(k-2k_{1})^{2}}{2m}+\text{\ensuremath{\omega_{1}}}-2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right) & -2\mathit{g}e^{i(k_{1}-k_{2})r}\psi_{2}^{\text{ss}}\psi_{1}^{\text{ss}\star}\\
+-2\mathit{g}e^{-i(k_{1}-k_{2})r}\psi_{1}^{\text{ss}\star}\psi_{2}^{\text{ss}\star} & -\mathit{g}\psi_{2}^{\text{ss}^{2}\star} & -2\mathit{g}e^{-i(k_{1}-k_{2})r}\psi_{1}^{\text{ss}}\psi_{2}^{\text{ss}\star} & -\frac{(k-2k_{2})^{2}}{2m}+\text{\ensuremath{\omega_{2}}}-2\mathit{g}\left(|\psi_{1}^{\text{ss}}|^{2}+|\psi_{2}^{\text{ss}}|^{2}\right)
+\end{array}\right)
+\end{equation}
+\normalsize
+
+We notice that, even though the matrix $\mathcal{L}_2$ contains complex exponentials of $r$, they are only present in the off-diagonal terms, hence they cancel out when calculating the eigenvalues. In practice, when calculating the spectrum, we diagonalize $\mathcal{L}_2$, plugging in any value of $r$ in these exponents, and the result will not change.
+
+\section{Results}
+First, we need to add a small imaginary part $\kappa$ to the diagonal part of the matrices, in order to satisfy causality. 
+
+System parameters (same for the 2 cases): $k_1=5.5, k_2=0.1, \psi_{1}^{\text{ss}}=\sqrt{1.5}, \psi_{2}^{\text{ss}}=\sqrt{0.2}, \omega_1=4, \omega_2=2.5, r=2, \kappa=0.15, g=1, m=1, g_V=0.01$.
+
+Note: the real-space response plots are each renormalized to their mean-field values of the density.
+
+\subsection{Dispersion}
+\subsubsection{Option 1}
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{spect1.png}
+\caption{\label{fig:spect1}Spectrum for option 1.}
+\end{figure}
+\subsubsection{Option 2}
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{spect2.png}
+\caption{\label{fig:spect2}Spectrum for option 2.}
+\end{figure}
+
+\subsection{Response}
+\subsubsection{Option 1}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state1opt1mom.png}
+\caption{\label{fig:state1opt1mom}Response in momentum for state 1, option 1.}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state1opt1spc.png}
+\caption{\label{fig:state1opt1spc}Response in space for state 1, option 1.}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state2opt1mom.png}
+\caption{\label{fig:state2opt1mom}Response in momentum for state 2, option 1.}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state2opt1spc.png}
+\caption{\label{fig:state2opt1spc}Response in space for state 2, option 1.}
+\end{figure}
+
+\subsubsection{Option 2}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state1opt2mom.png}
+\caption{\label{fig:state1opt2mom}Response in momentum for state 1, option 2.}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state1opt2spc.png}
+\caption{\label{fig:state1opt2spc}Response in space for state 1, option 2.}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state2opt2mom.png}
+\caption{\label{fig:state2opt2mom}Response in momentum for state 2, option 2.}
+\end{figure}
+\begin{figure}
+\includegraphics[width=0.5\textwidth]{state2opt2spc.png}
+\caption{\label{fig:state2opt2spc}Response in space for state 2, option 2.}
+\end{figure}
+
+\end{document}

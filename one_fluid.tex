@@ -1,0 +1,1017 @@
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
+\documentclass[a4paper,prb,10pt,aps,twocolumn]{revtex4-1}
+
+\usepackage{amsmath,amssymb,amsfonts} % need for subequations
+\usepackage{graphicx}                 % need for figures
+\usepackage{color}                    % use if color is used in text
+
+\begin{document}
+
+\title{One Fluid}
+\author{Andrei Berceanu}
+\affiliation{Departamento de F\'isica Te\'orica de la Materia
+  Condensada, Universidad Aut\'onoma de Madrid, Madrid 28049, Spain}
+
+\date{\today}
+
+\begin{abstract}
+We calculate the perturbation produced by a moving point defect in a single-state polariton condensate, using the linear response formalism.
+\end{abstract}
+
+\maketitle
+
+\section{Hamiltonian}
+We start from the effective Hamiltonian describing polaritons as a
+weakly interacting Bose gas - Eq. (9) of Ref.~\cite{Keeling_2007}. 
+We neglect the saturation term (see Ref.~arXiv:1107.4487v1),
+introduce a point-like defect potential in the photonic field.
+% In the case of a delta-defect, the Fourier transform of the real-space defect potential $V(r)=g_{V}\delta(r)$ is a constant,
+% \begin{equation}
+%   \label{eq:64}
+% \mathcal{F}\left(V(r)\right)=\hat{V}(k-q)=\int drV(r)e^{-i\left(k-q\right)r}=g_{V}
+% \end{equation}
+
+We consider the effective exciton-exciton interaction to be described
+by a contact potential
+$U_{k-k',q}=U_{0,0}=g_{x}=\frac{6e^{2}\lambda_{X}}{A\epsilon}$.  This
+assumption is justified in the case of wavevectors much smaller than
+the inverse of the exciton radius. We get:
+
+\begin{eqnarray}
+H & = & \sum_{k}\left(\begin{array}{cc}
+\psi_{k}^{\dagger} & D_{k}^{\dagger}\end{array}\right)\left(\begin{array}{cc}
+\omega_{k} & \Omega_{R}/2\\
+\Omega_{R}/2 & \varepsilon_{k}
+\end{array}\right)\left(\begin{array}{c}
+\psi_{k}\\
+D_{k}
+\end{array}\right)\nonumber \\
+ &  & +g_{V}\sum_{k,q}\psi_{k}^{\dagger}\psi_{q}\nonumber \\
+ &  & +\frac{1}{2}g_{X}\sum_{k,k',q}D_{k+q}^{\dagger}D_{k'-q}^{\dagger}D_{k}D_{k'}\label{eq:ham}
+\end{eqnarray}
+
+
+We denote by 
+
+\begin{equation}
+O_{k}=\left(\begin{array}{cc}
+\cos\theta_{k} & -\sin\theta_{k}\\
+\sin\theta_{k} & \cos\theta_{k}
+\end{array}\right)
+\end{equation}
+the unitary matrix which diagonalises the quadratic part of the Hamiltonian
+and rotates to the basis of lower and upper polariton states:
+
+\begin{equation}
+  \label{eq:65}
+\left(\begin{array}{c}
+\psi_{k}^{\dagger}\\
+D_{k}^{\dagger}
+\end{array}\right)=O_{k}\left(\begin{array}{c}
+U_{k}^{\dagger}\\
+L_{k}^{\dagger}
+\end{array}\right)  
+\end{equation}
+
+The (real) Hopfield coefficients $\cos\theta_k>0$ and $\sin\theta_{k}<0$ are given in Ref.~\cite{Ciuti_2003}.
+
+% \begin{subequations}
+%   \begin{eqnarray}
+%     \label{eq:69}
+% \psi_{k+q}^{\dagger}&=&\cos\theta_{k+q}U_{k+q}^{\dagger}-\sin\theta_{k+q}L_{k+q}^{\dagger}\\   
+% \psi_{k}&=&\cos\theta_{k}U_{k}-\sin\theta_{k}L_{k}
+%   \end{eqnarray}
+% \end{subequations}
+
+For temperatures much smaller than the Rabi energy we can neglect
+the upper polariton branch, and project Eq. \ref{eq:ham} in the basis
+of lower polariton states:
+
+% \begin{equation}
+%   \label{eq:68}
+% \sum_{k,q}\hat{V}(q)\psi_{k+q}^{\dagger}\psi_{k}=\sum_{k,q}\hat{V}(q)\sin\theta_{k+q}\sin\theta_{k}L_{k+q}^{\dagger}L_{k}  
+% \end{equation}
+
+\begin{eqnarray*}
+H^{LP} & = & \sum_{k}E_{k}^{LP}L_{k}^{\dagger}L_{k}+\sum_{k,q}g_{k,q}^{\text{{eff}}}L_{k}^{\dagger}L_{q}\\
+ &  & +\sum_{k,k',q}V_{k,k',q}^{\text{{eff}}}L_{k+q}^{\dagger}L_{k'-q}^{\dagger}L_{k}L_{k'}
+\end{eqnarray*}
+where we have defined
+
+\begin{eqnarray*}
+V_{k,k',q}^{\text{{eff}}} & = & \frac{g_{X}}{2}\cos\theta_{k+q}\cos\theta_{k'-q}\cos\theta_{k}\cos\theta_{k'}\\
+g_{k,q}^{\text{{eff}}} & = & g_{V}\sin\theta_{k}\sin\theta_{q}
+\end{eqnarray*}
+
+
+
+\section{Initial equation in momentum space}
+Hamilton's equation of motion now reads ($\hbar=1$):
+
+% Using the commutator $[L_{p},\, L_{k+q}^{\dagger}L_{k}]=\delta_{q,p-k}L_{k}$ we obtain for the defect part
+% \begin{eqnarray}
+%   \label{eq:70}
+% i\partial_{t}L_{p}=[L_{p},\, H^{LP}]=\sum_{k}\hat{V}(p-k)\sin\theta_{p}\sin\theta_{k}L_{k}
+% \end{eqnarray}
+
+\begin{multline}
+i\partial_{t}L_{k} = [L_{k},\, H^{LP}]
+  =  E_{k}^{LP}L_{k}+g_{V}\sin\theta_{k}\sum_{q}\sin\theta_{q}L_{q}+\\
+  +g_{X}\cos\theta_{k}\sum_{k_{1},k_{2}}\cos\theta_{|k_{1}+k_{2}-k|}\cos\theta_{k_{2}}\cos\theta_{k_{1}}L_{k_{1}+k_{2}-k}^{\dagger}L_{k_{2}}L_{k_{1}}
+\end{multline}
+
+
+In the case of a condensate, adding pumping and decay and interpreting
+the lower polariton field operator as a classical wavefunction we
+get the corresponding Gross-Pitaevskii equation:
+
+% \begin{equation}
+%   \label{eq:67}
+% i\partial_{t}\psi_{k}^{LP}=\sin\theta_{k}\sum_{q}\hat{V}(k-q)\sin\theta_{q}\psi_{q}^{LP}  
+% \end{equation}
+
+
+\begin{multline}
+i\partial_{t}\psi_{k}^{LP}(t)  =  \sin\theta_{k}f_{p}e^{-i\omega_{p}t}\delta_{k,k_{p}}+\left(E_{k}^{LP}-i\kappa_{k}^{LP}\right)\psi_{k}^{LP}+\\+g_{V}\sin\theta_{k}\sum_{q}\sin\theta_{q}\psi_{q}^{LP}+\\
++g_{X}\cos\theta_{k}\sum_{k_{1},k_{2}}\cos\theta_{|k_{1}+k_{2}-k|}\cos\theta_{k_{2}}\cos\theta_{k_{1}}\psi_{k_{1}+k_{2}-k}^{LP\star}\psi_{k_{2}}^{LP}\psi_{k_{1}}^{LP}
+\label{eq:gplp}
+\end{multline}
+where we have defined the momentum-dependent lower polariton decay rate $\kappa_{k}^{LP}=\kappa_{X}\cos^{2}\theta_{k}+\kappa_{C}\sin^{2}\theta_{k}$.
+
+In the mean-field solution of Eq. \ref{eq:gplp} only the pump mode
+is populated, i.e. $\psi_{k}^{LP}(t)=e^{-i\omega_{p}t}\delta_{k,k_{p}}p$ and we get the complex amplitude $p$ as a solution of the cubic equation:
+
+\begin{equation}
+s_{k_{p}}f_{p}-\left(\Delta_{p}+i\kappa_{k_{p}}^{LP}\right)p=0
+\end{equation}
+where we have defined the interaction renormalized detuning from the
+LP branch $\Delta_{p}=\omega_{p}-E_{k_{p}}^{LP}-g_{X}c_{k_{p}}^{4}|p|^{2}$ 
+and $c_{k}=\cos\theta_{k}$,  $s_{k}=\sin\theta_{k}$.
+
+The ansatz for the wavefunction in momentum space reads
+\begin{equation}
+\psi(k) = e^{-i\omega_p t} \left[P\delta(k-k_p) + 
+u(k-k_p) e^{-i \omega t} + v^*(k_p-k) e^{i \omega 
+t}\right]
+\end{equation}
+where we have used the Fourier transforms $u(r)=\sum_k \widetilde{u}(k) e^{ikr}$ and the equivalent for
+$v$.
+
+Notation
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:114}
+    f_p& =& \sqrt{g} \frac{C(k_p)}{X(k_p)} F_p\\
+X_p& =& X(k_p)\\
+I_p& =& \left| f_p \right|^2\\
+\psi_p&=& \sqrt{g} X(k_p) \psi^{\text{ss}}_p\\
+n_p& =& \left|\psi_p \right|^2
+  \end{eqnarray}
+\end{subequations}
+
+% left-hand side
+% \begin{multline}
+%   \label{eq:115}
+% \omega \tilde{u}_{p}{\left (k - k_{p} \right )} e^{- i \omega t} e^{- i \omega_{p} t} - \omega e^{i \omega t} e^{- i \omega_{p} t} \overline{\tilde{v}_{p}{\left (- k + k_{p} \right )}} +\\ \omega_{p} \tilde{u}_{p}{\left (k - k_{p} \right )} e^{- i \omega t} e^{- i \omega_{p} t} + \omega_{p} e^{i \omega t} e^{- i \omega_{p} t} \overline{\tilde{v}_{p}{\left (- k + k_{p} \right )}} +\\ \frac{\omega_{p} \psi_{p} e^{- i \omega_{p} t} \delta_{k k_{p}}}{\sqrt{g} X{\left (k_{p} \right )}}
+% \end{multline}
+
+Mean-field
+
+% \begin{equation}
+%   \label{eq:116}
+% f_{p} X^{2}{\left (k_{p} \right )} - \omega_{p} \psi_{p} + \psi_{p}^{2} X{\left (k_{p} \right )} \overline{\psi_{p}} \overline{X{\left (k_{p} \right )}} + \psi_{p} \epsilon{\left (k_{p} \right )} - \frac{i \psi_{p}}{2} \kappa{\left (k_{p} \right )}
+% \end{equation}
+% \begin{equation}
+%   \label{eq:117}
+% \left[\epsilon\left(k_{p}\right)-\omega_{p}+\left|X_{p}\right|^{2}n_{p}-i\frac{\kappa\left(k_{p}\right)}{2}\right]\psi_{p}=-X_{p}^{2}f_{p}
+% \end{equation}
+% \begin{equation}
+%   \label{eq:118}
+% \left[\left(\epsilon\left(k_{p}\right)-\omega_{p}+\left|X_{p}\right|^{2}n_{p}\right)^{2}+\frac{\kappa^{2}\left(k_{p}\right)}{4}\right]n_{p}-\left|X_{p}\right|^{4}I_{p}=0
+% \end{equation}
+
+\begin{equation}
+  \label{eq:119}
+\left[\left(\frac{\epsilon_{p}-\omega_{p}}{\kappa_{p}}+\left|X_{p}\right|^{2}\frac{n_{p}}{\kappa_{p}}\right)^{2}+\frac{1}{4}\right]\frac{n_{p}}{\kappa_{p}}=\left|X_{p}\right|^{4}\frac{I_{p}}{\kappa_{p}^{3}}
+\end{equation}
+
+Linear response
+
+% \begin{multline}
+%   \label{eq:121}
+% \omega \tilde{u}_{p}{\left (k - k_{p} \right )} e^{- i \omega t} e^{- i \omega_{p} t} - \omega e^{i \omega t} e^{- i \omega_{p} t} \overline{\tilde{v}_{p}{\left (- k + k_{p} \right )}} +\\ \omega_{p} \tilde{u}_{p}{\left (k - k_{p} \right )} e^{- i \omega t} e^{- i \omega_{p} t} + \omega_{p} e^{i \omega t} e^{- i \omega_{p} t} \overline{\tilde{v}_{p}{\left (- k + k_{p} \right )}}
+% \end{multline}
+
+% \begin{widetext}
+% \begin{equation}
+%   \label{eq:125}
+%   \left[\begin{matrix}2 n_{p} \left\lvert{X{\left (k + k_{p} \right )}}\right\rvert^{2} - \omega_{p} + \epsilon{\left (k + k_{p} \right )} - \frac{i}{2} \kappa{\left (k + k_{p} \right )} & \psi_{p}^{2} \overline{X{\left (- k + k_{p} \right )}} \overline{X{\left (k + k_{p} \right )}}\\- X{\left (- k + k_{p} \right )} X{\left (k + k_{p} \right )} \overline{\psi_{p}}^{2} & - 2 n_{p} \left\lvert{X{\left (- k + k_{p} \right )}}\right\rvert^{2} + \omega_{p} - \epsilon{\left (- k + k_{p} \right )} - \frac{i}{2} \kappa{\left (- k + k_{p} \right )}\end{matrix}\right]
+% \end{equation}
+% \end{widetext}
+% \begin{widetext}
+% \begin{equation}
+%   \label{eq:126}
+%     \left[\begin{matrix}2 n_{p} \left\lvert{X{\left (k + k_{p} \right )}}\right\rvert^{2} - \omega_{p} + \epsilon{\left (k + k_{p} \right )} - \frac{i}{2} \kappa{\left (k + k_{p} \right )} & n_{p} e^{2 i \phi_{p}} \overline{X{\left (- k + k_{p} \right )}} \overline{X{\left (k + k_{p} \right )}}\\- n_{p} X{\left (- k + k_{p} \right )} X{\left (k + k_{p} \right )} e^{- 2 i \phi_{p}} & - 2 n_{p} \left\lvert{X{\left (- k + k_{p} \right )}}\right\rvert^{2} + \omega_{p} - \epsilon{\left (- k + k_{p} \right )} - \frac{i}{2} \kappa{\left (- k + k_{p} \right )}\end{matrix}\right]
+% \end{equation}
+% \end{widetext}
+
+
+\begin{equation}
+  \label{eq:127}
+\left[\begin{matrix}M{\left (k \right )} & Q{\left (k \right )} e^{2 i \phi_{p}}\\- e^{- 2 i \phi_{p}} \overline{Q{\left (- k \right )}} & - \overline{M{\left (- k \right )}}\end{matrix}\right]
+\end{equation}
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:148}
+M(k)&=&\epsilon(k_{p}+k)-\omega_{p}+2n_{p}\left|X(k_{p}+k)\right|^{2}-\frac{i}{2}\gamma(k_{p}+k)\\
+Q(k)&=&n_{p}X^{*}(k_{p}+k)X^{*}(k_{p}-k)  
+  \end{eqnarray}
+\end{subequations}
+
+The eigenvalue equation we need to solve reads
+\begin{multline}
+  \label{eq:130}
+- M{\left (k \right )} \lambda{\left (k \right )} - M{\left (k \right )} \overline{M{\left (- k \right )}} + Q{\left (k \right )} \overline{Q{\left (- k \right )}} +\\ \lambda^{2}{\left (k \right )} + \lambda{\left (k \right )} \overline{M{\left (- k \right )}} = 0
+\end{multline}
+
+\begin{equation}
+  \label{eq:150}
+\lambda\left(k\right)_{1,2}=\frac{1}{2}w\pm\frac{1}{2}\sqrt{z } 
+\end{equation}
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:149}
+w(k)&=&M\left(k\right)-M^{*}\left(-k\right)\\
+z(k)&=&\left[M\left(k\right)+M^{*}\left(-k\right)\right]^{2}-4Q\left(k\right)Q^{*}\left(-k\right)
+  \end{eqnarray}
+\end{subequations}
+
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:132}
+\sqrt{g}\tilde{u}_p &=& u_p\\
+\sqrt{g}\tilde{v}_p &=& v_p\\
+R(k) &=& \frac{C(k_p)}{X(k_p)}C(k+k_p) 
+  \end{eqnarray}
+\end{subequations}
+
+
+\begin{multline}
+  \label{eq:134}
+\left[\begin{matrix}M{\left (k \right )} & Q{\left (k \right )} e^{2 i \phi_{p}}\\- e^{- 2 i \phi_{p}} \overline{Q{\left (- k \right )}} & - \overline{M{\left (- k \right )}}\end{matrix}\right]
+\left[\begin{matrix}\operatorname{u_{p}}{\left (k \right )}\\\operatorname{v_{p}}{\left (k \right )}\end{matrix}\right]=\\
+-\left[\begin{matrix}\sqrt{n_{p}} R{\left (k \right )} \operatorname{V_{d}}{\left (k \right )} e^{i \phi_{p}}\\- \sqrt{n_{p}} e^{- i \phi_{p}} \overline{R{\left (- k \right )}} \overline{\operatorname{V_{d}}{\left (- k \right )}}\end{matrix}\right]  
+\end{multline}
+
+now we need 
+\begin{multline}
+  \label{eq:138}
+u_p(k)+v_p^*(-k)=\\\frac{2 \sqrt{n_{p}} \left(Q{\left (k \right )} \overline{R{\left (- k \right )}} \overline{\operatorname{V_{d}}{\left (- k \right )}} - R{\left (k \right )} \operatorname{V_{d}}{\left (k \right )} \overline{M{\left (- k \right )}}\right) e^{i \phi_{p}}}{M{\left (k \right )} \overline{M{\left (- k \right )}} - Q{\left (k \right )} \overline{Q{\left (- k \right )}}}
+\end{multline}
+
+\begin{multline}
+  \label{eq:139}
+\widetilde{\psi}(k+k_{p})=e^{-i\omega_{p}t}\frac{1}{\sqrt{g}}\\
+\left[\frac{\sqrt{n_{p}}e^{i\phi_{p}}}{X_{p}}\delta(k)+u_{p}(k)e^{-i\omega t}+v_{p}^{*}(-k)e^{i\omega t}\right]  
+\end{multline}
+
+Since we are treating with a static defect, we are interested in the
+response at $\omega = 0$.
+
+\begin{multline}
+  \label{eq:140}
+\left|\widetilde{\psi}\left(k+k_{p}\right)\right|^{2}=\frac{n_{p}}{g}\\
+\left|\frac{\delta(k)}{X_{p}}+\frac{Q\left(k\right)R^{*}\left(-k\right)V_{d}^{*}\left(-k\right)-M^{*}\left(-k\right)R\left(k\right)V_{d}\left(k\right)}{M\left(k\right)M^{*}\left(-k\right)-Q\left(k\right)Q^{*}\left(-k\right)}\right|^{2}
+\end{multline}
+
+Now for the real space response, we make use of the Fourier shift
+theorem
+
+\begin{equation}
+  \label{eq:141}
+\psi(r)=\sum_{k}\widetilde{\psi}(k)e^{ikr}=e^{ik_{p}r}\sum_{k}\widetilde{\psi}(k+k_{p})e^{ikr}
+\end{equation}
+to finally obtain
+
+\begin{multline}
+  \label{eq:142}
+I(r)=\frac{\vert\psi(r)\vert^{2}}{\vert\psi_p^{\text{ss}}\vert^{2}}=\left|X_{p}\right|^{2}\Bigg|\sum_{k}\Bigg[\frac{\delta(k)}{X_{p}}+\\
++\frac{Q\left(k\right)R^{*}\left(-k\right)V_{d}^{*}\left(-k\right)-M^{*}\left(-k\right)R\left(k\right)V_{d}\left(k\right)}{M\left(k\right)M^{*}\left(-k\right)-Q\left(k\right)Q^{*}\left(-k\right)}\Bigg]e^{ikr}\Bigg|^{2}  
+\end{multline}
+
+We choose a gaussian potential of the form
+\begin{equation}
+  \label{eq:143}
+V_{d}(x,y)=\frac{g_{V}}{2\pi\sigma^{2}}\exp\left\{ -\frac{1}{2\sigma^{2}}\left[\left(x-x_{0}\right)^{2}+\left(y-y_{0}\right)^{2}\right]\right\}  
+\end{equation}
+
+
+Which can be written in momentum space as
+\begin{equation}
+  \label{eq:144}
+\tilde{V}_{d}(k_x, k_y)= g_{V}\exp\left[-i(k_{x}x_{0}+k_{y}y_{0})\right]\exp\left[-\frac{\sigma^{2}}{2}\left(k_{x}^{2}+k_{y}^{2}\right)\right]  
+\end{equation}
+
+This potential tends to a $\delta$ function in the limit
+$\sigma \rightarrow 0$. The defect strength $g_V$ is
+measured in units of $\gamma_p \mu m^2$.
+
+Eliptic potential in real space is
+\begin{multline}
+  \label{eq:146}
+  V_{d}(x,y)=\frac{g_{V}}{2\pi a b\sigma^{2}}\exp\Bigg\{ -\frac{1}{2\sigma^{2}}\times\\\times
+\Bigg[\Bigg(\frac{(x-x_{0})\cos(\alpha)+(y-y_{0})\sin(\alpha)}{a}\Bigg)^{2}+\\
++\Bigg(\frac{(x-x_{0})\sin(\alpha)-(y-y_{0})\cos(\alpha)}{b}\Bigg)^{2}\Bigg]\Bigg\}  
+\end{multline}
+
+and in momentum space
+\begin{multline}
+  \label{eq:147}
+\tilde{V}_{d}(k_x, k_y)= g_{V}\exp\Bigg[-i\Bigg(k_{x}x_{0}+k_{y}y_{0}\Bigg)\Bigg]\times\\\times
+\exp\Bigg[-\frac{\sigma^{2}}{4}\Bigg(a^{2}+b^{2}\Bigg)\Bigg(k_{x}^{2}+k_{y}^{2}\Bigg)\Bigg]\times\\\times
+\exp\Bigg\{ -\frac{\sigma^{2}}{4}\Bigg(a^{2}-b^{2}\Bigg)\Bigg[2\sin(2\alpha)k_{x}k_{y}+\cos(2\alpha)\Bigg(k_{x}^{2}-k_{y}^{2}\Bigg)\Bigg]\Bigg\}  
+\end{multline}
+
+
+
+
+
+\section{Initial equation in real space}
+
+\begin{multline}
+  \label{eq:100}
+i \partial_t\tilde{\psi}(r,t)=\left[\epsilon(-i\partial_{r})-i\frac{\gamma(-i\partial_{r})}{2}\right]\tilde{\psi}(r,t)+\\
++F_{p}C(k_p)e^{ik_{p}r}e^{-i\omega_{p}t}+\\
++\iiint dr_{123}\,\tilde{g}(r_1-r,r-r_2,r-r_3)\tilde{\psi}^*(r_1,t)\tilde{\psi}(r_2,t)\tilde{\psi}(r_3,t)+\\
++\iint dr_{12} \widetilde{C}\left(r-r_{2}\right)\widetilde{C}\left(r_{2}-r_{1}\right)\widetilde{V_{d}}(r_{2},t)\widetilde{\psi}(r_{1},t)
+\end{multline}
+
+where
+
+
+\begin{multline}
+  \label{eq:101}
+\tilde{g}\left(r_{1}-r,r-r_{2},r-r_{3}\right)=g\int dq_{3}X(q_{3})e^{iq_{3}\left(r-r_{3}\right)}\times\\\times\int dq_{1}X^{*}(q_{1})e^{iq_{1}\left(r_{1}-r\right)}\int dq_{2}X^{*}(q_{2}+q_{3}-q_{1})X(q_{2})e^{iq_{2}\left(r-r_{2}\right)}  
+\end{multline}
+
+
+The ansatz in real space is
+\begin{equation}
+  \label{eq:6}
+\tilde{\psi}(r,t)=\left[Pe^{ik_{p}r}+\phi(r,t)\right]e^{-i\omega_{p}t}
+\end{equation}
+
+
+\section{Mean-field calculation}
+
+\begin{equation}
+  \label{eq:7}
+\left(\epsilon_{p}-\omega_{p}+g\left|X_{p}\right|^{4}\left|P\right|^{2}-i\frac{\gamma_{p}}{2}\right)P=-C_{p}F_{p}
+\end{equation}
+
+\begin{equation}
+  \label{eq:9}
+  \Delta_{p}=\omega_{p}-E_{k_{p}}^{LP}-g_{X}c_{k_{p}}^{4}|p|^{2}
+\end{equation}
+
+\begin{equation}
+  \label{eq:8}
+  \left(-\Delta_{p}-i\kappa_{k_{p}}^{LP}\right)p=-s_{k_{p}}f_{p}
+\end{equation}
+
+
+
+\begin{equation}
+  \label{eq:11}
+\epsilon_{p}-\omega_{p}+g\left|X_{p}\right|^{4}\left|P\right|^{2}=0
+\end{equation}
+
+
+It remains unchanged, with the substitutions
+$P \rightarrow \psi^{\text{ss}}_p$ and $\kappa \rightarrow \gamma$.
+Using the notation
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:102}
+  P&=&\frac{\sqrt{n_{p}}e^{i\phi_{p}}}{\sqrt{g}X_{p}}\\
+\left|F_{p}\right|^{2}&=&\frac{\left|X_{p}\right|^{2}I_{p}}{g\left|C_{p}\right|^{2}}
+  \end{eqnarray}
+\end{subequations}
+
+and multiplying by the c.c. we get the convenient form
+\begin{equation}
+  \label{eq:16}
+  \epsilon_{p}-\omega_{p}+\left|X_{p}\right|^{2}n_{p}=0
+\end{equation}
+
+
+Therefore $n_{p}=\frac{\omega_{p}-\epsilon_{p}}{\left|X_{p}\right|^{2}}>0$ if $\omega_{p}>\epsilon_{p}$.
+
+% \begin{equation}
+%   \label{eq:19}
+% \left[\left(\epsilon_{p}-\omega_{p}+\left|X_{p}\right|^{2}n_{p}\right)^{2}+\frac{\gamma_{p}^{2}}{4}\right]n_{p}=\left|X_{p}\right|^{4}I_{p}
+% \end{equation}
+
+\begin{equation}
+  \label{eq:20}
+\left[\left(\frac{\epsilon_{p}-\omega_{p}}{\gamma_{p}}+\left|X_{p}\right|^{2}\frac{n_{p}}{\gamma_{p}}\right)^{2}+\frac{1}{4}\right]\frac{n_{p}}{\gamma_{p}}=\left|X_{p}\right|^{4}\frac{I_{p}}{\gamma_{p}^{3}}  
+\end{equation}
+
+\begin{equation}
+  \label{eq:21}
+\frac{1}{4}\frac{n_{p}}{\gamma_{p}}=\left|X_{p}\right|^{4}\frac{I_{p}}{\gamma_{p}^{3}}
+\end{equation}
+
+
+\section{Linear response}
+
+
+From the time derivative, we keep the linear term
+\begin{equation}
+  \label{eq:22}
+\left(\left[i\partial_{t}\phi(r,t)\right]+\omega_{p}\phi(r,t)\right)e^{-i\omega_{p}t}
+\end{equation}
+
+
+The kinetic term in linear response is simply
+\begin{equation}
+  \label{eq:18}
+\left[\epsilon(-i\partial_{r})-i\frac{\gamma(-i\partial_{r})}{2}\right]\phi(r,t)e^{-i\omega_{p}t}
+\end{equation}
+
+
+The defect term gives a contribution of
+\begin{equation}
+  \label{eq:23}
+Pe^{-i\omega_{p}t}\int dr_{1}\int dr_{2}\tilde{C}\left(r-r_{2}\right)\tilde{C}\left(r_{2}-r_{1}\right)\tilde{V_{d}}(r_{2},t)e^{ik_{p}r_{1}}
+\end{equation}
+
+
+% Now for the cubic term.
+% \begin{multline}
+%   \label{eq:103}
+% 2g\left|X_{p}\right|^{2}e^{-i\omega_{p}t}\left|P\right|^{2}\int dq\left|X(q)\right|^{2}e^{iqr}\int dr^{\prime}\phi(r^{\prime},t)e^{-iqr^{\prime}}+\\
+% +gX_{p}^{2}e^{2ik_{p}r}e^{-i\omega_{p}t}P^{2}\int dqX^{*}(q)X^{*}(2k_{p}-q)e^{-iqr}\int dr^{\prime}\phi^{*}(r^{\prime},t)e^{iqr^{\prime}}
+% \end{multline}
+
+
+We use complex conjugation and finally get a system of 2 coupled
+equations.
+
+% \begin{multline}
+%   \label{eq:104}
+% i\partial_{t}\phi(r,t)=\left[\epsilon(-i\partial_{r})-\omega_{p}-i\frac{\gamma(-i\partial_{r})}{2}\right]\phi(r,t)+\\
+% +2g\left|X_{p}\right|^{2}\left|P\right|^{2}\int dq\left|X(q)\right|^{2}e^{iqr}\int dr^{\prime}\phi(r^{\prime},t)e^{-iqr^{\prime}}+\\
+% +gX_{p}^{2}e^{2ik_{p}r}P^{2}\int dqX^{*}(q)X^{*}(2k_{p}-q)e^{-iqr}\int dr^{\prime}\phi^{*}(r^{\prime},t)e^{iqr^{\prime}}+\\
+% +P\int dr_{1}\int dr_{2}\tilde{C}\left(r-r_{2}\right)\tilde{C}\left(r_{2}-r_{1}\right)\tilde{V_{d}}(r_{2},t)e^{ik_{p}r_{1}}  
+% \end{multline}
+% \begin{multline}
+%   \label{eq:105}
+% i\partial_{t}\phi^{*}(r,t)=-\left[\epsilon(i\partial_{r})-\omega_{p}+i\frac{\gamma(i\partial_{r})}{2}\right]\phi^{*}(r,t)-\\
+% -2g\left|X_{p}\right|^{2}\left|P\right|^{2}\int dq\left|X(q)\right|^{2}e^{-iqr}\int dr^{\prime}\phi^{*}(r^{\prime},t)e^{iqr^{\prime}}-\\
+% -gX_{p}^{2*}e^{-2ik_{p}r}P^{2*}\int dqX(q)X(2k_{p}-q)e^{iqr}\int dr^{\prime}\phi(r^{\prime},t)e^{-iqr^{\prime}}-\\
+% -P^{*}\int dr_{1}\int dr_{2}\tilde{C}^*\left(r-r_{2}\right)\tilde{C}^*\left(r_{2}-r_{1}\right)\tilde{V}_{d}^*(r_{2},t)e^{-ik_{p}r_{1}}
+% \end{multline}
+
+
+We now introduce the fourier components of $\phi$ in order to
+solve these 2 eqs.
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:106}
+   \phi(r,t)&=&\int dqd\omega\, e^{iqr}e^{-i\omega t}u(q,\omega)\\   
+   \phi^{\star}(r,t)&=&\int dqd\omega\, e^{iqr}e^{-i\omega t}v(q,\omega)\\
+   \tilde{V}_{d}(r,t)&=&\int dqd\omega\, e^{iqr}e^{-i\omega t}{V}_{d}(q,\omega)
+  \end{eqnarray}
+\end{subequations}
+
+Note that, in order to decouple the fourier components, we also need to
+introduce a change of variables. All the terms containing 
+$u$
+change their momentum from $q$ to $q+k_p$ and the $v$
+terms from $q$ to $q-k_p$.
+
+The resulting linear system of equations in $k$-space is:
+
+\begin{multline}
+  \label{eq:35}
+   \mathcal{L}(q,\omega)\begin{pmatrix}u(q+k_{p},\omega)\\
+   v(q-k_{p},\omega)
+\end{pmatrix}=-\frac{1}{\sqrt{g}}\sqrt{n_{p}}\times\\\times
+\begin{pmatrix}e^{i\phi_{p}}R(q)V_{d}(q,\omega)\\
+   e^{-i\phi_{p}}R^{*}(-q)V_{d}^{*}(-q,-\omega)
+   \end{pmatrix}  
+\end{multline}
+
+
+
+with the matrix $\mathcal{L}$
+
+\begin{equation}
+  \label{eq:36}
+   \mathcal{L}(q,\omega)=\begin{pmatrix}M(q)-\omega & Q(q)e^{2i\phi_{p}}\\
+   Q^{*}(-q)e^{-2i\phi_{p}} & M^{*}(-q)+\omega
+   \end{pmatrix}
+\end{equation}
+
+
+where we have further defined
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:107}
+M(q)&=&\epsilon(k_{p}+q)-\omega_{p}+2n_{p}\left|X(k_{p}+q)\right|^{2}-\frac{i}{2}\gamma(k_{p}+q)\\
+Q(q)&=&n_{p}X^{*}(k_{p}+q)X^{*}(k_{p}-q)\\
+R(q)&=&\frac{C_{p}}{X_{p}}C(k_{p}+q)
+  \end{eqnarray}
+\end{subequations}
+
+
+\begin{equation}
+  \label{eq:40}
+\det\left(\mathcal{L}\right)=D(q,\omega)=-\left(\omega-\omega_{+}(q)\right)\left(\omega-\omega_{-}(q)\right)
+\end{equation}
+
+\begin{equation}
+  \label{eq:41}
+   \omega_{+,-}(q)=\frac{1}{2}w(q)\pm\frac{1}{2}\sqrt{z(q)}
+\end{equation}
+
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:108}
+w(q)&=&M\left(q\right)-M^{*}\left(-q\right)\\
+pz(q)&=&\left[M\left(q\right)+M^{*}\left(-q\right)\right]^{2}-4Q\left(q\right)Q^{*}\left(-q\right)
+  \end{eqnarray}
+\end{subequations}
+
+
+For a real defect potential $\tilde{V}_{d}^{\star}(r,t)=\tilde{V}_{d}(r,t)$, so that
+$V_{d}^{\star}(-q,-\omega)=V_{d}(q,\omega)$.
+
+The perturbation to the polariton density $\delta \tilde{\rho}$ is
+given by
+
+\begin{equation}
+  \label{eq:44}
+\tilde{\rho}=\left|\tilde{\psi}(r,t)\right|^{2}=\left|P\right|^{2}\left[1+\delta\tilde{\rho}(r,t)\right] 
+\end{equation}
+
+
+\begin{multline}
+  \label{eq:109}
+\delta\tilde{\rho}(r,t)=\frac{1}{\vert P\vert^{2}}\left[P^{\star}\phi(r,t)e^{-ik_{p}r}+P\phi^{\star}(r,t)e^{ik_{p}r}\right]=\\
+\frac{1}{\vert P\vert^{2}}\int dq\, d\omega\, e^{iqr}e^{-i\omega t}\left[P^{\star}u(q+k_{p},\omega)+Pv(q-k_{p},\omega)\right]    
+\end{multline}
+
+
+
+
+On the other hand, by the definition of the response function $\chi$, we have
+\begin{equation}
+  \label{eq:46}
+  \delta\tilde{\rho}(r,t)=\int dqd\omega\: e^{iqr}e^{-i\omega t}\delta\rho(q,\omega)
+\end{equation}
+
+
+with the perturbation in momentum space
+\begin{equation}
+  \label{eq:47}
+   \delta\rho(q,\omega)=\chi(q,\omega)V_{d}(q,\omega)
+\end{equation}
+
+
+Therefore the response function of the system is
+\begin{multline}
+  \label{eq:110}
+\chi(q,\omega)=-\frac{1}{D(q,\omega)}\Bigg[ X_{p}\left[\left(M^{*}(-q)+\omega\right)R(q)-Q(q)R^{*}(-q)\right]+\\+X_{p}^{*}\left[\left(M(q)-\omega\right)R^{*}(-q)-Q^{*}(-q)R(q)\right]\Bigg]
+\end{multline}
+
+
+or, in terms of the excitation spectrum,
+\begin{widetext}
+\begin{equation}
+  \label{eq:49}
+\chi(q,\omega)=\frac{X_{p}\left[\left(M^{*}(-q)+\omega\right)R(q)-Q(q)R^{*}(-q)\right]+X_{p}^{*}\left[\left(M(q)-\omega\right)R^{*}(-q)-Q^{*}(-q)R(q)\right]}{\left(\omega-\omega_{+}(q)\right)\left(\omega-\omega_{-}(q)\right)}  
+\end{equation}
+\end{widetext}
+
+
+\section{Moving defect}
+
+
+For a defect moving at a constant velocity $V$, its potential is a
+function of $r + Vt$ only, i.e.
+\begin{equation}
+  \label{eq:50}
+  \tilde{V}_{d}(r,t)=\tilde{f}_{d}(r+Vt)
+\end{equation}
+
+
+while its fourier components are given by
+\begin{equation}
+  \label{eq:51}
+   V_{d}(q,\omega)=\delta\left(\omega+qV\right)\int dr\tilde{f}_{d}(r)e^{-iqr}
+\end{equation}
+
+
+The perturbation in momentum-energy space reduces to
+\begin{equation}
+  \label{eq:52}
+   \delta\rho(q,\omega)=\chi(q,\omega)f_d(q)\delta\left(\omega+qV\right)
+\end{equation}
+
+
+The density modulation will therefore only be a function of
+$\hat{r}=r+Vt$, i.e.
+\begin{equation}
+  \label{eq:53}
+  \delta\tilde{\rho}(\hat{r})=\int dr^{\prime}\tilde{f}_{d}(r^{\prime})K(\hat{r}-r^{\prime})
+\end{equation}
+
+
+We have introduced the Green function of the problem
+\begin{equation}
+  \label{eq:54}
+   K(r)=\int dq\, e^{iqr}\chi(q,-qV)
+\end{equation}
+
+
+to make explicit the convolution in the previous formula.
+
+We now choose a gaussian potential of the form
+\begin{equation}
+  \label{eq:55}
+   \tilde{f}_{d}(r)=\frac{g_{V}}{2\pi\sigma^{2}}\exp\left[-\frac{r^{2}}{2\sigma^{2}}\right]
+\end{equation}
+
+
+This potential tends to a $\delta$-function in the limit
+$\sigma \rightarrow 0$.
+
+We can now calculate the density perturbation using 2 methods.
+
+-  Method of residues: we compute the complex integral $K$ by
+   contour integration, using the residue theorem for the poles of the
+   response function $\chi$.
+
+-  Fourier method
+\begin{equation}
+  \label{eq:56}
+\delta\tilde{\rho}(\hat{r})=\int dqe^{iq\hat{r}}\delta\rho(q,-Vq)  
+\end{equation}
+
+\begin{equation}
+  \label{eq:57}
+  \delta\rho(q,-Vq)=\chi(q,-Vq)f_{d}(q)
+\end{equation}
+
+For a gaussian defect,
+\begin{equation}
+  \label{eq:58}
+  f_{d}(q) = g_V \exp\left[-\frac{\sigma^{2}}{2}q^{2}\right]
+\end{equation}
+
+
+\section{Drag force}
+
+
+In general, it is defined as:
+
+\begin{equation}
+  \label{eq:59}
+ F_{d}(t)=\int\mathrm{d}r\,\vert\tilde{\psi}(r,t)\vert^{2}\partial_{r}\tilde{V}_{d}(r,t) 
+\end{equation}
+ 
+
+For a defect moving at constant velocity $V$
+\begin{multline}
+  \label{eq:60}
+F_{d}=\int\mathrm{d}\hat{r}\,\tilde{\rho}(\hat{r})\partial_{\hat{r}}\tilde{f}_{d}(\hat{r}) =\frac{n_{p}}{g\left|X_{p}\right|^{2}}\times\\\times
+\int\mathrm{d}\hat{r}\,\left[1+\delta\tilde{\rho}(\hat{r})\right]\partial_{\hat{r}}\tilde{f}_{d}(\hat{r})  
+\end{multline}
+
+
+For a Gaussian defect shape this reduces to
+\begin{equation}
+  \label{eq:61}
+F_{d}=-\frac{n_{p}}{g\left|X_{p}\right|^{2}}\frac{g_{V}}{2\pi\sigma^{4}}\int\mathrm{d}\hat{r}\,\delta\tilde{\rho}(\hat{r})\hat{r}\exp\left[-\frac{\hat{r}^{2}}{2\sigma^{2}}\right]  
+\end{equation}
+
+
+Furthermore, if the perturbation caused by the defect has the symmetry
+$\delta\tilde{\rho}(x,-y)=\delta\tilde{\rho}(x,y)$, then only the
+$x$ component of the drag force survives:
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:111}
+\left(F_{d}\right)_{x}&=&-\frac{n_{p}}{g\left|X_{p}\right|^{2}}\frac{g_{V}}{2\pi\sigma^{4}}\int\mathrm{d}xdy\,\delta\tilde{\rho}(x,y)x\exp\left[-\frac{x^{2}+y^{2}}{2\sigma^{2}}\right]\\
+\left(F_{d}\right)_{y}&=&-\frac{n_{p}}{g\left|X_{p}\right|^{2}}\frac{g_{V}}{2\pi\sigma^{4}}\int\mathrm{d}xdy\,\delta\tilde{\rho}(x,y)y\exp\left[-\frac{x^{2}+y^{2}}{2\sigma^{2}}\right]=0  
+  \end{eqnarray}
+\end{subequations}
+
+\appendix
+\section{Response with $\psi$, $\psi^{\star}$}
+
+We now introduce fluctuations on top of the mean-field solution to
+describe the linear response of the system to the perturbing $\delta$
+potential:
+
+\begin{equation}
+\psi_{k}^{LP}(t)=e^{-i\omega_{p}t}\left(\delta_{k,k_{p}}p+\delta_{k,k'}\delta\psi_{k'}\right)\label{eq:fluctuations}
+\end{equation}
+Plugging the expansion \ref{eq:fluctuations} in Eq. \ref{eq:gplp}
+and, in accordance with Bogoliubov's treatment, keeping only linear
+terms in $\delta\psi$, we get:
+
+\begin{multline}
+0=\left(-\omega_{p}+E_{k}^{LP}+2g_{X}\cos^{2}\theta_{k_{p}}\cos^{2}\theta_{k}|p|^{2}-i\kappa_{k}^{LP}\right)\delta\psi_{k}+\\
++g_{X}\cos^{2}\theta_{k_{p}}\cos\theta_{k}\cos\theta_{|2k_{p}-k|}p^{2}\delta\psi_{2k_{p}-k}^{\star}+g_{V}\sin\theta_{k_{p}}\sin\theta_{k}p
+\end{multline}
+
+we complex conjugate:
+
+\begin{multline}
+0=\left(-\omega_{p}+E_{k}^{LP}+2g_{X}\cos^{2}\theta_{k_{p}}\cos^{2}\theta_{k}|p|^{2}+i\kappa_{k}^{LP}\right)\delta\psi_{k}^{\star}+\\
++g_{X}\cos^{2}\theta_{k_{p}}\cos\theta_{k}\cos\theta_{|2k_{p}-k|}p^{\star2}\delta\psi_{2k_{p}-k}+g_{V}\sin\theta_{k_{p}}\sin\theta_{k}p^{\star}
+\end{multline}
+we make change of index in first eq: $k=k_{p}+k'$ and in the second one  $k=k_{p}-k'$.
+
+% \begin{multline}
+%0=g_{V}\sin\theta_{k_{p}}\sin\theta_{k_{p}+k'}p+\\+\left(-\omega_{p}+E_{k_{p}+k'}^{LP}+2g_{X}\cos^{2}\theta_{k_{p}}\cos^{2}\theta_{k_{p}+k'}|p|^{2}-i\kappa_{k_{p}+k'}^{LP}\right)\delta\psi_{k_{p}+k'}+\\
+%+g_{X}\cos^{2}\theta_{k_{p}}\cos\theta_{k_{p}+k'}\cos\theta_{|k_{p}-k'|}p^{2}\delta\psi_{k_{p}-k'}^{\star}
+% \end{multline}
+% \begin{multline}
+%0=g_{V}\sin\theta_{k_{p}}\sin\theta_{k_{p}-k'}p^{\star}+\\+\left(-\omega_{p}+E_{k_{p}-k'}^{LP}+2g_{X}\cos^{2}\theta_{k_{p}}\cos^{2}\theta_{k_{p}-k'}|p|^{2}+i\kappa_{k_{p}-k'}^{LP}\right)\delta\psi_{k_{p}-k'}^{\star}+\\
+%+g_{X}\cos^{2}\theta_{k_{p}}\cos\theta_{k_{p}-k'}\cos\theta_{|k_{p}+k'|}p^{\star2}\delta\psi_{k_{p}+k'}
+% \end{multline}
+
+Introducing the notation $\Delta_{k_{p}\pm k}=\omega_{p}-E_{k_{p}\pm k}^{LP}-2g_{X}c_{k_{p}}^{2}c_{k_{p}\pm k}^{2}|p|^{2}$, the resulting system of coupled equations is:
+
+% \begin{subequations}
+%   \begin{eqnarray}
+%     \label{eq:71}
+% \left(-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP}\right)\delta\psi_{k_{p}+k}+g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{2}\delta\psi_{k_{p}-k}^{\star}&=&-g_{V}s_{k_{p}}s_{k_{p}+k}p\\
+% g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{\star2}\delta\psi_{k_{p}+k}+\left(-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}\right)\delta\psi_{k_{p}-k}^{\star}&=&-g_{V}s_{k_{p}}s_{k_{p}-k}p^{\star}
+%   \end{eqnarray}
+% \end{subequations}
+
+
+\begin{equation}
+  \label{eq:pert}
+\left(\begin{array}{c}
+\delta\psi_{k_{p}+k}\\
+\delta\psi_{k_{p}-k}^{\star}
+\end{array}\right)=-g_{V}s_{k_{p}}\mathcal{L}_{k,k_{p}}^{-1}\left(\begin{array}{c}
+s_{k_{p}+k}p\\
+s_{k_{p}-k}p^{\star}
+\end{array}\right)  
+\end{equation}
+with the matrix
+\begin{equation}
+  \label{eq:74}
+  \mathcal{L}_{k,k_{p}}=\left(\begin{array}{cc}
+-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP} & g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{2}\\
+g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{\star2} & -\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}
+\end{array}\right)
+\end{equation}
+
+
+
+
+To find the perturbed wavefunction we need to invert Eq. \ref{eq:pert}:
+
+% \begin{multline}
+% \left(\begin{array}{c}
+% \delta\psi_{k_{p}+k}\\
+% \delta\psi_{k_{p}-k}^{\star}
+% \end{array}\right)=-\frac{g_{V}s_{k_{p}}}{\left(-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP}\right)\left(-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}\right)-\left(g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}|p|^{2}\right)^{2}}\times\\
+% \times \left(\begin{array}{cc}
+% -\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP} & -g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{2}\\
+% -g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{\star2} & -\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP}
+% \end{array}\right)\left(\begin{array}{c}
+% s_{k_{p}+k}p\\
+% s_{k_{p}-k}p^{\star}
+% \end{array}\right)
+% \end{multline}
+
+
+% \begin{eqnarray*}
+% \delta\psi_{k_{p}+k} & = & -\frac{g_{V}s_{k_{p}}\left(\left(-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}\right)s_{k_{p}+k}p-g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}s_{k_{p}-k}|p|^{2}p\right)}{\left(-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP}\right)\left(-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}\right)-\left(g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}|p|^{2}\right)^{2}}\\
+% \delta\psi_{k_{p}-k}^{\star} & = & -\frac{g_{V}s_{k_{p}}\left(\left(-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP}\right)s_{k_{p}-k}p^{\star}-g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}s_{k_{p}+k}|p|^{2}p^{\star}\right)}{\left(-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP}\right)\left(-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}\right)-\left(g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}|p|^{2}\right)^{2}}
+% \end{eqnarray*}
+
+\begin{widetext}
+\begin{equation}
+  \label{eq:76}
+  \delta\psi_{k_{p}+k}  =  -\frac{g_{V}s_{k_{p}}\left(\left(-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}\right)s_{k_{p}+k}p-g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}s_{k_{p}-k}|p|^{2}p\right)}{\left(-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP}\right)\left(-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}\right)-\left(g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}|p|^{2}\right)^{2}}
+\end{equation}
+\end{widetext}
+
+The drag force we need to compute is given by
+\begin{multline}
+  \label{eq:77}
+F_{k_{p}}=-\int dr|\psi^{LP}(r)|^{2}\nabla(g_{V}\delta(r))=g_{V}(\nabla|\psi^{LP}(r)|^{2})_{r=0}\\=g_{V}\sum_{k}ik(p^{\star}\delta\psi_{k_{p}+k}+p\delta\psi_{k_{p}-k}^{\star})
+\end{multline}
+
+
+
+
+% \begin{multline}
+% p^{\star}\delta\psi_{k_{p}+k}+p\delta\psi_{k_{p}-k}^{\star}=\frac{g_{V}s_{k_{p}}|p|^{2}}{\left(i\kappa_{k_{p}+k}^{LP}+\Delta_{k_{p}+k}\right)\left(i\kappa_{k_{p}-k}^{LP}-\Delta_{k_{p}-k}\right)+\left(g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}|p|^{2}\right)^{2}}\times \\
+% \times \left[ \left(\left(i\kappa_{k_{p}-k}^{LP}-\Delta_{k_{p}-k}\right)s_{k_{p}+k}-\left(i\kappa_{k_{p}+k}^{LP}+\Delta_{k_{p}+k}\right)s_{k_{p}-k}-\right.\right.\\
+% \left.\left.-g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}|p|^{2}\left(s_{k_{p}-k}+s_{k_{p}+k}\right)\right) \right]
+% \end{multline}
+
+therefore, after introducing the notations $g_{k,k_{p}}=g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}$ and $\Delta_{k_{p}\pm k}^{\kappa}=i\kappa_{k_{p}\pm k}^{LP}\pm\Delta_{k_{p}\pm k}$ we obtain
+
+\begin{widetext}
+\begin{equation}
+  \label{eq:78}
+F_{k_{p}}=g_{V}^{2}|p|^{2}s_{k_{p}}\sum_{k}ik\frac{s_{k_{p}+k}\Delta_{k_{p}-k}^{\kappa}-s_{k_{p}-k}\Delta_{k_{p}+k}^{\kappa}-(s_{k_{p}-k}+s_{k_{p}+k})g_{k,k_{p}}|p|^{2}}{\Delta_{k_{p}+k}^{\kappa}\Delta_{k_{p}-k}^{\kappa}+g_{k,k_{p}}^{2}|p|^{4}}  
+\end{equation}  
+\end{widetext}
+
+\section{Quadratic Approximation}
+
+Quadratic approximation for the LP dispersion:
+
+\begin{multline}
+  \label{eq:79}
+E_{k}^{LP}=\frac{1}{2}\left(\left(\omega_{C}(k)+\omega_{X}^{0}\right)-\sqrt{\left(\omega_{C}(k)-\omega_{X}^{0}\right)^{2}+\Omega_{R}^{2}}\right)\\
+\approx E_{0}^{LP}+\frac{k^{2}}{2m_{LP}}-\mathcal{O}(k^{4})  
+\end{multline}
+
+with 
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:66}
+\omega_{C}(k)&=&\omega_{C}^{0}+\frac{k^{2}}{2m_{C}}\\
+E_{0}^{LP}&=&\omega_{X}^{0}+\frac{1}{2}\left(\delta-\sqrt{\delta^{2}+\Omega_{R}^{2}}\right)\\
+\delta&=&\omega_{C}^{0}-\omega_{X}^{0}\\
+m_{LP}&=&m_{C}/s_{0}^{2}
+  \end{eqnarray}
+\end{subequations}
+
+
+Let's find the eigenvalues of our 2x2 matrix.
+
+\begin{equation}
+  \label{eq:73}
+\det\left(\begin{array}{cc}
+-\omega-\Delta_{k_{p}+k}-i\kappa_{k_{p}+k}^{LP} & g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{2}\\
+g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}p^{\star2} & \omega-\Delta_{k_{p}-k}+i\kappa_{k_{p}-k}^{LP}
+\end{array}\right)=0  
+\end{equation}  
+
+
+\begin{equation}
+  \label{eq:82}
+  \omega^{2}-b\omega+c=0
+\end{equation}
+
+% \begin{subequations}
+%   \begin{eqnarray}
+%     \label{eq:80}
+% b&=&2k\frac{k_{p}}{m_{LP}}-i\left(\kappa_{X}(c_{k_{p}-k}^{2}+c_{k_{p}+k}^{2})+\kappa_{C}(s_{k_{p}-k}^{2}+s_{k_{p}+k}^{2})\right)+2g_{X}c_{k_{p}}^{2}|p|^{2}(c_{k_{p}+k}^{2}-c_{k_{p}-k}^{2})\\
+% c&=&-\Delta_{k_{p}+k}\Delta_{k_{p}-k}+i(\kappa_{k_{p}-k}^{LP}\Delta_{k_{p}+k}-\kappa_{k_{p}+k}^{LP}\Delta_{k_{p}-k})-\kappa_{k_{p}+k}^{LP}\kappa_{k_{p}-k}^{LP}+g_{X}^{2}c_{k_{p}}^{4}c_{k_{p}+k}^{2}c_{k_{p}-k}^{2}|p|^{4}
+%   \end{eqnarray}
+% \end{subequations}
+
+Approximations: 
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:83}
+c_{k_{p}+k}^{2}&=&c_{k_{p}-k}^{2}=c_{k_{p}}^{2}\\
+s_{k_{p}+k}^{2}&=&s_{k_{p}-k}^{2}=s_{k_{p}}^{2}\\ \kappa_{k_{p}+k}^{LP}&=&\kappa_{k_{p}-k}^{LP}=\kappa^{LP}=\kappa_{X}c_{k_{p}}^{2}+\kappa_{C}s_{k_{p}}^{2}\\
+g^{LP}&=&g_{X}c_{k_{p}}^{4}    
+  \end{eqnarray}
+\end{subequations}
+
+
+\begin{multline}
+  \label{eq:84}
+\omega^{\pm}=\frac{1}{2}b\pm\frac{1}{2}\sqrt{b^{2}-4c}=k\frac{k_{p}}{m_{LP}}-i\kappa^{LP}\pm\\
+\pm\sqrt{(\frac{k{}^{2}}{2m_{LP}}-\Delta_{p})(\frac{k{}^{2}}{2m_{LP}}-\Delta_{p}+2g^{LP}|p|^{2})}  
+\end{multline}
+
+Now we expand in powers of $k$.
+
+Simplifications:
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:85}
+\kappa_{X}&=&\kappa_{C}=\kappa\\
+\kappa_{k_{p}+k}^{LP}&=&\kappa_{k_{p}-k}^{LP}=\kappa\\
+\delta&=&0 \\ 
+\frac{1}{2}m_{LP}&=&m_{C}    
+  \end{eqnarray}
+\end{subequations}
+
+
+% \begin{subequations}
+%   \begin{eqnarray}
+%     \label{eq:86}
+% b&=&2k\frac{k_{p}}{m_{LP}}-2i\kappa+2g_{X}c_{k_{p}}^{2}|p|^{2}(c_{k_{p}+k}^{2}-c_{k_{p}-k}^{2})\\
+% c&=&-\Delta_{k_{p}+k}\Delta_{k_{p}-k}+i\kappa(\Delta_{k_{p}+k}-\Delta_{k_{p}-k})-\kappa^{2}+g_{X}^{2}c_{k_{p}}^{4}c_{k_{p}+k}^{2}c_{k_{p}-k}^{2}|p|^{4}    
+%   \end{eqnarray}
+% \end{subequations}
+
+
+% \begin{equation}
+%   \label{eq:94}
+% c_{k}^{2}=\frac{1}{2}\left(1+\frac{\frac{k^{2}}{2m_{C}}}{\sqrt{\left(\frac{k^{2}}{2m_{C}}\right)^{2}+\Omega_{R}^{2}}}\right)
+% \end{equation}
+
+Now we expand the Hopfield coefficients. We make the expansion up
+to second order in $k$ and $k_{p}$.
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:88}
+c_{k}^{2}&=&\frac{1}{2}+\frac{k^{2}}{2m_{LP}\Omega_{R}}\\
+\Delta_{k_{p}\pm k}&=&\omega_{p}-E_{k_{p}\pm k}^{LP}-2g_{X}c_{k_{p}}^{2}c_{k_{p}\pm k}^{2}|p|^{2}\\
+E_{k_{p}\pm k}^{LP}&=&E_{0}^{LP}+\frac{k_{p}^{2}}{2m_{LP}}+\frac{k^{2}}{2m_{LP}}\pm \frac{kk_{p}}{m_{LP}}
+  \end{eqnarray}
+\end{subequations}
+
+
+% \begin{equation}
+%   \label{eq:87}
+% c_{k_{p}+k}^{2}-c_{k_{p}-k}^{2}=\frac{2kk_{p}}{m_{LP}\Omega_{R}}  
+% \end{equation}
+
+
+% \begin{equation}
+%   \label{eq:90}
+% \frac{1}{2}b=k\frac{k_{p}}{m_{LP}}-i\kappa+g_{X}c_{k_{p}}^{2}|p|^{2}\frac{2kk_{p}}{m_{LP}\Omega_{R}}=k\frac{k_{p}}{m_{LP}}\left(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}\right)-i\kappa  
+% \end{equation}
+% \begin{equation}
+%   \label{eq:91}
+% \frac{b^{2}}{4}=\left(k\frac{k_{p}}{m_{LP}}\right)^{2}\left(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}\right)^{2}-\kappa^{2}-2i\kappa k\frac{k_{p}}{m_{LP}}\left(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}\right)  
+% \end{equation}
+% \begin{equation}
+%   \label{eq:92}
+% -c=\Delta_{k_{p}+k}\Delta_{k_{p}-k}+i\kappa(\Delta_{k_{p}-k}-\Delta_{k_{p}+k})+\kappa^{2}-g_{X}^{2}c_{k_{p}}^{4}c_{k_{p}+k}^{2}c_{k_{p}-k}^{2}|p|^{4}  
+% \end{equation}
+% \begin{equation}
+%   \label{eq:93}
+% \frac{1}{4}\left(b^{2}-4c\right)=\left(k\frac{k_{p}}{m_{LP}}\right)^{2}\left(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}\right)^{2}+\Delta_{k_{p}+k}\Delta_{k_{p}-k}+i\kappa\left(\Delta_{k_{p}-k}-\Delta_{k_{p}+k}-2k\frac{k_{p}}{m_{LP}}\left(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}\right)\right)-\left(g_{X}c_{k_{p}}^{2}c_{k_{p}+k}c_{k_{p}-k}|p|^{2}\right)^{2}  
+% \end{equation}
+
+% \begin{eqnarray*}
+% \Delta_{k_{p}+k}\Delta_{k_{p}-k} & = & (\omega_{p}-E_{0}^{LP}-\frac{k_{p}^{2}}{2m_{LP}}-\frac{k^{2}}{2m_{LP}}-2g_{X}c_{k_{p}}^{2}|p|^{2}(\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}})-\frac{kk_{p}}{m_{LP}}(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}))(\omega_{p}-E_{0}^{LP}-\frac{k_{p}^{2}}{2m_{LP}}-\frac{k^{2}}{2m_{LP}}-2g_{X}c_{k_{p}}^{2}|p|^{2}(\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}})+\frac{kk_{p}}{m_{LP}}(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}))\\
+%  & = & \left(\omega_{p}-E_{0}^{LP}-\frac{k_{p}^{2}}{2m_{LP}}-\frac{k^{2}}{2m_{LP}}-2g_{X}c_{k_{p}}^{2}|p|^{2}(\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}})\right)^{2}-\left(\frac{kk_{p}}{m_{LP}}\right)^{2}(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})^{2}
+% \end{eqnarray*}
+% \begin{equation}
+%   \label{eq:95}
+% \Delta_{k_{p}-k}-\Delta_{k_{p}+k}=2\frac{kk_{p}}{m_{LP}}(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})  
+% \end{equation}
+
+% \begin{equation}
+%   \label{eq:96}
+% \frac{1}{4}\left(b^{2}-4c\right)=\left(\omega_{p}-E_{0}^{LP}-\frac{k_{p}^{2}}{2m_{LP}}-\frac{k^{2}}{2m_{LP}}-2g_{X}c_{k_{p}}^{2}|p|^{2}(\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}})\right)^{2}-\left(g_{X}c_{k_{p}}^{2}|p|^{2}c_{k_{p}+k}c_{k_{p}-k}\right)^{2}  
+% \end{equation}
+
+% We now expand the product $c_{k_{p}+k}c_{k_{p}-k}$:
+% \begin{eqnarray*}
+% c_{k_{p}+k}^{2} & = & \frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}}+\frac{1}{\Omega_{R}}\frac{kk_{p}}{m_{LP}}\\
+% c_{k_{p}-k}^{2} & = & \frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}}-\frac{1}{\Omega_{R}}\frac{kk_{p}}{m_{LP}}\\
+% c_{k_{p}+k}^{2}c_{k_{p}-k}^{2} & = & \left(\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}}\right)^{2}-\left(\frac{1}{\Omega_{R}}\frac{kk_{p}}{m_{LP}}\right)^{2}\\
+% c_{k_{p}+k}c_{k_{p}-k} & = & \sqrt{\left(\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}}\right)^{2}-\left(\frac{1}{\Omega_{R}}\frac{kk_{p}}{m_{LP}}\right)^{2}}\approx\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}}
+% \end{eqnarray*}
+
+% \begin{equation}
+%   \label{eq:97}
+% \frac{1}{4}\left(b^{2}-4c\right)=\left(\omega_{p}-E_{0}^{LP}-\frac{k_{p}^{2}}{2m_{LP}}-\frac{k^{2}}{2m_{LP}}-2g_{X}c_{k_{p}}^{2}|p|^{2}(\frac{1}{2}+\frac{k^{2}+k_{p}^{2}}{2m_{LP}\Omega_{R}})\right)^{2}-\left(g_{X}c_{k_{p}}^{2}|p|^{2}\frac{1}{2}\left(1+\frac{k^{2}+k_{p}^{2}}{m_{LP}\Omega_{R}}\right)\right)^{2}
+% \end{equation}
+
+% \begin{equation}
+%   \label{eq:98}
+% \left(b^{2}-4c\right)=4\left(\frac{k^{2}}{2m_{LP}}(1+\frac{3}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})-\omega_{p}+E_{0}^{LP}+\frac{k_{p}^{2}}{2m_{LP}}(1+\frac{3}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})+\frac{3}{2}g_{X}c_{k_{p}}^{2}|p|^{2}\right)  
+% \end{equation}
+
+% \begin{equation}
+%   \label{eq:99}
+% \left(\frac{k^{2}}{2m_{LP}}(1+\frac{1}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})-\omega_{p}+E_{0}^{LP}+\frac{k_{p}^{2}}{2m_{LP}}(1+\frac{1}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})+\frac{1}{2}g_{X}c_{k_{p}}^{2}|p|^{2}\right)  
+% \end{equation}
+
+% We finally get for the dispersion
+% \begin{eqnarray*}
+% \omega^{\pm} & = &k\frac{k_{p}}{m_{LP}}\left(1+\frac{2}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2}\right)-i\kappa\\
+%  &  & \pm\sqrt{\left(\frac{k^{2}}{2m_{LP}}(1+\frac{3}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})-\omega_{p}+E_{0}^{LP}+\frac{k_{p}^{2}}{2m_{LP}}(1+\frac{3}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})+\frac{3}{2}g_{X}c_{k_{p}}^{2}|p|^{2}\right)\left(\frac{k^{2}}{2m_{LP}}(1+\frac{1}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})-\omega_{p}+E_{0}^{LP}+\frac{k_{p}^{2}}{2m_{LP}}(1+\frac{1}{\Omega_{R}}g_{X}c_{k_{p}}^{2}|p|^{2})+\frac{1}{2}g_{X}c_{k_{p}}^{2}|p|^{2}\right)}
+% \end{eqnarray*}
+
+\bibliography{index}
+
+
+\end{document}

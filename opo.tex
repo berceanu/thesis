@@ -1,0 +1,987 @@
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
+\documentclass[a4paper,prb,10pt,aps,twocolumn]{revtex4-1}
+
+\usepackage{amsmath,amssymb,amsfonts} % need for subequations
+\usepackage{graphicx}                 % need for figures
+\usepackage{color}                    % use if color is used in text
+
+\newcommand{\vect}[1]{\boldsymbol{#1}}
+
+\begin{document}
+
+\title{Linear response for polaritons in the OPO configuration}
+\author{Andrei Berceanu}
+\affiliation{Departamento de F\'isica Te\'orica de la Materia
+  Condensada, Universidad Aut\'onoma de Madrid, Madrid 28049, Spain}
+
+\date{\today}
+
+\begin{abstract}
+We use the linear response formalism for the case of a polariton condensate flowing against a point defect.
+\end{abstract}
+
+\maketitle
+
+\section{Theoretical model}
+The starting GP eq. for the LP band with a $\delta$-like defect
+and pump is:
+
+\begin{align}
+i \frac{d}{dt} \widetilde{\Psi}_{\text{LP}}(k)=&\left[\epsilon(k)-i 
+\frac{\gamma(k)}{2}\right]\widetilde{\Psi}_{\text{LP}}(k) + F_p C(k_p) e^{-i 
+\omega_p t} \nonumber \\
+& + \sum_{q_1,q_2} g_{k,q_1,q_2} \widetilde{\Psi}^{*}_{\text{LP}}(q_1+q_2-
+k)\widetilde{\Psi}_{\text{LP}}(q_1)\widetilde{\Psi}_{\text{LP}}(q_2) \nonumber \\
+& + \sum_q G_{k,q} \widetilde{\Psi}_{\text{LP}}(q)
+\end{align}
+
+with the defect contribution
+
+\begin{equation}
+G_{k,q} = g_V C(k) C(q)
+\end{equation}
+
+and the polariton-polariton interaction
+
+\begin{equation}
+g_{k,q_1,q_2} = g X^*(k) X^*(q_1+q_2-k) X(q_1) X(q_2)
+\end{equation}
+
+The ansatz for the wavefunction in momentum space reads
+
+\begin{align}
+\widetilde{\Psi}_{\text{LP}}(k) &= e^{-i\omega_p t} \left[P\delta(k-k_p) + 
+\widetilde{u}_p(k-k_p) e^{-i \omega t} + \widetilde{v}^*_p(k_p-k) e^{i \omega 
+t}\right] \nonumber \\
+& + e^{-i\omega_s t} \left[S\delta(k-k_s) + \widetilde{u}_s(k-k_s) e^{-i \omega 
+t} + \widetilde{v}^*_s(k_s-k) e^{i \omega t}\right] \nonumber \\
+& + e^{-i\omega_i t} \left[I\delta(k-k_i) + \widetilde{u}_i(k-k_i) e^{-i \omega 
+t} + \widetilde{v}^*_i(k_i-k) e^{i \omega t}\right]
+\end{align}
+
+where we have used the Fourier transforms $u(r)=\sum_k \widetilde{u}(k) e^{ikr}$ and the equivalent for $v$.
+
+\section{Stability curve}
+
+\begin{equation}
+  \label{eq:1}
+\left[\left(\epsilon_{p}-\omega_{p}+X_{p}^{2}n_{p}\right)^{2}+\frac{1}{4}\right]n_{p}-X_{p}^{4}I_{p}=0  
+\end{equation}
+
+\section{Mean-field equations}
+
+We start from the mean-field equations
+
+\begin{equation}
+\begin{aligned}
+\frac{1}{X_{p}^{2}}\left(\epsilon_{p}-i\frac{\gamma_{p}}{2}-\omega_{p}\right)\tilde{P}+\left(n_{p}+2n_{s}+2n_{i}\right)\tilde{P}+2\tilde{P}^{\star}\tilde{S}\tilde{I}+\tilde{F_{p}}=0 \\
+\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)\tilde{S}+\left(2n_{p}+n_{s}+2n_{i}\right)\tilde{S}+\tilde{P}^{2}\tilde{I}^{\star}=0 \\
+\frac{1}{X_{i}^{2}}\left(\epsilon_{i}-i\frac{\gamma_{i}}{2}-2\omega_{p}+\omega_{s}\right)\tilde{I}+\left(2n_{p}+2n_{s}+n_{i}\right)\tilde{I}+\tilde{P}^{2}\tilde{S}^{\star}=0
+\end{aligned}
+\end{equation}
+
+where $\tilde{P} = \sqrt{g} X_p P$ etc,
+$\tilde{F_p} = \sqrt{g} \frac{C_p}{X_p} F_p$ and
+$n_p = \vert \tilde{P} \vert^2$ etc. We measure energy in units of
+$\gamma_p$ and $I_{p} = \vert \tilde{F_p} \vert ^2$ in units
+of $\gamma_p^3$.
+
+The 4 coupled equations for the unknowns
+$\omega_{s},n_{s},n_{p},n_i$ as a function of $I_{p}$ are
+
+\begin{subequations}
+\begin{align}
+&\Bigg(1-\alpha^{2}\Bigg)n_{s}+2\Bigg(1-\alpha\Bigg)n_{p}-\frac{1}{X_{s}^{2}}\Bigg(1+\frac{\gamma_{s}}{\gamma_{i}}\Bigg)\omega_{s}+\nonumber \\ 
+&+\frac{1}{X_{s}^{2}}\Bigg[\epsilon_{s}+\frac{\gamma_{s}}{\gamma_{i}}\Bigg(2\omega_{p}-\epsilon_{i}\Bigg)\Bigg]=0 \\
+&\Bigg[\frac{1}{X_{s}^{2}}\Bigg(\epsilon_{s}-\omega_{s}\Bigg)+2n_{p}+\Bigg(1+2\alpha\Bigg)n_{s}\Bigg]^{2}+\nonumber \\ &+\frac{1}{X_{s}^{4}}\frac{\gamma_{s}^{2}}{4}-\alpha n_{p}^{2}=0 \\
+&\Bigg\{ 2n_{s}\Bigg[\frac{1}{X_{s}^{2}}\Bigg(\epsilon_{s}-\omega_{s}\Bigg)+2n_{p}+\Bigg(1+2\alpha\Bigg)n_{s}\Bigg]-\nonumber \\ 
+&-n_{p}\Bigg[\frac{1}{X_{p}^{2}}\Bigg(\epsilon_{p}-\omega_{p}\Bigg)+n_{p}+2\Bigg(1+\alpha\Bigg)n_{s}\Bigg]\Bigg\} ^{2}+\nonumber \\ 
+&+\frac{1}{4}\Bigg(2\frac{\gamma_{s}}{X_{s}^{2}}n_{s}+\frac{1}{X_{p}^{2}}n_{p}\Bigg)^{2}-n_{p}I_{p}=0 \\
+&n_{i}=\frac{X_{i}^{2}}{X_{s}^{2}}\frac{\gamma_{s}}{\gamma_{i}}n_{s}=\alpha n_{s}
+\end{align}
+\end{subequations}
+
+
+Once the nonlinear system is solved for the unknowns, one can determine
+$\tilde{P}$ (in units of $\sqrt{\gamma_p}$) from
+
+\begin{multline}
+  \label{eq:12}
+\tilde{P}\tilde{F_{p}}^{\star}=\frac{2}{X_{s}^{2}}\Bigg(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\Bigg)n_{s}+\\+
+2\Bigg(2n_{p}+n_{s}+2n_{i}\Bigg)n_{s}-\Bigg[\frac{1}{X_{p}^{2}}\Bigg(\epsilon_{p}+i\frac{1}{2}-\omega_{p}\Bigg)n_{p}+\\+
+\Bigg(n_{p}+2n_{s}+2n_{i}\Bigg)n_{p}\Bigg]  
+\end{multline}
+
+
+where $\tilde{F_p}$ is expressed in units of
+$\gamma_p \sqrt{\gamma_p}$, and plug it into the following
+(linear) system in order to determine
+$\tilde{S}_{r}, \tilde{S}_{i}, \tilde{I}_{r}, \tilde{I}_{i}$
+
+\tiny
+\begin{widetext}
+\begin{equation}
+  \label{eq:2}
+   \left(\begin{array}{cccc}
+\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+n_{s}+2n_{i} & \frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2} & \tilde{P}_{r}^{2}-\tilde{P}_{i}^{2} & 2\tilde{P}_{r}\tilde{P}_{i}\\
+   -\frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2} & \frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+n_{s}+2n_{i} & 2\tilde{P}_{r}\tilde{P}_{i} & \tilde{P}_{i}^{2}-\tilde{P}_{r}^{2}\\
+   \tilde{P}_{r}^{2}-\tilde{P}_{i}^{2} & 2\tilde{P}_{r}\tilde{P}_{i} & \frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+2n_{p}+2n_{s}+n_{i} & \frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2}\\
+   2\tilde{P}_{r}\tilde{P}_{i} & \tilde{P}_{i}^{2}-\tilde{P}_{r}^{2} & -\frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2} & \frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+2n_{p}+2n_{s}+n_{i}
+   \end{array}\right)\left(\begin{array}{c}
+   \tilde{S}_{r}\\
+   \tilde{S}_{i}\\
+   \tilde{I}_{r}\\
+   \tilde{I}_{i}
+   \end{array}\right)=0
+\end{equation}
+\end{widetext}
+\normalsize
+
+\section{LP dispersion}
+The blue-shifted LP dispersion is given by
+$\epsilon\left(k\right)+2\left|X(k)\right|^{2}\sum_{q=1}^{3}n_{q}$.
+
+\section{Bogoliubov excitation spectrum}
+The spectrum of excitations can be obtained by diagonalizing the
+Bogoliubov matrix $\mathcal{L}$:
+
+\begin{equation}
+\mathcal{L}(k) =
+\begin{pmatrix}
+M(k) & Q(k) \\
+-Q^*(-k) & -M^*(-k) 
+\end{pmatrix}
+\end{equation}
+
+\begin{multline}
+  \label{eq:3}
+M_{mn}(k)=\left[\epsilon\left(k_{m}+k\right)-\omega_{m}-i\frac{\gamma\left(k_{m}+k\right)}{2}\right]\delta_{m,n}+\\
++2X(k_{n}+k)X^{*}(k_{m}+k)\sum_{q,t=1}^{3}\delta_{m+q,n+t}\tilde{A}_{q}^{*}\tilde{A}_{t}
+\end{multline}
+
+\begin{equation}
+  \label{eq:4}
+Q_{mn}(k)=X^{*}(k_{m}+k)X^{*}(k_{n}-k)\sum_{q,t=1}^{3}\delta_{m+n,q+t}\tilde{A}_{q}\tilde{A}_{t}  
+\end{equation}
+
+with $\tilde{A}_{1}=\tilde{S}$, $\tilde{A}_{2}=\tilde{P}$
+and $\tilde{A}_{3}=\tilde{I}$.
+
+\section{Blue-shifted LP}
+In order to get the blue-shifted LP dispersion, we need to set the
+off-diagonal elements of $\mathcal{L}$ to 0.
+
+\begin{multline}
+  \label{eq:5}
+M_{ij}(k)=\Bigg[-\omega_{j}+\epsilon\left(k_{j}+k\right)+\\
++2\left|X(k_{j}+k)\right|^{2}\sum_{q=1}^{3}n_{q}-\frac{i}{2}\gamma\left(k_{j}+k\right)\Bigg]\delta_{i,j}
+\end{multline}
+
+\section{Off-diagonal terms in $M$}
+With $m\neq n$, we have
+
+\begin{equation}
+  \label{eq:6}
+M_{mn}(k)=2X(k_{n}+k)X(k_{m}+k)\sum_{r}\tilde{A}_{r}^{\star}\tilde{A}_{r+\left(m-n\right)}=M_{nm}(k)^{\star}
+\end{equation}
+
+\section{Momentum-space response}
+The response of the system to the perturbation induced by the
+$\delta$-defect is given by
+$\mathcal{L} \cdot \delta\vec{\psi}_{d}=-\vec{F}_{d}$:
+
+\begin{equation}
+  \label{eq:7}
+   \mathcal{L}(k) \cdot \left(\begin{array}{c}
+   u^s_d(k)\\
+   u^p_d(k)\\
+   u^i_d(k)\\
+   v^s_d(k)\\
+   v^p_d(k)\\
+   v^i_d(k)
+   \end{array}\right)=
+   -\left(\begin{array}{c}
+   \frac{C_{s}}{X_s}C(k+k_{s})\tilde{S}\\
+   \frac{C_{p}}{X_p}C(k+k_{p})\tilde{P}\\
+   \frac{C_{i}}{X_i}C(k+k_{i})\tilde{I}\\
+   -\frac{C_{s}}{X_s}C(k_{s}-k)\tilde{S}^{\star}\\
+   -\frac{C_{p}}{X_p}C(k_{p}-k)\tilde{P}^{\star}\\
+   -\frac{C_{i}}{X_i}C(k_{i}-k)\tilde{I}^{\star}
+   \end{array}\right)
+\end{equation}
+
+where we have defined $u_d^s = \tilde{u}_d^s \sqrt{g}/g_V$ etc.
+and we measure $\delta\vec{\psi}_{d}$ in units of
+$\gamma_p^{-1/2}$ and $g_V$ in units of
+$\gamma_p \mu m^2$.
+
+\begin{equation}
+  \label{eq:8}
+g \left|\tilde{\Psi}_{\text{LP}}^{p}\left(k+k_{p}\right)\right|^{2}= \left|\tilde{P}/X_{p}\delta(k)+\frac{g_{V}}{2}\left(u_{d}^{p}(k)+v_{d}^{p\star}(-k)\right)\right|^{2}
+\end{equation}
+
+
+If we keep just the terms on the diagonal of the matrix
+$\mathcal{L}$, we can write the response in $k$-space
+analytically for the signal, pump and idler ($j=1,2,3$):
+
+\begin{widetext}
+\begin{multline}
+  \label{eq:9}
+\left|u_{d}^{j}(k)+v_{d}^{j\star}(-k)\right|^{2}=4\frac{C_{j}^{2}}{X_{j}^{2}}n_{j}\frac{C^{2}(k_{j}+k)}{\left[\epsilon\left(k_{j}+k\right)-\omega_{j}+2 X^2(k_{j}+k) \left(n_{s}+n_{p}+n_{i}\right)\right]^{2}+\frac{1}{4}\gamma^{2}\left(k_{j}+k\right)}  
+\end{multline}
+\end{widetext}
+
+\begin{equation}
+  \label{eq:10}
+   \mathcal{L}^{\star}(-k) \cdot \left(\begin{array}{c}
+   {u_d^s}^{\star}(-k)\\
+   {u_d^p}^{\star}(-k)\\
+   {u_d^i}^{\star}(-k)\\
+   {v_d^s}^{\star}(-k)\\
+   {v_d^p}^{\star}(-k)\\
+   {v_d^i}^{\star}(-k)
+   \end{array}\right) = - \vec{F}_{d}^{\star}(-k)
+\end{equation}
+
+
+We first plot the full response in momentum-space, corresponding to the
+Bogoliubov matrix $\mathcal{L}$.
+
+The next series of 3 contour plots correspond to the response calculated
+by keeping only the terms on the S-S, P-P and I-I interactions and
+setting all other terms in $\mathcal{L}$ to 0.
+
+
+\section{Real-space response}
+The last step is to transform to real-space, according to
+
+\begin{multline}
+  \label{eq:11}
+I^{p}(r)=\frac{\vert\Psi_{\text{LP}}^{p}(r)\vert^{2}}{\vert P\vert^{2}}=\\
+=\frac{\left|\sum_{k}\left[\tilde{P}/X_{p}\delta(k)+g_V/2\left(u_{d}^{p}(k)+v_{d}^{p\star}(-k)\right)\right]e^{ikr}\right|^{2}}{n_p/X_p^2}
+\end{multline}
+
+We plot the full response in real-space, corresponding to the Bogoliubov
+matrix $\mathcal{L}$.
+
+The next series of 3 contour plots correspond to the response calculated
+by keeping only the S-S, P-P and I-I terms of $\mathcal{L}$,
+setting all others to 0.
+
+\section{Mean-field equations}
+We start from 2 of the 4 OPO mf equations, and use the notations $\left(212\right)=\left(2n_{p}+n_{s}+2n_{i}\right)$ and $\left(221\right)=\left(2n_{p}+2n_{s}+n_{i}\right)$. 
+
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:15}
+\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)\frac{\tilde{S}}{X_{s}^{2}}+(212)\tilde{S}=-\tilde{P}^{2}\tilde{I}^{\star}\\
+\left(\epsilon_{i}-i\frac{\gamma_{i}}{2}-2\omega_{p}+\omega_{s}\right)\frac{\tilde{I}}{X_{i}^{2}}+(221)\tilde{I}=-\tilde{P}^{2}\tilde{S}^{\star}
+  \end{eqnarray}
+\end{subequations}
+
+We separate the complex variables into their real and imaginary parts, as follows
+\begin{subequations}
+  \begin{eqnarray}
+    \label{eq:13}
+\tilde{P}=\tilde{P}_{r}+i\tilde{P}_{i}\\
+\tilde{S}=\tilde{S}_{r}+i\tilde{S}_{i}\\
+\tilde{I}=\tilde{I}_{r}+i\tilde{I}_{i}
+  \end{eqnarray}
+\end{subequations}
+
+
+
+% \begin{subequations}
+%   \begin{align}
+%     \label{eq:14}
+% \left[\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+\left(212\right)\right]-i\frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2}\right]\left(\tilde{S}_{r}+i\tilde{S}_{i}\right)+\left(\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)+2i\tilde{P}_{r}\tilde{P}_{i}\right)\left(\tilde{I}_{r}-i\tilde{I}_{i}\right)=0\\
+% \left[\left[\frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+\left(221\right)\right]-i\frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2}\right]\left(\tilde{I}_{r}+i\tilde{I}_{i}\right)+\left(\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)+2i\tilde{P}_{r}\tilde{P}_{i}\right)\left(\tilde{S}_{r}-i\tilde{S}_{i}\right)=0
+%   \end{align}
+% \end{subequations}
+% \begin{subequations}
+%   \begin{align}
+%     \label{eq:16}
+% \left\{ \left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+\left(212\right)\right]\tilde{S}_{r}+\frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2}\tilde{S}_{i}+\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)\tilde{I}_{r}+2\tilde{I}_{i}\tilde{P}_{r}\tilde{P}_{i}\right\} +i\left\{ \tilde{S}_{i}\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+\left(212\right)\right]-\frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2}\tilde{S}_{r}-\tilde{I}_{i}\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)+2\tilde{P}_{r}\tilde{P}_{i}\tilde{I}_{r}\right\} =0\\
+% \left\{ \left[\frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+\left(221\right)\right]\tilde{I}_{r}+\frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2}\tilde{I}_{i}+\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)\tilde{S}_{r}+2\tilde{P}_{r}\tilde{P}_{i}\tilde{S}_{i}\right\} +i\left\{ \tilde{I}_{i}\left[\frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+\left(221\right)\right]-\frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2}\tilde{I}_{r}-\tilde{S}_{i}\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)+2\tilde{P}_{r}\tilde{P}_{i}\tilde{S}_{r}\right\} =0
+%   \end{align}
+% \end{subequations}
+
+
+% \begin{subequations}
+%   \begin{align}
+%     \label{eq:17}
+% \left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+\left(212\right)\right]\tilde{S}_{r}+\frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2}\tilde{S}_{i}+\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)\tilde{I}_{r}+2\tilde{P}_{r}\tilde{P}_{i}\tilde{I}_{i}=0\\
+% -\frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2}\tilde{S}_{r}+\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+\left(212\right)\right]\tilde{S}_{i}+2\tilde{P}_{r}\tilde{P}_{i}\tilde{I}_{r}-\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)\tilde{I}_{i}=0\\
+% \left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)\tilde{S}_{r}+2\tilde{P}_{r}\tilde{P}_{i}\tilde{S}_{i}+\left[\frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+\left(221\right)\right]\tilde{I}_{r}+\frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2}\tilde{I}_{i}=0\\
+% 2\tilde{P}_{r}\tilde{P}_{i}\tilde{S}_{r}-\left(\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2}\right)\tilde{S}_{i}-\frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2}\tilde{I}_{r}+\left[\frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+\left(221\right)\right]\tilde{I}_{i}=0
+%   \end{align}
+% \end{subequations}
+
+Substituting into the original equations and separating real and imaginary parts, we obtain 4 coupled equations which can be written in matrix form as Eq.~\eqref{eq:2}.
+
+\begin{multline}
+  \label{eq:19}
+\left(\left(\epsilon_{p}-\omega_{p}+gX_{p}^{4}n_{p}\right)^{2}+\frac{\gamma_{p}^{2}}{4}\right)n_{p}=I_{p}  
+\end{multline}
+
+\begin{multline}
+  \label{eq:20}
+\left(\epsilon_{p}-i\frac{\gamma_{p}}{2}-\omega_{p}\right)P+gX_{p}^{2}\left(\left(\left(|P|^{2}X_{p}^{2}+2|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\right)P+2P^{*}SIX_{s}X_{i}\right)\right)+F_{p}=0  
+\end{multline}
+
+\begin{multline}
+  \label{eq:21}
+\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)X_{s}S+gX_{s}^{2}\left[\left(2|P|^{2}X_{p}^{2}+|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\right)X_{s}S+P^{2}I^{*}X_{p}^{2}X_{i}\right]=0  
+\end{multline}
+
+
+\begin{multline}
+  \label{eq:22}
+\left(\epsilon_{i}-i\frac{\gamma_{i}}{2}-\omega_{i}\right)X_{i}I+gX_{i}^{2}\left[\left(2|P|^{2}X_{p}^{2}+2|S|^{2}X_{s}^{2}+|I|^{2}X_{i}^{2}\right)X_{i}I+P^{2}S^{*}X_{p}^{2}X_{s}\right]=0  
+\end{multline}
+
+From the signal equation we get:
+
+\begin{multline}
+  \label{eq:23}
+P^{2}=-\frac{S\left[\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}+gX_{s}^{2}\left(2|P|^{2}X_{p}^{2}+|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\right)\right]}{gX_{i}I^{*}X_{p}^{2}X_{s}}  
+\end{multline}
+
+Inserting this in the equation for the idler, we get
+
+\begin{multline}
+  \label{eq:24}
+|I|^{2}\Bigg[\Bigg(\epsilon_{i}-i\frac{\gamma_{i}}{2}-\omega_{i}\Bigg)+gX_{i}^{2}\Bigg(2|P|^{2}X_{p}^{2}+2|S|^{2}X_{s}^{2}+|I|^{2}X_{i}^{2}\Bigg)\Bigg]\\
+=|S|^{2}\Bigg[\Bigg(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\Bigg)+gX_{s}^{2}\Bigg(2|P|^{2}X_{p}^{2}+|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\Bigg)\Bigg]
+\end{multline}
+
+We now equate the real and imaginary part on both sides. 
+
+\begin{multline}
+  \label{eq:25}
+-i\frac{\gamma_{i}}{2}|I|^{2}+|I|^{2}\Bigg(\epsilon_{i}-\omega_{i}\Bigg)+|I|^{2}gX_{i}^{2}\Bigg(2|P|^{2}X_{p}^{2}+2|S|^{2}X_{s}^{2}+|I|^{2}X_{i}^{2}\Bigg)\\
+=-i\frac{\gamma_{s}}{2}|S|^{2}+|S|^{2}\Bigg(\epsilon_{s}-\omega_{s}\Bigg)+|S|^{2}gX_{s}^{2}\Bigg(2|P|^{2}X_{p}^{2}+|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\Bigg)
+\end{multline}
+
+
+For the imaginary part we get
+\begin{equation}
+  \label{eq:26}
+|I|^{2}=\frac{\gamma_{s}}{\gamma_{i}}|S|^{2}  
+\end{equation}
+
+and for the real part
+
+\begin{multline}
+  \label{eq:27}
+\epsilon_{s}-\frac{\gamma_{s}}{\gamma_{i}}\epsilon_{i}+2\frac{\gamma_{s}}{\gamma_{i}}\omega_{p}-\omega_{s}\Bigg(1+\frac{\gamma_{s}}{\gamma_{i}}\Bigg)+2gn_{p}X_{p}^{2}\Bigg(X_{s}^{2}-\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\\
++gn_{s}\Bigg(X_{s}^{4}-\Bigg(\frac{\gamma_{s}}{\gamma_{i}}\Bigg)^{2}X_{i}^{4}\Bigg)=0  
+\end{multline}
+
+
+We now take the absolute value sq. of the equation for $P^{2}$
+
+\begin{multline}
+  \label{eq:28}
+|P|^{4}=\frac{1}{g^{2}X_{i}^{2}\frac{\gamma_{s}}{\gamma_{i}}X_{p}^{4}X_{s}^{2}}\times\\
+\times \left[\epsilon_{s}-\omega_{s}+gX_{s}^{2}\left(2|P|^{2}X_{p}^{2}+|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\right)-i\frac{\gamma_{s}}{2}\right]\\
+\times \left[\epsilon_{s}-\omega_{s}+gX_{s}^{2}\left(2|P|^{2}X_{p}^{2}+|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\right)+i\frac{\gamma_{s}}{2}\right]
+\end{multline}
+
+\begin{multline}
+  \label{eq:29}
+  \Bigg\{ \epsilon_{s}-\omega_{s}+gX_{s}^{2}\Bigg[2|P|^{2}X_{p}^{2}+|S|^{2}\Bigg(X_{s}^{2}+2\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg]\Bigg\}^{2}\\
++\frac{\gamma_{s}^{2}}{4}-g^{2}\frac{\gamma_{s}}{\gamma_{i}}|P|^{4}X_{p}^{4}X_{s}^{2}X_{i}^{2}=0
+\end{multline}
+
+
+
+Finally, manipulating the Eqs. for pump and signal, we get
+
+\begin{multline}
+  \label{eq:30}
+\Bigg(\epsilon_{p}+i\frac{\gamma_{p}}{2}-\omega_{p}\Bigg)X_{p}|P|^{2}+gX_{p}^{2}\Bigg[\Bigg(|P|^{2}X_{p}^{2}+2|S|^{2}X_{s}^{2}+\\
+ 2|I|^{2}X_{i}^{2}\Bigg)X_{p}|P|^{2}+2P^{2}S^{*}I^{*}X_{p}X_{s}X_{i}\Bigg]+X_{p}PF_{p}^{*}=0  
+\end{multline}
+
+\tiny
+\begin{multline}
+  \label{eq:31}
+-\frac{|S|^{2}\left[\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)+gX_{s}^{2}\left(2|P|^{2}X_{p}^{2}+|S|^{2}X_{s}^{2}+2|I|^{2}X_{i}^{2}\right)\right]}{gX_{s}X_{p}^{2}X_{i}}=P^{2}S^{*}I^{*}  
+\end{multline}
+\normalsize
+
+\begin{multline}
+  \label{eq:33}
+P=\frac{1}{F_{p}^{*}}\Bigg\{ 2n_{s}\Bigg[\epsilon_{s}-\omega_{s}+gX_{s}^{2}\Bigg(2n_{p}X_{p}^{2}+n_{s}\Bigg(X_{s}^{2}+2\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg)\Bigg]\\
+-n_{p}\Bigg[\epsilon_{p}-\omega_{p}+gX_{p}^{2}\Bigg(n_{p}X_{p}^{2}+2n_{s}\Bigg(X_{s}^{2}+\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg)\Bigg]-\frac{i}{2}\Bigg(\gamma_{p}n_{p}+2\gamma_{s}n_{s}\Bigg)\Bigg\}  
+\end{multline}
+
+
+We now take the absolute value sq
+
+\begin{multline}
+  \label{eq:34}
+\Bigg\{ 2n_{s}\Bigg[\epsilon_{s}-\omega_{s}+gX_{s}^{2}\Bigg(2n_{p}X_{p}^{2}+n_{s}\Bigg(X_{s}^{2}+2\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg)\Bigg]\\
+-n_{p}\Bigg[\epsilon_{p}-\omega_{p}+gX_{p}^{2}\Bigg(n_{p}X_{p}^{2}+2n_{s}\Bigg(X_{s}^{2}+\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg)\Bigg]\Bigg\} ^{2}\\
++\frac{1}{4}\Bigg(\gamma_{p}n_{p}+2\gamma_{s}n_{s}\Bigg)^{2}-n_{p}I_{p}=0  
+\end{multline}
+
+
+So the three coupled equations for the unknowns $\omega_{s},\,,n_{s},\, n_{p}$
+as a function of $\omega_{p},\, k_{p},\, k_{s}$and $\gamma,\, g,\, I_{p}$
+are:
+
+\begin{multline}
+  \label{eq:35}
+\epsilon_{s}-\frac{\gamma_{s}}{\gamma_{i}}\epsilon_{i}+2\frac{\gamma_{s}}{\gamma_{i}}\omega_{p}-\Bigg(1+\frac{\gamma_{s}}{\gamma_{i}}\Bigg)\omega_{s}+2gn_{p}X_{p}^{2}\Bigg(X_{s}^{2}-\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\\
++gn_{s}\Bigg(X_{s}^{4}-\Bigg(\frac{\gamma_{s}}{\gamma_{i}}\Bigg)^{2}X_{i}^{4}\Bigg)=0  
+\end{multline}
+
+\begin{multline}
+  \label{eq:36}
+\Bigg\{ \epsilon_{s}-\omega_{s}+gX_{s}^{2}\Bigg[2n_{p}X_{p}^{2}+n_{s}\Bigg(X_{s}^{2}+2\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg]\Bigg\} ^{2}+\frac{\gamma_{s}^{2}}{4}\\
+-g^{2}\frac{\gamma_{s}}{\gamma_{i}}n_{p}^{2}X_{p}^{4}X_{s}^{2}X_{i}^{2}=0  
+\end{multline}
+
+\begin{multline}
+  \label{eq:37}
+\Bigg\{ 2n_{s}\Bigg[\epsilon_{s}-\omega_{s}+gX_{s}^{2}\Bigg(2n_{p}X_{p}^{2}+n_{s}\Bigg(X_{s}^{2}+2\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg)\Bigg]\\
+-n_{p}\Bigg[\epsilon_{p}-\omega_{p}+gX_{p}^{2}\Bigg(n_{p}X_{p}^{2}+2n_{s}\Bigg(X_{s}^{2}+\frac{\gamma_{s}}{\gamma_{i}}X_{i}^{2}\Bigg)\Bigg)\Bigg]\Bigg\} ^{2}\\
++\frac{1}{4}\Bigg(\gamma_{p}n_{p}+2\gamma_{s}n_{s}\Bigg)^{2}-n_{p}I_{p}=0  
+\end{multline}
+
+\begin{multline}
+  \label{eq:39}
+\frac{1}{X_{p}^{2}}\Bigg(\epsilon_{p}-i\frac{\gamma_{p}}{2}-\omega_{p}\Bigg)\tilde{P}+\Bigg(n_{p}+2n_{s}+2n_{i}\Bigg)\tilde{P}+2\tilde{P}^{\star}\tilde{S}\tilde{I}+\tilde{F_{p}}=0
+\end{multline}
+\begin{multline}
+  \label{eq:40}
+\frac{1}{X_{s}^{2}}\Bigg(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\Bigg)\tilde{S}+\Bigg(2n_{p}+n_{s}+2n_{i}\Bigg)\tilde{S}+\tilde{P}^{2}\tilde{I}^{\star}=0
+\end{multline}
+\begin{multline}
+  \label{eq:41}
+\frac{1}{X_{i}^{2}}\Bigg(\epsilon_{i}-i\frac{\gamma_{i}}{2}-2\omega_{p}+\omega_{s}\Bigg)\tilde{I}+\Bigg(2n_{p}+2n_{s}+n_{i}\Bigg)\tilde{I}+\tilde{P}^{2}\tilde{S}^{\star}=0
+\end{multline}
+
+
+equation for the pump
+
+$\left[\epsilon_{p}-\omega_{p}-i\frac{\gamma_{p}}{2}+X_{p}^{2}n_{p}\right]\tilde{P}=-X_{p}^{2}\tilde{F_{p}}$
+
+$\left[\left(\epsilon_{p}-\omega_{p}+X_{p}^{2}n_{p}\right)^{2}+\frac{1}{4}\right]n_{p}-X_{p}^{4}I_{p}=0$
+
+nondimensionalization
+
+$\left[\left(\epsilon_{p}-\omega_{p}+n_{p}\right)^{2}+\frac{1}{4}\right]n_{p}-X_{p}^{4}I_{p}=0$
+
+introduce new variables $\frac{n_{p}}{\gamma_{p}}=y$ and $\frac{I_{p}}{\gamma_{p}^{3}}=x$ 
+
+$\left[\left(\frac{\epsilon_{p}-\omega_{p}}{\gamma_{p}}+y\right)^{2}+\frac{1}{4}\right]y-X_{p}^{4}x=0$
+
+Now
+
+From the signal equation we get:
+
+$\tilde{P}^{2}=-\frac{\tilde{S}}{\tilde{I}^{\star}}\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)+2n_{p}+n_{s}+2n_{i}\right]$
+
+Inserting this in the equation for the idler, we get
+\begin{multline}
+  \label{eq:38}
+\frac{n_{i}}{X_{i}^{2}}\Bigg(\epsilon_{i}-2\omega_{p}+\omega_{s}\Bigg)+n_{i}\Bigg(2n_{p}+2n_{s}+n_{i}\Bigg)-\frac{i}{2}\frac{n_{i}}{X_{i}^{2}}\gamma_{i}\\
+=\frac{n_{s}}{X_{s}^{2}}\Bigg(\epsilon_{s}-\omega_{s}\Bigg)+n_{s}\Bigg(2n_{p}+n_{s}+2n_{i}\Bigg)-\frac{i}{2}\frac{n_{s}}{X_{s}^{2}}\gamma_{s}  
+\end{multline}
+
+
+We now equate the real and imaginary part on both sides. For the imaginary
+part we get
+
+\[
+n_{i}=\frac{X_{i}^{2}}{X_{s}^{2}}\frac{\gamma_{s}}{\gamma_{i}}n_{s}=\alpha n_{s}
+\]
+
+
+and for the real part
+
+$\left(1-\alpha^{2}\right)n_{s}^{2}+2\left(1-\alpha\right)n_{p}n_{s}-\frac{1}{X_{s}^{2}}\left(1+\frac{\gamma_{s}}{\gamma_{i}}\right)n_{s}\omega_{s}+\frac{1}{X_{s}^{2}}\left[\epsilon_{s}+\frac{\gamma_{s}}{\gamma_{i}}\left(2\omega_{p}-\epsilon_{i}\right)\right]n_{s}=0$
+
+nonadimensionalization
+
+\[
+\left(1-\alpha^{2}\right)n_{s}+2\left(1-\alpha\right)n_{p}-\frac{1}{X_{s}^{2}}\left(1+\frac{\gamma_{s}}{\gamma_{i}}\right)\omega_{s}+\frac{1}{X_{s}^{2}}\left[\epsilon_{s}+\frac{\gamma_{s}}{\gamma_{i}}\left(2\omega_{p}-\epsilon_{i}\right)\right]=0
+\]
+
+
+$2\left(1-\alpha\right)n_{p}+\frac{1}{X_{s}^{2}}\left[\frac{\gamma_{s}}{\gamma_{i}}\left(2\omega_{p}-\epsilon_{i}\right)\right]=0$
+
+from now on we measure all energies in units of $\gamma_{p}$.
+
+$\left(1-\alpha^{2}\right)\left(\frac{n_{s}}{\gamma_{p}}\right)^{2}+2\left(1-\alpha\right)\frac{n_{p}}{\gamma_{p}}\frac{n_{s}}{\gamma_{p}}-\frac{1}{X_{s}^{2}}\left(1+\frac{\gamma_{s}}{\gamma_{i}}\right)\frac{n_{s}}{\gamma_{p}}\frac{\omega_{s}}{\gamma_{p}}+\frac{1}{X_{s}^{2}}\left[\frac{\epsilon_{s}}{\gamma_{p}}+\frac{\gamma_{s}}{\gamma_{i}}\frac{2\omega_{p}-\epsilon_{i}}{\gamma_{p}}\right]\frac{n_{s}}{\gamma_{p}}=0$
+
+We now take the absolute value sq. of the equation for $\tilde{P}^{2}$:
+
+\[
+\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+\left(1+2\alpha\right)n_{s}\right]^{2}+\frac{1}{X_{s}^{4}}\frac{\gamma_{s}^{2}}{4}-\alpha n_{p}^{2}=0
+\]
+
+
+$\frac{1}{\alpha}\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+n_{s}+2n_{i}\right]^{2}+\frac{1}{4}\frac{\gamma_{s}\gamma_{i}}{\gamma_{p}^{2}X_{s}^{2}X_{i}^{2}}-n_{p}^{2}=0$
+
+Finally, manipulating the Eqs. for pump and signal, we get
+
+$\frac{1}{X_{p}^{2}}\left(\epsilon_{p}+i\frac{\gamma_{p}}{2}-\omega_{p}\right)n_{p}+\left(n_{p}+2n_{s}+2n_{i}\right)n_{p}+\tilde{P}\tilde{F_{p}}^{\star}=-2\tilde{P}^{2}\tilde{S}^{\star}\tilde{I}^{\star}$
+
+$\frac{2}{X_{s}^{2}}\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)n_{s}+2\left(2n_{p}+n_{s}+2n_{i}\right)n_{s}=-2\tilde{P}^{2}\tilde{S}^{\star}\tilde{I}^{\star}$
+
+\[
+\tilde{P}\tilde{F_{p}}^{\star}=\frac{2}{X_{s}^{2}}\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)n_{s}+2\left(2n_{p}+n_{s}+2n_{i}\right)n_{s}-\left[\frac{1}{X_{p}^{2}}\left(\epsilon_{p}+i\frac{1}{2}-\omega_{p}\right)n_{p}+\left(n_{p}+2n_{s}+2n_{i}\right)n_{p}\right]
+\]
+
+
+$\tilde{P}\tilde{F_{p}}^{\star}=2n_{s}\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+\left(1+2\alpha\right)n_{s}\right]-n_{p}\left[\frac{1}{X_{p}^{2}}\left(\epsilon_{p}-\omega_{p}\right)+n_{p}+2\left(1+\alpha\right)n_{s}\right]-i\frac{1}{2}\left(2\frac{\gamma_{s}}{X_{s}^{2}}n_{s}+\frac{1}{X_{p}^{2}}n_{p}\right)$
+
+We now take the absolute value sq
+
+\[
+\left\{ 2n_{s}\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+\left(1+2\alpha\right)n_{s}\right]-n_{p}\left[\frac{1}{X_{p}^{2}}\left(\epsilon_{p}-\omega_{p}\right)+n_{p}+2\left(1+\alpha\right)n_{s}\right]\right\} ^{2}+\frac{1}{4}\left(2\frac{\gamma_{s}}{X_{s}^{2}}n_{s}+\frac{\gamma_{p}}{X_{p}^{2}}n_{p}\right)^{2}-n_{p}I_{p}=0
+\]
+
+\appendix
+
+\section{Theoretical Model}
+
+The starting GP eq. for the LP band with a $\delta$-like defect and pump
+is:
+
+\begin{align}
+i \frac{d}{dt} \widetilde{\Psi}_{\text{LP}}(k)=&\left[\epsilon(k)-i 
+\frac{\gamma(k)}{2}\right]\widetilde{\Psi}_{\text{LP}}(k) + F_p C(k_p) e^{-i 
+\omega_p t} \nonumber \\
+& + \sum_{q_1,q_2} g_{k,q_1,q_2} \widetilde{\Psi}^{*}_{\text{LP}}(q_1+q_2-
+k)\widetilde{\Psi}_{\text{LP}}(q_1)\widetilde{\Psi}_{\text{LP}}(q_2) \nonumber \\
+& + \sum_q G_{k,q} \widetilde{\Psi}_{\text{LP}}(q)
+\end{align}
+
+with the defect contribution
+
+\begin{equation}
+G_{k,q} = g_V C(k) C(q)
+\end{equation}
+
+and the polariton-polariton interaction
+
+\begin{equation}
+g_{k,q_1,q_2} = g X^*(k) X^*(q_1+q_2-k) X(q_1) X(q_2)
+\end{equation}
+
+The ansatz for the wavefunction in momentum space reads
+
+\begin{align}
+\widetilde{\Psi}_{\text{LP}}(k) &= e^{-i\omega_p t} \left[P\delta(k-k_p) + 
+\widetilde{u}_p(k-k_p) e^{-i \omega t} + \widetilde{v}^*_p(k_p-k) e^{i \omega 
+t}\right] \nonumber \\
+& + e^{-i\omega_s t} \left[S\delta(k-k_s) + \widetilde{u}_s(k-k_s) e^{-i \omega 
+t} + \widetilde{v}^*_s(k_s-k) e^{i \omega t}\right] \nonumber \\
+& + e^{-i\omega_i t} \left[I\delta(k-k_i) + \widetilde{u}_i(k-k_i) e^{-i \omega 
+t} + \widetilde{v}^*_i(k_i-k) e^{i \omega t}\right]
+\end{align}
+
+where we have used the Fourier transforms
+$u(r)=\sum_k \widetilde{u}(k) e^{ikr}$ and the equivalent for $v$.
+
+
+    
+\section{Pump-only stability curve}
+
+\[\left[\left(\epsilon_{p}-\omega_{p}+X_{p}^{2}n_{p}\right)^{2}+\frac{1}{4}\right]n_{p}-X_{p}^{4}I_{p}=0\]
+
+
+\section{Mean-field equations}
+
+We start from the mean-field equations\begin{equation}
+\begin{aligned}
+    \frac{1}{X_{p}^{2}}\left(\epsilon_{p}-i\frac{\gamma_{p}}{2}-\omega_{p}\right)\tilde{P}+\left(n_{p}+2n_{s}+2n_{i}\right)\tilde{P}+2\tilde{P}^{\star}\tilde{S}\tilde{I}+\tilde{F_{p}}=0 \\
+    \frac{1}{X_{s}^{2}}\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)\tilde{S}+\left(2n_{p}+n_{s}+2n_{i}\right)\tilde{S}+\tilde{P}^{2}\tilde{I}^{\star}=0 \\
+    \frac{1}{X_{i}^{2}}\left(\epsilon_{i}-i\frac{\gamma_{i}}{2}-2\omega_{p}+\omega_{s}\right)\tilde{I}+\left(2n_{p}+2n_{s}+n_{i}\right)\tilde{I}+\tilde{P}^{2}\tilde{S}^{\star}=0
+\end{aligned}
+\end{equation}where $\tilde{P} = \sqrt{g} X_p P$ etc,
+$\tilde{F_p} = \sqrt{g} \frac{C_p}{X_p} F_p$ and
+$n_p = \vert \tilde{P} \vert^2$ etc. We measure energy in units of
+$\gamma_p$ and $I_{p} = \vert \tilde{F_p} \vert ^2$ in units of
+$\gamma_p^3$.The 4 coupled equations for the unknowns $\omega_{s},n_{s},n_{p},n_i$ as
+a function of $I_{p}$ are\begin{equation}
+\begin{aligned}
+  \left(1-\alpha^{2}\right)n_{s}+2\left(1-\alpha\right)n_{p}-\frac{1}{X_{s}^{2}}\left(1+\frac{\gamma_{s}}{\gamma_{i}}\right)\omega_{s}+\frac{1}{X_{s}^{2}}\left[\epsilon_{s}+\frac{\gamma_{s}}{\gamma_{i}}\left(2\omega_{p}-\epsilon_{i}\right)\right]=0 \\
+  \left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+\left(1+2\alpha\right)n_{s}\right]^{2}+\frac{1}{X_{s}^{4}}\frac{\gamma_{s}^{2}}{4}-\alpha n_{p}^{2}=0 \\
+  \left\{ 2n_{s}\left[\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+\left(1+2\alpha\right)n_{s}\right]-n_{p}\left[\frac{1}{X_{p}^{2}}\left(\epsilon_{p}-\omega_{p}\right)+n_{p}+2\left(1+\alpha\right)n_{s}\right]\right\} ^{2}+\frac{1}{4}\left(2\frac{\gamma_{s}}{X_{s}^{2}}n_{s}+\frac{1}{X_{p}^{2}}n_{p}\right)^{2}-n_{p}I_{p}=0 \\
+  n_{i}=\frac{X_{i}^{2}}{X_{s}^{2}}\frac{\gamma_{s}}{\gamma_{i}}n_{s}=\alpha n_{s}
+\end{aligned}
+\end{equation}Once the nonlinear system is solved for the unknowns, one can determine
+$\tilde{P}$ (in units of $\sqrt{\gamma_p}$) from\[\tilde{P}\tilde{F_{p}}^{\star}=\frac{2}{X_{s}^{2}}\left(\epsilon_{s}-i\frac{\gamma_{s}}{2}-\omega_{s}\right)n_{s}+2\left(2n_{p}+n_{s}+2n_{i}\right)n_{s}-\left[\frac{1}{X_{p}^{2}}\left(\epsilon_{p}+i\frac{1}{2}-\omega_{p}\right)n_{p}+\left(n_{p}+2n_{s}+2n_{i}\right)n_{p}\right]\]where $\tilde{F_p}$ is expressed in units of $\gamma_p \sqrt{\gamma_p}$,
+and plug it into the following (linear) system in order to determine
+$\tilde{S}_{r}, \tilde{S}_{i}, \tilde{I}_{r}, \tilde{I}_{i}$\[\left(\begin{array}{cccc}
+\frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+n_{s}+2n_{i} & \frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2} & \tilde{P}_{r}^{2}-\tilde{P}_{i}^{2} & 2\tilde{P}_{r}\tilde{P}_{i}\\
+-\frac{1}{X_{s}^{2}}\frac{\gamma_{s}}{2} & \frac{1}{X_{s}^{2}}\left(\epsilon_{s}-\omega_{s}\right)+2n_{p}+n_{s}+2n_{i} & 2\tilde{P}_{r}\tilde{P}_{i} & \tilde{P}_{i}^{2}-\tilde{P}_{r}^{2}\\
+\tilde{P}_{r}^{2}-\tilde{P}_{i}^{2} & 2\tilde{P}_{r}\tilde{P}_{i} & \frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+2n_{p}+2n_{s}+n_{i} & \frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2}\\
+2\tilde{P}_{r}\tilde{P}_{i} & \tilde{P}_{i}^{2}-\tilde{P}_{r}^{2} & -\frac{1}{X_{i}^{2}}\frac{\gamma_{i}}{2} & \frac{1}{X_{i}^{2}}\left(\epsilon_{i}-\omega_{i}\right)+2n_{p}+2n_{s}+n_{i}
+\end{array}\right)\left(\begin{array}{c}
+\tilde{S}_{r}\\
+\tilde{S}_{i}\\
+\tilde{I}_{r}\\
+\tilde{I}_{i}
+\end{array}\right)=0\]
+
+The blue-shifted LP dispersion is given by
+$\epsilon\left(k\right)+2\left|X(k)\right|^{2}\sum_{q=1}^{3}n_{q}$.
+
+\section{Bogoliubov excitation spectrum}
+
+The spectrum of excitations can be obtained by diagonalizing the
+Bogoliubov matrix $\mathcal{L}$:\begin{equation}
+\mathcal{L}(k) =
+\begin{pmatrix}
+M(k) & Q(k) \\
+-Q^*(-k) & -M^*(-k) 
+\end{pmatrix}
+\end{equation}\[M_{mn}(k)=\left[\epsilon\left(k_{m}+k\right)-\omega_{m}-i\frac{\gamma\left(k_{m}+k\right)}{2}\right]\delta_{m,n}+2X(k_{n}+k)X^{*}(k_{m}+k)\sum_{q,t=1}^{3}\delta_{m+q,n+t}\tilde{A}_{q}^{*}\tilde{A}_{t}\]\[Q_{mn}(k)=X^{*}(k_{m}+k)X^{*}(k_{n}-k)\sum_{q,t=1}^{3}\delta_{m+n,q+t}\tilde{A}_{q}\tilde{A}_{t}\]with $\tilde{A}_{1}=\tilde{S}$, $\tilde{A}_{2}=\tilde{P}$ and
+$\tilde{A}_{3}=\tilde{I}$.
+
+\section{Momentum-space response}
+
+The response of the system to the perturbation induced by the
+$\delta$-defect is given by
+$\mathcal{L} \cdot \delta\vec{\psi}_{d}=-\vec{F}_{d}$:\[\mathcal{L}(k) \cdot \left(\begin{array}{c}
+u^s_d(k)\\
+u^p_d(k)\\
+u^i_d(k)\\
+v^s_d(k)\\
+v^p_d(k)\\
+v^i_d(k)
+\end{array}\right)=
+-\left(\begin{array}{c}
+\frac{C_{s}}{X_s}C(k+k_{s})\tilde{S}\\
+\frac{C_{p}}{X_p}C(k+k_{p})\tilde{P}\\
+\frac{C_{i}}{X_i}C(k+k_{i})\tilde{I}\\
+-\frac{C_{s}}{X_s}C(k_{s}-k)\tilde{S}^{\star}\\
+-\frac{C_{p}}{X_p}C(k_{p}-k)\tilde{P}^{\star}\\
+-\frac{C_{i}}{X_i}C(k_{i}-k)\tilde{I}^{\star}
+\end{array}\right)\]where we have defined $u_d^s = \tilde{u}_d^s \sqrt{g}/g_V$ etc. and we
+measure $\delta\vec{\psi}_{d}$ in units of $\gamma_p^{-1/2}$ and $g_V$
+in units of $\gamma_p \mu m^2$.
+
+\[g \left|\tilde{\Psi}_{\text{LP}}^{p}\left(k+k_{p}\right)\right|^{2}= \left|\tilde{P}/X_{p}\delta(k)+\frac{g_{V}}{2}\left(u_{d}^{p}(k)+v_{d}^{p\star}(-k)\right)\right|^{2}\]
+
+\section{Real-space response}
+
+The last step is to transform to real-space, according to\[I^{p}(r)=\frac{\vert\Psi_{\text{LP}}^{p}(r)\vert^{2}}{\vert P\vert^{2}}=\frac{\left|\sum_{k}\left[\tilde{P}/X_{p}\delta(k)+g_V/2\left(u_{d}^{p}(k)+v_{d}^{p\star}(-k)\right)\right]e^{ikr}\right|^{2}}{n_p/X_p^2}\]
+
+\section{Introduction}
+\label{sec:intro}
+
+The spectrum for small excitations about the pump (P), signal (S) and idler (I)
+ is calculated using a linearized expansion of the fluctuations around these 3 
+modes. These fluctuations satisfy a set of coupled equations, from which the 
+(complex) dispersion relations can be obtained. The Bogoliubov matrix 
+$\mathcal{L}(k)$ was previously calculated by Iacopo and David.
+
+
+\section{Mean-field}
+\label{sec:mf}
+
+\begin{eqnarray}
+0&=&%
+\left[ \epsilon_p-i\frac{\gamma}{2}-\omega _{p}\right] \tilde{P}+
+g\,X_{p}^{2}\left[\left( \vert
+\tilde{P}\vert ^{2}+2\vert \tilde{S}\vert ^{2}+2\vert \tilde{I}\vert
+^{2}\right) \tilde{P}+2\tilde{P}^{\ast
+}\tilde{S}\tilde{I}\right]+\tilde{F}_{p}
+  \label{eq:mf1} \\
+0&=&
+\left[ \epsilon_s-i\frac{\gamma}{2}-\omega _{s}\right] \tilde{S}+
+g\,X_{s}^{2}\left[\left( 2\vert
+\tilde{P}\vert ^{2}+\vert \tilde{S}\vert ^{2}+2\vert \tilde{I}\vert
+^{2}\right) \tilde{S}+\tilde{P}^{2}\tilde{I}^{\ast }\right]  \label{eq:mf2} \\
+0&=&
+\left[ \epsilon_{i}-i\frac{\gamma}{2}-2\omega _{p}+\omega
+  _{s}\right] \tilde{I}+
+g\,X_{i}^{2}\left[\left( 
+2\vert \tilde{P}\vert ^{2}+2\vert \tilde{S}\vert ^{2}+\vert
+\tilde{I}\vert ^{2}\right) \tilde{I}+\tilde{P}^{2}\tilde{S}^{\ast }\right],  
+\label{eq:mf3}
+\end{eqnarray}%
+where the following shorthand notations have been introduced
+$\epsilon_{p,s,i}=\epsilon(k_{p,s,i})$ and
+$X_{p,s,i}=X(k_{p,s,i})$. 
+Scaled quantities $\tilde{S}= X_{s}\, S$,  $\tilde{P}= X_{p}\, P$,
+$\tilde{I}= X_{i}\, I$ and 
+$\tilde{F}_{p}=X_p\,F_{p}$ have been also defined.
+
+
+\section{Eigenvalue equation}
+\label{sec:eigv}
+
+We have checked and extended Iacopo's result to the case of a momentum-dependent 
+lower polariton linewidth.
+
+The starting GP eq. for the LP band with a $\delta$-like defect and pump is:
+\begin{align}
+i \frac{d}{dt} \widetilde{\Psi}_{\text{LP}}(k)=&\left[\epsilon(k)-i 
+\frac{\gamma(k)}{2}\right]\widetilde{\Psi}_{\text{LP}}(k) + F_p C(k_p) e^{-i 
+\omega_p t} \nonumber \\
+& + \sum_{q_1,q_2} g_{k,q_1,q_2} \widetilde{\Psi}^{*}_{\text{LP}}(q_1+q_2-
+k)\widetilde{\Psi}_{\text{LP}}(q_1)\widetilde{\Psi}_{\text{LP}}(q_2) \nonumber \\
+& + \sum_q G_{k,q} \widetilde{\Psi}_{\text{LP}}(q)
+\end{align}
+
+with the defect contribution
+\begin{equation}
+G_{k,q} = g_V C(k) C(q)
+\end{equation}
+
+and the polariton-polariton interaction
+\begin{equation}
+g_{k,q_1,q_2} = g X^*(k) X^*(q_1+q_2-k) X(q_1) X(q_2)
+\end{equation}
+
+The ansatz for the wavefunction in momentum space reads
+
+\begin{align}
+\widetilde{\Psi}_{\text{LP}}(k) &= e^{-i\omega_p t} \left[P\delta(k-k_p) + 
+\widetilde{u}_p(k-k_p) e^{-i \omega t} + \widetilde{v}^*_p(k_p-k) e^{i \omega 
+t}\right] \nonumber \\
+& + e^{-i\omega_s t} \left[S\delta(k-k_s) + \widetilde{u}_s(k-k_s) e^{-i \omega 
+t} + \widetilde{v}^*_s(k_s-k) e^{i \omega t}\right] \nonumber \\
+& + e^{-i\omega_i t} \left[I\delta(k-k_i) + \widetilde{u}_i(k-k_i) e^{-i \omega 
+t} + \widetilde{v}^*_i(k_i-k) e^{i \omega t}\right]
+\end{align}
+
+where we have used the Fourier transforms $u(r)=\sum_k \widetilde{u}(k) e^{ikr}$ 
+and the equivalent for $v$. 
+
+We now insert this ansatz into the motion equation for $\Psi_{\text{LP}}$ and 
+keep only linear terms in $u$ and $v$.
+The deviations from the steady state can be grouped in a 6-vector 
+$\widetilde{\mathcal{U}}(k)=(\widetilde{u}_s(k),\widetilde{u}_p(k),\widetilde{u}_i(k),\widetilde{v}_s(k),\widetilde{v}_p(k),\widetilde{v}_i(k))^T$ and the spectrum of excitations can be 
+obtained from the eigenvalue equation:
+\begin{equation}
+\mathcal{L}(k) \,\widetilde{\mathcal{U}}(k)=\omega(k)\, \widetilde{\mathcal{U}}
+(k)
+\end{equation}
+
+
+
+with the Bogoliubov matrix
+
+\begin{equation}
+\mathcal{L}(k) =
+\begin{pmatrix}
+M(k) & Q(k) \\
+-Q^*(-k) & -M^*(-k) 
+\end{pmatrix}
+\end{equation}
+
+where 
+
+\begin{align}
+M_{mn}(k)=&\left[\epsilon\left(k_{m}+k\right)-\omega_{m}-
+i\frac{\gamma\left(k_{m}+k\right)}{2}\right]\delta_{m,n} \nonumber \\
+&+2\sum_{q,t=1}^{3}g_{k_{m}+k,k_{n}+k,k_{t}}\delta_{m+q,n+t}A_{q}^{*}A_{t}
+\end{align}
+
+and
+
+\begin{equation}
+Q_{mn}(k)=\sum_{q,t=1}^{3}g_{k_{m}+k,k_{q},k_{t}}\delta_{m+n,q+t}A_{q}A_{t}
+\end{equation}
+
+with $A_1=S$, $A_2=P$ and $A_3=I$.
+
+\section{Check}
+\label{sec:check}
+
+The generator of the signal-idler phase rotations $G$ should be an eigenvector of 
+the Bogoliubov matrix $\mathcal{L}(k=0)$ with eigenvalue 0.
+
+\begin{equation}
+\mathcal{L}(0) \left(
+\begin{array}{c}
+ i S \\
+ 0 \\
+ -i I \\
+ -i S^* \\
+ 0 \\
+ i I^* \\
+\end{array}
+\right) = \left(
+\begin{array}{c}
+ \omega_{G,1} \\
+ 0 \\
+ \omega_{G,3} \\
+ \omega_{G,4} \\
+ 0 \\
+ \omega_{G,6} \\
+\end{array}
+\right)=0
+\end{equation}
+
+Multiplying the first row of $\mathcal{L}$ with the eigenvector $G$, we get
+
+\begin{equation} \label{eq:omega1}
+\omega_{G,1}=i\left(\left(\epsilon\left(k_{s}\right)-i\frac{\gamma}{2}-
+\omega_{s}\right)S+\left(2|P|^{2}g\left(k_{s},k_{s},k_{p}\right)+|S|^{2}g\left(k_
+{s},k_{s},k_{s}\right)+2|I|^{2}g\left(k_{s},k_{s},k_{i}\right)\right)S+P^{2}I^{*}
+g\left(k_{s},k_{p},k_{p}\right)\right)
+\end{equation}
+
+For a general $k \neq 0$, we have
+
+\begin{align}
+\omega_{G,1} &=i\left(\epsilon\left(k_{s}+k\right)-i\frac{\gamma}{2}-
+\omega_{s}\right)S+iP^{2}I^{*}g\left(k_{s}+k,k_{p},k_{p}\right)+\nonumber \\
+&+i\left(2|P|^{2}g\left(k_{s}+k,k_{s}+k,k_{p}\right)+|S|^{2}\left(2g\left(k_{s}+k
+,k_{s}+k,k_{s}\right)-g\left(k_{s}+k,k_{s},k_{s}\right)\right)\right)S+\nonumber 
+\\
+&+i\left(2|I|^{2}\left(g\left(k_{s}+k,k_{s},k_{i}\right)+g\left(k_{s}+k,k_{s}+k,k
+_{i}\right)-g\left(k_{s}+k,k_{s},k_{i}+k\right)\right)\right)S\,,
+\end{align}
+
+which reduces to Eq.~\eqref{eq:omega1} for $k=0$. The invariance condition 
+$\omega_{G,1}=0$ writes as
+
+\begin{equation}
+\left(\epsilon_{s}-i\frac{\gamma}{2}-
+\omega_{s}\right)X_{s}S+gX^{2}_{s}\left[\left(2|P|^{2}X^{2}_{p}+|S|^{2}X^{2}_{s}+
+2|I|^{2}X^{2}_{i}\right)X_{s}S+P^{2}I^{*}X^{2}_{p}X_{i}\right]=0
+\end{equation}
+
+which is precisely the mean-field equation for the signal, Eq.~\eqref{eq:mf2}. 
+Similarly, the condition that $\omega_{G,3}$ be 0 is equivalent to
+
+\begin{equation}
+\left(\epsilon_{i}-i\frac{\gamma}{2}-
+\omega_{i}\right)X_{i}I+gX_{i}^{2}\left[\left(2|P|^{2}X_{p}^{2}+2|S|^{2}X_{s}^{2}
++|I|^{2}X_{i}^{2}\right)X_{i}I+P^{2}S^{*}X_{p}^{2}X_{s}\right]=0
+\end{equation}
+
+which is just the mean-field equation for the idler, Eq.~\eqref{eq:mf3}.
+
+Finally, setting $\omega_{G,4}$ and $\omega_{G,6}$ to 0 we get the c.c. of 
+Eq.~\eqref{eq:mf2}, respectively Eq.~\eqref{eq:mf3}.
+
+
+\section{Response}
+\label{sec:response}
+
+\[
+\widetilde{u_{p}}(k-k_{p})\left(\omega_{p}+\omega\right)e^{-i\omega 
+t}+\widetilde{v_{p}}^{\star}(k_{p}-k)\left(\omega_{p}-\omega\right)e^{i\omega 
+t}=\left[\dots\right]+g_{V}C(k)C(k_{p})P
+\]
+
+We equate the terms oscillating with frequency $\omega$ and $-\omega$:
+
+\[
+\widetilde{u_{p}}
+(k)\left(\omega_{p}+\omega\right)=\left[\dots\right]+g_{V}C(k_{p})C(k+k_{p})P
+\]
+
+\[
+\widetilde{v_{p}}(k)\left(\omega-\omega_{p}\right)=\left[\dots\right]-
+g_{V}C(k_{p})C(k_{p}-k)P^{\star}
+\]
+
+The response of the system to the perturbation induced by the $\delta$-defect
+is $\delta\vec{\psi}_{d}=-\big(\mathcal{L}\big)^{-1}\cdot\vec{F}_{d}$:
+
+\[
+\left(\begin{array}{c}
+\widetilde{u^s_d}(k)\\
+\widetilde{u^p_d}(k)\\
+\widetilde{u^i_d}(k)\\
+\widetilde{v^s_d}(k)\\
+\widetilde{v^p_d}(k)\\
+\widetilde{v^i_d}(k)
+\end{array}\right)=-g_{V}\,\big(\mathcal{L}\big)^{-1} \cdot 
+\left(\begin{array}{c}
+C(k_{s})C(k+k_{s})S\\
+C(k_{p})C(k+k_{p})P\\
+C(k_{i})C(k+k_{i})I\\
+-C(k_{s})C(k_{s}-k)S^{\star}\\
+-C(k_{p})C(k_{p}-k)P^{\star}\\
+-C(k_{i})C(k_{i}-k)I^{\star}
+\end{array}\right)
+\]
+
+Now, as specified, .the perturbation in momentum space reads 
+$\delta\widetilde{\psi_{d}}(k)=\widetilde{u_{d}}(k-
+k_{0})+\widetilde{v_{d}}^{\star}(k_{0}-k)$
+
+The last step is to transform to real-space, according to
+\[
+\left|\psi(r,t)\right|^{2}=\left|\psi_{0}\, 
+e^{ik_{0}r}+\sum_{k}\delta\widetilde{\psi_{d}}
+(k)e^{ikr}\right|^{2}=\left|\psi_{0}+\sum_{k}\delta\widetilde{\psi_{d}}
+(k+k_{0})e^{ikr}\right|^{2}
+\]
+
+
+\section{Goldstone Mode}
+\label{sec:goldstone}
+
+We have checked that the slope of the real part of the dispersion of the 
+Goldstone mode does not depend on the pump intensity.
+
+\section{Drag force}
+\label{sec:drag}
+
+The wf. (in sq. mod.) of the signal state is
+
+\begin{equation}
+\vert \psi_{\text{LP},s}(\vect{r})\vert^2 = \vert S \vert^2 + \Re\left( S^{\star} 
+\int \frac{\mathrm{d}\vect{k}}{(2 \pi)^2}\, \mathrm{e}^{i \vect{k} \vect{r}} 
+\left( \widetilde{u}_s(\vect{k}) + \widetilde{v}_s^{\star}(-\vect{k}) \right) 
+\right)
+\end{equation}
+
+We use the formula for the drag force introduced by Pitaevskii, which, for a 
+point defect, is
+
+\begin{equation}
+\vect{F}= - g_V \int \mathrm{d} \vect{r} \, \vert \psi(\vect{r}) \vert ^2 
+\vect{\nabla} \delta(\vect{r}) = g_V \left[ \vect{\nabla} \vert \psi(\vect{r}) 
+\vert ^2 \right]_{\vect{r}=0}
+\end{equation}
+
+For the signal state we get
+
+\begin{equation}
+\frac{\vect{F}_s}{g_V^2} = -\frac{1}{g_V (2 \pi)^2} \Im \left( S^{\star} \int 
+\mathrm{d}\vect{k} \, \vect{k} \left( \widetilde{u}_s(\vect{k}) + 
+\widetilde{v}_s^{\star}(-\vect{k}) \right) \right)
+\end{equation}
+
+The drag will be oriented along $\vect{k_p}$, with modulus
+
+\begin{equation}
+\frac{\vect{F}_s}{g_V^2} \frac{\vect{k_p}}{k_p} = -\frac{1}{g_V (2 \pi)^2} \Im 
+\left( S^{\star} \int \mathrm{d}^2 k \, \vect{k} \cdot \frac{\vect{k_p}}{k_p} 
+\left( \widetilde{u}_s(\vect{k}) + \widetilde{v}_s^{\star}(-\vect{k}) \right) 
+\right)
+\end{equation}
+
+The same formula holds for the signal and idler states, with their corresponding 
+indices and densities.
+
+
+\bibliography{index}
+
+\end{document}
