@@ -1,0 +1,91 @@
+\documentclass[a4paper,prb,10pt,aps,twocolumn]{revtex4-1}
+
+\usepackage{amsmath,amssymb,amsfonts} % need for subequations
+\usepackage{graphicx}                 % need for figures
+\usepackage{color}                    % use if color is used in text
+
+\begin{document}
+
+\title{Berry Phase}
+\author{Andrei Berceanu}
+\affiliation{Departamento de F\'isica Te\'orica de la Materia
+  Condensada, Universidad Aut\'onoma de Madrid, Madrid 28049, Spain}
+
+\date{\today}
+
+\begin{abstract}
+We introduce pumping and decay into the model of Hannah et al.~\cite{1403.6041v2}.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+We need to solve Hamilton's equation of motion $i\partial_{t}a_{i,j}(t)=\left[a_{i,j}(t),H\right]$ for the following Hamiltonian:\cite{1403.6041v2} 
+\begin{multline}
+  \label{eq:1}
+H=-J\sum_{m,n}(\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n}+e^{i2\pi\alpha ma}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n})-\\-J\sum_{m,n}(\hat{a}_{m,n}^{\dagger}\hat{a}_{m+1,n}+e^{-i2\pi\alpha ma}\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n+1})+\\+\frac{1}{2}\kappa a^{2}\sum_{m,n}(m^{2}+n^{2})\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}
+\end{multline}
+
+% The Hamiltonian recently used in photonic lattices is\cite{Ozawa_2014}
+% \begin{multline}
+%   \label{eq:2}
+% H=\sum_{m,n}\biggl[Fn\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}- \\-J\Big(\hat{a}_{m,n}^{\dagger}\hat{a}_{m+1,n}+e^{-i2\pi\alpha m}\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n+1}\Big)- \\
+% -J\Big(\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n}+e^{i2\pi\alpha m}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}\Big)\biggr]
+% \end{multline}
+
+We will make use of the chain commutation relation $\left[A,BC\right]=\left[A,B\right]C+B\left[A,C\right]$ and the well-known commutation relations for bosons $\left[\hat{a}_{i,j},\hat{a}_{k,l}^{\dagger}\right]=\delta_{i,k}\delta_{j,l}$ and $\left[\hat{a}_{i,j},\hat{a}_{k,l}\right]=\left[\hat{a}_{i,j}^{\dagger},\hat{a}_{k,l}^{\dagger}\right]=0$. We assume the time dependence follows that of the pump $a_{i,j}(t)=a_{i,j}e^{-i\omega_{0}t}$.
+
+
+% \begin{align}
+%   \label{eq:4}
+% \left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}\right]&=a_{i,j}(t)\delta_{i,m}\delta_{j,n}\\
+% \left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m+1,n}\right]&=\delta_{i,m}\delta_{j,n}\hat{a}_{i+1,j}\\
+% \left[a_{i,j}(t),\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n}\right]&=\delta_{i-1,m}\delta_{j,n}\hat{a}_{i-1,j}\\
+% \left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n+1}\right]&=\delta_{i,m}\delta_{j,n}\hat{a}_{i,j+1}\\
+% \left[a_{i,j}(t),\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}\right]&=\delta_{i,m}\delta_{j-1,n}\hat{a}_{i,j-1}
+% \end{align}
+
+
+
+Introducing pumping and decay, Hamilton's equation reads
+
+\begin{equation}
+  \label{eq:6}
+i\partial_{t}a_{i,j}(t)+i\gamma a_{i,j}(t)-f_{i,j}e^{-i\omega_{0}t}=\left[a_{i,j}(t),H\right]  
+\end{equation}
+
+
+% \begin{multline}
+%   \label{eq:8}
+% \frac{1}{2}\kappa a^{2}\sum_{m,n}(m^{2}+n^{2})\left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}\right]=\\=\frac{1}{2}\kappa a^{2}(i^{2}+j^{2})a_{i,j}(t)  
+% \end{multline}
+
+% The commutator is easy to compute
+% \begin{multline}
+%   \label{eq:9}
+% \left[a_{i,j}(t),H\right]=\frac{1}{2}\kappa a^{2}(i^{2}+j^{2})a_{i,j}(t)-\\-J\left(\hat{a}_{i+1,j}+\hat{a}_{i-1,j}+e^{-i2\pi\alpha ia}\hat{a}_{i,j+1}+e^{i2\pi\alpha ia}\hat{a}_{i,j-1}\right)  
+% \end{multline}
+
+% \begin{multline}
+%   \label{eq:10}
+% J\left(a_{m+1,n}+a_{m-1,n}+e^{-i2\pi\alpha ma}a_{m,n+1}+e^{i2\pi\alpha ma}a_{m,n-1}\right)+\\+\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa a^{2}(m^{2}+n^{2})\right]a_{m,n}=f_{m,n}
+% \end{multline}
+
+
+Expressing $\omega_{0}$, $\gamma$, $\kappa$ and $f$ in units of $J$ and setting $a=1$ we finally get
+\begin{multline}
+  \label{eq:12}
+a_{m+1,n}+a_{m-1,n}+e^{-i2\pi\alpha ma}a_{m,n+1}+e^{i2\pi\alpha ma}a_{m,n-1}+\\+\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa a^{2}(m^{2}+n^{2})\right]a_{m,n}=fe^{i\phi}  
+\end{multline}
+
+
+
+% In order to implement numerically the resulting equation, we need to re-label our degrees of freedom.
+% \begin{multline}
+%   \label{eq:13}
+% a_{i-N}+e^{-i2\pi\alpha m}a_{i-1}+\\+\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa(m^{2}+n^{2})\right]a_{i}+\\+e^{i2\pi\alpha m}a_{i+1}+a_{i+N}=fe^{i\phi_{i}}  
+% \end{multline}
+
+\bibliography{index}
+
+\end{document}
