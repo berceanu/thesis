@@ -1,0 +1,219 @@
+\documentclass[a4paper,prb,10pt,aps,twocolumn]{revtex4-1}
+
+\usepackage{amsmath,amssymb,amsfonts} % need for subequations
+\usepackage{graphicx}                 % need for figures
+\usepackage{color}                    % use if color is used in text
+\usepackage{braket}
+
+
+\newcommand{\ketzero}{\ket{0}}
+\newcommand{\brazero}{\bra{0}}
+
+
+\begin{document}
+
+\title{Berry Phase}
+\author{Andrei Berceanu}
+\affiliation{Departamento de F\'isica Te\'orica de la Materia
+  Condensada, Universidad Aut\'onoma de Madrid, Madrid 28049, Spain}
+
+\date{\today}
+
+\begin{abstract}
+We introduce pumping and decay into the model of Hannah et al.~\cite{1403.6041v2}.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+We need to solve Hamilton's equation of motion $i\partial_{t}a_{i,j}(t)=\left[a_{i,j}(t),H\right]$ for the following Hamiltonian:\cite{1403.6041v2} 
+\begin{multline}
+  \label{eq:1}
+H=-J\sum_{m,n}(e^{-i\pi\alpha n}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n}+e^{i\pi\alpha m}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n})-\\-J\sum_{m,n}(e^{i\pi\alpha n}\hat{a}_{m,n}^{\dagger}\hat{a}_{m+1,n}+e^{-i\pi\alpha m}\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n+1})+\\+\frac{1}{2}\kappa a^{2}\sum_{m,n}(m^{2}+n^{2})\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}
+\end{multline}
+
+% The Hamiltonian recently used in photonic lattices is\cite{Ozawa_2014}
+% \begin{multline}
+%   \label{eq:2}
+% H=\sum_{m,n}\biggl[Fn\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}- \\-J\Big(\hat{a}_{m,n}^{\dagger}\hat{a}_{m+1,n}+e^{-i2\pi\alpha m}\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n+1}\Big)- \\
+% -J\Big(\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n}+e^{i2\pi\alpha m}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}\Big)\biggr]
+% \end{multline}
+
+\section{Equation of motion}
+
+We will make use of the chain commutation relation $\left[A,BC\right]=\left[A,B\right]C+B\left[A,C\right]$ and the well-known commutation relations for bosons $\left[\hat{a}_{i,j},\hat{a}_{k,l}^{\dagger}\right]=\delta_{i,k}\delta_{j,l}$ and $\left[\hat{a}_{i,j},\hat{a}_{k,l}\right]=\left[\hat{a}_{i,j}^{\dagger},\hat{a}_{k,l}^{\dagger}\right]=0$. We assume the time dependence follows that of the pump $a_{i,j}(t)=a_{i,j}e^{-i\omega_{0}t}$.
+
+
+% \begin{align}
+%   \label{eq:4}
+% \left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}\right]&=a_{i,j}(t)\delta_{i,m}\delta_{j,n}\\
+% \left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m+1,n}\right]&=\delta_{i,m}\delta_{j,n}\hat{a}_{i+1,j}\\
+% \left[a_{i,j}(t),\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n}\right]&=\delta_{i-1,m}\delta_{j,n}\hat{a}_{i-1,j}\\
+% \left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n+1}\right]&=\delta_{i,m}\delta_{j,n}\hat{a}_{i,j+1}\\
+% \left[a_{i,j}(t),\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}\right]&=\delta_{i,m}\delta_{j-1,n}\hat{a}_{i,j-1}
+% \end{align}
+
+
+
+Introducing pumping and decay, Hamilton's equation reads
+
+\begin{equation}
+  \label{eq:6}
+i\partial_{t}a_{i,j}(t)+i\gamma a_{i,j}(t)-f_{i,j}e^{-i\omega_{0}t}=\left[a_{i,j}(t),H\right]  
+\end{equation}
+
+
+% \begin{multline}
+%   \label{eq:8}
+% \frac{1}{2}\kappa a^{2}\sum_{m,n}(m^{2}+n^{2})\left[a_{i,j}(t),\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n}\right]=\\=\frac{1}{2}\kappa a^{2}(i^{2}+j^{2})a_{i,j}(t)  
+% \end{multline}
+
+% The commutator is easy to compute
+% \begin{multline}
+%   \label{eq:9}
+% \left[a_{i,j}(t),H\right]=\frac{1}{2}\kappa a^{2}(i^{2}+j^{2})a_{i,j}(t)-\\-J\left(\hat{a}_{i+1,j}+\hat{a}_{i-1,j}+e^{-i2\pi\alpha ia}\hat{a}_{i,j+1}+e^{i2\pi\alpha ia}\hat{a}_{i,j-1}\right)  
+% \end{multline}
+
+% \begin{multline}
+%   \label{eq:10}
+% J\left(a_{m+1,n}+a_{m-1,n}+e^{-i2\pi\alpha ma}a_{m,n+1}+e^{i2\pi\alpha ma}a_{m,n-1}\right)+\\+\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa a^{2}(m^{2}+n^{2})\right]a_{m,n}=f_{m,n}
+% \end{multline}
+
+
+Expressing $\omega_{0}$, $\gamma$, $\kappa$ and $f$ in units of $J$ and setting $a=1$ we finally get
+\begin{multline}
+  \label{eq:12}
+e^{i\pi\alpha n}a_{m+1,n}+e^{-i\pi\alpha n}a_{m-1,n}+e^{-i\pi\alpha m}a_{m,n+1}+e^{i\pi\alpha m}a_{m,n-1}+\\+\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa a^{2}(m^{2}+n^{2})\right]a_{m,n}=fe^{i\phi}  
+\end{multline}
+
+
+
+In order to implement numerically the resulting equation, we need to re-label our degrees of freedom.
+\begin{multline}
+  \label{eq:13}
+e^{-i \pi \alpha n}a_{i-N}+e^{-i\pi\alpha m}a_{i-1}+\\+\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa(m^{2}+n^{2})\right]a_{i}+\\+e^{i\pi\alpha m}a_{i+1}+e^{i \pi \alpha n}a_{i+N}=fe^{i\phi_{i}}  
+\end{multline}
+
+\section{Exact diagonalization}
+We work in the "localized lattice site" basis $\Set{\Ket{m,n}}$, with $m$ and $n$ running from 1 to $N$.
+
+\begin{eqnarray}
+  \label{eq:3}
+  \Ket{m,n} &=& \hat{a}_{m,n}^{\dagger}\ketzero\\
+  \Bra{m,n} &=& \brazero \hat{a}_{m,n}
+\end{eqnarray}
+
+We have orthogonality and completeness
+\begin{eqnarray}
+  \label{eq:5}
+  \Braket{i,j|m,n} &=& \delta_{i,m}\delta_{j,n}\\
+  \sum_{m,n}\Ket{m,n}\Bra{m,n} &=& 1
+\end{eqnarray}
+
+Consider an eigenstate of the Hamiltonian, $\Ket{\psi}$, such that $H\Ket{\psi} = E \Ket{\psi}$. We can expand this eigenstate in the lattice site basis
+\begin{equation}
+  \label{eq:7}
+  \Ket{\psi} = \sum_{m,n} \psi_{m,n} \Ket{m,n}
+\end{equation}
+where we have defined the components $\psi_{m,n} =
+\Braket{m,n|\psi}$.
+Substituting this in the Schrodinger equation for $H$ we get
+
+\begin{equation}
+  \label{eq:11}
+  (H\psi)_{m,n} = \Braket{m,n|H\psi} = \sum_{m^{\prime}, n^{\prime}} \psi_{m^{\prime}, n^{\prime}} \Braket{m,n|H|m^{\prime}, n^{\prime}}
+\end{equation}
+We now have to calculate the matrix elements of the Hamiltonian ($N^2 \times N^2$) in the chosen basis,
+\begin{equation}
+  \label{eq:14}
+  \Braket{m,n|H|m^{\prime}, n^{\prime}} = \Braket{0|\hat{a}_{m,n}H\hat{a}^{\dagger}_{m^{\prime},n^{\prime}}|0}
+\end{equation}
+We make use of the commutation relations and finally get
+\begin{multline}
+  \label{eq:15}
+  (H\psi)_{m,n} = \frac{1}{2}\kappa a^2 (m^2+n^2) \psi_{m,n}-\\
+ -J\left(e^{i 2\pi \alpha m a} \psi_{m,n-1} + e^{-i 2\pi \alpha m a} \psi_{m,n+1}\right)-\\
+ -J\left(\psi_{m-1,n} + \psi_{m+1,n}\right)
+\end{multline}
+Expressing $\kappa$ in units of $J$, setting $a=1$ and re-labeling our degrees of freedom using $i$ which runs from 1 to $N^2$, we have
+
+
+\begin{multline}
+  \label{eq:17}
+  e^{-i \pi \alpha n}\psi_{i-N} + e^{-i \pi \alpha m} \psi_{i-1} +\\
+  +\left[E- \frac{1}{2} \kappa (m^2+n^2)\right] \psi_i +\\
+  + e^{i \pi \alpha m} \psi_{i+1} + e^{i \pi \alpha n}\psi_{i+N} = 0
+\end{multline}
+
+\section{Harper-Hofstadter Hamiltonian}
+\subsection{Momentum Space}
+Without the harmonic trap, we have the celebrated Harper-Hofstadter Hamiltonian
+
+\begin{equation}
+  \label{eq:16}
+  \mathcal{H}_0=-J\sum_{m,n}(\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n}+e^{i2\pi\alpha m}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{h.c.}
+\end{equation}
+
+We Fourier-transform to momentum space
+\begin{equation}
+  \label{eq:18}
+  \hat{a}_{m,n} = \frac{1}{(2\pi)^2}\int_{-\pi}^{\pi}dk_x\int_{-\pi}^{\pi}dk_y e^{i k_x m + i k_y n} \hat{a}_{k_x,k_y}
+\end{equation}
+with the PBCs $\hat{a}_{k_x+2\pi j, k_y+2\pi l} = \hat{a}_{k_x, k_y}$. The Fourier-transformed Hamiltonian then reads
+
+\begin{multline}
+  \label{eq:19}
+  \mathcal{H}_0= -J\int_{-\pi}^{\pi} \frac{dk_x}{2\pi}\int_{-\pi}^{\pi} \frac{dk_y}{2\pi} [\cos(k_x)\hat{a}^{\dagger}_{k_x,k_y} \hat{a}_{k_x,k_y} +\\
++ e^{-ik_y}\hat{a}^{\dagger}_{k_x+2\pi\alpha,k_y}\hat{a}_{k_x,k_y} + \text{h.c.}]
+\end{multline}
+In order to diagonalize this momentum space Hamiltonian, we need to partition the $k$-space by making the BZ $q$ times (here $\alpha = p/q$) smaller than the initial one in the $x$ direction, with the change of variable $k_x = k_x^0 + 2\pi\alpha n$. The Hamiltonian can thus be rewritten
+\begin{equation}
+  \label{eq:20}
+  \mathcal{H}_0 = \frac{1}{(2\pi)^2} \int_{-\pi/q}^{\pi/q} dk_x^0 \int_{-\pi}^{\pi} dk_y \hat{H}_{k_x^0, k_y}
+\end{equation}
+where
+\begin{multline}
+  \label{eq:21}
+  \hat{H}_{k_x^0, k_y} = -J\sum_{n=0}^{q-1} [2 \cos(k_x^0 + 2\pi \alpha n) \hat{a}^{\dagger}_{k_x^0+2\pi\alpha n, k_y} \hat{a}_{k_x^0+2\pi \alpha n, k_y}+\\
++ e^{-i k_y} \hat{a}^{\dagger}_{k_x^0 + 2\pi\alpha(n+1), k_y} \hat{a}_{k_x^0 + 2\pi\alpha n, k_y} +\\
++ e^{i k_y} \hat{a}^{\dagger}_{k_x^0 + 2\pi\alpha(n-1), k_y} \hat{a}_{k_x^0 + 2\pi\alpha n, k_y}]
+\end{multline}
+We can now write the corresponding Schrodinger equation for this new Hamiltonian 
+\begin{equation}
+  \label{eq:23}
+  \hat{H}_{k_x^0, k_y} \ket{\psi} = E_{k_x^0, k_y} \ket{\psi}
+\end{equation}
+We expand the w.f. in the basis of single-particle states
+\begin{equation}
+  \label{eq:24}
+  \ket{\psi} = \sum_{m=0}^{q-1} \psi_m \hat{a}^{\dagger}_{k_x^0 + 2\pi\alpha m, k_y} \ket{0}
+\end{equation}
+The resulting Harper equation is
+\begin{equation}
+  \label{eq:25}
+  -2J\cos(k_x^0 + 2\pi \alpha j) \psi_j - J (e^{-ik_y} \psi_{j-1} + e^{i k_y} \psi_{j+1}) = E_{k_x^0, k_y} \psi_j
+\end{equation}
+with the BCs $\psi_{j+q} = \psi_j$. We now make the transformation $\psi_j = b_j e^{-i k_y j}$ and get
+\begin{equation}
+  \label{eq:26}
+  -2J\cos(k_x^0 + 2\pi \alpha j) b_j - J (b_{j-1} + b_{j+1}) = E_{k_x^0, k_y} b_j
+\end{equation}
+with the new boundary conditions $b_{j+q} = b_j e^{i k_y q}$. Finally, the $q \times q$ matrix one has to diagonalize is
+
+\begin{equation}
+  \label{eq:27}
+-J\begin{pmatrix}
+    v_1 & 1 & 0 & 0 & \cdots & e^{-iqk_y}\\
+    1 & v_2 & 1 & 0 & \cdots & 0\\
+    \cdots & \cdots & \cdots & \cdots & \cdots & \cdots\\
+    0 & 0 & \cdots & 1 & v_{q-1} & 1\\
+    e^{i q k_y} & 0 & \cdots & 0 & 1 & v_q\\
+  \end{pmatrix}
+\end{equation}
+
+where $v_j = 2\cos(k_x^0 + 2\pi \alpha j)$, with $j$ running from 1 to $q$.
+
+
+\bibliography{index}
+
+\end{document}

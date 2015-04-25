@@ -1,0 +1,206 @@
+\documentclass[a4paper,prb,10pt,aps]{revtex4-1}
+
+\usepackage{amsmath,amssymb,amsfonts}    % need for subequations
+\usepackage{graphicx}   % need for figures
+\usepackage{verbatim}   % useful for program listings
+\usepackage{color}      % use if color is used in text
+\usepackage{subfigure}  % use for side-by-side figures
+\raggedbottom           % don't add extra vertical space
+\pagestyle{empty}       % use if page numbers not wanted
+
+\begin{document}
+
+\title{Linear response of an atomic condensate to a $\delta$-defect}
+\author{Andrei Berceanu}
+\affiliation{Departamento de F\'isica Te\'orica de la Materia
+  Condensada, Universidad Aut\'onoma de Madrid, Madrid 28049, Spain}
+
+\date{\today}
+
+\begin{abstract}
+We calculate the response (in the linear approximation) of a 2D BEC condensate of neutral atoms to the perturbation caused by the presence of a $\delta$-like potential.
+\end{abstract}
+
+%\maketitle
+
+\section{Introduction}
+
+
+\begin{equation}
+  \label{eq:3}
+\psi(r,t)=\big[\psi_{0}\, e^{ik_{0}r}+\delta\psi(r,t)\big]\, e^{-i\omega_{0}t}
+\end{equation}
+
+
+\section{Mean-field}
+\begin{equation}
+  \label{eq:12}
+\omega_{0}-\frac{k_{0}^{2}}{2m}=g\rho_{0}.  
+\end{equation}
+
+\section{Response}
+
+\begin{equation}
+  \label{eq:13}
+i\partial_{t}\psi(r,t)=\left[-\frac{\nabla^{2}}{2m}+g\left|\psi(r,t)\right|^{2}+V_{d}(r)\right]\psi(r,t)  
+\end{equation}
+
+Plugging in the perturbed wavefunction and expanding to first order (linear response) we can get the dispersion for the elementary excitations. 
+
+\begin{equation}
+  \label{eq:16}
+i\partial_{t}\delta\vec{\psi}=\mathcal{L}\cdot\delta\vec{\psi}+\vec{F}_{d}  
+\end{equation}
+
+
+\begin{equation}
+  \label{eq:14}
+i\partial_{t}\left(\begin{array}{c}
+\delta\psi(r,t)\\
+\delta\psi^{\star}(r,t)
+\end{array}\right)=\left(\begin{array}{cc}
+-\frac{k_{0}^{2}}{2m}-\frac{\nabla^{2}}{2m}+g\rho_{0} & g\psi_{0}^{2}\, e^{2ik_{0}r}\\
+-g\psi_{0}^{2\star}\, e^{-2ik_{0}r} & -\left(-\frac{k_{0}^{2}}{2m}-\frac{\nabla^{2}}{2m}+g\rho_{0}\right)
+\end{array}\right)\left(\begin{array}{c}
+\delta\psi(r,t)\\
+\delta\psi^{\star}(r,t)
+\end{array}\right)+V_{d}(r)\,\left(\begin{array}{c}
+\psi_{0}\, e^{ik_{0}r}\\
+-\psi_{0}^{\star}\, e^{-ik_{0}r}
+\end{array}\right)
+\end{equation}
+
+
+
+
+
+
+\section{Momentum space}
+We make use of the translational symmetry of the problem and work in the plane wave basis, introducing the Fourier transforms:
+
+\begin{equation}
+\left(\begin{array}{c}
+\delta\psi(r,t)\\
+\delta\psi^{\star}(r,t)
+\end{array}\right) = \int d^2kd\omega \left(\begin{array}{c}
+u(k,\omega)\\
+v(k,\omega)
+\end{array}\right)\exp{i(kr-\omega t)}
+\end{equation}
+
+We now make use of the Fourier shift theorem, to factor out the phase due to $k_0$:
+
+\begin{equation}
+\left(\begin{array}{c}
+\delta\psi(r,t)\\
+\delta\psi^{\star}(r,t)
+\end{array}\right) = \int d^2kd\omega \left(\begin{array}{c}
+u(k+k_0,\omega)e^{ik_0r}\\
+v(k-k_0,\omega)e^{-ik_0r}
+\end{array}\right)\exp{i(kr-\omega t)}
+\end{equation}
+
+Due to the defect being a static one, the response is at $\omega=0$ frequency. Also, for a delta-like defect, the Fourier transform of $V_d$ is a constant, namely the strength of the defect $g_V$.
+
+Using these facts, and going to momentum space we get
+\begin{equation}
+0=\left(\begin{array}{cc}
+-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(k+k_{0})^{2}}{2m}-i\kappa & g\psi_{0}^{2}\\
+-g\psi_{0}^{2\star} & -\left(-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(k-k_{0})^{2}}{2m}\right)-i\kappa
+\end{array}\right)
+\left(\begin{array}{c}
+u(k+k_0)\\
+v(k-k_0)
+\end{array}\right)
++g_V\,\left(\begin{array}{c}
+\psi_{0}\\
+-\psi_{0}^{\star}
+\end{array}\right)
+\end{equation}
+
+The small imaginary part $i\kappa$ was added in order to satisfy causality.
+We get
+
+\begin{equation}
+  \label{eq:34}
+u(k+k_0)=-g_{V}\frac{\left(-\left(-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(k-k_{0})^{2}}{2m}\right)-i\kappa\right)\psi_{0}+g\psi_{0}\rho_{0}}{g^{2}\rho_{0}^{2}-\left(\frac{(k+k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}-i\kappa\right)\left(\frac{(k-k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}  
+\end{equation}
+
+\begin{equation}
+  \label{eq:35}
+v(k-k_0)=g_{V}\frac{\left(-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(k+k_{0})^{2}}{2m}-i\kappa\right)\psi_{0}^{\star}-g\psi_{0}^{\star}\rho_{0}}{g^{2}\rho_{0}^{2}-\left(\frac{(k+k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}-i\kappa\right)\left(\frac{(k-k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}  
+\end{equation}
+
+
+\begin{equation}
+u(k)=-g_{V}\psi_{0}\frac{g\rho_{0}-\left(\frac{(k-2k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}{g^{2}\rho_{0}^{2}-\left(\frac{k{}^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}-i\kappa\right)\left(\frac{(k-2k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}
+\end{equation}
+
+Fourier transforming this gives $\delta\psi(r,t)$.
+Notice that this is exactly $\frac{1}{2}\delta\widetilde{\psi_{d}}(k)$, where $\delta\widetilde{\psi_{d}}(k)$ is the result obtained with the Bogoliubov ansatz below. To explain this and make the connection to that calculation, we see that
+
+\begin{equation}
+\delta\psi(r,t) = \frac{1}{2}(\delta\psi(r,t) +(\delta\psi^{\star}(r,t))^{\star})=\frac{1}{2}\int d^2k (u(k)+v^{\star}(-k))e^{ikr}
+\end{equation}
+
+\section{Bogoliubov Ansatz calculation}
+An alternative way to obtain the above results is to write the GP equation directly in momentum space, as follows:
+
+\begin{equation}
+i\partial_{t}\widetilde{\psi}(k)=\frac{k^{2}}{2m}\widetilde{\psi}(k)+g\iint d^2 k_1 d^2 k_2 \widetilde{\psi}^{\star}\left(k_{1}+k_{2}-k\right)\widetilde{\psi}\left(k_{2}\right)\widetilde{\psi}\left(k_{1}\right)+g_{V}\int d^2 q\widetilde{\psi}(q)
+\end{equation}
+
+We then plug in the following ansatz for the wavefunction
+
+\begin{equation}
+  \label{eq:9}
+\delta\psi(r,t)=\int d^2 k\delta\widetilde{\psi}(k)e^{ikr}=\int d^2 k(\widetilde{u}(k-k_{0})+\widetilde{v}^{\star}(k_{0}-k))e^{ikr}
+\end{equation}
+
+
+
+
+The response of the system to the perturbation induced by the $\delta$-defect is 
+\begin{equation}
+  \label{eq:29}
+\delta\vec{\psi}_{d}=-\big(\mathcal{L}-i\,0^{+}\,\mathbf{1}\big)^{-1}\cdot\vec{F}_{d}  
+\end{equation}
+
+\begin{equation}
+  \label{eq:30}
+\left(\begin{array}{c}
+\widetilde{u_{d}}(k)\\
+\widetilde{v_{d}}(k)
+\end{array}\right)=-g_{V}\,\left(\begin{array}{cc}
+-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(k+k_{0})^{2}}{2m}-i\kappa & g\psi_{0}^{2}\\
+-g\psi_{0}^{2\star} & -\left(-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(k-k_{0})^{2}}{2m}\right)-i\kappa
+\end{array}\right)^{-1}\left(\begin{array}{c}
+\psi_{0}\\
+-\psi_{0}^{\star}
+\end{array}\right)  
+\end{equation}
+
+
+
+
+\begin{equation}
+  \label{eq:37}
+\widetilde{u_{d}}(k-k_{0})=g_{V}\frac{\left(-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(k-2k_{0})^{2}}{2m}+i\kappa\right)\psi_{0}-g\psi_{0}\rho_{0}}{g^{2}\rho_{0}^{2}-\left(\frac{k{}^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}-i\kappa\right)\left(\frac{(k-2k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}  
+\end{equation}
+
+
+\begin{equation}
+  \label{eq:38}
+\widetilde{v_{d}}^{\star}(k_{0}-k)=g_{V}\frac{\left(-\frac{k_{0}^{2}}{2m}+g\rho_{0}+\frac{(2k_{0}-k)^{2}}{2m}+i\kappa\right)\psi_{0}-g\psi_{0}\rho_{0}}{g^{2}\rho_{0}^{2}-\left(\frac{k{}^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}-i\kappa\right)\left(\frac{(k-2k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}  
+\end{equation}
+
+
+
+\begin{equation}
+  \label{eq:39}
+\delta\widetilde{\psi_{d}}(k)=\widetilde{u_{d}}(k-k_{0})+\widetilde{v_{d}}^{\star}(k_{0}-k)  =-2g_{V}\psi_{0}\frac{g\rho_{0}-\left(\frac{(k-2k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}{g^{2}\rho_{0}^{2}-\left(\frac{k{}^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}-i\kappa\right)\left(\frac{(k-2k_{0})^{2}}{2m}-\frac{k_{0}^{2}}{2m}+g\rho_{0}+i\kappa\right)}  
+\end{equation}
+
+
+%%% End document
+\end{document}
