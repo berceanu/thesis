@@ -1,4 +1,5 @@
 auto/
+*.json
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
