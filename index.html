@@ -11,7 +11,8 @@
       function drawChart() {
 
         var public_key = '2Jx69KvdnbFD6J9odQnD';
-
+        var colin = 41523;
+      
         // JSONP request
         var jsonData = $.ajax({
           url: 'https://data.sparkfun.com/output/' + public_key + '.json',
@@ -19,16 +20,25 @@
           dataType: 'jsonp',
         }).done(function (results) {
 
+          //progress bar
+          var lastCount = parseInt(results[0].words);
+          var prog = Math.floor((100 / colin) * lastCount);
+
+          var pBar = document.getElementById("p");
+          pBar.value = lastCount;
+          pBar.max = colin;
+          pBar.getElementsByTagName('span')[0].innerHTML = prog;
+
+          document.getElementById("total").getElementsByTagName('span')[0].innerHTML = prog;
+          
+
           var data = new google.visualization.DataTable();
 
           data.addColumn('datetime', 'Time');
           data.addColumn('number', 'Words');
 
           $.each(results, function (i, row) {
-            data.addRow([
-              (new Date(row.timestamp)),
-              parseInt(row.words)
-            ]);
+            data.addRow([new Date(row.timestamp), parseInt(row.words)]);
           });
 
           var chart = new google.visualization.LineChart($('#chart').get(0));
@@ -38,9 +48,7 @@
                 legend: {position: 'none'},
                 pointSize: 4
           });
-
         });
-
       }
 
       // load chart lib
@@ -50,11 +58,17 @@
 
       // call drawChart once google charts is loaded
       google.setOnLoadCallback(drawChart);
-
     </script>
 
   </head>
   <body>
     <div id="chart" style="width: 100%;"></div>
+
+    <progress id="p"><span>0</span>%</progress>
+    <p id="total">Total progress <span style="color:blue">0</span>%.</p>
+    
+    <p>You can find the latest version of the thesis LaTeX code in <a href="https://github.com/berceanu/thesis">this</a> GitHub repository and the latest compiled PDF <a href="https://www.sharelatex.com/github/repos/berceanu/thesis/builds/latest/output.pdf">here</a>.</p>
+    
+    <!-- <p>Real-time compilation status <img src="https://www.sharelatex.com/github/repos/berceanu/thesis/builds/latest/badge.svg" alt="PDF status" style="border:0"></p> -->
   </body>
 </html>
