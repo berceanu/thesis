@@ -1,7 +1,5 @@
 tmp/
 auto/
-*.json
-*.org
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
