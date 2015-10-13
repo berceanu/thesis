@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+
+    <!-- EXTERNAL LIBS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://www.google.com/jsapi"></script>
+
+    <script>
+
+      // onload callback
+      function drawChart() {
+
+        var public_key = '2Jx69KvdnbFD6J9odQnD';
+        var colin = 41523;
+      
+        // JSONP request
+        var jsonData = $.ajax({
+          url: 'https://data.sparkfun.com/output/' + public_key + '.json',
+          //data: {'gte' :{'timestamp' : 'now - 5 days'}},
+          dataType: 'jsonp',
+        }).done(function (results) {
+
+          //progress bar
+          var lastCount = parseInt(results[0].words);
+          var prog = Math.floor((100 / colin) * lastCount);
+
+          var pBar = document.getElementById("p");
+          pBar.value = lastCount;
+          pBar.max = colin;
+          pBar.getElementsByTagName('span')[0].innerHTML = prog;
+
+          document.getElementById("total").getElementsByTagName('span')[0].innerHTML = prog;
+          
+
+          var data = new google.visualization.DataTable();
+
+          data.addColumn('datetime', 'Time');
+          data.addColumn('number', 'Words');
+
+          $.each(results, function (i, row) {
+            data.addRow([new Date(row.timestamp), parseInt(row.words)]);
+          });
+
+          var chart = new google.visualization.LineChart($('#chart').get(0));
+
+          chart.draw(data, {
+             title: 'Number of words written for my thesis',
+                legend: {position: 'none'},
+                pointSize: 4
+          });
+        });
+      }
+
+      // load chart lib
+      google.load('visualization', '1', {
+        packages: ['corechart']
+      });
+
+      // call drawChart once google charts is loaded
+      google.setOnLoadCallback(drawChart);
+    </script>
+  </head>
+
+  <body>
+    <div id="chart" style="width: 100%;"></div>
+
+    <progress id="p"><span>0</span>%</progress>
+    <p id="total">Total progress <span style="color:blue">0</span>%.</p>
+    
+    <p>You can find the latest version of the thesis LaTeX code in <a href="https://github.com/berceanu/thesis">this</a> GitHub repository and the latest compiled PDF <a href="https://www.sharelatex.com/github/repos/berceanu/thesis/builds/latest/output.pdf">here</a>. <img src="https://www.sharelatex.com/github/repos/berceanu/thesis/builds/latest/badge.svg" alt="PDF status" style="border:0"></p>
+    
+    <p id="xmas">There are <span style="color:blue">0</span> days left.</p>
+    <script>
+      today=new Date();
+      var cmas=new Date(today.getFullYear(), 11, 25);
+      if (today.getMonth()==11 && today.getDate()>25) 
+      {
+      cmas.setFullYear(cmas.getFullYear()+1); 
+      }  
+      var one_day=1000*60*60*24;
+      var diffDays = Math.round(Math.abs((cmas.getTime() - today.getTime())/(one_day)));
+      document.getElementById("xmas").getElementsByTagName('span')[0].innerHTML = diffDays;
+    </script>
+
+  </body>
+</html>
