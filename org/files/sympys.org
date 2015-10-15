@@ -1,0 +1,17 @@
+* One Fluid
+** [[file:///home/berceanu/notebooks/fano_lineshape.ipynb][notebooks/fano_lineshape.ipynb]]
+** [[file:///home/berceanu/notebooks/sympy/1pump-omega.ipynb][notebooks/sympy/1pump-omega.ipynb]]
+** [[file:///home/berceanu/notebooks/sympy/1pump.ipynb][notebooks/sympy/1pump.ipynb]]
+** [[file:///home/berceanu/notebooks/sympy/1pump_response_function.ipynb][notebooks/sympy/1pump_response_function.ipynb]]
+** [[file:///home/berceanu/notebooks/sympy/LP_inflection_point.ipynb][notebooks/sympy/LP_inflection_point.ipynb]]
+** [[file:///home/berceanu/notebooks/sympy/taylor.ipynb][notebooks/sympy/taylor.ipynb]]
+* Two Fluids
+** [[file:///home/berceanu/notebooks/sympy/2pumps-equal.ipynb][notebooks/sympy/2pumps-equal.ipynb]]
+** [[file:///home/berceanu/notebooks/sympy/2pumps_alpha.ipynb][notebooks/sympy/2pumps_alpha.ipynb]]
+** [[file:///home/berceanu/notebooks/sympy/alpha_false.ipynb][notebooks/sympy/alpha_false.ipynb]]
+* OPO
+** [[file:///home/berceanu/notebooks/OPODrag/OPODrag-ks0.0_same_lifetime.ipynb][notebooks/OPODrag/OPODrag-ks0.0_same_lifetime.ipynb]]
+** [[file:///home/berceanu/notebooks/OPODrag/block_matrix.ipynb][notebooks/OPODrag/block_matrix.ipynb]]
+** [[file:///home/berceanu/notebooks/phase_shift.ipynb][notebooks/phase_shift.ipynb]]
+* Vortex
+** [[file:///home/berceanu/notebooks/sheffield_vortex.ipynb][notebooks/sheffield_vortex.ipynb]]

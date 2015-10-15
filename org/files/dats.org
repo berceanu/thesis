@@ -1,0 +1,13 @@
+* One Fluid
+** [[file:///home/berceanu/Documents/phd_projects/point_defect_1_fluid/paper/plots][Documents/phd_projects/point_defect_1_fluid/paper/plots]]
+* OPO
+** [[file:///home/berceanu/Documents/phd_projects/superfl_OPO/experiments_OPO-defect][Documents/phd_projects/superfl_OPO/experiments_OPO-defect]]
+** [[file:///home/berceanu/Documents/phd_projects/vortex_plots][Documents/phd_projects/vortex_plots]]
+** [[file:///home/berceanu/data][data]]
+** [[file:///home/berceanu/notebooks/julia/april/E-defect.dat][notebooks/julia/april/E-defect.dat]]
+** [[file:///home/berceanu/notebooks/julia/april/E-idler.dat][notebooks/julia/april/E-idler.dat]]
+** [[file:///home/berceanu/notebooks/julia/april/E-pump.dat][notebooks/julia/april/E-pump.dat]]
+** [[file:///home/berceanu/notebooks/julia/april/E-signal.dat][notebooks/julia/april/E-signal.dat]]
+** [[file:///home/berceanu/tmp/final/][tmp/final/]]
+** [[file:///home/berceanu/tmp/scripts/LP_bare.dat][tmp/scripts/LP_bare.dat]]
+** [[file:///home/berceanu/tmp/timeres/][tmp/timeres/]]

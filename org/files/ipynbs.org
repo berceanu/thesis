@@ -1,0 +1,11 @@
+* Atomic
+** [[file:///home/berceanu/notebooks/atomic_cherenkov.ipynb][notebooks/atomic_cherenkov.ipynb]]
+* Two Fluids
+** [[file:///home/berceanu/notebooks/2pumps_MF.ipynb][notebooks/2pumps_MF.ipynb]]
+* OPO
+** [[file:///home/berceanu/notebooks/OPODrag/OPODrag-ks-0.3.ipynb][notebooks/OPODrag/OPODrag-ks-0.3.ipynb]]
+** [[file:///home/berceanu/notebooks/OPODrag/OPODrag-ks0.72.ipynb][notebooks/OPODrag/OPODrag-ks0.72.ipynb]]
+** [[file:///home/berceanu/notebooks/OPODrag/OPOpump.ipynb][notebooks/OPODrag/OPOpump.ipynb]]
+** [[file:///home/berceanu/notebooks/RK-interface/RK-interface.ipynb][notebooks/RK-interface/RK-interface.ipynb]]
+** [[file:///home/berceanu/notebooks/filtering/filtering-theory-GP.ipynb][notebooks/filtering/filtering-theory-GP.ipynb]]
+** [[file:///home/berceanu/notebooks/filtering/gaussian_vs_fft_filter.ipynb][notebooks/filtering/gaussian_vs_fft_filter.ipynb]]

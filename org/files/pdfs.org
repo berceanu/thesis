@@ -1,0 +1,25 @@
+* Atomic
+** [[file:///home/berceanu/Documents/phd_projects/atomic_condensate/atomic_condensate_scattering.pdf][Documents/phd_projects/atomic_condensate/atomic_condensate_scattering.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/superfl_OPO/Rayleigh.pdf][Documents/phd_projects/superfl_OPO/Rayleigh.pdf]]
+** [[file:///home/berceanu/Downloads/writelatex/atomic-condensate-scattering/main.pdf][Downloads/writelatex/atomic-condensate-scattering/main.pdf]]
+* One Fluid
+** [[file:///home/berceanu/Documents/phd_projects/point_defect_1_fluid/non_quadratic_LP_drag.pdf][Documents/phd_projects/point_defect_1_fluid/non_quadratic_LP_drag.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/point_defect_1_fluid/paper/iopart/point-defect_1fluid.pdf][Documents/phd_projects/point_defect_1_fluid/paper/iopart/point-defect_1fluid.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/point_defect_1_fluid/paper/revtex/point-defect_1fluid.pdf][Documents/phd_projects/point_defect_1_fluid/paper/revtex/point-defect_1fluid.pdf]]
+** [[file:///home/berceanu/Downloads/writelatex/530444dbyrrd/main.pdf][Downloads/writelatex/530444dbyrrd/main.pdf]]
+** [[file:///home/berceanu/ownCloud/1pump.pdf][ownCloud/1pump.pdf]]
+** [[file:///home/berceanu/ownCloud/1pump_response_function.pdf][ownCloud/1pump_response_function.pdf]]
+* Two Fluids
+** [[file:///home/berceanu/Documents/phd_projects/2_fluids/2_fluids.pdf][Documents/phd_projects/2_fluids/2_fluids.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/2_fluids/notes.pdf][Documents/phd_projects/2_fluids/notes.pdf]]
+** [[file:///home/berceanu/Downloads/writelatex/193926snsblz/main.pdf][Downloads/writelatex/193926snsblz/main.pdf]]
+* OPO
+** [[file:///home/berceanu/Documents/phd_projects/superfl_OPO/OPODrag-ks0.0_same_lifetime.pdf][Documents/phd_projects/superfl_OPO/OPODrag-ks0.0_same_lifetime.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/superfl_OPO/drag.pdf][Documents/phd_projects/superfl_OPO/drag.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/superfl_OPO/extract_opo_defect.pdf][Documents/phd_projects/superfl_OPO/extract_opo_defect.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/superfl_OPO/opo_excitation_spectrum.pdf][Documents/phd_projects/superfl_OPO/opo_excitation_spectrum.pdf]]
+** [[file:///home/berceanu/Downloads/writelatex/50808fsngxm/main.pdf][Downloads/writelatex/50808fsngxm/main.pdf]]
+** [[file:///home/berceanu/Downloads/writelatex/opo-excitation-spectrum/main.pdf][Downloads/writelatex/opo-excitation-spectrum/main.pdf]]
+* Vortex
+** [[file:///home/berceanu/Documents/phd_projects/sheffield/vortex-new.pdf][Documents/phd_projects/sheffield/vortex-new.pdf]]
+** [[file:///home/berceanu/Documents/phd_projects/sheffield/sheffield_report.pdf][Documents/phd_projects/sheffield/sheffield_report.pdf]]
