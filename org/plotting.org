@@ -1,0 +1,3 @@
+* TODO put together most recent plotting scripts into one large file for reference
+* TODO test Julia plotting via matplotlib 
+* TODO test Python matplotlib plotting
