@@ -1,1 +1,0 @@
-* TODO /references/ becomes BMC article folder with tags /review/, /opo/, /topo/ etc
