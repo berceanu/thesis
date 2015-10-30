@@ -1,5 +1,6 @@
 tmp/
 auto/
+references/
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
