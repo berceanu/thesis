@@ -254,8 +254,8 @@ the different excitation spectra one can get for polaritons resonantly
 pumped close to the bottom of the LP dispersion.
 
 %
-\begin{figure}[htb]
-\centerline{\includegraphics[width=0.8\linewidth]{dispersion}}
+\begin{figure}[htb]\centering
+\includegraphics[width=0.8\linewidth]{dispersion}
 \caption{(Color online) Collective excitation spectra for the subsonic
   (thick solid [black] line at $v_p=0.2 c_s$, with
   $c_s=\sqrt{g|\psi_0|^2/m}$) and supersonic (dashed [red] line at
@@ -410,8 +410,8 @@ function of the fluid velocity, for either $\Delta_p<0$ or $\Delta_p
 \ge 0$ pump detunings.
 
 %
-\begin{figure}[htb]
-\centerline{\includegraphics[width=0.8\linewidth]{dragspeed}}
+\begin{figure}[htb]\centering
+\includegraphics[width=0.8\linewidth]{dragspeed}
 \caption{(Color online) Drag force $F$ as a function of the fluid
   velocity $v_p$ for different values of the pump detuning $\Delta_p$:
   $\Delta_p=-0.3g|\Psi_0|^2$ (a), $\Delta_p=0$ (b), and $\Delta_p>0$
@@ -422,8 +422,8 @@ function of the fluid velocity, for either $\Delta_p<0$ or $\Delta_p
 \end{figure}
 %
 %
-\begin{figure}
-\centerline{\includegraphics[width=0.8\linewidth]{dragkappa}}
+\begin{figure}\centering
+\includegraphics[width=0.8\linewidth]{dragkappa}
 \caption{(Color online) Drag force $F$ as a function of the inverse
   polariton lifetime $\kappa'=\kappa/(g |\psi_0|^2)$ in the (a)
   subcritical regime ($v_p=0.2 c_s$) and (b) supercritical regime
@@ -639,11 +639,16 @@ $\psi_{LP}(\bm{r},t) = \sum_{\bm{k}} e^{i\bm{k}\cdot \bm{r}}
 \end{multline}
 %
 where $\kappa(k)=\kappa_X c^2_k + \kappa_C s^2_k$ is the effective LP
-decay rate, $g_{\bm{k}, \bm{k}_1, \bm{k}_2}=g_X c_{k}
-c_{|\bm{k}_1 + \bm{k}_2-\bm{k}|} c_{k_1} c_{k_2}$ is the
-interaction strength, and where $V(\bm{r}) = \sum_{\bm{k}}
-e^{i\bm{k}\cdot \bm{r}} V_{\bm{k}}$. In these expressions, the
-coefficients
+decay rate,
+%
+\begin{equation}
+  g_{\bm{k}, \bm{k}_1, \bm{k}_2}=g_X c_{k}c_{|\bm{k}_1 + \bm{k}_2-\bm{k}|} c_{k_1} c_{k_2}
+\end{equation}
+%
+is the interaction strength, and where
+$V(\bm{r}) = \sum_{\bm{k}} e^{i\bm{k}\cdot \bm{r}} V_{\bm{k}}$.
+
+In these expressions, the coefficients
 %
 \begin{equation}
   c^2_{k}, s^2_{k} = \frac{1}{2} \left(1 \pm \frac{\omega_C(k) -
