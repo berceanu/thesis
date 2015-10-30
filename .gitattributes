@@ -1,2 +1,1 @@
-references/*.pdf filter=lfs diff=lfs merge=lfs -text
-references/*.djvu filter=lfs diff=lfs merge=lfs -text
+references/ filter=lfs diff=lfs merge=lfs -text
