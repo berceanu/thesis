@@ -1,0 +1,689 @@
+\chapter{Drag in a resonantly driven polariton fluid}
+\label{ch:drag}
+
+\section{Introduction}
+\label{sec:intro}
+
+Out of equilibrium quantum fluids such as polaritons in semiconductor
+microcavities are being the subject of an intensive study. Microcavity
+polaritons, the quasiparticles resulting from the strong coupling of
+cavity photons and quantum well excitons, have the prerogative of
+being easy to both manipulate, via an external laser, and detect, via
+the light escaping from the cavity~\cite{9780199228942}. In
+particular, resonant excitation allows the accurate tuning of the
+fluid properties, such as its density and current. However, the
+polariton lifetime being finite establishes the system as
+intrinsically out of equilibrium: An external pump is needed to
+continuously replenish the cavity of polaritons, that quickly, on a
+scale of tens of picoseconds, escape.
+
+Recently, the superfluid properties of a resonantly pumped polariton
+quantum fluid in the pump-only configuration --- i.e., where no other
+states aside the pump one are occupied by, e.g., parametric scattering
+--- have been actively investigated both experimentally and
+theoretically~\cite{Carusotto_2004,Ciuti_2005,Amo_2009,Cancellieri_2010,Pigeon_2011,Amo_2011,Nardin_2011,Sanvitto_2011}. This
+pumping scheme, differently from other cases, such as the resonant
+optical parametric oscillator regime and the non-resonant pumping
+scheme, creates a polariton fluid that, inside the pump spot, is not
+characterised by a free phase. On the contrary, the phase of the pump
+state is locked to the one of the external pumping
+laser. Nevertheless, it has been predicted~\cite{Carusotto_2004,Ciuti_2005}
+and observed~\cite{Amo_2009} that scattering can be suppressed below a
+critical velocity, where the system displays superfluid behaviour,
+similarly to what has been predicted by the Landau criterion for
+equilibrium superfluid condensates. Further, a fixed phase clearly
+prevents the formation of phase dislocations, such as vortices and
+solitons. For this reason, it has been suggested~\cite{Pigeon_2011} and
+experimentally realised~\cite{Amo_2011} that the defect can be
+located just outside the pump spot, where the hydrodynamic nucleation
+of vortices, vortex-antivortex pairs, arrays of vortices, and solitons
+can be observed when the fluid collides with the extended
+defect. Similarly, nucleation of vortices in the wake of the obstacle
+has been observed in pulsed experiments ~\cite{Nardin_2011,Sanvitto_2011}.
+
+In a conservative quantum liquid flowing past a small defect, the
+Landau criterion for superfluidity links the onset of dissipation at a
+critical fluid velocity with the shape of the fluid collective
+excitation spectrum~\cite{9780198507192}. In particular, for weakly
+interacting Bose gases, the dispersion of the low-energy excitation
+modes being linear implies that the critical velocity for superflow
+coincides with the speed of sound $c_s$. Clearly, this is strictly
+correct only for vanishingly small
+perturbations~\cite{Astrakharchik_2004}, while for a defect with finite
+size and strength, the critical velocity can be smaller than
+$c_s$~\cite{Onofrio_2000,Ianeselli_2006}.
+
+However, even for perturbatively weak defects, in out-of-equilibrium
+systems, where the spectrum of excitations is complex, the validity of
+the Landau criterion has to be
+questioned~\cite{Szyma_ska_2006,Wouters_2010,Cancellieri_2010}. In the
+particular case of coherently driven polaritons in the pump-only
+configuration, it has been predicted~\cite{Carusotto_2004,Ciuti_2005}, and
+later observed~\cite{Amo_2009}, that scattering is suppressed at either
+strong enough pump powers or small enough flow velocities. Yet, on a
+closer scrutiny, it has been shown that, despite the apparent validity
+of the Landau criterion, the system always experiences a residual drag
+force even in the limit of asymptotically large
+densities~\cite{Cancellieri_2010} or small velocities. This result has
+been proven by numerically solving the Gross-Pitaevskii equation
+describing the resonantly-driven polariton system in presence of a
+non-perturbative extended defect. Here, the drag force exerted by the
+defect on the fluid has been shown to display a smooth crossover from
+the subsonic to the supersonic regime, similarly to what it has been
+found in the case of non-resonantly pumped
+polaritons~\cite{Wouters_2010}. In this work, we find an even richer
+phenomenology for the dependence of the drag force on the fluid
+velocity and two different kinds of crossovers from the sub- to the
+supercritical regime. Further, we show that the origin of the residual
+drag force, which, in agreement with Ref.~\cite{Cancellieri_2010}, lies
+in the polariton lifetime only, can be demonstrated even within a
+linear response approximation.
+
+More specifically, in this work, we apply the linear response theory
+to analytically evaluate the drag force exerted by the coherently
+driven polariton fluid in the pump-only configuration on a point-like
+defect. To simplify the formalism, we restrict our analysis to the
+case of resonant pumping close to the bottom of the lower polariton
+dispersion, where the dispersion is quadratic. Here, the properties of
+the collective excitation spectrum have been shown to be uniquely
+determined by three parameters only~\cite{Ciuti_2005}: the fluid
+velocity $v_p$, the interaction-renormalised pump detuning $\Delta_p$,
+and the polariton lifetime $\kappa$. In particular, the sign of the
+detuning $\Delta_p$ determines three qualitatively different types of
+spectra: linear for $\Delta_p= 0$, diffusive-like for $\Delta_p> 0$,
+and gapped for $\Delta_p< 0$. 
+
+For both cases of linear and diffusive spectra, we find a
+qualitatively similar behaviour of the drag force as a function of the
+fluid velocity $v_p$: In particular, the drag displays a crossover
+from a subsonic or superfluid regime --- characterised by the absence
+of quasiparticle excitations --- to a supersonic regime --- where
+Cherenkov-like waves are generated by the defect and propagate into
+the fluid. The crossover becomes sharper for increasing polariton
+lifetimes $1/\kappa$ and displays the typical threshold behaviour for
+$\kappa \to 0$ with a critical velocity given by the speed of sound of
+linear regime, $v^c= c_s$, exactly as for weakly interacting
+equilibrium superfluids (in the case of perturbatively weak
+defects). This behaviour is similar to the one predicted for polariton
+superfluids excited non-resonantly~\cite{Wouters_2010}, where the
+spectrum in that case is diffusive-like.
+
+However, for gapped spectra at $\Delta_p <0$, we find that the
+critical velocity governing the drag crossover exceeds the speed of
+sound, $v^c > c_s$, and we determine an analytical expression of $v^c$
+as a function of the detuning $\Delta_p$. Further, for $\kappa \to 0$,
+the drag has a threshold-like behaviour qualitatively different from
+the one of weakly interacting equilibrium superfluids, with the drag
+jumping discontinuously from zero to a finite value at $v_p=v^c$.
+
+We evaluate the drag as a function of the polariton lifetime $\kappa$
+and find for all three cases that: In the supercritical regime,
+$v_p>v^c$, the lifetime tends to suppress the propagation of the
+Cherenkov waves away from the defect and therefore to suppress the
+drag. Instead, well in the subcritical regime, $v_p \ll v^c$, we find
+that the residual drag goes linearly to zero with the polariton
+lifetime $\kappa$, in agreement to what it was found in
+Ref.~\cite{Cancellieri_2010}, by making use of a non-perturbative
+numerical analysis for a finite size defect. Similarly to
+Ref.~\cite{Cancellieri_2010}, here, we do also find that the residual
+drag in the subcritical regime can be explained in terms of an
+asymmetric perturbation induced in the fluid by the defect in the
+direction of the fluid velocity.
+
+This paper is structured as follows: In Sec.~\ref{sec:linea} we
+briefly introduce the linear response approximation. We classify the
+three types of collective excitation spectra in the simplified case of
+excitation close to the bottom of the lower polariton dispersion in
+Sec.~\ref{sec:spect}. In Sec.~\ref{sec:drag} we derive the drag force
+and characterise the crossover from the subsonic to the supersonic
+regime in the three cases of zero, positive and negative detuning. In
+this section, we also evaluate the drag as a function of the polariton
+lifetime, interpreting therefore the results of
+Ref.~\cite{Cancellieri_2010}.  Brief conclusions are drawn is
+Sec.~\ref{sec:concl}.
+
+
+\section{Linear response}
+\label{sec:linea}
+
+The description of cavity polaritons resonantly excited by an external
+laser is usually formulated in terms of a classical non-linear
+Schr\"odinger equation (or Gross-Pitaevskii equation)~\cite{Ciuti_2003}
+for the lower polariton (LP) field $\psi_{LP}(\bm{r}, t)$ ($\hbar =
+1$):
+%
+\begin{multline}
+  i \partial_t \psi_{LP} = [\omega_{LP}(-i\nabla) - i\kappa +
+    V(\bm{r}) + g |\psi_{LP}|^2]\psi_{LP} \\
+%
+  + \mathcal{F}(\bm{r},t)\; .
+\label{eq:basic}
+\end{multline}
+%
+The LP dispersion is expressed in terms of the photon
+$\omega_C(\bm{k}) = \omega_C^0 + \frac{\bm{k}^2}{2m_C}$ and
+exciton $\omega_X^0$ energies, the photon mass $m_C$, and the Rabi
+splitting $\Omega_R$~\cite{9780199228942}:
+%
+\begin{multline}
+  \omega_{LP}(\bm{k}) = \frac{1}{2} \left[\omega_C(\bm{k}) +
+    \omega_X^0\right]\\
+%
+  - \frac{1}{2} \sqrt{\left[\omega_C(\bm{k}) -
+    \omega_X^0 \right]^2 + \Omega_R^2} \; .
+\label{eq:dispe}
+\end{multline}
+%
+Because polaritons continuously decay at a rate $\kappa$, the cavity
+is replenished by a continuous wave resonant pump $F(\bm{r},t)$ at a
+wavevector $\bm{k}_p$ (we will later assume $\bm{k}_p$ directed
+along the $x$-direction, $\bm{k}_p = (k_p,0)$) and frequency
+$\omega_p$:
+\begin{equation}
+  \mathcal{F}(\bm{r},t) = f_p e^{i (\bm{k}_p \cdot \bm{r} -
+    \omega_p t)} \; .
+\end{equation}
+%
+Note that, as discussed in appendix~\ref{app:full},
+Eq.~\eqref{eq:basic} is a simplified description of the polariton
+system: This implies that the interaction non-linearities are small
+enough not to mix the lower and upper polariton branches. Moreover,
+starting from a formulation in terms of coupled exciton and photon
+fields, the polariton lifetime would be momentum dependent and,
+similarly, the polariton-polariton interaction strength $g$ is not
+contact-like as instead assumed in Eq.~\eqref{eq:basic}. However, as
+shown in appendix~\ref{app:full}, these simplifications, do not affect
+our results qualitatively, rather, allow to write them in terms of
+simpler expressions. Further, we have checked that, whenever the
+system is excited near the bottom of the lower polariton dispersion,
+the results for the drag force reported in Sec.~\ref{sec:drag}
+coincide with the ones obtained by using an exact photon-exciton
+coupled field description.
+
+The potential $V(\bm{r})$ in Eq.~\eqref{eq:dispe} describes a
+defect, which can be either naturally present in the cavity
+mirror~\cite{Amo_2009} or it can be created by an additional
+laser~\cite{Amo_2010}. Later on, we will assume the defect to be
+point-like $V(\bm{r})=g_V \delta(\bm{r})$ and weak, so that we can
+apply the linear response approximation~\cite{Astrakharchik_2004}.
+%
+In this treatment, one divides the response of the LP field in a
+mean-field component $\psi_0$ corresponding to the case when the
+perturbing potential is absent, and a fluctuation part $\delta \psi
+(\bm{r},t)$ reflecting the linear response of the system to the
+perturbing potential:
+%
+\begin{equation}
+  \psi_{LP} (\bm{r},t) = e^{-i \omega_p t} \left[e^{i \bm{k}_p
+      \cdot \bm{r}} \psi_0 + \delta \psi (\bm{r},t)\right] \; .
+\label{eq:mfield}
+\end{equation}
+%
+By substituting~\eqref{eq:mfield} into~\eqref{eq:basic}, we obtain a
+mean-field equation and, by retaining only the linear terms in the
+fluctuation field and the defect potential, the following first order
+equation in $\delta \psi (\bm{r},t)$:
+%
+\begin{equation}
+  i \partial_t \begin{pmatrix} \delta \psi \\ \delta
+    \psi^* \end{pmatrix} = \hat{\mathcal{L}} \begin{pmatrix} \delta
+    \psi \\ \delta \psi^* \end{pmatrix} + V(\bm{r}) \begin{pmatrix}
+    \psi_0 e^{i \bm{k}_p \cdot \bm{r}} \\ -\psi_0^{\star} e^{-i
+      \bm{k}_p \cdot \bm{r}}\; ,
+    \end{pmatrix}
+\label{eq:linre}
+\end{equation}
+%
+where the operator $\hat{\mathcal{L}}$ is given by:
+%
+\begin{equation}
+ \hat{\mathcal{L}} = \begin{pmatrix} \widetilde{\omega_{LP}}
+   (-i\nabla) - i \kappa & g \psi_0^2 e^{2 i \bm{k}_p \cdot
+     \bm{r}} \\ -g {\psi_0^{\star}}^2 e^{-2 i \bm{k}_p \cdot
+     \bm{r}}& - \widetilde{\omega_{LP}}(-i \nabla) -
+   i\kappa \end{pmatrix}\; ,
+\end{equation}
+%
+with $\widetilde{\omega_{LP}} = \omega_{LP}-\omega_p + 2g
+|\psi_0|^2$. We are not interested here in solving the complex cubic
+mean-field equation for $\psi_0$, as this has been already widely
+studied~\cite{9780199228942}. Rather, we want to study the response
+of the system to the presence of the defect and how different
+behaviours of the onset of dissipation can be described in terms of
+the different excitation spectra one can get for polaritons resonantly
+pumped close to the bottom of the LP dispersion.
+
+%
+\begin{figure}[htb]
+\centerline{\includegraphics[width=0.8\linewidth]{dispersion}}
+\caption{(Color online) Collective excitation spectra for the subsonic
+  (thick solid [black] line at $v_p=0.2 c_s$, with
+  $c_s=\sqrt{g|\psi_0|^2/m}$) and supersonic (dashed [red] line at
+  $v_p=1.9 c_s$) regimes and for an interaction-renormalised pump
+  detuning $\Delta_p=-0.3 g|\psi_0|^2$ (a, b), $\Delta_p = 0$ (c, d),
+  $\Delta_p=0.3g|\psi_0|^2$ (e, f) and $\Delta_p=2.3g|\psi_0|^2$ (g,
+  h). Real parts of the spectra are plotted in the left panels and the
+  corresponding imaginary parts in the right panels for $\kappa=1.1
+  g|\psi_0|^2$ --- note that in our description the spectrum imaginary
+  parts do not depend on the fluid velocity $v_p$.}
+\label{fig:spect}
+\end{figure}
+%
+
+
+\subsection{Spectrum of collective excitations}
+\label{sec:spect}
+%
+The spectrum of the collective excitations can be obtained by
+diagonalising the operator $\hat{\mathcal{L}}$ in the momentum space
+representation:
+%
+\begin{equation}
+  \mathcal{L}_{\bm{k},\bm{k}_p} = \begin{pmatrix}
+    \widetilde{\omega_{LP}} (\delta \bm{k}+\bm{k}_p) - i \kappa &
+    g \psi_0^2 \\ -g {\psi_0^{\star}}^2 & -
+    \widetilde{\omega_{LP}}(\delta \bm{k}-\bm{k}_p) -
+    i\kappa \end{pmatrix}\; ,
+\label{eq:opell}
+\end{equation}
+%
+where, $\delta \bm{k} = \bm{k} - \bm{k}_p$. The description of
+the spectrum simplifies in the case when the pumping is close to the
+bottom of the LP dispersion, that can be approximated as parabolic
+%
+\begin{equation}
+  \omega_{LP} (\delta \bm{k} \pm \bm{k}_p) \simeq \omega_{LP}(0) +
+  \frac{k_p^2}{2m} + \frac{\delta \bm{k}^2}{2m} \pm \delta \bm{k}
+  \cdot \bm{v}_p \; ,
+\end{equation}
+%
+where $\bm{v}_p=\bm{k}_p/m$ is the fluid velocity, and $m$ is the
+LP mass, $m = 2m_C [1 - (\omega_C^0 - \omega_X^0)/\sqrt{(\omega_C^0 -
+    \omega_X^0)^2 + \Omega_R^2}]^{-1}$. This simplification allows one
+to describe the complex spectrum in terms of three parameters only,
+namely the fluid velocity $\bm{v}_p$, the interaction-renormalised
+pump detuning
+%
+\begin{equation}
+  \Delta_p = \omega_p - \left[\omega_{LP} (0) +\frac{k_p^2}{2m} +
+    g|\psi_0|^2\right]
+\end{equation}
+%
+and the LP lifetime $\kappa$:
+%
+\begin{equation}
+  \omega^{\pm} (\bm{k}) = \delta \bm{k}\cdot \bm{v}_p - i\kappa
+  \pm \sqrt{\varepsilon(\delta \bm{k}) \left[\varepsilon(\delta
+      \bm{k}) + 2g|\psi_0|^2\right]} \; ,
+\label{eq:spect}
+\end{equation}
+%
+where $\varepsilon(\bm{k}) = \frac{k^2}{2m} - \Delta_p$. If energies
+are measured in units of the mean-field energy blue-shift $g
+|\psi_0|^2$ (we will use the notation $\Delta_p' =
+\Delta_p/g|\psi_0|^2$ and $\kappa'= \kappa/g|\psi_0|^2$), then the
+fluid velocity $v_p$ is measured in units of the speed of sound $c_s =
+\sqrt{g|\psi_0|^2/m}$. In order to make connection with the current
+experiments, note that, for blue-shifts in the range $g |\psi_0|^2
+\simeq 0.1-1$~meV, typical values of the speed of sound $c_s$ are
+$0.8-2.7\times 10^6$~m/s. Similarly, for common values of the LP mass,
+the range in momenta in Fig.~\ref{fig:spect} comes of the order of
+$\delta k_x \simeq 0.2-0.8$~$\mu$m${}^{-1}$.
+
+%{\tt note that this way we can describe all kinds of spectra but the
+%  ONE that can only be described when $k_p$ is beyon the quadratic
+%  approximation of the dispersion?}
+
+The spectrum~\eqref{eq:spect} can be classified according to the sign
+of the interaction-renormalised pump detuning
+$\Delta_p$~\cite{Carusotto_2004,Ciuti_2005} --- see
+Fig.~\ref{fig:spect}. For $\Delta_p<0$ [panels (a,b)], the real part
+of the spectrum is \emph{gapped} while the imaginary part is
+determined by the polariton lifetime $\kappa$ only. If one applies the
+Landau criterion making reference to the real part of the spectrum
+only, then one finds a critical velocity
+%
+\begin{equation}
+  \frac{v^c}{c_s} = \sqrt{1 + |\Delta_p'| +
+    \sqrt{|\Delta_p'|(|\Delta_p'| + 2)}} > 1\; ,
+\label{eq:criti}
+\end{equation}
+%
+always larger than the speed of sound for $\Delta_p<0$. If the fluid
+velocity is subcritical, $v_p<v^c$ (see [black] solid lines in
+Fig.~\ref{fig:spect}(a)), then no quasiparticles can be excited and
+thus, for infinitely living polaritons $\kappa \to 0$, the fluid would
+experience no drag when scattering against the defect. For
+supercritical velocities instead, $v_p>v^c$ see [red] dashed lines in
+Fig.~\ref{fig:spect}(a), one expects dissipation in the form of
+radiation of Cherenkov-like waves from the defect into the fluid. In
+the supercritical regime, the set of wavevectors $\bm{k}$ for which
+$\Re[\omega^{+} (\bm{k})] = 0$ form a closed curve in the
+$\bm{k}$-space with no singularity of the derivative, i.e., in other
+words, the radiation can be emitted in all possible directions around
+the defect. This, as we will see in the next section, will imply that
+the drag force for $\kappa \to 0$ goes abruptly, rather than
+continuously, from zero at $v_p<v^c$ to a finite value at $v_p \ge
+v^c$.
+
+
+The spectrum gap closes to zero in the resonant situation at
+$\Delta_p=0$, when the two branches $\omega^{\pm} (\bm{k})$ touch at
+$\delta \bm{k}=0$ [panels (c,d) of Fig.~\ref{fig:spect}]: Here, the
+real part of the spectrum displays the standard \emph{linear
+  dispersion} at small wavevectors as for the weakly interacting
+bosonic gases, with the slope given by $c_s \pm v_p$. The imaginary
+part, as in the previous case, is constant and equal to $-\kappa$. It
+is clear therefore that in this case, when $\kappa \to 0$, one
+recovers the equilibrium results valid for weakly interacting
+gases~\cite{Astrakharchik_2004,Carusotto_2006}, where the critical
+velocity for superfluidity equals the speed of sound, $v^c=c_s$, and
+the drag displays a threshold like behaviour. Here, in the supersonic
+regime $v_p> v^c$, the close curve $\Re[ \omega^{+} (\bm{k})] = 0$
+has instead a singularity, resulting in the standard Mach cone of
+aperture $\theta$, $\sin \theta = c_s/v_p$, inside which radiation
+from the defect cannot be emitted~\cite{Carusotto_2006}.
+
+Finally, for $\Delta_p>0$, the real parts of the particle $\omega^+
+(\bm{k})$ and hole $\omega^- (\bm{k})$ branches of the spectrum
+touch together in either one [$\Delta_p \le 2$, see panels (e,f)] or
+two [$\Delta_p > 2$, see panels (g,h)] separate regions in momentum
+space. In the same regions, the corresponding imaginary parts instead
+split. With a somewhat abuse of language, we call these kinds of
+spectrum, \emph{diffusive-like}. We note that, clearly, these spectra
+have no correspondence in equilibrium systems, because a finite
+polariton lifetime $\kappa$ is needed in order for these modes to be
+stable, $\Im [ \omega^{\pm} (\bm{k}) ]<0$. We also note that for
+these spectra, even if considering only the real part of the
+collective excitation spectrum, as soon as the fluid is in motion
+$v_p>0$, dissipation in the form of waves is possible. However, we
+will see that similarly to the case of polaritons non-resonantly
+pumped~\cite{Wouters_2010}, when decreasing $\kappa$ (and accordingly
+$\Delta_p$ in order to have stable solutions), this situation connects
+continuously to the previous case, where a threshold-like behaviour
+with $v^c = c_s$ was found.
+
+
+We will see in the next section how these different spectra imply only
+two qualitatively different types of crossover of the drag force as a
+function of the fluid velocity, for either $\Delta_p<0$ or $\Delta_p
+\ge 0$ pump detunings.
+
+%
+\begin{figure}[htb]
+\centerline{\includegraphics[width=0.8\linewidth]{dragspeed}}
+\caption{(Color online) Drag force $F$ as a function of the fluid
+  velocity $v_p$ for different values of the pump detuning $\Delta_p$:
+  $\Delta_p=-0.3g|\Psi_0|^2$ (a), $\Delta_p=0$ (b), and $\Delta_p>0$
+  (c), and for different values of the polariton lifetime --- here, we
+  use the notation $\kappa' = \kappa/g|\psi_0|^2$, $\Delta_p' =
+  \Delta/g|\psi_0|^2$.}
+\label{fig:dragv}
+\end{figure}
+%
+%
+\begin{figure}
+\centerline{\includegraphics[width=0.8\linewidth]{dragkappa}}
+\caption{(Color online) Drag force $F$ as a function of the inverse
+  polariton lifetime $\kappa'=\kappa/(g |\psi_0|^2)$ in the (a)
+  subcritical regime ($v_p=0.2 c_s$) and (b) supercritical regime
+  ($v_p=1.9 c_s$). In both cases we have fixed
+  $\Delta_p=-0.3g|\Psi_0|^2$ ($v^c \simeq 1.46 c_s$) but these results
+  are qualitatively similar for any other value of the pump
+  detuning. We plot in the insets the normalised real-space
+  wavefunction $|\psi_{LP}(\bm{r})|^2/|\psi_0|^2$ for two specific
+  values of $\kappa'=0.2$ and $\kappa'=0.8$.}
+\label{fig:dragk}
+\end{figure}
+%
+
+
+\section{Drag force}
+\label{sec:drag}
+%
+The steady state response of the system to a static and weak defect
+can be evaluated starting from Eq.~\eqref{eq:linre}:
+%
+\begin{equation*}
+  \begin{pmatrix} \delta \psi_s(\bm{r}) \\ \delta
+    \psi_s^*(\bm{r}) \end{pmatrix} =
+  \hat{\mathcal{L}}^{-1} \begin{pmatrix} V(\bm{r}) e^{i \bm{k}_p
+      \cdot \bm{r}} \psi_0 \\ -V(\bm{r}) e^{-i \bm{k}_p \cdot
+      \bm{r}} \psi_0^{\star} \end{pmatrix} \; .
+\end{equation*}
+%
+For a point-like defect, this can be written in momentum space as:
+%
+\begin{equation*}
+  \delta \psi_s (\bm{k} + \bm{k}_p) = \frac{-g_V \psi_0
+    (\varepsilon(\bm{k}) - \bm{k} \cdot \bm{v}_p +
+    i\kappa)}{\varepsilon(\bm{k}) [\varepsilon(\bm{k}) +
+      2g|\psi_0|^2] - (\bm{k} \cdot \bm{v}_p - i\kappa)^2} \; ,
+\end{equation*}
+%
+while the other component $\delta \psi_s^* (\bm{k}_p - \bm{k})$
+can be obtained by complex conjugation and by substituting $\bm{k}
+\mapsto -\bm{k}$. The drag force exerted by the defect on the fluid
+is given by~\cite{Astrakharchik_2004}:
+%
+\begin{equation}
+  \bm{F} = - \int d\bm{r} |\psi_{LP}(\bm{r},t)|^2 \bm{\nabla}
+  (V(\bm{r})) \; ,
+\end{equation}
+%
+and, in the steady state linear response regime, we obtain:
+%
+\begin{multline}
+  \bm{F} = g_V \int \frac{d\bm{k}}{(2\pi)^2} i\bm{k}
+  \left[\psi_0^* \delta\psi_s (\bm{k} + \bm{k}_p) + \psi_0 \delta
+    \psi_s^* (\bm{k}_p - \bm{k})\right]\\
+%
+  = 2g_V^2|\psi_0|^2 \int \frac{d\bm{k}}{(2\pi)^2} \frac{i\bm{k}
+    \varepsilon(\bm{k})}{\omega^{+} (\bm{k})\omega^{-} (\bm{k})}
+  \; .
+    \label{eq:dragf}
+\end{multline}
+%
+The drag is clearly oriented along the fluid velocity $\bm{v}_p$,
+i.e., $\bm{F} = F \hat{\bm{v}}_p$. If $\kappa \to 0$, then the
+integral in Eq.~\eqref{eq:dragf} is finite only if poles exist when
+$\Re [\omega^{\pm} (\bm{k})] = 0$, i.e., when quasiparticles can be
+excited, in agreement with the Landau criterion. For finite polariton
+lifetimes, however, it is clear that the integral will be always
+different from zero for $v_p>0$.
+% Note that the only dependence on the polariton lifetime $\kappa$ is
+%in the denominator of the integral in Eq.~\eqref{eq:dragf}.
+We now analyse the behaviour of the drag force as a function of the
+fluid velocity for the three ($\Delta_p = 0$, $\Delta_P > 0$, and
+$\Delta_p < 0$) different spectra illustrated in the previous section.
+
+For the \emph{linear} spectrum, at $\Delta_p=0$, in the equilibrium
+limit, $\kappa \to 0$, we recover for the drag the known result of
+weakly interacting Bose gases in two
+dimensions~\cite{Astrakharchik_2004}:
+%
+\begin{equation}
+  \frac{F}{(mc_s)^3 g_V^2/g}=\frac{(v_p/c_s)^2 - 1}{v_p/c_s}
+  \Theta(v_p - c_s)\; ,
+\label{eq:drag0}
+\end{equation}
+%
+with a threshold-like behaviour at a critical fluid velocity equal to
+the speed of sound $c_s$. This limiting result is plotted as a bold
+gray line in the panels (b,c) of Fig.~\ref{fig:dragv}. For
+$\Delta_p=0$ and finite lifetimes $\kappa$, we find a smooth crossover
+from the subsonic to the supersonic regime, with the drag being closer
+to the equilibrium threshold behaviour for decreasing $\kappa$ (see
+Fig.~\ref{fig:dragv}(b)). A finite lifetime tends to increase the
+value of the drag in the subsonic region $v_p \ll v^c$, giving place
+to a residual drag force, similar to what was found in the numerical
+simulations of Ref.~\cite{Cancellieri_2010}. Instead, in the supersonic
+region $v_p \gg v^c$, the finite lifetime tends to decrease the value
+of the drag. In the case of \emph{diffusive-like} spectra at
+$\Delta_p>0$ the situation is qualitatively very similar to the
+resonant case (see Fig.~\ref{fig:dragv}(c)), with the difference that
+now, in order to have stable solutions, we can decrease the value of
+the lifetime only by decreasing accordingly also the value of the pump
+detuning $\Delta_p$. The crossover for both $\Delta_p = 0$ and
+$\Delta_p > 0$ is also qualitatively very similar to the case of
+non-resonantly pumped polaritons~\cite{Wouters_2010}, where the
+spectrum of excitation is in that case diffusive-like.
+
+In the case of \emph{gapped} spectra, the situation is however
+qualitatively different (see Fig.~\ref{fig:dragv}(a)). For infinitely
+living polaritons, $\kappa \to 0$, the drag force can also be
+evaluated analytically and its expression is similar to
+Eq.~\eqref{eq:drag0}, but with a critical velocity larger than the
+speed of sound, which expression is given in Eq.~\eqref{eq:criti}:
+%
+\begin{equation}
+  \frac{F}{(mc_s)^3 g_V^2/g}=\frac{(v_p/c_s)^2 - 1}{v_p/c_s}
+  \Theta(v_p - v^c)\; .
+\end{equation}
+%
+Therefore now the drag experiences a jump for $v_p=v^c$, rather than a
+continuous threshold as for the resonant case $\Delta_p=0$. As already
+mentioned in the previous section, this discontinuous behaviour of the
+drag for the gapped spectra is connected to the fact that, as soon as
+quasiparticles can be excited by the defect at $v_p\ge v^c$,
+Cherenkov-like waves can be immediately emitted in all directions,
+rather than being restricted in a region outside the Mach cone like
+before. For $\Delta_p=0$, the cone was gradually closing with
+increasing the fluid velocity.
+
+Both the increase of the value of the drag in the subcritical region
+as a function of the polariton lifetime and the decrease in the
+supercritical region, are behaviours common to all the types of
+spectra. We plot the drag force as a function of $\kappa$ in
+Fig.~\ref{fig:dragk}, for two values of the fluid velocity $v_p$ and a
+specific value of the pump detuning $\Delta_p$, though we have checked
+that the following results are generic. For $v_p < v^c$, we find that
+the residual drag is a finite-lifetime effect only, and, in agreement
+with the results of Ref.~\cite{Cancellieri_2010}, we find that, well
+below the critical velocity, the drag force goes linearly to zero for
+$\kappa \to 0$. In the resonant case $\Delta_p=0$, the slope of the
+drag for $v_p \ll c_s$ can be evaluated analytically starting from the
+expression~\eqref{eq:dragf}:
+%
+\begin{equation*}
+    \frac{F}{(mc_s)^3 g_V^2/g} \mathop{\simeq}\limits_{\kappa \to 0} \frac{2 c_s}{\pi
+      v_p} \left( \frac{1}{ \sqrt{1-(v_p/c_s)^2}} - 1 \right)
+    \frac{\kappa}{g |\psi_0|^2} \; .
+\end{equation*}
+%
+The residual drag in the subsonic regime is an effect of the
+broadening of the quasi-particles energies: Even when the spectrum
+real part does not allow any scattering against the defect (e.g., for
+$\Delta_p \le 0$), the broadening produces some scattering close to
+the defect. This results in a perturbation of the fluid around the
+defect, asymmetric in the direction of the fluid velocity (see panel
+(a) of Fig.~\ref{fig:dragk}), similarly to what it was obtained in
+Ref.~\cite{Cancellieri_2010}. Instead, in the supersonic regime, the
+drag force is weaker in the non-equilibrium case respect to the
+equilibrium one. This is caused by the finite lifetime tending to
+suppress the propagation of the Cherenkov waves away from the defect,
+as shown in panel (b) of Fig.~\ref{fig:dragk}.
+
+
+
+
+\section{Conclusions and discussion}
+\label{sec:concl}
+%
+To conclude, we have analysed the linear response to a weak defect of
+resonantly pumped polaritons in the pump-only state and we have been
+able to determine two different kinds of threshold like behaviours for
+the drag force as a function of the fluid velocity. In the case of
+either zero or positive pump detuning, one can continuously connect to
+the case of equilibrium weakly interacting gases, where the drag
+displays a continuous threshold with a critical velocity equal to the
+speed of sound. However, for negative pump detuning, where the
+spectrum of excitations is gapped, the drag shows a discontinuity with
+a critical velocity larger than the speed of sound. In this sense, the
+case of coherently driven microcavity polaritons in the pump-only
+configuration displays a richer phenomenology than the case of
+polariton superfluids non resonantly pumped. It would be interesting
+to perform a similar analysis in the case of polaritons in the optical
+parametric oscillator regime, where polaritons are parametrically
+scattered from the pump state to the signal and idler states. Here,
+the spectrum of excitations has been already determined in
+Ref.~\cite{Wouters_2007}, however it is far from clear what are the
+conditions for subcritical, superfluid, behaviour in a fluid
+characterised by three distinct currents, and how the link between
+signal and idler imposed by the parametric scattering influences the
+scattering of both fluids against a defect.
+
+
+\begin{subappendices}
+\section{Gross-Pitaevskii equation for the lower polariton field}
+\label{app:full}
+%
+If one starts from a descriptions of polaritons in terms of separate
+exciton and cavity photon fields, a rotation into the lower and upper
+polariton basis, followed by neglecting the occupancy of the upper
+polariton branch, results in the following Gross-Pitaevskii equation
+for the lower polariton (LP) field in momentum space
+$\psi_{LP}(\bm{r},t) = \sum_{\bm{k}} e^{i\bm{k}\cdot \bm{r}}
+\psi_{LP,\bm{k}} (t)$~\cite{Ciuti_2003}:
+%
+\begin{multline}
+  i\partial_t \psi_{LP,\bm{k}} = f_p e^{-i\omega_p t}
+  \delta_{\bm{k},\bm{k}_p} + \left[\omega_{LP} (k) - i\kappa
+    (k)\right]\psi_{LP,\bm{k}} +\\
+%
+  \sum_{\bm{k}_1, \bm{k}_2} g_{\bm{k}, \bm{k}_1, \bm{k}_2}
+  \psi^*_{LP,\bm{k}_1 + \bm{k}_2-\bm{k}} \psi_{LP,\bm{k}_1}
+  \psi_{LP,\bm{k}_2} +\\ s_k \sum_{\bm{k}_1} V_{\bm{k} -
+    \bm{k}_1} \psi_{LP,\bm{k}_1} s_{k_1}\; ,
+\label{eq:efflp}
+\end{multline}
+%
+where $\kappa(k)=\kappa_X c^2_k + \kappa_C s^2_k$ is the effective LP
+decay rate, $g_{\bm{k}, \bm{k}_1, \bm{k}_2}=g_X c_{k}
+c_{|\bm{k}_1 + \bm{k}_2-\bm{k}|} c_{k_1} c_{k_2}$ is the
+interaction strength, and where $V(\bm{r}) = \sum_{\bm{k}}
+e^{i\bm{k}\cdot \bm{r}} V_{\bm{k}}$. In these expressions, the
+coefficients
+%
+\begin{equation}
+  c^2_{k}, s^2_{k} = \frac{1}{2} \left(1 \pm \frac{\omega_C(k) -
+    \omega_X^0}{\sqrt{(\omega_C(k) - \omega_X^0)^2 +
+      \Omega_R^2}}\right)
+\end{equation}
+%
+are the Hopfield coefficients used to diagonalise the free polariton
+Hamiltonian. We want here to justify the simplified description done
+in Eq.~\eqref{eq:basic}. If we follow the linear response expansion as
+in~\eqref{eq:mfield}, the operator $\hat{\mathcal{L}}$ in momentum
+space analogous to~\eqref{eq:opell} reads as:
+
+%
+\begin{equation}
+  \mathcal{L}_{\bm{k},\bm{k}_p} = \begin{pmatrix}
+    \widetilde{\omega_{LP}} (\delta \bm{k}+\bm{k}_p) - i
+    \kappa(\delta \bm{k}+\bm{k}_p) & g_X c_{k_p}^2 c_{\delta
+      \bm{k}+\bm{k}_p} c_{\delta \bm{k}-\bm{k}_p} \psi_0^2
+    \\ - g_X c_{k_p}^2 c_{\delta \bm{k}+\bm{k}_p} c_{\delta
+      \bm{k}-\bm{k}_p}{\psi_0^{\star}}^2 & -
+    \widetilde{\omega_{LP}}(\delta \bm{k}-\bm{k}_p) -
+    i\kappa(\delta \bm{k}-\bm{k}_p) \end{pmatrix}\; ,
+\label{eq:opel2}
+\end{equation}
+%
+
+where now $\widetilde{\omega_{LP}} (\delta \bm{k} \pm\bm{k}_p) =
+\omega_{LP} (\delta \bm{k} \pm\bm{k}_p) -\omega_p + 2 g_X
+c_{k_p}^2 c_{\delta \bm{k} \pm \bm{k}_p}^2 |\psi_0|^2$. It is easy
+to show that the eigenvalues of this operator coincide with our
+approximated expressions~\eqref{eq:spect} in the limit of $\delta k
+\ll k_p$, when $c_{\delta \bm{k} \pm \bm{k}_p}^2 \simeq
+c_{k_p}^2$, $s_{\delta \bm{k} \pm \bm{k}_p}^2 \simeq s_{k_p}^2$
+and when we can simply rename $g=g_X c_{k_p}^4$ and $\kappa =
+\kappa(k_p)$. It is interesting to note that, even if we would retain
+the linear terms in $\bm{k}_p \cdot \delta \bm{k}$ in the
+expansion of $c_{\delta \bm{k} \pm \bm{k}_p}^2$, this would result
+in a renormalisation of the fluid velocity $\bm{v}_p$ in the
+expression~\eqref{eq:spect} which takes into account the blue-shift of
+the lower polariton dispersion due to the interaction.
+
+\end{subappendices}
