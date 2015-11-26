@@ -1,12 +1,400 @@
 \chapter{Introduction}
 
-Nullam eu ante vel est convallis dignissim.  Fusce suscipit, wisi nec facilisis facilisis, est dui fermentum leo, quis tempor ligula erat quis odio.  Nunc porta vulputate tellus.  Nunc rutrum turpis sed pede.  Sed bibendum.  Aliquam posuere.  Nunc aliquet, augue nec adipiscing interdum, lacus tellus malesuada massa, quis varius mi purus non odio.  Pellentesque condimentum, magna ut suscipit hendrerit, ipsum augue ornare nulla, non luctus diam neque sit amet urna.  Curabitur vulputate vestibulum lorem.  Fusce sagittis, libero non molestie mollis, magna orci ultrices dolor, at vulputate neque nulla lacinia eros.  Sed id ligula quis est convallis tempor.  Curabitur lacinia pulvinar nibh.  Nam a sapien.
-
-Aliquam erat volutpat.  Nunc eleifend leo vitae magna.  In id erat non orci commodo lobortis.  Proin neque massa, cursus ut, gravida ut, lobortis eget, lacus.  Sed diam.  Praesent fermentum tempor tellus.  Nullam tempus.  Mauris ac felis vel velit tristique imperdiet.  Donec at pede.  Etiam vel neque nec dui dignissim bibendum.  Vivamus id enim.  Phasellus neque orci, porta a, aliquet quis, semper a, massa.  Phasellus purus.  Pellentesque tristique imperdiet tortor.  Nam euismod tellus id erat.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.  Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.  Nam vestibulum accumsan nisl.
-
 % TODO: insert chapter descriptions (see akhmerov)
+% TODO: create abbreviations list
+% GP: Gross-Pitaevskii
+% TODO: mention \hbar = 1
+
+
+\section{Preliminaries}
+\label{sec:preliminary}
+
+\subsection{Linear response theory}
+\label{subsec:linear-response}
+
+Let $\phi_0(\rv)$ be the steady state solution to the
+GP equation in the time-independent trapping potential $U_0(\rv)$
+%
+\begin{equation}\label{eq:GP-atoms}
+  H_{\text{GP}} \phi_0 = 0
+\end{equation}
+% 
+with the GP Hamiltonian defined as\footnote{This section follows
+  loosely the formalism presented in Ref.~\cite{9783540410478}.}
+%
+\begin{equation}\label{eq:GP-ham}
+  H_{\text{GP}} \equiv -\frac{\nabla^2}{2m} + U_0 + gN_0\abs{\phi_0}^2 - \mu
+\end{equation}
+% 
+
+This Hamiltonian describes a bosonic condensate of $N_0$ particles with
+contact interactions quantified by $g$, and chemical potential $\mu$.
+
+Now consider adding a small time-dependent perturbation on top of the
+trap, giving $U(\rv,t)=U_0(\rv) + \delta U(\rv,t)$. We are interested
+in the response of the condensate to this perturbation.  For weak
+perturbations, we can perform a linearization of the GP equation
+Eq.~\eqref{eq:GP-atoms} around the stationary solution $\phi_0$. This
+approach is known in the literature as the ``linear response''
+formalism.
+
+The condensate wavefunction $\phi(\rv,t)$ evolves according to
+%
+\begin{equation}\label{eq:GP-atoms-evolution}
+  i\partial_t \phi = \left[-\frac{\nabla^2}{2m} + U + gN_0 \abs{\phi}^2 - \mu\right] \phi
+\end{equation}
+% 
+We assume a small deviation of the wavefunction from its initial
+steady state
+%
+\begin{equation}\label{eq:ansatz-atoms}
+  \phi(\rv,t) = \phi_0(\rv) + \delta\phi(\rv,t)
+\end{equation}
+% 
+such that we can expand Eq.~\eqref{eq:GP-atoms-evolution} and keep only linear terms in $\delta\phi$ and $\delta U$. We get
+%
+\begin{equation}\label{eq:GP-atoms-lin}
+  i\partial_t\delta\phi =  \left[-\frac{\nabla^2}{2m} + U_0-\mu\right]
+  \delta\phi + 2 g N_0 \phi_0^{\star}\phi_0\delta\phi + gN_0\phi_0^2\delta\phi^{\star}
+  +\delta U\phi_0
+\end{equation}
+% 
+Note that Eq.~\eqref{eq:GP-atoms-lin} is not strictly linear due to
+the coupling of $\delta\phi$ to $\delta\phi^{\star}$. To restore
+linearity, we consider the functions $\delta\phi$ and
+$\delta\phi^{\star}$ as being independent and write the linear system
+%
+\begin{equation}\label{eq:GP-atoms-system}
+  i \partial_t \colvec{\delta\phi(\rv,t)}{\delta\phi^{\star}(\rv,t)}
+  = \Lca_{GP} \colvec{\delta\phi(\rv,t)}{\delta\phi^{\star}(\rv,t)}
+  + \colvec{S(\rv,t)}{-S^{\star}(\rv,t)}
+\end{equation}
+% 
+where we have introduced the linear operator
+%
+\begin{equation}\label{eq:LGP}
+  \Lca_{\text{GP}} = \mat{H_{\text{GP}}+gN_0\abs{\phi_0}^2}{g N_0 \phi_0^2}{-g N_0 \phi_0^{\star 2}}{-\left[H_{\text{GP}}+gN_0\abs{\phi_0}^2\right]^{\star}}
+\end{equation}
+% 
+and the source term $S(\rv,t)=\delta U(\rv,t)\phi_0(\rv)$.  Note that
+$\Lca_{\text{GP}}$ is not a Hermitian operator! The presence of the minus
+sign in the second line is due to the fact that the particles obey
+Bose statistics, as this is not present in the BCS theory.
+
+The standard method of determining the time evolution of $\delta\phi$
+is to expand it in the basis formed by the eigenvectors of
+$\Lca_{\text{GP}}$.
+
+There is a subtlety involved here, however, as in the general case
+$\Lca_{\text{GP}}$ is not diagonalizable. It usually has too few
+eigenvectors to span the whole functional space\footnote{We are
+  referring to the $L^2 \times L^2$ space, with $L^2$ being the space
+  of square-integrable complex functions.}.
+
+The solution to this problem, detailed in Ref.~\cite{Castin_1998},
+is to work in the subspace orthogonal to $\ket{\phi_0}$. It can be
+shown that the component of the solution along $\ket{\phi_0}$ only
+results in a change of phase of the total condensate wavefunction. For
+the problems of interest in the rest of this manuscript, however, the
+dimension of the space parallel to $\ket{\phi_0}$ that we must project
+out is of order 1.
+
+We now consider the eigenvalue equation for the operator $\Lca_{\text{GP}}$
+%
+\begin{equation}\label{eq:L-eigen}
+  \Lca_{\text{GP}} \ket{\psi_k^R} = \epsilon_k \ket{\psi_k^R}
+\end{equation}
+% 
+with $\ket{\psi_k^R}$ being the right eigenvector and $\epsilon_k$ its
+corresponding eigenvalue
+%
+\begin{equation}\label{eq:psi-R}
+  \ket{\psi_k^R} = \colvec{\ket{u_k}}{\ket{v_k}}
+\end{equation}
+% 
+Similarly, we also introduce the left eigenvector, obeying
+$\Lca_{\text{GP}}^{\dagger} \ket{\psi_k^L} = \epsilon_k^{\star} \ket{\psi_k^L}$,
+and the orthonormality condition
+$\braket{\psi_k^L}{\psi_q^R} = \delta_{k,q}$. 
+
+Notice that $\Lca_{\text{GP}}$ and $\Lca_{\text{GP}}^{\dagger}$ are
+connected by the unitary transformation\footnote{Note that this holds
+  as long as the Hamiltonian $H_{\text{GP}}$ only contains real
+  terms.}
+%
+\begin{equation}\label{eq:symmetry-1}
+  \eta \Lca_{\text{GP}} \eta^{\dagger} = \Lca_{\text{GP}}^{\dagger}
+\end{equation}
+% 
+where $\eta = \sigma_3 = \mat{1}{0}{0}{-1}$ is the third Pauli
+matrix. We say that $\Lca_{\text{GP}}$ is $\eta$-Hermitian, meaning
+that one can define a new scalar product
+$\braket{\cdot}{\cdot}_{\eta} = \braket{\cdot}{\eta \cdot}$ with a
+different signature, such that
+$\braket{\cdot}{\Lca_{\text{GP}} \cdot}_{\eta} =
+\braket{\Lca_{\text{GP}} \cdot}{\cdot}_{\eta}$. The operator $\eta$ is
+usually called the metric operator, and, not suprisingly in our case,
+it is the same as the one of the scalar Klein-Gordon equation. A
+pseudo-Hermitian operator usually also posesses antilinear symmetries,
+and as we will see below this is also the case for
+$\Lca_{\text{GP}}$. Interestingly, for operators with a real spectrum,
+it can be shown that one can define another metric $\eta_+$, which
+guarantees a positive-definite inner product, or, in other words,
+$\braket{\psi}{\psi}_{\eta_+} > 0$ (provided $\psi \neq 0$ of
+course). This can be used to formulate a probabilistic quantum theory
+for the new wave-functions $\psi^R$ and $\psi^L$. For the general
+theory and properties of pseudo-Hermitian operators, we point the
+interested reader to Ref.~\cite{MOSTAFAZADEH_2010}.
+
+
+Using Eq.~\eqref{eq:symmetry-1}, we get the general form of the left
+eigen-vectors as
+%
+\begin{equation}\label{eq:psi-L}
+  \bra{\psi_k^L} = {\cal N}_k \left( \bra{u_k},\, -\bra{v_k} \right)
+\end{equation}
+% 
+with ${\cal N}_k$ a normalization factor.  We can chose
+${\cal N}_k = \pm 1$ and group the eigenvalues of $\Lca_{\text{GP}}$
+into 3 families, according to the quantity
+%
+\begin{equation}\label{eq:norms}
+  n_k = \braket{u_k}{u_k} - \braket{v_k}{v_k}
+\end{equation}
+% 
+We therefore have: the ``$+$'' family, corresponding to $n_k=+1$, the
+``$-$'' family, such that $n_k=-1$ and the ``$0$'' family, with
+$n_k=0$.
+
+% In the absence of the added weak perturbation, the time evolution of
+% mode $k$ is given by $\exp(-i\epsilon_k t)$, from which we get the
+% dynamical stability condition $\imag{(\epsilon_k)} \leq 0$ for all
+% $k$. Dynamical stability is important because it insures that small
+% perturbations will not induce the condensate wavefunction to evolve
+% far from its steady state value.
+
+We are now ready to write the completeness relation
+%
+\begin{equation}\label{eq:completeness}
+  \sum_k \ket{\psi_k^R} \bra{\psi_k^L} = \mathbb{I}
+\end{equation}
+% 
+Using Eq.~\eqref{eq:completeness}, we can decompose any column vector
+as\footnote{The modes in the ``$0$'' family do not appear in this
+  expansion as their components live in the space orthogonal to the one
+  of our solution.}
+%
+\begin{multline}\label{eq:decomposition}
+  \colvec{\ket{l_1}}{\ket{l_2}} = \sum_{k \in ``+" \mbox{\scriptsize family}} \left[\braket{u_k}{l_1} - \braket{v_k}{l_2}\right]\colvec{\ket{u_k}}{\ket{v_k}}\\
+  + \sum_{k \in ``-" \mbox{\scriptsize family}} \left[\braket{v_k}{l_2} - \braket{u_k}{l_1}\right]\colvec{\ket{u_k}}{\ket{v_k}}
+\end{multline}
+% 
+There is now a further symmetry of $\Lca_{\text{GP}}$ that we can
+exploit in our problem, a sort of time-reversal ``spin''-flip (or
+particle-hole) symmetry, namely
+%
+\begin{equation}\label{eq:symmetry-2}
+   \Theta \Lca_{\text{GP}} \Theta^{\dagger} = -\Lca_{\text{GP}}
+\end{equation}
+%
+where $\Theta = \sigma_1 \cal{K}$, with $\sigma_1 = \mat{0}{1}{1}{0}$
+the first Pauli matrix and $\cal{K}$ the complex conjugation
+antilinear operator.
+
+This results in a duality between the ``$+$'' family with eigenvectors
+$(u_k, v_k)$ and energy $\epsilon_k$ and the ``$-$'' family with
+eigenvectors $(v_{-k}^{\star}, u_{-k}^{\star})$ and energy
+$-\epsilon_{-k}^{\star}$.
+
+We can now finally project Eq.~\eqref{eq:GP-atoms-system} onto the
+eigenvectors of $\Lca_{\text{GP}}$. Using the above-mentioned duality and
+Eq.~\eqref{eq:decomposition}, we get
+%
+\begin{equation}\label{eq:phi-column-expansion}
+  \colvec{\delta\phi(\rv,t)}{\delta\phi^{\star}(\rv,t)} = \sum_{k \in ``+" \mbox{\scriptsize family}}
+  b_k(t) \colvec{u_k(\rv)}{v_k(\rv)}
+  + b_{-k}^{\star}(t) \colvec{v_{-k}^{\star}(\rv)}{u_{-k}^{\star}(\rv)}
+\end{equation}
+% 
+with the complex amplitudes $b_k$ satisfying 
+%
+\begin{equation}\label{eq:amplitudes-bk}
+  i \frac{d}{dt}b_k(t) = \epsilon_k b_k(t) + s_k(t)
+\end{equation}
+% 
+where we introduced
+%
+\begin{equation}\label{eq:amplitudes-sk}
+  s_k(t) = \left( \bra{u_k} ,\, -\bra{v_k} \right) \colvec{\ket{S(t)}}{-\ket{S^{\star}(t)}}
+\end{equation}
+% 
+
+\subsection{Cherenkov emission}
+\label{subsec:cherenkov}
+
+We now turn to applying the formalism developed in
+Sec.~\ref{subsec:linear-response} to a concrete physical example,
+inspired by Ref.~\cite{Carusotto_2006}. Consider a 2-dimensional
+Bose-Einstein atomic condensate in a state with well-defined momentum,
+described by the plane wave
+$\psi_0 \exp \left( i \bm{k_0} \rv - \omega_0 t \right)$. Using our
+previous notation, this corresponds to
+%
+\begin{equation}\label{eq:atom-initial}
+  \phi_0(\rv) = \psi_0 \exp \left( i \bm{k_0} \rv \right)
+\end{equation}
+% 
+and a chemical potential $\mu = \omega_0$. Since we have no trap,
+$U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
+%
+\begin{equation}\label{eq:atom-MF}
+  \omega_0 - \left( \frac{k_0^2}{2m} + g \rho_0 \right) = 0
+\end{equation}
+% 
+where we have introduced the condensate density
+$\rho_0 \equiv N_0 \abs{\psi_0}^2$.  
+
+We now intoduce a weak perturbation in the form of a localized defect
+potential $\delta U(\rv, t) = V_d(\rv)$, which can represent for
+instance a laser spot depleting a small area of the condensate.
+
+Using Eq.~\eqref{eq:atom-MF}, the GP Hamiltonian becomes
+$H_{\text{GP}} = -\frac{\nabla^2}{2m} - \frac{k_0^2}{2m}$ and the
+source term
+$S(\rv) = \psi_0 V_d(\rv) \exp \left( i \bm{k_0} \rv \right)$. We now
+get the linear operator for our problem in the form
+%
+\begin{equation}\label{eq:ourL}
+  \Lca = \mat{-\frac{\nabla^2}{2m} - \frac{k_0^2}{2m} + g\rho_0}{g N_0 \psi_0^2 \exp \left( 2 i \bm{k_0} \rv \right)}{- g N_0 \psi_0^{\star 2} \exp \left( - 2 i \bm{k_0} \rv \right)}{-\left[ -\frac{\nabla^2}{2m} - \frac{k_0^2}{2m} + g\rho_0 \right]}
+\end{equation}
+% 
+Notice that, due to the presence of the off-diagonal exponential
+terms, $\Lca$ does not commute with the momentum operator, which is
+the generator of the spatial translation group. Luckily, however, we
+can restore translational invariance by a simple unitary
+transformation, as shown below.
+
+First, a brief reminder of basic quantum mechanics. Using the standard
+commutation relations, one can show that, for a constant wavevector
+$\bm{k_0}$, the unitary operator\footnote{The hat symbol denotes
+  operators in the relevant Hilbert space.}
+%
+\begin{equation}\label{eq:trans-oper}
+  \hat{T}(\bm{k_0}) = \exp \left( -i \bm{k_0} \hat{\rv} \right)
+\end{equation}
+% 
+performs a translation in momentum space,
+$\hat{T}(\bm{k_0}) \ket{\bm{k}} = \ket{\bm{k} - \bm{k_0}}$, with the
+ket $\ket{\bm{k}}$ representing a single particle state with
+wavevector $\bm{k}$ such that
+$\hat{\bm{k}} \ket{\bm{k}} = \bm{k} \ket{\bm{k}}$. Using the
+definitions above, one can easily obtain the commutator
+%
+\begin{equation}\label{eq:trans-commutator}
+  \left[ \hat{\bm{k}},\, \hat{T}(\bm{k_0}) \right] = -\bm{k_0}\hat{T}(\bm{k_0}) 
+\end{equation}
+% 
+This allows us to rewrite the following expressions
+\begin{align}\label{eq:products}
+  \begin{split}
+    \hat{T}^{\dagger}(\bm{k_0})\hat{\bm{k}}\hat{T}(\bm{k_0})& = \hat{\bm{k}} - \bm{k_0}\hat{\mathbb{I}}\\
+    \hat{T}(\bm{k_0})\hat{\bm{k}}\hat{T}^{\dagger}(\bm{k_0})& = \hat{\bm{k}} + \bm{k_0}\hat{\mathbb{I}}  
+  \end{split}
+\end{align}
+
+We now recognize the two exponentials in Eq.~\eqref{eq:ourL} as being
+the real-space representation of $\hat{T}^2(\bm{k_0})$ and its
+hermitian conjugate. This motivates us to define the following unitary
+operator
+%
+\begin{equation}\label{eq:ucal}
+  \hat{{\cal T}}(\bm{k_0}) = \mat{\hat{T}(\bm{k_0})}{0}{0}{\hat{T}^{\dagger}(\bm{k_0})}
+\end{equation}
+% 
+such that a unitary transformation of our operator $\Lca$ now restores translational
+symmetry. Indeed, one can see that
+%
+\begin{equation}\label{eq:translated-L}
+  \hat{{\cal T}} \hat{\Lca} \hat{{\cal T}}^{\dagger} = \mat{\frac{\left(\kop + \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0}{g N_0 \psi_0^2}{- g N_0 \psi_0^{\star 2}}{-\left[\frac{\left(\kop - \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0 \right]}
+\end{equation}
+% 
+where we have make use of Eqs.~\eqref{eq:products} and we have written
+$\hat{\Lca}$ in a base-independent representation.  In the subspace of
+momentum eigenstates $\ket{\kv}$, we can write the (right-)eigenvalue
+equation corresponding to Eq.~\eqref{eq:translated-L} as
+%
+\begin{equation}\label{eq:right-eigen}
+  \Lca_{\text{GP}} [k] \colvec{U_\sigma(k)}{V_\sigma(k)} = \epsilon_\sigma(k) \colvec{U_\sigma(k)}{V_\sigma(k)}
+\end{equation}
+% 
+where we have recovered the matrix representation of
+Eq.~\eqref{eq:LGP}, and introduced the notation
+$\omega_\sigma(\kv) = \bm{v}_0 \kv + \epsilon_\sigma(k)$. Here
+$\sigma = \pm$ labels the 2 different eigenmodes and we defined
+$\bm{v}_0 \equiv \frac{\kv_0}{m}$ as the speed of the condensate.
+
+Notice that the $k=0$ mode has only one eigenvector. However, one can
+safely exclude it as this mode does not imply energy or momentum
+transport. Excluding the $k = 0$ point, one can then solve
+Eq.~\eqref{eq:right-eigen} and obtain the celebrated Bogoliubov
+excitation spectrum
+%
+\begin{equation}\label{eq:bogoliubov}
+  \epsilon_\sigma(k) = \sigma \left[\frac{k^2}{2m}\left(\frac{k^2}{2m} + 2 g \rho_0 \right) \right]^{\frac{1}{2}}
+\end{equation}
+% 
+with $\sigma = \pm$. Notice that the complex amplitudes $U_\sigma(k)$,
+$V_\sigma(k)$ only depend on the absolute value of $\kv$, while the
+(real) spectrum of Eq.~\eqref{eq:translated-L}, $\omega_\sigma(\kv)$
+is the Bogoliubov spectrum with an additional Galilean boost
+$\bm{v}_0 \kv$.
+
+As can be seen from Eq.~\eqref{eq:symmetry-2}, the 2 eigen-families
+$\sigma$ and $-\sigma$ are linked by a duality, stemming from the
+$\cal{P} \cal{T}$ symmetry\footnote{This can be actually formally
+  proven after defining the parity and time-reversal operators
+  corresponding to our problem. For details, see
+  Ref.~\cite{MOSTAFAZADEH_2010}.} of the Bogoliubov operator $\Lca$.
+We therefore drop the subscript and make the convention that
+$\left( U,\, V \right) \equiv \left( U_{+},\, V_{+}
+\right)$. Furthermore, making use of Eq.~\eqref{eq:symmetry-1}, we can
+act with $\sigma_3$ on the eigenstates of $\Lca_{\text{GP}}$ to obtain
+the ones of $\Lca_{\text{GP}}^{\dagger}$. 
+
+This finally leads us to a biorthonormal basis
+$\left\{ \ket{\psi_\sigma^R(\kv)},\, \ket{\psi_\sigma^L(\kv)} \right\}$
+with 4 basis vectors
+%
+\begin{equation}\label{eq:biorthobasis}
+  \left\{ \colvec{U(k)}{V(k)}, \colvec{V^{\star}(k)}{U^{\star}(k)}, \colvec{U(k)}{-V(k)}, \colvec{-V^{\star}(k)}{U^{\star}(k)} \right\} \bigotimes \ket{\kv}
+\end{equation}
+% 
+which fulfills the orthonormality condition
+%
+\begin{equation}\label{eq:binormality}
+  \braket{\psi_{\sigma^{\prime}}^L(\kv^{\prime})}{\psi_\sigma^R(\kv)} = \delta_{\sigma,\sigma^{\prime}} \delta^2(\kv - \kv^{\prime})
+\end{equation}
+% 
+provided of course that we normalize in such a way that
+$\abs{U(k)}^2 - \abs{V(k)}^2 = 1$, and the completeness relation
+%
+\begin{equation}\label{eq:bicompleteness}
+  \sum_{\sigma = \pm} \int d^2 \kv \ket{\psi_\sigma^R(\kv)}\bra{\psi_\sigma^L(\kv)} = 1
+\end{equation}
+% 
+In this basis, the spectral decomposition of
+Eq.~\eqref{eq:translated-L} is of the diagonal form
+%
+\begin{equation}\label{eq:bidecomposition}
+  \hat{{\cal T}} \hat{\Lca} \hat{{\cal T}}^{\dagger} = \sum_{\sigma = \pm} \int d^2 \kv \omega_\sigma(\kv) \ket{\psi_\sigma^R(\kv)}\bra{\psi_\sigma^L(\kv)}
+\end{equation}
+% 
+It is now a trivial matter to solve the linearized evolution equation
+Eq.~\eqref{eq:GP-atoms-system} for our problem. In particular, for a
+localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$, ...
+
+
+
 
 
 %%% Local Variables:
