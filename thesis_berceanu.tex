@@ -64,15 +64,41 @@
 \hyphenation{Ber-cea-nu Mar-chet-ti Ca-ru-sot-to}
 
 % Abbreviations:
-\newcommand{\Cca}{\mathcal{C}}
+\newcommand*{\Lca}{\mathcal{L}}
 
-\newcommand{\la}{\langle}
-\newcommand{\ra}{\rangle}
 
-\newcommand{\zb}{\bar{z}}
-\newcommand{\e}{\epsilon}
+\newcommand*{\la}{\langle}
+\newcommand*{\ra}{\rangle}
+\newcommand*{\abs}[1]{\vert #1 \vert}
+\newcommand*{\bra}[1]{\langle #1 \vert}
+\newcommand*{\ket}[1]{\vert #1 \rangle}
+\newcommand*{\braket}[2]{\langle #1 \vert #2 \rangle}
 
-\newcommand{\etal}{\emph{et al.}}
+\newcommand*{\zb}{\bar{z}}
+\newcommand*{\e}{\epsilon}
+
+\newcommand*{\rv}{\bm{r}}
+\newcommand*{\kv}{\bm{k}}
+\newcommand*{\kop}{\hat{\bm{k}}}
+
+
+% \colvec{a}{b}
+\newcommand*\colvec[2]{
+  \begin{pmatrix}
+    #1\\
+    #2
+  \end{pmatrix}
+}
+
+% \mat{a}{b}{c}{d}
+\newcommand*{\mat}[4]{
+  \begin{pmatrix}
+    #1 & #2\\
+    #3 & #4
+  \end{pmatrix}
+}
+
+\newcommand*{\etal}{\emph{et al.}}
 
 \DeclareMathOperator{\real}{Re}
 \DeclareMathOperator{\imag}{Im}
