@@ -506,14 +506,14 @@ transformation and truncating the interaction terms at fourth order
 results in the following three-part effective Hamiltonian
 %
 \begin{equation}\label{eq:total-ham}
-  H_{\text{eff}} = H_0 + H_{XC}^{\text{sat}} + H_{\text{XX}}
+  H_{\text{eff}} = H_0  + H_{\text{XX}} + H_{XC}^{\text{sat}}
 \end{equation}
 % 
 where we have defined
 \begin{align}
   H_0 & =\sum_{\kv}\left(a_{\kv}^{\dagger},\, b_{\kv}^{\dagger}\right)\mat{E_C(k)}{\Omega_R}{\Omega_R}{E_X(k)}\colvec{a_{\kv}}{b_{\kv}}\label{eq:polariton-ham}\\
-  H_{XC}^{\text{sat}} & =-\frac{\Omega_R}{\rho_{\text{sat}}A}\sum_{\kv,\kv^{\prime},\bm{q}}\left(b_{\kv^{\prime}-\bm{q}}^{\dagger}b_{\kv + \bm{q}}^{\dagger}b_{\kv}a_{\kv^{\prime}} + \text{H.c.}\right)\label{eq:saturation-ham}\\
   H_{\text{XX}} & =\frac{1}{2}\sum_{\kv,\kv^{\prime},\bm{q}}U_{\kv - \kv^{\prime},\bm{q}}b_{\kv + \bm{q}}^{\dagger}b_{\kv^{\prime} - \bm{q}}^{\dagger}b_{\kv^{\prime}}b_{\kv}\label{eq:interaction-ham}\\
+  H_{XC}^{\text{sat}} & =-\frac{\Omega_R}{\rho_{\text{sat}}A}\sum_{\kv,\kv^{\prime},\bm{q}}\left(b_{\kv^{\prime}-\bm{q}}^{\dagger}b_{\kv + \bm{q}}^{\dagger}b_{\kv}a_{\kv^{\prime}} + \text{H.c.}\right)\label{eq:saturation-ham}
 \end{align}
 $H_0$ contains the kinetic energy of the excitons and cavity photons,
 as well as their harmonic coupling, ie. the conversion of an exciton
@@ -553,19 +553,86 @@ Fig.~\ref{fig:polariton-dispersion}, together with the dispersions of
 the cavity photons and excitons.
 
 Note that the 1s-exciton energy can be approximated as
-$E_X(k) = E_X(0) + \frac{k^2}{2M}$, with the exicton mass $M$ of the
+$E_X(k) = E_X(0) + \frac{k^2}{2M}$, with the exciton mass $M$ of the
 order of the electron mass. Since, as we have already noted, this is
 several orders of magnitude larger than the cavity photon mass
 $m_{\text{cav}}$, one can in practice neglect the momentum dependence
-of the exciton dispersion. Furthermore, we can agree to measure
-energies starting from $E_X(0)$.
+of the exciton dispersion and consider it to be flat. Furthermore, we
+can agree to measure energies starting from $E_X(0)$ and denote the
+detuning between exciton and photon bands as
+$\delta \equiv E_C(0) - E_X(0)$. For zero detuning ($\delta = 0$), the
+splitting between the two polariton branches is $2\Omega_R$.
 
-Angle
+Also note that the spectrum in Fig.~\ref{fig:polariton-dispersion} is
+represented as a function of the angle $\theta$ of emission of a
+photon out of the cavity, as depicted in
+Fig.~\ref{fig:cavity-polaritons}. Conservation of in-plane momentum
+and photon frequency dictates that a laser beam coming in at an angle
+$\theta$ and frequency $\omega$ resonantly excites a microcavity mode
+with wave vector $k_{\parallel} = \frac{\omega}{c}\sin(\theta)$.
 
+$H_{\text{XX}}$ quantifies the effective repulsive exciton-exciton
+interaction, with a momentum-dependent strength
+$U_{\kv - \kv^{\prime},\bm{q}}$ that can be calculated from the
+Coulomb exchange term in the Born approximation. A further
+approximation, for wave vectors much smaller than the inverse exciton
+radius $\lambda_X^{-1}$, is to reduce $U$ to a contact potential
+$g_X \equiv U_{\bm{0},\bm{0}} =
+\frac{6e^2\lambda_X}{A\epsilon}$. Physically, this represents the
+interaction between two excitons in the same single-particle momentum
+eigenstate $\kv$.
 
+Finally, the last term of Eq.~\eqref{eq:total-ham},
+$H_{\text{XC}}^{\text{sat}}$, can be interpreted as a saturation
+effect due to the Pauli exclusion principle underlying the fermionic
+character of the excitons. The exciton saturation density
+$\rho_{\text{sat}} = \frac{7}{16\pi\lambda_X^2}$ for the problems we
+will be treating in the remainder of this manuscript can be considered
+large enough to justify neglecting this anharmonic contribution to the
+total Hamiltonian.
 
+For temperatures smaller than the Rabi splitting between the two
+polariton branches, we can neglect the upper polaritons and project
+Eq.~\eqref{eq:total-ham} on the basis of lower-polariton states
+only. Applying the approximations we just mentioned, we obtain the
+lower-polariton Hamiltonian
+%
+\begin{equation}\label{eq:LP-ham}
+  H_{\text{LP}} = \sum_{\kv} E_{\text{LP}}(k) p_{\kv}^{\dagger} p_{\kv} + \sum_{\kv,\kv^{\prime},\bm{q}} g_{\kv,\kv^{\prime},\bm{q}}\, p^{\dagger}_{\kv + \bm{q}} p^{\dagger}_{\kv^{\prime} - \bm{q}} p_{\kv} p_{\kv^{\prime}}
+\end{equation}
+% 
+where the strength of the repulsive interaction between lower
+polaritons now depends on in-plane momentum through the Hopfield
+coefficients
+%
+\begin{equation}\label{eq:g-eff}
+  g_{\kv,\kv^{\prime},\bm{q}} = g_X X_{\kv + \bm{q}}X_{\kv^{\prime}}X_{\kv^{\prime} - \bm{q}}X_{\kv}
+\end{equation}
+% 
+The physical meaning of the quantities $\abs{X_k}^2$ and $\abs{C_k}^2$
+is the excitionic and photonic fractions of the lower lower polariton
+mode. Their momentum dependence is not very pronounced, as for
+$\delta = 0$, $X_k$ is between $1/\sqrt{2}$ and $1$.
 
-
+Consider now the low-temperature case, where the polaritons form a
+BEC-like condensate in the momentum eigenstate $\ket{\kv}$. In this
+case, since we have the macroscopic ocupation of a single particle
+state, we can follow the standard Bogoliubov prescription and treat
+the operator $p_{\kv}$ as a classical wavefunction, which we will
+denote by $\psi_{\kv}$. The time-evolution of this classical object is
+a Gross-Pitaevksii-like equation obtained from Heisenberg's equation
+of motion
+$i \partial_t \psi_{\kv} = \left[\psi_{\kv},\, H_{\text{LP}}\right]$.
+Since polariton condensates are intrinsically out-of-equilibrium
+systems, one also had to add additional terms in order to describe
+pumping and losses. We therefore get a driven-dissipative mean-field
+equation, which in momentum space reads
+%
+\begin{multline}\label{eq:mom-GPE}
+  i\partial_t\psi_{\kv} = \left[E_{\text{LP}}(k) - \frac{i}{2} \gamma_k\right]\psi_{\kv} + \sum_{\kv_1,\kv_2} g_{\kv,\kv_1,\kv_2} \psi^{\star}_{\kv_1 + \kv_2 - \kv} \psi_{\kv_2} \psi_{\kv_1}\\
+  + C_k f_p \exp{\left(-i \omega_pt\right)} \delta_{\kv,\kv_{p}}
+\end{multline}
+% 
 
 
 
