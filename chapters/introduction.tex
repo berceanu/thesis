@@ -439,7 +439,7 @@ From Ref.~\cite{Kasprzak_2006}.
 We start by writing down the kinetic energy of the photons
 %
 \begin{equation}\label{eq:cavity-energy}
-  H_{C} = \sum_{\kv} E_C(k) a_{\kv}^{\dagger} a_{\kv}
+  H_{C} = \sum_{\kv} \omega_C(k) a_{\kv}^{\dagger} a_{\kv}
 \end{equation}
 % 
 where we've made use of the translational symmetry of the problem in
@@ -450,13 +450,13 @@ of the photon momentum $k_z = \frac{2 \pi N}{l_z}$, with
 $N = 1,2,\dots$ indexing the longitudinal modes ($N=5$ in
 Fig.~\ref{fig:cavity-polaritons}) and $l_z$ being the cavity width,
 i.e. the distance between the mirrors. The cavity photon dispersion
-for each of these modes is therefore $E_C(k) = v \sqrt{k^2 + k_z^2}$,
+for each of these modes is therefore $\omega_C(k) = v \sqrt{k^2 + k_z^2}$,
 with $v$ the speed of light in the semiconductor. Expanding the square
 root for $k \ll k_z$, one has
-$E_C(k) \approx E_C(0) + \frac{k^2}{2m_{C}}$. We see that
+$\omega_C(k) \approx \omega_C(0) + \frac{k^2}{2m_{C}}$. We see that
 cavity photons, as opposed to free-space photons, have a quadratic
 dispersion with an effective mass
-$m_{C} = \frac{E_C(0)}{v^2}$. For typical cavities used in
+$m_{C} = \frac{\omega_C(0)}{v^2}$. For typical cavities used in
 experiments, $m_{C}$ is of the order of $10^{-5}$ (free)
 electron masses $m_e^0$.
 
@@ -500,7 +500,7 @@ dipole and rotating wave approximations, we have
 \end{equation}
 % 
 with the strength
-$G(q) = e \mu_{\text{cv}}\sqrt{\frac{E_C(q)}{2\epsilon A l_z}}$
+$G(q) = e \mu_{\text{cv}}\sqrt{\frac{\omega_C(q)}{2\epsilon A l_z}}$
 written in the dipole gauge, where $\mu_{\text{cv}}$ is the inter-band
 dipole matrix element.
 
@@ -523,7 +523,7 @@ results in the following three-part effective Hamiltonian
 % 
 where we have defined
 \begin{align}
-  H_0 & =\sum_{\kv}\left(a_{\kv}^{\dagger},\, b_{\kv}^{\dagger}\right)\mat{E_C(k)}{\Omega_R}{\Omega_R}{E_X(k)}\colvec{a_{\kv}}{b_{\kv}}\label{eq:polariton-ham}\\
+  H_0 & =\sum_{\kv}\left(a_{\kv}^{\dagger},\, b_{\kv}^{\dagger}\right)\mat{\omega_C(k)}{\Omega_R}{\Omega_R}{\omega_X(k)}\colvec{a_{\kv}}{b_{\kv}}\label{eq:polariton-ham}\\
   H_{\text{XX}} & =\frac{1}{2}\sum_{\kv,\kv^{\prime},\bm{q}}U_{\kv - \kv^{\prime},\bm{q}}b_{\kv + \bm{q}}^{\dagger}b_{\kv^{\prime} - \bm{q}}^{\dagger}b_{\kv^{\prime}}b_{\kv}\label{eq:interaction-ham}\\
   H_{XC}^{\text{sat}} & =-\frac{\Omega_R}{\rho_{\text{sat}}A}\sum_{\kv,\kv^{\prime},\bm{q}}\left(b_{\kv^{\prime}-\bm{q}}^{\dagger}b_{\kv + \bm{q}}^{\dagger}b_{\kv}a_{\kv^{\prime}} + \text{H.c.}\right)\label{eq:saturation-ham}
 \end{align}
@@ -546,35 +546,35 @@ eigen-energies
   \includegraphics[width=.5\linewidth]{polariton_dispersion}
   \caption{
     % 
-    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity. This angle is connected to the momentum $k$ of polaritons inside the cavity by the relation $ck = E_{\text{LP}}(k) \sin \theta$. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Notice the very sharp dispersion of the polaritons compared to excitons, due to the light mass of their photonic component.
+    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity. This angle is connected to the momentum $k$ of polaritons inside the cavity by the relation $ck = \omega_{\text{LP}}(k) \sin \theta$. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Notice the very sharp dispersion of the polaritons compared to excitons, due to the light mass of their photonic component.
 From Ref.~\cite{Keeling_2007}.
     % 
 }\label{fig:polariton-dispersion}
 \end{figure}
 % 
 \begin{equation}\label{eq:polariton-dispersion}
-  E_{\text{UP,LP}}(k) = \frac{1}{2}\left(E_C(k) + E_X(k)\right) \pm \frac{1}{2}\left[\left(E_C(k) - E_X(k)\right)^2 + 4 \Omega_R^2\right]^{1/2}
+  \omega_{\text{UP,LP}}(k) = \frac{1}{2}\left(\omega_C(k) + \omega_X(k)\right) \pm \frac{1}{2}\left[\left(\omega_C(k) - \omega_X(k)\right)^2 + 4 \Omega_R^2\right]^{1/2}
 \end{equation}
 % 
 whereas the Hopfield coefficients appearing in Eq.~\eqref{eq:hopfield-trans} are
 \begin{align}
-  X_k & =\left[1 + \left(\frac{\Omega_R}{E_{\text{LP}}(k) - E_C(k)}\right)^2\right]^{-1/2}\label{eq:hopfield-X}\\
-  C_k & =-\left[1 + \left(\frac{E_{\text{LP}}(k) - E_C(k)}{\Omega_R}\right)^2\right]^{-1/2}
+  X_k & =\left[1 + \left(\frac{\Omega_R}{\omega_{\text{LP}}(k) - \omega_C(k)}\right)^2\right]^{-1/2}\label{eq:hopfield-X}\\
+  C_k & =-\left[1 + \left(\frac{\omega_{\text{LP}}(k) - \omega_C(k)}{\Omega_R}\right)^2\right]^{-1/2}
 \end{align}
 The two branches of the polaritonic dispersion relation are shown in
 Fig.~\ref{fig:polariton-dispersion}, together with the dispersions of
 the cavity photons and excitons.
 
 Note that the 1s-exciton energy can be approximated as
-$E_X(k) = E_X(0) + \frac{k^2}{2M}$, with the exciton mass
+$\omega_X(k) = \omega_X(0) + \frac{k^2}{2M}$, with the exciton mass
 $M = m_e + m_h$ of the order of the electron mass and
-$E_X(0) = \varepsilon_g - \Ry_X$. Since, as we have already noted, $M$
+$\omega_X(0) = \varepsilon_g - \Ry_X$. Since, as we have already noted, $M$
 is several orders of magnitude larger than the cavity photon mass
 $m_{C}$, one can in practice neglect the momentum dependence
 of the excitonic dispersion and consider it to be flat. Furthermore,
-we can agree to measure energies starting from $E_X(0)$ and denote the
+we can agree to measure energies starting from $\omega_X(0)$ and denote the
 detuning between exciton and photon bands as
-$\delta \equiv E_C(0) - E_X(0)$. For zero detuning ($\delta = 0$), the
+$\delta \equiv \omega_C(0) - \omega_X(0)$. For zero detuning ($\delta = 0$), the
 splitting between the two polariton branches is $2\Omega_R$. In order
 to tune $\delta$ in experiments, one tipically builds the cavity
 mirrors with a wedge.
@@ -650,7 +650,7 @@ only. Employing the approximations we just mentioned, we obtain the
 lower-polariton Hamiltonian
 %
 \begin{equation}\label{eq:LP-ham}
-  H_{\text{LP}} = \sum_{\kv} E_{\text{LP}}(k) p_{\kv}^{\dagger} p_{\kv} + \sum_{\kv,\kv^{\prime},\bm{q}} V^{\text{eff}}_{\kv,\kv^{\prime},\bm{q}}\, p^{\dagger}_{\kv + \bm{q}} p^{\dagger}_{\kv^{\prime} - \bm{q}} p_{\kv} p_{\kv^{\prime}}
+  H_{\text{LP}} = \sum_{\kv} \omega_{\text{LP}}(k) p_{\kv}^{\dagger} p_{\kv} + \sum_{\kv,\kv^{\prime},\bm{q}} V^{\text{eff}}_{\kv,\kv^{\prime},\bm{q}}\, p^{\dagger}_{\kv + \bm{q}} p^{\dagger}_{\kv^{\prime} - \bm{q}} p_{\kv} p_{\kv^{\prime}}
 \end{equation}
 % 
 where the strength of the repulsive interaction between lower
@@ -684,7 +684,7 @@ pumping and losses. We therefore get a driven-dissipative mean-field
 equation, which in momentum space reads
 %
 \begin{multline}\label{eq:mom-GPE}
-  i\partial_t\psi_{\kv} = \left[E_{\text{LP}}(k) - \frac{i}{2} \gamma_k\right]\psi_{\kv} + \sum_{\kv_1,\kv_2} g_{\kv,\kv_1,\kv_2} \psi^{\star}_{\kv_1 + \kv_2 - \kv} \psi_{\kv_2} \psi_{\kv_1}\\
+  i\partial_t\psi_{\kv} = \left[\omega_{\text{LP}}(k) - \frac{i}{2} \gamma_k\right]\psi_{\kv} + \sum_{\kv_1,\kv_2} g_{\kv,\kv_1,\kv_2} \psi^{\star}_{\kv_1 + \kv_2 - \kv} \psi_{\kv_2} \psi_{\kv_1}\\
   + C_k f_p \exp{\left(-i \omega_pt\right)} \delta_{\kv,\kv_{p}}
 \end{multline}
 % 
@@ -713,19 +713,20 @@ Eq.~\eqref{eq:saturation-ham}.
   \centering
   \begin{tabular}{@{}ll@{}} \toprule
     QW & Cavity \\ \midrule
-    $\epsilon \simeq 13$ &  $E_C(0) \simeq E_X(0) \simeq 1.53$~eV\\
+    $\epsilon \simeq 13$ &  $\omega_C(0) \simeq \omega_X(0) \simeq 1.53$~eV\\
     $m_e = 0.063m^0_e$    &  $\delta \in [-10,10]$~meV\\
     $m_h = 0.3m^0_e$      &  $m_{C} = 2.3\times 10^{-5} m^0_e$ \\
     $\lambda_X \simeq 7$~nm   & $\ell_{C} = 0.868~\mu$m\\
     $\Ry_X \simeq 17$~meV &  $\Omega_R \simeq 2.2$~meV \\
     $\gamma_X \sim \mu$eV &  $\gamma_C = 0.1$~meV \\ 
-    $g_X \simeq 5\times10^{-3}$~meV($\mu$m)$^2$ &  $A = 10^4~\mu$m$^2$\\
+    $g_X \simeq 5\times10^{-3}$~meV($\mu$m)$^2$ &  $A \sim 10^4~\mu$m$^2$\\
     $\rho_{\text{sat}} \simeq 2842~$($\mu$m)$^{-2}$ &  $l_z \sim 1~\mu$m\\ \bottomrule
   \end{tabular}
   \caption{Typical parameters of a microcavity containing GaAs QWs, from Ref.~\cite{9783642241857}. Left column shows values concerning the QW while the right one refers to the microcavity.}
   \label{tab:GaAs-params}
 \end{table}
 %
+
 
 
 %TODO: explanation of terms
