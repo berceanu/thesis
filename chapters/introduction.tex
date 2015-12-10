@@ -406,36 +406,44 @@ localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$,
 \label{sec:polaritons}
 
 
-Consider the following (simplified) physical system. We have a bunch
-of photons confined within the metalic mirrors of an optical cavity
-which also contains a 2D semiconductor quantum well (QW), as shown in
-Fig.~\ref{fig:cavity-polaritons}. The photons continuously create
-electron-hole pairs, which go by the name of excitons, within the
-QW. The excitons in turn recombine, emiting photons, which every so
-often escape through the imperfect cavity mirrors. If one uses a
-continuous wave laser to replenish the lost photons, a steady state
-can eventually be reached where the pumping balances the losses. The
-system is however in a driven-dissipative state, out of thermal
-equilibrium.
+\subsection{Model system}
+\label{subsec:model}
 
-Exactly describing the system of electrons, holes and photons, taking
-into account their Coulomb interaction and the disorder created by
-defects inside the QW, as well as imperfections in the mirrors would
-not allow for much physical insight into this problem. We therefore
-use a series of approximations in order to construct an effective
-Hamiltonian description of the system.
+
+
+Consider the following (simplified) physical system. We have an
+optical cavity containing photons confined along the growth direction
+$z$ by its metalic mirrors. At position $z_{\text{QW}}$, the cavity
+contains a 2D quantum well (QW), which is a thin semiconductor layer
+sandwitched in between another alloy acting as a barrier. The setup is
+shown in Fig.~\ref{fig:cavity-polaritons} (for an in-depth
+introduction to the physics of semiconductor microcavities, see
+Ref.~\cite{9780199228942}). The photons create electron-hole
+hydrogenlike bound pairs (excitons) confined by the barrier inside the
+QW. Exactly describing the system of electrons, holes and photons,
+taking into account their Coulomb interaction and the disorder created
+by defects inside the QW, as well as imperfections present in the
+cavity mirrors is a daunting task that would also not provide much
+physical insight into this system. We therefore use a series of
+approximations and construct an effective Hamiltonian description that
+is more physically transparent.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.8\linewidth]{cavity}
   \caption{
     % 
-    Pictorial representation of microcavity polaritons, as electron-hole pairs (excitons) inside a semiconductor quantum well, 
-coupled with the photons trapped by the dielectric Bragg mirrors of the cavity. To excite the polariton mode with wave-vector $\kv$, a beam with incidence angle $\theta$ has to hit the microcavity, such that $k c = \omega \sin\theta$, with $\omega$ being the beam frequency.
-From Ref.~\cite{Kasprzak_2006}.
+    Pictorial representation of microcavity polaritons, as electron-hole pairs (excitons) inside a semiconductor quantum well (QW), 
+    coupled with the photons trapped by the dielectric Bragg mirrors of the cavity. 
+    Momentum conservation dictates that a cavity field component of momentum $\kv$ must decay into external radiation of frequency $\omega$, emitted at an angle $\theta$ satisfying $k c = \omega \sin\theta$.
+    From Ref.~\cite{Kasprzak_2006}.
     % 
-}\label{fig:cavity-polaritons}
+  }\label{fig:cavity-polaritons}
 \end{figure}
-% 
+
+\subsection{Microscopic description}
+\label{subsec:microscopic}
+
+
 We start by writing down the kinetic energy of the photons
 %
 \begin{equation}\label{eq:cavity-energy}
@@ -445,20 +453,38 @@ We start by writing down the kinetic energy of the photons
 where we've made use of the translational symmetry of the problem in
 the $(x,y)$ plane and labeled the bosonic creation (annihilation)
 operators $a_{\kv}^{\dagger}$ ($a_{\kv}$) by the in-plane momentum
-$\kv$. The confinement along the $z$ direction leads to quantization
-of the photon momentum $k_z = \frac{2 \pi N}{l_z}$, with
-$N = 1,2,\dots$ indexing the longitudinal modes ($N=5$ in
+$\kv$. These operators satisfy the standard commutation relations
+\begin{align}
+  \left[a_{\kv}, a_{\kv^{\prime}}^{\dagger}\right] & =\delta_{\kv,\kv^{\prime}}\\
+  \left[a_{\kv}, a_{\kv^{\prime}}\right] & =\left[a_{\kv}^{\dagger}, a_{\kv^{\prime}}^{\dagger}\right] = 0
+\end{align}
+
+The confinement along the $z$ direction leads to the quantization of
+the photon momentum $k_z = 2 \pi N/l_z$, with $N = 1,2,\dots$
+indexing the longitudinal modes ($N=5$ in
 Fig.~\ref{fig:cavity-polaritons}) and $l_z$ being the cavity width,
-i.e. the distance between the mirrors. The cavity photon dispersion
-for each of these modes is therefore $\omega_C(k) = v \sqrt{k^2 + k_z^2}$,
-with $v$ the speed of light in the semiconductor. Expanding the square
-root for $k \ll k_z$, one has
-$\omega_C(k) \approx \omega_C(0) + \frac{k^2}{2m_{C}}$. We see that
+i.e. the distance between the
+mirrors. Fig.~\ref{fig:cavity-polaritons} depicts the photonic field
+as a standing wave, which is the measurable electric field inside the
+cavity. This field can be expressed in terms of photonic operators by
+$E(\kv,z)a_{\kv} +$ H.c., where the photon mode wavefunction
+$E(\kv,z)$ has the sinusoidal shape~\cite{Carusotto_2013}
+%
+\begin{equation}\label{eq:electric-field}
+  E(\kv,z) \propto \sqrt{\omega_C(k)/l_z} \sin \left(k_z z\right)
+\end{equation}
+% 
+
+
+The cavity photon dispersion for each of these modes is therefore
+$\omega_C(k) = v \sqrt{k^2 + k_z^2}$, with $v$ the speed of light in
+the semiconductor. Expanding the square root for $k \ll k_z$, one has
+$\omega_C(k) \approx \omega_C(0) + k^2/(2m_{C})$. We see that
 cavity photons, as opposed to free-space photons, have a quadratic
-dispersion with an effective mass
-$m_{C} = \frac{\omega_C(0)}{v^2}$. For typical cavities used in
-experiments, $m_{C}$ is of the order of $10^{-5}$ (free)
-electron masses $m_e^0$.
+dispersion with an effective mass related to the cutoff frequency
+$\omega_C(0)$ by $m_{C} v^2 = \omega_C(0)$. For typical cavities used
+in experiments, $m_{C}$ is of the order of $10^{-5}$ (free) electron
+masses $m_e^0$ (see Tab.~\ref{tab:GaAs-params}).
 
 We now turn our attention to the semiconductor QW. For simplicity,
 consider a spin-polarized direct bandgap semiconductor such as GaAs,
@@ -475,9 +501,16 @@ constant, $e$ the electron charge and $\mu^{-1} = m_e^{-1} + m_h^{-1}$
 their reduced mass. Their binding energy is called the exciton
 Rydberg, defined as $\Ry_X = \frac{e^2}{\epsilon \lambda_X}$.
 
-Defining $c_{\kv}^{\dagger}$ and $v_{\kv}$ as the operators creating
-an electron in the empty conduction band, respectively a hole in the
-filled valence band, we can write the electronic hamiltonian as
+We define $c_{\kv}^{\dagger}$ and $v_{\kv}$ as the operators which
+create an electron in the empty conduction band, respectively a hole
+in the filled valence band, and which obey the Fermi anticommutation
+rules
+\begin{align}
+  \left\{c_{\kv}, c_{\kv^{\prime}}^{\dagger}\right\} & =\delta_{\kv,\kv^{\prime}}\\
+  \left\{c_{\kv}, c_{\kv^{\prime}}\right\} & = \left\{c_{\kv}^{\dagger}, c_{\kv^{\prime}}^{\dagger}\right\} = 0
+\end{align}
+and similar for $v_{\kv}$. We can therefore write the electronic
+Hamiltonian in terms of these new operators as~\cite{Keeling_2007}
 %
 \begin{equation}\label{eq:coulomb-hamiltonian}
   H_{\text{el}} = \sum_{\kv} \left( \varepsilon^c_k c_{\kv}^{\dagger} c_{\kv} + \varepsilon^v_k v_{\kv}^{\dagger} v_{\kv} \right) + \frac{1}{2}\sum_{\bm{q}} V_q \left( \rho^e_{\bm{q}} \rho^e_{-\bm{q}} + \rho^h_{\bm{q}} \rho^h_{-\bm{q}} -2 \rho^e_{\bm{q}} \rho^h_{-\bm{q}}\right)
@@ -493,7 +526,7 @@ over states to intragrals over $\kv$.
 
 Finally, the last ingredient of our microscopic description concerns
 the interaction between electrons and photons. Making use of the
-dipole and rotating wave approximations, we have
+dipole approximation, we have
 %
 \begin{equation}\label{eq:dipolar-inter}
   H_{\text{dipole}} = \sum_{\kv, \bm{q}} G(q) \left( a_{\bm{q}}^{\dagger} v_{\kv + \bm{q}}^{\dagger} c_{\kv} + \text{H.c.}\right)
@@ -504,6 +537,11 @@ $G(q) = e \mu_{\text{cv}}\sqrt{\frac{\omega_C(q)}{2\epsilon A l_z}}$
 written in the dipole gauge, where $\mu_{\text{cv}}$ is the inter-band
 dipole matrix element.
 
+
+\subsection{Effective Hamiltonian}
+\label{subsec:effective}
+
+
 We are interested in an approximate description of the problem where
 we can consider the excitons as fundamental quasiparticle excitations
 from the ground state of the semiconductor and treat the Coulomb term
@@ -511,11 +549,14 @@ in Eq.~\eqref{eq:coulomb-hamiltonian} as an effective exciton-exciton
 interaction. We then couple the resulting excitons to light, and
 obtain the so-called \textbf{weakly interacting boson model} for
 polaritons. The name stems from the fact that, at moderate
-electron-hole densities, one can assume excitons to behave esentially
-as bosons, and describe them using the Bose creation and annihilation
-operators $b_{\kv}^{\dagger}$ and $b_{\kv}$. Therefore, making an Usui
-transformation and truncating the interaction terms at fourth order
-results in the following three-part effective Hamiltonian
+electron-hole densities, such that the inter-exciton distance is much
+larger than $\lambda_X$, one can assume excitons to behave esentially
+as (composite) bosons~\cite{deveaud2003electron}, and therefore
+describe them using the Bose creation and annihilation operators
+$b_{\kv}^{\dagger}$ and $b_{\kv}$. Making an Usui
+transformation~\cite{Usui1960} and truncating the interaction terms at
+fourth order results in the following three-part effective
+Hamiltonian~\cite{Ciuti_2003}
 %
 \begin{equation}\label{eq:total-ham}
   H_{\text{eff}} = H_0  + H_{\text{XX}} + H_{XC}^{\text{sat}}
@@ -530,23 +571,41 @@ where we have defined
 $H_0$ contains the kinetic energy of the excitons and cavity photons,
 as well as their harmonic coupling, ie. the conversion of an exciton
 to a cavity photon at the Rabi frequency $\Omega_R$, which depends on
-the overlap between the wavefunctions of the exciton and photon and
-$\mu_{\text{cv}}$. Eq.~\eqref{eq:polariton-ham} can be diagonalized by
-means of a unitary transformation of the form
+the overlap between the wavefunctions of the exciton and photon
+through the  oscillator strength surface density $f_{\text{2D}}$ of
+the excitonic transition
+%
+\begin{equation}\label{eq:omega-R}
+  \Omega_R \propto \sqrt{\omega_C(0)l_z^{-1}f_{\text{2D}}} \frac{E(z_{\text{QW}})}{E_{\text{max}}}
+\end{equation}
+% 
+where $E_{\text{max}}$ is the maximum amplitude of the cavity photon
+electric field, at one of its antinodes from
+Eq.~\eqref{eq:electric-field}. It is worth noting that both
+Eq.~\eqref{eq:dipolar-inter} and Eq.~\eqref{eq:polariton-ham} make use
+of the rotating-wave approximation, neglecting antiresonant terms
+which do not conserve the number of excitations, such as
+$b_{\kv}a_{\kv}$ and $b_{\kv}^{\dagger}a_{\kv}^{\dagger}$. This is
+justified so long as $\Omega_R \ll \omega_C(0),\, \omega_X(0)$, which
+is normally the case, as can be seen by inspecting
+Tab.~\ref{tab:GaAs-params}.
+
+Eq.~\eqref{eq:polariton-ham} can be diagonalized by means of a unitary
+transformation of the form~\cite{Hopfield1958}
 %
 \begin{equation}\label{eq:hopfield-trans}
   \colvec{p_{\kv}}{u_{\kv}} = \mat{X_k}{C_k}{-C_k}{X_k} \colvec{b_{\kv}}{a_{\kv}}
 \end{equation}
 % 
-The normal modes of $H_0$ are called \textbf{upper and lower polaritons} and
-correspond to the Bose operators $u_{\kv}$ and $p_{\kv}$, with
-eigen-energies
+The normal modes of $H_0$ are called \textbf{upper and lower
+  polaritons} (UP and LP) and correspond to the Bose operators
+$u_{\kv}$ and $p_{\kv}$, with eigenenergies
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.5\linewidth]{polariton_dispersion}
   \caption{
     % 
-    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity. This angle is connected to the momentum $k$ of polaritons inside the cavity by the relation $ck = \omega_{\text{LP}}(k) \sin \theta$. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Notice the very sharp dispersion of the polaritons compared to excitons, due to the light mass of their photonic component.
+    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity, related to the momentum $\kv$ of polaritons inside the cavity. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Due to their light mass, the polaritons have a very sharp dispersion  compared to excitons. Also note the typical anticrossing form characteristic of strong light-matter coupling.
 From Ref.~\cite{Keeling_2007}.
     % 
 }\label{fig:polariton-dispersion}
@@ -556,97 +615,85 @@ From Ref.~\cite{Keeling_2007}.
   \omega_{\text{UP,LP}}(k) = \frac{1}{2}\left(\omega_C(k) + \omega_X(k)\right) \pm \frac{1}{2}\left[\left(\omega_C(k) - \omega_X(k)\right)^2 + 4 \Omega_R^2\right]^{1/2}
 \end{equation}
 % 
-whereas the Hopfield coefficients appearing in Eq.~\eqref{eq:hopfield-trans} are
+where the $\pm$ signs refer to the UP and LP branches and the Hopfield
+coefficients appearing in Eq.~\eqref{eq:hopfield-trans} are
 \begin{align}
   X_k & =\left[1 + \left(\frac{\Omega_R}{\omega_{\text{LP}}(k) - \omega_C(k)}\right)^2\right]^{-1/2}\label{eq:hopfield-X}\\
   C_k & =-\left[1 + \left(\frac{\omega_{\text{LP}}(k) - \omega_C(k)}{\Omega_R}\right)^2\right]^{-1/2}
 \end{align}
 The two branches of the polaritonic dispersion relation are shown in
 Fig.~\ref{fig:polariton-dispersion}, together with the dispersions of
-the cavity photons and excitons.
+the cavity photons and excitons. One can therefore think of polaritons
+as being massive photons dressed by matter excitations.
 
 Note that the 1s-exciton energy can be approximated as
 $\omega_X(k) = \omega_X(0) + \frac{k^2}{2M}$, with the exciton mass
 $M = m_e + m_h$ of the order of the electron mass and
-$\omega_X(0) = \varepsilon_g - \Ry_X$. Since, as we have already noted, $M$
-is several orders of magnitude larger than the cavity photon mass
-$m_{C}$, one can in practice neglect the momentum dependence
-of the excitonic dispersion and consider it to be flat. Furthermore,
-we can agree to measure energies starting from $\omega_X(0)$ and denote the
-detuning between exciton and photon bands as
-$\delta \equiv \omega_C(0) - \omega_X(0)$. For zero detuning ($\delta = 0$), the
-splitting between the two polariton branches is $2\Omega_R$. In order
-to tune $\delta$ in experiments, one tipically builds the cavity
-mirrors with a wedge.
+$\omega_X(0) = \varepsilon_g - \Ry_X$. Since, as we have already
+noted, $M$ is several orders of magnitude larger than the cavity
+photon mass $m_{C}$, one can in practice neglect the momentum
+dependence of the excitonic dispersion and consider it to be
+flat. Furthermore, we can agree to measure energies starting from
+$\omega_X(0)$ and denote the detuning between exciton and photon bands
+as $\delta \equiv \omega_C(0) - \omega_X(0)$. For zero detuning
+($\delta = 0$), the splitting between the two polariton branches is
+$2\Omega_R$. In order to tune $\delta$ in experiments, one tipically
+builds the cavity mirrors with a wedge~\cite{Weisbuch1992}.
 
-Also note that the spectrum in Fig.~\ref{fig:polariton-dispersion} is
-represented as a function of the angle $\theta$ of emission of a
-photon out of the cavity, as depicted in
-Fig.~\ref{fig:cavity-polaritons}. Conservation of in-plane momentum
-and photon frequency dictates that a laser beam coming in at an angle
-$\theta$ and frequency $\omega$ resonantly excites a microcavity mode
-with wave vector $k_{\parallel} = \frac{\omega}{c}\sin(\theta)$.
+
 
 $H_{\text{XX}}$ quantifies the effective repulsive exciton-exciton
-interaction, with a momentum-dependent strength
+interaction, with a momentum dependent strength
 $U_{\kv - \kv^{\prime},\bm{q}}$ that can be calculated from the
-Coulomb exchange term in the Born approximation. A further
-approximation, for wave vectors much smaller than $\lambda_X^{-1}$, is
-to reduce $U_{\kv - \kv^{\prime},\bm{q}}$ to a contact potential
+Coulomb exchange term in the Born approximation.  Notice that the
+form of this interaction corresponds to Feynman diagrams with
+4-legged vertices in quantum field theory language, implying binary
+collision with momentum conservation: two excitons in the planewave
+states $\ket{\kv}$ and $\ket{\kv^{\prime}}$ scatter into the new
+states $\ket{\bm{\kv+\bm{q}}}$ and $\ket{\bm{\kv^{\prime}-\bm{q}}}$.
+A further approximation that one can make for wave vectors much
+smaller than $\lambda_X^{-1}$ is to reduce
+$U_{\kv - \kv^{\prime},\bm{q}}$ to a contact potential
 $g_X \equiv \frac{1}{2} U_{\bm{0},\bm{0}} =
-\frac{6e^2\lambda_X}{2A\epsilon}$. As a result $g_X$ physically
-represents the interaction between two excitons in the same
-single-particle momentum eigenstate $\ket{\kv}$.
+\frac{6e^2\lambda_X}{2A\epsilon}$, as shown in
+Ref.~\cite{Ciuti1998}. As a result, $g_X$ physically represents the
+interaction between two excitons in the same single-particle momentum
+eigenstate $\ket{\kv}$.
 
 Finally, the last term of Eq.~\eqref{eq:total-ham},
 $H_{\text{XC}}^{\text{sat}}$, can be interpreted as a saturation
 effect due to the Pauli exclusion principle underlying the fermionic
-character of the excitons. The exciton saturation density
-$\rho_{\text{sat}} = \frac{7}{16\pi\lambda_X^2}$ for the problems we
-will be treating in the remainder of this manuscript can be considered
-large enough to justify neglecting this anharmonic contribution to the
-total Hamiltonian.
+character of the excitons~\cite{Tassone1999}. The exciton saturation
+density $\rho_{\text{sat}} \sim \frac{7}{16\pi\lambda_X^2}$ generally
+depends on the specific shape of the internal wavefunction of the
+exciton~\cite{Glazov2009}.  For the problems we will be treating in
+the remainder of this manuscript it can be considered large enough to
+justify neglecting this anharmonic contribution to the total
+Hamiltonian Eq.~\eqref{eq:total-ham} (see Tab.~\ref{tab:GaAs-params}).
 
-It is noteworthy to remark that Hamiltonian Eq.~\eqref{eq:total-ham}
-does not include any disorder. We have already mentioned that there
-are two distinct disorder classes in this problem. One is the
-excitonic disorder, acting on length scales of around 10 nm, which
-tipically affects the exciton oscillator strengths, but not the
-spatial polaritonic density. This type of disorder stems from
-variations in the QW thickness as well as alloy imperfections and is
-typically not strong enough to dissociate excitons. Neglecting
-excitonic disorder also implies that each localized exciton state
-couples to precisely one extended photon state. The resulting
-polaritons are then nothing but the superposition of these excitonic
-and photonic states.
-
-Photonic disorder, on the other hand, acts on lengthscales
-$\ell_{C} = (m_{C}\Omega_R)^{-1/2}$ on the order of microns (see
-Tab.~\ref{tab:GaAs-params}) and therefore can disrupt the polariton
-density profile. It is normally caused by imperfections in the cavity
-mirrors, which can act as scattering centers for the polaritons, and
-can be included in the Hamiltonian as an additional external
-potential. We will see some eloquent examples of polariton scattering
-in the following chapters. Typical decay rates for excitons
-($\gamma_X$) and cavity photons ($\gamma_C$) in GaAs-based
-microcavities are also shown in Tab.~\ref{tab:GaAs-params}.
-
-Last but not least, one should mention the validity limitations of the
-weakly interacting boson model for polaritons. Its derivation, by
-means of the Usui transformation, implies an expansion of the original
-fermionic operators from Eq.~\eqref{eq:coulomb-hamiltonian} in powers
-of bosonic operators, having as small parameter the number of excitons
-per Bohr radius $\lambda_X$. Truncating the series results in an upper
-bound on the exciton density of the order of $1/\lambda_X^2$. At
+Before concluding this Section, one should mention the validity
+limitations of the weakly interacting boson model for polaritons
+reviewed here. Its derivation, by means of the Usui transformation,
+implies an expansion of the original fermionic operators of
+Eq.~\eqref{eq:coulomb-hamiltonian} in powers of bosonic operators,
+having as small parameter the number of excitons per Bohr radius
+$\lambda_X$. Truncating this series at fourth order results in an
+upper bound on the exciton density of around $1/\lambda_X^2$. At
 higher densities, an electron-hole plasma-like state is formed, with a
-a qualitatively different behaviour.  We see that this model is
-particularly useful for the case when the dominant interaction is the
-Coulomb repulsion between the excitons.
+a qualitatively different behaviour~\cite{COMBESCOT2008}.  We see that
+this model is particularly useful for the case when the dominant
+interaction is the Coulomb repulsion between the excitons.
 
-For temperatures smaller than the Rabi splitting between the two
+\subsection{Lower polaritons}
+\label{subsec:lower-polaritons}
+
+%TODO: LP branch well approximated by parabolic dispersion with
+% effective mass $m_{\text{LP}}$ and cutoff freq $\omega_{\text{LP}}(0)$
+
+For temperatures much smaller than the Rabi splitting between the two
 polariton branches, we can neglect the upper polaritons and project
 Eq.~\eqref{eq:total-ham} on the basis of lower-polariton states
-only. Employing the approximations we just mentioned, we obtain the
+only. Employing the approximations discussed above, we obtain the
 lower-polariton Hamiltonian
 %
 \begin{equation}\label{eq:LP-ham}
@@ -659,37 +706,81 @@ coefficients\footnote{The interaction strength $g_X$ can usually be
   rescaled to 1 by a simple transformation.}
 %
 \begin{equation}\label{eq:g-eff}
-  V^{\text{eff}}_{\kv,\kv^{\prime},\bm{q}} = g_X X_{\kv + \bm{q}}X_{\kv^{\prime}}X_{\kv^{\prime} - \bm{q}}X_{\kv}
+  V^{\text{eff}}_{\kv,\kv^{\prime},\bm{q}} = g_X X_{\kv + \bm{q}}X_{\kv^{\prime} - \bm{q}}X_{\kv}X_{\kv^{\prime}}
 \end{equation}
 % 
+This effective interaction, originating from the binary Coulomb
+scattering of the excitons, is the one responsible for the collective
+behaviour of the polaritons, and in particular superfluid
+hydrodynamics, an aspect which we will explore in the next two chapters.
+
 Physically, the quantities $\abs{X_k}^2$ and $\abs{C_k}^2$ are the
-excitionic and photonic fractions of the lower lower polariton
+excitonic and photonic fractions of the lower lower polariton
 mode. Their momentum dependence is not very pronounced, as for
 $\delta = 0$, $X_k$ is between $1/\sqrt{2}$ and $1$ and if we are also
 at normal incidence, meaning $\kv = 0$, than the light and matter
 content of lower polaritons are each equal to $1/2$.
 
-Consider now the low-temperature case, where the polaritons form a
-BEC-like condensate in the momentum eigenstate $\ket{\kv}$. In this
-case, since we have the macroscopic ocupation of a single particle
-state, we can follow the standard Bogoliubov prescription and treat
-the operator $p_{\kv}$ as a classical wavefunction, which we will
-denote by $\psi_{\kv}$. The time-evolution of this classical object is
-a Gross-Pitaevksii-like equation obtained from Heisenberg's equation
-of motion
-$i \partial_t \psi_{\kv}(t) = \left[\psi_{\kv}(t),\, H_{\text{LP}}\right]$.
-Since polariton condensates are intrinsically out-of-equilibrium
-systems, one also had to add additional terms in order to describe
-pumping and losses. We therefore get a driven-dissipative mean-field
-equation, which in momentum space reads
-%
-\begin{multline}\label{eq:mom-GPE}
-  i\partial_t\psi_{\kv} = \left[\omega_{\text{LP}}(k) - \frac{i}{2} \gamma_k\right]\psi_{\kv} + \sum_{\kv_1,\kv_2} g_{\kv,\kv_1,\kv_2} \psi^{\star}_{\kv_1 + \kv_2 - \kv} \psi_{\kv_2} \psi_{\kv_1}\\
-  + C_k f_p \exp{\left(-i \omega_pt\right)} \delta_{\kv,\kv_{p}}
-\end{multline}
-% 
+\subsection{Disorder effects}
+\label{subsec:disorder}
 
-%%%%%%
+
+It is noteworthy to remark that Hamiltonian Eq.~\eqref{eq:total-ham}
+does not include any disorder. We have already mentioned that there
+are two distinct disorder classes in this problem. One is the
+excitonic disorder, acting on length scales of around 10 nanometers,
+which tipically affects the exciton oscillator strengths
+$f_{\text{2D}}$, but not the spatial polaritonic density. This type of
+disorder stems from variations in the QW thickness as well as alloy
+imperfections and is typically not strong enough to dissociate
+excitons. Neglecting excitonic disorder also implies that each
+localized exciton state couples to precisely one extended photon
+state. The resulting polaritons are then nothing but the coherent
+superposition of these excitonic and photonic states.
+
+Photonic disorder, on the other hand, acts on lengthscales
+$\ell_{C} = (m_{C}\Omega_R)^{-1/2}$ on the order of microns (see
+Tab.~\ref{tab:GaAs-params}) and therefore can disrupt the polariton
+density profile. It is normally caused by the presence of
+imperfections inherent to the growth process of the cavity
+mirrors. These defects can act as scattering centers for the
+polaritons, and can be included in the Hamiltonian as an additional
+external scalar potential. We will see some eloquent examples of
+polariton scattering in the following chapters.
+
+%TODO: add defect potential
+
+\subsection{Pumping and dissipation}
+\label{subsec:pumping}
+
+Also note that the spectrum in Fig.~\ref{fig:polariton-dispersion} is
+represented as a function of the angle $\theta$ of emission of a
+photon out of the cavity, as depicted in
+Fig.~\ref{fig:cavity-polaritons}. Conservation of in-plane momentum
+and photon frequency dictates that a laser beam coming in at an angle
+$\theta$ and frequency $\omega$ resonantly excites a microcavity mode
+with wave vector $k_{\parallel} = \frac{\omega}{c}\sin(\theta)$.
+
+Typical decay rates for excitons
+($\gamma_X$) and cavity photons ($\gamma_C$) in GaAs-based
+microcavities are also shown in Tab.~\ref{tab:GaAs-params}.
+
+%TODO: different types of pumping
+%TODO: directly excited by laser and detected via reflection/transmission 
+
+%TODO: near-field (far-field) emission from the cavity gives the real
+% (momentum) space photon density
+
+% If one uses a continuous wave laser to replenish
+% the lost photons, a steady state can eventually be reached where the
+% pumping balances the losses. The system is however in a
+% driven-dissipative state, out of thermal equilibrium.
+
+%TODO: strong coupling when Omega_R > losses (\gamma).
+
+
+\subsection{Realistic systems}
+\label{subsec:realistic}
 
 To get a more quantitative idea of the physics involved, it is worth
 describing realistic samples typically used in state-of-the-art
@@ -697,17 +788,20 @@ experiments. Instead of simple metallic mirrors, such microcavities
 are usually bound by a series of up to around 20 distributed Bragg
 reflectors (DBRs), which are alternating dielectric layers of
 thickness $\lambda/4$ and different refractive indices, achieving a
-total reflectivity of over $99.9$\%. Multiple CdTe or GaAs QWs of
-approximately $8~$nm thickness are placed inside the cavity of length
-$l_z = 2\lambda \sim 1~\mu$m, at the antinodes (maxima) of the
-photonic field, in order to maximize the coupling between excitons and
-photons. Typical values of the relevant parameters for GaAs-based
-microcavities are shown in Tab.~\ref{tab:GaAs-params}. As a sidenote,
-one can see that for these values, the ratio between saturation and
-Coulomb interaction
-$\frac{\Omega_R}{g_X \rho_{\text{sat}}} \simeq 0.1$, hereby justifying
-our assumption that we can neglect the anharmonic Hamiltonian
-Eq.~\eqref{eq:saturation-ham}.
+total reflectivity of over $99.9$\%~\cite{9780199228942}. 
+
+Multiple CdTe or GaAs QWs a few nanometers thick are placed inside the
+cavity of length $l_z = 2\lambda \sim 1~\mu$m, at the antinodes
+(maxima) of the photonic electric field, in order to maximize the
+coupling between excitons and photons (see
+Eq.~\eqref{eq:omega-R}). When $N$ QWs are placed in the cavity at the
+electric field maxima, the light-matter coupling $\Omega_R$ is
+enhanced by a factor $\sqrt{N}$. Furthermore, the cavity cutoff
+frequency $\omega_C(0)$ is normally chosen close to the exciton
+frequency $\omega_X(0)$.
+
+Typical values of the relevant parameters for GaAs-based
+microcavities are shown in Tab.~\ref{tab:GaAs-params}. 
 %
 \begin{table}
   \centering
@@ -722,23 +816,48 @@ Eq.~\eqref{eq:saturation-ham}.
     $g_X \simeq 5\times10^{-3}$~meV($\mu$m)$^2$ &  $A \sim 10^4~\mu$m$^2$\\
     $\rho_{\text{sat}} \simeq 2842~$($\mu$m)$^{-2}$ &  $l_z \sim 1~\mu$m\\ \bottomrule
   \end{tabular}
-  \caption{Typical parameters of a microcavity containing GaAs QWs, from Ref.~\cite{9783642241857}. Left column shows values concerning the QW while the right one refers to the microcavity.}
+  \caption{Typical parameters of a microcavity containing GaAs QWs. Left column shows properties of the QW while the right one refers to the microcavity. For these values, the ratio between saturation and
+    Coulomb interaction is small,
+    $\Omega_R/(g_X \rho_{\text{sat}}) \simeq 0.1$. From Ref.~\cite{9783642241857}.}
   \label{tab:GaAs-params}
 \end{table}
 %
 
 
+\subsection{Mean-field description of condensed state}
+\label{subsec:mean-field}
 
+Consider now the low-temperature case, where the polaritons form a
+BEC-like condensate in the momentum eigenstate $\ket{\kv}$. In this
+case, since we have the macroscopic ocupation of a single particle
+state, we can follow the standard Bogoliubov prescription and treat
+the operator $p_{\kv}$ as a classical wavefunction, which we will
+denote by $\psi_{\kv}$. The time-evolution of this classical object is
+a Gross-Pitaevksii-like equation obtained from Heisenberg's equation
+of motion
+$i \partial_t \psi_{\kv}(t) = \left[\psi_{\kv}(t),\,
+  H_{\text{LP}}\right]$.  Since polariton condensates are
+intrinsically out-of-equilibrium systems, one also had to add
+additional terms in order to describe pumping and losses. We therefore
+get a driven-dissipative mean-field equation, neglecting both quantum
+and thermal fluctuations of the field $\psi_{\kv}$. In momentum space
+this reads
+%
+\begin{multline}\label{eq:mom-GPE}
+  i\partial_t\psi_{\kv} = \left[\omega_{\text{LP}}(k) - \frac{i}{2} \gamma_k\right]\psi_{\kv} + \sum_{\kv_1,\kv_2} g_{\kv,\kv_1,\kv_2} \psi^{\star}_{\kv_1 + \kv_2 - \kv} \psi_{\kv_2} \psi_{\kv_1}\\
+  + C_k f_p \exp{\left(-i \omega_pt\right)} \delta_{\kv,\kv_{p}}
+\end{multline}
+% 
 %TODO: explanation of terms
-%TODO: add defect potential
+
+
+
 %TODO: real space driven-dissipative GPE
-%TODO: different types of pumping
+
+
 %TODO: mean-field equations, U(1)
+
 %TODO: OPO
-%TODO: add references
-%TODO: anticrossing mention in disp fig, strong coupling
-%TODO: polaritons = photons dressed by matter
-%TODO: directly excited by laser and detected via reflection/transmission 
 
 
 
