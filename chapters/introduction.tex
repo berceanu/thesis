@@ -411,22 +411,23 @@ localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$,
 
 
 
-Consider the following (simplified) physical system. We have an
-optical cavity containing photons confined along the growth direction
-$z$ by its metalic mirrors. At position $z_{\text{QW}}$, the cavity
-contains a 2D quantum well (QW), which is a thin semiconductor layer
-sandwitched in between another alloy acting as a barrier. The setup is
-shown in Fig.~\ref{fig:cavity-polaritons} (for an in-depth
-introduction to the physics of semiconductor microcavities, see
-Ref.~\cite{9780199228942}). The photons create electron-hole
-hydrogenlike bound pairs (excitons) confined by the barrier inside the
-QW. Exactly describing the system of electrons, holes and photons,
-taking into account their Coulomb interaction and the disorder created
-by defects inside the QW, as well as imperfections present in the
-cavity mirrors is a daunting task that would also not provide much
-physical insight into this system. We therefore use a series of
-approximations and construct an effective Hamiltonian description that
-is more physically transparent.
+Consider the following (simplified) physical system, at zero
+temperature. We have an optical planar microcavity containing photons
+confined along the growth direction $z$ by its (identical) metalic
+mirrors, separated by a distance $l_z$. At position $z_{\text{QW}}$,
+the cavity contains a 2D quantum well (QW), which is a thin
+semiconductor layer sandwitched in between another alloy acting as a
+barrier. The setup is shown in Fig.~\ref{fig:cavity-polaritons} (for
+an in-depth introduction to the physics of semiconductor
+microcavities, see Ref.~\cite{9780199228942}). The photons create
+electron-hole hydrogenlike bound pairs (excitons) confined by the
+barrier inside the QW. Exactly describing the system of electrons,
+holes and photons, taking into account their Coulomb interaction and
+the disorder created by defects inside the QW, as well as
+imperfections present in the cavity mirrors is a daunting task that
+would also not provide much physical insight into this system. We
+therefore use a series of approximations and construct an effective
+Hamiltonian description that is more physically transparent.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.8\linewidth]{cavity}
@@ -547,7 +548,7 @@ we can consider the excitons as fundamental quasiparticle excitations
 from the ground state of the semiconductor and treat the Coulomb term
 in Eq.~\eqref{eq:coulomb-hamiltonian} as an effective exciton-exciton
 interaction. We then couple the resulting excitons to light, and
-obtain the so-called \textbf{weakly interacting boson model} for
+obtain the so-called \textit{weakly interacting boson model} for
 polaritons. The name stems from the fact that, at moderate
 electron-hole densities, such that the inter-exciton distance is much
 larger than $\lambda_X$, one can assume excitons to behave esentially
@@ -576,7 +577,7 @@ through the  oscillator strength surface density $f_{\text{2D}}$ of
 the excitonic transition
 %
 \begin{equation}\label{eq:omega-R}
-  \Omega_R \propto \sqrt{\omega_C(0)l_z^{-1}f_{\text{2D}}} \frac{E(z_{\text{QW}})}{E_{\text{max}}}
+  \Omega_R \propto \frac{E(z_{\text{QW}})}{E_{\text{max}}}\sqrt{f_{\text{2D}}\omega_C(0)/l_z}
 \end{equation}
 % 
 where $E_{\text{max}}$ is the maximum amplitude of the cavity photon
@@ -597,7 +598,7 @@ transformation of the form~\cite{Hopfield1958}
   \colvec{p_{\kv}}{u_{\kv}} = \mat{X_k}{C_k}{-C_k}{X_k} \colvec{b_{\kv}}{a_{\kv}}
 \end{equation}
 % 
-The normal modes of $H_0$ are called \textbf{upper and lower
+The normal modes of $H_0$ are called \textit{upper and lower
   polaritons} (UP and LP) and correspond to the Bose operators
 $u_{\kv}$ and $p_{\kv}$, with eigenenergies
 %
@@ -687,11 +688,8 @@ interaction is the Coulomb repulsion between the excitons.
 \subsection{Lower polaritons}
 \label{subsec:lower-polaritons}
 
-%TODO: LP branch well approximated by parabolic dispersion with
-% effective mass $m_{\text{LP}}$ and cutoff freq $\omega_{\text{LP}}(0)$
-
-For temperatures much smaller than the Rabi splitting between the two
-polariton branches, we can neglect the upper polaritons and project
+Assuming the Rabi energy $\omega_R$ to dominate over the kinetic and
+interaction energies we can neglect the upper polaritons and project
 Eq.~\eqref{eq:total-ham} on the basis of lower-polariton states
 only. Employing the approximations discussed above, we obtain the
 lower-polariton Hamiltonian
@@ -716,10 +714,127 @@ hydrodynamics, an aspect which we will explore in the next two chapters.
 
 Physically, the quantities $\abs{X_k}^2$ and $\abs{C_k}^2$ are the
 excitonic and photonic fractions of the lower lower polariton
-mode. Their momentum dependence is not very pronounced, as for
-$\delta = 0$, $X_k$ is between $1/\sqrt{2}$ and $1$ and if we are also
-at normal incidence, meaning $\kv = 0$, than the light and matter
-content of lower polaritons are each equal to $1/2$.
+mode and the effective mass of the lower polaritons, $m_{\text{LP}}$, can
+be computed from the curvature of their dispersion
+Eq.~\eqref{eq:polariton-dispersion} by
+%
+\begin{equation}\label{eq:LP-mass-def}
+  m_{\text{LP}}(k) = \left[\frac{d^2 \omega_{\text{LP}}(k)}{dk^2}\right]^{-1}
+\end{equation}
+% 
+which at normal incidence $\kv = 0$ reduces to 
+%
+\begin{equation}\label{eq:LP-mass}
+  m_{\text{LP}} = 2m_C \left[1 - \delta/\sqrt{\delta^2 + 4\Omega_R^2}\right]^{-1}
+\end{equation}
+% 
+if we neglect the flat exciton dispersion in the limit $M \gg
+m_C$. For zero detuning, we see that $m_{\text{LP}} = 2m_C$ and the
+light and matter content of lower polaritons are each equal to $1/2$.
+
+As long as the interesting physics is limited to small wavevectors
+$\kv$, close to the bottom of the LP branch, one can safely
+approximate its dispersion as being parabolic, by expanding
+Eq.~\eqref{eq:polariton-dispersion} in a Taylor series around
+$\kv = 0$ and truncating at second order. We obtain the expression
+%
+\begin{equation}\label{eq:parabolic-disp}
+  \omega_{\text{LP}}(k) \simeq \omega_{\text{LP}}(0) + \frac{k^2}{2m_{\text{LP}}}
+\end{equation}
+% 
+with an effective mass given by Eq.~\eqref{eq:LP-mass}. In practice,
+many interesting experimental conditions can be described limiting
+ourselves to the LP branch with a quadratic dispersion.
+
+
+\subsection{Pumping and dissipation}
+\label{subsec:pumping}
+
+We have so far assumed that the mirrors at the two ends of the optical
+cavity in Fig.~\ref{fig:cavity-polaritons} are perfect. In reality of
+course, this is not the case, and photons continuously escape from the
+cavity. In other words, dissipation is a built-in feature of this
+system and, rather than being a hindrance, it is actually useful for
+extracting information about the system. By looking at the near-field
+(far-field) emission from the cavity, one can measure the real
+(momentum) space photon density. The polaritonic spectrum can also be
+obtained in this way, as a function of the angle $\theta$ of emission
+of a photon out of the cavity, as shown in
+Fig.~\ref{fig:polariton-dispersion}.
+
+Since the system is lossy, one needs to drive it by means of an
+incoming laser beam (called the pump), thus replenishing the photons
+and achieving a stationary state. It is important to note, however,
+that this state should not be confused with thermal equilibrium, as we
+are dealing with intrinsic out-of-equilibrium physics
+here. Experiments have so far explored two main ways of pumping these
+cavities: resonantly (coherent) and non-resonantly (incoherent). We
+will not concern ourselves with the latter in this manuscript, but we
+point the interested reader to the excelent review in
+Ref.~\cite{Carusotto_2013} (and references therein) for details.
+
+Resonant pumping is done by means of a continuous-wave coherent beam
+which is transmitted through one of the mirrors. As already mentioned,
+conservation of in-plane momentum and photon frequency dictates that a
+laser wave coming in at an angle $\theta$ and frequency $\omega$
+resonantly excites a microcavity mode with wavevector
+$k_{\parallel} = \frac{\omega}{c}\sin(\theta)$. As a result, we see
+that, besides balancing the losses, the pump can also be used to tune
+the system to a particular desired state. In Chapter~\ref{cha:drag},
+the pumping is done quasi-resonantly, close to the bottom of the LP
+branch, by using a planewave pump of amplitude $f_p$, wavevector
+$\kv_p$ and frequency $\omega_p$
+\begin{equation}
+  \mathcal{F}(\bm{r},t) = f_p \exp{\left[i (\bm{k}_p \cdot \bm{r} -
+    \omega_p t)\right]}
+\end{equation}
+
+ If the pumping angle is such that the wavevector it excites
+lies close to the inflection point of the LP dispersion, the system
+can enter a new and facinating regime called \textit{optical
+  parametric oscillator} (see Sec.~\ref{subsec:opo} for details about
+OPO).
+
+To quantitatively account for the driving and dissipation, one can use
+the input-output formalism extended to planar microcavities in
+Ref.~\cite{Ciuti2006}. As far as photonic losses are concerned, we
+must first note that, apart from the radiative decay channels already
+mentioned, there is also a nonradiative contribution due to photon
+absorbtion inside the cavity. The total cavity photon decay rate
+$\gamma_C$ can therefore be expressed as the sum
+$\gamma_C^{\text{rad}} + \gamma_C^{\text{nrad}}$, where the radiative
+decay rate
+%
+\begin{equation}\label{eq:rad-decay}
+  \gamma_C^{\text{rad}}(\kv) = -2 \eta(\kv)\kappa(\kv)
+\end{equation}
+% 
+is a function of the input (output) coefficients $\eta$ ($\kappa$)
+that can generally be computed via the transfer matrix
+method~\cite{burstein2012confined}. For the simple case of normal
+incidence and mirror transmittivity $t \ll 1$, these coefficients are
+given by~\cite{Carusotto_2013}
+\begin{align}
+  \begin{split}
+    \eta(\kv) & =(c t/2l_z) \sqrt{l_z/\pi\omega_C(\kv)}\\
+    \kappa(\kv) & =-t\,\sqrt{\pi \omega_C(\kv) / l_z}  
+  \end{split}
+\end{align}
+with $c$ the speed of light in vacuum.
+
+The excitons from the QW are of course also subject to decay
+processes. While their radiative decay can only take place via one of
+the cavity modes (due to strong light-matter coupling\footnote{In
+  general, one is in the strong coupling regime when $\Omega_R$ is
+  greater than the combined losses in the system.}), we must include
+nonradiative recombination processes as well as the additional
+dephasing~\cite{Liew2011} caused by interactions with carriers inside
+the well and variations in well thickness. All this results in an
+effective decay rate $\gamma_X$ for excitons, which is generally
+weaker than the photonic one quantified by $\gamma_C$. Typical values
+of both rates for GaAs-based microcavities are shown in
+Tab.~\ref{tab:GaAs-params}.
+
 
 \subsection{Disorder effects}
 \label{subsec:disorder}
@@ -745,39 +860,14 @@ density profile. It is normally caused by the presence of
 imperfections inherent to the growth process of the cavity
 mirrors. These defects can act as scattering centers for the
 polaritons, and can be included in the Hamiltonian as an additional
-external scalar potential. We will see some eloquent examples of
-polariton scattering in the following chapters.
-
-%TODO: add defect potential
-
-\subsection{Pumping and dissipation}
-\label{subsec:pumping}
-
-Also note that the spectrum in Fig.~\ref{fig:polariton-dispersion} is
-represented as a function of the angle $\theta$ of emission of a
-photon out of the cavity, as depicted in
-Fig.~\ref{fig:cavity-polaritons}. Conservation of in-plane momentum
-and photon frequency dictates that a laser beam coming in at an angle
-$\theta$ and frequency $\omega$ resonantly excites a microcavity mode
-with wave vector $k_{\parallel} = \frac{\omega}{c}\sin(\theta)$.
-
-Typical decay rates for excitons
-($\gamma_X$) and cavity photons ($\gamma_C$) in GaAs-based
-microcavities are also shown in Tab.~\ref{tab:GaAs-params}.
-
-%TODO: different types of pumping
-%TODO: directly excited by laser and detected via reflection/transmission 
-
-%TODO: near-field (far-field) emission from the cavity gives the real
-% (momentum) space photon density
-
-% If one uses a continuous wave laser to replenish
-% the lost photons, a steady state can eventually be reached where the
-% pumping balances the losses. The system is however in a
-% driven-dissipative state, out of thermal equilibrium.
-
-%TODO: strong coupling when Omega_R > losses (\gamma).
-
+external scalar potential. The simplest example is that of a spatially
+localized defect of strength $g_V$ located at positon $\rv_0$, which
+can be approximated by the external potential
+%
+\begin{equation}\label{eq:defect-pot}
+  V_d(\rv) = g_V \delta^2(\rv - \rv_0)
+\end{equation}
+% 
 
 \subsection{Realistic systems}
 \label{subsec:realistic}
@@ -794,10 +884,10 @@ Multiple CdTe or GaAs QWs a few nanometers thick are placed inside the
 cavity of length $l_z = 2\lambda \sim 1~\mu$m, at the antinodes
 (maxima) of the photonic electric field, in order to maximize the
 coupling between excitons and photons (see
-Eq.~\eqref{eq:omega-R}). When $N$ QWs are placed in the cavity at the
-electric field maxima, the light-matter coupling $\Omega_R$ is
-enhanced by a factor $\sqrt{N}$. Furthermore, the cavity cutoff
-frequency $\omega_C(0)$ is normally chosen close to the exciton
+Eq.~\eqref{eq:omega-R}). When $N$ distinct QWs are placed in the
+cavity at the electric field maxima, the light-matter coupling
+$\Omega_R$ is enhanced by a factor $\sqrt{N}$. Furthermore, the cavity
+cutoff frequency $\omega_C(0)$ is normally chosen close to the exciton
 frequency $\omega_X(0)$.
 
 Typical values of the relevant parameters for GaAs-based
@@ -824,41 +914,75 @@ microcavities are shown in Tab.~\ref{tab:GaAs-params}.
 %
 
 
-\subsection{Mean-field description of condensed state}
+\subsection{Mean-field description}
 \label{subsec:mean-field}
 
-Consider now the low-temperature case, where the polaritons form a
-BEC-like condensate in the momentum eigenstate $\ket{\kv}$. In this
-case, since we have the macroscopic ocupation of a single particle
-state, we can follow the standard Bogoliubov prescription and treat
-the operator $p_{\kv}$ as a classical wavefunction, which we will
-denote by $\psi_{\kv}$. The time-evolution of this classical object is
-a Gross-Pitaevksii-like equation obtained from Heisenberg's equation
-of motion
-$i \partial_t \psi_{\kv}(t) = \left[\psi_{\kv}(t),\,
-  H_{\text{LP}}\right]$.  Since polariton condensates are
-intrinsically out-of-equilibrium systems, one also had to add
-additional terms in order to describe pumping and losses. We therefore
-get a driven-dissipative mean-field equation, neglecting both quantum
-and thermal fluctuations of the field $\psi_{\kv}$. In momentum space
-this reads
+As it turns out, a useful approach for tackling the
+hydrodynamics-related problems that we will encounter in the following
+Chapters is the so-called mean-field approximation. In the context of
+weakly interacting Bose gases, this approach leads to the celebrated
+Gross-Pitaevskii equation~\cite{9780198507192}, and in our case it
+will lead to a driven-dissipative version of it.
+
+If the Rabi energy is larger than the pump detuning from the bottom of
+the LP branch $\omega_p - \omega_{\text{LP}}(0)$ and the decay rates
+$\gamma_X$ and $\gamma_C$, we can start from the lower polariton
+Hamiltonian of Sec.~\ref{subsec:lower-polaritons}.  The idea is that
+one replaces the lower polariton operators $p_{\kv}$ in
+Eq.~\eqref{eq:LP-ham} with their expectation values
+$\psi_{\kv} = \langle p_{\kv} \rangle$, where $\psi_{\kv}$ is now
+interpreted as a classical wavefunction (order parameter in atomic gas
+language) describing the state with momentum label $\kv$. The
+mean-field equation for $\psi_{\kv}$ is then obtained from the
+Heisenberg equation of motion for $p_{\kv}$
+%
+\begin{equation}\label{eq:heisenberg-eom}
+  i \partial_t \psi_{\kv}(t) = \left[\psi_{\kv}(t),\,
+    H_{\text{LP}}\right]
+\end{equation}
+% 
+by replacing all the operators with their corresponding expectation
+values. This mean-field treatment is of course exact for two-operator
+products such as the polariton kinetic energy, the pumping and the
+losses. However, the effective lower polariton interactions are
+approximated, as we consider
+%
+\begin{equation}\label{eq:mean-field-approx}
+  \langle p^{\dagger}_{\kv_1 + \kv_2 - \kv} p_{\kv_2} p_{\kv_1} \rangle \approx \langle p^{\dagger}_{\kv_1 + \kv_2 - \kv} \rangle \langle p_{\kv_2} \rangle \langle p_{\kv_1} \rangle
+\end{equation}
+% 
+We obtain a generalized Gross-Pitaevskii equation in momentum space
+under coherent driving, including losses
 %
 \begin{multline}\label{eq:mom-GPE}
   i\partial_t\psi_{\kv} = \left[\omega_{\text{LP}}(k) - \frac{i}{2} \gamma_k\right]\psi_{\kv} + \sum_{\kv_1,\kv_2} g_{\kv,\kv_1,\kv_2} \psi^{\star}_{\kv_1 + \kv_2 - \kv} \psi_{\kv_2} \psi_{\kv_1}\\
   + C_k f_p \exp{\left(-i \omega_pt\right)} \delta_{\kv,\kv_{p}}
 \end{multline}
-% 
-%TODO: explanation of terms
+Here $\gamma_k = \gamma_X \abs{X_k}^2 + \gamma_C \abs{C_k}^2$ is the
+(lower) polariton loss rate, and their effective interaction strength
+is given by
+%
+\begin{equation}\label{eq:LP-inter}
+  g_{\kv,\kv_1,\kv_2} = g_X X_{\kv}X_{\vert\kv_1 + \kv_2 - \kv\vert}X_{\kv_1}X_{\kv_2}
+\end{equation}
 
+Going beyond the mean-field approximation to include quantum and
+thermal fluctuations of the field $\hat{\psi}_{\kv}$ is not an easy
+task in general, see Ref.~\cite{Carusotto_2013} for some approaches
+such as using the Wigner representation.
 
 
 %TODO: real space driven-dissipative GPE
-
+%Their momentum dependence is not very pronounced, as for $\delta = 0$,
+%$X_k$ is between $1/\sqrt{2}$ and $1$.
 
 %TODO: mean-field equations, U(1)
 
-%TODO: OPO
 
+\subsection{OPO}
+\label{subsec:opo}
+
+%U(1)
 
 
 
