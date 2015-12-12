@@ -412,7 +412,7 @@ localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$,
 
 
 Consider the following (simplified) physical system, at zero
-temperature. We have an optical planar microcavity containing photons
+temperature: we have an optical planar microcavity containing photons
 confined along the growth direction $z$ by its (identical) metalic
 mirrors, separated by a distance $l_z$. At position $z_{\text{QW}}$,
 the cavity contains a 2D quantum well (QW), which is a thin
@@ -778,12 +778,13 @@ which is transmitted through one of the mirrors. As already mentioned,
 conservation of in-plane momentum and photon frequency dictates that a
 laser wave coming in at an angle $\theta$ and frequency $\omega$
 resonantly excites a microcavity mode with wavevector
-$k_{\parallel} = \frac{\omega}{c}\sin(\theta)$. As a result, we see
-that, besides balancing the losses, the pump can also be used to tune
-the system to a particular desired state. In Chapter~\ref{cha:drag},
-the pumping is done quasi-resonantly, close to the bottom of the LP
-branch, by using a planewave pump of amplitude $f_p$, wavevector
-$\kv_p$ and frequency $\omega_p$
+$k_{\parallel} = \frac{\omega}{c}\sin(\theta)$ (see
+Fig.~\ref{fig:cavity-polaritons}). As a result, we see that, besides
+balancing the losses, the pump can also be used to tune the system to
+a particular desired state. In Chapter~\ref{cha:drag}, the pumping is
+done quasi-resonantly, close to the bottom of the LP branch, by using
+a planewave pump of amplitude $f_p$, wavevector $\kv_p$ and frequency
+$\omega_p$
 \begin{equation}
   \mathcal{F}(\bm{r},t) = f_p \exp{\left[i (\bm{k}_p \cdot \bm{r} -
     \omega_p t)\right]}
@@ -865,7 +866,7 @@ localized defect of strength $g_V$ located at positon $\rv_0$, which
 can be approximated by the external potential
 %
 \begin{equation}\label{eq:defect-pot}
-  V_d(\rv) = g_V \delta^2(\rv - \rv_0)
+  \tilde{V}_d(\rv) = g_V \delta^2(\rv - \rv_0)
 \end{equation}
 % 
 
@@ -931,50 +932,94 @@ Hamiltonian of Sec.~\ref{subsec:lower-polaritons}.  The idea is that
 one replaces the lower polariton operators $p_{\kv}$ in
 Eq.~\eqref{eq:LP-ham} with their expectation values
 $\psi_{\kv} = \langle p_{\kv} \rangle$, where $\psi_{\kv}$ is now
-interpreted as a classical wavefunction (order parameter in atomic gas
+interpreted as a classical field (order parameter in atomic gas
 language) describing the state with momentum label $\kv$. The
 mean-field equation for $\psi_{\kv}$ is then obtained from the
-Heisenberg equation of motion for $p_{\kv}$
-%
-\begin{equation}\label{eq:heisenberg-eom}
-  i \partial_t \psi_{\kv}(t) = \left[\psi_{\kv}(t),\,
-    H_{\text{LP}}\right]
-\end{equation}
-% 
-by replacing all the operators with their corresponding expectation
-values. This mean-field treatment is of course exact for two-operator
-products such as the polariton kinetic energy, the pumping and the
-losses. However, the effective lower polariton interactions are
-approximated, as we consider
+Heisenberg equation of motion
+$\dot{p}_{\kv} =i \left[ H_{\text{LP}},\, p_{\kv} \right]$ by
+replacing all the operators with their corresponding expectation
+values. This mean-field treatment is of course exact as far as the
+pumping and the losses are concerned, as well as for any two-operator
+product such as the polariton kinetic energy. However, the effective
+lower polariton interactions are approximated as follows
 %
 \begin{equation}\label{eq:mean-field-approx}
   \langle p^{\dagger}_{\kv_1 + \kv_2 - \kv} p_{\kv_2} p_{\kv_1} \rangle \approx \langle p^{\dagger}_{\kv_1 + \kv_2 - \kv} \rangle \langle p_{\kv_2} \rangle \langle p_{\kv_1} \rangle
 \end{equation}
 % 
-We obtain a generalized Gross-Pitaevskii equation in momentum space
-under coherent driving, including losses
+We obtain a generalized Gross-Pitaevskii equation (GPE) in momentum
+space under coherent driving, which includes losses and describes the
+time evolution of $\psi_{\kv}(t)$
 %
 \begin{multline}\label{eq:mom-GPE}
   i\partial_t\psi_{\kv} = \left[\omega_{\text{LP}}(k) - \frac{i}{2} \gamma_k\right]\psi_{\kv} + \sum_{\kv_1,\kv_2} g_{\kv,\kv_1,\kv_2} \psi^{\star}_{\kv_1 + \kv_2 - \kv} \psi_{\kv_2} \psi_{\kv_1}\\
-  + C_k f_p \exp{\left(-i \omega_pt\right)} \delta_{\kv,\kv_{p}}
+  + C_{\kv} \sum_{\bm{q}} C_{\bm{q}} V_d(\kv - \bm{q}) \psi_{\bm{q}}
+  + C_{\kv} f_p \exp{\left(-i \omega_pt\right)} \delta_{\kv,\kv_{p}}
 \end{multline}
 Here $\gamma_k = \gamma_X \abs{X_k}^2 + \gamma_C \abs{C_k}^2$ is the
-(lower) polariton loss rate, and their effective interaction strength
-is given by
+(lower) polariton loss rate, $V_d(\kv)$ is the Fourier transform of
+the external potential Eq.~\eqref{eq:defect-pot} and the effective
+polariton-polariton interaction strength is given by
 %
 \begin{equation}\label{eq:LP-inter}
   g_{\kv,\kv_1,\kv_2} = g_X X_{\kv}X_{\vert\kv_1 + \kv_2 - \kv\vert}X_{\kv_1}X_{\kv_2}
 \end{equation}
 
 Going beyond the mean-field approximation to include quantum and
-thermal fluctuations of the field $\hat{\psi}_{\kv}$ is not an easy
-task in general, see Ref.~\cite{Carusotto_2013} for some approaches
-such as using the Wigner representation.
+thermal fluctuations of the (quantum) field $\hat{\psi}_{\kv}$ is not
+an easy task in general, see Ref.~\cite{Carusotto_2013} for some
+approaches such as using the semiclassical Wigner representation.
 
 
-%TODO: real space driven-dissipative GPE
-%Their momentum dependence is not very pronounced, as for $\delta = 0$,
-%$X_k$ is between $1/\sqrt{2}$ and $1$.
+In order to obtain the corresponding form of Eq.~\eqref{eq:mom-GPE} in
+real-space, we introduce the Fourier transform of the classical
+wavefunction $\psi_{\kv}$ by means of\footnote{Replacing the discrete
+  sums over $\kv$ states by continuous integrals is justified in the
+  limit of a large system.}
+%
+\begin{equation}\label{eq:fourier-psi}
+  \tilde{\psi}(\rv) = \int \frac{d^2\kv}{(2\pi)^2} \psi(\kv) \exp \left(i \kv \cdot\rv \right)
+\end{equation}
+% 
+Knowing that Fourier transforms take multiplication to convolution, we
+immediately get the real-space equation for $\tilde{\psi}(\rv, t)$
+\begin{multline}\label{eq:convoluted-GPE}
+  i \partial_t \tilde{\psi}(\rv) = \left[ \omega_{\text{LP}}(i \bm{\nabla}) - \frac{i}{2} \gamma(i \bm{\nabla}) \right] \tilde{\psi}(\rv)\\ + \int d\rv_{1,2,3} \,\tilde{g}(\rv_1 - \rv, \rv - \rv_2, \rv - \rv_3) \tilde{\psi}^{\star}(\rv_1) \tilde{\psi}(\rv_2) \tilde{\psi}(\rv_3)\\
++ \int d\rv_{1,2} \,\tilde{C}(\rv - \rv_1) \tilde{C}(\rv_1 - \rv_2) \tilde{V}_d(\rv_1) \tilde{\psi}(\rv_2) + C(\kv_p) \mathcal{F}(\bm{r},t)
+\end{multline}
+Here we have introduced the functions $\tilde{C}(\rv)$, which are the
+Fourier transforms of the Hopfield coefficients $C(\kv)$, defined in a
+similar manner to Eq.~\eqref{eq:fourier-psi} and the nonlocal
+interaction
+%
+\begin{equation}\label{eq:convoluted-g}
+  \tilde{g}(\rv_1, \rv_2, \rv_3) = \int d\kv_{1,2,3} \,g(\kv_1,\kv_2,\kv_3) \exp \left[i \textstyle{\sum_{n=1}^3} (\kv_n \cdot \rv_n) \right]
+\end{equation}
+% 
+with $g(\kv_1,\kv_2,\kv_3)$ given in Eq.~\eqref{eq:LP-inter} as a
+function of the Hopfield coefficients $X(\kv)$. These coefficients do
+not have a very pronounced momentum dependence, and in fact for
+$\delta = 0$ their value is between $1/\sqrt{2}$ and $1$. If we
+neglect altogether the Hopfield coefficients in
+Eq.~\eqref{eq:convoluted-GPE} and consider the case of parabolic lower
+polariton dispersion, we finally obtain the real-space
+driven-dissipative GPE
+%
+\begin{equation}\label{eq:rspace-GPE}
+  i \partial_t \tilde{\psi}(\rv) = \left[ \omega_{\text{LP}}(0) - \frac{\nabla^2}{2m_{\text{LP}}} - \frac{i\gamma}{2}  + \tilde{V}_d(\rv) + g_X \abs{\tilde{\psi}(\rv)}^2\right] \tilde{\psi}(\rv)
+  + \mathcal{F}(\bm{r},t)
+\end{equation}
+% 
+
+
+
+
+
+
+
+
+\subsection{Equation of state}
+\label{subsec:eq-state}
 
 %TODO: mean-field equations, U(1)
 
@@ -985,7 +1030,7 @@ such as using the Wigner representation.
 %U(1)
 
 
-
+ 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../thesis_berceanu"
