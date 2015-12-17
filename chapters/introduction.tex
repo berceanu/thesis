@@ -606,7 +606,7 @@ $u_{\kv}$ and $p_{\kv}$, with eigenenergies
   \includegraphics[width=.5\linewidth]{polariton_dispersion}
   \caption{
     % 
-    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity, related to the momentum $\kv$ of polaritons inside the cavity. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Due to their light mass, the polaritons have a very sharp dispersion  compared to excitons. Also note the typical anticrossing form characteristic of strong light-matter coupling.
+    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity, related to the momentum $\kv$ of polaritons inside the cavity. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Due to their light mass, the polaritons have a very sharp dispersion  compared to excitons. Also note the typical anticrossing form characteristic of Hermitian coupling.
 From Ref.~\cite{Keeling_2007}.
     % 
 }\label{fig:polariton-dispersion}
@@ -783,9 +783,9 @@ Fig.~\ref{fig:cavity-polaritons}). As a result, we see that, besides
 balancing the losses, the pump can also be used to tune the system to
 a particular desired state. In Chapter~\ref{cha:drag}, the pumping is
 done quasi-resonantly, close to the bottom of the LP branch, by using
-a planewave pump of amplitude $f_p$, wavevector $\kv_p$ and frequency
-$\omega_p$
-\begin{equation}
+a homogeneous planewave pump of amplitude $f_p$, wavevector $\kv_p$
+and frequency $\omega_p$
+\begin{equation}\label{eq:pwpump}
   \mathcal{F}(\bm{r},t) = f_p \exp{\left[i (\bm{k}_p \cdot \bm{r} -
     \omega_p t)\right]}
 \end{equation}
@@ -984,22 +984,23 @@ wavefunction $\psi_{\kv}$ by means of\footnote{Replacing the discrete
 Knowing that Fourier transforms take multiplication to convolution, we
 immediately get the real-space equation for $\tilde{\psi}(\rv, t)$
 \begin{multline}\label{eq:convoluted-GPE}
-  i \partial_t \tilde{\psi}(\rv) = \left[ \omega_{\text{LP}}(i \bm{\nabla}) - \frac{i}{2} \gamma(i \bm{\nabla}) \right] \tilde{\psi}(\rv)\\ + \int d\rv_{1,2,3} \,\tilde{g}(\rv_1 - \rv, \rv - \rv_2, \rv - \rv_3) \tilde{\psi}^{\star}(\rv_1) \tilde{\psi}(\rv_2) \tilde{\psi}(\rv_3)\\
+  i \partial_t \tilde{\psi}(\rv) = \left[ \omega_{\text{LP}}(-i \bm{\nabla}) - \frac{i}{2} \gamma(-i \bm{\nabla}) \right] \tilde{\psi}(\rv)\\ + \int d\rv_{1,2,3} \,\tilde{g}(\rv_1 - \rv, \rv - \rv_2, \rv - \rv_3) \tilde{\psi}^{\star}(\rv_1) \tilde{\psi}(\rv_2) \tilde{\psi}(\rv_3)\\
 + \int d\rv_{1,2} \,\tilde{C}(\rv - \rv_1) \tilde{C}(\rv_1 - \rv_2) \tilde{V}_d(\rv_1) \tilde{\psi}(\rv_2) + C(\kv_p) \mathcal{F}(\bm{r},t)
 \end{multline}
-Here we have introduced the functions $\tilde{C}(\rv)$, which are the
-Fourier transforms of the Hopfield coefficients $C(\kv)$, defined in a
-similar manner to Eq.~\eqref{eq:fourier-psi} and the nonlocal
-interaction
+Note that the nonlocal interaction term in the second line of
+Eq.~\eqref{eq:convoluted-GPE} has the form of the most general third
+order nonlinear term that one can come up with, if $\tilde{g}$ were an
+arbitrary function. That is not the case however, as in fact
+$\tilde{g}$ is related to Eq.~\eqref{eq:LP-inter} by 
 %
 \begin{equation}\label{eq:convoluted-g}
   \tilde{g}(\rv_1, \rv_2, \rv_3) = \int d\kv_{1,2,3} \,g(\kv_1,\kv_2,\kv_3) \exp \left[i \textstyle{\sum_{n=1}^3} (\kv_n \cdot \rv_n) \right]
 \end{equation}
 % 
-with $g(\kv_1,\kv_2,\kv_3)$ given in Eq.~\eqref{eq:LP-inter} as a
-function of the Hopfield coefficients $X(\kv)$. These coefficients do
-not have a very pronounced momentum dependence, and in fact for
-$\delta = 0$ their value is between $1/\sqrt{2}$ and $1$. If we
+and we have also introduced the functions $\tilde{C}(\rv)$, which are
+the Fourier transforms of the Hopfield coefficients $C(\kv)$. These
+coefficients do not have a very pronounced momentum dependence, as in
+fact for $\delta = 0$, $X(\kv)$ is between $1/\sqrt{2}$ and $1$. If we
 neglect altogether the Hopfield coefficients in
 Eq.~\eqref{eq:convoluted-GPE} and consider the case of parabolic lower
 polariton dispersion, we finally obtain the real-space
@@ -1010,18 +1011,110 @@ driven-dissipative GPE
   + \mathcal{F}(\bm{r},t)
 \end{equation}
 % 
-
-
-
-
-
+To make the connection with nonlinear optics, we note that a similar
+equation holds for cavities containing a nonlinear medium, with the
+role of $g_X$ being taken by the $\chi^{(3)}$ susceptibility of the
+medium~\cite{boyd2003nonlinear}. This equation allows for an ab-initio
+description of the coherently pumped system, unlike the more
+complicated case of incoherent pumping where one generally also needs
+a phenomelogical description of the various relaxation
+processes~\cite{Keeling_2007}.
 
 
 
 \subsection{Equation of state}
 \label{subsec:eq-state}
 
-%TODO: mean-field equations, U(1)
+Given that we drive the system with the coherent continuous-wave pump Eq.~\eqref{eq:pwpump}, we can look for stationary state solutions with similar oscillatory behaviour, namely
+%
+\begin{equation}\label{eq:pump-ansatz}
+  \psi(\rv,t) = \psi_p e^{i (\kv_p \cdot \rv- \omega_p t)}
+\end{equation}
+% 
+Inserting this ansatz into Eq.~\eqref{eq:mom-GPE} (without the defect
+potential term), we obtain the equation of state for lower polaritons
+%
+\begin{equation}\label{eq:pump-mf}
+  \left[ \omega_p - \omega^p_{\text{LP}} - g_X X_p^4 \abs{\psi_p}^2 + \frac{i}{2}\gamma_p\right]\psi_p = C_p f_p
+\end{equation}
+% 
+One immediately notices that the phase of the polation field amplitude
+$\psi_p$ is set by the pump, therefore explicitly breaking the $U(1)$
+gauge symmetry associated to global rotations of the condensate
+phase. As we shall see in Chapter~\ref{cha:drag}, this results in new
+features of the quasiparticle excitation spectrum for polaritons
+compared to equilibrium systems like cold atomic gases in the BEC
+regime. 
+
+A second observation one can make is that the oscillation frequency of
+the condensate wavefunction is now fixed by the pump frequency
+$\omega_p$, while in the atomic case it was given by the chemical
+potential.
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.9\linewidth]{bistable}
+  \caption{
+    % 
+    Pump energy blueshift of Eq.~\eqref{eq:pump-mf-sq} as a function of pump laser intensity in the optical limiter (left panel) and bistable (right panel) regimes. The arrows in the right panel show the hysteretic jumps between the lower and upper branches at different intensities, while the dotted middle branch is single-mode unstable. The black dot marks a saddle node bifurcation. From Ref.~\cite{Wouters_2007_b}.
+    % 
+  }\label{fig:bistable}
+\end{figure}
+% 
+Introducing the shorthand notations $\gamma_p \equiv \gamma(\kv_p)$,
+$C_p \equiv C(\kv_p)$, $X_p \equiv X(\kv_p)$,
+$\omega^p_{\text{LP}} \equiv \omega_{\text{LP}}(\kv_p)$, as well as
+the pump energy blueshift $\epsilon_p = g_X X_p^2 \abs{\psi_p}^2$, we
+can rewrite Eq.~\eqref{eq:pump-mf} as
+%
+\begin{equation}\label{eq:pump-mf-sq}
+  \left[\left(\frac{\omega_p-\omega^p_{\text{LP}}}{\gamma_p} - X_p^2 \frac{\epsilon_p}{\gamma_p}\right)^2 + \frac{1}{4} \right] \frac{\epsilon_p}{\gamma_p} = X_p^4 \frac{I_p}{\gamma_p^3}
+\end{equation}
+%
+where we have also defined the pump laser intensity
+$I_p = g_X C_p^2 \abs{f_p}^2/X_p^2$. One can now distinguish two
+qualitatively different regimes, based on the value of the bare pump
+detuning $\tilde{\delta} \equiv \omega_p-\omega^p_{\text{LP}}$. The
+first regime, called \textit{optical limiter} is for
+$\tilde{\delta} \leq \sqrt{3}\gamma_p/2$ and it is plotted in the left
+panel of Fig.~\ref{fig:bistable}. We see that the pump blueshift
+increases monotonically with increasing pump power. The increase is
+sublinear, as the blueshift moves the lower polariton dispersion out
+of resonance with the pump.
+
+The second regime $\tilde{\delta} > \sqrt{3}\gamma_p/2$, shown in the
+right panel of Fig.~\ref{fig:bistable}, is called \textit{optical
+  bistability} and is no longer monotonic. The blueshift-intensity
+curve has a characteric S-shape, and shows hysteresis: increasing the
+pump power, we get to the first turning point (filled circle in the
+figure) where the blueshift suddenly jumps from the low to the high
+branch, while the reverse process of decreasing the pump power shows a
+jump at a second turning point on the S curve. Defining an
+interaction-renormalized pump detuning
+$\Delta_p \equiv \omega_p-(\omega^p_{\text{LP}} + X_p^2\epsilon_p)$,
+we see that this quantity is positive up to the second turning point
+on the S curve, and then changes sign, becoming negative on the higher
+branch.
+
+The middle branch of the S curve, with negative slope, is dynamically
+unstable. To see this, one must consider perturbations of wave-vector
+$\kv$ of the form
+%
+\begin{equation}\label{eq:pump-fluctuations}
+  \delta \psi(\rv,t) =  u_p e^{i [(\kv_p + \delta\kv) \cdot \rv - (\omega_p + \omega) t ]}  + v_p^{\star}e^{i[ (\kv_p - \delta\kv) \cdot \rv- (\omega_p - \omega) t]}
+\end{equation}
+% 
+where $\delta\kv \equiv \kv - \kv_p$. Substituting this into
+Eq.~\eqref{eq:mom-GPE} and linearising with respect to the amplitudes
+$u_p$ and $v_p$, we obtain an eigenvalue problem from which the two
+(complex) eigenvalues $\omega$ can be determined in a straightforward
+manner. Dynamical stability is then ensured iff $\Im(\omega) < 0$ for
+all wave-vectors $\kv$.
+
+
+
+
+
+
 
 
 \subsection{OPO}
@@ -1029,7 +1122,66 @@ driven-dissipative GPE
 
 %U(1)
 
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.5\linewidth]{opo}
+  \caption{
+    % 
+    Upper (UP) and lower (LP) polariton dispersions are shown as solid lines, while the original exciton and cavity photon are represented by dashed lines, as a function of the laser incidence angle $\theta$. The filled circles represent two pump polaritons being parametrically scattered into the signal (here at 0 angle) and idler states, shown as empty circles. The scattering process is resonant, conserving both energy and momentum. From Ref.~\cite{Ciuti_2003}.
+    % 
+  }\label{fig:parametric-scattering}
+\end{figure}
+% 
 
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.9\linewidth]{marchetti_threshold_comp}
+  \includegraphics[width=.9\linewidth]{marchetti_spectrum_comp_review}
+  \includegraphics[width=.9\linewidth]{marchetti_comp_OPO_figure_review_clean}
+  \caption{
+    %
+    \emph{Top panels:} Integrated photon emission intensities for the signal $s$ (red dots), pump $p$ (blue squares) and idler $i$ (green triangles) as a function of the renormalized pump intensity (left) and real-space signal emission corresponding to positions 1-4, including random photonic disorder, shown as contour lines (right). Note the OPO phase transition is a gradual one, with the signal first switching on in the center, increasing to maximum size and finally switching off for large pump intensities.
+    \emph{Middle panels:} Photonic component of the OPO spectrum (log scale) as a function of energy and momentum (left) and integrated in momentum (right). Note that the emission is $\delta$-like in energy.
+    \emph{Bottom panels:} Full photonic emission (left) and filtered real-space emission of signal, pump and idler (last 3 panels). Note the vertical interference fringes caused by the coherent superposition of the 3 states. The arrows in the second panel indicate the complex currents due to the finite size of the system.
+    From Ref.~\cite{9783642241857}.
+    % 
+  }\label{fig:marchetti}
+\end{figure}
+% 
+
+
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.5\linewidth]{response-sp}
+  \caption{
+    % 
+    OPO pump (upper solid curve) and signal (lower curve, magnified 5 times) energy blueshifts in the optical limiter regime, as a function of pump laser intensity. The dashed line is the pump blueshift in the pump-only solution Eq.~\eqref{eq:pump-mf-sq}. The vertical dotted line marks the pump intensity used in Fig.~\ref{fig:goldstone}.
+    From Ref.~\cite{Wouters_2007}.
+    % 
+  }\label{fig:spi}
+\end{figure}
+% 
+
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.9\linewidth]{response-ev}
+  \caption{
+    % 
+    Real (left) and imaginary (right) parts of the Bogoliubov spectrum of collective excitations on top of the OPO stationary state as a function of $\Delta k = k - k_{s,p,i}$. The chosen pump intensity is marked with a dotted line in Fig.~\ref{fig:spi}. The breaking of the $U(1)$ symmetry corresponding to the simultaneous phase rotation of the signal and idler is manifest in the presence of the Goldstone mode \textbf{G} (solid heavy curve). From Ref.~\cite{Wouters_2007}.
+    % 
+  }\label{fig:goldstone}
+\end{figure}
+% 
+
+
+
+
+
+
+
+
+
+\subsection{Spontaneous symmetry breaking}
  
 %%% Local Variables:
 %%% mode: latex
