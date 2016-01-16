@@ -425,9 +425,9 @@ barrier inside the QW. Exactly describing the system of electrons,
 holes and photons, taking into account their Coulomb interaction and
 the disorder created by defects inside the QW, as well as
 imperfections present in the cavity mirrors is a daunting task that
-would also not provide much physical insight into this system. We
-therefore use a series of approximations and construct an effective
-Hamiltonian description that is more physically transparent.
+would provide little physical insight into this system. We therefore
+use a series of approximations and construct an effective theory that
+is more physical.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.8\linewidth]{cavity}
@@ -445,7 +445,7 @@ Hamiltonian description that is more physically transparent.
 \label{subsec:microscopic}
 
 
-We start by writing down the kinetic energy of the photons
+We start by writing down the kinetic energy of the cavity photons
 %
 \begin{equation}\label{eq:cavity-energy}
   H_{C} = \sum_{\kv} \omega_C(k) a_{\kv}^{\dagger} a_{\kv}
@@ -461,13 +461,11 @@ $\kv$. These operators satisfy the standard commutation relations
 \end{align}
 
 The confinement along the $z$ direction leads to the quantization of
-the photon momentum $k_z = 2 \pi N/l_z$, with $N = 1,2,\dots$
-indexing the longitudinal modes ($N=5$ in
-Fig.~\ref{fig:cavity-polaritons}) and $l_z$ being the cavity width,
-i.e. the distance between the
-mirrors. Fig.~\ref{fig:cavity-polaritons} depicts the photonic field
-as a standing wave, which is the measurable electric field inside the
-cavity. This field can be expressed in terms of photonic operators by
+the photon momentum $k_z = \pi N/l_z$, with $N = 1,2,\dots$ indexing
+the longitudinal modes. Fig.~\ref{fig:cavity-polaritons} depicts the
+photonic field corresponding to the $N = 5$ mode as a standing wave,
+representing the measurable electric field inside the cavity. This
+field can be expressed in terms of photonic operators by
 $E(\kv,z)a_{\kv} +$ H.c., where the photon mode wavefunction
 $E(\kv,z)$ has the sinusoidal shape~\cite{Carusotto_2013}
 %
@@ -479,12 +477,12 @@ $E(\kv,z)$ has the sinusoidal shape~\cite{Carusotto_2013}
 
 The cavity photon dispersion for each of these modes is therefore
 $\omega_C(k) = v \sqrt{k^2 + k_z^2}$, with $v$ the speed of light in
-the semiconductor. Expanding the square root for $k \ll k_z$, one has
-$\omega_C(k) \approx \omega_C(0) + k^2/(2m_{C})$. We see that
-cavity photons, as opposed to free-space photons, have a quadratic
-dispersion with an effective mass related to the cutoff frequency
-$\omega_C(0)$ by $m_{C} v^2 = \omega_C(0)$. For typical cavities used
-in experiments, $m_{C}$ is of the order of $10^{-5}$ (free) electron
+the semiconductor. Expanding the square root for $k \ll k_z$, one gets
+$\omega_C(k) \approx \omega_C(0) + k^2/(2m_{C})$. We see that cavity
+photons, as opposed to free-space photons, have a quadratic dispersion
+with an effective mass $m_C$ related to the cutoff frequency $\omega_C(0)$
+by $m_{C} v^2 = \omega_C(0)$. For typical cavities used in
+experiments, $m_{C}$ is of the order of $10^{-5}$ (free) electron
 masses $m_e^0$ (see Tab.~\ref{tab:GaAs-params}).
 
 We now turn our attention to the semiconductor QW. For simplicity,
@@ -502,7 +500,7 @@ constant, $e$ the electron charge and $\mu^{-1} = m_e^{-1} + m_h^{-1}$
 their reduced mass. Their binding energy is called the exciton
 Rydberg, defined as $\Ry_X = \frac{e^2}{\epsilon \lambda_X}$.
 
-We define $c_{\kv}^{\dagger}$ and $v_{\kv}$ as the operators which
+We further define $c_{\kv}^{\dagger}$ and $v_{\kv}$ as the operators which
 create an electron in the empty conduction band, respectively a hole
 in the filled valence band, and which obey the Fermi anticommutation
 rules
@@ -523,7 +521,7 @@ $\rho^h_{\bm{q}} = \sum_{\kv} v_{\kv} v_{\kv + \bm{q}}^{\dagger}$. The
 matrix element of the Coulomb potential
 $V_q = \frac{e^2}{2 \epsilon A q}$ depends on cavity quantization area
 $A$, but this dependence drops out when passing from discrete sums
-over states to intragrals over $\kv$.
+over states to integrals over the momenta $\kv$.
 
 Finally, the last ingredient of our microscopic description concerns
 the interaction between electrons and photons. Making use of the
@@ -534,7 +532,7 @@ dipole approximation, we have
 \end{equation}
 % 
 with the strength
-$G(q) = e \mu_{\text{cv}}\sqrt{\frac{\omega_C(q)}{2\epsilon A l_z}}$
+$G(k) = e \mu_{\text{cv}}\sqrt{\frac{\omega_C(k)}{2\epsilon A l_z}}$
 written in the dipole gauge, where $\mu_{\text{cv}}$ is the inter-band
 dipole matrix element.
 
@@ -543,10 +541,11 @@ dipole matrix element.
 \label{subsec:effective}
 
 
-We are interested in an approximate description of the problem where
-we can consider the excitons as fundamental quasiparticle excitations
-from the ground state of the semiconductor and treat the Coulomb term
-in Eq.~\eqref{eq:coulomb-hamiltonian} as an effective exciton-exciton
+As mentioned in Sec.~\ref{subsec:model}, we are interested in an
+approximate description of the problem where we can consider the
+excitons as fundamental quasiparticle excitations from the ground
+state of the semiconductor and treat the Coulomb term in
+Eq.~\eqref{eq:coulomb-hamiltonian} as an effective exciton-exciton
 interaction. We then couple the resulting excitons to light, and
 obtain the so-called \textit{weakly interacting boson model} for
 polaritons. The name stems from the fact that, at moderate
@@ -606,7 +605,7 @@ $u_{\kv}$ and $p_{\kv}$, with eigenenergies
   \includegraphics[width=.5\linewidth]{polariton_dispersion}
   \caption{
     % 
-    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity, related to the momentum $\kv$ of polaritons inside the cavity. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Due to their light mass, the polaritons have a very sharp dispersion  compared to excitons. Also note the typical anticrossing form characteristic of Hermitian coupling.
+    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity, which is directly related to the momentum $\kv$ of polaritons inside the cavity. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Due to their light mass, the polaritons have a very sharp dispersion  compared to excitons. Also note the typical anticrossing form characteristic of Hermitian coupling.
 From Ref.~\cite{Keeling_2007}.
     % 
 }\label{fig:polariton-dispersion}
@@ -633,7 +632,7 @@ $M = m_e + m_h$ of the order of the electron mass and
 $\omega_X(0) = \varepsilon_g - \Ry_X$. Since, as we have already
 noted, $M$ is several orders of magnitude larger than the cavity
 photon mass $m_{C}$, one can in practice neglect the momentum
-dependence of the excitonic dispersion and consider it to be
+dependence of the excitonic dispersion, considering it as
 flat. Furthermore, we can agree to measure energies starting from
 $\omega_X(0)$ and denote the detuning between exciton and photon bands
 as $\delta \equiv \omega_C(0) - \omega_X(0)$. For zero detuning
@@ -688,7 +687,7 @@ interaction is the Coulomb repulsion between the excitons.
 \subsection{Lower polaritons}
 \label{subsec:lower-polaritons}
 
-Assuming the Rabi energy $\omega_R$ to dominate over the kinetic and
+Assuming the Rabi energy $\Omega_R$ to dominate over the kinetic and
 interaction energies we can neglect the upper polaritons and project
 Eq.~\eqref{eq:total-ham} on the basis of lower-polariton states
 only. Employing the approximations discussed above, we obtain the
@@ -710,12 +709,12 @@ coefficients\footnote{The interaction strength $g_X$ can usually be
 This effective interaction, originating from the binary Coulomb
 scattering of the excitons, is the one responsible for the collective
 behaviour of the polaritons, and in particular superfluid
-hydrodynamics, an aspect which we will explore in the next two chapters.
+hydrodynamics, an aspect which we will explore in the following two Chapters.
 
 Physically, the quantities $\abs{X_k}^2$ and $\abs{C_k}^2$ are the
-excitonic and photonic fractions of the lower lower polariton
-mode and the effective mass of the lower polaritons, $m_{\text{LP}}$, can
-be computed from the curvature of their dispersion
+excitonic and photonic fractions of the lower polariton mode and the
+effective mass of the lower polaritons, $m_{\text{LP}}$, can be
+computed from the curvature of their dispersion
 Eq.~\eqref{eq:polariton-dispersion} by
 %
 \begin{equation}\label{eq:LP-mass-def}
@@ -734,7 +733,7 @@ light and matter content of lower polaritons are each equal to $1/2$.
 
 As long as the interesting physics is limited to small wavevectors
 $\kv$, close to the bottom of the LP branch, one can safely
-approximate its dispersion as being parabolic, by expanding
+approximate the LP dispersion as being parabolic, by expanding
 Eq.~\eqref{eq:polariton-dispersion} in a Taylor series around
 $\kv = 0$ and truncating at second order. We obtain the expression
 %
@@ -743,8 +742,8 @@ $\kv = 0$ and truncating at second order. We obtain the expression
 \end{equation}
 % 
 with an effective mass given by Eq.~\eqref{eq:LP-mass}. In practice,
-many interesting experimental conditions can be described limiting
-ourselves to the LP branch with a quadratic dispersion.
+many interesting experimental conditions can be adequately described
+by limiting ourselves to the LP branch with a quadratic dispersion.
 
 
 \subsection{Pumping and dissipation}
@@ -754,12 +753,12 @@ We have so far assumed that the mirrors at the two ends of the optical
 cavity in Fig.~\ref{fig:cavity-polaritons} are perfect. In reality of
 course, this is not the case, and photons continuously escape from the
 cavity. In other words, dissipation is a built-in feature of this
-system and, rather than being a hindrance, it is actually useful for
-extracting information about the system. By looking at the near-field
-(far-field) emission from the cavity, one can measure the real
-(momentum) space photon density. The polaritonic spectrum can also be
-obtained in this way, as a function of the angle $\theta$ of emission
-of a photon out of the cavity, as shown in
+system and, rather than being a hindrance, it is actually useful as it
+allows one to extract information about the system. By looking at
+the near-field (far-field) emission from the cavity, one can measure
+the real (momentum) space photon density. The polaritonic spectrum can
+also be obtained in this way, as a function of the angle $\theta$ of
+emission of a photon out of the cavity, as shown in
 Fig.~\ref{fig:polariton-dispersion}.
 
 Since the system is lossy, one needs to drive it by means of an
@@ -773,32 +772,38 @@ will not concern ourselves with the latter in this manuscript, but we
 point the interested reader to the excelent review in
 Ref.~\cite{Carusotto_2013} (and references therein) for details.
 
-Resonant pumping is done by means of a continuous-wave coherent beam
-which is transmitted through one of the mirrors. As already mentioned,
-conservation of in-plane momentum and photon frequency dictates that a
-laser wave coming in at an angle $\theta$ and frequency $\omega$
-resonantly excites a microcavity mode with wavevector
-$k_{\parallel} = \frac{\omega}{c}\sin(\theta)$ (see
+Resonant pumping is done by means of a continuous-wave coherent laser
+beam which is transmitted through one of the mirrors. The coherence of
+the beam is then inherited by the polariton fluid.  As already
+mentioned, conservation of in-plane momentum and photon frequency
+dictates that a laser wave coming in at an angle $\theta$ and
+frequency $\omega$ resonantly excites a microcavity mode with
+wavevector $k_{\parallel} = \frac{\omega}{c}\sin(\theta)$ (see
 Fig.~\ref{fig:cavity-polaritons}). As a result, we see that, besides
 balancing the losses, the pump can also be used to tune the system to
-a particular desired state. In Chapter~\ref{cha:drag}, the pumping is
-done quasi-resonantly, close to the bottom of the LP branch, by using
-a homogeneous planewave pump of amplitude $f_p$, wavevector $\kv_p$
-and frequency $\omega_p$
+a particular desired state, injecting polaritons of a given momentum
+and energy. In the following we will consider that the pumping is done
+quasi-resonantly, close to the bottom of the LP branch, by using a
+homogeneous planewave pump of amplitude $f_p$, wavevector $\kv_p$,
+frequency $\omega_p$ and circular polarization
 \begin{equation}\label{eq:pwpump}
   \mathcal{F}(\bm{r},t) = f_p \exp{\left[i (\bm{k}_p \cdot \bm{r} -
     \omega_p t)\right]}
 \end{equation}
 
- If the pumping angle is such that the wavevector it excites
-lies close to the inflection point of the LP dispersion, the system
-can enter a new and facinating regime called \textit{optical
-  parametric oscillator} (see Sec.~\ref{subsec:opo} for details about
-OPO).
+Depending on the pump parameters (specifically the pumping angle,
+which in turn determines $k_p$), one can distinguish two qualitatively
+different regimes: the pump-only state where where the only stable
+configuration of the system is the mode at $k_p$ and the regime where
+polaritons at $k_p$ undergo stimulated scattering and populate two
+other modes. Indeed, if the pumping angle is such that the wavevector
+it excites lies close to the inflection point of the LP dispersion,
+the system can enter a new regime called \textit{optical parametric
+  oscillator} (see Sec.~\ref{subsec:opo} for details about OPO).
 
 To quantitatively account for the driving and dissipation, one can use
-the input-output formalism extended to planar microcavities in
-Ref.~\cite{Ciuti2006}. As far as photonic losses are concerned, we
+the input-output formalism that was extended to planar microcavities
+in Ref.~\cite{Ciuti2006}. As far as photonic losses are concerned, we
 must first note that, apart from the radiative decay channels already
 mentioned, there is also a nonradiative contribution due to photon
 absorbtion inside the cavity. The total cavity photon decay rate
@@ -857,13 +862,13 @@ superposition of these excitonic and photonic states.
 Photonic disorder, on the other hand, acts on lengthscales
 $\ell_{C} = (m_{C}\Omega_R)^{-1/2}$ on the order of microns (see
 Tab.~\ref{tab:GaAs-params}) and therefore can disrupt the polariton
-density profile. It is normally caused by the presence of
-imperfections inherent to the growth process of the cavity
-mirrors. These defects can act as scattering centers for the
-polaritons, and can be included in the Hamiltonian as an additional
-external scalar potential. The simplest example is that of a spatially
+density profile. Photonic disorder is normally caused by the presence
+of imperfections inherent to the growth process of the cavity
+mirrors. These defects act as scattering centers for the polaritons,
+and can be included in the Hamiltonian as an additional external
+scalar potential. The simplest example is that of a spatially
 localized defect of strength $g_V$ located at positon $\rv_0$, which
-can be approximated by the external potential
+can be approximated by the potential
 %
 \begin{equation}\label{eq:defect-pot}
   \tilde{V}_d(\rv) = g_V \delta^2(\rv - \rv_0)
@@ -884,11 +889,12 @@ total reflectivity of over $99.9$\%~\cite{9780199228942}.
 Multiple CdTe or GaAs QWs a few nanometers thick are placed inside the
 cavity of length $l_z = 2\lambda \sim 1~\mu$m, at the antinodes
 (maxima) of the photonic electric field, in order to maximize the
-coupling between excitons and photons (see
-Eq.~\eqref{eq:omega-R}). When $N$ distinct QWs are placed in the
-cavity at the electric field maxima, the light-matter coupling
-$\Omega_R$ is enhanced by a factor $\sqrt{N}$. Furthermore, the cavity
-cutoff frequency $\omega_C(0)$ is normally chosen close to the exciton
+coupling between excitons and photons (see Eq.~\eqref{eq:omega-R},
+which shows maximum coupling for $E(z_{\text{QW}}) =
+E_{\text{max}}$). When $N$ distinct QWs are placed in the cavity at
+the electric field maxima, the light-matter coupling $\Omega_R$ is
+enhanced by a factor $\sqrt{N}$. Furthermore, the cavity cutoff
+frequency $\omega_C(0)$ is normally chosen close to the exciton
 frequency $\omega_X(0)$.
 
 Typical values of the relevant parameters for GaAs-based
@@ -907,7 +913,7 @@ microcavities are shown in Tab.~\ref{tab:GaAs-params}.
     $g_X \simeq 5\times10^{-3}$~meV($\mu$m)$^2$ &  $A \sim 10^4~\mu$m$^2$\\
     $\rho_{\text{sat}} \simeq 2842~$($\mu$m)$^{-2}$ &  $l_z \sim 1~\mu$m\\ \bottomrule
   \end{tabular}
-  \caption{Typical parameters of a microcavity containing GaAs QWs. Left column shows properties of the QW while the right one refers to the microcavity. For these values, the ratio between saturation and
+  \caption{Typical parameters of a microcavity containing GaAs QWs. Left column shows properties of the QW, while the right one refers to the microcavity. For these values, the ratio between saturation and
     Coulomb interaction is small,
     $\Omega_R/(g_X \rho_{\text{sat}}) \simeq 0.1$. From Ref.~\cite{9783642241857}.}
   \label{tab:GaAs-params}
@@ -923,28 +929,30 @@ hydrodynamics-related problems that we will encounter in the following
 Chapters is the so-called mean-field approximation. In the context of
 weakly interacting Bose gases, this approach leads to the celebrated
 Gross-Pitaevskii equation~\cite{9780198507192}, and in our case it
-will lead to a driven-dissipative version of it.
+will lead to its driven-dissipative counterpart.
 
 If the Rabi energy is larger than the pump detuning from the bottom of
-the LP branch $\omega_p - \omega_{\text{LP}}(0)$ and the decay rates
-$\gamma_X$ and $\gamma_C$, we can start from the lower polariton
-Hamiltonian of Sec.~\ref{subsec:lower-polaritons}.  The idea is that
-one replaces the lower polariton operators $p_{\kv}$ in
+the LP branch $\omega_p - \omega_{\text{LP}}(0)$ and also larger than
+the decay rates $\gamma_X$ and $\gamma_C$, we can start from the lower
+polariton Hamiltonian of Sec.~\ref{subsec:lower-polaritons}.  The idea
+is that one replaces the lower polariton operators $p_{\kv}$ in
 Eq.~\eqref{eq:LP-ham} with their expectation values
 $\psi_{\kv} = \langle p_{\kv} \rangle$, where $\psi_{\kv}$ is now
-interpreted as a classical field (order parameter in atomic gas
-language) describing the state with momentum label $\kv$. The
-mean-field equation for $\psi_{\kv}$ is then obtained from the
-Heisenberg equation of motion
+interpreted as a classical field (order parameter representing lower
+polariton polarization) describing the state with momentum label
+$\kv$. The mean-field equation for $\psi_{\kv}$ is then obtained from
+the Heisenberg equation of motion
 $\dot{p}_{\kv} =i \left[ H_{\text{LP}},\, p_{\kv} \right]$ by
 replacing all the operators with their corresponding expectation
 values. This mean-field treatment is of course exact as far as the
 pumping and the losses are concerned, as well as for any two-operator
 product such as the polariton kinetic energy. However, the effective
-lower polariton interactions are approximated as follows
+lower polariton interactions are approximated following an approach
+similar to the one pioneered by Bogoliubov in the context of atomic
+BECs, namely
 %
 \begin{equation}\label{eq:mean-field-approx}
-  \langle p^{\dagger}_{\kv_1 + \kv_2 - \kv} p_{\kv_2} p_{\kv_1} \rangle \approx \langle p^{\dagger}_{\kv_1 + \kv_2 - \kv} \rangle \langle p_{\kv_2} \rangle \langle p_{\kv_1} \rangle
+  \langle p^{\dagger}_{\kv_1 + \kv_2 - \kv} p_{\kv_2} p_{\kv_1} \rangle \approx \langle p_{\kv_1 + \kv_2 - \kv} \rangle^{\star} \langle p_{\kv_2} \rangle \langle p_{\kv_1} \rangle
 \end{equation}
 % 
 We obtain a generalized Gross-Pitaevskii equation (GPE) in momentum
@@ -987,11 +995,14 @@ immediately get the real-space equation for $\tilde{\psi}(\rv, t)$
   i \partial_t \tilde{\psi}(\rv) = \left[ \omega_{\text{LP}}(-i \bm{\nabla}) - \frac{i}{2} \gamma(-i \bm{\nabla}) \right] \tilde{\psi}(\rv)\\ + \int d\rv_{1,2,3} \,\tilde{g}(\rv_1 - \rv, \rv - \rv_2, \rv - \rv_3) \tilde{\psi}^{\star}(\rv_1) \tilde{\psi}(\rv_2) \tilde{\psi}(\rv_3)\\
 + \int d\rv_{1,2} \,\tilde{C}(\rv - \rv_1) \tilde{C}(\rv_1 - \rv_2) \tilde{V}_d(\rv_1) \tilde{\psi}(\rv_2) + C(\kv_p) \mathcal{F}(\bm{r},t)
 \end{multline}
-Note that the nonlocal interaction term in the second line of
-Eq.~\eqref{eq:convoluted-GPE} has the form of the most general third
-order nonlinear term that one can come up with, if $\tilde{g}$ were an
-arbitrary function. That is not the case however, as in fact
-$\tilde{g}$ is related to Eq.~\eqref{eq:LP-inter} by 
+Note that the kinetic energy operator has a particular dependence on
+the gradient instead of the usual Laplacian, reflecting the
+non-parabolic LP dispersion.  Furthermore, the nonlocal interaction
+term in the second line of Eq.~\eqref{eq:convoluted-GPE} has the form
+of the most general third order nonlinear term that one can come up
+with, if $\tilde{g}$ were an arbitrary function. This freedom is
+somewhat restrained in practice by the fact that $\tilde{g}$ is related to
+Eq.~\eqref{eq:LP-inter} by
 %
 \begin{equation}\label{eq:convoluted-g}
   \tilde{g}(\rv_1, \rv_2, \rv_3) = \int d\kv_{1,2,3} \,g(\kv_1,\kv_2,\kv_3) \exp \left[i \textstyle{\sum_{n=1}^3} (\kv_n \cdot \rv_n) \right]
@@ -1004,21 +1015,24 @@ fact for $\delta = 0$, $X(\kv)$ is between $1/\sqrt{2}$ and $1$. If we
 neglect altogether the Hopfield coefficients in
 Eq.~\eqref{eq:convoluted-GPE} and consider the case of parabolic lower
 polariton dispersion, we finally obtain the real-space
-driven-dissipative GPE
+driven-dissipative GPE in its simplified form
 %
 \begin{equation}\label{eq:rspace-GPE}
-  i \partial_t \tilde{\psi}(\rv) = \left[ \omega_{\text{LP}}(0) - \frac{\nabla^2}{2m_{\text{LP}}} - \frac{i\gamma}{2}  + \tilde{V}_d(\rv) + g_X \abs{\tilde{\psi}(\rv)}^2\right] \tilde{\psi}(\rv)
+  i \partial_t \tilde{\psi}(\rv) = \left[ \omega_{\text{LP}}(0) - \frac{\nabla^2}{2m_{\text{LP}}} - \frac{i}{2}\gamma  + \tilde{V}_d(\rv) + g_X \abs{\tilde{\psi}(\rv)}^2\right] \tilde{\psi}(\rv)
   + \mathcal{F}(\bm{r},t)
 \end{equation}
 % 
-To make the connection with nonlinear optics, we note that a similar
-equation holds for cavities containing a nonlinear medium, with the
-role of $g_X$ being taken by the $\chi^{(3)}$ susceptibility of the
-medium~\cite{boyd2003nonlinear}. This equation allows for an ab-initio
-description of the coherently pumped system, unlike the more
-complicated case of incoherent pumping where one generally also needs
-a phenomelogical description of the various relaxation
-processes~\cite{Keeling_2007}.
+Here we have also neglected the momentum dependence of the polariton
+loss rate, justified by the fact that, at large momenta, the
+diminishing radiative width is normally compensated by non-radiative
+broadening.  To make a stronger connection with nonlinear optics, we
+note that a similar equation holds for cavities containing a nonlinear
+medium, with the role of $g_X$ being taken by the $\chi^{(3)}$
+susceptibility of the medium~\cite{boyd2003nonlinear}. This equation
+allows for an ab-initio description of the coherently pumped system,
+unlike the more complicated case of incoherent pumping where one
+generally also needs a phenomenological description of the various
+relaxation processes~\cite{Keeling_2007}.
 
 
 
@@ -1032,24 +1046,30 @@ Given that we drive the system with the coherent continuous-wave pump Eq.~\eqref
 \end{equation}
 % 
 Inserting this ansatz into Eq.~\eqref{eq:mom-GPE} (without the defect
-potential term), we obtain the equation of state for lower polaritons
+potential term), we obtain the equation of state for lower polaritons,
+employing the simplified notation $\gamma_p \equiv \gamma(\kv_p)$,
+$C_p \equiv C(\kv_p)$, $X_p \equiv X(\kv_p)$ and
+$\omega^p_{\text{LP}} \equiv \omega_{\text{LP}}(\kv_p)$
 %
 \begin{equation}\label{eq:pump-mf}
   \left[ \omega_p - \omega^p_{\text{LP}} - g_X X_p^4 \abs{\psi_p}^2 + \frac{i}{2}\gamma_p\right]\psi_p = C_p f_p
 \end{equation}
 % 
-One immediately notices that the phase of the polation field amplitude
+One immediately notices that, unlike the case of the atomic mean-field
+Eq.~\eqref{eq:atom-MF}, the phase of the polariton field amplitude
 $\psi_p$ is set by the pump, therefore explicitly breaking the $U(1)$
-gauge symmetry associated to global rotations of the condensate
-phase. As we shall see in Chapter~\ref{cha:drag}, this results in new
-features of the quasiparticle excitation spectrum for polaritons
-compared to equilibrium systems like cold atomic gases in the BEC
-regime. 
-
-A second observation one can make is that the oscillation frequency of
-the condensate wavefunction is now fixed by the pump frequency
-$\omega_p$, while in the atomic case it was given by the chemical
-potential.
+gauge symmetry associated with global rotations of the condensate
+phase. This implies that, unlike the atomic BECs, no Goldstone branch
+will be present in the polaritonic excitation spectrum. Note also that
+the oscillation frequency of the condensate wavefunction is fixed by
+the pump frequency $\omega_p$. In Chapter~\ref{cha:drag}, we will
+compare the main features of the quasiparticle excitation spectrum for
+polaritons to equilibrium systems like cold atomic gases in the BEC
+regime.
+Another important consequence of this phase-locking is that experiments concerning
+topological phase defects such as vortices and solitons should be
+performed with a finite size pump, leaving the condensate phase
+unbound outside of the pump spot. 
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.9\linewidth]{bistable}
@@ -1059,12 +1079,12 @@ potential.
     % 
   }\label{fig:bistable}
 \end{figure}
-% 
-Introducing the shorthand notations $\gamma_p \equiv \gamma(\kv_p)$,
-$C_p \equiv C(\kv_p)$, $X_p \equiv X(\kv_p)$,
-$\omega^p_{\text{LP}} \equiv \omega_{\text{LP}}(\kv_p)$, as well as
-the pump energy blueshift $\epsilon_p = g_X X_p^2 \abs{\psi_p}^2$, we
-can rewrite Eq.~\eqref{eq:pump-mf} as
+%
+
+The repulsive polaritonic interaction is responsible for a blueshift
+of the LP dispersion $\omega_{\text{LP}}^{p}$.  Introducing the pump energy blueshift
+$\epsilon_p = g_X X_p^2 \abs{\psi_p}^2$, we can rewrite
+Eq.~\eqref{eq:pump-mf} in absolute value as
 %
 \begin{equation}\label{eq:pump-mf-sq}
   \left[\left(\frac{\omega_p-\omega^p_{\text{LP}}}{\gamma_p} - X_p^2 \frac{\epsilon_p}{\gamma_p}\right)^2 + \frac{1}{4} \right] \frac{\epsilon_p}{\gamma_p} = X_p^4 \frac{I_p}{\gamma_p^3}
@@ -1073,15 +1093,16 @@ can rewrite Eq.~\eqref{eq:pump-mf} as
 where we have also defined the pump laser intensity
 $I_p = g_X C_p^2 \abs{f_p}^2/X_p^2$. One can now distinguish two
 qualitatively different regimes, based on the value of the bare pump
-detuning $\tilde{\delta} \equiv \omega_p-\omega^p_{\text{LP}}$. The
-first regime, called \textit{optical limiter} is for
-$\tilde{\delta} \leq \sqrt{3}\gamma_p/2$ and it is plotted in the left
-panel of Fig.~\ref{fig:bistable}. We see that the pump blueshift
-increases monotonically with increasing pump power. The increase is
-sublinear, as the blueshift moves the lower polariton dispersion out
-of resonance with the pump.
+detuning $\omega_p-\omega^p_{\text{LP}}$. The first regime, called
+\textit{optical limiter} is for
+$\omega_p-\omega^p_{\text{LP}} \leq \sqrt{3}\gamma_p/2$ and it is
+plotted in the left panel of Fig.~\ref{fig:bistable}. We see that the
+pump blueshift increases monotonically with increasing pump power. The
+increase is sublinear, as the blueshift moves the lower polariton
+dispersion out of resonance with the pump.
 
-The second regime $\tilde{\delta} > \sqrt{3}\gamma_p/2$, shown in the
+The second regime
+$\omega_p-\omega^p_{\text{LP}} > \sqrt{3}\gamma_p/2$, shown in the
 right panel of Fig.~\ref{fig:bistable}, is called \textit{optical
   bistability} and is no longer monotonic. The blueshift-intensity
 curve has a characteric S-shape, and shows hysteresis: increasing the
@@ -1096,8 +1117,10 @@ on the S curve, and then changes sign, becoming negative on the higher
 branch.
 
 The middle branch of the S curve, with negative slope, is dynamically
-unstable. To see this, one must consider perturbations of wave-vector
-$\kv$ of the form
+unstable, while the two turning points where the stable and unstable
+solutions meet are called \textit{saddle node} bifurcations.  To see
+this, one must consider small perturbations of wave-vector $\kv$ of
+the form
 %
 \begin{equation}\label{eq:pump-fluctuations}
   \delta \psi(\rv,t) =  u_p e^{i [(\kv_p + \delta\kv) \cdot \rv - (\omega_p + \omega) t ]}  + v_p^{\star}e^{i[ (\kv_p - \delta\kv) \cdot \rv- (\omega_p - \omega) t]}
@@ -1107,49 +1130,112 @@ where $\delta\kv \equiv \kv - \kv_p$. Substituting this into
 Eq.~\eqref{eq:mom-GPE} and linearising with respect to the amplitudes
 $u_p$ and $v_p$, we obtain an eigenvalue problem from which the two
 (complex) eigenvalues $\omega$ can be determined in a straightforward
-manner. Dynamical stability is then ensured iff $\Im(\omega) < 0$ for
-all wave-vectors $\kv$.
+manner. 
 
-
-
-
-
+Dynamical stability is then ensured iff
+$\Im\left[\omega(\kv)\right] < 0$ for all wave-vectors $\kv$.  We can
+therefore distinguish two main types of instabilities, depending on
+the value of $\delta\kv$: for $\delta\kv =0$ (the degenerate case),
+the system shows a \textit{Kerr single-mode} (or pump-only)
+instability which only involves the pump wave-vector, while the
+general case of $\delta\kv \neq 0$ implies a \textit{parametric}
+instability, signaling the onset of the optical parametric oscillator
+(OPO) regime. This regime involves two separate modes (apart from the
+pump), namely the so-called \textit{signal} and \textit{idler} states
+at wavevectors $\kv_s = \kv$ and $\kv_i = 2\kv_p - \kv$ respectively,
+as we will discuss at large in Sec.~\ref{subsec:opo}.
 
 
 
 \subsection{OPO}
 \label{subsec:opo}
 
-%U(1)
+To understand why the OPO regime arises, one has to first look at the
+form of the Heisenberg equation of motion Eq.~\eqref{eq:mom-GPE}. This
+equation describes the coupled dynamics of an arbitrary state $\kv$,
+given an applied optical field which excites polaritons with in-plane
+wavevector $\kv_p$. As a result of polariton-polariton interactions,
+the coherent occupation at generic wavevectors $\kv_1$ and $\kv_2$ can
+scatter into $\kv$ and $\kv_1 + \kv_2 - \kv$, a process one can
+represent as
+%
+\begin{equation}\label{eq:scattering-cascade}
+  \left\{\kv_1, \kv_2\right\} \rightarrow \left\{\kv, \kv_1 + \kv_2 - \kv\right\}
+\end{equation}
+% 
+As these states further scatter into others by the same matter
+wave-mixing mechanism, we get a cascade of so-called satellite states,
+with diminishing population.  
 
+Out of the multitude of possible scattering channels, we limit our
+description to the one describing the process
+$\{\kv_p, \kv_p\} \rightarrow \{\kv, 2\kv_p - \kv\}$, which is
+precisely the parametric scattering of two pump polaritons into the
+signal and idler states that we just introduced in
+Sec.~\ref{subsec:eq-state}. As it turns out, due to the peculiar shape
+of the lower polariton dispersion relation
+Eq.~\eqref{eq:polariton-dispersion}, this scattering process can occur
+in a completely resonant way, with conservation of both in-plane
+momentum as well as energy, expressed by the phase-matching conditions
+$2\kv_p = \kv_s + \kv_i$ and $2\omega_p = \omega_s + \omega_i$ (we
+have introduced here the signal and idler frequencies). The parametric
+scattering condition that has to be satisfied then reads
+%
+\begin{equation}\label{eq:conservations}
+  2\omega_{\text{LP}}(\kv_p) =   \omega_{\text{LP}}(\kv_s) +   \omega_{\text{LP}}(\kv_i)
+\end{equation}
+% 
+We must further emphasize the importance of the unique form of the LP
+dispersion in Eq.~\eqref{eq:conservations}, as it allows efficient
+parametric coupling on a relatively broad range of pump momenta.
+Parametric scattering would not be possible for particles with a
+quadratic dispersion: in the atomic case for instance, one must employ
+the use of an optical lattice in order to deform the dispersion and
+promote parametric amplification~\cite{Campbell2006}. 
+
+A schematic depiction of the parametric scattering process with the
+signal state located at zero momentum and the pump close to the
+inflection point of the LP dispersion is shown in
+Fig.~\ref{fig:parametric-scattering}. It is clear that for a given
+signal wavevector, Eq.~\eqref{eq:conservations} then uniquely determines
+the pump and idler states.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.5\linewidth]{opo}
   \caption{
     % 
-    Upper (UP) and lower (LP) polariton dispersions are shown as solid lines, while the original exciton and cavity photon are represented by dashed lines, as a function of the laser incidence angle $\theta$. The filled circles represent two pump polaritons being parametrically scattered into the signal (here at 0 angle) and idler states, shown as empty circles. The scattering process is resonant, conserving both energy and momentum. From Ref.~\cite{Ciuti_2003}.
+    Upper (UP) and lower (LP) polariton dispersions are shown as solid lines, while the original exciton and cavity photon are represented by dashed lines, as a function of the laser incidence angle $\theta$. The filled circles represent two pump polaritons being parametrically scattered into the signal (here at 0 angle) and idler states, shown as empty circles. The scattering process depicted by the curved arrows is resonant, conserving both energy and momentum. From Ref.~\cite{Ciuti_2003}.
     % 
   }\label{fig:parametric-scattering}
 \end{figure}
-% 
-
 %
-\begin{figure}[tb]\centering
-  \includegraphics[width=.9\linewidth]{marchetti_threshold_comp}
-  \includegraphics[width=.9\linewidth]{marchetti_spectrum_comp_review}
-  \includegraphics[width=.9\linewidth]{marchetti_comp_OPO_figure_review_clean}
-  \caption{
-    %
-    \emph{Top panels:} Integrated photon emission intensities for the signal $s$ (red dots), pump $p$ (blue squares) and idler $i$ (green triangles) as a function of the renormalized pump intensity (left) and real-space signal emission corresponding to positions 1-4, including random photonic disorder, shown as contour lines (right). Note the OPO phase transition is a gradual one, with the signal first switching on in the center, increasing to maximum size and finally switching off for large pump intensities.
-    \emph{Middle panels:} Photonic component of the OPO spectrum (log scale) as a function of energy and momentum (left) and integrated in momentum (right). Note that the emission is $\delta$-like in energy.
-    \emph{Bottom panels:} Full photonic emission (left) and filtered real-space emission of signal, pump and idler (last 3 panels). Note the vertical interference fringes caused by the coherent superposition of the 3 states. The arrows in the second panel indicate the complex currents due to the finite size of the system.
-    From Ref.~\cite{9783642241857}.
-    % 
-  }\label{fig:marchetti}
-\end{figure}
-% 
+The fact that $\kv_s$ is close to $0$ is not incidental, but was
+observed in multiple experiments~\cite{Stevenson2000,Baumberg2000}
+performed in the OPO regime, as well as numerical simulations of the
+full GP equation~\cite{9783642241857}. An intuitive explanation was
+put forward~\cite{Gippius2004,Whittaker_2005}, based on the
+interaction-induced blueshift of the LP dispersion.
 
-
+We now turn our attention to the mechanism explaining the onset of the
+parametric scattering instability in the simple case of the optical
+limiter regime shown in the left panel of Fig.~\ref{fig:bistable}. As
+already mentioned, the polariton-polariton repulsive interaction
+causes a blueshift of the LP dispersion proportional to the pump mode
+population $\abs{\psi_p}^2$. This shift also affects the signal and
+idler frequencies $\omega_{\text{LP}}(\kv_{s,i})$, bringing them in
+resonance with the pump frequency $\omega_p$. The pump population (and
+hence the shift) of the optical limiter is a monotonically increasing
+function of laser intensity, quantified by
+Eq.~\eqref{eq:pump-mf-sq}. As a result, there is a certain minimum
+\textit{threshold intensity} where the resonance starts and the
+pump-only solution becomes unstable towards parametric
+scattering. Further increasing the laser power, we hit an upper
+threshold, where the blueshift becomes too large and the resonance is
+lost, forbiding parametric oscillation. This mechanism defines a
+certain window of pump intensities where the parametric instability
+can arise, the region depicted by the dashed line in
+Fig.~\ref{fig:spi}. Inside this window, the pump-only solution still
+exists, but it is unstable towards OPO.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.5\linewidth]{response-sp}
@@ -1162,6 +1248,129 @@ all wave-vectors $\kv$.
 \end{figure}
 % 
 
+The simplest ansatz one can make for describing the OPO regime above
+threshold is to consider the three separate states (signal, pump and
+idler), each with its own population, wavevector and frequency, in the
+form~\cite{Ciuti_2000,Whittaker2001,Whittaker_2005,Gippius2004}
+%
+\begin{equation}\label{eq:3-state-ansatz}
+  \psi(\rv,t) = \psi_s e^{i (\kv_s \cdot \rv- \omega_s t)} + \psi_p e^{i (\kv_p \cdot \rv- \omega_p t)} + \psi_i e^{i (\kv_i \cdot \rv- \omega_i t)}
+\end{equation}
+% 
+where energy and momentum conservation dictate that
+$\omega_i = 2\omega_p - \omega_s$ and $\kv_i = 2\kv_p - \kv_s$. As
+before, we insert this ansatz into Eq.~\eqref{eq:mom-GPE} and we
+obtain three couplex (complex) equations of motion for $\psi_{s,p,i}$
+which determine the dynamics of the signal, pump and idler. It is
+important to note that these equations become closed only if we
+neglect the multiple scattering processes mentioned at the start of
+this Section and consider only the conversion of two pump polaritons
+into a signal and an idler polariton. We will not give the full form
+of these OPO equations of state, but instead refer the reader to
+Ref.~\cite{Wouters_2007_b}, where a complete discussion of the
+oscillation threshold and ensuing dynamics is
+given. Fig.~\ref{fig:spi} shows a particular solution of the equations
+for the optical limiter case. One can see the smooth growth of the
+signal population (and subsequent depletion of the pump) inside the
+OPO (dashed) region. It is of course never implied that the whole OPO
+window is dynamically stable, and in fact a stability analysis needs
+to be performed by adding small fluctuations on top of the (now) three
+coupled states, in a manner similar to
+Eq.~\eqref{eq:pump-fluctuations}, following
+Ref.~\cite{Wouters_2007}. The complete treatment will be presented in
+Chapter~\ref{cha:opo}.  
+
+Before moving on, it is worth noting that a limitation of the ansatz
+Eq.~\eqref{eq:3-state-ansatz} is that it does not allow solving the
+so-called ``selection'' problem of determining the value of $\kv_s$
+above threshold. As a result, this value has to be considered as an
+input parameter to our problem. Futhermore, similarly to the pump-only
+case and inherent in any mean-field approach, we are of course
+neglecting any quantum fluctuations of the three macroscopically
+occupied modes. Last but not least, we are also neglecting the
+so-called TE-TM (transverse electric - transverse magnetic)
+splitting~\cite{Panzarini1999}, which can act as an effective
+spin-orbit interaction term~\cite{Kavokin2004}. This approximation
+allows one to work with a single spin state, considering the circular
+polarization of the pump to be fully transmitted to the signal and
+ider as well.
+
+We now turn our attention to a separate discussion, concerning the
+phases of the three OPO states.  As before, the phase of the pump is
+fixed by the outside laser, and now the sum of the signal and idler
+phases is given by the matching condition
+$\phi_s + \phi_i = 2 \phi_p$. Their phase difference however is a
+free parameter, and as such it is spontaneously chosen by the system
+every time the threshold is crossed. In summary, the OPO equations of
+motion for the three states posess a $U(1)$ symmetry, corresponding to
+a simultaneous and opposite phase rotation of the signal and idler,
+that is
+%
+\begin{align}
+  \begin{split}
+    \psi_s& \rightarrow \psi_s e^{i \phi} \\
+    \psi_i & \rightarrow \psi_i e^{-i \phi}
+  \end{split}
+\end{align}
+%
+This intrinsic symmetry is spontaneously broken above threshold, a
+random value of the phase of the signal (and hence idler) being
+selected at each realization of the experiment. 
+
+We can thus see the onset of OPO as a phase transition in
+out-of-equilibrium conditions, signaling the spontaneous macroscopic
+occupation of the signal and idler states. Below threshold, the
+incoherent signal and idler emission starts being stimulated and then
+becomes coherent once the threshold is crossed. These coherence
+properties were studied both experimentally~\cite{Baas2006} as well as
+theoretically, by means of quantum Monte Carlo
+methods~\cite{Carusotto2005}. The order parameter of the transition is
+the matter polarization, the analog of magnetization in the
+ferromagnetic phase transition. At the critical point, noise
+fluctuations are amplified and a macroscopic polarization is
+spontaneously created. 
+
+The phase transition can be first or second order, depending on the
+pump parameters - both behaviors have been observed in
+experiments~\cite{Baumberg_2000,Dasbach2005,Baas2004}. In the optical
+limiter case detailed above, both pump and signal are continuous
+functions of the incident laser power, and the transition is second
+order as the signal increases smoothly. In the pattern formation
+language, one clasifies the associated bifurcation as being of the
+\textit{supercritical Hopf} type. If one considers the bistable pump
+regime of the right panel of Fig.~\ref{fig:bistable} however, things
+get more complicated, as the bifurcation can now be of the
+\textit{subcritical Hopf} type and hence the associated OPO initiates
+discontinuously~\cite{Wouters_2007_b}. 
+
+It is relatively well known that in an infinite uniform
+two-dimensional equilibrium system, thermal fluctuations at any
+strictly nonzero temperature are strong enough to destroy the fully
+ordered BEC state. The associated phase transition in that case is
+instead described by the so-called Berezinskii-Kosterlitz-Thouless
+(BKT) theory, and is driven by interactions as opposed to being a
+purely statistical phenomenon. As the polariton system is out of
+equilibrium (and in practice no experimental system is truly infinite
+anyway), the exact nature of the OPO transition in this case has not
+yet been fully elucidated, although it seems that BKT-like physics has
+been both predicted~\cite{Szyma_ska_2006} and
+observed~\cite{Roumpos2012} under incoherent pumping.
+
+As we have seen, the breaking of the $U(1)$ symmetry in an atomic gas
+below the BEC critical point is related to the appearance of a soft
+Goldstone mode in the form of zero sound. Similar physics arises below
+the Curie temperature in a ferromagnet, where the magnon excitations
+(spin waves) are the corresponding Goldstone bosons due to the
+spontaneous breaking of the initial rotational symmetry. Since the
+resonantly pumped polariton system above threshold spontaneously
+breaks a $U(1)$ symmetry, Goldtone's theorem predicts a massless mode
+corresponding in this case to a spatial twist of the signal-idler
+phases. Indeed, such a mode has been identified in
+Ref.~\cite{Wouters_2007} by calculating the quasiparticle excitation
+spectrum on top of the three-state OPO anzatz
+Eq.~\eqref{eq:3-state-ansatz}. The Bogoliubov spectrum in question is
+shown in Fig.~\ref{fig:goldstone}, and the Goldstone mode represented
+by the solid heavy line labeled ``G''.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.9\linewidth]{response-ev}
@@ -1172,17 +1381,102 @@ all wave-vectors $\kv$.
   }\label{fig:goldstone}
 \end{figure}
 % 
+Note that both the real and imaginary parts of the frequency of this
+gapless mode tend to zero in the long wavelength limit
+$\Delta k \rightarrow 0$. Close to this point, the real part has a
+non-zero slope due to the finite wavevector of the injected pump
+polaritons, while the imaginary part has a parabolic shape. This means
+that, as opposed to the BEC case, a localized perturbation in the OPO
+regime does not freely propagate as a sound wave. Instead, one should
+observe a diffusive-like behaviour, where the localized signal-idler
+phase perturbation decays and is then dragged along by the flow of the
+pump. Another important difference compared to the BEC spectrum is the
+absence of a singularity of the Goldstone branch around the
+$\Delta k = 0$ point.
+
+Further insight into OPO physics for realistic experimental conditions
+can be gained by numerically solving the full 2-component GP equation
+for the coupled exciton and cavity photon fields, as first done in
+Ref.~\cite{Whittaker_2005}.  A similar approach, reviewed in detail in
+Ref.~\cite{9783642241857}, will be employed in Chapter~\ref{cha:opo},
+where we study multicomponent superfluidity in the OPO regime.
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.9\linewidth]{marchetti_threshold_comp}
+  \includegraphics[width=.9\linewidth]{marchetti_spectrum_comp_review}
+  \includegraphics[width=.9\linewidth]{marchetti_comp_OPO_figure_review_clean}
+  \caption{
+    %
+    \emph{Top panels:} Integrated photon emission intensities for the signal $s$ (red dots), pump $p$ (blue squares) and idler $i$ (green triangles) as a function of the renormalized pump intensity (left) and real-space signal emission corresponding to positions 1-4, including random photonic disorder, shown as contour lines (right). Note the OPO phase transition is a gradual one, with the signal first switching on in the center, increasing to maximum size and finally switching off for large pump intensities.
+    \emph{Middle panels:} Photonic component of the OPO spectrum (log scale) as a function of energy and momentum (left) and integrated in momentum (right). Note that the emission is $\delta$-like in energy.
+    \emph{Bottom panels:} Full photonic emission (left) and filtered real-space emission of signal, pump and idler (last 3 panels). Note the vertical interference fringes caused by the coherent superposition of the 3 states. The arrows in the second panel indicate the complex currents due to  finite size effects.
+    From Ref.~\cite{9783642241857}.
+    % 
+  }\label{fig:marchetti}
+\end{figure}
+%
+Using a continuous wave pump with a top-hat profile, one injects
+polaritons at a specific wavevector, close to the inflection point of
+the LP dispersion. Above a certain threshold pump power, random
+numerical noise starts getting amplified and the OPO instability sets
+in, populating the three states. After the system reaches a steady
+state, one can obtain the time evolution of the photon and exciton
+fields $\psi_C$ and $\psi_X$ both in real and momentum space. Since
+experiments measure the photonic component of the polariton field,
+that is what is plotted in Fig.~\ref{fig:marchetti}. Filtering in a
+narrow cone in momentum (or equivalently, in energy), one can obtain
+separately the emission of the signal, pump and idler states, while
+the energy-momentum spectrum can be calculated as the discrete Fourier
+transform of the total photonic wavefunction recorded at equally
+spaced time-intervals.
+
+Inspecting Fig.~\ref{fig:marchetti}, we see that the threshold is a
+continuous one in this case, with the OPO first switching on in a
+narrow region in the center of the system and then extending to the
+size of the whole pump spot before finally surviving only on its edge
+when pumping is increased even further. Interestingly, the OPO
+transition is signaled by the appearance of a moving striped pattern
+in the polariton density (see bottom left panel), spontaneously
+breaking the translational symmetry of the system. This pattern is
+caused by the interference of the coherent emission of the three
+states, and is similar to the Rayleigh-B\'{e}nard instability in the
+field of fluid dynamics. The threshold point in the OPO case is where
+the stimulated scattering rate exceeds the losses, while the
+B\'{e}nard cells form when the temperature gradient (playing the role
+of pumping) exceeds the viscosity (dissipation). In these simulations,
+the pump (and hence also signal and idler) wavevectors are oriented
+along the $\hat{x}$ direction, so the fringes appear along the
+$\hat{y}$ axis. They are however usually not visible, due to the time
+integration of the photonic emission in most experimental setups. Seen
+in this new light, the OPO phase transition has an associated
+Goldstone mode that would correspond to a rigid translation of the
+spatial stripe pattern.
+
+The photonic component of the OPO spectrum is shown in the middle
+pannel of Fig.~\ref{fig:marchetti}. Integrating the spectrum over all
+momenta, one sees that, as a result of being in the steady state, the
+emission is $\delta$-like in energy, while it is broadened in momentum
+due to the finite size of the pump. The satellite states, equally
+spaced in energy and less populated, are also visible in the middle
+left panel. They are due to secondary scattering processes, from the
+signal/idler into the pump and secondary-signal/secondary-idler, and
+so on.
+
+Finally, the filtered emission from the signal, pump and idler states
+is shown in the lower panels of Fig.~\ref{fig:marchetti}. Since we are
+in the steady state, the density profiles are time-independent and
+the idler emission is less intense due to the smaller radiative decay
+of polaritons at large momenta. One important difference from cold
+atomic gases in the BEC regime is the presence of nonvanishing
+currents, which can flow across the microcavity even in the ground
+state in a polariton system. These currents can be seen in the second
+panel for the signal state, and are due the complex interaction
+between nonlinearities, dissipation and parametric gain. Note that we
+are not refering here to the uniform flow caused by the signal being
+at finite momentum $\kv_s$, as in fact this dominant current is
+substracted from the plot.
 
 
-
-
-
-
-
-
-
-\subsection{Spontaneous symmetry breaking}
- 
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "../thesis_berceanu"
