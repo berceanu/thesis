@@ -11,7 +11,7 @@ Rather than simply replicating previous measurements, experiments with synthetic
 
 In the presence of a (synthetic) gauge field, the eigenstates making up an energy band can have nontrivial geometrical properties, as encoded in the Berry connection and Berry curvature defined below~\cite{berry, xiao2010berryreview}. Understanding the geometry of eigenstates in a band is of great importance, not least because the integral of the Berry curvature over the 2D Brillouin zone (BZ) gives the first Chern number: the topological invariant responsible for the integer quantum Hall effect~\cite{thouless}. Consequently, there has been much work in recent years to develop new techniques with which to probe the properties of energy bands in photonics and ultracold gases. For example, the Berry curvature can be measured in the semiclassical dynamics of a wavepacket in an optical lattice~\cite{dudarev,1chang, price, cominotti, dauphin, aidelsburger2015measuring, jotzu2014experimental} or in photon transport in a cavity array~\cite{ozawa2014qhe}. In all these cases, the physics can be most naturally understood by recognising that the Berry curvature acts like a magnetic field in momentum space~\cite{berry, bliokh2005spin, PhysRevD.12.3845, cooper2012designing}. 
 
-The analogy between Berry curvature and magnetism is most powerful when a geometrical energy band is subjected to an additional weak harmonic potential~\cite{price2014magnetic}. Then, in the effective momentum-space Hamiltonian, a harmonic potential acts like the kinetic energy of a particle in real space. Just as the physical momentum $\vt{p}-\vt{A}({\bf r})$ is the sum of the canonical momentum $\vt{p}$ and the magnetic vector potential $\vt{A} ({\bf r})$ in the magnetic Hamiltonian, so the physical position $\vt{r}+\mathcal{A}_{n,n}({\bf p})$, is given by the canonical position $\vt{r}$ and the Berry connection $\mathcal{A}_{n,n}({\bf p})$ of band $n$ in the effective Hamiltonian~\cite{adams1959energy,nagaosa, murakami2003dissipationless, bliokh2005spin, fujita, bliokh2005topological,gosselin2006semiclassical}. The Berry curvature, $\Omega_n ({\bf p})= \nabla \times \mathcal{A}_{n,n}({\bf p})$, is then like a momentum-space magnetic field. For certain models, this analogy leads to a clear analytical understanding of single-particle dynamics~\cite{price2014magnetic, ozawa2014momhh, price2015sporbit, Claassen_prl_2015}. In particular, we will focus on the small-flux limit of the Harper-Hofstadter Hamiltonian~\cite{harper1955magnetic,hofstadter1976butterfly}, which is a model that has recently been realized in a multitude of experimental configurations,
+The analogy between Berry curvature and magnetism is most powerful when a geometrical energy band is subjected to an additional weak harmonic potential~\cite{price2014magnetic}. Then, in the effective momentum-space Hamiltonian, a harmonic potential acts like the kinetic energy of a particle in real space. Just as the physical momentum $\vt{p}-\vt{A}(\rv)$ is the sum of the canonical momentum $\vt{p}$ and the magnetic vector potential $\vt{A} (\rv)$ in the magnetic Hamiltonian, so the physical position $\vt{r}+\mathcal{A}_{n,n}(\pv)$, is given by the canonical position $\vt{r}$ and the Berry connection $\mathcal{A}_{n,n}(\pv)$ of band $n$ in the effective Hamiltonian~\cite{adams1959energy,nagaosa, murakami2003dissipationless, bliokh2005spin, fujita, bliokh2005topological,gosselin2006semiclassical}. The Berry curvature, $\Omega_n (\pv)= \nabla \times \mathcal{A}_{n,n}(\pv)$, is then like a momentum-space magnetic field. For certain models, this analogy leads to a clear analytical understanding of single-particle dynamics~\cite{price2014magnetic, ozawa2014momhh, price2015sporbit, Claassen_prl_2015}. In particular, we will focus on the small-flux limit of the Harper-Hofstadter Hamiltonian~\cite{harper1955magnetic,hofstadter1976butterfly}, which is a model that has recently been realized in a multitude of experimental configurations,
 ranging from ultracold
 gases~\cite{aidelsburger2013hh,miyake2013hh,mancini2015edge,stuhl2015edge},
 solid state superlattices~\cite{dean2013hofstadter,yu2014hierarchy}
@@ -22,7 +22,7 @@ circuits~\cite{jia2013circuits}. As first shown in Ref.~\cite{price2014magnetic}
 While previous theoretical works on momentum-space Landau levels have focused on conservative dynamics~\cite{price2014magnetic, Claassen_prl_2015}, photonics systems naturally include driving and dissipation~\cite{carusotto2013fluids}. In this paper, we present a realistic experimental proposal for the observation of these states in a driven-dissipative 2D lattice of cavities, such as the array of coupled silicon ring resonators of Ref.~\cite{hafezi2013imaging}, where link resonators were used to simulate a synthetic gauge field for photons. In our proposal, we combine this set-up with a harmonic potential, introduced, for example, by a spatial modulation of the resonator size. We demonstrate numerically that the main features of momentum-space Landau levels will be observable spectroscopically in this system for realistic parameters. 
 
 In this paper, we also emphasize how the inherent driving and dissipation in photonics can be a key advantage in probing properties that are otherwise inaccessible. 
-Firstly, the spectroscopic measurements discussed here are sensitive to the absolute energy of a state. From this, we show how to extract the energy shift due to the off-diagonal matrix elements of the Berry connection $\mathcal{A}_{n,n'}({\bf p})$ relating eigenstates in different bands $n$ and $n'$. Only very recently has the first measurement of such effects been reported in ultracold atomic gases~\cite{Grusdt2014nonabelian,tracy2015arxiv}, and the approach used in this experiment would be difficult to apply in a photonics set-up. Our scheme may therefore be useful for the characterisation of energy bands in topologically-nontrivial photonic systems.
+Firstly, the spectroscopic measurements discussed here are sensitive to the absolute energy of a state. From this, we show how to extract the energy shift due to the off-diagonal matrix elements of the Berry connection $\mathcal{A}_{n,n'}(\pv)$ relating eigenstates in different bands $n$ and $n'$. Only very recently has the first measurement of such effects been reported in ultracold atomic gases~\cite{Grusdt2014nonabelian,tracy2015arxiv}, and the approach used in this experiment would be difficult to apply in a photonics set-up. Our scheme may therefore be useful for the characterisation of energy bands in topologically-nontrivial photonic systems.
 
 Secondly, since the photon steady-state depends on the overlap between the (observable) spatial amplitude profile of the drive and of the eigenstates~\cite{carusotto2013fluids}, the observables will depend on the phase of the eigenfunctions and thus on the specific synthetic magnetic gauge that is implemented in a given experimental realization of the Harper-Hofstadter Hamiltonian using a synthetic gauge field. We note that a related gauge-sensitivity has also recently been of much interest in ultracold gases in suitably designed time-of-flight experiments~\cite{kennedy2015bec,spielman2011gauge, spielman_gauge, tomoki2015nv}. Experiments on synthetic magnetic fields therefore present the opportunity of straightforwardly probing gauge-dependent physics. 
 
@@ -35,12 +35,12 @@ photonics-based experiment in Section \ref{sec:experiment}. Finally, we draw con
 
 In this paper, we study the Harper-Hofstadter Hamiltonian $\mathcal{H}_0$ in the presence of an external harmonic trap. The full tight-binding Hamiltonian $\mathcal{H}$ of this system is
 %
-\begin{eqnarray}
-{\resizebox{.9\hsize}{!}{$\displaystyle{\mathcal{H}=\mathcal{H}_0+\frac{1}{2}\kappa
-\sum_{m,n}\left[(m-m_0)^{2}+(n-n_0)^{2}\right]\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n},}$}}  \qquad \label{eq:model}\\
-{\resizebox{.9\hsize}{!}{$\displaystyle{\mathcal{H}_0=-J\sum_{m,n}(e^{i \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} 
-+e^{i \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{h.c.} }$}} \qquad\label{eq:hh_hamiltonian}
-\end{eqnarray}
+\begin{align}
+\mathcal{H} &= \mathcal{H}_0+\frac{1}{2}\kappa
+\sum_{m,n}\left[(m-m_0)^{2}+(n-n_0)^{2}\right]\hat{a}_{m,n}^{\dagger}\hat{a}_{m,n} \label{eq:model}\\
+\mathcal{H}_0 &= -J\sum_{m,n}(e^{i \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} 
++e^{i \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{h.c.} \label{eq:hh_hamiltonian}
+\end{align}
 %
 where $J$ is the real hopping amplitude and $\hat{a}_{m,n}^{\dagger}$ ($\hat{a}_{m,n}$) are the creation (annihilation) operators for a particle on a square lattice at site $(m,n)$. The harmonic trap is of strength $\kappa$ and is centered at a position $(m_0, n_0)$ which, in general, need not coincide with a lattice site. Throughout, the lattice spacing is set equal to one. 
 
@@ -52,7 +52,7 @@ Although the sum of phases around a plaquette is set by the external (synthetic)
 
 Having introduced the full Hamiltonian  in Eq. \eqref{eq:model}, we now review how the eigenstates of this model in an appropriate limit can be understood as toroidal Landau levels in momentum space~\cite{price2014magnetic}. Throughout the following discussion, we assume that the trap is centered at the origin $(m_0, n_0)= (0,0)$.  
 
-We begin from the eigenstates of the Harper-Hofstadter model $\mathcal{H}_0\ket{\chi_{n,\vt{p}}} = E_n ({\bf p}) \ket{\chi_{n,\vt{p}}}$, where $E_n ({\bf p}) $ is the energy dispersion of band $n$ at crystal momentum $\vt{p}$. As the spatially-dependent hopping phases in $\mathcal{H}_0$ break translational invariance, new magnetic translation operators must be introduced to define a larger magnetic unit cell, containing an integer number of magnetic flux quanta~\cite{zak1964group, zak1964representations, 1chang}. Then translational symmetry is restored and Bloch's theorem can be applied to write the eigenstates as $\ket{\chi_{n,\vt{p}}} = \frac{1}{\sqrt{N}} e^{i\vt{p}\cdot \vt{r}} \ket{u_{n,\vt{p}}}$, where $\ket{u_{n,\vt{p}}}$ is the periodic Bloch function and $N$ is the number of lattice sites. Thanks to the new larger unit cell, the crystal momentum and the periodic Bloch functions here are defined in the smaller magnetic Brillouin zone (MBZ). For example, hereafter, we take the number of flux quanta per plaquette to be of the form $\alpha=1/q$, where $q$ is an integer. Then the magnetic unit cell can be chosen to be $q$ times larger than the original unit cell, while the MBZ is $q$ times smaller than the original BZ.
+We begin from the eigenstates of the Harper-Hofstadter model $\mathcal{H}_0\ket{\chi_{n,\vt{p}}} = E_n (\pv) \ket{\chi_{n,\vt{p}}}$, where $E_n (\pv) $ is the energy dispersion of band $n$ at crystal momentum $\vt{p}$. As the spatially-dependent hopping phases in $\mathcal{H}_0$ break translational invariance, new magnetic translation operators must be introduced to define a larger magnetic unit cell, containing an integer number of magnetic flux quanta~\cite{zak1964group, zak1964representations, 1chang}. Then translational symmetry is restored and Bloch's theorem can be applied to write the eigenstates as $\ket{\chi_{n,\vt{p}}} = \frac{1}{\sqrt{N}} e^{i\vt{p}\cdot \vt{r}} \ket{u_{n,\vt{p}}}$, where $\ket{u_{n,\vt{p}}}$ is the periodic Bloch function and $N$ is the number of lattice sites. Thanks to the new larger unit cell, the crystal momentum and the periodic Bloch functions here are defined in the smaller magnetic Brillouin zone (MBZ). For example, hereafter, we take the number of flux quanta per plaquette to be of the form $\alpha=1/q$, where $q$ is an integer. Then the magnetic unit cell can be chosen to be $q$ times larger than the original unit cell, while the MBZ is $q$ times smaller than the original BZ.
 
 Adding the harmonic trap breaks all translational symmetry of the lattice, but we can use the eigenstates of $\mathcal{H}_0$ as a basis in which to expand the new wave function 
 $\ket{\psi} = \sum_n\sum_{\vt{p}} \psi_n(\vt{p})
@@ -79,11 +79,11 @@ For the moment we focus on the first two terms; we discuss the role of the last 
 As can be seen, there is a close analogy between the first two terms in the momentum-space Hamiltonian and that of a charged
 particle in an electromagnetic field {\em in real space}:
 %
-\begin{eqnarray} \label{eq:mag}
-\mathcal{H}'= \frac{\left[-i\nabla_{\vt{r}} - \vt{A}(\vt{r})\right]^2}{2M} +  \Phi({\bf r}). 
-\end{eqnarray}
+\begin{equation}\label{eq:mag}
+\mathcal{H}'= \frac{\left[-i\nabla_{\vt{r}} - \vt{A}(\vt{r})\right]^2}{2M} +  \Phi(\rv). 
+\end{equation}
 %
-In this analogy, the role of the particle mass $M$ is played by $\kappa^{-1}$, while the scalar potential $ \Phi({\bf r})$ is replaced by the energy band dispersion $E_n(\mathbf{p})$ and the magnetic vector potential $\vt{A}(\vt{r})$ by the intra-band Berry connection $\mathcal{A}_{n, n}(\mathbf{p})$. We note that both the magnetic vector potential and the Berry connection are gauge-dependent quantities. We hereafter refer to the gauge choice for the Berry connection as the Berry gauge, and the gauge choice for a real-space magnetic vector potential as the magnetic gauge. From the Berry connection, we can also define the geometrical Berry curvature $\Omega_{n}(\mathbf{p}) =\nabla \times \mathcal{A}_{n, n}(\mathbf{p})$, which acts like a momentum-space magnetic field $B(\vt{r})$. 
+In this analogy, the role of the particle mass $M$ is played by $\kappa^{-1}$, while the scalar potential $ \Phi(\rv)$ is replaced by the energy band dispersion $E_n(\mathbf{p})$ and the magnetic vector potential $\vt{A}(\vt{r})$ by the intra-band Berry connection $\mathcal{A}_{n, n}(\mathbf{p})$. We note that both the magnetic vector potential and the Berry connection are gauge-dependent quantities. We hereafter refer to the gauge choice for the Berry connection as the Berry gauge, and the gauge choice for a real-space magnetic vector potential as the magnetic gauge. From the Berry connection, we can also define the geometrical Berry curvature $\Omega_{n}(\mathbf{p}) =\nabla \times \mathcal{A}_{n, n}(\mathbf{p})$, which acts like a momentum-space magnetic field $B(\vt{r})$. 
 
 The topology of momentum space also plays a crucial role here, as the MBZ is topologically equivalent to a torus. One important consequence of this is of course that the integral of Berry curvature over the whole MBZ is quantised in units of the first Chern number $\mathcal{C}_n$. In the above analogy with magnetism, this means that the particle is confined to move on the surface of a torus, while the Chern number counts the number of magnetic monopoles contained inside~\cite{Fang}. 
 
@@ -101,15 +101,13 @@ $\omega_c = e |B| /M $. Again, we note that here we have neglected the contribut
 
 While the above spectrum does not directly depend on the toroidal topology of momentum space, the topology does enter into the eigenstate degeneracy, which is equal to $|\mathcal{C}_n|$, as well as into the analytical form of the eigenstates in the MBZ. For example, for the bands with $\mathcal{C}_n = -1$, the eigenstates can be written as~\cite{price2014magnetic}
 %
-\begin{eqnarray}\label{eq:chi}
- \chi_\beta (\vt{p}) &=& \mathcal{N}_\beta^{l_{\Omega_n}} \sum_{j = -
- \infty}^{\infty} e^{- i p_y j } e^{ - ( p_x + j  l_{\Omega_n}^2 )
- ^2 / 2 l_{\Omega_n}^2} \nonumber \\ &&
- \times H_\beta ( p_x / l_{\Omega_n} + j 
- l_{\Omega_n})  , \\
- \mathcal{N}_\beta^{l_{\Omega_n}} &=& \left( \frac{\sqrt{2/q}} {2^\beta
-\beta! \times 2 \pi l_{\Omega_n}^2} \right)^{1/2} , 
-\end{eqnarray}
+\begin{align}\label{eq:chi}
+\begin{split}
+ \chi_\beta (\vt{p}) &= \mathcal{N}_\beta^{l_{\Omega_n}} \sum_{j = - \infty}^{\infty} e^{- i p_y j } e^{ - ( p_x + j  l_{\Omega_n}^2 ) ^2 / 2 l_{\Omega_n}^2}\\
+ &\quad \times H_\beta ( p_x / l_{\Omega_n} + j  l_{\Omega_n})  ,
+\end{split}\\
+ \mathcal{N}_\beta^{l_{\Omega_n}} &= \left( \frac{\sqrt{2/q}} {2^\beta\beta! \times 2 \pi l_{\Omega_n}^2} \right)^{1/2} , 
+\end{align}
 % 
 where $H_\beta$ are the Hermite polynomials and $l_{\Omega_n} = \sqrt{1/|\Omega_n|}$ is the analogue of
 the magnetic length. Here we have taken the Berry gauge to have a Landau form $\mathcal{A}_n(\mathbf{p}) = \Omega_n p_x \hat{\vt{p}}_y$ parallel to the $\hat{\vt{p}}_y$ unit vector in  momentum space. We have also assumed that the MBZ is of length $2 \pi$ in one momentum direction, and $2 \pi / q$ in the other direction, corresponding to a magnetic unit cell of $q$ plaquettes containing one flux quantum. While this choice of MBZ is valid in any magnetic gauge of the underlying Harper-Hofstadter model, it is particularly natural when the hopping phases in $\mathcal{H}_0$ are in the Landau magnetic gauge $\phi = (0, 2\pi\alpha m)$, as we shall discuss further below. 
@@ -183,11 +181,11 @@ $f_{m,n}$. Following the treatment of Ref.~\cite{ozawa2014qhe}, we replace the b
 values, as can be justified for a noninteracting system. The steady state evolution of the photon-field amplitude in a cavity then follows that of
 the pump as $a_{m,n}(t) = a_{m,n} e^{-i \omega_0 t}$. Combining Hamiltonian evolution with pumping and losses, one arrives at a set of linear coupled equations that can be solved numerically for the steady-state\cite{cohen1992atom}:
 %
-\begin{eqnarray}\label{eq:linear_problem}
-f_{m,n} =J&&\left[e^{-i\phi_{m,n}^x}a_{m+1,n}+e^{i\phi_{m-1,n}^x}a_{m-1,n} \right. \nonumber\\ &&\left. +e^{-i\phi_{m,n}^y}a_{m,n+1}+e^{i\phi_{m,n-1}^y}a_{m,n-1}\right] \nonumber\\
-&&{\resizebox{.8\hsize}{!}{${+\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa 
-\left((m-m_0)^{2}+(n-n_0)^{2}\right)\right]a_{m,n}}$}} \qquad
-\end{eqnarray}
+\begin{multline}\label{eq:linear_problem}
+f_{m,n} =J\left[e^{-i\phi_{m,n}^x}a_{m+1,n}+e^{i\phi_{m-1,n}^x}a_{m-1,n} \right. \\ 
+\left. +e^{-i\phi_{m,n}^y}a_{m,n+1}+e^{i\phi_{m,n-1}^y}a_{m,n-1}\right] \\
++\left[\omega_{0}+i\gamma-\frac{1}{2}\kappa \left((m-m_0)^{2}+(n-n_0)^{2}\right)\right]a_{m,n}
+\end{multline}
 where we have reintroduced the position of the harmonic trap centre $(m_0, n_0)$, although unless otherwise specified we set $(m_0, n_0)=(0,0)$ in our simulations.
 
 The expectation values $\abs{a_{m,n}}^2$ correspond to the number of photons
@@ -356,7 +354,7 @@ spectrum.
 
 \begin{figure}[tb]
   \centering
-  \includegraphics[width=\linewidth]{exp_fig} % anc/scripts/experimental_fig.jl
+  \includegraphics[width=.8\linewidth]{exp_fig} % anc/scripts/experimental_fig.jl
   \caption{(Color online) \emph{Top row}: Intensity spectrum for a small lattice of $11 \times 11$ sites, with
     $\gamma = 0.05 J$, $\kappa = 0.2 J$ and $\alpha=1/7$. The orange vertical (dashed) lines
     show the first ladder of eigenstates of $\mathcal{H}$ from Eq.~\eqref{eq:model}. The second ladder of states is indicated with green vertical dash-dotted lines.

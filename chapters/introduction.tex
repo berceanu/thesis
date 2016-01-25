@@ -151,11 +151,11 @@ Using Eq.~\eqref{eq:symmetry-1}, we get the general form of the left
 eigen-vectors as
 %
 \begin{equation}\label{eq:psi-L}
-  \bra{\psi_k^L} = {\cal N}_k \left( \bra{u_k},\, -\bra{v_k} \right)
+  \bra{\psi_k^L} = \mathcal{N}_k \left( \bra{u_k},\, -\bra{v_k} \right)
 \end{equation}
 % 
-with ${\cal N}_k$ a normalization factor.  We can chose
-${\cal N}_k = \pm 1$ and group the eigenvalues of $\Lca_{\text{GP}}$
+with $\mathcal{N}_k$ a normalization factor.  We can chose
+$\mathcal{N}_k = \pm 1$ and group the eigenvalues of $\Lca_{\text{GP}}$
 into 3 families, according to the quantity
 %
 \begin{equation}\label{eq:norms}
@@ -197,8 +197,8 @@ particle-hole) symmetry, namely
    \Theta \Lca_{\text{GP}} \Theta^{\dagger} = -\Lca_{\text{GP}}
 \end{equation}
 %
-where $\Theta = \sigma_1 \cal{K}$, with $\sigma_1 = \mat{0}{1}{1}{0}$
-the first Pauli matrix and $\cal{K}$ the complex conjugation
+where $\Theta = \sigma_1 \mathcal{K}$, with $\sigma_1 = \mat{0}{1}{1}{0}$
+the first Pauli matrix and $\mathcal{K}$ the complex conjugation
 antilinear operator.
 
 This results in a duality between the ``$+$'' family with eigenvectors
@@ -308,14 +308,14 @@ hermitian conjugate. This motivates us to define the following unitary
 operator
 %
 \begin{equation}\label{eq:ucal}
-  \hat{{\cal T}}(\bm{k_0}) = \mat{\hat{T}(\bm{k_0})}{0}{0}{\hat{T}^{\dagger}(\bm{k_0})}
+  \hat{\mathcal{T}}(\bm{k_0}) = \mat{\hat{T}(\bm{k_0})}{0}{0}{\hat{T}^{\dagger}(\bm{k_0})}
 \end{equation}
 % 
 such that a unitary transformation of our operator $\Lca$ now restores translational
 symmetry. Indeed, one can see that
 %
 \begin{equation}\label{eq:translated-L}
-  \hat{{\cal T}} \hat{\Lca} \hat{{\cal T}}^{\dagger} = \mat{\frac{\left(\kop + \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0}{g N_0 \psi_0^2}{- g N_0 \psi_0^{\star 2}}{-\left[\frac{\left(\kop - \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0 \right]}
+  \hat{\mathcal{T}} \hat{\Lca} \hat{\mathcal{T}}^{\dagger} = \mat{\frac{\left(\kop + \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0}{g N_0 \psi_0^2}{- g N_0 \psi_0^{\star 2}}{-\left[\frac{\left(\kop - \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0 \right]}
 \end{equation}
 % 
 where we have make use of Eqs.~\eqref{eq:products} and we have written
@@ -351,7 +351,7 @@ $\bm{v}_0 \kv$.
 
 As can be seen from Eq.~\eqref{eq:symmetry-2}, the 2 eigen-families
 $\sigma$ and $-\sigma$ are linked by a duality, stemming from the
-$\cal{P} \cal{T}$ symmetry\footnote{This can be actually formally
+$\mathcal{P} \mathcal{T}$ symmetry\footnote{This can be actually formally
   proven after defining the parity and time-reversal operators
   corresponding to our problem. For details, see
   Ref.~\cite{MOSTAFAZADEH_2010}.} of the Bogoliubov operator $\Lca$.
@@ -386,7 +386,7 @@ In this basis, the spectral decomposition of
 Eq.~\eqref{eq:translated-L} is of the diagonal form
 %
 \begin{equation}\label{eq:bidecomposition}
-  \hat{{\cal T}} \hat{\Lca} \hat{{\cal T}}^{\dagger} = \sum_{\sigma = \pm} \int d^2 \kv \; \omega_\sigma(\kv) \ket{\psi_\sigma^R(\kv)}\bra{\psi_\sigma^L(\kv)}
+  \hat{\mathcal{T}} \hat{\Lca} \hat{\mathcal{T}}^{\dagger} = \sum_{\sigma = \pm} \int d^2 \kv \; \omega_\sigma(\kv) \ket{\psi_\sigma^R(\kv)}\bra{\psi_\sigma^L(\kv)}
 \end{equation}
 % 
 The concrete form of $\Lca_{\text{GP}}[k]$, coupled with the
@@ -1418,9 +1418,9 @@ Ref.~\cite{9783642241857}, will be employed in Chapter~\ref{cha:opo},
 where we study multicomponent superfluidity in the OPO regime.
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=.9\linewidth]{marchetti_threshold_comp}
-  \includegraphics[width=.9\linewidth]{marchetti_spectrum_comp_review}
-  \includegraphics[width=.9\linewidth]{marchetti_comp_OPO_figure_review_clean}
+  \includegraphics[width=.8\linewidth]{marchetti_threshold_comp}
+  \includegraphics[width=.8\linewidth]{marchetti_spectrum_comp_review}
+  \includegraphics[width=.8\linewidth]{marchetti_comp_OPO_figure_review_clean}
   \caption{
     %
     \emph{Top panels:} Integrated photon emission intensities for the signal $s$ (red dots), pump $p$ (blue squares) and idler $i$ (green triangles) as a function of the renormalized pump intensity (left) and real-space signal emission corresponding to positions 1-4, including random photonic disorder, shown as contour lines (right). Note the OPO phase transition is a gradual one, with the signal first switching on in the center, increasing to maximum size and finally switching off for large pump intensities.
