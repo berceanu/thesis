@@ -129,13 +129,13 @@ confirmed by the experimental observations.
 %
 \begin{figure}[tb]
 \centering
-\includegraphics[width=.5\linewidth]{figure1.png}
+\includegraphics[width=.5\linewidth]{figure1.png} %TODO add generating scripts
 \caption{(Color online) OPO mean-field blue-shifts and fluctuation
   Rayleigh rings in the linear response scheme for homogeneous
   pumping. Left panel: Signal $s$ ([blue] upper triangles), pump $p$
   ([red] circles), and idler $i$ ([green] lower triangles) mean-field
   energy blue-shifts $\epsilon_{n=s,p,i}$ (in units of $\gamma_p =
-  \gamma_{\vect{k}_p}$) versus the rescaled pump intensity $I_p$ (in
+  \gamma_{\vt{k}_p}$) versus the rescaled pump intensity $I_p$ (in
   units of $\gamma_p^3$) in the optical limiter regime. Parameters are
   $\Omega_R=5$~meV, zero cavity-exciton detuning, $\gamma_X = \gamma_C
   = 0.12$~meV, $\omega_p - \omega_0^X = -1.25$~meV, $k_p=1.6{\mu
@@ -143,11 +143,11 @@ confirmed by the experimental observations.
   area is stable OPO region, while the vertical dashed line
   corresponds to the pump power value chosen for plotting the right
   panel. Right panel: Blue-shifted LP dispersion~\eqref{eq:blues} with
-  superimposed Rayleigh curves $\Gamma_{p,i,(u,v), \tilde{\vect{k}} +
-    \vect{k}_{p, i}}$ evaluated within the linear response
+  superimposed Rayleigh curves $\Gamma_{p,i,(u,v), \tilde{\vt{k}} +
+    \vt{k}_{p, i}}$ evaluated within the linear response
   approximation (same symbols as left panel). The two rings
   corresponding to the signal state, $\Gamma_{s,(u,v),
-    \tilde{\vect{k}}}$, are shrinked to zero because $k_s \simeq 0$.}
+    \tilde{\vt{k}}}$, are shrinked to zero because $k_s \simeq 0$.}
 \label{fig:spect}
 \end{figure}
 %
@@ -158,12 +158,12 @@ The dynamics of polaritons in the OPO regime, and their hydrodynamic
 properties when scattering against a defect, can be described via a
 classical driven-dissipative non-linear Gross-Pitaevskii equation
 (GPE) for the coupled exciton and cavity fields $\psi_{X,C}
-(\vect{r},t)$ ($\hbar=1$)~\cite{Whittaker_2005,Carusotto_2013}:
+(\vt{r},t)$ ($\hbar=1$)~\cite{Whittaker_2005,Carusotto_2013}:
 %
 \begin{equation}
   i\partial_t \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix} =
   \hat{H} \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix}
-  + \begin{pmatrix} 0 \\ F_p(\vect{r},t) \end{pmatrix} \; .
+  + \begin{pmatrix} 0 \\ F_p(\vt{r},t) \end{pmatrix} \; .
 \label{eq:gpequ}
 \end{equation}
 %
@@ -178,106 +178,106 @@ is regulated by the exciton coupling strength $g_X$:
   .
 \end{equation}
 %
-We describe the defect via a potential $V_d (\vect{r})$ acting on the
+We describe the defect via a potential $V_d (\vt{r})$ acting on the
 photonic component; this can either be a defect in the cavity mirror
 or a localised laser field~\cite{Amo_2009,Amo_2010,Zajac_2012}.
 %
 In the conservative, homogeneous, and linear regime ($\gamma_{X,C}=0=
-V_d (\vect{r})= g_X$), the eigenvalues of $\hat{H}$ are given by the
+V_d (\vt{r})= g_X$), the eigenvalues of $\hat{H}$ are given by the
 lower (LP) and upper polariton (UP) energies, $2
-\omega_{\vect{k}}^{LP,UP} = \omega_{\vect{k}}^{C} +
-\omega_{\vect{k}}^{X} \mp \sqrt{(\omega_{\vect{k}}^{C} -
-  \omega_{\vect{k}}^{X})^2 + \Omega_R^2}$.
+\omega_{\vt{k}}^{LP,UP} = \omega_{\vt{k}}^{C} +
+\omega_{\vt{k}}^{X} \mp \sqrt{(\omega_{\vt{k}}^{C} -
+  \omega_{\vt{k}}^{X})^2 + \Omega_R^2}$.
 %
-The cavity is driven by a continuous-wave laser field $F_p(\vect{r},t)
-= \mathcal{F}_p(\vect{r}) e^{i (\vect{k}_p \cdot \vect{r} - \omega_p
+The cavity is driven by a continuous-wave laser field $F_p(\vt{r},t)
+= \mathcal{F}_p(\vt{r}) e^{i (\vt{k}_p \cdot \vt{r} - \omega_p
   t)}$ into the OPO regime: Here, polaritons are continuously injected
 into the pump state with frequency $\omega_p$ and momentum
-$\vect{k}_p$ and, above a pump strength threshold, undergo coherent
-stimulated scattering into the signal $(\omega_s, \vect{k}_s)$ and
-idler $(\omega_i, \vect{k}_i)$ states. 
+$\vt{k}_p$ and, above a pump strength threshold, undergo coherent
+stimulated scattering into the signal $(\omega_s, \vt{k}_s)$ and
+idler $(\omega_i, \vt{k}_i)$ states. 
 
 As a first step, it is useful to get insight into the system behaviour
 in the simple case of a homogeneous pump of strength
-$\mathcal{F}_p(\vect{r}) = f_p$. A numerical study of the coupled
+$\mathcal{F}_p(\vt{r}) = f_p$. A numerical study of the coupled
 equations~\eqref{eq:gpequ} for the more realistic case of a
-finite-size top-hat pump profile $\mathcal{F}_p(\vect{r})$ will be
+finite-size top-hat pump profile $\mathcal{F}_p(\vt{r})$ will be
 presented later.
 %
 To further simplify our analysis, we assume here that the UP
 dispersion does not get populated by parametric scattering processes
-and thus, by means of the Hopfield coefficients $2X_{\vect{k}}^2,
-2C_{\vect{k}}^2 = 1 \pm (\omega_{\vect{k}}^{C} -
-\omega_{\vect{k}}^{X})/\sqrt{(\omega_{\vect{k}}^{C} -
-  \omega_{\vect{k}}^{X})^2 + \Omega_R^2}$, we project the
+and thus, by means of the Hopfield coefficients $2X_{\vt{k}}^2,
+2C_{\vt{k}}^2 = 1 \pm (\omega_{\vt{k}}^{C} -
+\omega_{\vt{k}}^{X})/\sqrt{(\omega_{\vt{k}}^{C} -
+  \omega_{\vt{k}}^{X})^2 + \Omega_R^2}$, we project the
 GPE~\eqref{eq:gpequ} onto the LP
-component~\cite{Ciuti_2001,Wouters_2007_b} $\psi_{\vect{k}}^{} =
-X_{\vect{k}} \psi_{X,\vect{k}} + C_{\vect{k}} \psi_{C,\vect{k}}$,
-where $\psi(\vect{r},t) = \sum_{\vect{k}} e^{i\vect{k}\cdot \vect{r}}
-\psi_{\vect{k}}^{} (t)$:
+component~\cite{Ciuti_2001,Wouters_2007_b} $\psi_{\vt{k}}^{} =
+X_{\vt{k}} \psi_{X,\vt{k}} + C_{\vt{k}} \psi_{C,\vt{k}}$,
+where $\psi(\vt{r},t) = \sum_{\vt{k}} e^{i\vt{k}\cdot \vt{r}}
+\psi_{\vt{k}}^{} (t)$:
 %
 \begin{multline}
-  i\partial_t \psi_{\vect{k}}^{} = \left[\omega_{\vect{k}}^{LP} -
-    i\Frac{\gamma_{\vect{k}}}{2}\right]\psi_{\vect{k}}^{} +
-  C_{\vect{k}} \sum_{\vect{q}} C_{\vect{q}} V_d(\vect{k} - \vect{q})
-  \psi_{\vect{q}}^{}\\ + \sum_{\vect{k}_1, \vect{k}_2} g_{\vect{k},
-    \vect{k}_1, \vect{k}_2} \psi^*_{\vect{k}_1 + \vect{k}_2-\vect{k}}
-  \psi_{\vect{k}_1}^{} \psi_{\vect{k}_2}^{} + \tilde{f}_p(t)
-  \delta_{\vect{k},\vect{k}_p}\; .
+  i\partial_t \psi_{\vt{k}}^{} = \left[\omega_{\vt{k}}^{LP} -
+    i\frac{\gamma_{\vt{k}}}{2}\right]\psi_{\vt{k}}^{} +
+  C_{\vt{k}} \sum_{\vt{q}} C_{\vt{q}} V_d(\vt{k} - \vt{q})
+  \psi_{\vt{q}}^{}\\ + \sum_{\vt{k}_1, \vt{k}_2} g_{\vt{k},
+    \vt{k}_1, \vt{k}_2} \psi^*_{\vt{k}_1 + \vt{k}_2-\vt{k}}
+  \psi_{\vt{k}_1}^{} \psi_{\vt{k}_2}^{} + \tilde{f}_p(t)
+  \delta_{\vt{k},\vt{k}_p}\; .
 \label{eq:efflp}
 \end{multline}
 %
-Here, $\gamma_{\vect{k}}=\gamma_X X_{\vect{k}}^2 + \gamma_C
-C_{\vect{k}}^2$ is the effective LP decay rate, the interaction
-strength is given by $g_{\vect{k}, \vect{k}_1, \vect{k}_2}=g_X
-X_{\vect{k}} X_{\vect{k}_1 + \vect{k}_2-\vect{k}} X_{\vect{k}_1}
-X_{\vect{k}_2}$, and the pumping term by $\tilde{f}_p(t)=
-C_{\vect{k}_p} f_p e^{-i\omega_p t}$.
+Here, $\gamma_{\vt{k}}=\gamma_X X_{\vt{k}}^2 + \gamma_C
+C_{\vt{k}}^2$ is the effective LP decay rate, the interaction
+strength is given by $g_{\vt{k}, \vt{k}_1, \vt{k}_2}=g_X
+X_{\vt{k}} X_{\vt{k}_1 + \vt{k}_2-\vt{k}} X_{\vt{k}_1}
+X_{\vt{k}_2}$, and the pumping term by $\tilde{f}_p(t)=
+C_{\vt{k}_p} f_p e^{-i\omega_p t}$.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Linear response theory}
 %
 In the limit where the homogeneously pumped system is only weakly
-perturbed by the external potential $V_d(\vect{r})$, we apply a linear
+perturbed by the external potential $V_d(\vt{r})$, we apply a linear
 response analysis~\cite{Astrakharchik_2004}: The LP field is expanded
 around the mean-field terms for the three $n=1,2,3=s,p,i$ OPO
 states~\cite{Whittaker_2005},
 %
 \begin{equation}
-  \psi_{\tilde{\vect{k}}}^{} = \sum_{n=1}^3 e^{-i \omega_n t}
-  \left[\psi_{n}^{} \delta_{\tilde{\vect{k}},0} +
-    u_{n,\tilde{\vect{k}}}^{} e^{-i\omega t} +
-    v^*_{n,-\tilde{\vect{k}}} e^{i\omega t} \right]\; ,
+  \psi_{\tilde{\vt{k}}}^{} = \sum_{n=1}^3 e^{-i \omega_n t}
+  \left[\psi_{n}^{} \delta_{\tilde{\vt{k}},0} +
+    u_{n,\tilde{\vt{k}}}^{} e^{-i\omega t} +
+    v^*_{n,-\tilde{\vt{k}}} e^{i\omega t} \right]\; ,
 \label{eq:expan}
 \end{equation}
 %
-where $\tilde{\vect{k}} = \vect{k} - \vect{k}_n$. Eq.~\eqref{eq:efflp}
+where $\tilde{\vt{k}} = \vt{k} - \vt{k}_n$. Eq.~\eqref{eq:efflp}
 is expanded linearly in both the fluctuations terms,
-$u_{n,\tilde{\vect{k}}}^{}$ and $v_{n,\tilde{\vect{k}}}^{}$, as well
+$u_{n,\tilde{\vt{k}}}^{}$ and $v_{n,\tilde{\vt{k}}}^{}$, as well
 as the defect potential.  At zero-th order, the three complex uniform
 mean-field equations can be solved to obtain the dependence of the
 signal, pump and idler energy blue-shifts, $\epsilon_n = g_X
-X^2_{\vect{k}_n} |\psi_{n}^{}|^2$ on the system
+X^2_{\vt{k}_n} |\psi_{n}^{}|^2$ on the system
 parameters~\cite{Wouters_2007_b,SM}. A typical behaviour of
 $\epsilon_n$ as a function of the rescaled pump intensity $I_p = g_X
-C_{\vect{k}_p}^2 f_p^2/X_{\vect{k}_p}^2$ in the optical limiter regime
+C_{\vt{k}_p}^2 f_p^2/X_{\vt{k}_p}^2$ in the optical limiter regime
 is plotted in the left panel of Fig.~\ref{fig:spect}.
 %
 At first order, one obtains six coupled equations diagonal in momentum
 space~\cite{Wouters_2007}
 %
 \begin{equation}
-  \omega \vect{w}_{\tilde{\vect{k}}} = \mathcal{L}_{\tilde{\vect{k}}}
-  \vect{w}_{\tilde{\vect{k}}} + \Frac{1}{2} \vectgr{\Psi}_d\; ,
+  \omega \vt{w}_{\tilde{\vt{k}}} = \mathcal{L}_{\tilde{\vt{k}}}
+  \vt{w}_{\tilde{\vt{k}}} + \frac{1}{2} \bm{\Psi}_d\; ,
 \label{eq:fluct}
 \end{equation}
 %
-for the $6$-component vector $\vect{w}_{\tilde{\vect{k}}} =
-(u_{n,\tilde{\vect{k}}}^{} , v_{n,\tilde{\vect{k}}}^{})^{T}$ and for
-the potential part, $\vectgr{\Psi}_d = (\psi_n^{} C_{\vect{k}_n}
-C_{\vect{k} + \vect{k}_n} V_d(\vect{k}),-\psi_n^* C_{\vect{k}_n}
-C_{\vect{k}_n - \vect{k}} V_d(-\vect{k}))^{T}$. In ~\eqref{eq:fluct}
+for the $6$-component vector $\vt{w}_{\tilde{\vt{k}}} =
+(u_{n,\tilde{\vt{k}}}^{} , v_{n,\tilde{\vt{k}}}^{})^{T}$ and for
+the potential part, $\bm{\Psi}_d = (\psi_n^{} C_{\vt{k}_n}
+C_{\vt{k} + \vt{k}_n} V_d(\vt{k}),-\psi_n^* C_{\vt{k}_n}
+C_{\vt{k}_n - \vt{k}} V_d(-\vt{k}))^{T}$. In ~\eqref{eq:fluct}
 we have only kept the terms oscillating at the frequencies $\omega_n
 \pm \omega$ and neglected the other terms in the expansion (i.e.,
 $2\omega_n - \omega_m \pm \omega$), which are oscillating at
@@ -288,23 +288,23 @@ determining the spectrum of excitations can be written
 as~\cite{Wouters_2007}
 %
 \begin{equation}
-  \mathcal{L}_{\vect{k}} = \begin{pmatrix} M_{\vect{k}}^{} & Q_{\vect{k}}^{}
-    \\ -Q_{-\vect{k}}^* & -M_{-\vect{k}}^* \end{pmatrix} \; ,
+  \mathcal{L}_{\vt{k}} = \begin{pmatrix} M_{\vt{k}}^{} & Q_{\vt{k}}^{}
+    \\ -Q_{-\vt{k}}^* & -M_{-\vt{k}}^* \end{pmatrix} \; ,
 \end{equation}
 %
 where the 3 OPO states components are
 %
 \begin{align}
-  (M_{\vect{k}}^{})_{mn} &= \left[\omega^{LP}_{\vect{k}_m + \vect{k}}
-    - \omega_m - i\Frac{\gamma_{\vect{k}_m + \vect{k}}}{2}\right]
+  (M_{\vt{k}}^{})_{mn} &= \left[\omega^{LP}_{\vt{k}_m + \vt{k}}
+    - \omega_m - i\frac{\gamma_{\vt{k}_m + \vt{k}}}{2}\right]
   \delta_{m,n} \\
 %
   \nonumber & + 2\sum_{q,t=1}^3
-  g_{\vect{k}_m+\vect{k},\vect{k}_n+\vect{k},\vect{k}_t} \psi_q^*
+  g_{\vt{k}_m+\vt{k},\vt{k}_n+\vt{k},\vt{k}_t} \psi_q^*
   \psi_t^{} \delta_{m+q,n+t}\\
 %
-  (Q_{\vect{k}}^{})_{mn} &= \sum_{q,t=1}^3
-  g_{\vect{k}_m+\vect{k},\vect{k}_q,\vect{k}_t} \psi_q^{} \psi_t^{}
+  (Q_{\vt{k}}^{})_{mn} &= \sum_{q,t=1}^3
+  g_{\vt{k}_m+\vt{k},\vt{k}_q,\vt{k}_t} \psi_q^{} \psi_t^{}
   \delta_{m+n,q+t}\; .
 \end{align}
 %
@@ -317,8 +317,8 @@ where the 3 OPO states components are
 \caption{Linear responses to a static defect of the three OPO states
   in real and momentum space. Rescaled filtered OPO emissions (signal
   [top panels], pump [middle], and idler [bottom]) in real space
-  $|\psi (\vect{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear
-  scale) and momentum space $|\psi_{\tilde{\vect{k}}} (\omega_n)|^2$
+  $|\psi (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear
+  scale) and momentum space $|\psi_{\tilde{\vt{k}}} (\omega_n)|^2$
   (right panel in logarithmic scale) obtained within the linear
   response approximation. The parameters are the same ones of
   Fig.~\ref{fig:spect}. For the top left panel of the signal emission
@@ -329,18 +329,18 @@ where the 3 OPO states components are
 \label{fig:ereal}
 \end{figure}
 %
-In absence of a defect potential ($\vectgr{\Psi}_d =0$),
+In absence of a defect potential ($\bm{\Psi}_d =0$),
 Eq.~\eqref{eq:fluct} is the eigenvalue equation for the spectrum of
 excitations of a homogeneous OPO, i.e.,
-$\det(\mathcal{L}_{\tilde{\vect{k}}} - \omega)=0$. The spectrum has 6
-branches, $\omega_{n,(u,v),\tilde{\vect{k}}}$, labeled by $n=s,p,i$
+$\det(\mathcal{L}_{\tilde{\vt{k}}} - \omega)=0$. The spectrum has 6
+branches, $\omega_{n,(u,v),\tilde{\vt{k}}}$, labeled by $n=s,p,i$
 and $(u,v)$. Even though these degrees of freedom are mixed together,
 at large momenta, one recovers the LP dispersions shifted by the three
 states energies and momenta, i.e.,:
 %
 \begin{equation}
-  \lim_{\tilde{k} \gg \sqrt{2m_C \Omega_R}} \omega_{n,(u,v),\tilde{\vect{k}}} = \pm
-  (\omega^{LP}_{\vect{k} - \vect{k}_n} - \omega_n)\; ,
+  \lim_{\tilde{k} \gg \sqrt{2m_C \Omega_R}} \omega_{n,(u,v),\tilde{\vt{k}}} = \pm
+  (\omega^{LP}_{\vt{k} - \vt{k}_n} - \omega_n)\; ,
 \label{eq:large}
 \end{equation}
 %
@@ -348,31 +348,31 @@ where $+$ ($-$) corresponds to the $u$ ($v$) particle- (hole-)like
 branch.
 %
 The OPO solution is stable (shaded area in Fig.~\ref{fig:spect}) as
-far as $\Im \omega_{n,(u,v),\tilde{\vect{k}}} < 0$.
+far as $\Im \omega_{n,(u,v),\tilde{\vt{k}}} < 0$.
 
 The shape of the patterns, or Cherenkov-like waves, resulting from the
 elastic scattering of the OPO 3-fluids against the static ($\omega=0$)
 defect can be determined starting from the spectrum, and in particular
-evaluating the closed curves $\Gamma_{n,(u,v), \tilde{\vect{k}}}$ in
-$\vect{k}$-space, or ``Rayleigh rings''~\cite{9783319002651} defined
-by condition $\Re \omega_{n,(u,v), \tilde{\vect{k}}} =
+evaluating the closed curves $\Gamma_{n,(u,v), \tilde{\vt{k}}}$ in
+$\vt{k}$-space, or ``Rayleigh rings''~\cite{9783319002651} defined
+by condition $\Re \omega_{n,(u,v), \tilde{\vt{k}}} =
 0$~\footnote{Even if they do not appear to be relevant here, note that
   the presence of a non-vanishing imaginary part of the excitation
-  spectrum $Im\omega_{n,(u,v),\tilde{\vect{k}}}\neq 0$ introduces some
+  spectrum $Im\omega_{n,(u,v),\tilde{\vt{k}}}\neq 0$ introduces some
   complications: Even in the absence of any Rayleigh ring, the drag
   force can be non-vanishing and the standard Landau criterion may
   fail identifying a critical velocity~\cite{Wouters_2010}.}.
 %
 The modulations propagate with a direction
-$\hat{\eta}_{n,(u,v),\tilde{\vect{k}}}$ orthogonal to each curve
-$\Gamma_{n,(u,v), \tilde{\vect{k}}}$, a pattern wavelength given by
-the corresponding $|\tilde{\vect{k}}|$, and a group velocity
-$\vect{v}_{n,(u,v),\tilde{\vect{k}}}^{(g)}=\nabla_{\tilde{\vect{k}}}
-\Re \omega_{n,(u,v), \tilde{\vect{k}}}$, where
-$\xi_{n,(u,v),\tilde{\vect{k}}} =
-|\vect{v}_{n,(u,v),\tilde{\vect{k}}}^{(g)} / \Im \omega_{n,(u,v),
-  \tilde{\vect{k}}}|$ determines the distance, at any given direction
-$\hat{\eta}_{n,(u,v),\tilde{\vect{k}}}$, over which the perturbation
+$\hat{\eta}_{n,(u,v),\tilde{\vt{k}}}$ orthogonal to each curve
+$\Gamma_{n,(u,v), \tilde{\vt{k}}}$, a pattern wavelength given by
+the corresponding $|\tilde{\vt{k}}|$, and a group velocity
+$\vt{v}_{n,(u,v),\tilde{\vt{k}}}^{(g)}=\nabla_{\tilde{\vt{k}}}
+\Re \omega_{n,(u,v), \tilde{\vt{k}}}$, where
+$\xi_{n,(u,v),\tilde{\vt{k}}} =
+|\vt{v}_{n,(u,v),\tilde{\vt{k}}}^{(g)} / \Im \omega_{n,(u,v),
+  \tilde{\vt{k}}}|$ determines the distance, at any given direction
+$\hat{\eta}_{n,(u,v),\tilde{\vt{k}}}$, over which the perturbation
 extends away from the defect. For a single fluid under a coherent
 pump, the qualitative shape of the modulation pattern generated in the
 fluid by the defect is mostly determined by the excitation
@@ -380,42 +380,42 @@ spectrum~\cite{Carusotto_2006,Carusotto_2004}.
 
 For OPO, the spectrum of excitation on top of each of the three,
 $n=1,2,3$, states (see~\cite{SM}) generates six identical Rayleigh
-rings $\Gamma_{n,(u,v), \tilde{\vect{k}}}$ for the 3 states.
+rings $\Gamma_{n,(u,v), \tilde{\vt{k}}}$ for the 3 states.
 %
 The Rayleigh rings for the OPO conditions specified in
 Fig.~\ref{fig:spect} are clearly visible in the right panels of
-Fig.~\ref{fig:ereal}, where we plot the $\vect{k}$-space
+Fig.~\ref{fig:ereal}, where we plot the $\vt{k}$-space
 photoluminescence filtered at each state energy, i.e.,
-$|\psi_{\tilde{\vect{k}}} (\omega_n)|^2= |\psi_{n}^{}
-\delta_{\tilde{\vect{k}},0} + u_{n,\tilde{\vect{k}}}^{} +
-v^*_{n,-\tilde{\vect{k}}}|^2$.
+$|\psi_{\tilde{\vt{k}}} (\omega_n)|^2= |\psi_{n}^{}
+\delta_{\tilde{\vt{k}},0} + u_{n,\tilde{\vt{k}}}^{} +
+v^*_{n,-\tilde{\vt{k}}}|^2$.
 %
-We have here chosen a $\delta$-like defect potential, $V_d(\vect{k}) =
+We have here chosen a $\delta$-like defect potential, $V_d(\vt{k}) =
 g_d$, but we have however checked that our results do not depend on
 its exact shape~\cite{SM}.
 %
 For the OPO conditions considered here, the signal momentum is at $k_s
 \simeq 0$, and thus only four of the six rings are present. The same
 rings are also plotted in the right panel of Fig.~\ref{fig:spect},
-shifted at each of the three OPO state momentum $\vect{k}_n$,
-$\Gamma_{n,(u,v), \tilde{\vect{k}}+\vect{k}_n}$ and energies
+shifted at each of the three OPO state momentum $\vt{k}_n$,
+$\Gamma_{n,(u,v), \tilde{\vt{k}}+\vt{k}_n}$ and energies
 $\omega_n$.
 %
 It is important to note that, even though the three OPO states have
 locked responses because the three states display the same spectrum of
 excitations, only one of the rings $\Gamma_{n,(u,v),
-  \tilde{\vect{k}}+\vect{k}_n}$ is the most resonant at $\omega_n$
+  \tilde{\vt{k}}+\vt{k}_n}$ is the most resonant at $\omega_n$
 with the interaction blue-shifted lower polariton dispersion,
 %
 \begin{equation}
-  \bar{\omega}_{\vect{k}}^{LP} = \omega_{\vect{k}}^{LP} + 2 
-  X_{\vect{k}}^2 \sum_{n=1}^3  \epsilon_n\; ,
+  \bar{\omega}_{\vt{k}}^{LP} = \omega_{\vt{k}}^{LP} + 2 
+  X_{\vt{k}}^2 \sum_{n=1}^3  \epsilon_n\; ,
 \label{eq:blues}
 \end{equation}
 %
-where $\epsilon_n = g_X X_{\vect{k}_n}^2 |\psi_n^{}|^2$ are the
+where $\epsilon_n = g_X X_{\vt{k}_n}^2 |\psi_n^{}|^2$ are the
 mean-field energy blue-shifts (measured in Fig.~\ref{fig:spect} in
-units of $\gamma_p = \gamma_{\vect{k}_p}$).  This implies that the
+units of $\gamma_p = \gamma_{\vt{k}_p}$).  This implies that the
 most visible modulation for each fluid should be the most resonant
 one, with superimposed weaker modulations coming from the other two
 state rings.
@@ -426,7 +426,7 @@ rings are very far from being resonant with the blue-shifted LP
 dispersion~\eqref{eq:blues} at $\omega_s$, and thus the signal
 displays only an extremely weak modulation coming from the next
 closer ring, which is the one associated with the pump state,
-$\Gamma_{p,u, \tilde{\vect{k}}+\vect{k}_s}$.
+$\Gamma_{p,u, \tilde{\vt{k}}+\vt{k}_s}$.
 %
 We estimate that the signal modulation amplitudes are roughly $1\%$ of
 the average signal intensity and about a factor of 10 times weaker
@@ -447,18 +447,18 @@ leaving the signal basically insensitive to the presence of the
 defect.
 
 Pump and idler states are each mostly resonant with their own
-rings, i.e., $\Gamma_{p,u, \tilde{\vect{k}}+\vect{k}_p}$ at $\omega_p$
-and $\Gamma_{i,u, \tilde{\vect{k}}+\vect{k}_i}$ at $\omega_i$,
+rings, i.e., $\Gamma_{p,u, \tilde{\vt{k}}+\vt{k}_p}$ at $\omega_p$
+and $\Gamma_{i,u, \tilde{\vt{k}}+\vt{k}_i}$ at $\omega_i$,
 respectively. Thus one should then observe two superimposed
 modulations in both pump and idler filtered emissions, the stronger
 one for each being the most resonant one.
 %
 However, the modulations associated to the idler only propagate very
 close to the defect, at an average distance
-$\overline{\xi_{i,u,\tilde{\vect{k}}}} \sim 1.7~\mu$m before getting
+$\overline{\xi_{i,u,\tilde{\vt{k}}}} \sim 1.7~\mu$m before getting
 damped, and thus are not clearly visible. For the OPO conditions
 considered, this is due to the small idler group velocity
-$\vect{v}_{i,u,\tilde{\vect{k}}}^{(g)}$, as the dispersion is almost
+$\vt{v}_{i,u,\tilde{\vt{k}}}^{(g)}$, as the dispersion is almost
 excitonic at the idler energy.
 
 We can conclude that, for the typical OPO condition with a signal at
@@ -484,7 +484,7 @@ promotes stimulated scattering.
   emissions of signal, pump and idler in presence of a structural
   defect. The six panels show the filtered emission profiles in real
   space of signal (top), pump (middle) and idler (bottom) $I_{s,
-    p,i}(\vect{r})$. A Gaussian filtering to enhance the short
+    p,i}(\vt{r})$. A Gaussian filtering to enhance the short
   wavelength modulations is applied in the right column panels. Here,
   the extracted wave-crests from the idler emission (yellow contours
   in the bottom panel) are also superimposed to the pump profile
@@ -525,15 +525,15 @@ defect can be extracted from the emission spectrum and is indicated
 with a dot (orange) symbol in the profiles of Fig.~\ref{fig:exper}.
 
 In order to filter the emission at the three states energies,
-$I_{s,p,i}(\vect{r}=x,y)$, and obtain 2D spatial maps for the OPO
+$I_{s,p,i}(\vt{r}=x,y)$, and obtain 2D spatial maps for the OPO
 three states, we use a spectrometer and, at a fixed position $x_0$,
 obtain the intensity emission as a function of energy and position,
 $I(\epsilon,x_0,y)$. By changing $x_0$ we build the full emission
 spectrum as a function of energy and 2D position,
-$I(\epsilon,\vect{r})$. The filtered emission for each OPO state is
-obtained from the integrals $I_{n=s,p,i}(\vect{r}) =
+$I(\epsilon,\vt{r})$. The filtered emission for each OPO state is
+obtained from the integrals $I_{n=s,p,i}(\vt{r}) =
 \int_{\omega_n-\sigma}^{\omega_n+\sigma} d\epsilon I(\epsilon,
-\vect{r})$, with $\sigma=0.08$~meV. The results are shown in
+\vt{r})$, with $\sigma=0.08$~meV. The results are shown in
 Fig.~\ref{fig:exper} for respectively the signal (top panel), pump
 (middle) and the idler (bottom) profiles.
 %
@@ -563,7 +563,7 @@ Details are given in~\cite{SM}.
 %
 The pumping conditions are very similar to those previously considered
 in the linear response approximation of Figs.~\ref{fig:spect}
-and~\ref{fig:ereal}, while the pump profile $\mathcal{F}_p(\vect{r})$
+and~\ref{fig:ereal}, while the pump profile $\mathcal{F}_p(\vt{r})$
 is now finite-size top-hat. In particular, we consider the case of
 zero cavity-exciton detuning, $k_p=1.6$~$\mu$m$^{-1}$,
 $\omega_p-\omega_X^0 = -0.44$~meV and the pump power strength is fixed
@@ -577,8 +577,8 @@ the spectrum continues to be $\delta$-like in energy, allowing to
 easily filter in energy the emission of the three OPO states.
 %
 Results are shown in Fig.~\ref{fig:numer}, where real-space emissions
-$|\psi_C (\vect{r},\omega_n)|^2$ are plotted in the left panels, while
-the ones in momentum space $|\psi_C (\tilde{\vect{k}},\omega_n)|^2$ in
+$|\psi_C (\vt{r},\omega_n)|^2$ are plotted in the left panels, while
+the ones in momentum space $|\psi_C (\tilde{\vt{k}},\omega_n)|^2$ in
 the right panels. We observe a very similar phenomenology to that one
 obtained in the linear approximation shown in
 Fig.~\ref{fig:ereal}. The signal now is at slightly negative values of
@@ -602,9 +602,9 @@ velocity associated with this state.
 \caption{(Color online) Full numerical responses to a static defect of
   the three OPO states in real and momentum space. Filtered OPO
   emissions (signal [top panels], pump [middle], and idler [bottom])
-  in real space $|\psi_C (\vect{r},\omega_n)|^2$ (left panels in
+  in real space $|\psi_C (\vt{r},\omega_n)|^2$ (left panels in
   linear scale) and momentum space $|\psi_C
-  (\tilde{\vect{k}},\omega_n)|^2$ (right panel in logarithmic scale)
+  (\tilde{\vt{k}},\omega_n)|^2$ (right panel in logarithmic scale)
   obtained by a full numerical evaluation of~\eqref{eq:gpequ}. For the
   top left panel of the signal space emission, Gaussian filtering is
   applied to enhance the short wavelength modulations of this state,
@@ -678,7 +678,7 @@ For the theoretical calculations we follow two independent approaches:
 In the first approach, we exactly numerically solve the dynamics of
 the two coupled Gross-Pitaevskii equations (GPEs) for the exciton and
 cavity fields for the realistic case of a finite-size top-hat pump
-profile $\mathcal{F}_p(\vect{r})$. In the second approach, we apply a
+profile $\mathcal{F}_p(\vt{r})$. In the second approach, we apply a
 perturbative linear response approximation for the lower polariton
 (LP) state which leads to semi-analytical results in the limiting case
 of a spatially homogeneous pump profile. Both methods have been
@@ -700,12 +700,12 @@ allow to put the conclusions of our work into a broader perspective.
 %
 The classical driven-dissipative non-linear Gross-Pitaevskii equation
 (GPE) for the coupled exciton and cavity fields $\psi_{X,C}
-(\vect{r},t)$ ($\hbar=1$)
+(\vt{r},t)$ ($\hbar=1$)
 %
 \begin{equation}
   i\partial_t \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix} =
   \hat{H} \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix}
-  + \begin{pmatrix} 0 \\ F_p(\vect{r},t) \end{pmatrix}\; ,
+  + \begin{pmatrix} 0 \\ F_p(\vt{r},t) \end{pmatrix}\; ,
 \label{eq:numer}
 \end{equation}
 %
@@ -732,12 +732,12 @@ Refs.~\cite{Marchetti_2010,9783642241857}).
 %
 As for the system parameters, we have considered a LP dispersion at
 zero photon-exciton detuning, $\omega^C_0 = \omega^X_0$, a
-dispersionless excitonic spectrum, $\omega^X_{\vect{k}} = \omega^X_0$
-and a quadratic dispersion for photons $\omega^C_{\vect{k}} =
+dispersionless excitonic spectrum, $\omega^X_{\vt{k}} = \omega^X_0$
+and a quadratic dispersion for photons $\omega^C_{\vt{k}} =
 \omega^C_0 + k^2/2m_C$, with the photon mass $m_C=2.3 \times 10^{-5}
 m_e$, where $m_e$ is the bare electron mass. The LP dispersion, $2
-\omega_{\vect{k}}^{LP} = \omega_{\vect{k}}^{C} + \omega_{\vect{k}}^{X}
-- \sqrt{(\omega_{\vect{k}}^{C} - \omega_{\vect{k}}^{X})^2 +
+\omega_{\vt{k}}^{LP} = \omega_{\vt{k}}^{C} + \omega_{\vt{k}}^{X}
+- \sqrt{(\omega_{\vt{k}}^{C} - \omega_{\vt{k}}^{X})^2 +
   \Omega_R^2}$ is characterised by a Rabi splitting $\Omega_R =
 4.4$~meV. Further, the exciton and cavity decay rates are fixed to
 $\gamma_X=\gamma_C=0.53$~meV.
@@ -745,10 +745,10 @@ $\gamma_X=\gamma_C=0.53$~meV.
 For the defect we choose a $\delta$-like defect potential
 %
 \begin{equation}
-  V_d(\vect{r}) = g_d \delta(\vect{r} - \vect{r}_0)\; ,
+  V_d(\vt{r}) = g_d \delta(\vt{r} - \vt{r}_0)\; ,
 \end{equation}
 %
-where its location $\vect{r}_0$ is fixed at one of the $N \times N$
+where its location $\vt{r}_0$ is fixed at one of the $N \times N$
 points of the grid.
 %
 Note that in a finite-size OPO, local currents lead to inhomogeneous
@@ -766,15 +766,15 @@ the strength $g_d$ (nor on the sign) of the defect potential, as far
 as this does not exceed a critical value above which it destabilises
 the OPO steady-state regime.
 %
-The pump, $F_p(\vect{r},t) = \mathcal{F}_p(\vect{r}) e^{i (\vect{k}_p
-  \cdot \vect{r} - \omega_p t)}$, has a smoothen and rotationally
-symmetric top-hat profile, $\mathcal{F}_p(\vect{r}) = \mathcal{F}_p(r)
+The pump, $F_p(\vt{r},t) = \mathcal{F}_p(\vt{r}) e^{i (\vt{k}_p
+  \cdot \vt{r} - \omega_p t)}$, has a smoothen and rotationally
+symmetric top-hat profile, $\mathcal{F}_p(\vt{r}) = \mathcal{F}_p(r)
 = \frac{f_p}{2}[\tanh(\frac{r+\sigma_p}{r_0}) -
   \tanh(\frac{r-\sigma_p}{r_0})]$ with strength $f_p = 1.23
 f_p^\text{th} = 0.053$~meV/$\mu$m and parameters $r_0 = 8.68~\mu$m,
 $\sigma_p = 34.72~\mu$m.
 %
-We pump at $k_p=1.6$~$\mu$m$^{-1}$ in the $x$-direction, $\vect{k}_p =
+We pump at $k_p=1.6$~$\mu$m$^{-1}$ in the $x$-direction, $\vt{k}_p =
 (k_p,0)$, and at $\omega_p-\omega_X^0=-0.44$~meV, i.e., roughly
 $0.5$~meV above the bare LP dispersion. By increasing the pump
 strength $f_p$, we find the threshold $f_p^{\text{th}}$ above which
@@ -817,7 +817,7 @@ parametric scattering later in the section ``Linear response''.
   dispersion, including its broadening due to finite lifetime, is
   plotted as a shaded grey region, while the bare UP dispersion as a
   (black) dot-dashed line. Right panel: Momentum integrated spectrum,
-  $\sum_{\vect{k}} |\psi_C(\vect{k},\omega)|^2$ (linear scale) as a
+  $\sum_{\vt{k}} |\psi_C(\vt{k},\omega)|^2$ (linear scale) as a
   function of the rescaled energy $\omega - \omega_0^X$, where it can
   be clearly appreciated that the emission is $\delta$-like in
   energy.}
@@ -841,17 +841,17 @@ parametric scattering later in the section ``Linear response''.
 \end{figure}
 %
 We evaluate the time dependent full numerical solution
-of~\eqref{eq:numer} $\psi_{X,C} (\vect{r},t)$, until a steady state
+of~\eqref{eq:numer} $\psi_{X,C} (\vt{r},t)$, until a steady state
 regime is reached. Here, both its Fourier transform to momentum
-$\vect{k}$ and energies $\omega$ can be evaluated numerically.
+$\vt{k}$ and energies $\omega$ can be evaluated numerically.
 %
 We plot on the left panel of S.~Fig.~\ref{fig:spectGP} a cut at $k_y=0$
 of the photonic component of the OPO spectrum in presence of a
 point-like defect, $|\psi_C(k_x,0,\omega)|^2$, as a function of the
 rescaled energy $\omega - \omega_0^X$ versus the $x$-component of
 momentum $k_x$ (cut at $k_y=0$). In the right panel we plot instead
-the corresponding momentum integrated spectrum, $\sum_{\vect{k}}
-|\psi_C(\vect{k},\omega)|^2$.
+the corresponding momentum integrated spectrum, $\sum_{\vt{k}}
+|\psi_C(\vt{k},\omega)|^2$.
 %
 Here, we can clearly see that the presence of the defect does not
 modify the fact that the OPO emission for the OPO signal ([blue] upper
@@ -876,8 +876,8 @@ those profiles very efficiently in energy. In fact, because the
 emission is $\delta$-like, it is enough to fix a single value of the
 energy $\omega$ to the one of the three states $\omega_{n=s,p,i}$,
 thus extracting the filtered profiles either in real space
-$|\psi_C(\vect{r},\omega_n)|^2$ or in momentum space
-$|\psi_C(\vect{k},\omega_n)|^2$ --- we have however checked that
+$|\psi_C(\vt{r},\omega_n)|^2$ or in momentum space
+$|\psi_C(\vt{k},\omega_n)|^2$ --- we have however checked that
 integrating in a narrow energy window around $\omega_n$ does not
 quantitatively change the results.
 
@@ -901,12 +901,12 @@ signal images, which result is shown in the inset of the top-left
 panel of Fig.~4 in the manuscript.
 %
 This consists of the following procedure. The original data for the
-real space profile $\psi(\vect{r})$ are convoluted with a Gaussian
-kernel $K(\vect{r} - \vect{r}')$, obtaining a new profile,
-$\tilde{\psi}(\vect{r}') = \int d\vect{r} \psi (\vect{r}) K(\vect{r} -
-\vect{r}')$, where short wavelengths features are smoothen out. The
-convoluted image $\tilde{\psi}(\vect{r}')$ is then subtracted from the
-original data, giving $\psi(\vect{r}) - \tilde{\psi}(\vect{r})$, and
+real space profile $\psi(\vt{r})$ are convoluted with a Gaussian
+kernel $K(\vt{r} - \vt{r}')$, obtaining a new profile,
+$\tilde{\psi}(\vt{r}') = \int d\vt{r} \psi (\vt{r}) K(\vt{r} -
+\vt{r}')$, where short wavelengths features are smoothen out. The
+convoluted image $\tilde{\psi}(\vt{r}')$ is then subtracted from the
+original data, giving $\psi(\vt{r}) - \tilde{\psi}(\vt{r})$, and
 effectively filtering out all long wavelength details.
 %
 The same procedure of Gaussian filtering is also applied to the signal
@@ -918,7 +918,7 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 \includegraphics[width=.5\linewidth]{fig_excitation_ks_0_000.png}
 \caption{Spectrum of collective excitations. Cut at $k_y=0$ of the
   real part of the quasiparticle energy dispersion $\Re
-  \omega_{n,(u,v),\vect{k}-\vect{k}_n}$ plotted versus $k_x -
+  \omega_{n,(u,v),\vt{k}-\vt{k}_n}$ plotted versus $k_x -
   k_n$. The spectrum is evaluated within the linear approximation
   scheme and the parameters are the same ones used for Fig.~2 of the
   main manuscript.}
@@ -933,8 +933,8 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 \caption{(Color online) OPO for finite and positive signal momentum in
   the linear response approximation for homogeneous pumping. Rescaled
   OPO emission within the linear response approximation in real $|\psi
-  (\vect{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear scale) and
-  momentum space $|\psi_{\tilde{\vect{k}}} (\omega_n)|^2$ (right
+  (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear scale) and
+  momentum space $|\psi_{\tilde{\vt{k}}} (\omega_n)|^2$ (right
   panels in linear scale) filtered at the energies of the three OPO
   states: signal (top panels), pump (middle), and idler (bottom). The
   parameters are the same as those used in Fig.~2 of the main
@@ -955,8 +955,8 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 \caption{(Color online) OPO for finite and negative signal momentum in
   the linear response approximation for homogeneous pumping. Rescaled
   OPO emission within the linear response approximation in real $|\psi
-  (\vect{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear scale) and
-  momentum space $|\psi_{\tilde{\vect{k}}} (\omega_n)|^2$ (right
+  (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear scale) and
+  momentum space $|\psi_{\tilde{\vt{k}}} (\omega_n)|^2$ (right
   panels in linear scale) filtered at the energies of the three OPO
   states: signal (top panels), pump (middle), and idler (bottom). The
   parameters are the same as those used in Fig.~2 of the main
@@ -993,7 +993,7 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 \includegraphics[width=.5\linewidth]{uncoupled.png}
 \caption{Real space profiles of three uncoupled signal, pump and idler
   fluids. The rescaled profiles $|\psi
-  (\vect{r},\omega_n)|^2/|\psi_n|^2$ are obtained by setting all
+  (\vt{r},\omega_n)|^2/|\psi_n|^2$ are obtained by setting all
   off-diagonal couplings in Eq.~(6) of the main manuscript to zero,
   resulting in three uncoupled signal (left column), pump (middle
   column), and idler (right column) fluids. The three rows correspond
@@ -1019,15 +1019,15 @@ eigenvalues determine the spectrum of collective excitations. We plot
 in S.~Fig.~\ref{fig:bogol} a typical collective dispersion (here we
 consider the same system parameters as the ones used in Fig.~2 of the
 manuscript), by plotting the real part of the Bogoliubov matrix
-eigenvalues $\Re \omega_{n,(u,v),\vect{k}-\vect{k}_n}$ as a function
+eigenvalues $\Re \omega_{n,(u,v),\vt{k}-\vt{k}_n}$ as a function
 of $k_x - k_n$ (cut at $k_y=0$). Note that the Rayleigh rings can be
 found by finding the intersections $\Re
-\omega_{n,(u,v),\vect{k}-\vect{k}_n}=0$.
+\omega_{n,(u,v),\vt{k}-\vt{k}_n}=0$.
 
 
 As also done for the full numerics, we
-consider there a $\delta$-like disorder potential $V_d(\vect{r}) = g_d
-\delta(\vect{r} - \vect{r}_0)$, and Figs.~1 and~2 of the manuscript,
+consider there a $\delta$-like disorder potential $V_d(\vt{r}) = g_d
+\delta(\vt{r} - \vt{r}_0)$, and Figs.~1 and~2 of the manuscript,
 as well as S.~Figs.~\ref{fig:ksp07} and~\ref{fig:ksm04} below, are
 plotted for this case.
 %
@@ -1039,7 +1039,7 @@ in real space.
 
 We have seen in the manuscript that both experimentally as well as in
 the full numerical analysis, one obtains OPO conditions where the
-signal momentum is very close to zero, $\vect{k}_s \sim 0$. The reason
+signal momentum is very close to zero, $\vt{k}_s \sim 0$. The reason
 why OPO selects almost zero momentum signal conditions is still
 awaiting a theoretical explaination.
 %
@@ -1050,8 +1050,8 @@ momentum values, either positive or negative.
 %
 This is a peculiarity of this approximation scheme, where one can show
 that, at mean-field level, one has the possibility of choosing
-different values of the signal momentum $\vect{k}_s$ (and thus the one
-of the idler $\vect{k}_i$), and that this choice range is quite broad
+different values of the signal momentum $\vt{k}_s$ (and thus the one
+of the idler $\vt{k}_i$), and that this choice range is quite broad
 particularly when the pump power is close to the lower pump threshold
 for OPO --- the stability region for OPO is plotted as a shaded grey
 region in the top left panels of S.~Figs.~\ref{fig:ksp07}
@@ -1068,12 +1068,12 @@ One can only show that, within the same mean-field approximation
 scheme, when increasing the pump power towards the upper threshold for
 OPO, the blue-shift of the LP polariton dispersion due to the
 increasing mean-field polariton density, causes the signal momentum to
-converge towards zero~\cite{Whittaker_2005} $\vect{k}_s \to 0$.
+converge towards zero~\cite{Whittaker_2005} $\vt{k}_s \rightarrow 0$.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \paragraph{OPO conditions with a finite momentum signal ---}
 %
-Given the freedom of choice for the signal momentum $\vect{k}_s$ close
+Given the freedom of choice for the signal momentum $\vt{k}_s$ close
 to the lower OPO threshold, we consider here two additional cases,
 that could not be studied neither experimentally, nor within a full
 numerical approach, but that instead we can easily analyse within the
@@ -1128,18 +1128,18 @@ fluids.
 
 In S.~Fig.~\ref{fig:uncou} we instead show the real space profiles
 obtained by setting all off-diagonal couplings in the Bogoliubov
-matrix $\mathcal{L}_{\vect{k}}$ of Eq.~(6) of the main manuscript to
+matrix $\mathcal{L}_{\vt{k}}$ of Eq.~(6) of the main manuscript to
 zero, resulting in three uncoupled signal (left column), pump (middle
 column), and idler (right column) fluids. This underlines the
 importance of the coupling between the three fluids in the three
 different OPO regimes previously analysed within the linear response
 approximation. In particular, for the OPO conditions such that the
-signal has a finite and positive momentum $\vect{k}_s$ (bottom row of
+signal has a finite and positive momentum $\vt{k}_s$ (bottom row of
 S.~Fig.~\ref{fig:uncou}, which corresponds to the conditions shown in
 S.~Fig.~\ref{fig:ksp07}), the coupling has little effect and the three
 fluid respond to the defect in practice in a independent way (each
 Rayleigh ring influences its own fluid). The OPO condition with a
-finite and negative momentum $\vect{k}_s$, which corresponds to the
+finite and negative momentum $\vt{k}_s$, which corresponds to the
 conditions shown in S.~Fig.~\ref{fig:ksm04}, are shown in the top row
 of S.~Fig.~\ref{fig:uncou}: Here, we can see that the coupling between
 the three fluids plays an effect. The modulations of the pump can be
