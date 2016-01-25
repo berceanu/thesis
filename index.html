@@ -73,19 +73,5 @@
     <p>You can download the latest version of the LaTeX source code as a <a href="https://github.com/berceanu/thesis/archive/master.zip">zip archive</a> or visit the <a href="https://github.com/berceanu/thesis">GitHub repository</a>.</p>
     <p>For the updated PDF click <a href="https://www.sharelatex.com/github/repos/berceanu/thesis/builds/latest/output.pdf">here</a>. <img src="https://www.sharelatex.com/github/repos/berceanu/thesis/builds/latest/badge.svg" alt="PDF status" style="border:0"></p>
     
-    <p id="xmas">There are <span style="color:blue">0</span> days left.</p>
-    
-    <script>
-      today=new Date();
-      var cmas=new Date(today.getFullYear(), 11, 20);
-      if (today.getMonth()==11 && today.getDate()>25) 
-      {
-      cmas.setFullYear(cmas.getFullYear()+1); 
-      }  
-      var one_day=1000*60*60*24;
-      var diffDays = Math.round(Math.abs((cmas.getTime() - today.getTime())/(one_day)));
-      document.getElementById("xmas").getElementsByTagName('span')[0].innerHTML = diffDays;
-    </script>
-
   </body>
 </html>
