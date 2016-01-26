@@ -129,8 +129,8 @@ confirmed by the experimental observations.
 %
 \begin{figure}[tb]
 \centering
-\includegraphics[width=.5\linewidth]{figure1.png} %TODO add generating scripts
-\caption{(Color online) OPO mean-field blue-shifts and fluctuation
+\includegraphics[width=.5\linewidth]{3d0_0} % ~/notebooks/OPODrag/opodrag.py
+\caption{OPO mean-field blue-shifts and fluctuation
   Rayleigh rings in the linear response scheme for homogeneous
   pumping. Left panel: Signal $s$ ([blue] upper triangles), pump $p$
   ([red] circles), and idler $i$ ([green] lower triangles) mean-field
@@ -313,7 +313,9 @@ where the 3 OPO states components are
 %
 \begin{figure}[tb]
 \centering
-\includegraphics[width=.5\linewidth]{figure2.png}
+\includegraphics[width=.5\linewidth]{ks0_0}
+% ~/notebooks/julia/april/linresp_waves.ipynb
+% ~/notebooks/OPODrag/opodrag.py
 \caption{Linear responses to a static defect of the three OPO states
   in real and momentum space. Rescaled filtered OPO emissions (signal
   [top panels], pump [middle], and idler [bottom]) in real space
@@ -479,8 +481,9 @@ promotes stimulated scattering.
 
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=.5\linewidth]{figure3.png}
-\caption{(Color online) Experimental OPO spectrum and filtered
+  \includegraphics[width=.5\linewidth]{exp_waves}
+% ~/notebooks/julia/april/extract_exp_waves.ipynb
+\caption{Experimental OPO spectrum and filtered
   emissions of signal, pump and idler in presence of a structural
   defect. The six panels show the filtered emission profiles in real
   space of signal (top), pump (middle) and idler (bottom) $I_{s,
@@ -598,8 +601,10 @@ velocity associated with this state.
 %
 \begin{figure}[tb]
 \centering
-\includegraphics[width=.5\linewidth]{figure4.png}
-\caption{(Color online) Full numerical responses to a static defect of
+\includegraphics[width=.5\linewidth]{GP_space_mom}
+% ~/Development/gp-linear-response/filtering-theory-GP.py
+% ~/notebooks/julia/april/GP_signal_inset.ipynb
+\caption{Full numerical responses to a static defect of
   the three OPO states in real and momentum space. Filtered OPO
   emissions (signal [top panels], pump [middle], and idler [bottom])
   in real space $|\psi_C (\vt{r},\omega_n)|^2$ (left panels in
@@ -779,8 +784,9 @@ parametric scattering later in the section ``Linear response''.
 
 %
 \begin{figure}[tb]\centering
-\includegraphics[width=.5\linewidth]{GP_disp.png}
-\caption{(Color online) OPO spectrum obtained by full numerics. Left
+\includegraphics[width=.5\linewidth]{GP_disp}
+% ~/notebooks/julia/theory-GP.ipynb
+\caption{OPO spectrum obtained by full numerics. Left
   panel: Photonic component of the OPO spectrum in presence of a
   point-like defect, $|\psi_C(k_x,0,\omega)|^2$ (logarithmic scale),
   as a function of the rescaled energy $\omega - \omega_0^X$ versus
@@ -806,6 +812,7 @@ parametric scattering later in the section ``Linear response''.
 %
 \begin{figure}[tb]\centering
 \includegraphics[width=.5\linewidth]{rangesGP.png}
+% ~/Development/gp-linear-response/filtering-theory-GP.py
 \caption{Real space signal, pump and idler OPO one-dimensional
   filtered profiles derived from finite size numerics with and without
   a defect. Rescaled OPO filtered emissions along the $y=0$ direction,
@@ -896,6 +903,7 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 %
 \begin{figure}[tb]\centering
 \includegraphics[width=.5\linewidth]{fig_excitation_ks_0_000.png}
+% ~/notebooks/OPODrag/opodrag.py
 \caption{Spectrum of collective excitations. Cut at $k_y=0$ of the
   real part of the quasiparticle energy dispersion $\Re
   \omega_{n,(u,v),\vt{k}-\vt{k}_n}$ plotted versus $k_x -
@@ -910,7 +918,8 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 \centering
 \includegraphics[width=.5\linewidth]{3d0_7.png}
 \includegraphics[width=.5\linewidth]{ks0_7.png}
-\caption{(Color online) OPO for finite and positive signal momentum in
+% ~/notebooks/OPODrag/opodrag.py
+\caption{OPO for finite and positive signal momentum in
   the linear response approximation for homogeneous pumping. Rescaled
   OPO emission within the linear response approximation in real $|\psi
   (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear scale) and
@@ -932,7 +941,8 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 \centering
 \includegraphics[width=.5\linewidth]{3d-0_4.png}
 \includegraphics[width=.5\linewidth]{ks-0_4.png}
-\caption{(Color online) OPO for finite and negative signal momentum in
+% ~/notebooks/OPODrag/opodrag.py
+\caption{OPO for finite and negative signal momentum in
   the linear response approximation for homogeneous pumping. Rescaled
   OPO emission within the linear response approximation in real $|\psi
   (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear scale) and
@@ -950,7 +960,8 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 %
 \begin{figure}[tb]\centering
 \includegraphics[width=.5\linewidth]{ranges.png}
-\caption{(Color online) Real space signal, pump and idler OPO
+% ~/notebooks/OPODrag/opodrag.py
+\caption{Real space signal, pump and idler OPO
   one-dimensional filtered profiles in the linear response
   approximation. OPO filtered emissions along the $y=0$ direction, $I
   (x, y=0, \omega_n) = |\psi(x,y=0, \omega_n)|^2/|\psi_n|^2$ rescaled
@@ -971,6 +982,7 @@ shown in the inset of the top left panel of Fig.~2 of the manuscript.
 %
 \begin{figure}[tb]\centering
 \includegraphics[width=.5\linewidth]{uncoupled.png}
+% ~/notebooks/OPODrag/opodrag.py
 \caption{Real space profiles of three uncoupled signal, pump and idler
   fluids. The rescaled profiles $|\psi
   (\vt{r},\omega_n)|^2/|\psi_n|^2$ are obtained by setting all
