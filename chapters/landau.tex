@@ -1,4 +1,13 @@
-\chapter{Momentum-space Landau levels in driven-dissipative cavity arrays}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Key                         | Occurences |
+%-----------------------------+------------|
+% price2014magnetic           |         14 |
+% ozawa2014momhh              |          9 |
+% hafezi2013imaging           |          7 |
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\chapter{Landau levels in dissipative cavity arrays}
 \label{cha:landau}
 
 \section{Introduction}
@@ -30,7 +39,7 @@ This paper is organized as follows: in Section \ref{sec:model} we introduce the 
 photonics-based experiment in Section \ref{sec:experiment}. Finally, we draw conclusions in Section \ref{sec:conclusion}. 
 
 
-\section{Introduction to the trapped Harper-Hofstadter Model}
+\section{The trapped Harper-Hofstadter Model}
 \label{sec:model}
 
 In this paper, we study the Harper-Hofstadter Hamiltonian $\mathcal{H}_0$ in the presence of an external harmonic trap. The full tight-binding Hamiltonian $\mathcal{H}$ of this system is
@@ -113,7 +122,7 @@ where $H_\beta$ are the Hermite polynomials and $l_{\Omega_n} = \sqrt{1/|\Omega_
 the magnetic length. Here we have taken the Berry gauge to have a Landau form $\mathcal{A}_n(\mathbf{p}) = \Omega_n p_x \hat{\vt{p}}_y$ parallel to the $\hat{\vt{p}}_y$ unit vector in  momentum space. We have also assumed that the MBZ is of length $2 \pi$ in one momentum direction, and $2 \pi / q$ in the other direction, corresponding to a magnetic unit cell of $q$ plaquettes containing one flux quantum. While this choice of MBZ is valid in any magnetic gauge of the underlying Harper-Hofstadter model, it is particularly natural when the hopping phases in $\mathcal{H}_0$ are in the Landau magnetic gauge $\phi = (0, 2\pi\alpha m)$, as we shall discuss further below. 
 
 
-\subsection{The Berry connection and the breakdown of approximations}\label{sec:berry-shift}
+\subsection{The Berry connection}\label{sec:berry-shift}
 
 We now study the effects of the last term in the momentum-space Hamiltonian~(\ref{eq:dual}) which comes from the off-diagonal matrix elements of the Berry connection~\cite{berry}:
 \begin{align}
@@ -211,7 +220,7 @@ In the rest of the article, we denote the momentum in the original BZ as $\mathb
 
 \begin{figure}[tb]\centering
   \includegraphics[width=\linewidth]{selection} % anc/scripts/selection_fig.jl
-  \caption{(Color online) Intensity spectra for different pumping conditions: (a)
+  \caption{Intensity spectra for different pumping conditions: (a)
     pumping the single site (5,5), (b) pumping with a Gaussian
     profile centered at site (5,5) with width $\sigma=1$, (c) homogeneous pumping across all lattice sites and (d) pumping with a random
     phase across all lattice sites. These results were obtained by numerical solving Eq.~\eqref{eq:linear_problem} for the steady-state in a lattice of
@@ -251,7 +260,7 @@ Fig.~\ref{fig:pumping_schemes} (a).
 \begin{figure}[tb]
   \centering
   \includegraphics[width=0.9\linewidth]{real} % anc/scripts/selection_fig.jl
-  \caption{(Color online) Real space reconstruction of the states $\beta=3$, 6, 15
+  \caption{Real space reconstruction of the states $\beta=3$, 6, 15
     and 26 of Fig.~\ref{fig:pumping_schemes}(a).}
   \label{fig:delta_real_sp}
 \end{figure}
@@ -266,7 +275,7 @@ counterpart, where states have higher amplitude close to the centre of the BZ an
 
 \begin{figure}[tb]\centering
   \includegraphics[width=0.9\linewidth]{momentum} % anc/scripts/selection_fig.jl
-  \caption{(Color online) Momentum space reconstruction of the
+  \caption{Momentum space reconstruction of the
     eigenstates. \emph{Top row}: states corresponding to $\beta=0$, 2,
     4 and 6 in Fig.~\ref{fig:pumping_schemes}(c), using the
     Landau gauge.  \emph{Bottom row}: states corresponding to
@@ -296,7 +305,7 @@ increasing momentum-space ring discussed above.
 \begin{figure}[tb]
   \centering
   \includegraphics[width=0.9\linewidth]{sym_ring} % anc/scripts/torus_edge_fig.jl
-  \caption{(Color online) Momentum space reconstruction of the eigenstates in the
+  \caption{Momentum space reconstruction of the eigenstates in the
     full BZ, using the symmetric gauge and homogeneous pumping with a random on-site
     phase. \emph{Top row}: states corresponding to
     $\beta = 9, 20, 30$.  \emph{Bottom row}: states corresponding to
@@ -320,7 +329,7 @@ As shown in Fig.~\ref{fig:moving_trap}, a shift in the harmonic trap centre in o
 \begin{figure}[htb]
   \centering
   \includegraphics[width=\linewidth]{fringe_trap} % anc/scripts/torus_edge_fig.jl
-  \caption{(Color online) Momentum space reconstruction of the eigenstates in the
+  \caption{Momentum space reconstruction of the eigenstates in the
     full BZ, using the Landau (top row) and symmetric gauge (middle
     and bottom row) and a spatially homogeneous pump with
     a random on-site phase. We have considered the state $\beta = 4$ for
@@ -355,7 +364,7 @@ spectrum.
 \begin{figure}[tb]
   \centering
   \includegraphics[width=.8\linewidth]{exp_fig} % anc/scripts/experimental_fig.jl
-  \caption{(Color online) \emph{Top row}: Intensity spectrum for a small lattice of $11 \times 11$ sites, with
+  \caption{\emph{Top row}: Intensity spectrum for a small lattice of $11 \times 11$ sites, with
     $\gamma = 0.05 J$, $\kappa = 0.2 J$ and $\alpha=1/7$. The orange vertical (dashed) lines
     show the first ladder of eigenstates of $\mathcal{H}$ from Eq.~\eqref{eq:model}. The second ladder of states is indicated with green vertical dash-dotted lines.
   \emph{Second row}: Profile of the $\beta=7$ state in real space
