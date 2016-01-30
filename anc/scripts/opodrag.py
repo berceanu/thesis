@@ -1,4 +1,4 @@
-# Python 2.7
+
 
 import numpy as np
 import matplotlib as mpl
