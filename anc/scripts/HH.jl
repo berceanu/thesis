@@ -1,6 +1,5 @@
 module HH
 import BP
-
 #in-place builder of the q x q HH matrix in mom. sp.
 momsphhmat!(A::Matrix{Complex{Float64}},kx0::Float64,ky::Float64) =
    momsphhmat!(A, kx0,ky, 1)
@@ -25,7 +24,6 @@ function momsphhmat!(A::Matrix{Complex{Float64}},
     end
     nothing
 end
-
 # Computes the q energy levels E(p_y)
 hhladder(q::Int) = hhladder(1,q)
 function hhladder(p::Int, q::Int)
@@ -63,7 +61,6 @@ function hhgrstate!(ve::Matrix{Float64}, p::Int, q::Int)
     end
     nothing
 end
-
 # zero point energy error
 ηzpe(q::Int, κ::Float64) = ηzpe(1, q, κ)
 ηzpe(p::Int, q::Int, κ::Float64) = (N=15; A =
@@ -93,7 +90,6 @@ function ηzpe(qs::Vector{Int}, κs::Vector{Float64})
     end
     return η
 end
-
 # level error
 ηlev(q::Int, κ::Float64) = ηlev(1, q, κ)
 ηlev(p::Int, q::Int, κ::Float64) = (N=15; A =
@@ -137,7 +133,6 @@ function ηlev(qs::Vector{Int}, κs::Vector{Float64})
     end
     return η
 end
-
 bwidth(qs::UnitRange{Int}) = bwidth([qs])
 bwidth(qs::Vector{Int}) = [bwidth(q) for q in qs]
 bwidth(q::Int) = bwidth(1, q)

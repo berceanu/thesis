@@ -2,7 +2,6 @@ using PyPlot
 import BP
 using PyCall
 @pyimport matplotlib.gridspec as gspec
-
 # system parameters
 const N = 45
 const q = 11
@@ -27,7 +26,6 @@ exdef = BP.ExactStates(100, :symmetric, N, 1/q, κ)
       38, 59, 99]
 ηs = βs + 1
 sω0s = [exdef.νs[state]::Float64 for state in ηs] # 6 frequencies
-
 fig, axes = plt[:subplots](2,3, figsize=(10, 7.3))
 for i = 1:3 #loop over columns
     # top row
@@ -63,7 +61,6 @@ end
 fig[:savefig]("../../figures/sym_ring.pdf", transparent=true,
    pad_inches=0.0, bbox_inches="tight")
 plt[:close](fig)
-
 # moving the trap
 β = 4 # selected state
 ω0 = exdef.νs[β + 1]
@@ -84,7 +81,6 @@ for col = 1:4, row = 1:3
     statefft = BP.myfft2(state, k,k)
     bz[row, col, :, :] = abs2(statefft)
 end
-
 fig = plt[:figure]()
 gs = gspec.GridSpec(3, 4)
 gs[:update](top=.99,bottom=.08,left=.07,right=.99,hspace=.05)

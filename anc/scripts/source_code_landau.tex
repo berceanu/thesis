@@ -1,10 +1,12 @@
-\subsection{BP.jl}\label{subsec:bp}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% pygmentize -l julia -f latex -o BP.tex BP.jl  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\subsection{BP.jl}\label{subsec:bp}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{module} \PY{n}{BP}
 \PY{k}{using} \PY{n}{Polynomials}
 \PY{k}{using} \PY{n}{Base}\PY{o}{.}\PY{n}{Test}
-
 \PY{k}{type}\PY{n+nc}{ }\PY{n+nc}{WaveFunction}
     \PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}
     \PY{n}{int}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
@@ -30,7 +32,6 @@
     \PY{n}{X} \PY{o}{=} \PY{n}{S}\PYZbs{}\PY{n}{P}
     \PY{k}{return} \PY{n}{WaveFunction}\PY{p}{(}\PY{n}{N}\PY{p}{,}\PY{n}{sum}\PY{p}{(}\PY{n}{abs2}\PY{p}{(}\PY{n}{X}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{n}{X}\PY{p}{)}
 \PY{k}{end}
-
 \PY{k}{type}\PY{n+nc}{ }\PY{n+nc}{ExactStates}
     \PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}
     \PY{n}{gauge}\PY{p}{:}\PY{p}{:}\PY{n}{Symbol}
@@ -58,7 +59,6 @@
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{getstate}\PY{p}{(}\PY{n}{s}\PY{p}{:}\PY{p}{:}\PY{n}{ExactStates}\PY{p}{,} \PY{n}{η}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)}
     \PY{k}{return} \PY{n}{reshape}\PY{p}{(}\PY{n}{s}\PY{o}{.}\PY{n}{states}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{η}\PY{p}{]}\PY{p}{,} \PY{p}{(}\PY{n}{s}\PY{o}{.}\PY{n}{N}\PY{p}{,} \PY{n}{s}\PY{o}{.}\PY{n}{N}\PY{p}{)}\PY{p}{)}
 \PY{k}{end}
-
 \PY{k}{type}\PY{n+nc}{ }\PY{n+nc}{Spectrum}
     \PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}
     \PY{n}{gauge}\PY{p}{:}\PY{p}{:}\PY{n}{Symbol}
@@ -110,14 +110,12 @@
     \PY{n}{i}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int} \PY{o}{=} \PY{n}{indmin}\PY{p}{(}\PY{n}{abs}\PY{p}{(}\PY{n}{s}\PY{o}{.}\PY{n}{νs} \PY{o}{.}\PY{o}{\PYZhy{}} \PY{n}{ω}\PY{p}{)}\PY{p}{)}
     \PY{k}{return} \PY{n}{reshape}\PY{p}{(}\PY{n}{s}\PY{o}{.}\PY{n}{states}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{ψ}\PY{p}{,} \PY{p}{(}\PY{n}{s}\PY{o}{.}\PY{n}{N}\PY{p}{,} \PY{n}{s}\PY{o}{.}\PY{n}{N}\PY{p}{)}\PY{p}{)}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{}Check that matrix is square}
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{chksquare}\PY{p}{(}\PY{n}{A}\PY{p}{:}\PY{p}{:}\PY{n}{AbstractMatrix}\PY{p}{)}
     \PY{n}{m}\PY{p}{,}\PY{n}{n} \PY{o}{=} \PY{n}{size}\PY{p}{(}\PY{n}{A}\PY{p}{)}
     \PY{n}{m} \PY{o}{==} \PY{n}{n} \PY{o}{||} \PY{n+nb}{throw}\PY{p}{(}\PY{n}{DimensionMismatch}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{matrix is not square}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{)}
     \PY{n}{m}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{}Find radius of ring}
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{radius}\PY{p}{(}\PY{n}{M}\PY{p}{:}\PY{p}{:}\PY{n}{Matrix}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{n}{axis}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{)}
     \PY{n}{N} \PY{o}{=} \PY{n}{chksquare}\PY{p}{(}\PY{n}{M}\PY{p}{)}
@@ -133,12 +131,10 @@
     \PY{n}{r} \PY{o}{=} \PY{n}{v1}\PY{p}{[}\PY{n}{i}\PY{p}{]}
     \PY{k}{return} \PY{n}{r}
 \PY{k}{end}
-
 \PY{n}{getm}\PY{p}{(}\PY{n}{i}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int64}\PY{p}{,}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int64}\PY{p}{)} \PY{o}{=} \PY{n}{div}\PY{p}{(}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{N}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{div}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
 \PY{n}{getn}\PY{p}{(}\PY{n}{i}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int64}\PY{p}{,}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int64}\PY{p}{)} \PY{o}{=} \PY{n}{div}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{rem}\PY{p}{(}\PY{n}{i}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{N}\PY{p}{)}
 \PY{n}{geti}\PY{p}{(}\PY{n}{m}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,}\PY{n}{n}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)}\PY{o}{=}\PY{p}{(}\PY{n}{m}\PY{o}{+}\PY{n}{div}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{n}{N}\PY{o}{+}\PY{p}{(}\PY{n}{div}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{n}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{1}
 \PY{n}{countentries}\PY{p}{(}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)} \PY{o}{=} \PY{n}{N}\PY{o}{\PYZca{}}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{8} \PY{o}{+} \PY{l+m+mi}{4}\PY{o}{*}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{*}\PY{l+m+mi}{3} \PY{o}{+} \PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{l+m+mi}{4}
-
 \PY{k}{macro} \PY{n}{hambody}\PY{p}{(}\PY{n}{fself}\PY{p}{,} \PY{n}{fleft}\PY{p}{,} \PY{n}{fright}\PY{p}{,} \PY{n}{fup}\PY{p}{,} \PY{n}{fdown}\PY{p}{)}
     \PY{k}{return} \PY{k}{quote}
         \PY{n}{border}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int} \PY{o}{=} \PY{n}{div}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
@@ -190,7 +186,6 @@
     \PY{p}{@}\PY{n}{hambody}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{κ}\PY{o}{*}\PY{p}{(}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{n}{n₀}\PY{p}{)}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{o}{+}\PY{p}{(}\PY{n}{m}\PY{o}{\PYZhy{}}\PY{n}{m₀}\PY{p}{)}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n+nb}{im}\PY{o}{*}\PY{n}{π}\PY{o}{*}\PY{n}{α}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{p}{,}
        \PY{o}{\PYZhy{}}\PY{n}{exp}\PY{p}{(}\PY{n+nb}{im}\PY{o}{*}\PY{n}{π}\PY{o}{*}\PY{n}{α}\PY{o}{*}\PY{n}{n}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{exp}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{n+nb}{im}\PY{o}{*}\PY{n}{π}\PY{o}{*}\PY{n}{α}\PY{o}{*}\PY{n}{m}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{exp}\PY{p}{(}\PY{n+nb}{im}\PY{o}{*}\PY{n}{π}\PY{o}{*}\PY{n}{α}\PY{o}{*}\PY{n}{m}\PY{p}{)}\PY{p}{)}
 \PY{k}{end}
-
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{genspmat}\PY{p}{(}\PY{n}{l}\PY{p}{:}\PY{p}{:}\PY{n}{Function}\PY{p}{,}\PY{n}{r}\PY{p}{:}\PY{p}{:}\PY{n}{Function}\PY{p}{,}\PY{n}{u}\PY{p}{:}\PY{p}{:}\PY{n}{Function}\PY{p}{,}\PY{n}{d}\PY{p}{:}\PY{p}{:}\PY{n}{Function}\PY{p}{,}
    \PY{n}{s}\PY{p}{:}\PY{p}{:}\PY{n}{Function}\PY{p}{,}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,}\PY{n}{nz}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,}\PY{n}{α}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)}
     \PY{n}{iseven}\PY{p}{(}\PY{n}{N}\PY{p}{)} \PY{o}{\PYZam{}\PYZam{}} \PY{n+nb}{throw}\PY{p}{(}\PY{n}{ArgumentError}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{invalid system size N=}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{N.}
@@ -272,7 +267,6 @@
     \PY{k}{end}
     \PY{k}{return} \PY{n}{sparse}\PY{p}{(}\PY{n}{I}\PY{p}{,}\PY{n}{J}\PY{p}{,}\PY{n}{V}\PY{p}{)}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{}various pumping schemes}
 \PY{k}{function}\PY{n+nf}{ }\PY{err}{δ}\PY{n+nf}{pmp}\PY{p}{(}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{;} \PY{n}{A}\PY{o}{=}\PY{l+m+mf}{1.}\PY{p}{,} \PY{n}{seed}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{σ}\PY{o}{=}\PY{l+m+mf}{0.}\PY{p}{,} \PY{n}{n0}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{m0}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
     \PY{n}{i} \PY{o}{=} \PY{p}{(}\PY{n}{m0}\PY{o}{+}\PY{n}{div}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{N} \PY{o}{+} \PY{p}{(}\PY{n}{div}\PY{p}{(}\PY{n}{N}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{n0}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}
@@ -303,7 +297,6 @@
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{homopmp}\PY{p}{(}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{;} \PY{n}{A}\PY{o}{=}\PY{l+m+mf}{1.}\PY{p}{,} \PY{n}{seed}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{σ}\PY{o}{=}\PY{l+m+mf}{0.}\PY{p}{,} \PY{n}{n0}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{,} \PY{n}{m0}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
     \PY{n}{A} \PY{o}{.}\PY{o}{*} \PY{n}{ones}\PY{p}{(}\PY{n}{Complex}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{n}{N}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{)}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{}arbitrary resolution fft}
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{myfft2}\PY{p}{(}\PY{n}{ψr}\PY{p}{:}\PY{p}{:}\PY{n}{Matrix}\PY{p}{\PYZob{}}\PY{n}{Complex}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{n}{k1}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,}
    \PY{n}{k2}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,}\PY{n}{xs1}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,}\PY{n}{xs2}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,}\PY{n}{Δx1}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,}\PY{n}{Δx2}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)}
@@ -325,7 +318,6 @@
     \PY{k}{end}
     \PY{n}{out}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{} maps any momentum to the first Brillouin Zone}
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{fbz}\PY{p}{(}\PY{n}{mom}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)}
     \PY{n}{m} \PY{o}{=} \PY{n}{mod}\PY{p}{(}\PY{n}{mom}\PY{p}{,} \PY{l+m+mi}{2}\PY{n}{π}\PY{p}{)}
@@ -345,7 +337,6 @@
     \PY{k}{end}
     \PY{n}{V}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{4}\PY{n}{π}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{)}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{}comparison to analytics}
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{compute\PYZus{}hermite\PYZus{}polynomial}\PY{p}{(}\PY{n}{n}\PY{p}{)}
     \PY{n}{P} \PY{o}{=} \PY{n}{Poly}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{)}
@@ -367,13 +358,10 @@
 \PY{k}{end} \PY{c}{\PYZsh{}module}
 \end{Verbatim}
 
-
 \subsection{HH.jl}\label{subsec:hh}
-
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{module} \PY{n}{HH}
 \PY{k}{import} \PY{n}{BP}
-
 \PY{c}{\PYZsh{}in\PYZhy{}place builder of the q x q HH matrix in mom. sp.}
 \PY{n}{momsphhmat!}\PY{p}{(}\PY{n}{A}\PY{p}{:}\PY{p}{:}\PY{n}{Matrix}\PY{p}{\PYZob{}}\PY{n}{Complex}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{n}{kx0}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,}\PY{n}{ky}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=}
    \PY{n}{momsphhmat!}\PY{p}{(}\PY{n}{A}\PY{p}{,} \PY{n}{kx0}\PY{p}{,}\PY{n}{ky}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
@@ -398,7 +386,6 @@
     \PY{k}{end}
     \PY{n}{nothing}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{} Computes the q energy levels E(p\PYZus{}y)}
 \PY{n}{hhladder}\PY{p}{(}\PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)} \PY{o}{=} \PY{n}{hhladder}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{q}\PY{p}{)}
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{hhladder}\PY{p}{(}\PY{n}{p}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)}
@@ -436,7 +423,6 @@
     \PY{k}{end}
     \PY{n}{nothing}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{} zero point energy error}
 \PY{n}{ηzpe}\PY{p}{(}\PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=} \PY{n}{ηzpe}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{q}\PY{p}{,} \PY{n}{κ}\PY{p}{)}
 \PY{n}{ηzpe}\PY{p}{(}\PY{n}{p}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{n}{N}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{;} \PY{n}{A} \PY{o}{=}
@@ -466,7 +452,6 @@
     \PY{k}{end}
     \PY{k}{return} \PY{n}{η}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{} level error}
 \PY{n}{ηlev}\PY{p}{(}\PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=} \PY{n}{ηlev}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{q}\PY{p}{,} \PY{n}{κ}\PY{p}{)}
 \PY{n}{ηlev}\PY{p}{(}\PY{n}{p}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{n}{N}\PY{o}{=}\PY{l+m+mi}{15}\PY{p}{;} \PY{n}{A} \PY{o}{=}
@@ -510,7 +495,6 @@
     \PY{k}{end}
     \PY{k}{return} \PY{n}{η}
 \PY{k}{end}
-
 \PY{n}{bwidth}\PY{p}{(}\PY{n}{qs}\PY{p}{:}\PY{p}{:}\PY{n}{UnitRange}\PY{p}{\PYZob{}}\PY{k+kt}{Int}\PY{p}{\PYZcb{}}\PY{p}{)} \PY{o}{=} \PY{n}{bwidth}\PY{p}{(}\PY{p}{[}\PY{n}{qs}\PY{p}{]}\PY{p}{)}
 \PY{n}{bwidth}\PY{p}{(}\PY{n}{qs}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{k+kt}{Int}\PY{p}{\PYZcb{}}\PY{p}{)} \PY{o}{=} \PY{p}{[}\PY{n}{bwidth}\PY{p}{(}\PY{n}{q}\PY{p}{)} \PY{k}{for} \PY{n}{q} \PY{k}{in} \PY{n}{qs}\PY{p}{]}
 \PY{n}{bwidth}\PY{p}{(}\PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)} \PY{o}{=} \PY{n}{bwidth}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{q}\PY{p}{)}
@@ -533,15 +517,12 @@
 \PY{k}{end} \PY{c}{\PYZsh{}module}
 \end{Verbatim}
 
-
 \subsection{nonabelian\textunderscore fig.jl}\label{subsec:nonabelian}
-
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{import} \PY{n}{HH}
 \PY{k}{import} \PY{n}{BP}
 \PY{k}{using} \PY{n}{Base}\PY{o}{.}\PY{n}{Test}
 \PY{k}{using} \PY{n}{PyPlot}
-
 \PY{c}{\PYZsh{} 0\PYZhy{}point energy, with and without nonabelian correction}
 \PY{n}{ηzpenew}\PY{p}{(}\PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{n}{α}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{q}\PY{p}{;} \PY{l+m+mi}{4}\PY{n}{π}\PY{o}{*}\PY{n}{α}\PY{o}{/}\PY{n}{κ} \PY{o}{*} \PY{n}{endiffnonab}\PY{p}{(}\PY{n}{q}\PY{p}{,} \PY{n}{κ}\PY{p}{)}\PY{p}{)}
 \PY{n}{ηzpeold}\PY{p}{(}\PY{n}{q}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{n}{α}\PY{o}{=}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{q}\PY{p}{;} \PY{l+m+mi}{4}\PY{n}{π}\PY{o}{*}\PY{n}{α}\PY{o}{/}\PY{n}{κ} \PY{o}{*} \PY{n}{endiff}\PY{p}{(}\PY{n}{q}\PY{p}{,} \PY{n}{κ}\PY{p}{)}\PY{p}{)}
@@ -631,7 +612,6 @@
     \PY{n}{ynumerator} \PY{o}{=} \PY{n}{dot}\PY{p}{(}\PY{n}{U}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{n}\PY{p}{]}\PY{p}{,} \PY{n}{∇Hy}\PY{o}{*}\PY{n}{U}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{n}{n′}\PY{p}{]}\PY{p}{)}
     \PY{k}{return} \PY{p}{[}\PY{n+nb}{im}\PY{o}{*}\PY{n}{xnumerator}\PY{o}{/}\PY{n}{denominator}\PY{p}{,}\PY{n+nb}{im}\PY{o}{*}\PY{n}{ynumerator}\PY{o}{/}\PY{n}{denominator}\PY{p}{]}
 \PY{k}{end}
-
 \PY{c}{\PYZsh{}plotting}
 \PY{n}{qs} \PY{o}{=} \PY{l+m+mi}{4}\PY{p}{:}\PY{l+m+mi}{20}
 \PY{n}{y1} \PY{o}{=} \PY{p}{[}\PY{n}{ηzpeold}\PY{p}{(}\PY{n}{q}\PY{p}{,} \PY{l+m+mf}{0.02}\PY{p}{)}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64} \PY{k}{for} \PY{n}{q} \PY{k}{in} \PY{n}{qs}\PY{p}{]}
@@ -678,7 +658,6 @@
 \PY{n}{kxmbz} \PY{o}{=} \PY{n}{xmbz} \PY{o}{*} \PY{n}{δk}
 \PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{n}{δE}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,} \PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{,}\PY{l+m+mf}{0.02}\PY{p}{)}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64} \PY{k}{for} \PY{n}{y} \PY{k}{in} \PY{n}{k}\PY{p}{,} \PY{n}{x} \PY{k}{in} \PY{n}{kxmbz}\PY{p}{]}
 \PY{n}{a}\PY{p}{,} \PY{n}{b} \PY{o}{=} \PY{n}{extrema}\PY{p}{(}\PY{n}{data}\PY{p}{)}
-
 \PY{n}{fig}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{subplots}\PY{p}{]}\PY{p}{(}\PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 \PY{n}{img} \PY{o}{=} \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{imshow}\PY{p}{]}\PY{p}{(}\PY{n}{data}\PY{p}{,} \PY{n}{origin}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{upper}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{ColorMap}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{gist\PYZus{}heat\PYZus{}r}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{,}
                  \PY{n}{interpolation}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{none}\PY{l+s}{\PYZdq{}}\PY{p}{,}
@@ -701,10 +680,8 @@
 \PY{n}{fig}\PY{p}{[}\PY{p}{:}\PY{n}{savefig}\PY{p}{]}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{../../figures/correction\PYZus{}mbz.pdf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{transparent}\PY{o}{=}\PY{n}{true}\PY{p}{,}
    \PY{n}{pad\PYZus{}inches}\PY{o}{=}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{tight}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
-
 \PY{c}{\PYZsh{} various line types}
 \PY{n}{lines} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZhy{}}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZhy{}\PYZhy{}}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{\PYZhy{}.}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{:}\PY{l+s}{\PYZdq{}}\PY{p}{]}
-
 \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{subplots}\PY{p}{]}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 \PY{k}{for} \PY{p}{(}\PY{n}{i}\PY{p}{,} \PY{n}{ax}\PY{p}{)} \PY{k}{in} \PY{n}{enumerate}\PY{p}{(}\PY{n}{axes}\PY{p}{)}
     \PY{k}{if} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{1} \PY{c}{\PYZsh{} first panel, with zero\PYZhy{}point\PYZhy{}energy error}
@@ -733,16 +710,13 @@
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
 \end{Verbatim}
 
-
 \subsection{selection\textunderscore fig.jl}\label{subsec:selection}
-
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{using} \PY{n}{PyPlot}
 \PY{k}{using} \PY{n}{PyCall}
 \PY{p}{@}\PY{n}{pyimport} \PY{n}{mpl\PYZus{}toolkits}\PY{o}{.}\PY{n}{axes\PYZus{}grid1}\PY{o}{.}\PY{n}{inset\PYZus{}locator} \PY{n}{as} \PY{n}{axloc}
 \PY{p}{@}\PY{n}{pyimport} \PY{n}{matplotlib}\PY{o}{.}\PY{n}{gridspec} \PY{n}{as} \PY{n}{gspec}
 \PY{k}{import} \PY{n}{BP}
-
 \PY{c}{\PYZsh{} system parameters}
 \PY{k+kd}{const} \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{45}
 \PY{k+kd}{const} \PY{n}{q} \PY{o}{=} \PY{l+m+mi}{11}
@@ -786,7 +760,6 @@
 \PY{n}{homopmp}\PY{p}{(}\PY{p}{)} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{homopmp}\PY{p}{(}\PY{n}{N}\PY{p}{)}
 \PY{n}{randpmp}\PY{p}{(}\PY{n}{s}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{randpmp}\PY{p}{(}\PY{n}{N}\PY{p}{;} \PY{n}{seed}\PY{o}{=}\PY{n}{s}\PY{p}{)} \PY{c}{\PYZsh{}1234}
 \PY{n}{prm} \PY{o}{=} \PY{p}{(}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{q}\PY{p}{,}\PY{n}{γ}\PY{p}{,}\PY{n}{κ}\PY{p}{)}\PY{p}{;}
-
 \PY{n}{spδl} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{Spectrum}\PY{p}{(}\PY{n}{ν}\PY{p}{,}\PY{n}{δpmp}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{n}{landau}\PY{p}{,} \PY{n}{prm}\PY{o}{.}\PY{o}{.}\PY{o}{.}\PY{p}{)}
 \PY{n}{spgaussl} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{Spectrum}\PY{p}{(}\PY{n}{ν}\PY{p}{,}\PY{n}{gausspmp}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{n}{landau}\PY{p}{,} \PY{n}{prm}\PY{o}{.}\PY{o}{.}\PY{o}{.}\PY{p}{)}
 \PY{n}{sphoml} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{Spectrum}\PY{p}{(}\PY{n}{ν}\PY{p}{,}\PY{n}{homopmp}\PY{p}{(}\PY{p}{)}\PY{p}{,} \PY{p}{:}\PY{n}{landau}\PY{p}{,} \PY{n}{prm}\PY{o}{.}\PY{o}{.}\PY{o}{.}\PY{p}{)}
@@ -817,7 +790,6 @@
     \PY{k}{end}
 \PY{k}{end}
 \PY{n}{sprandl} \PY{o}{=} \PY{n}{intvec}\PY{o}{.}\PY{o}{/}\PY{l+m+mi}{100}\PY{p}{;}
-
 \PY{n}{ics}\PY{o}{=}\PY{l+m+mf}{3.0}
 \PY{n}{el} \PY{o}{=} \PY{l+m+mf}{0.86}\PY{o}{/}\PY{p}{(}\PY{l+m+mi}{3}\PY{o}{/}\PY{n}{ics} \PY{o}{+} \PY{l+m+mi}{5}\PY{p}{)}
 \PY{n}{b1} \PY{o}{=} \PY{l+m+mf}{0.97}\PY{o}{\PYZhy{}}\PY{n}{el}
@@ -908,7 +880,6 @@
 \PY{n}{fig}\PY{p}{[}\PY{p}{:}\PY{n}{savefig}\PY{p}{]}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{../../figures/selection.pdf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{tight}\PY{l+s}{\PYZdq{}}\PY{p}{,}
    \PY{n}{pad\PYZus{}inches}\PY{o}{=}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{transparent}\PY{o}{=}\PY{n}{true}\PY{p}{)}
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
-
 \PY{c}{\PYZsh{} plot w.fs. in real space}
 \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{subplots}\PY{p}{]}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{length}\PY{p}{(}\PY{n}{βreal}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 \PY{k}{for} \PY{p}{(}\PY{n}{i}\PY{p}{,}\PY{n}{ax}\PY{p}{)} \PY{k}{in} \PY{n}{enumerate}\PY{p}{(}\PY{n}{axes}\PY{p}{)}
@@ -925,7 +896,6 @@
 \PY{n}{fig}\PY{p}{[}\PY{p}{:}\PY{n}{savefig}\PY{p}{]}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{../../figures/real.pdf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{transparent}\PY{o}{=}\PY{n}{true}\PY{p}{,}
    \PY{n}{pad\PYZus{}inches}\PY{o}{=}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{tight}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
-
 \PY{c}{\PYZsh{} plot w.fs. in  mom space}
 \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{subplots}\PY{p}{]}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{length}\PY{p}{(}\PY{n}{βlan}\PY{p}{)}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}\PY{p}{)}
 \PY{k}{for} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{:}\PY{n}{length}\PY{p}{(}\PY{n}{βlan}\PY{p}{)} \PY{c}{\PYZsh{} loop over columns}
@@ -970,15 +940,12 @@
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
 \end{Verbatim}
 
-
 \subsection{torus\textunderscore edge\textunderscore fig.jl}\label{subsec:torus-edge}
-
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{using} \PY{n}{PyPlot}
 \PY{k}{import} \PY{n}{BP}
 \PY{k}{using} \PY{n}{PyCall}
 \PY{p}{@}\PY{n}{pyimport} \PY{n}{matplotlib}\PY{o}{.}\PY{n}{gridspec} \PY{n}{as} \PY{n}{gspec}
-
 \PY{c}{\PYZsh{} system parameters}
 \PY{k+kd}{const} \PY{n}{N} \PY{o}{=} \PY{l+m+mi}{45}
 \PY{k+kd}{const} \PY{n}{q} \PY{o}{=} \PY{l+m+mi}{11}
@@ -1003,7 +970,6 @@
       \PY{l+m+mi}{38}\PY{p}{,} \PY{l+m+mi}{59}\PY{p}{,} \PY{l+m+mi}{99}\PY{p}{]}
 \PY{n}{ηs} \PY{o}{=} \PY{n}{βs} \PY{o}{+} \PY{l+m+mi}{1}
 \PY{n}{sω0s} \PY{o}{=} \PY{p}{[}\PY{n}{exdef}\PY{o}{.}\PY{n}{νs}\PY{p}{[}\PY{n}{state}\PY{p}{]}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64} \PY{k}{for} \PY{n}{state} \PY{k}{in} \PY{n}{ηs}\PY{p}{]} \PY{c}{\PYZsh{} 6 frequencies}
-
 \PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{subplots}\PY{p}{]}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mf}{7.3}\PY{p}{)}\PY{p}{)}
 \PY{k}{for} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3} \PY{c}{\PYZsh{}loop over columns}
     \PY{c}{\PYZsh{} top row}
@@ -1039,7 +1005,6 @@
 \PY{n}{fig}\PY{p}{[}\PY{p}{:}\PY{n}{savefig}\PY{p}{]}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{../../figures/sym\PYZus{}ring.pdf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{transparent}\PY{o}{=}\PY{n}{true}\PY{p}{,}
    \PY{n}{pad\PYZus{}inches}\PY{o}{=}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{tight}\PY{l+s}{\PYZdq{}}\PY{p}{)}
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
-
 \PY{c}{\PYZsh{} moving the trap}
 \PY{n}{β} \PY{o}{=} \PY{l+m+mi}{4} \PY{c}{\PYZsh{} selected state}
 \PY{n}{ω0} \PY{o}{=} \PY{n}{exdef}\PY{o}{.}\PY{n}{νs}\PY{p}{[}\PY{n}{β} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{]}
@@ -1060,7 +1025,6 @@
     \PY{n}{statefft} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{myfft2}\PY{p}{(}\PY{n}{state}\PY{p}{,} \PY{n}{k}\PY{p}{,}\PY{n}{k}\PY{p}{)}
     \PY{n}{bz}\PY{p}{[}\PY{n}{row}\PY{p}{,} \PY{n}{col}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{abs2}\PY{p}{(}\PY{n}{statefft}\PY{p}{)}
 \PY{k}{end}
-
 \PY{n}{fig} \PY{o}{=} \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{figure}\PY{p}{]}\PY{p}{(}\PY{p}{)}
 \PY{n}{gs} \PY{o}{=} \PY{n}{gspec}\PY{o}{.}\PY{n}{GridSpec}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{)}
 \PY{n}{gs}\PY{p}{[}\PY{p}{:}\PY{n}{update}\PY{p}{]}\PY{p}{(}\PY{n}{top}\PY{o}{=}\PY{o}{.}\PY{l+m+mi}{99}\PY{p}{,}\PY{n}{bottom}\PY{o}{=}\PY{o}{.}\PY{l+m+mi}{08}\PY{p}{,}\PY{n}{left}\PY{o}{=}\PY{o}{.}\PY{l+m+mi}{07}\PY{p}{,}\PY{n}{right}\PY{o}{=}\PY{o}{.}\PY{l+m+mi}{99}\PY{p}{,}\PY{n}{hspace}\PY{o}{=}\PY{o}{.}\PY{l+m+mi}{05}\PY{p}{)}
@@ -1102,16 +1066,13 @@
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
 \end{Verbatim}
 
-
 \subsection{experimental\textunderscore fig.jl}\label{subsec:experimental}
-
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k}{import} \PY{n}{BP}
 \PY{k}{import} \PY{n}{HH}
 \PY{k}{using} \PY{n}{PyPlot}
 \PY{k}{using} \PY{n}{PyCall}
 \PY{p}{@}\PY{n}{pyimport} \PY{n}{matplotlib}\PY{o}{.}\PY{n}{gridspec} \PY{n}{as} \PY{n}{gspec}
-
 \PY{c}{\PYZsh{} system parameters}
 \PY{n}{sN}\PY{o}{=}\PY{l+m+mi}{11} \PY{c}{\PYZsh{} true system size}
 \PY{c}{\PYZsh{} where we pump}
@@ -1145,7 +1106,6 @@
 \PY{c}{\PYZsh{}with a δ\PYZhy{}like pump}
 \PY{n}{δpmp}\PY{p}{(}\PY{n}{n₀}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,}\PY{n}{m₀}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{)} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{δpmp}\PY{p}{(}\PY{n}{sN}\PY{p}{;} \PY{n}{n0}\PY{o}{=}\PY{n}{n₀}\PY{p}{,} \PY{n}{m0}\PY{o}{=}\PY{n}{m₀}\PY{p}{)}
 \PY{n}{P} \PY{o}{=} \PY{n}{δpmp}\PY{p}{(}\PY{n}{n}\PY{p}{,}\PY{n}{m}\PY{p}{)}
-
 \PY{c}{\PYZsh{} compute spectrum}
 \PY{n}{sω1}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mf}{3.1}
 \PY{n}{sω2}\PY{o}{=}\PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0}
@@ -1163,7 +1123,6 @@
 \PY{n}{ψr} \PY{o}{=} \PY{n}{abs2}\PY{p}{(}\PY{n}{X}\PY{p}{)}
 \PY{n}{ψk} \PY{o}{=} \PY{n}{abs2}\PY{p}{(}\PY{n}{BP}\PY{o}{.}\PY{n}{myfft2}\PY{p}{(}\PY{n}{X}\PY{p}{,} \PY{n}{k}\PY{p}{,} \PY{n}{k}\PY{p}{)}\PY{p}{)}
 \PY{n}{ψkmbz} \PY{o}{=} \PY{n}{BP}\PY{o}{.}\PY{n}{mbz}\PY{p}{(}\PY{n}{ψk}\PY{p}{,} \PY{n}{r}\PY{p}{,} \PY{n}{q}\PY{p}{,} \PY{n}{kxmbz}\PY{p}{,} \PY{n}{k}\PY{p}{)}
-
 \PY{c}{\PYZsh{}analytical w.f. in MBZ}
 \PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{getχ}\PY{p}{(}\PY{n}{Np}\PY{p}{,}\PY{n}{q}\PY{p}{,}\PY{n}{β}\PY{p}{)}
     \PY{n}{α} \PY{o}{=} \PY{l+m+mi}{1}\PY{o}{/}\PY{n}{q}
@@ -1176,7 +1135,6 @@
     \PY{n}{radical} \PY{o}{.}\PY{o}{*} \PY{n}{v}
 \PY{k}{end}
 \PY{n}{χ} \PY{o}{=} \PY{n}{getχ}\PY{p}{(}\PY{n}{N}\PY{p}{,}\PY{n}{q}\PY{p}{,}\PY{n}{β}\PY{p}{)}
-
 \PY{c}{\PYZsh{} plotting}
 \PY{n}{ics} \PY{o}{=} \PY{l+m+mi}{4}
 \PY{n}{t1} \PY{o}{=} \PY{l+m+mf}{0.97}
@@ -1291,4 +1249,3 @@
    \PY{n}{pad\PYZus{}inches}\PY{o}{=}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{transparent}\PY{o}{=}\PY{n}{true}\PY{p}{)}
 \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
 \end{Verbatim}
-

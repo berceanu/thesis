@@ -1,7 +1,6 @@
 module BP
 using Polynomials
 using Base.Test
-
 type WaveFunction
     N::Int
     int::Float64
@@ -27,7 +26,6 @@ function WaveFunction(S::SparseMatrixCSC{Complex{Float64},Int64},
     X = S\P
     return WaveFunction(N,sum(abs2(X)),X)
 end
-
 type ExactStates
     N::Int
     gauge::Symbol
@@ -55,7 +53,6 @@ end
 function getstate(s::ExactStates, η::Int)
     return reshape(s.states[:,η], (s.N, s.N))
 end
-
 type Spectrum
     N::Int
     gauge::Symbol
@@ -107,14 +104,12 @@ function getstate(s::Spectrum, ω::Float64)
     i::Int = indmin(abs(s.νs .- ω))
     return reshape(s.states[i].ψ, (s.N, s.N))
 end
-
 #Check that matrix is square
 function chksquare(A::AbstractMatrix)
     m,n = size(A)
     m == n || throw(DimensionMismatch("matrix is not square"))
     m
 end
-
 #Find radius of ring
 function radius(M::Matrix{Float64}, axis::Vector)
     N = chksquare(M)
@@ -130,12 +125,10 @@ function radius(M::Matrix{Float64}, axis::Vector)
     r = v1[i]
     return r
 end
-
 getm(i::Int64,N::Int64) = div(i-1,N)-div(N-1,2)
 getn(i::Int64,N::Int64) = div(N-1,2)-rem(i-1,N)
 geti(m::Int,n::Int,N::Int)=(m+div(N-1,2))*N+(div(N-1,2)-n)+1
 countentries(N::Int) = N^2 + 8 + 4*(N-2)*3 + (N-2)^2*4
-
 macro hambody(fself, fleft, fright, fup, fdown)
     return quote
         border::Int = div(N-1,2)
@@ -187,7 +180,6 @@ function buildhamexactsymmetric!(
     @hambody(1/2*κ*((n-n₀)^2+(m-m₀)^2), -exp(-im*π*α*n),
        -exp(im*π*α*n), -exp(-im*π*α*m), -exp(im*π*α*m))
 end
-
 function genspmat(l::Function,r::Function,u::Function,d::Function,
    s::Function,N::Int,nz::Int,α::Float64)
     iseven(N) && throw(ArgumentError("invalid system size N=$N.
@@ -269,7 +261,6 @@ function genspmat(l::Function,r::Function,u::Function,d::Function,
     end
     return sparse(I,J,V)
 end
-
 #various pumping schemes
 function δpmp(N::Int; A=1., seed=0, σ=0., n0=0, m0=0)
     i = (m0+div(N-1,2)) * N + (div(N-1,2)-n0) + 1
@@ -300,7 +291,6 @@ end
 function homopmp(N::Int; A=1., seed=0, σ=0., n0=0, m0=0)
     A .* ones(Complex{Float64}, N^2)
 end
-
 #arbitrary resolution fft
 function myfft2(ψr::Matrix{Complex{Float64}},k1::Float64,
    k2::Float64,xs1::Float64,xs2::Float64,Δx1::Float64,Δx2::Float64)
@@ -322,7 +312,6 @@ function myfft2(ψr::Matrix{Complex{Float64}}, k1, k2)
     end
     out
 end
-
 # maps any momentum to the first Brillouin Zone
 function fbz(mom::Float64)
     m = mod(mom, 2π)
@@ -342,7 +331,6 @@ function mbz(data::Array{Float64,2}, r::Int, q::Int,
     end
     V/(4π^2)
 end
-
 #comparison to analytics
 function compute_hermite_polynomial(n)
     P = Poly([1])

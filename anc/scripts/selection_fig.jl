@@ -3,7 +3,6 @@ using PyCall
 @pyimport mpl_toolkits.axes_grid1.inset_locator as axloc
 @pyimport matplotlib.gridspec as gspec
 import BP
-
 # system parameters
 const N = 45
 const q = 11
@@ -47,7 +46,6 @@ gausspmp(n₀::Int,m₀::Int) = BP.gausspmp(N; σ=1., n0=n₀, m0=m₀)
 homopmp() = BP.homopmp(N)
 randpmp(s::Int) = BP.randpmp(N; seed=s) #1234
 prm = (1/q,γ,κ);
-
 spδl = BP.Spectrum(ν,δpmp(5,5), :landau, prm...)
 spgaussl = BP.Spectrum(ν,gausspmp(5,5), :landau, prm...)
 sphoml = BP.Spectrum(ν,homopmp(), :landau, prm...)
@@ -78,7 +76,6 @@ for j=1:100
     end
 end
 sprandl = intvec./100;
-
 ics=3.0
 el = 0.86/(3/ics + 5)
 b1 = 0.97-el
@@ -169,7 +166,6 @@ fig[:text](0.022, 0.5, L"$\sum_{m,n} |a_{m,n}|^2$ (arb. units)",
 fig[:savefig]("../../figures/selection.pdf", bbox_inches="tight",
    pad_inches=0.0, transparent=true)
 plt[:close](fig)
-
 # plot w.fs. in real space
 fig, axes = plt[:subplots](1,length(βreal), figsize=(10, 5))
 for (i,ax) in enumerate(axes)
@@ -186,7 +182,6 @@ end
 fig[:savefig]("../../figures/real.pdf", transparent=true,
    pad_inches=0.0, bbox_inches="tight")
 plt[:close](fig)
-
 # plot w.fs. in  mom space
 fig, axes = plt[:subplots](2,length(βlan), figsize=(10, 5))
 for i = 1:length(βlan) # loop over columns

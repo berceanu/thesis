@@ -3,7 +3,6 @@ import HH
 using PyPlot
 using PyCall
 @pyimport matplotlib.gridspec as gspec
-
 # system parameters
 sN=11 # true system size
 # where we pump
@@ -37,7 +36,6 @@ sω0=exexp.νs[η]
 #with a δ-like pump
 δpmp(n₀::Int,m₀::Int) = BP.δpmp(sN; n0=n₀, m0=m₀)
 P = δpmp(n,m)
-
 # compute spectrum
 sω1=-3.1
 sω2=-1.0
@@ -55,7 +53,6 @@ X = BP.getstate(sp, sω0)
 ψr = abs2(X)
 ψk = abs2(BP.myfft2(X, k, k))
 ψkmbz = BP.mbz(ψk, r, q, kxmbz, k)
-
 #analytical w.f. in MBZ
 function getχ(Np,q,β)
     α = 1/q
@@ -68,7 +65,6 @@ function getχ(Np,q,β)
     radical .* v
 end
 χ = getχ(N,q,β)
-
 # plotting
 ics = 4
 t1 = 0.97

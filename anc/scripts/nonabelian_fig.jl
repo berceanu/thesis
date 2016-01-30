@@ -2,7 +2,6 @@ import HH
 import BP
 using Base.Test
 using PyPlot
-
 # 0-point energy, with and without nonabelian correction
 ηzpenew(q::Int, κ::Float64) = (α=1/q; 4π*α/κ * endiffnonab(q, κ))
 ηzpeold(q::Int, κ::Float64) = (α=1/q; 4π*α/κ * endiff(q, κ))
@@ -92,7 +91,6 @@ function A(n::Int,n′::Int,q::Int,p::Int, k₀x::Float64,ky::Float64)
     ynumerator = dot(U[:,n], ∇Hy*U[:,n′])
     return [im*xnumerator/denominator,im*ynumerator/denominator]
 end
-
 #plotting
 qs = 4:20
 y1 = [ηzpeold(q, 0.02)::Float64 for q in qs]
@@ -139,7 +137,6 @@ xmbz = -div(r-1,2):div(r-1,2)
 kxmbz = xmbz * δk
 data = [δE(1,5,1, x,y,0.02)::Float64 for y in k, x in kxmbz]
 a, b = extrema(data)
-
 fig, ax = plt[:subplots](figsize=(5, 5))
 img = ax[:imshow](data, origin="upper", ColorMap("gist_heat_r"),
                  interpolation="none",
@@ -162,10 +159,8 @@ cbar[:solids][:set_edgecolor]("face")
 fig[:savefig]("../../figures/correction_mbz.pdf", transparent=true,
    pad_inches=0.0, bbox_inches="tight")
 plt[:close](fig)
-
 # various line types
 lines = ["-","--","-.",":"]
-
 fig, axes = plt[:subplots](2, figsize=(8, 5))
 for (i, ax) in enumerate(axes)
     if i == 1 # first panel, with zero-point-energy error
