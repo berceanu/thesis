@@ -4,7 +4,6 @@
 % pygmentize -l python -f latex -o opodrag.tex opodrag.py                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{k+kn}{import} \PY{n+nn}{numpy} \PY{k+kn}{as} \PY{n+nn}{np}
 \PY{k+kn}{import} \PY{n+nn}{matplotlib} \PY{k+kn}{as} \PY{n+nn}{mpl}
@@ -118,8 +117,7 @@
     \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{1} \PY{o}{+} \PY{p}{(}\PY{p}{(}\PY{n}{enLP}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{n}{enC}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{p}{(}
         \PY{n}{Omega\PYZus{}R} \PY{o}{/} \PY{n}{gp}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{gamma}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{p}{:}
-    \PY{k}{return} \PY{p}{(}\PY{n}{gamma\PYZus{}C} \PY{o}{+} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*}
-            \PY{p}{(}\PY{n}{gamma\PYZus{}X} \PY{o}{\PYZhy{}} \PY{n}{gamma\PYZus{}C}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{n}{gp}
+    \PY{k}{return} \PY{p}{(}\PY{n}{gamma\PYZus{}C} \PY{o}{+} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}\PY{n}{gamma\PYZus{}X} \PY{o}{\PYZhy{}} \PY{n}{gamma\PYZus{}C}\PY{p}{)}\PY{p}{)} \PY{o}{/} \PY{n}{gp}
 \PY{n}{kxL}\PY{p}{,} \PY{n}{kxR} \PY{o}{=} \PY{n}{index\PYZus{}mom}\PY{p}{(}\PY{n}{kxl}\PY{p}{)}\PY{p}{,} \PY{n}{index\PYZus{}mom}\PY{p}{(}\PY{n}{kxr}\PY{p}{)}
 \PY{n}{kyL}\PY{p}{,} \PY{n}{kyR} \PY{o}{=} \PY{n}{index\PYZus{}mom}\PY{p}{(}\PY{n}{kyl}\PY{p}{)}\PY{p}{,} \PY{n}{index\PYZus{}mom}\PY{p}{(}\PY{n}{kyr}\PY{p}{)}
 \PY{n}{es} \PY{o}{=} \PY{n}{enLP}\PY{p}{(}\PY{n}{k\PYZus{}sigx}\PY{p}{,} \PY{n}{k\PYZus{}sigy}\PY{p}{)}
@@ -148,13 +146,11 @@
          \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{+} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
              \PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{s} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}
                  \PY{n}{i}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{+} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-                     \PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{n}{s}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-                         \PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*}
+         \PY{n}{k\PYZus{}sigx}\PY{o}{+}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}sigy}\PY{o}{+}\PY{n}{ky}\PY{p}{)}\PY{p}{,}\PY{n}{s}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}sigy}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}
          \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{p} \PY{o}{*} \PY{n}{s} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
              \PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
                  \PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{i} \PY{o}{*} \PY{n}{s}\PY{p}{)} \PY{o}{*}
-         \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,}
-                                                   \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+         \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx}\PY{o}{+}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}sigy}\PY{o}{+}\PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
         \PY{p}{[}\PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}\PY{n}{i} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{+} \PY{n}{p} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
             \PY{n}{k\PYZus{}pmpx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{+} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
                 \PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{omega\PYZus{}p\PYZus{}chosen} \PY{o}{+} \PY{n}{enLP}\PY{p}{(}
@@ -169,11 +165,9 @@
                  \PY{n}{k\PYZus{}pmpx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{n}{p}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{i} \PY{o}{*} \PY{n}{s}\PY{p}{)} \PY{o}{*}
          \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
              \PY{n}{k\PYZus{}pmpx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{i} \PY{o}{*} \PY{n}{p} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-                 \PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{+} \PY{n}{kx}\PY{p}{,}
-                                                    \PY{n}{k\PYZus{}pmpy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+                 \PY{n}{k\PYZus{}idlx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx}\PY{o}{+}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}pmpy}\PY{o}{+}\PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
         \PY{p}{[}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{i} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-            \PY{n}{k\PYZus{}idlx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{+} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy}
-                                               \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2}
+            \PY{n}{k\PYZus{}idlx}\PY{o}{+}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{+}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx}\PY{o}{+}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}sigy}\PY{o}{+}\PY{n}{ky}\PY{p}{)}\PY{p}{,}\PY{l+m+mi}{2}
          \PY{o}{*} \PY{p}{(}\PY{n}{i} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{+} \PY{n}{p} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}
             \PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{+} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
                 \PY{n}{k\PYZus{}pmpx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{omega\PYZus{}i\PYZus{}chosen} \PY{o}{+} \PY{n}{enLP}\PY{p}{(}
@@ -185,8 +179,7 @@
              \PY{n}{k\PYZus{}idlx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{i} \PY{o}{*} \PY{n}{p} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
                  \PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
                      \PY{n}{k\PYZus{}idlx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{n}{i}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-                         \PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-                             \PY{n}{k\PYZus{}idlx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+                \PY{n}{k\PYZus{}idlx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx}\PY{o}{+}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{+}\PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
         \PY{p}{[}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*}
            \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)}
          \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*}
@@ -195,18 +188,15 @@
                  \PY{n}{s}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
                      \PY{n}{k\PYZus{}idlx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{omega\PYZus{}s\PYZus{}chosen} \PY{o}{\PYZhy{}}
          \PY{n}{enLP}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1j} \PY{o}{*} \PY{l+m+mi}{1} \PY{o}{/} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{gamma}\PY{p}{(}
-             \PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}
-                 \PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{n}{ns\PYZus{}chosen}
+             \PY{n}{k\PYZus{}sigx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}sigy}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{ni\PYZus{}chosen}\PY{o}{+}\PY{n}{np\PYZus{}chosen}\PY{o}{+}\PY{n}{ns\PYZus{}chosen}
              \PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}
                  \PY{n}{i} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{+} \PY{n}{p} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)} \PY{o}{*}
          \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
              \PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{i} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}
-                 \PY{n}{s}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-                     \PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+        \PY{n}{s}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}sigy}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
         \PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-            \PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,}
-                                               \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}
-         \PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{o}{*}
+            \PY{n}{k\PYZus{}pmpx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}pmpy}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx}\PY{o}{+}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}sigy}\PY{o}{+}\PY{n}{ky}\PY{p}{)}\PY{p}{,}
+         \PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{o}{*}
            \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*}
           \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{i}\PY{p}{)}
          \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*}
@@ -215,12 +205,10 @@
          \PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
              \PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{n}{omega\PYZus{}p\PYZus{}chosen} \PY{o}{\PYZhy{}} \PY{n}{enLP}\PY{p}{(}
                  \PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1j} \PY{o}{*} \PY{l+m+mi}{1} \PY{o}{/} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{gamma}\PY{p}{(}
-                     \PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}
-                         \PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{n}{ns\PYZus{}chosen}\PY{p}{)} \PY{o}{*}
+            \PY{n}{k\PYZus{}pmpx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}pmpy}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{ni\PYZus{}chosen}\PY{o}{+}\PY{n}{np\PYZus{}chosen}\PY{o}{+}\PY{n}{ns\PYZus{}chosen}\PY{p}{)}\PY{o}{*}
          \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}
              \PY{n}{i} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)} \PY{o}{+} \PY{n}{p} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
-                 \PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,}
-                                                    \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+                 \PY{n}{k\PYZus{}idlx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}pmpx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}pmpy}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{p}{]}\PY{p}{,}
         \PY{p}{[}\PY{o}{\PYZhy{}}\PY{p}{(}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{p}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{i}\PY{p}{)} \PY{o}{*}
             \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*}
            \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}sigx} \PY{o}{+} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{+} \PY{n}{ky}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{i}\PY{p}{)}
@@ -234,10 +222,8 @@
          \PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}
              \PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{p}{,} \PY{n}{omega\PYZus{}i\PYZus{}chosen} \PY{o}{\PYZhy{}} \PY{n}{enLP}\PY{p}{(}
                  \PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1j} \PY{o}{*} \PY{l+m+mi}{1} \PY{o}{/} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{gamma}\PY{p}{(}
-                     \PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}
-                         \PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{n}{ns\PYZus{}chosen}
-                     \PY{p}{)} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{]}
-    \PY{p}{]}\PY{p}{)}
+            \PY{n}{k\PYZus{}idlx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{ni\PYZus{}chosen}\PY{o}{+}\PY{n}{np\PYZus{}chosen}\PY{o}{+}\PY{n}{ns\PYZus{}chosen}\PY{p}{)}
+         \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{L\PYZus{}mats}\PY{p}{(}\PY{n}{K\PYZus{}X}\PY{p}{,} \PY{n}{K\PYZus{}Y}\PY{p}{,} \PY{n}{n\PYZus{}kx}\PY{p}{,} \PY{n}{n\PYZus{}ky}\PY{p}{)}\PY{p}{:}
     \PY{n}{mats} \PY{o}{=} \PY{n}{L}\PY{p}{(}\PY{n}{K\PYZus{}X}\PY{p}{,} \PY{n}{K\PYZus{}Y}\PY{p}{)}
     \PY{n}{new\PYZus{}mats} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{n}{mats}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}\PY{p}{)}
@@ -254,8 +240,7 @@
              \PY{n}{kx} \PY{o}{+} \PY{n}{k\PYZus{}idlx}\PY{p}{,} \PY{n}{ky} \PY{o}{+} \PY{n}{k\PYZus{}idly}\PY{p}{)} \PY{o}{*} \PY{n}{i}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{cs} \PY{o}{/} \PY{n}{xs} \PY{o}{*} \PY{n}{hopf\PYZus{}c}\PY{p}{(}
                  \PY{n}{k\PYZus{}sigx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}sigy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{s}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{cp}
          \PY{o}{/} \PY{n}{xp} \PY{o}{*} \PY{n}{hopf\PYZus{}c}\PY{p}{(}\PY{n}{k\PYZus{}pmpx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}pmpy} \PY{o}{\PYZhy{}} \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}
-             \PY{n}{p}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{ci} \PY{o}{/} \PY{n}{xi} \PY{o}{*} \PY{n}{hopf\PYZus{}c}\PY{p}{(}\PY{n}{k\PYZus{}idlx} \PY{o}{\PYZhy{}} \PY{n}{kx}\PY{p}{,} \PY{n}{k\PYZus{}idly} \PY{o}{\PYZhy{}}
-                                   \PY{n}{ky}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+            \PY{n}{p}\PY{p}{)}\PY{p}{,}\PY{o}{\PYZhy{}}\PY{n}{ci}\PY{o}{/}\PY{n}{xi}\PY{o}{*}\PY{n}{hopf\PYZus{}c}\PY{p}{(}\PY{n}{k\PYZus{}idlx}\PY{o}{\PYZhy{}}\PY{n}{kx}\PY{p}{,}\PY{n}{k\PYZus{}idly}\PY{o}{\PYZhy{}}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{conjugate}\PY{p}{(}\PY{n}{i}\PY{p}{)}\PY{p}{]}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{fd\PYZus{}mats}\PY{p}{(}\PY{n}{K\PYZus{}X}\PY{p}{,} \PY{n}{K\PYZus{}Y}\PY{p}{,} \PY{n}{n\PYZus{}kx}\PY{p}{,} \PY{n}{n\PYZus{}ky}\PY{p}{)}\PY{p}{:}
     \PY{n}{res} \PY{o}{=} \PY{n}{fd}\PY{p}{(}\PY{n}{K\PYZus{}X}\PY{p}{,} \PY{n}{K\PYZus{}Y}\PY{p}{)}
     \PY{n}{new\PYZus{}res} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{transpose}\PY{p}{(}\PY{n}{res}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}\PY{p}{)}
@@ -271,21 +256,20 @@
     \PY{c+c1}{\PYZsh{}x3 \PYZhy{}\PYZgt{} np}
     \PY{n}{eq1} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZob{}0:+.16f\PYZcb{}*x1\PYZob{}1:+.16f\PYZcb{}*x2\PYZob{}2:+.16f\PYZcb{}*x3\PYZob{}3:+.16f\PYZcb{};}\PY{l+s+s2}{\PYZdq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}
         \PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{gi} \PY{o}{\PYZhy{}} \PY{n}{gs}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{gi} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{alpha}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{alpha} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{,}
-        \PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{ei} \PY{o}{*} \PY{n}{gs} \PY{o}{+} \PY{n}{es} \PY{o}{*} \PY{n}{gi} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{gs} \PY{o}{*} \PY{n}{omega\PYZus{}p\PYZus{}chosen}\PY{p}{)} \PY{o}{/}
-        \PY{p}{(}\PY{n}{gi} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
-    \PY{n}{eq2} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZob{}0:.16f\PYZcb{}*x1\PYZca{}2\PYZob{}1:+.16f\PYZcb{}*x1*x2\PYZob{}2:+.16f\PYZcb{}*x1*x3\PYZob{}3:+.16f\PYZcb{}*}
-        \PY{n}{x1}\PY{p}{\PYZob{}}\PY{l+m+mi}{4}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{5}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{*}\PY{n}{x3}\PY{p}{\PYZob{}}\PY{l+m+mi}{6}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{p}{\PYZob{}}\PY{l+m+mi}{7}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}
-        \PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{8}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x3}\PY{p}{\PYZob{}}\PY{l+m+mi}{9}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{p}{;}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.format(}
+        \PY{p}{(}\PY{o}{\PYZhy{}}\PY{n}{ei} \PY{o}{*} \PY{n}{gs} \PY{o}{+} \PY{n}{es} \PY{o}{*} \PY{n}{gi} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{gs} \PY{o}{*} \PY{n}{omega\PYZus{}p\PYZus{}chosen}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{gi}\PY{o}{*}\PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
+    \PY{n}{eq2} \PY{o}{=} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZob{}0:.16f\PYZcb{}*x1\PYZca{}2\PYZob{}1:+.16f\PYZcb{}*x1*x2\PYZob{}2:+.16f\PYZcb{}*x1*x3\PYZob{}3:+.16f\PYZcb{}*}\PY{l+s+s2}{\PYZdq{}}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x1\PYZob{}4:+.16f\PYZcb{}*x2\PYZca{}2\PYZob{}5:+.16f\PYZcb{}*x2*x3\PYZob{}6:+.16f\PYZcb{}*x2\PYZob{}7:+.16f\PYZcb{}*}\PY{l+s+s2}{\PYZdq{}}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x3\PYZca{}2\PYZob{}8:+.16f\PYZcb{}*x3\PYZob{}9:+.16f\PYZcb{};}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{format}\PY{p}{(}
         \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{,} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4} \PY{o}{*} \PY{n}{alpha} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}\PY{p}{)} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{4} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{es} \PY{o}{/}
         \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{alpha}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{alpha} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{8} \PY{o}{*} \PY{n}{alpha} \PY{o}{+} \PY{l+m+mi}{4}\PY{p}{,}
         \PY{p}{(}\PY{l+m+mi}{4} \PY{o}{*} \PY{n}{alpha} \PY{o}{*} \PY{n}{es} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{es}\PY{p}{)} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{alpha} \PY{o}{+} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{4} \PY{o}{*} \PY{n}{es} \PY{o}{/} \PY{n}{xs}
         \PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{p}{(}\PY{l+m+mi}{4} \PY{o}{*} \PY{n}{es}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n}{gs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{l+m+mi}{4} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{)}\PY{p}{)}
-    \PY{n}{eq3} \PY{o}{=} \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZob{}0:.16f\PYZcb{}*x1\PYZca{}2*x2\PYZca{}2\PYZob{}1:+.16f\PYZcb{}*x1*x2\PYZca{}3\PYZob{}2:+.16f\PYZcb{}*x1*x2\PYZca{}2*}
-        \PY{n}{x3}\PY{p}{\PYZob{}}\PY{l+m+mi}{3}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x1}\PY{o}{*}\PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{4}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x1}\PY{o}{*}\PY{n}{x2}\PY{o}{*}\PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{5}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x1}\PY{o}{*}\PY{n}{x2}\PY{o}{*}
-        \PY{n}{x3}\PY{p}{\PYZob{}}\PY{l+m+mi}{6}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{4}\PY{p}{\PYZob{}}\PY{l+m+mi}{7}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{3}\PY{o}{*}\PY{n}{x3}\PY{p}{\PYZob{}}\PY{l+m+mi}{8}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{3}\PY{p}{\PYZob{}}\PY{l+m+mi}{9}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}
-        \PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{10}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{x3}\PY{p}{\PYZob{}}\PY{l+m+mi}{11}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{12}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{*}
-        \PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{3}\PY{p}{\PYZob{}}\PY{l+m+mi}{13}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{*}\PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{14}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x2}\PY{o}{*}\PY{n}{x3}\PY{p}{\PYZob{}}\PY{l+m+mi}{15}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}
-        \PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{4}\PY{p}{\PYZob{}}\PY{l+m+mi}{16}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{3}\PY{p}{\PYZob{}}\PY{l+m+mi}{17}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x3}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{\PYZob{}}\PY{l+m+mi}{18}\PY{p}{:}\PY{o}{+}\PY{o}{.}\PY{l+m+mi}{16}\PY{n}{f}\PY{p}{\PYZcb{}}\PY{o}{*}\PY{n}{x3}\PY{p}{;}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{.format(}
+    \PY{n}{eq3} \PY{o}{=} \PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{\PYZob{}0:.16f\PYZcb{}*x1\PYZca{}2*x2\PYZca{}2\PYZob{}1:+.16f\PYZcb{}*x1*x2\PYZca{}3\PYZob{}2:+.16f\PYZcb{}*x1*x2\PYZca{}2*}\PY{l+s+s2}{\PYZdq{}}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x3\PYZob{}3:+.16f\PYZcb{}*x1*x2\PYZca{}2\PYZob{}4:+.16f\PYZcb{}*x1*x2*x3\PYZca{}2\PYZob{}5:+.16f\PYZcb{}*x1*x2*}\PY{l+s+s2}{\PYZdq{}}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x3\PYZob{}6:+.16f\PYZcb{}*x2\PYZca{}4\PYZob{}7:+.16f\PYZcb{}*x2\PYZca{}3*x3\PYZob{}8:+.16f\PYZcb{}*x2\PYZca{}3\PYZob{}9:+.16f\PYZcb{}*}\PY{l+s+s2}{\PYZdq{}}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x2\PYZca{}2*x3\PYZca{}2\PYZob{}10:+.16f\PYZcb{}*x2\PYZca{}2*x3\PYZob{}11:+.16f\PYZcb{}*x2\PYZca{}2\PYZob{}12:+.16f\PYZcb{}*x2*}\PY{l+s+s2}{\PYZdq{}}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x3\PYZca{}3\PYZob{}13:+.16f\PYZcb{}*x2*x3\PYZca{}2\PYZob{}14:+.16f\PYZcb{}*x2*x3\PYZob{}15:+.16f\PYZcb{}*}\PY{l+s+s2}{\PYZdq{}}
+        \PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{x3\PYZca{}4\PYZob{}16:+.16f\PYZcb{}*x3\PYZca{}3\PYZob{}17:+.16f\PYZcb{}*x3\PYZca{}2\PYZob{}18:+.16f\PYZcb{}*x3;}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{format}\PY{p}{(}
         \PY{l+m+mf}{4.0} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mf}{1.0} \PY{o}{*} \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{16.0} \PY{o}{*} \PY{n}{alpha} \PY{o}{\PYZhy{}} \PY{l+m+mf}{8.0}\PY{p}{)} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{1.0} \PY{o}{*}
         \PY{p}{(}\PY{l+m+mf}{8.0} \PY{o}{*} \PY{n}{alpha} \PY{o}{\PYZhy{}} \PY{l+m+mf}{8.0}\PY{p}{)} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{8.0} \PY{o}{*} \PY{n}{es} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mf}{4.0} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}
         \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{1.0} \PY{o}{*} \PY{p}{(}\PY{l+m+mf}{4.0} \PY{o}{*} \PY{n}{ep} \PY{o}{\PYZhy{}} \PY{l+m+mf}{4.0} \PY{o}{*} \PY{n}{omega\PYZus{}p\PYZus{}chosen}\PY{p}{)} \PY{o}{/}
@@ -302,7 +286,7 @@
          \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{l+m+mf}{4.0} \PY{o}{*} \PY{n}{ep} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{l+m+mf}{4.0} \PY{o}{*} \PY{n}{es} \PY{o}{*} \PY{n}{xp}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mf}{4.0} \PY{o}{*}
          \PY{n}{omega\PYZus{}p\PYZus{}chosen} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)} \PY{o}{/} \PY{p}{(}\PY{n}{xp}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{1.0} \PY{o}{*}
         \PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mf}{4.0} \PY{o}{*} \PY{n}{ep} \PY{o}{*} \PY{n}{es} \PY{o}{+} \PY{l+m+mf}{4.0} \PY{o}{*} \PY{n}{es} \PY{o}{*} \PY{n}{omega\PYZus{}p\PYZus{}chosen} \PY{o}{+} \PY{l+m+mf}{1.0} \PY{o}{*} \PY{n}{gs}\PY{p}{)} \PY{o}{/}
-        \PY{p}{(}\PY{n}{xp}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{1.00000000000000}\PY{p}{,} \PY{l+m+mf}{1.0} \PY{o}{*}
+        \PY{p}{(}\PY{n}{xp}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{l+m+mf}{1.0}\PY{p}{,} \PY{l+m+mf}{1.0} \PY{o}{*}
         \PY{p}{(}\PY{l+m+mf}{2.0} \PY{o}{*} \PY{n}{ep} \PY{o}{\PYZhy{}} \PY{l+m+mf}{2.0} \PY{o}{*} \PY{n}{omega\PYZus{}p\PYZus{}chosen}\PY{p}{)} \PY{o}{/} \PY{n}{xp}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mf}{1.0} \PY{o}{*}
         \PY{p}{(}\PY{l+m+mf}{1.0} \PY{o}{*} \PY{n}{ep}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{l+m+mf}{2.0} \PY{o}{*} \PY{n}{ep} \PY{o}{*} \PY{n}{omega\PYZus{}p\PYZus{}chosen} \PY{o}{+} \PY{l+m+mf}{1.0} \PY{o}{*}
          \PY{n}{omega\PYZus{}p\PYZus{}chosen}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{l+m+mf}{0.25}\PY{p}{)} \PY{o}{/} \PY{n}{xp}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{4}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{l+m+mf}{1.0} \PY{o}{*} \PY{n}{ip}\PY{p}{)}
@@ -335,8 +319,7 @@
         \PY{n}{idx}\PY{p}{]} \PY{k}{for} \PY{n}{lst} \PY{o+ow}{in} \PY{n}{solutions\PYZus{}v2} \PY{k}{for} \PY{n}{tple} \PY{o+ow}{in} \PY{n}{lst}\PY{p}{]}\PY{p}{)}\PY{p}{)}
 \PY{n}{ipstart} \PY{o}{=} \PY{n}{nsnpip}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
 \PY{n}{fig\PYZus{}mf}\PY{p}{,} \PY{n}{ax} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{p}{)}
-\PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{ipx}\PY{p}{[}\PY{n}{ipx} \PY{o}{\PYZlt{}} \PY{n}{ipstart}\PY{p}{]}\PY{p}{,}
-        \PY{n}{n\PYZus{}hom\PYZus{}mf}\PY{p}{(}\PY{n}{ipx}\PY{p}{[}\PY{n}{ipx} \PY{o}{\PYZlt{}} \PY{n}{ipstart}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{ipx}\PY{p}{[}\PY{n}{ipx}\PY{o}{\PYZlt{}}\PY{n}{ipstart}\PY{p}{]}\PY{p}{,}\PY{n}{n\PYZus{}hom\PYZus{}mf}\PY{p}{(}\PY{n}{ipx}\PY{p}{[}\PY{n}{ipx}\PY{o}{\PYZlt{}}\PY{n}{ipstart}\PY{p}{]}\PY{p}{)}\PY{p}{,}\PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{k}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{ipx}\PY{p}{[}\PY{n}{ipx} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{ipstart}\PY{p}{]}\PY{p}{,} \PY{n}{n\PYZus{}hom\PYZus{}mf}\PY{p}{(}\PY{n}{ipx}\PY{p}{[}\PY{n}{ipx} \PY{o}{\PYZgt{}}\PY{o}{=} \PY{n}{ipstart}\PY{p}{]}\PY{p}{)}\PY{p}{,}
         \PY{n}{linestyle}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{dashed}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{n}{color}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{black}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{k}{for} \PY{n}{idx} \PY{o+ow}{in} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{:}
@@ -354,29 +337,25 @@
     \PY{n}{ax}\PY{o}{.}\PY{n}{xaxis}\PY{o}{.}\PY{n}{set\PYZus{}ticks}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{8}\PY{p}{,} \PY{l+m+mi}{12}\PY{p}{,} \PY{l+m+mi}{16}\PY{p}{]}\PY{p}{)}
 \PY{n}{ax}\PY{o}{.}\PY{n}{yaxis}\PY{o}{.}\PY{n}{set\PYZus{}ticks}\PY{p}{(}\PY{p}{[}\PY{l+m+mf}{0.4}\PY{p}{,} \PY{l+m+mf}{0.8}\PY{p}{,} \PY{l+m+mf}{1.2}\PY{p}{,} \PY{l+m+mf}{1.6}\PY{p}{]}\PY{p}{)}
 \PY{n}{fig\PYZus{}mf}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fig\PYZus{}mf\PYZus{}ks\PYZus{}\PYZob{}0:s\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{ks}\PY{p}{)}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tight}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{p}{[}\PY{p}{(}\PY{n}{omega\PYZus{}s\PYZus{}chosen}\PY{p}{,} \PY{n}{ns\PYZus{}chosen}\PY{p}{,} \PY{n}{np\PYZus{}chosen}\PY{p}{,} \PY{n}{ip\PYZus{}chosen}\PY{p}{)}
- \PY{p}{]} \PY{o}{=} \PY{n}{eqs}\PY{p}{(}\PY{n}{ip\PYZus{}chosen}\PY{p}{)}
+\PY{p}{[}\PY{p}{(}\PY{n}{omega\PYZus{}s\PYZus{}chosen}\PY{p}{,}\PY{n}{ns\PYZus{}chosen}\PY{p}{,}\PY{n}{np\PYZus{}chosen}\PY{p}{,}\PY{n}{ip\PYZus{}chosen}\PY{p}{)}\PY{p}{]}\PY{o}{=}\PY{n}{eqs}\PY{p}{(}\PY{n}{ip\PYZus{}chosen}\PY{p}{)}
 \PY{n}{omega\PYZus{}i\PYZus{}chosen} \PY{o}{=} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{omega\PYZus{}p\PYZus{}chosen} \PY{o}{\PYZhy{}} \PY{n}{omega\PYZus{}s\PYZus{}chosen}
 \PY{n}{ni\PYZus{}chosen} \PY{o}{=} \PY{n}{alpha} \PY{o}{*} \PY{n}{ns\PYZus{}chosen}
 \PY{n}{energy\PYZus{}spi} \PY{o}{=} \PY{p}{[}\PY{n}{omega\PYZus{}s\PYZus{}chosen}\PY{p}{,} \PY{n}{omega\PYZus{}p\PYZus{}chosen}\PY{p}{,} \PY{n}{omega\PYZus{}i\PYZus{}chosen}\PY{p}{]}
-\PY{n}{p} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{ip\PYZus{}chosen}\PY{p}{)} \PY{o}{*} \PY{p}{(}
-    \PY{l+m+mi}{2} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*}
+\PY{n}{p} \PY{o}{=} \PY{l+m+mi}{1} \PY{o}{/} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{ip\PYZus{}chosen}\PY{p}{)} \PY{o}{*} \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*}
     \PY{p}{(}\PY{n}{es} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1j} \PY{o}{*} \PY{n}{gs} \PY{o}{/} \PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{omega\PYZus{}s\PYZus{}chosen}\PY{p}{)} \PY{o}{*} \PY{n}{ns\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*}
     \PY{p}{(}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{n}{ns\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{ni\PYZus{}chosen}\PY{p}{)} \PY{o}{*} \PY{n}{ns\PYZus{}chosen} \PY{o}{\PYZhy{}}
     \PY{p}{(}\PY{l+m+mi}{1} \PY{o}{/} \PY{n}{xp}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}\PY{n}{ep} \PY{o}{+} \PY{l+m+mi}{1j} \PY{o}{*} \PY{l+m+mi}{1} \PY{o}{/} \PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{omega\PYZus{}p\PYZus{}chosen}\PY{p}{)} \PY{o}{*} \PY{n}{np\PYZus{}chosen} \PY{o}{+}
      \PY{p}{(}\PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{ns\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{ni\PYZus{}chosen}\PY{p}{)} \PY{o}{*} \PY{n}{np\PYZus{}chosen}\PY{p}{)}\PY{p}{)}
 \PY{n}{pr} \PY{o}{=} \PY{n}{p}\PY{o}{.}\PY{n}{real}
 \PY{n}{pi} \PY{o}{=} \PY{n}{p}\PY{o}{.}\PY{n}{imag}
-\PY{n}{matSI} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{n}{ns\PYZus{}chosen} \PY{o}{+} \PY{p}{(}
-    \PY{n}{es} \PY{o}{\PYZhy{}} \PY{n}{omega\PYZus{}s\PYZus{}chosen}
+\PY{n}{matSI}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{p}{[}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{ni\PYZus{}chosen}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np\PYZus{}chosen}\PY{o}{+}\PY{n}{ns\PYZus{}chosen}\PY{o}{+}\PY{p}{(}\PY{n}{es}\PY{o}{\PYZhy{}}\PY{n}{omega\PYZus{}s\PYZus{}chosen}
 \PY{p}{)} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{gs} \PY{o}{/} \PY{p}{(}\PY{l+m+mf}{2.} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n}{pr}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{n}{pr}\PY{p}{]}\PY{p}{,} \PY{p}{[}
     \PY{o}{\PYZhy{}}\PY{n}{gs} \PY{o}{/} \PY{p}{(}\PY{l+m+mf}{2.} \PY{o}{*} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{n}{ns\PYZus{}chosen}
     \PY{o}{+} \PY{p}{(}\PY{n}{es} \PY{o}{\PYZhy{}} \PY{n}{omega\PYZus{}s\PYZus{}chosen}\PY{p}{)} \PY{o}{/} \PY{n}{xs}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{n}{pr}\PY{p}{,} \PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{pr}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}
 \PY{p}{]}\PY{p}{,} \PY{p}{[}\PY{o}{\PYZhy{}}\PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{+} \PY{n}{pr}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{n}{pr}\PY{p}{,} \PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*}
     \PY{n}{ns\PYZus{}chosen} \PY{o}{+} \PY{p}{(}\PY{n}{ei} \PY{o}{\PYZhy{}} \PY{n}{omega\PYZus{}i\PYZus{}chosen}\PY{p}{)} \PY{o}{/} \PY{n}{xi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{gi} \PY{o}{/} \PY{p}{(}\PY{l+m+mf}{2.} \PY{o}{*} \PY{n}{xi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{]}\PY{p}{,}
                   \PY{p}{[}\PY{l+m+mi}{2} \PY{o}{*} \PY{n}{pi} \PY{o}{*} \PY{n}{pr}\PY{p}{,} \PY{n}{pi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{pr}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{n}{gi} \PY{o}{/} \PY{p}{(}\PY{l+m+mf}{2.} \PY{o}{*} \PY{n}{xi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}\PY{p}{,}
-                   \PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{ns\PYZus{}chosen} \PY{o}{+} \PY{p}{(}
-                       \PY{n}{ei} \PY{o}{\PYZhy{}} \PY{n}{omega\PYZus{}i\PYZus{}chosen}\PY{p}{)} \PY{o}{/} \PY{n}{xi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ni\PYZus{}chosen}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{np\PYZus{}chosen}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{ns\PYZus{}chosen}\PY{o}{+}\PY{p}{(}\PY{n}{ei}\PY{o}{\PYZhy{}}\PY{n}{omega\PYZus{}i\PYZus{}chosen}\PY{p}{)}\PY{o}{/}\PY{n}{xi}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{]}\PY{p}{)}
 \PY{n}{norm} \PY{o}{=} \PY{n}{ns\PYZus{}chosen} \PY{o}{+} \PY{n}{ni\PYZus{}chosen}
 \PY{n}{N} \PY{o}{=} \PY{n}{null}\PY{p}{(}\PY{n}{matSI}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{norm}\PY{p}{)}
 \PY{p}{[}\PY{n}{sr}\PY{p}{,} \PY{n}{si}\PY{p}{,} \PY{n}{ir}\PY{p}{,} \PY{n}{ii}\PY{p}{]} \PY{o}{=} \PY{n}{N}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}
@@ -413,8 +392,8 @@
 \PY{n}{matsL\PYZus{}diag}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{indices\PYZus{}ps\PYZus{}rows}\PY{p}{,} \PY{n}{indices\PYZus{}ps\PYZus{}cols}\PY{p}{]} \PY{o}{=} \PY{n+nb}{complex}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}
 \PY{n}{matsL\PYZus{}diag}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{n}{indices\PYZus{}pi\PYZus{}rows}\PY{p}{,} \PY{n}{indices\PYZus{}pi\PYZus{}cols}\PY{p}{]} \PY{o}{=} \PY{n+nb}{complex}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{)}
 \PY{n}{eigs\PYZus{}diag} \PY{o}{=} \PY{n}{eigL\PYZus{}mats}\PY{p}{(}\PY{n}{matsL\PYZus{}diag}\PY{p}{,} \PY{n}{nkx}\PY{p}{,} \PY{n}{nky}\PY{p}{)}
-\PY{n}{y\PYZus{}points}\PY{p}{,} \PY{n}{x\PYZus{}points}\PY{p}{,} \PY{n}{eig\PYZus{}indices} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{eigs}\PY{o}{.}\PY{n}{real}\PY{p}{)} \PY{o}{\PYZlt{}}\PY{o}{=}
-                                           \PY{n}{eigs\PYZus{}threshold}\PY{p}{)}
+\PY{n}{y\PYZus{}points}\PY{p}{,}\PY{n}{x\PYZus{}points}\PY{p}{,}\PY{n}{eig\PYZus{}indices}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}
+    \PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{eigs}\PY{o}{.}\PY{n}{real}\PY{p}{)}\PY{o}{\PYZlt{}}\PY{o}{=}\PY{n}{eigs\PYZus{}threshold}\PY{p}{)}
 \PY{n}{y\PYZus{}points\PYZus{}diag}\PY{p}{,} \PY{n}{x\PYZus{}points\PYZus{}diag}\PY{p}{,} \PY{n}{eig\PYZus{}indices\PYZus{}diag} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{where}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}
     \PY{n}{eigs\PYZus{}diag}\PY{o}{.}\PY{n}{real}\PY{p}{)} \PY{o}{\PYZlt{}}\PY{o}{=} \PY{l+m+mf}{0.05}\PY{p}{)}
 \PY{n}{phi\PYZus{}gold} \PY{o}{=} \PY{l+m+mf}{1.618}
@@ -442,13 +421,11 @@
 \PY{n}{vectfd\PYZus{}min} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{fft}\PY{o}{.}\PY{n}{fftshift}\PY{p}{(}\PY{n}{vectfd}\PY{p}{,} \PY{n}{axes}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{p}{)}\PY{p}{)}
 \PY{n}{bcoef\PYZus{}conj\PYZus{}mink} \PY{o}{=} \PY{n}{bog\PYZus{}coef\PYZus{}mats}\PY{p}{(}\PY{n}{matsL\PYZus{}min}\PY{p}{,} \PY{n}{vectfd\PYZus{}min}\PY{p}{,} \PY{n}{nkx}\PY{p}{,} \PY{n}{nky}\PY{p}{)}
 \PY{n}{matsL\PYZus{}min\PYZus{}diag} \PY{o}{=} \PY{o}{\PYZhy{}}\PY{n}{np}\PY{o}{.}\PY{n}{fft}\PY{o}{.}\PY{n}{fftshift}\PY{p}{(}\PY{n}{matsL\PYZus{}diag}\PY{p}{,} \PY{n}{axes}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{)}\PY{p}{)}
-\PY{n}{bcoef\PYZus{}conj\PYZus{}mink\PYZus{}diag} \PY{o}{=} \PY{n}{bog\PYZus{}coef\PYZus{}mats}\PY{p}{(}\PY{n}{matsL\PYZus{}min\PYZus{}diag}\PY{p}{,} \PY{n}{vectfd\PYZus{}min}\PY{p}{,}
-                                     \PY{n}{nkx}\PY{p}{,} \PY{n}{nky}\PY{p}{)}
+\PY{n}{bcoef\PYZus{}conj\PYZus{}mink\PYZus{}diag}\PY{o}{=}\PY{n}{bog\PYZus{}coef\PYZus{}mats}\PY{p}{(}\PY{n}{matsL\PYZus{}min\PYZus{}diag}\PY{p}{,}\PY{n}{vectfd\PYZus{}min}\PY{p}{,}\PY{n}{nkx}\PY{p}{,}\PY{n}{nky}\PY{p}{)}
 \PY{n}{psi\PYZus{}k} \PY{o}{=} \PY{n}{gv} \PY{o}{/} \PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}\PY{n}{bcoef}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{+} \PY{n}{bcoef\PYZus{}conj\PYZus{}mink}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
-\PY{n}{psi\PYZus{}k\PYZus{}diag} \PY{o}{=} \PY{n}{gv} \PY{o}{/} \PY{l+m+mi}{2} \PY{o}{*} \PY{p}{(}
-    \PY{n}{bcoef\PYZus{}diag}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{+} \PY{n}{bcoef\PYZus{}conj\PYZus{}mink\PYZus{}diag}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
-\PY{p}{[}\PY{n}{imax}\PY{p}{,} \PY{n}{jmax}\PY{p}{]} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{unravel\PYZus{}index}\PY{p}{(}
-    \PY{n}{np}\PY{o}{.}\PY{n}{argmax}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{,} \PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{p}{:}\PY{p}{,} \PY{p}{:}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
+\PY{n}{psi\PYZus{}k\PYZus{}diag}\PY{o}{=}\PY{n}{gv}\PY{o}{/}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{bcoef\PYZus{}diag}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}\PY{o}{+}\PY{n}{bcoef\PYZus{}conj\PYZus{}mink\PYZus{}diag}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{:}\PY{l+m+mi}{6}\PY{p}{]}\PY{p}{)}
+\PY{p}{[}\PY{n}{imax}\PY{p}{,}\PY{n}{jmax}\PY{p}{]}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{unravel\PYZus{}index}\PY{p}{(}
+    \PY{n}{np}\PY{o}{.}\PY{n}{argmax}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{p}{:}\PY{p}{,}\PY{p}{:}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{shape}\PY{p}{)}
 \PY{n}{l1} \PY{o}{=} \PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{n}{imax} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}\PY{p}{:}\PY{n}{imax} \PY{o}{+} \PY{l+m+mi}{3}\PY{p}{,} \PY{n}{jmax} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}\PY{p}{,} \PY{p}{:}\PY{p}{]}
 \PY{n}{l2} \PY{o}{=} \PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{n}{imax} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}\PY{p}{:}\PY{n}{imax} \PY{o}{+} \PY{l+m+mi}{3}\PY{p}{,} \PY{n}{jmax} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{,} \PY{p}{:}\PY{p}{]}
 \PY{n}{l3} \PY{o}{=} \PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{n}{imax} \PY{o}{\PYZhy{}} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{jmax} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{:}\PY{n}{jmax} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{,} \PY{p}{:}\PY{p}{]}
@@ -456,8 +433,7 @@
 \PY{n}{l} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{concatenate}\PY{p}{(}\PY{p}{(}\PY{n}{l1}\PY{p}{,} \PY{n}{l2}\PY{p}{,} \PY{n}{l3}\PY{p}{,} \PY{n}{l4}\PY{p}{)}\PY{p}{)}
 \PY{n}{averages} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{axis}\PY{o}{=}\PY{l+m+mi}{0}\PY{p}{)}
 \PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{n}{imax} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{:}\PY{n}{imax} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{jmax} \PY{o}{\PYZhy{}} \PY{l+m+mi}{1}\PY{p}{:}\PY{n}{jmax} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{=} \PY{n}{averages}
-\PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{n}{nky} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{nkx} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{nkx} \PY{o}{*} \PY{n}{nky}\PY{p}{)} \PY{o}{*} \PYZbs{}
-    \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{s} \PY{o}{/} \PY{n}{xs}\PY{p}{,} \PY{n}{p} \PY{o}{/} \PY{n}{xp}\PY{p}{,} \PY{n}{i} \PY{o}{/} \PY{n}{xi}\PY{p}{]}\PY{p}{)}
+\PY{n}{psi\PYZus{}k}\PY{p}{[}\PY{n}{nky}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{nkx}\PY{o}{/}\PY{l+m+mi}{2}\PY{p}{,}\PY{p}{:}\PY{p}{]}\PY{o}{+}\PY{o}{=}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{n}{nkx}\PY{o}{*}\PY{n}{nky}\PY{p}{)}\PY{o}{*}\PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{s}\PY{o}{/}\PY{n}{xs}\PY{p}{,}\PY{n}{p}\PY{o}{/}\PY{n}{xp}\PY{p}{,}\PY{n}{i}\PY{o}{/}\PY{n}{xi}\PY{p}{]}\PY{p}{)}
 \PY{n}{psi\PYZus{}k\PYZus{}diag}\PY{p}{[}\PY{n}{nky} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{,} \PY{n}{nkx} \PY{o}{/} \PY{l+m+mi}{2}\PY{p}{,} \PY{p}{:}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}
     \PY{n}{nkx} \PY{o}{*} \PY{n}{nky}\PY{p}{)} \PY{o}{*} \PY{n}{np}\PY{o}{.}\PY{n}{array}\PY{p}{(}\PY{p}{[}\PY{n}{s} \PY{o}{/} \PY{n}{xs}\PY{p}{,} \PY{n}{p} \PY{o}{/} \PY{n}{xp}\PY{p}{,} \PY{n}{i} \PY{o}{/} \PY{n}{xi}\PY{p}{]}\PY{p}{)}
 \PY{n}{res\PYZus{}k} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{log10}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{abs}\PY{p}{(}\PY{n}{psi\PYZus{}k}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}  \PY{c+c1}{\PYZsh{} logscale}
@@ -507,9 +483,8 @@
 \PY{n}{init\PYZus{}view} \PY{o}{=} \PY{n}{view\PYZus{}2}
 \PY{n}{ax}\PY{o}{.}\PY{n}{view\PYZus{}init}\PY{p}{(}\PY{o}{*}\PY{n}{init\PYZus{}view}\PY{p}{)}
 \PY{n}{ax}\PY{o}{.}\PY{n}{plot\PYZus{}surface}\PY{p}{(}\PY{n}{KX}\PY{p}{[}\PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{,} \PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{]}\PY{p}{,}
-                \PY{n}{KY}\PY{p}{[}\PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{,} \PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{]}\PY{p}{,}
-                \PY{n}{BLP}\PY{p}{[}\PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{,} \PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{]}\PY{p}{,} \PY{n}{rstride}\PY{o}{=}\PY{n}{stride\PYZus{}r}\PY{p}{,}
-                \PY{n}{cstride}\PY{o}{=}\PY{n}{stride\PYZus{}c}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.4}\PY{p}{)}
+          \PY{n}{KY}\PY{p}{[}\PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{,}\PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{]}\PY{p}{,}\PY{n}{BLP}\PY{p}{[}\PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{,}\PY{n}{kxl3d}\PY{p}{:}\PY{n}{kxr3d}\PY{p}{]}\PY{p}{,}
+                \PY{n}{rstride}\PY{o}{=}\PY{n}{stride\PYZus{}r}\PY{p}{,} \PY{n}{cstride}\PY{o}{=}\PY{n}{stride\PYZus{}c}\PY{p}{,} \PY{n}{alpha}\PY{o}{=}\PY{l+m+mf}{0.4}\PY{p}{)}
 \PY{k}{for} \PY{n}{idx} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
     \PY{n}{ax}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{kx}\PY{p}{[}\PY{n}{x\PYZus{}points}\PY{p}{]} \PY{o}{+} \PY{n}{momentum\PYZus{}spi}\PY{p}{[}\PY{n}{idx}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{,}
             \PY{n}{ky}\PY{p}{[}\PY{n}{y\PYZus{}points}\PY{p}{]} \PY{o}{+} \PY{n}{momentum\PYZus{}spi}\PY{p}{[}\PY{n}{idx}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{energy\PYZus{}spi}\PY{p}{[}\PY{n}{idx}\PY{p}{]}\PY{p}{,}
@@ -545,8 +520,8 @@
     \PY{n}{np}\PY{o}{.}\PY{n}{amax}\PY{p}{(}\PY{n}{res\PYZus{}r}\PY{p}{[}\PY{n}{rango}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{n}{rango}\PY{p}{,} \PY{n}{rango}\PY{p}{:}\PY{o}{\PYZhy{}}\PY{n}{rango}\PY{p}{,} \PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{)}
 \PY{n}{cb} \PY{o}{=} \PY{n}{fig\PYZus{}real\PYZus{}S}\PY{o}{.}\PY{n}{colorbar}\PY{p}{(}\PY{n}{im}\PY{p}{,}\PY{n}{cax}\PY{o}{=}\PY{n}{cax}\PY{p}{,}\PY{n}{ticks}\PY{o}{=}\PY{n}{ticks\PYZus{}at}\PY{p}{,}\PY{n}{format}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+si}{\PYZpc{}1.2f}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{cb}\PY{o}{.}\PY{n}{ax}\PY{o}{.}\PY{n}{tick\PYZus{}params}\PY{p}{(}\PY{n}{labelsize}\PY{o}{=}\PY{l+m+mi}{20}\PY{p}{)}
-\PY{n}{fig\PYZus{}real\PYZus{}S}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fig\PYZus{}real\PYZus{}ks\PYZus{}\PYZob{}0:s\PYZcb{}\PYZus{}\PYZob{}1:s\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}
-    \PY{n}{ks}\PY{p}{,} \PY{n}{letter\PYZus{}spi}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tight}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
+\PY{n}{fig\PYZus{}real\PYZus{}S}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fig\PYZus{}real\PYZus{}ks\PYZus{}\PYZob{}0:s\PYZcb{}\PYZus{}\PYZob{}1:s\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{ks}\PY{p}{,}
+                            \PY{n}{letter\PYZus{}spi}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tight}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \PY{n}{ls} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{\PYZhy{}}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{:}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
 \PY{n}{col} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{blue}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{red}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{green}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
 \PY{n}{leg} \PY{o}{=} \PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{signal}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{pump}\PY{l+s+s1}{\PYZsq{}}\PY{p}{,} \PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{idler}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}
@@ -652,7 +627,6 @@
 \PY{n}{fig\PYZus{}real\PYZus{}diag\PYZus{}I}\PY{o}{.}\PY{n}{savefig}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{fig\PYZus{}real\PYZus{}diag\PYZus{}ks\PYZus{}\PYZob{}0:s\PYZcb{}\PYZus{}\PYZob{}1:s\PYZcb{}}\PY{l+s+s1}{\PYZsq{}}\PY{o}{.}\PY{n}{format}\PY{p}{(}\PY{n}{ks}\PY{p}{,}
                             \PY{n}{letter\PYZus{}spi}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{tight}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
 \end{Verbatim}
-
 
 %%% Local Variables:
 %%% mode: latex

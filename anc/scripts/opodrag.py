@@ -110,8 +110,7 @@ def hopf_c(kx, ky):
     return -1 / np.sqrt(1 + ((enLP(kx, ky) - enC(kx, ky)) / (
         Omega_R / gp))**2)
 def gamma(kx, ky):
-    return (gamma_C + hopf_x(kx, ky)**2 *
-            (gamma_X - gamma_C)) / gp
+    return (gamma_C + hopf_x(kx, ky)**2 * (gamma_X - gamma_C)) / gp
 kxL, kxR = index_mom(kxl), index_mom(kxr)
 kyL, kyR = index_mom(kyl), index_mom(kyr)
 es = enLP(k_sigx, k_sigy)
@@ -140,13 +139,11 @@ def L(kx, ky):
          hopf_x(k_pmpx + kx, k_pmpy + ky) * hopf_x(
              k_sigx + kx, k_sigy + ky), 2 * s * np.conjugate(
                  i) * hopf_x(k_idlx + kx, k_idly + ky) * hopf_x(
-                     k_sigx + kx, k_sigy + ky), s**2 * hopf_x(
-                         k_sigx - kx, k_sigy - ky) *
+         k_sigx+kx,k_sigy+ky),s**2*hopf_x(k_sigx-kx,k_sigy-ky)*
          hopf_x(k_sigx + kx, k_sigy + ky), 2 * p * s * hopf_x(
              k_pmpx - kx, k_pmpy - ky) * hopf_x(
                  k_sigx + kx, k_sigy + ky), (p**2 + 2 * i * s) *
-         hopf_x(k_idlx - kx, k_idly - ky) * hopf_x(k_sigx + kx,
-                                                   k_sigy + ky)],
+         hopf_x(k_idlx-kx,k_idly-ky)*hopf_x(k_sigx+kx,k_sigy+ky)],
         [2 * (i * np.conjugate(p) + p * np.conjugate(s)) * hopf_x(
             k_pmpx + kx, k_pmpy + ky) * hopf_x(
                 k_sigx + kx, k_sigy + ky), -omega_p_chosen + enLP(
@@ -161,11 +158,9 @@ def L(kx, ky):
                  k_pmpx + kx, k_pmpy + ky), (p**2 + 2 * i * s) *
          hopf_x(k_pmpx - kx, k_pmpy - ky) * hopf_x(
              k_pmpx + kx, k_pmpy + ky), 2 * i * p * hopf_x(
-                 k_idlx - kx, k_idly - ky) * hopf_x(k_pmpx + kx,
-                                                    k_pmpy + ky)],
+                 k_idlx-kx,k_idly-ky)*hopf_x(k_pmpx+kx,k_pmpy+ky)],
         [2 * i * np.conjugate(s) * hopf_x(
-            k_idlx + kx, k_idly + ky) * hopf_x(k_sigx + kx, k_sigy
-                                               + ky), 2
+            k_idlx+kx,k_idly+ky)*hopf_x(k_sigx+kx,k_sigy+ky),2
          * (i * np.conjugate(p) + p * np.conjugate(s)
             ) * hopf_x(k_idlx + kx, k_idly + ky) * hopf_x(
                 k_pmpx + kx, k_pmpy + ky), -omega_i_chosen + enLP(
@@ -177,8 +172,7 @@ def L(kx, ky):
              k_idlx + kx, k_idly + ky), 2 * i * p * hopf_x(
                  k_pmpx - kx, k_pmpy - ky) * hopf_x(
                      k_idlx + kx, k_idly + ky), i**2 * hopf_x(
-                         k_idlx - kx, k_idly - ky) * hopf_x(
-                             k_idlx + kx, k_idly + ky)],
+                k_idlx-kx,k_idly-ky)*hopf_x(k_idlx+kx,k_idly+ky)],
         [-(np.conjugate(s)**2 * hopf_x(k_sigx - kx, k_sigy - ky) *
            hopf_x(k_sigx + kx, k_sigy + ky)), -2 * np.conjugate(p)
          * np.conjugate(s) * hopf_x(k_sigx - kx, k_sigy - ky) *
@@ -187,18 +181,15 @@ def L(kx, ky):
                  s)) * hopf_x(k_sigx - kx, k_sigy - ky) * hopf_x(
                      k_idlx + kx, k_idly + ky)), omega_s_chosen -
          enLP(k_sigx - kx, k_sigy - ky) - 1j * 1 / 2 * gamma(
-             k_sigx - kx, k_sigy - ky) - 2 * (
-                 ni_chosen + np_chosen + ns_chosen
+             k_sigx-kx,k_sigy-ky)-2*(ni_chosen+np_chosen+ns_chosen
              ) * hopf_x(k_sigx - kx, k_sigy - ky)**2, -2 * (
                  i * np.conjugate(p) + p * np.conjugate(s)) *
          hopf_x(k_pmpx - kx, k_pmpy - ky) * hopf_x(
              k_sigx - kx, k_sigy - ky), -2 * i * np.conjugate(
-                 s) * hopf_x(k_idlx - kx, k_idly - ky) * hopf_x(
-                     k_sigx - kx, k_sigy - ky)],
+        s)*hopf_x(k_idlx-kx,k_idly-ky)*hopf_x(k_sigx-kx,k_sigy-ky)],
         [-2 * np.conjugate(p) * np.conjugate(s) * hopf_x(
-            k_pmpx - kx, k_pmpy - ky) * hopf_x(k_sigx + kx,
-                                               k_sigy + ky), -
-         ((np.conjugate(p)**2 + 2 * np.conjugate(i) *
+            k_pmpx-kx,k_pmpy-ky)*hopf_x(k_sigx+kx,k_sigy+ky),
+         -((np.conjugate(p)**2 + 2 * np.conjugate(i) *
            np.conjugate(s)) * hopf_x(k_pmpx - kx, k_pmpy - ky) *
           hopf_x(k_pmpx + kx, k_pmpy + ky)), -2 * np.conjugate(i)
          * np.conjugate(p) * hopf_x(k_pmpx - kx, k_pmpy - ky) *
@@ -207,12 +198,10 @@ def L(kx, ky):
          ) * hopf_x(k_pmpx - kx, k_pmpy - ky) * hopf_x(
              k_sigx - kx, k_sigy - ky), omega_p_chosen - enLP(
                  k_pmpx - kx, k_pmpy - ky) - 1j * 1 / 2 * gamma(
-                     k_pmpx - kx, k_pmpy - ky) - 2 * (
-                         ni_chosen + np_chosen + ns_chosen) *
+            k_pmpx-kx,k_pmpy-ky)-2*(ni_chosen+np_chosen+ns_chosen)*
          hopf_x(k_pmpx - kx, k_pmpy - ky)**2, -2 * (
              i * np.conjugate(p) + p * np.conjugate(s)) * hopf_x(
-                 k_idlx - kx, k_idly - ky) * hopf_x(k_pmpx - kx,
-                                                    k_pmpy - ky)],
+                 k_idlx-kx,k_idly-ky)*hopf_x(k_pmpx-kx,k_pmpy-ky)],
         [-((np.conjugate(p)**2 + 2 * np.conjugate(i) *
             np.conjugate(s)) * hopf_x(k_idlx - kx, k_idly - ky) *
            hopf_x(k_sigx + kx, k_sigy + ky)), -2 * np.conjugate(i)
@@ -226,10 +215,8 @@ def L(kx, ky):
          ) * hopf_x(k_idlx - kx, k_idly - ky) * hopf_x(
              k_pmpx - kx, k_pmpy - ky), omega_i_chosen - enLP(
                  k_idlx - kx, k_idly - ky) - 1j * 1 / 2 * gamma(
-                     k_idlx - kx, k_idly - ky) - 2 * (
-                         ni_chosen + np_chosen + ns_chosen
-                     ) * hopf_x(k_idlx - kx, k_idly - ky)**2]
-    ])
+            k_idlx-kx,k_idly-ky)-2*(ni_chosen+np_chosen+ns_chosen)
+         * hopf_x(k_idlx - kx, k_idly - ky)**2]])
 def L_mats(K_X, K_Y, n_kx, n_ky):
     mats = L(K_X, K_Y)
     new_mats = np.transpose(mats, (2, 3, 0, 1))
@@ -246,8 +233,7 @@ def fd(kx, ky):
              kx + k_idlx, ky + k_idly) * i, -cs / xs * hopf_c(
                  k_sigx - kx, k_sigy - ky) * np.conjugate(s), -cp
          / xp * hopf_c(k_pmpx - kx, k_pmpy - ky) * np.conjugate(
-             p), -ci / xi * hopf_c(k_idlx - kx, k_idly -
-                                   ky) * np.conjugate(i)])
+            p),-ci/xi*hopf_c(k_idlx-kx,k_idly-ky)*np.conjugate(i)])
 def fd_mats(K_X, K_Y, n_kx, n_ky):
     res = fd(K_X, K_Y)
     new_res = np.transpose(res, (1, 2, 0))
@@ -263,21 +249,20 @@ def eqs(ip):
     #x3 -> np
     eq1 = "{0:+.16f}*x1{1:+.16f}*x2{2:+.16f}*x3{3:+.16f};".format(
         (-gi - gs) / (gi * xs**2), -alpha**2 + 1, -2 * alpha + 2,
-        (-ei * gs + es * gi + 2 * gs * omega_p_chosen) /
-        (gi * xs**2))
-    eq2 = "{0:.16f}*x1^2{1:+.16f}*x1*x2{2:+.16f}*x1*x3{3:+.16f}*
-        x1{4:+.16f}*x2^2{5:+.16f}*x2*x3{6:+.16f}*x2{7:+.16f}*
-        x3^2{8:+.16f}*x3{9:+.16f};".format(
+        (-ei * gs + es * gi + 2 * gs * omega_p_chosen)/(gi*xs**2))
+    eq2 = ("{0:.16f}*x1^2{1:+.16f}*x1*x2{2:+.16f}*x1*x3{3:+.16f}*"
+        "x1{4:+.16f}*x2^2{5:+.16f}*x2*x3{6:+.16f}*x2{7:+.16f}*"
+        "x3^2{8:+.16f}*x3{9:+.16f};").format(
         xs**(-4), (-4 * alpha - 2) / xs**2, -4 / xs**2, -2 * es /
         xs**4, 4 * alpha**2 + 4 * alpha + 1, 8 * alpha + 4,
         (4 * alpha * es + 2 * es) / xs**2, -alpha + 4, 4 * es / xs
         **2, (4 * es**2 + gs**2) / (4 * xs**4))
-    eq3 = "{0:.16f}*x1^2*x2^2{1:+.16f}*x1*x2^3{2:+.16f}*x1*x2^2*
-        x3{3:+.16f}*x1*x2^2{4:+.16f}*x1*x2*x3^2{5:+.16f}*x1*x2*
-        x3{6:+.16f}*x2^4{7:+.16f}*x2^3*x3{8:+.16f}*x2^3{9:+.16f}*
-        x2^2*x3^2{10:+.16f}*x2^2*x3{11:+.16f}*x2^2{12:+.16f}*x2*
-        x3^3{13:+.16f}*x2*x3^2{14:+.16f}*x2*x3{15:+.16f}*
-        x3^4{16:+.16f}*x3^3{17:+.16f}*x3^2{18:+.16f}*x3;".format(
+    eq3 = ("{0:.16f}*x1^2*x2^2{1:+.16f}*x1*x2^3{2:+.16f}*x1*x2^2*"
+        "x3{3:+.16f}*x1*x2^2{4:+.16f}*x1*x2*x3^2{5:+.16f}*x1*x2*"
+        "x3{6:+.16f}*x2^4{7:+.16f}*x2^3*x3{8:+.16f}*x2^3{9:+.16f}*"
+        "x2^2*x3^2{10:+.16f}*x2^2*x3{11:+.16f}*x2^2{12:+.16f}*x2*"
+        "x3^3{13:+.16f}*x2*x3^2{14:+.16f}*x2*x3{15:+.16f}*"
+        "x3^4{16:+.16f}*x3^3{17:+.16f}*x3^2{18:+.16f}*x3;").format(
         4.0 / xs**4, 1.0 * (-16.0 * alpha - 8.0) / xs**2, 1.0 *
         (8.0 * alpha - 8.0) / xs**2, -8.0 * es / xs**4, 4.0 / xs**
         2, 1.0 * (4.0 * ep - 4.0 * omega_p_chosen) /
@@ -294,7 +279,7 @@ def eqs(ip):
          xs**2 - 4.0 * ep * xs**2 - 4.0 * es * xp**2 + 4.0 *
          omega_p_chosen * xs**2) / (xp**2 * xs**2), 1.0 *
         (-4.0 * ep * es + 4.0 * es * omega_p_chosen + 1.0 * gs) /
-        (xp**2 * xs**2), 1.00000000000000, 1.0 *
+        (xp**2 * xs**2), 1.0, 1.0 *
         (2.0 * ep - 2.0 * omega_p_chosen) / xp**2, 1.0 *
         (1.0 * ep**2 - 2.0 * ep * omega_p_chosen + 1.0 *
          omega_p_chosen**2 + 0.25) / xp**4, -1.0 * ip)
@@ -327,8 +312,7 @@ for idx in range(1, 4):
         idx] for lst in solutions_v2 for tple in lst]))
 ipstart = nsnpip[2][0]
 fig_mf, ax = plt.subplots()
-ax.plot(ipx[ipx < ipstart],
-        n_hom_mf(ipx[ipx < ipstart]), color='black')
+ax.plot(ipx[ipx<ipstart],n_hom_mf(ipx[ipx<ipstart]),color='k')
 ax.plot(ipx[ipx >= ipstart], n_hom_mf(ipx[ipx >= ipstart]),
         linestyle='dashed', color='black')
 for idx in [0, 1]:
@@ -346,29 +330,25 @@ if param_set == "ks0.0":
     ax.xaxis.set_ticks([0, 4, 8, 12, 16])
 ax.yaxis.set_ticks([0.4, 0.8, 1.2, 1.6])
 fig_mf.savefig('fig_mf_ks_{0:s}'.format(ks), bbox_inches='tight')
-[(omega_s_chosen, ns_chosen, np_chosen, ip_chosen)
- ] = eqs(ip_chosen)
+[(omega_s_chosen,ns_chosen,np_chosen,ip_chosen)]=eqs(ip_chosen)
 omega_i_chosen = 2 * omega_p_chosen - omega_s_chosen
 ni_chosen = alpha * ns_chosen
 energy_spi = [omega_s_chosen, omega_p_chosen, omega_i_chosen]
-p = 1 / np.sqrt(ip_chosen) * (
-    2 / xs**2 *
+p = 1 / np.sqrt(ip_chosen) * (2 / xs**2 *
     (es - 1j * gs / 2 - omega_s_chosen) * ns_chosen + 2 *
     (2 * np_chosen + ns_chosen + 2 * ni_chosen) * ns_chosen -
     (1 / xp**2 * (ep + 1j * 1 / 2 - omega_p_chosen) * np_chosen +
      (np_chosen + 2 * ns_chosen + 2 * ni_chosen) * np_chosen))
 pr = p.real
 pi = p.imag
-matSI = np.array([[2 * ni_chosen + 2 * np_chosen + ns_chosen + (
-    es - omega_s_chosen
+matSI=np.array([[2*ni_chosen+2*np_chosen+ns_chosen+(es-omega_s_chosen
 ) / xs**2, gs / (2. * xs**2), -pi**2 + pr**2, 2 * pi * pr], [
     -gs / (2. * xs**2), 2 * ni_chosen + 2 * np_chosen + ns_chosen
     + (es - omega_s_chosen) / xs**2, 2 * pi * pr, pi**2 - pr**2
 ], [-pi**2 + pr**2, 2 * pi * pr, ni_chosen + 2 * np_chosen + 2 *
     ns_chosen + (ei - omega_i_chosen) / xi**2, gi / (2. * xi**2)],
                   [2 * pi * pr, pi**2 - pr**2, -gi / (2. * xi**2),
-                   ni_chosen + 2 * np_chosen + 2 * ns_chosen + (
-                       ei - omega_i_chosen) / xi**2]])
+    ni_chosen+2*np_chosen+2*ns_chosen+(ei-omega_i_chosen)/xi**2]])
 norm = ns_chosen + ni_chosen
 N = null(matSI) * np.sqrt(norm)
 [sr, si, ir, ii] = N[:, 0]
@@ -405,8 +385,8 @@ matsL_diag[:, indices_si_rows, indices_si_cols] = complex(0, 0)
 matsL_diag[:, indices_ps_rows, indices_ps_cols] = complex(0, 0)
 matsL_diag[:, indices_pi_rows, indices_pi_cols] = complex(0, 0)
 eigs_diag = eigL_mats(matsL_diag, nkx, nky)
-y_points, x_points, eig_indices = np.where(np.abs(eigs.real) <=
-                                           eigs_threshold)
+y_points,x_points,eig_indices=np.where(
+    np.abs(eigs.real)<=eigs_threshold)
 y_points_diag, x_points_diag, eig_indices_diag = np.where(np.abs(
     eigs_diag.real) <= 0.05)
 phi_gold = 1.618
@@ -434,13 +414,11 @@ matsL_min = -np.fft.fftshift(matsL, axes=(1, 2))
 vectfd_min = -np.fft.fftshift(vectfd, axes=(1, ))
 bcoef_conj_mink = bog_coef_mats(matsL_min, vectfd_min, nkx, nky)
 matsL_min_diag = -np.fft.fftshift(matsL_diag, axes=(1, 2))
-bcoef_conj_mink_diag = bog_coef_mats(matsL_min_diag, vectfd_min,
-                                     nkx, nky)
+bcoef_conj_mink_diag=bog_coef_mats(matsL_min_diag,vectfd_min,nkx,nky)
 psi_k = gv / 2 * (bcoef[:, :, 0:3] + bcoef_conj_mink[:, :, 3:6])
-psi_k_diag = gv / 2 * (
-    bcoef_diag[:, :, 0:3] + bcoef_conj_mink_diag[:, :, 3:6])
-[imax, jmax] = np.unravel_index(
-    np.argmax(np.abs(psi_k[:, :, 0])), psi_k[:, :, 0].shape)
+psi_k_diag=gv/2*(bcoef_diag[:,:,0:3]+bcoef_conj_mink_diag[:,:,3:6])
+[imax,jmax]=np.unravel_index(
+    np.argmax(np.abs(psi_k[:,:,0])),psi_k[:,:,0].shape)
 l1 = psi_k[imax - 2:imax + 3, jmax - 2, :]
 l2 = psi_k[imax - 2:imax + 3, jmax + 2, :]
 l3 = psi_k[imax - 2, jmax - 1:jmax + 2, :]
@@ -448,8 +426,7 @@ l4 = psi_k[imax + 2, jmax - 1:jmax + 2, :]
 l = np.concatenate((l1, l2, l3, l4))
 averages = np.mean(l, axis=0)
 psi_k[imax - 1:imax + 2, jmax - 1:jmax + 2, :] = averages
-psi_k[nky / 2, nkx / 2, :] += np.sqrt(nkx * nky) * \
-    np.array([s / xs, p / xp, i / xi])
+psi_k[nky/2,nkx/2,:]+=np.sqrt(nkx*nky)*np.array([s/xs,p/xp,i/xi])
 psi_k_diag[nky / 2, nkx / 2, :] += np.sqrt(
     nkx * nky) * np.array([s / xs, p / xp, i / xi])
 res_k = np.log10(np.abs(psi_k)**2)  # logscale
@@ -499,9 +476,8 @@ view_2 = (25, -45)
 init_view = view_2
 ax.view_init(*init_view)
 ax.plot_surface(KX[kxl3d:kxr3d, kxl3d:kxr3d],
-                KY[kxl3d:kxr3d, kxl3d:kxr3d],
-                BLP[kxl3d:kxr3d, kxl3d:kxr3d], rstride=stride_r,
-                cstride=stride_c, alpha=0.4)
+          KY[kxl3d:kxr3d,kxl3d:kxr3d],BLP[kxl3d:kxr3d,kxl3d:kxr3d],
+                rstride=stride_r, cstride=stride_c, alpha=0.4)
 for idx in range(3):
     ax.plot(kx[x_points] + momentum_spi[idx, 0],
             ky[y_points] + momentum_spi[idx, 1], energy_spi[idx],
@@ -537,8 +513,8 @@ ticks_at = np.linspace(
     np.amax(res_r[rango:-rango, rango:-rango, 0]), 5)
 cb = fig_real_S.colorbar(im,cax=cax,ticks=ticks_at,format='%1.2f')
 cb.ax.tick_params(labelsize=20)
-fig_real_S.savefig('fig_real_ks_{0:s}_{1:s}'.format(
-    ks, letter_spi[0]), bbox_inches='tight')
+fig_real_S.savefig('fig_real_ks_{0:s}_{1:s}'.format(ks,
+                            letter_spi[0]), bbox_inches='tight')
 ls = ['--', '-', ':']
 col = ['blue', 'red', 'green']
 leg = ['signal', 'pump', 'idler']
