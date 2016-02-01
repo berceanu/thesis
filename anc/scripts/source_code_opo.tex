@@ -1,6 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % export PYTHONPATH=/home/berceanu/tmp/yapf/                               %
 % python2 tmp/yapf/yapf --in-place --style='{column_limit: 66}' opodrag.py %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % pygmentize -l python -f latex -o opodrag.tex opodrag.py                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -105,8 +106,8 @@
 \PY{k}{def} \PY{n+nf}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{l+m+mi}{1}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{p}{(}\PY{p}{(}\PY{n}{Omega\PYZus{}R}\PY{o}{/}\PY{n}{gp}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{enLP}\PY{p}{(}\PY{n}{kx}\PY{p}{,}\PY{n}{ky}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{enC}\PY{p}{(}\PY{n}{kx}\PY{p}{,}\PY{n}{ky}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{blue\PYZus{}enLP}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{p}{:}
-    \PY{k}{return} \PY{n}{enLP}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{2} \PY{o}{*} \PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)} \PY{o}{*}\PY{o}{*} \PY{l+m+mi}{2} \PY{o}{*}
-        \PY{p}{(}\PY{n}{ni\PYZus{}chosen} \PY{o}{+} \PY{n}{np\PYZus{}chosen} \PY{o}{+} \PY{n}{ns\PYZus{}chosen}\PY{p}{)}
+    \PY{k}{return} \PY{p}{(}\PY{n}{enLP}\PY{p}{(}\PY{n}{kx}\PY{p}{,}\PY{n}{ky}\PY{p}{)}\PY{o}{+}\PY{l+m+mi}{2}\PY{o}{*}\PY{n}{hopf\PYZus{}x}\PY{p}{(}\PY{n}{kx}\PY{p}{,}\PY{n}{ky}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{n}{ni\PYZus{}chosen}\PY{o}{+}\PY{n}{np\PYZus{}chosen}
+                                            \PY{o}{+}\PY{n}{ns\PYZus{}chosen}\PY{p}{)}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{hopf\PYZus{}c}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{p}{:}
     \PY{k}{return} \PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{o}{/}\PY{n}{np}\PY{o}{.}\PY{n}{sqrt}\PY{p}{(}\PY{l+m+mi}{1}\PY{o}{+}\PY{p}{(}\PY{p}{(}\PY{n}{enLP}\PY{p}{(}\PY{n}{kx}\PY{p}{,}\PY{n}{ky}\PY{p}{)}\PY{o}{\PYZhy{}}\PY{n}{enC}\PY{p}{(}\PY{n}{kx}\PY{p}{,}\PY{n}{ky}\PY{p}{)}\PY{p}{)}\PY{o}{/}\PY{p}{(}\PY{n}{Omega\PYZus{}R}\PY{o}{/}\PY{n}{gp}\PY{p}{)}\PY{p}{)}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
 \PY{k}{def} \PY{n+nf}{gamma}\PY{p}{(}\PY{n}{kx}\PY{p}{,} \PY{n}{ky}\PY{p}{)}\PY{p}{:}

@@ -98,8 +98,8 @@ def enLP(kx, ky):
 def hopf_x(kx, ky):
     return 1/np.sqrt(1+((Omega_R/gp)/(enLP(kx,ky)-enC(kx,ky)))**2)
 def blue_enLP(kx, ky):
-    return enLP(kx, ky) + 2 * hopf_x(kx, ky) ** 2 *
-        (ni_chosen + np_chosen + ns_chosen)
+    return (enLP(kx,ky)+2*hopf_x(kx,ky)**2*(ni_chosen+np_chosen
+                                            +ns_chosen))
 def hopf_c(kx, ky):
     return -1/np.sqrt(1+((enLP(kx,ky)-enC(kx,ky))/(Omega_R/gp))**2)
 def gamma(kx, ky):
