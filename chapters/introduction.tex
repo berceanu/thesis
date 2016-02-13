@@ -1,15 +1,45 @@
-\chapter{Introduction}
+\chapter{Introduction}%TODO: mention \hbar = 1
 
-% TODO: insert chapter descriptions (see akhmerov)
-% TODO: create abbreviations list
-% TODO: mention \hbar = 1
+%TODO: motivation
+%TODO: original contribution
+%TODO: chapter descriptions (a la anton)
 
 
-\section{Cold atomic gases}
-\label{sec:cold-gases}
+\paragraph{How birds fly together}%TODO: incorporate
+Consider a group of birds that show long-range ordered behaviour,
+manifested by forming a flock under certain conditions. This behaviour
+has been modeled in Ref.~\cite{Toner1995}, where a time step rule is
+introduced, such that each individual bird in a group determines its
+next direction on each time step by averaging the directions of its
+neighbours and adding some random noise on top of that. It is shown
+that, in the limit of the velocity magnitude going to zero, the model
+reduces to the XY model in two dimensions, where the spin is
+represented by the bird velocity. Since the 2D XY model does not
+spontaneously break the symmetry at any finite temperature (as
+justified by the Mermin-Wagner theorem), Ref.~\cite{Toner1995} goes on
+to show that the appearance of the long-range ordered phase is a
+direct consequence of nonequilibrium aspects of the model. In a
+nutshell, the neighbours of one particular bird will be different at
+different times, depending on the velocity field. This gives rise to a
+time-dependent variable-ranged interaction, which can stabilize the
+ordered phase.
 
-\subsection{Linear response theory}
-\label{subsec:linear-response}
+
+
+
+
+\chapter{Cold atomic gases}
+\label{cha:cold-gases}
+
+\section{Bose-Einstein condensation}
+\label{sec:BEC}
+
+\section{Gross–Pitaevskii equation}
+\label{sec:GPE}
+
+
+\section{Linear response theory}
+\label{sec:linear-response}
 
 Let $\phi_0(\rv)$ be the steady state solution to the
 GP equation in the time-independent trapping potential $U_0(\rv)$
@@ -82,14 +112,11 @@ Bose statistics, as this is not present in the BCS theory.
 
 The standard method of determining the time evolution of $\delta\phi$
 is to expand it in the basis formed by the eigenvectors of
-$\Lca_{\text{GP}}$.
-
-There is a subtlety involved here, however, as in the general case
-$\Lca_{\text{GP}}$ is not diagonalizable. It usually has too few
-eigenvectors to span the whole functional space\footnote{We are
-  referring to the $L^2 \times L^2$ space, with $L^2$ being the space
-  of square-integrable complex functions.}.
-
+$\Lca_{\text{GP}}$. There is a subtlety involved here, however, as in
+the general case $\Lca_{\text{GP}}$ is not diagonalizable. It usually
+has too few eigenvectors to span the whole functional
+space\footnote{We are referring to the $L^2 \times L^2$ space, with
+  $L^2$ being the space of square-integrable complex functions.}.
 The solution to this problem, detailed in Ref.~\cite{Castin_1998},
 is to work in the subspace orthogonal to $\ket{\phi_0}$. It can be
 shown that the component of the solution along $\ket{\phi_0}$ only
@@ -228,11 +255,12 @@ where we introduced
 \end{equation}
 % 
 
-\subsection{Cherenkov emission}
-\label{subsec:cherenkov}
+\section{Bogoliubov spectrum}
+\label{sec:bogoliubov-spectrum}
+
 
 We now turn to applying the formalism developed in
-Sec.~\ref{subsec:linear-response} to a concrete physical example,
+Sec.~\ref{sec:linear-response} to a concrete physical example,
 inspired by Ref.~\cite{Carusotto_2006}. Consider a 2-dimensional
 Bose-Einstein atomic condensate in a state with well-defined momentum,
 described by the plane wave
@@ -243,7 +271,7 @@ previous notation, this corresponds to
   \phi_0(\rv) = \psi_0 \exp \left( i \bm{k_0} \rv \right)
 \end{equation}
 % 
-and a chemical potential $\mu = \omega_0$. Since we have no trap,
+and a ``chemical potential" $\omega_0$. Since we have no trap,
 $U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
 %
 \begin{equation}\label{eq:atom-MF}
@@ -252,10 +280,26 @@ $U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
 % 
 where we have introduced the condensate density
 $\rho_0 \equiv N_0 \abs{\psi_0}^2$.  
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.9\linewidth]{mach_number}
+  \caption{
+    % 
+    Density profiles of an expanding BEC hitting a stationary defect
+created by the repulsive potential of a blue-detuned laser beam. The
+condensate has different speeds in the two panels, moving twice as
+fast in the right-panel. Notice the Mach cone formed behind the
+defect, which gets narrower as the condesate moves faster. From
+Ref.~\cite{Carusotto_2006}.
+    % 
+  }\label{fig:mach-number}
+\end{figure}
+% 
 
 We now intoduce a weak perturbation in the form of a localized defect
 potential $\delta U(\rv, t) = V_d(\rv)$, which can represent for
-instance a laser spot depleting a small area of the condensate.
+instance a laser spot depleting a small area of the condensate, as
+shown in Fig.~\ref{fig:mach-number}.
 
 Using Eq.~\eqref{eq:atom-MF}, the GP Hamiltonian becomes
 $H_{\text{GP}} = -\frac{\nabla^2}{2m} - \frac{k_0^2}{2m}$ and the
@@ -401,6 +445,29 @@ It is now a trivial matter to solve the linearized evolution equation
 Eq.~\eqref{eq:GP-atoms-system} for our problem. In particular, for a
 localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$,
 
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=\linewidth]{cerenk_atomi_bogo_new}
+  \caption{
+    % 
+    Bla bla yata yata. From Ref.~\cite{Carusotto_2006}.
+    % 
+  }\label{fig:bogo-cherenkov}
+\end{figure}
+% 
+
+
+\paragraph{Landau causality rule}%TODO: incorporate
+We must also touch on the subject of \textit{adiabatic switching} at
+this point. Adiabatic switching is neccesary to causally distinguish
+the past from the future, making sure that the time $t = -\infty$ is
+prior to that of the occurence of any cause (in our case the defect)
+giving rise to the effect (pertubation of the condensate density). The
+way to achieve this in practice is by adding an infinitesimally small
+positive imaginary part to the frequency $[\dots]$
+
+\section{Cherenkov emission}
+\label{sec:cherenkov}
 
 %TODO%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -417,12 +484,12 @@ localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$,
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{Microcavity exciton-polaritons}
-\label{sec:polaritons}
+\chapter{Microcavity exciton-polaritons}
+\label{cha:polaritons}
 
 
-\subsection{Model system}
-\label{subsec:model}
+\section{Model system}
+\label{sec:model}
 
 
 
@@ -456,8 +523,8 @@ is more physical.
   }\label{fig:cavity-polaritons}
 \end{figure}
 
-\subsection{Microscopic description}
-\label{subsec:microscopic}
+\section{Microscopic description}
+\label{sec:microscopic}
 
 
 We start by writing down the kinetic energy of the cavity photons
@@ -552,11 +619,11 @@ written in the dipole gauge, where $\mu_{\text{cv}}$ is the inter-band
 dipole matrix element.
 
 
-\subsection{Effective Hamiltonian}
-\label{subsec:effective}
+\section{Effective Hamiltonian}
+\label{sec:effective}
 
 
-As mentioned in Sec.~\ref{subsec:model}, we are interested in an
+As mentioned in Sec.~\ref{sec:model}, we are interested in an
 approximate description of the problem where we can consider the
 excitons as fundamental quasiparticle excitations from the ground
 state of the semiconductor and treat the Coulomb term in
@@ -699,8 +766,8 @@ a qualitatively different behaviour~\cite{COMBESCOT2008}.  We see that
 this model is particularly useful for the case when the dominant
 interaction is the Coulomb repulsion between the excitons.
 
-\subsection{Lower polaritons}
-\label{subsec:lower-polaritons}
+\section{Lower polaritons}
+\label{sec:lower-polaritons}
 
 Assuming the Rabi energy $\Omega_R$ to dominate over the kinetic and
 interaction energies we can neglect the upper polaritons and project
@@ -761,8 +828,8 @@ many interesting experimental conditions can be adequately described
 by limiting ourselves to the LP branch with a quadratic dispersion.
 
 
-\subsection{Pumping and dissipation}
-\label{subsec:pumping}
+\section{Pumping and dissipation}
+\label{sec:pumping}
 
 We have so far assumed that the mirrors at the two ends of the optical
 cavity in Fig.~\ref{fig:cavity-polaritons} are perfect. In reality of
@@ -814,7 +881,7 @@ polaritons at $k_p$ undergo stimulated scattering and populate two
 other modes. Indeed, if the pumping angle is such that the wavevector
 it excites lies close to the inflection point of the LP dispersion,
 the system can enter a new regime called \textit{optical parametric
-  oscillator} (see Sec.~\ref{subsec:opo} for details about OPO).
+  oscillator} (see Sec.~\ref{sec:opo} for details about OPO).
 
 To quantitatively account for the driving and dissipation, one can use
 the input-output formalism that was extended to planar microcavities
@@ -857,8 +924,8 @@ of both rates for GaAs-based microcavities are shown in
 Tab.~\ref{tab:GaAs-params}.
 
 
-\subsection{Disorder effects}
-\label{subsec:disorder}
+\section{Disorder effects}
+\label{sec:disorder}
 
 
 It is noteworthy to remark that Hamiltonian Eq.~\eqref{eq:total-ham}
@@ -890,8 +957,8 @@ can be approximated by the potential
 \end{equation}
 % 
 
-\subsection{Realistic systems}
-\label{subsec:realistic}
+\section{Realistic systems}
+\label{sec:realistic}
 
 To get a more quantitative idea of the physics involved, it is worth
 describing realistic samples typically used in state-of-the-art
@@ -936,8 +1003,8 @@ microcavities are shown in Tab.~\ref{tab:GaAs-params}.
 %
 
 
-\subsection{Mean-field description}
-\label{subsec:mean-field}
+\section{Mean-field description}
+\label{sec:mean-field}
 
 As it turns out, a useful approach for tackling the
 hydrodynamics-related problems that we will encounter in the following
@@ -949,7 +1016,7 @@ will lead to its driven-dissipative counterpart.
 If the Rabi energy is larger than the pump detuning from the bottom of
 the LP branch $\omega_p - \omega_{\text{LP}}(0)$ and also larger than
 the decay rates $\gamma_X$ and $\gamma_C$, we can start from the lower
-polariton Hamiltonian of Sec.~\ref{subsec:lower-polaritons}.  The idea
+polariton Hamiltonian of Sec.~\ref{sec:lower-polaritons}.  The idea
 is that one replaces the lower polariton operators $p_{\kv}$ in
 Eq.~\eqref{eq:LP-ham} with their expectation values
 $\psi_{\kv} = \langle p_{\kv} \rangle$, where $\psi_{\kv}$ is now
@@ -1051,8 +1118,8 @@ relaxation processes~\cite{Keeling_2007}.
 
 
 
-\subsection{Equation of state}
-\label{subsec:eq-state}
+\section{Equation of state}
+\label{sec:eq-state}
 
 Given that we drive the system with the coherent continuous-wave pump Eq.~\eqref{eq:pwpump}, we can look for stationary state solutions with similar oscillatory behaviour, namely
 %
@@ -1158,12 +1225,12 @@ instability, signaling the onset of the optical parametric oscillator
 (OPO) regime. This regime involves two separate modes (apart from the
 pump), namely the so-called \textit{signal} and \textit{idler} states
 at wavevectors $\kv_s = \kv$ and $\kv_i = 2\kv_p - \kv$ respectively,
-as we will discuss at large in Sec.~\ref{subsec:opo}.
+as we will discuss at large in Sec.~\ref{sec:opo}.
 
 
 
-\subsection{OPO regime}
-\label{subsec:opo}
+\section{OPO regime}
+\label{sec:opo}
 
 
 To understand why the OPO regime arises, one has to first look at the
@@ -1188,7 +1255,7 @@ description to the one describing the process
 $\{\kv_p, \kv_p\} \rightarrow \{\kv, 2\kv_p - \kv\}$, which is
 precisely the parametric scattering of two pump polaritons into the
 signal and idler states that we just introduced in
-Sec.~\ref{subsec:eq-state}. As it turns out, due to the peculiar shape
+Sec.~\ref{sec:eq-state}. As it turns out, due to the peculiar shape
 of the lower polariton dispersion relation
 Eq.~\eqref{eq:polariton-dispersion}, this scattering process can occur
 in a completely resonant way, with conservation of both in-plane
@@ -1491,6 +1558,10 @@ between nonlinearities, dissipation and parametric gain. Note that we
 are not refering here to the uniform flow caused by the signal being
 at finite momentum $\kv_s$, as in fact this dominant current is
 substracted from the plot.
+
+
+\chapter{Silicon photonics}
+\label{cha:silicon-photonics}
 
 
 %%% Local Variables:
