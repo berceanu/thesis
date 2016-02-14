@@ -255,8 +255,8 @@ where we introduced
 \end{equation}
 % 
 
-\section{Bogoliubov spectrum}
-\label{sec:bogoliubov-spectrum}
+\section{Cherenkov emission of Bogoliubov excitations}
+\label{sec:cherenkov-emission}
 
 
 We now turn to applying the formalism developed in
@@ -280,6 +280,11 @@ $U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
 % 
 where we have introduced the condensate density
 $\rho_0 \equiv N_0 \abs{\psi_0}^2$.  
+
+We now introduce a weak perturbation in the form of a localized defect
+potential $\delta U(\rv, t) = V_d(\rv)$, which can represent for
+instance a laser spot depleting a small area of the condensate, as
+shown in Fig.~\ref{fig:mach-number}.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.9\linewidth]{mach_number}
@@ -295,11 +300,25 @@ Ref.~\cite{Carusotto_2006}.
   }\label{fig:mach-number}
 \end{figure}
 % 
-
-We now intoduce a weak perturbation in the form of a localized defect
-potential $\delta U(\rv, t) = V_d(\rv)$, which can represent for
-instance a laser spot depleting a small area of the condensate, as
-shown in Fig.~\ref{fig:mach-number}.
+\begin{figure}[tbh]\centering
+  \includegraphics[width=.9\linewidth]{ducks_new}
+  \caption{
+    % 
+    \emph{Top panels:} Bogoliubov dispersion of quasiparticle
+excitations Eq.~\eqref{eq:bogoliubov} in a weakly interacting BEC. The
+dotted lines indicate the $\bm{v}_0 \kv$ plane.
+    \emph{Middle panels:} Locus $\Gamma$ of intersection of the
+two-dimensional dispersion relation with the $\bm{v}_0 \kv$ plane. The
+green arrows are normal to $\Gamma$, and the dashed lines indicate the
+Cherenkov cone.
+    \emph{Bottom panels:} Density modulation in real-space, caused by
+the flow of the condensate on the $\delta$-like defect located at the
+origin. The dashed lines indicate the Mach cone. The panels in the
+left column are for $v_0 = 1.2 c_s$, while the right column condensate
+speed is $v_0 = 2.5 c_s$. From Ref.~\cite{9783319002651}.
+    % 
+}\label{fig:bogo-cherenkov}
+\end{figure}
 
 Using Eq.~\eqref{eq:atom-MF}, the GP Hamiltonian becomes
 $H_{\text{GP}} = -\frac{\nabla^2}{2m} - \frac{k_0^2}{2m}$ and the
@@ -392,6 +411,68 @@ $V_\sigma(k)$ only depend on the absolute value of $\kv$, while the
 is the Bogoliubov spectrum with an additional Galilean boost
 $\bm{v}_0 \kv$.
 
+\paragraph{Bogoliubov spectrum discussion}
+The Bogoliubov spectrum Eq.~\eqref{eq:bogoliubov} is shown in the top
+row of Fig.~\ref{fig:bogo-cherenkov}, for two different values of the
+condensate speed $v_0$, which sets the slope of the $\bm{v}_0 \kv$
+plane, indicated by the dotted lines. In the non-interacting case
+$g=0$ and the spectrum reduces to a simple parabola characterising a
+free particle. For repulsive interactions, $g > 0$ and we can
+distinguish two qualitatively different domains, after first
+introducing the typical length scale of the problem, called the
+\textit{healing length}. The healing length $\xi$ is a measure of the
+distance over which the condensate density recovers its equilibrium
+value $\rho_0$ when forced to vary away from this value, as for
+example in a box where the density must be zero at the position of the
+walls, as imposed by the boundary conditions. In mathematical terms,
+%
+\begin{equation}\label{eq:healing-length}
+  \frac{1}{m\xi^2}=g\rho_0
+\end{equation}
+% 
+
+We first explore the domain of small momenta, $k\xi \ll 1$, which is
+characterised by a linear behaviour of the dispersion,
+$\epsilon(k) \simeq k \sqrt{\frac{g\rho_0}{m}}$, that implies the
+propagation of low-energy excitations in the form of sound waves, with
+a velocity $c_s$ given by
+%
+\begin{equation}\label{eq:sound-velocity}
+  mc^2_s = g \rho_0
+\end{equation}
+% 
+The \textit{Landau criterion} for superfluidity~\cite{9780198507192}
+determines the maximum velocity at which a weak impurity can travel
+through the condensate without dissipating energy. In order to
+dissipate energy, such an impurity must be able to create excitations
+in the condensate. Conservation of energy then results in a critical
+velocity
+%
+\begin{equation}\label{eq:Landau}
+  v_{\text{cr}}=\min_{k} \left[\frac{\epsilon(k)}{k}\right]
+\end{equation}
+% 
+which in our case is exactly equal to the speed of sound,
+$v_{\text{cr}} = c_s$. As the two situations, of a particle moving
+through the condensate, or the condensate moving against a fixed
+defect are physically equivalent (they are connected by a Galilean
+transformation), we can only conclude that we must have $v_0 \geq c_s$
+in order to observe any damping.
+
+Finally, the second domain of interest is the one of larga momenta,
+$k\xi \gg 1$. Looking at Eq.~\eqref{eq:right-eigen}, one notices that
+the only $k$-dependent parts are the diagonal terms for $U(k)$ and
+$V(k)$. These terms have opposite sign, so the off-diagonal coupling
+between $U$ and $V$ becomes highly off-resonant at large
+$k$. Completely neglecting it gives the shifted parabola
+%
+\begin{equation}\label{eq:shifted-parabola}
+  \epsilon(k) \simeq \frac{k^2}{2m}+g\rho_0
+\end{equation}
+% 
+with $U(k) \simeq 1$ and $V(k) \simeq 0$.
+
+
 As can be seen from Eq.~\eqref{eq:symmetry-2}, the 2 eigen-families
 $\sigma$ and $-\sigma$ are linked by a duality, stemming from the
 $\mathcal{P} \mathcal{T}$ symmetry\footnote{This can be actually formally
@@ -441,33 +522,40 @@ choose $\abs{U(k)} \pm \abs{V(k)} = f(k)^{\pm\frac{1}{4}}$, with
   f(k) = \frac{\frac{k^2}{2m}}{\frac{k^2}{2m} + 2g\rho_0}
 \end{equation}
 % 
+Furthermore, in case the Hamiltonian doesn't contain any time-reversal
+symmetry-breaking terms (as in our case), one can chose $U(k)$ and
+$V(k)$ to be real quantities, without loss of generality.
+
 It is now a trivial matter to solve the linearized evolution equation
 Eq.~\eqref{eq:GP-atoms-system} for our problem. In particular, for a
-localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$,
+localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$, the
+source term is time-independent, and hence the quasi-particle
+amplitudes of Eq.~\eqref{eq:amplitudes-bk} have the simple form
+$b(\kv) = -s(\kv)/\omega(\kv)$. Equivalently, we can obtain the
+defect-induced perturbation of the wavefunction from its initial
+steady state by first inverting Eq.~\eqref{eq:bidecomposition} and
+then reverting the unitary transformation that was applied in
+Eq.~\eqref{eq:translated-L}.
 
-%
-\begin{figure}[tb]\centering
-  \includegraphics[width=\linewidth]{cerenk_atomi_bogo_new}
-  \caption{
-    % 
-    Bla bla yata yata. From Ref.~\cite{Carusotto_2006}.
-    % 
-  }\label{fig:bogo-cherenkov}
-\end{figure}
-% 
-
-
-\paragraph{Landau causality rule}%TODO: incorporate
+\paragraph{Landau causality rule}
 We must also touch on the subject of \textit{adiabatic switching} at
 this point. Adiabatic switching is neccesary to causally distinguish
 the past from the future, making sure that the time $t = -\infty$ is
 prior to that of the occurence of any cause (in our case the defect)
 giving rise to the effect (pertubation of the condensate density). The
-way to achieve this in practice is by adding an infinitesimally small
-positive imaginary part to the frequency $[\dots]$
+way to achieve this in practice is by shifting the real poles of the
+Bogoliubov dispersion Eq.~\eqref{eq:bogoliubov} into the lower half of
+the complex plane by an infinitesimal amount,
+$\epsilon(k) \rightarrow \epsilon(k) - i0^{+}$. This corresponds to a
+weak damping of the plane wave solution and ensures that no Bogoliubov
+excitations were present at $t = - \infty$.
 
-\section{Cherenkov emission}
-\label{sec:cherenkov}
+The defect-induced perturbation of the condensate density is shown in
+the bottom row of Fig.~\ref{fig:bogo-cherenkov}, for two distinct
+values of the condensate speed $v_0$. We now briefly review a
+geometric construction detailed in Ref.~\cite{9783319002651}, that can
+shed light on the main features of the condensate response.
+
 
 %TODO%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
