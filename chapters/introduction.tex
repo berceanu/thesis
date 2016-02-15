@@ -271,8 +271,8 @@ previous notation, this corresponds to
   \phi_0(\rv) = \psi_0 \exp \left( i \bm{k_0} \rv \right)
 \end{equation}
 % 
-and a ``chemical potential" $\omega_0$. Since we have no trap,
-$U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
+and a chemical potential $\mu = k_0^2/(2m) + g \rho_0$. Since we
+have no trap, $U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
 %
 \begin{equation}\label{eq:atom-MF}
   \omega_0 - \left( \frac{k_0^2}{2m} + g \rho_0 \right) = 0
@@ -292,30 +292,29 @@ shown in Fig.~\ref{fig:mach-number}.
     % 
     Density profiles of an expanding BEC hitting a stationary defect
 created by the repulsive potential of a blue-detuned laser beam. The
-condensate has different speeds in the two panels, moving twice as
-fast in the right-panel. Notice the Mach cone formed behind the
-defect, which gets narrower as the condesate moves faster. From
+condensate has different speeds in the two panels, moving roughly
+twice as fast in the right-panel. Notice the Mach cone formed behind
+the defect, which gets narrower as the condesate moves faster. From
 Ref.~\cite{Carusotto_2006}.
     % 
-  }\label{fig:mach-number}
+}\label{fig:mach-number}
 \end{figure}
 % 
-\begin{figure}[tbh]\centering
-  \includegraphics[width=.9\linewidth]{ducks_new}
+\begin{figure}[tb]\centering
+  \includegraphics[width=.85\linewidth]{ducks_new}
   \caption{
     % 
-    \emph{Top panels:} Bogoliubov dispersion of quasiparticle
-excitations Eq.~\eqref{eq:bogoliubov} in a weakly interacting BEC. The
-dotted lines indicate the $\bm{v}_0 \kv$ plane.
-    \emph{Middle panels:} Locus $\Gamma$ of intersection of the
-two-dimensional dispersion relation with the $\bm{v}_0 \kv$ plane. The
-green arrows are normal to $\Gamma$, and the dashed lines indicate the
-Cherenkov cone.
-    \emph{Bottom panels:} Density modulation in real-space, caused by
-the flow of the condensate on the $\delta$-like defect located at the
-origin. The dashed lines indicate the Mach cone. The panels in the
-left column are for $v_0 = 1.2 c_s$, while the right column condensate
-speed is $v_0 = 2.5 c_s$. From Ref.~\cite{9783319002651}.
+    \emph{Top panels:} Bogoliubov dispersion
+Eq.~\eqref{eq:bogoliubov}. The dotted lines indicate the $\bm{v}_0
+\kv$ plane.
+    \emph{Middle panels:} Locus $\Gamma$ of intersection of the 2D
+dispersion with the $\bm{v}_0 \kv$ plane. Green arrows are normal
+to $\Gamma$, while the dashed lines indicate the Cherenkov
+cone.
+    \emph{Bottom panels:} Real-space density modulation, with a
+$\delta$--defect at $(0,0)$. Dashed lines show the Mach cone. Left
+column panels are for $v_0 = 1.2 c_s$, and right column for $v_0 = 2.5
+c_s$. From Ref.~\cite{9783319002651}.
     % 
 }\label{fig:bogo-cherenkov}
 \end{figure}
@@ -380,7 +379,7 @@ symmetry. Indeed, one can see that
   \hat{\mathcal{T}} \hat{\Lca} \hat{\mathcal{T}}^{\dagger} = \mat{\frac{\left(\kop + \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0}{g N_0 \psi_0^2}{- g N_0 \psi_0^{\star 2}}{-\left[\frac{\left(\kop - \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0 \right]}
 \end{equation}
 % 
-where we have make use of Eqs.~\eqref{eq:products} and we have written
+where we have made use of Eqs.~\eqref{eq:products} and we have written
 $\hat{\Lca}$ in a base-independent representation.  In the subspace of
 momentum eigenstates $\ket{\kv}$, we can write the (right-)eigenvalue
 equation corresponding to Eq.~\eqref{eq:translated-L} as
@@ -392,39 +391,51 @@ equation corresponding to Eq.~\eqref{eq:translated-L} as
 where we have recovered the matrix representation of
 Eq.~\eqref{eq:LGP}, and introduced the notation
 $\omega_\sigma(\kv) = \bm{v}_0 \kv + \epsilon_\sigma(k)$. Here
-$\sigma = \pm$ labels the 2 different eigenmodes and we defined
-$\bm{v}_0 \equiv \frac{\kv_0}{m}$ as the speed of the condensate.
+$\sigma = \pm$ labels the 2 different eigenmodes, and we defined the
+condensate speed $\bm{v}_0 \equiv \frac{\kv_0}{m}$.
 
 Notice that the $k=0$ mode has only one eigenvector. However, one can
 safely exclude it as this mode does not imply energy or momentum
 transport. Excluding the $k = 0$ point, one can then solve
-Eq.~\eqref{eq:right-eigen} and obtain the celebrated Bogoliubov
+Eq.~\eqref{eq:right-eigen}, obtaining the celebrated Bogoliubov
 excitation spectrum
 %
 \begin{equation}\label{eq:bogoliubov}
   \epsilon_\sigma(k) = \sigma \left[\frac{k^2}{2m}\left(\frac{k^2}{2m} + 2 g \rho_0 \right) \right]^{\frac{1}{2}}
 \end{equation}
 % 
-with $\sigma = \pm$. Notice that the complex amplitudes $U_\sigma(k)$,
+with $\sigma = \pm$. Here $k$ represents the momentum of the
+quasiparticle excitation with respect to the momentum $k_0$ of the
+condensate. Note that the complex amplitudes $U_\sigma(k)$ and
 $V_\sigma(k)$ only depend on the absolute value of $\kv$, while the
-(real) spectrum of Eq.~\eqref{eq:translated-L}, $\omega_\sigma(\kv)$
+(real) spectrum of Eq.~\eqref{eq:translated-L}, $\omega_\sigma(\kv)$,
 is the Bogoliubov spectrum with an additional Galilean boost
 $\bm{v}_0 \kv$.
 
+We can now further simplify the problem. As can be seen from
+Eq.~\eqref{eq:symmetry-2}, the 2 eigen-families $\sigma$ and $-\sigma$
+are linked by a duality, stemming from the $\mathcal{P} \mathcal{T}$
+symmetry\footnote{This can be actually formally proven after defining
+  the parity and time-reversal operators corresponding to our
+  problem. For details, see Ref.~\cite{MOSTAFAZADEH_2010}.} of the
+Bogoliubov operator $\Lca$.  We therefore drop the subscript $\sigma$
+and make the convention that
+$\left( U,\, V \right) \equiv \left( U_{+},\, V_{+} \right)$.
+
 \paragraph{Bogoliubov spectrum discussion}
 The Bogoliubov spectrum Eq.~\eqref{eq:bogoliubov} is shown in the top
-row of Fig.~\ref{fig:bogo-cherenkov}, for two different values of the
-condensate speed $v_0$, which sets the slope of the $\bm{v}_0 \kv$
-plane, indicated by the dotted lines. In the non-interacting case
-$g=0$ and the spectrum reduces to a simple parabola characterising a
-free particle. For repulsive interactions, $g > 0$ and we can
-distinguish two qualitatively different domains, after first
-introducing the typical length scale of the problem, called the
-\textit{healing length}. The healing length $\xi$ is a measure of the
-distance over which the condensate density recovers its equilibrium
-value $\rho_0$ when forced to vary away from this value, as for
-example in a box where the density must be zero at the position of the
-walls, as imposed by the boundary conditions. In mathematical terms,
+row of Fig.~\ref{fig:bogo-cherenkov}, for two different values of
+$v_0$, which sets the slope of the dotted lines (indicating the
+$\bm{v}_0 \kv$ plane). In the non-interacting case $g=0$ and the
+spectrum reduces to a simple parabola characterising a free
+particle. For repulsive interactions, $g > 0$ and we can distinguish
+two qualitatively different domains, after first introducing the
+typical length scale of the problem, called the \textit{healing
+  length}. The healing length $\xi$ is a measure of the distance over
+which the condensate density recovers its equilibrium value $\rho_0$
+when forced to vary away from this value. For example, in a box the
+boundary conditions fix the density to zero at the positions of the
+walls. In mathematical terms,
 %
 \begin{equation}\label{eq:healing-length}
   \frac{1}{m\xi^2}=g\rho_0
@@ -433,9 +444,10 @@ walls, as imposed by the boundary conditions. In mathematical terms,
 
 We first explore the domain of small momenta, $k\xi \ll 1$, which is
 characterised by a linear behaviour of the dispersion,
-$\epsilon(k) \simeq k \sqrt{\frac{g\rho_0}{m}}$, that implies the
-propagation of low-energy excitations in the form of sound waves, with
-a velocity $c_s$ given by
+$\epsilon(k) \simeq k c_s$, that implies the propagation of low-energy
+excitations in the form of \textit{sound waves}, with a
+velocity\footnote{The sound velocity here is measured in the
+  condensate rest-frame ($k_0 = 0$).} $c_s$ given by
 %
 \begin{equation}\label{eq:sound-velocity}
   mc^2_s = g \rho_0
@@ -443,71 +455,70 @@ a velocity $c_s$ given by
 % 
 The \textit{Landau criterion} for superfluidity~\cite{9780198507192}
 determines the maximum velocity at which a weak impurity can travel
-through the condensate without dissipating energy. In order to
-dissipate energy, such an impurity must be able to create excitations
-in the condensate. Conservation of energy then results in a critical
-velocity
+through the condensate without dissipating energy. In order for it to
+dissipate energy, such an impurity must be able to create
+quasiparticle excitations in the condensate. Conservation of energy
+then results in a critical velocity
 %
 \begin{equation}\label{eq:Landau}
-  v_{\text{cr}}=\min_{k} \left[\frac{\epsilon(k)}{k}\right]
+  v_c=\min_{k} \left[\frac{\epsilon(k)}{k}\right]
 \end{equation}
 % 
-which in our case is exactly equal to the speed of sound,
-$v_{\text{cr}} = c_s$. As the two situations, of a particle moving
-through the condensate, or the condensate moving against a fixed
-defect are physically equivalent (they are connected by a Galilean
-transformation), we can only conclude that we must have $v_0 \geq c_s$
-in order to observe any damping.
+below which no dissipation can occur. In our case, this velocity is
+precisely equal to the speed of sound, $v_c =
+c_s$. Furthermore, the two situations, the one of a particle moving
+through the condensate, or of the condensate moving against a fixed
+defect, are physically equivalent, being connected by a Galilean
+transformation. We can therefore conclude that we must have
+$v_0 \geq c_s$ in order to observe any propagating
+perturbation. Before moving on, it is worth noting that the Landau
+criterion has some asociated caveats. The first one is that we are
+completely neglecting the nucleation of vortices by a macroscopic
+defect with a size comparable to the healing length, which would lower
+the effective critical velocity. Vortices would furthermore also break
+the translational invariance along the transverse directions, an
+invariance that we already made use of. The second caveat is that
+quantum fluctuations are also neglected. As seen in
+Ref.~\cite{Astrakharchik_2004}, they could lead to nonzero dissipation
+even at sub-sonic speeds.
 
-Finally, the second domain of interest is the one of larga momenta,
+The second domain of interest is the one of large momenta,
 $k\xi \gg 1$. Looking at Eq.~\eqref{eq:right-eigen}, one notices that
-the only $k$-dependent parts are the diagonal terms for $U(k)$ and
-$V(k)$. These terms have opposite sign, so the off-diagonal coupling
-between $U$ and $V$ becomes highly off-resonant at large
-$k$. Completely neglecting it gives the shifted parabola
-%
-\begin{equation}\label{eq:shifted-parabola}
-  \epsilon(k) \simeq \frac{k^2}{2m}+g\rho_0
-\end{equation}
-% 
-with $U(k) \simeq 1$ and $V(k) \simeq 0$.
+the only $k$-dependent parts of $\Lca_{\text{GP}} [k]$ are the
+diagonal terms. These terms have opposite sign, so the off-diagonal
+coupling between $U(k)$ and $V(k)$ becomes highly off-resonant at
+large $k$. Completely neglecting it gives the free-particle-like
+shifted parabola $\epsilon(k) \simeq k^2/(2m)+g\rho_0$, with
+$U(k) \simeq 1$ and $V(k) \simeq 0$.
 
-
-As can be seen from Eq.~\eqref{eq:symmetry-2}, the 2 eigen-families
-$\sigma$ and $-\sigma$ are linked by a duality, stemming from the
-$\mathcal{P} \mathcal{T}$ symmetry\footnote{This can be actually formally
-  proven after defining the parity and time-reversal operators
-  corresponding to our problem. For details, see
-  Ref.~\cite{MOSTAFAZADEH_2010}.} of the Bogoliubov operator $\Lca$.
-We therefore drop the subscript and make the convention that
-$\left( U,\, V \right) \equiv \left( U_{+},\, V_{+}
-\right)$. Furthermore, making use of Eq.~\eqref{eq:symmetry-1}, we can
-act with $\sigma_3$ on the eigenstates of $\Lca_{\text{GP}}$ to obtain
-the ones of $\Lca_{\text{GP}}^{\dagger}$. 
-
-This finally leads us to a biorthonormal basis
-$\left\{ \ket{\psi_\sigma^R(\kv)},\, \ket{\psi_\sigma^L(\kv)} \right\}$
-with 4 basis vectors
+In order to obtain the defect-induced density perturbation, we must
+now also determine the eigenvectors of the problem. Making use of
+Eq.~\eqref{eq:symmetry-1}, we can act with $\sigma_3$ on the
+eigenstates of $\Lca_{\text{GP}}$ to obtain the ones of
+$\Lca_{\text{GP}}^{\dagger}$. This finally leads us to a biorthonormal
+basis
+$\left\{ \ket{\psi_\sigma^R(\kv)},\, \ket{\psi_\sigma^L(\kv)}
+\right\}$, containing 4 basis vectors
 %
 \begin{equation}\label{eq:biorthobasis}
   \left\{ \colvec{U(k)}{V(k)}, \colvec{V^{\star}(k)}{U^{\star}(k)}, \colvec{U(k)}{-V(k)}, \colvec{-V^{\star}(k)}{U^{\star}(k)} \right\} \bigotimes \ket{\kv}
 \end{equation}
 % 
-which fulfills the orthonormality condition
+which fulfill the orthonormality condition
 %
 \begin{equation}\label{eq:binormality}
   \braket{\psi_{\sigma^{\prime}}^L(\kv^{\prime})}{\psi_\sigma^R(\kv)} = \delta_{\sigma,\sigma^{\prime}} \delta^2(\kv - \kv^{\prime})
 \end{equation}
 % 
-provided of course that we normalize in such a way that
-$\abs{U(k)}^2 - \abs{V(k)}^2 = 1$, and the completeness relation
+and the completeness relation
 %
 \begin{equation}\label{eq:bicompleteness}
   \sum_{\sigma = \pm} \int d^2 \kv \; \ket{\psi_\sigma^R(\kv)}\bra{\psi_\sigma^L(\kv)} = 1
 \end{equation}
 % 
-In this basis, the spectral decomposition of
-Eq.~\eqref{eq:translated-L} is the diagonal form
+provided of course that we normalize in such a way that
+$\abs{U(k)}^2 - \abs{V(k)}^2 = 1$. In this basis, the spectral
+decomposition of Eq.~\eqref{eq:translated-L} is the diagonal form
 %
 \begin{equation}\label{eq:bidecomposition}
   \hat{\mathcal{T}} \hat{\Lca} \hat{\mathcal{T}}^{\dagger} = \sum_{\sigma = \pm} \int d^2 \kv \; \omega_\sigma(\kv) \ket{\psi_\sigma^R(\kv)}\bra{\psi_\sigma^L(\kv)}
@@ -519,23 +530,29 @@ eigenvectors of the ``+'' family up to a phase factor. Indeed, one can
 choose $\abs{U(k)} \pm \abs{V(k)} = f(k)^{\pm\frac{1}{4}}$, with 
 %
 \begin{equation}
-  f(k) = \frac{\frac{k^2}{2m}}{\frac{k^2}{2m} + 2g\rho_0}
+  f(k) = \frac{k^2/(2m)}{k^2/(2m) + 2g\rho_0}
 \end{equation}
 % 
 Furthermore, in case the Hamiltonian doesn't contain any time-reversal
-symmetry-breaking terms (as in our case), one can chose $U(k)$ and
-$V(k)$ to be real quantities, without loss of generality.
+symmetry-breaking terms, one can chose $U(k)$ and $V(k)$ to be real
+quantities, without loss of generality.
 
 It is now a trivial matter to solve the linearized evolution equation
-Eq.~\eqref{eq:GP-atoms-system} for our problem. In particular, for a
-localized static defect potential $V_d(\rv) = g_V \delta^2(\rv)$, the
+Eq.~\eqref{eq:GP-atoms-system}. In particular, for a localized static
+defect potential $V_d(\rv) = g_V \delta^2(\rv)$, quasiparticle modes
+at all wavevectors $k$ are excited.\footnote{If one wishes to
+  selectively excite a pair of modes, one can use a periodic
+  potential, following, for example, Ref.~\cite{Ianeselli_2006}.} The
 source term is time-independent, and hence the quasi-particle
 amplitudes of Eq.~\eqref{eq:amplitudes-bk} have the simple form
 $b(\kv) = -s(\kv)/\omega(\kv)$. Equivalently, we can obtain the
 defect-induced perturbation of the wavefunction from its initial
-steady state by first inverting Eq.~\eqref{eq:bidecomposition} and
-then reverting the unitary transformation that was applied in
-Eq.~\eqref{eq:translated-L}.
+steady state by directly inverting Eq.~\eqref{eq:bidecomposition} and
+then reversing the unitary transformation that was applied to obtain
+Eq.~\eqref{eq:translated-L}. Whichever route we take, it is clear that
+the final answer will have a resonant structure, containing
+$\omega(\kv)$ in the denominator, hence the dominant modes will be the
+ones that satisfy $\omega(\kv) = 0$.
 
 \paragraph{Landau causality rule}
 We must also touch on the subject of \textit{adiabatic switching} at
@@ -550,11 +567,88 @@ $\epsilon(k) \rightarrow \epsilon(k) - i0^{+}$. This corresponds to a
 weak damping of the plane wave solution and ensures that no Bogoliubov
 excitations were present at $t = - \infty$.
 
-The defect-induced perturbation of the condensate density is shown in
+We show the defect-induced perturbation of the condensate density in
 the bottom row of Fig.~\ref{fig:bogo-cherenkov}, for two distinct
-values of the condensate speed $v_0$. We now briefly review a
-geometric construction detailed in Ref.~\cite{9783319002651}, that can
-shed light on the main features of the condensate response.
+values of the condensate speed $v_0$. Rather than giving its full
+analytical expression, it is more instructive to present a geometrical
+construction, detailed in Ref.~\cite{9783319002651}, that can shed
+light on the main features of the condensate response. 
+
+\paragraph{Geometrical construction}
+We have already identified the importance of the poles of
+$\omega(\kv)$; the solutions of $\epsilon(k) + \bm{v}_0 \kv = 0$ can
+be visualized if one plots the intersection of the Bogoliubov
+dispersion surface $\epsilon(k)$ with the $\bm{v}_0 \kv$ plane. The
+locus of this intersection is a closed curve that we will denote by
+$\Gamma$ and that is plotted in the middle row of
+Fig.~\ref{fig:bogo-cherenkov}. Making the connection with the Landau
+criterion presented earlier, we can identify two regimes. 
+
+For small velocities $v_0 < c_s$ we have the \textit{sub-sonic}
+regime, where $\Gamma$ is a single point at the origin. Consequently,
+one can observe superfluid-like behaviour with no propagating density
+modulation. The modulation will stay localized in the vecinity of the
+defect, and, in the Galilean-equivalent problem of a particle moving
+through the condensate, it would renormalize the particle
+mass.~\cite{Astrakharchik_2004}
+
+As we gradually increases the condensate speed, and hence the slope of
+the $\bm{v}_0 \kv$ plane, this plane will touch the surface of the
+dispersion relation when $v_0 = c_s$, marking the entry into the
+\textit{super-sonic} (dissipative) regime. Further increasing the
+speed will increase the size of $\Gamma$, as can be seen in
+Fig.~\ref{fig:bogo-cherenkov}. The green arrows, orthogonal to the
+curve $\Gamma$ at each point, represent the group velocity of the
+Bogoliubov mode at that particular $k$-value. They show the direction
+of propagation of the density perturbation away from the defect, up to
+infinity. It is the interference of these propagating modes that we
+see as the real-space density pattern. Note that the locus $\Gamma$
+has two distinct regions, inherited from the linear and quadratic
+domains of the dispersion Eq.~\eqref{eq:bogoliubov}.
+
+The linear region of $\Gamma$, close to the origin, is characterised
+by essentially the same physics as the Cherenkov effect in
+non-dispersive media. We remind the reader that the Charenkov effect
+consists in the emission of electromagnetic radiation by a charged
+particle moving relativistically through a dielectric medium at a
+velocity higher than the (phase) velocity of light in that medium. The
+emission is concentrated into a \textit{Cherenkov cone} in momentum
+space, of aperture $2\theta$, where
+$\cos\theta = c/v$.~\cite{jelley1958vcerenkov} The higher the
+particle speed $v$ with respect to the speed of light $c$, the wider
+the angle $\theta$ between the emission and the direction of
+motion. The Cherenkov cone is depicted by the dashed lines in the
+middle panels of Fig.~\ref{fig:bogo-cherenkov}, and the angle $\theta$
+in our case is of course given by $\cos\theta = c_s/v_0$. Due to the
+momentum-space singularity at the origin, the group velocity has a
+jump, defining a whole region of space where no phonons are
+emitted. This corresponds in real-space to the so-called \textit{Mach
+  cone}, named in analogy to the cone that is created by a super-sonic
+aircraft, and depicted by dashed lines in the bottom panels of
+Fig.~\ref{fig:bogo-cherenkov}. As its aperture $2\phi$ is quantified
+by $\sin\phi = c_s/v_0$, that means that, the faster the fluid, the
+narrower the Mach cone will be.
+
+The high-momentum, rounded region of $\Gamma$, which corresponds to
+the single-particle-like dispersion, has no equivalent in Cherenkov
+physics. It is responsible for the hyperbolic-like
+wavefronts\footnote{The wavefronts are actually parabolic in the
+  non-interacting limit of $g=0$.}, emitted in the positive
+$\hat{\bm{x}}$ direction. The physical origin of these rounded waves
+lies in the interference between the coherent matter wave of the BEC
+and the wave scattered off the defect. It it worth noting that the
+curve $\Gamma$ also helps one determine the spacing between the
+emitted wavefronts, which is inversely proportional to the value of
+the momentum at the particular point on $\Gamma$ that corresponds to
+the wave propagation direction. In practice, we see for example that
+the spacing along $y = 0$, in the positive $\hat{\bm{x}}$ direction,
+is wider in the left-bottom panel than in the right one.
+
+Aside from being just a useful geometrical construction, the locus
+$\Gamma$ can actually be observed in scattering experiments, both in
+the context of atomic condensates, as well as for microcavity
+polaritons (the topic of Chapter~\ref{cha:polaritons}), where it goes
+by the name of Rayleigh scattering ring~\cite{Ciuti_2005}.
 
 
 %TODO%
@@ -564,8 +658,6 @@ shed light on the main features of the condensate response.
 %   be artitrarily chosen, U(1) symmetry                                                         %
 % - U(1) symmetry of the MF eq                                                                   %
 % - wavefunction of TIGPE is purely real in the absence of time-reversal symmetry breaking terms %
-% - introduce healing length                                                                     %
-% - introduce single particle and phononic BEC regimes                                           %
 % - discuss sharp corner at k = 0                                                                %
 % - no macroscopic curent is flowing across the BEC in the GS                                    %
 % - Goldstone mode (zero sound)                                                                  %
@@ -1568,7 +1660,7 @@ $\Delta k = 0$ point.
 Further insight into OPO physics for realistic experimental conditions
 can be gained by numerically solving the full 2-component GP equation
 for the coupled exciton and cavity photon fields, as first done in
-Ref.~\cite{Whittaker_2005}.  A similar approach, reviewed in detail in
+Ref.~\cite{Whittaker_2005_c}.  A similar approach, reviewed in detail in
 Ref.~\cite{9783642241857}, will be employed in Chapter~\ref{cha:opo},
 where we study multicomponent superfluidity in the OPO regime.
 %
