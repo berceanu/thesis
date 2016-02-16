@@ -24,9 +24,8 @@ different times, depending on the velocity field. This gives rise to a
 time-dependent variable-ranged interaction, which can stabilize the
 ordered phase.
 
-
-
-
+\paragraph{Ducks on a lake emit Cherenkov radiation}%TODO: incorporate
+% Parallel between ducks on a lake and content of thesis
 
 \chapter{Cold atomic gases}
 \label{cha:cold-gases}
@@ -34,8 +33,60 @@ ordered phase.
 \section{Bose-Einstein condensation}
 \label{sec:BEC}
 
+
+\paragraph{BEC in noninteracting gas}
+In 1925, Albert Einstein considered what would happen to a
+non-interacting bosonic gas of non-relativistic particles in the
+thermodynamic limit, as one lowers the temperature. He predicted the
+phenomenon we now call \textit{Bose-Einstein condensation} (BEC),
+namely a phase transition, below a critical temperature $T_c$, to a
+new state of matter, in which a finite fraction of all the particles
+would occupy the same single-particle state. In particular, if we take
+$N$ particles in a cubic box of volume $L^3$, then they would
+predominantly occupy the zero-momentum state $\kv = 0$, and the
+critical temperature would be~\cite{9780198507192}
+%
+\begin{equation}\label{eq:Tc3D}
+  T_c \simeq 3.31 \frac{\rho^{2/3}\hbar^2}{m k_B}
+\end{equation}
+%
+with the density $\rho = N/L^3$ and $m$, $k_B$ being the particle
+mass and Boltzmann's constant, respectively.
+
+At its core, BEC is a statistical phenomenon, steming from the
+indistinguishability of elementary particles in quantum field theory,
+coupled to the ``spin-statistics'' theorem, which sets a constraint on
+the symmetry of the many-body wavefunction regarding the interchange
+of its arguments. In fact, one can hand-wavingly deduce the
+temperature below which quantum effects would start playing a role in
+a many-body system, by arguing that the thermal de Broglie
+wavelength should be comparable to the inter-particle distance (which
+in our case is $\rho^{-1/3}$ on average)~\cite{Leggett_1999}. Apart
+from the numerical prefactor, we get the same answer as
+Eq.~\eqref{eq:Tc3D}.
+%
+%TODO: elementary bosons with non-zero mass do not exist
+
+
+
+\paragraph{BEC in interacting system}
+Interestingly enough, BEC was considered at the time to be nothing
+more than a pathological behaviour of the non-interacting gas, which
+would resolve once interactions were properly accounted for.
+
+
+
+
+\paragraph{Penrose-Onsager criterion for BEC}
+\paragraph{No-go theorem for lower dimensionality}
+\paragraph{Introducing the scattering length $a$.}
+\paragraph{Condensate wavefunction is the order parameter}
+\paragraph{Explaining atom trapping}
+
 \section{Gross–Pitaevskii equation}
 \label{sec:GPE}
+
+\paragraph{Derivation of Gross Pitaevskii equation}
 
 
 \section{Linear response theory}
@@ -56,8 +107,10 @@ with the GP Hamiltonian defined as\footnote{This section follows
 \end{equation}
 % 
 
-This Hamiltonian describes a bosonic condensate of $N_0$ particles with
-contact interactions quantified by $g$, and chemical potential $\mu$.
+This Hamiltonian describes a bosonic condensate of $N_0$ particles
+with contact interactions quantified by $g$, and chemical potential
+$\mu$ -- which is the energy required to add one more particle to the
+system.
 
 Now consider adding a small time-dependent perturbation on top of the
 trap, giving $U(\rv,t)=U_0(\rv) + \delta U(\rv,t)$. We are interested
@@ -490,6 +543,10 @@ coupling between $U(k)$ and $V(k)$ becomes highly off-resonant at
 large $k$. Completely neglecting it gives the free-particle-like
 shifted parabola $\epsilon(k) \simeq k^2/(2m)+g\rho_0$, with
 $U(k) \simeq 1$ and $V(k) \simeq 0$.
+%
+The discontinuity in the spectrum at zero momentum can be explained by
+the fact that the diagonal and off-diagonal parts of $\Lca_{\text{GP}}
+[0]$ are equal in absolute value.
 
 In order to obtain the defect-induced density perturbation, we must
 now also determine the eigenvectors of the problem. Making use of
@@ -614,20 +671,21 @@ particle moving relativistically through a dielectric medium at a
 velocity higher than the (phase) velocity of light in that medium. The
 emission is concentrated into a \textit{Cherenkov cone} in momentum
 space, of aperture $2\theta$, where
-$\cos\theta = c/v$.~\cite{jelley1958vcerenkov} The higher the
-particle speed $v$ with respect to the speed of light $c$, the wider
-the angle $\theta$ between the emission and the direction of
-motion. The Cherenkov cone is depicted by the dashed lines in the
-middle panels of Fig.~\ref{fig:bogo-cherenkov}, and the angle $\theta$
-in our case is of course given by $\cos\theta = c_s/v_0$. Due to the
-momentum-space singularity at the origin, the group velocity has a
-jump, defining a whole region of space where no phonons are
-emitted. This corresponds in real-space to the so-called \textit{Mach
-  cone}, named in analogy to the cone that is created by a super-sonic
-aircraft, and depicted by dashed lines in the bottom panels of
-Fig.~\ref{fig:bogo-cherenkov}. As its aperture $2\phi$ is quantified
-by $\sin\phi = c_s/v_0$, that means that, the faster the fluid, the
-narrower the Mach cone will be.
+$\cos\theta = c/v$.~\cite{jelley1958vcerenkov} The higher the particle
+speed $v$ with respect to the speed of light $c$, the wider the angle
+$\theta$ between the emission and the direction of motion. The
+Cherenkov cone is depicted by the dashed lines in the middle panels of
+Fig.~\ref{fig:bogo-cherenkov}, and the angle $\theta$ in our case is
+of course given by $\cos\theta = c_s/v_0$. Due to the momentum-space
+singularity at the origin, the group velocity has a jump, defining a
+whole region of space where no phonons are emitted. This corresponds
+in real-space to the so-called \textit{Mach cone}, named in analogy to
+the cone that is created by a super-sonic aircraft (since we are
+dealing with terminology, it is worth noting that the ratio $v_0/c_s$
+goes by the name of \textit{Mach number}). The Mach cone is depicted
+by dashed lines in the bottom panels of Fig.~\ref{fig:bogo-cherenkov}:
+as its aperture $2\phi$ is quantified by $\sin\phi = c_s/v_0$, that
+means that, the faster the fluid, the narrower the cone will be.
 
 The high-momentum, rounded region of $\Gamma$, which corresponds to
 the single-particle-like dispersion, has no equivalent in Cherenkov
@@ -651,14 +709,13 @@ polaritons (the topic of Chapter~\ref{cha:polaritons}), where it goes
 by the name of Rayleigh scattering ring~\cite{Ciuti_2005}.
 
 
+
 %TODO%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% - chemical potential = energy required to add one more particle to the system                  %
 % - global phase of the wavefunction in the time-independent(TI) GPE can                         %
 %   be artitrarily chosen, U(1) symmetry                                                         %
 % - U(1) symmetry of the MF eq                                                                   %
 % - wavefunction of TIGPE is purely real in the absence of time-reversal symmetry breaking terms %
-% - discuss sharp corner at k = 0                                                                %
 % - no macroscopic curent is flowing across the BEC in the GS                                    %
 % - Goldstone mode (zero sound)                                                                  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
