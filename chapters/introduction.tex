@@ -1,8 +1,8 @@
-\chapter{Introduction}%TODO: mention \hbar = 1
+\chapter{Introduction}
 
 %TODO: motivation
 %TODO: original contribution
-%TODO: chapter descriptions (a la anton)
+%TODO: chapter descriptions
 
 
 \paragraph{How birds fly together}%TODO: incorporate
@@ -35,7 +35,8 @@ ordered phase.
 
 
 \paragraph{BEC in noninteracting gas}
-In 1925, Albert Einstein considered what would happen to a
+In 1925, Albert Einstein (prompted by the earlier work of the indian
+polyglot Satyendra Nath Bose) considered what would happen to a
 non-interacting bosonic gas of non-relativistic particles in the
 thermodynamic limit, as one lowers the temperature. He predicted the
 phenomenon we now call \textit{Bose-Einstein condensation} (BEC),
@@ -43,7 +44,7 @@ namely a phase transition, below a critical temperature $T_c$, to a
 new state of matter, in which a finite fraction of all the particles
 would occupy the same single-particle state. In particular, if we take
 $N$ particles in a cubic box of volume $L^3$, then they would
-predominantly occupy the zero-momentum state $\kv = 0$, and the
+predominantly occupy the zero-wavevector state $\kv = 0$, and the
 critical temperature would be~\cite{9780198507192}
 %
 \begin{equation}\label{eq:Tc3D}
@@ -58,69 +59,294 @@ indistinguishability of elementary particles in quantum field theory,
 coupled to the ``spin-statistics'' theorem, which sets a constraint on
 the symmetry of the many-body wavefunction regarding the interchange
 of its arguments. In fact, one can hand-wavingly deduce the
-temperature below which quantum effects would start playing a role in
-a many-body system, by arguing that the thermal de Broglie
-wavelength should be comparable to the inter-particle distance (which
-in our case is $\rho^{-1/3}$ on average)~\cite{Leggett_1999}. Apart
-from the numerical prefactor, we get the same answer as
-Eq.~\eqref{eq:Tc3D}.
-%
-%TODO: elementary bosons with non-zero mass do not exist
-
-
+temperature below which quantum degeneracy would start playing a role
+in a many-body system, by arguing that the thermal de Broglie
+wavelength should be comparable to or greater than the inter-particle
+distance (which in our case is $\rho^{-1/3}$ on
+average)~\cite{Leggett_1999}. Apart from the numerical prefactor, we
+get the same answer as Eq.~\eqref{eq:Tc3D}. While one may argue that
+elementary massive bosons do not exist, it is worth emphasizing that
+indistinguishability only plays a role when there is a finite
+probability for exchange processes to occur between the particles. In
+that sense, all odd-isotope alkali atoms under relevant experimental
+conditions (see below) effectively behave as bosons: their many-body
+wavefunction is symmetric under the exchange of any two such atoms.
 
 \paragraph{BEC in interacting system}
-Interestingly enough, BEC was considered at the time to be nothing
-more than a pathological behaviour of the non-interacting gas, which
-would resolve once interactions were properly accounted for.
+Interestingly enough, BEC was considered by many at the time to be a
+pathological behaviour of the non-interacting gas, which would resolve
+once interactions were properly accounted for. In fact, it is well
+known that the ideal Bose gas has infinite compresibility. Since most
+experimental systems found in nature are interacting ones, one needs
+to explore the notion of BEC in an interacting system. In order to
+proceed however, we must first introduce the key concept of
+\textit{single-particle density matrix}.
 
-
-
+\paragraph{One-body density matrix}
+Following Leggett, we characterise each of the $N$
+particles\footnote{The particles are assumed to be spinless, for
+  simplicity; the extension to particles posessing a nontrivial
+  internal degree of freedom is straightforward.} by a position vector
+$\rv_i$, with the label $i$ running from 1 to $N$. Any pure state $s$
+of the (now interacting) system -- which can be also subjected to an
+external potential -- can be described at time $t$ by the many-body
+wavefunction $\Psi_s(\rv_1,\rv_2,\dots,\rv_N,t)$. Therefore, the most
+general state of the system (also called \textit{mixed state}) can be
+written as a superposition of pure orthonormal states $s$ with
+different weights $p_s$. The single-particle density matrix
+$\hat{\rho}_1(\rv,\rv^{\prime},t)$ then represents the probability
+amplitude, at time $t$, of finding a specific particle at position
+$\rv$, multiplied by the amplitude of finding it at $\rv^{\prime}$,
+and averaged over the positions of all the other particles:
+%
+\begin{align}\label{eq:one-particle-rho}
+  \hat{\rho}_1(\rv,\rv^{\prime},t) & \equiv N \sum_s p_s \int d\rv_2d\rv_3\dots
+d\rv_N
+\Psi_s^{\star}(\rv,\rv_2,\dots,\rv_N,t)\Psi_s(\rv^{\prime},\rv_2,\dots,\rv_N,t)\nonumber\\
+& = \sum_i n_i(t) \phi_i^{\star}(\rv,t) \phi_i(\rv^{\prime},t)
+\end{align}
+% 
+where in the second line we have re-written the density matrix in
+diagonal form, introducing its eigenvalues $n_i$ and eigenvectors
+$\phi_i$, which form a complete orthonormal set at any time $t$ (here
+$i$ labels a good quantum number of the problem, i.e. momentum in a
+translationally-symmetric situation).
 
 \paragraph{Penrose-Onsager criterion for BEC}
+We are now ready to state the Penrose-Onsager criterion for
+condensation, first formulated in 1956: if at any given time $t$ it is
+possible to find a complete orthonormal basis of states of
+$\hat{\rho}_1$ such that one and only one of these states has an
+eigenvalue of order $N$ (the rest being of order 1), then we say the
+system exhibits BEC. One should note that this definition only applies
+to ``simple'' BEC, as opposed to the ``fragmented'' case (of no
+concern to us here), where two or more of the eigenvalues of the
+one-body density matrix are of order $N$.
+
+\paragraph{Condensate wavefunction and the order parameter}
+We denote the single macroscopic eigenvalue of the density matrix by
+$N_0(t)$, and its corresponding eigenfunction by
+$\phi_0(\rv,t)$. $\phi_0$ is called the \textit{condensate
+  wavefunction} and the $N_0$ particles occupying it the
+\textit{condensate}, while the ratio $N_0/N$ is the \textit{condensate
+  fraction}. It is not necessarily true that $N_0 = N$, even at zero
+temperature. Also note that, while $\phi_0$ behaves as a
+single-particle Schr\"{o}dinger wavefunction, it is generally not an
+eigenfunction of the single-particle part of the Hamiltonian, or of
+any other simple operator for that matter, other than
+$\hat{\rho}_1$. Another useful quantity frequently found in the
+literature is the so-called \textit{order parameter},
+$\psi(\rv,t) = \sqrt{N_0(t)}\phi_0(\rv,t)$. We see that, while
+$\phi_0$ is normalized to 1, $\psi$ will be normalized to $N_0(t)$.
+
 \paragraph{No-go theorem for lower dimensionality}
-\paragraph{Introducing the scattering length $a$.}
-\paragraph{Condensate wavefunction is the order parameter}
-\paragraph{Explaining atom trapping}
+Before moving on to relevant experimental results, it is worth
+mentioning the existence of a ``no-go'' theorem, due to Hohenberg,
+stating that, in the thermodynamic limit, BEC cannot occur at a finite
+temperature in any system moving freely in space in less than three
+dimensions, irespective of the existence and/or sign of the
+interparticle interactions. Note that this theorem, however, only
+applies under equilibrium conditions, the nonequilibrium case still
+being an open question.  Furthermore, there is no general proof that a
+realistic system of interacting bosonic particles must show BEC, even
+at zero temperature -- the solid phase of ${}^4$He constitutes an
+obvious counter-example.
+
+\paragraph{Experimental proof}
+Most gases, with the notable exception of ${}^4$He, are solids at the
+densities and temperatures predicted by Eq.~\eqref{eq:Tc3D}. That is
+why it took no less than 70 years between Einstein's original paper
+and the first experimental observation of BEC in an atomic gas. In
+1995, the group of Eric Cornell and Carl Wieman succesfully condensed
+a cloud of ${}^{87}$Rb atoms, by first bringing the system to a very
+low density, and then cooling it fast enough to prevent any
+recombination processes that would have lead to the formation of the
+solid phase. While other odd-isotope alkali elements, especially
+${}^{23}$Na or ${}^{7}$Li, are also routinely used in experiments, the
+first non-alkali atom to be cooled into the BEC phase was hydrogen
+${}^1$H. Due to the extreme diluteness of these systems
+($\rho < 10^{15}$ atoms/cm${}^3$), the typical range of $T_c$ is from
+$20$ nK to a few $\mu$K. Achieving such ultra-low temperatures
+stimulated the development of novel experimental techniques, such as
+magnetic/laser trapping and evaporative cooling of atoms.
+
+\paragraph{Diagnostic techniques}
+The very low densities of alkali gases also limit the range of
+available diagnostic techniques. The most commonly employed method in
+BEC experiments is optical absorption imaging, where one shines a
+laser on the gas and detects the percentage of transmitted power. The
+image is usually taken after removing the trap and allowing the gas to
+expand. This gives information about the gas density as a function of
+coordinates and time, with a spatial resolution of a few $\mu$m. In
+stark contrast to liquid ${}^4$He, density-related information seems
+to be sufficient for most practical purposes.
+
+\paragraph{Diluteness/weak interaction condition}
+
 
 \section{Gross–Pitaevskii equation}
 \label{sec:GPE}
 
+\paragraph{Short history and utility of GP equation}
+As it turns out, many of the experimental results in ultracold gases
+can be interpreted on the basis of a single equation for the
+condensate wavefunction $\phi_0(\rv,t)$. This equation, first derived
+in 1961 independently by Eugene Gross and Lev Pitaevskii, was
+originally intended as a phenomenological description of quantum
+vortices in the superfluid phase of liquid ${}^4$He, below the lambda
+point. Since liquid helium is a strongly interacting system however,
+the GP equation turned out to be much better suited to alkali gases.
+Before giving the concrete formulation of the GP equation, we must
+first explore the nature of the inter-atomic interactions.
+
+\paragraph{s-wave scattering length}
+In dilute systems, the inter-atomic distance $d = \rho^{-1/3}$ is on
+the order of 1000~\AA, while the range $r_0$ of the inter-atomic
+potential, namely the extent of the last bound state of the van der
+Waals interaction, is about 50-100~\AA. As $d \gg r_0$, the
+probability of three-atom colissions is substantially diminished. This
+justifies limiting ourselves to a binary (instead of three-body or
+more) scattering problem: consider two atoms, separated by a relative
+distance $r$ and interacting in three dimensions through a potential
+$V(r)$. We can therefore decouple their center-of-mass motion from
+their relative one and write a Schr\"{o}dinger equation for the
+scattering states $\psi(r)$.
+
+For temperatures below $T_c$, the thermal de Broglie wavelength
+$\lambda_T > d$ (as mentioned in Sec.~\ref{sec:BEC}), meaning all
+significantly occupied states will have small wavevectors,
+$k \ll r_0^{-1}$. This directly translates to a low relative kinetic
+energy, and hence small relative wavevectors, for the scattering
+problem outlined above. However, we know from scattering theory that
+the probability for two atoms, with relative angular momentum $\ell$,
+of being separated by a distance $r \ll k^{-1}$ is proportional to
+$(kr)^{2\ell}$, therefore essentially negligible in the limit
+$k r_0 \ll 1$. That is of course, unless $\ell = 0$, meaning their
+relative state is $s$-wave, which is what we will assume from now
+on. Since $r_0 \ll d$, one can use the asymptotic expression for
+$\psi(r)$, which only depends on the scattering amplitude. At small
+wavevectors, this amplitude can be safely replaced by the
+\textit{$s$-wave scattering length} $a_s$, which will encapsulate all
+the interaction effects on macroscopic properties of the atomic gas.
+
+One can now replace the two-body potential $V(r)$ with an effective
+interaction, $V_{\text{eff}}(r)$, provided it gives the same
+scattering length. The limit of small wavevectors prompts us to only
+consider the lowest Fourier component of $V_{\text{eff}}$, equivalent
+in real space to a contact interaction\footnote{Technically, one
+  should also include a regularizing part in order to remove any $1/r$
+  divergencies of the wavefunction.}
+$V_{\text{eff}}(r) = g \delta(r)$, where we have introduced the
+interaction coupling constant $g$, whose value can be calculated using
+the first-order Born approximation~\cite{9780198507192} 
+%
+\begin{equation}\label{eq:g-constant}
+  g = \frac{4\pi\hbar^2}{m} a_s
+\end{equation}
+% 
+The scattering length $a_s$ therefore becomes the small parameter of
+the theory of weakly-interacting ultracold gases, and the validity of
+the Born approximation rests on the following two conditions
+%
+\begin{align}
+  k \abs{a_s} & \ll 1\\
+    \abs{a_s} & \ll \rho^{-1/3}\label{eq:diluteness-condition}
+\end{align}
+% 
+Eq.~\eqref{eq:diluteness-condition} is called the ``diluteness
+condition'', and it paves the way to various mean-field approaches,
+such as the GP equation.
+
+
 \paragraph{Derivation of Gross Pitaevskii equation}
+Formally, the GP equation corresponds to the lowest-order expansion in
+$a_s$ of the more exact Bogoliubov theory. However, we will try to
+give a hand-waving justification of it for the zero-temperature
+case. At $T=0$, all $N$ particles are in the condensate, therefore one
+could neglect all inter-particle correlations and introduce the
+simplest (Hartree-Fock) ansatz, expressing the ground state many-body
+wavefunction $\Psi$ in the symmetrized form
+%
+\begin{equation}\label{eq:HF-ansatz}
+  \Psi(\rv_1,\rv_2,\dots,\rv_N,t) = \prod_{i = 1}^{N} \phi_0(\rv_i,t)
+\end{equation}
+% 
+As explained in Sec.~\ref{sec:BEC}, the single-particle state $\phi_0$
+(now occupied by all the bosons) obeys a Schr\"{o}dinger-like
+equation, to which we must add the energy of the effective binary
+interactions. In mean-field, these interactions contribute the
+equivalent of a one-particle potential term proportional to
+$\abs{\phi_0}^2$.~\cite{Leggett_1999} Together with the kinetic part,
+this results in the nonlinear equation\footnote{We have tacitly
+  assumed that $N$ is large enough, such that $N-1 \approx N$.}
+%
+\begin{equation}\label{eq:TDGP}
+  i\hbar\partial_t\phi_0(\rv,t) = 
+  \left[-\frac{\hbar^2\nabla^2}{2m} + U(\rv,t) + g N |\phi_0(\rv,t)|^2\right]\phi_0(\rv,t)
+\end{equation}
+% 
+where we have also included an external potential $U(\rv,t)$, normally
+used to model harmonic trapping of the gas. Note that
+Eq.~\eqref{eq:TDGP} is valid for physics occuring over distances much
+larger than the scattering length $a_s$, which in turn must be smaller
+than the typical extension of $U(\rv,t)$.
+
+\paragraph{Caveats of TDGP}
+Eq.~\eqref{eq:TDGP} is the time-dependent Gross-Pitaevskii (TDGP)
+equation, a mean-field result where the condensate wavefunction
+$\phi_0$ must be calculated self-consistently. It is important to
+emphasize that the TDGP equation is also valid at nonzero temperatures
+$T \ll T_c$, provided that the density of non-condensed particles is
+much smaller than the condensate density. In that case, the condensate
+number $N_0$ is smaller (but still on the order of) the total particle
+number $N$. Finally, one must note that the nonlinearity of
+Eq.~\eqref{eq:TDGP} builds a bridge connecting BEC to nonlinear
+optics, where a similar relation is used, under the name of
+\textit{nonlinear Schr\"{o}dinger equation}.
+
+\paragraph{Time-independent GP}
+In case the external potential $U$ does not depend explicitly on time,
+the stationary solutions of Eq.~\eqref{eq:TDGP} evolve with a trivial
+phase factor $\exp(-i\mu t/\hbar)$. This yields a time-independent GP
+equation for $\phi_0(\rv)$ (we set $\hbar = 1$ from here on)
+%
+\begin{equation}\label{eq:TIGP}
+  \mu\phi_0(\rv) = \left[-\frac{\nabla^2}{2m} + U(\rv)+
+    g N_0 |\phi_0(\rv)|^2\right]\phi_0(\rv)
+\end{equation}
+where $\mu$ is chemical potential of the gas, the energy required to
+add one more particle to the system.\footnote{Technically, it is the
+  Lagrange multiplier associated to the conservation of particle
+  number $N_0$, and can be shown to be very close to the actual
+  chemical potential in the thermodynamic limit.~\cite{9783540410478}}
 
 
 \section{Linear response theory}
 \label{sec:linear-response}
 
-Let $\phi_0(\rv)$ be the steady state solution to the
-GP equation in the time-independent trapping potential $U_0(\rv)$
+Following loosely the formalism presented in Ref.~\cite{9783540410478}, we now let $\phi_0(\rv)$ be the steady state solution to the GP equation in
+the time-independent trapping potential $U_0(\rv)$
 %
 \begin{equation}\label{eq:GP-atoms}
   H_{\text{GP}} \phi_0 = 0
 \end{equation}
 % 
-with the GP Hamiltonian defined as\footnote{This section follows
-  loosely the formalism presented in Ref.~\cite{9783540410478}.}
+with the GP Hamiltonian defined as
 %
 \begin{equation}\label{eq:GP-ham}
   H_{\text{GP}} \equiv -\frac{\nabla^2}{2m} + U_0 + gN_0\abs{\phi_0}^2 - \mu
 \end{equation}
 % 
-
 This Hamiltonian describes a bosonic condensate of $N_0$ particles
 with contact interactions quantified by $g$, and chemical potential
-$\mu$ -- which is the energy required to add one more particle to the
-system.
-
-Now consider adding a small time-dependent perturbation on top of the
-trap, giving $U(\rv,t)=U_0(\rv) + \delta U(\rv,t)$. We are interested
-in the response of the condensate to this perturbation.  For weak
-perturbations, we can perform a linearization of the GP equation
-Eq.~\eqref{eq:GP-atoms} around the stationary solution $\phi_0$. This
-approach is known in the literature as the ``linear response''
-formalism.
-
-The condensate wavefunction $\phi(\rv,t)$ evolves according to
+$\mu$.  Now consider adding a small time-dependent perturbation on top
+of the trap, giving $U(\rv,t)=U_0(\rv) + \delta U(\rv,t)$. We are
+interested in the response of the condensate to this perturbation.
+For weak perturbations, we can perform a linearization of the GP
+equation Eq.~\eqref{eq:GP-atoms} around the stationary solution
+$\phi_0$ -- an approach known in the literature as the ``linear
+response'' formalism. The condensate wavefunction $\phi(\rv,t)$
+evolves according to
 %
 \begin{equation}\label{eq:GP-atoms-evolution}
   i\partial_t \phi = \left[-\frac{\nabla^2}{2m} + U + gN_0 \abs{\phi}^2 - \mu\right] \phi
@@ -332,7 +558,7 @@ have no trap, $U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
 \end{equation}
 % 
 where we have introduced the condensate density
-$\rho_0 \equiv N_0 \abs{\psi_0}^2$.  
+$\rho_0 \equiv N_0 \abs{\phi_0}^2$.  
 
 We now introduce a weak perturbation in the form of a localized defect
 potential $\delta U(\rv, t) = V_d(\rv)$, which can represent for
