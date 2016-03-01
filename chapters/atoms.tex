@@ -708,7 +708,7 @@ determines the maximum velocity at which a weak impurity can travel
 through the condensate without dissipating energy. In order for it to
 dissipate energy, such an impurity must be able to create
 quasiparticle excitations in the condensate. Conservation of energy
-then results in a critical velocity
+and momentum then results in a critical velocity
 %
 \begin{equation}\label{eq:Landau}
   v_c=\min_{k} \left[\frac{\epsilon(k)}{k}\right]
@@ -915,13 +915,466 @@ by the name of Rayleigh scattering ring~\cite{Ciuti_2005}.
 \section{Superfluidity}
 \label{sec:superfluid-atom}
 
-% glossary.org
+\paragraph{Short history}
+The story of superfluidity is intrinsically linked to that of helium,
+the liquefaction of which was first achieved in 1908 by
+Kammerlingh-Onnes. This ushered in a new era of low-temperature
+physics, and it was soon realized that the thermal expansion
+coefficient of liquid ${}^4$He had a discontinuity at the so-called
+lambda-($\lambda$-)point. This lead to the classification of liquid
+helium in two distinct phases, above (He-I) and below (He-II) the
+critical temperature $T_{\lambda} = 2.2K$. It was in this context
+that, 30 years later, Kapitza in Moscow and Allen and Misener in
+Cambridge investigated the flow of He-II through a narrow opening
+between two large containers. Observing that the fluid essentially
+behaves as having no viscosity\footnote{In fact, formally one cannot
+  even define viscosity in this case, as the ratio of the mass flow to
+  the pressure differential diverges.}, Kapitza introduced the term
+``superfluidity'' in analogy to the superconductivity observed in
+charged systems. It turned out to be an inspired analogy, as the
+prevalent view of the scientific community nowadays is that the two
+are essentially the same phenomenon, stemming from BEC (in the neutral
+case), respectively Cooper-pairing in the charged case (arguably a
+kind of pseudo-BEC). The connection between superfluidity and BEC was
+first made by Fritz London, who noted that $T_{\lambda}$ was not too
+far off from the critical temperature one would predict by applying
+Eq.~\eqref{eq:Tc3D} to a noninteracting gas of helium atoms. Of
+course, liquid helium is anything \textbf{but} a noninteracting gas, so in that
+sense it is rather amusing that this connection was made. The modern
+conception of superfluidity is that it represents a collection of
+phenomena, most of them related to flow properties, and the initial
+observations of Kapitza can in fact be broken down into such
+``elementary'' ingredients, as we shall see.
+
+\paragraph{Two-fluid model}
+A great leap in the understanding of superfluidity was made with the
+help of Lev Landau's phenomenological \textit{two-fluid model}. In a
+nutshell, one can think of the problem in terms of two liquids, one
+formed by the condesate occupying the single-particle state $\phi_0$
+and flowing without friction, and the other behaving as a normal
+fluid. To be fair, it must be said that Landau actually opposed the
+whole notion of BEC, and formulated his model without it. We must also
+note that the superfluid and normal components in He-II are not the
+condensed and noncondensed atoms, as the whole liquid is superfluid at
+zero temperature, while only around 10\% of the atoms are in the BEC
+state. That being said, the model describes He-II in thermodynamic
+equilibrium by introducing two independent velocities ($\bm{v}_s$ and
+$\bm{v}_n$), and associated densities ($\rho_s$ and $\rho_n$), which
+are temperature-dependent. One can then express the total mass current
+density $\bm{J} = \bm{j}_s + \bm{j}_n$ and kinetic energy of flow
+$Q = Q_s + Q_n$ as~\cite{leggett2006quantum}
+\begin{align}
+  \bm{J}(\rv) & = \rho_s(\rv)\bm{v}_s(\rv) + \rho_n(\rv)\bm{v}_n(\rv)\\
+  Q(\rv) & = \frac{\rho_s(\rv)\bm{v}_s^2(\rv)}{2} + \frac{\rho_n(\rv)\bm{v}_n^2(\rv)}{2}
+\end{align}
+with $\rho_s(\rv) + \rho_n(\rv) = \rho(\rv)$. We can futher define the
+superfluid ($f_s$) and normal ($f_n$) fractions as
+$f_s(T) = \rho_s(T)/\rho$ and $f_n(T) = \rho_n(T)/\rho$, with
+$f_s(T) + f_n(T) = 1$. Furthermore, we have the limits
+%
+\begin{align}
+  f_s(T) &\xrightarrow[T \rightarrow 0]{} 1\\
+  f_s(T) &\xrightarrow[T \rightarrow T_{\lambda}]{} 0
+\end{align}
+%
+It is in this sense that one is dealing with an intuitive picture of
+He-II as a mixture of two independent, interpenetrating components,
+each associated with its own mass current and flow energy.
+
+
+\paragraph{Superfluid velocity}
+We now look at the $N_0$ atoms condensed in the state $\phi_0$, in
+order to investigate the origin of the superfluid velocity
+$\bm{v}_s$. One can express the condesate wavefunction in the form
+%
+\begin{equation}\label{eq:label}
+  \phi_0 (\rv, t) = \sqrt{\frac{\rho_s(\rv,t)}{N_0(t)}} e^{i\chi(\rv,t)}
+\end{equation}
+% 
+with $\rho_s = N_0\abs{\phi_0}^2$ being the particle
+density\footnote{We again emphasize that, in general, the superfluid
+  density $\rho_s$ is \textbf{not} equal to the density of condensed atoms.}
+and $\chi$ the condensate phase, both real functions.
+%
+The quantum mechanical definition of the current density of the
+condensate yields\footnote{We explicitly re-introduced $\hbar$ in the
+  equations of this Section to show their quantum nature.}
+\begin{align}\label{eq:bec-current}
+  \bm{j}_s(\rv,t) & = N_0(t)\frac{\hbar}{2mi}\left[\phi_0^{\star}(\rv,t)\bm{\nabla}\phi_0(\rv,t) - \phi_0(\rv,t)\bm{\nabla}\phi_0^{\star}(\rv,t)\right]\\
+& = N_0(t) \abs{\phi_0(\rv,t)}^2 \frac{\hbar}{m} \bm{\nabla}\chi(\rv,t)
+\end{align}
+with $m$, as before, representing the particle mass. The ratio
+$\bm{v}_s \equiv \bm{j}_s/\rho_s$ will then be the condensate velocity
+(called \textit{superfluid velocity} in the literature for the
+historical reasons detailed above)
+%
+\begin{equation}\label{eq:supervelocity}
+  \bm{v}_s(\rv,t) = \frac{\hbar}{m} \bm{\nabla}\chi(\rv,t)
+\end{equation}
+% 
+
+\paragraph{Onsager-Feynman quantization condition}
+As the curl of a gradient is zero, the flow given by
+Eq.~\eqref{eq:supervelocity} is irrotational, in other words the
+vorticity
+%
+\begin{equation}\label{eq:vorticity}
+  \bm{\nabla} \times \bm{v}_s(\rv,t) = 0  
+\end{equation}
+% 
+provided, of course, that $\bm{v_s}$ is defined in all space (i.e.
+the magnitude of $\phi_0$ is finite). If that is not the case, one can
+consider a contour $C$ around the region where $\phi_0$ vanishes, and
+the condition that $\phi_0$ be single-valued then gives the famous
+\textit{Onsager-Feynman quantization}
+%
+\begin{equation}\label{eq:feynman}
+  \oint_C \bm{v}_s(\rv,t) \cdot d\bm{l} = \frac{2\pi \hbar}{m} n_w
+\end{equation}
+% 
+with $n_w = 0, \pm 1, \pm 2, \dots$ being the \textit{windinding
+  number}, the number of turns made by the phase in the complex plane,
+as we go around the integration contour $C$. Thus the circulation of
+the irrotational flow is quantized, with the quantum of circulation
+being $h/m = 0.997 \times 10^{-3}$ cm$^2/$s.
+
+\paragraph{Two effects intro}
+We are now in a position to discuss the two elementary ingredients
+which together account for the original obsevation of superfluidity by
+Kapitza. Following Ref.~\cite{Leggett_1999}, we consider a multiply
+connected geometry in the form of a hollow cylindrical pipe with solid
+walls shown in Fig.~\ref{fig:torus}.
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.5\linewidth]{torus}
+  \caption{
+    % 
+    The multiply connected toroidal geometry, of radius $R$, used to
+    showcase superfluid behaviour. The anullus, which contains ${}^4$He
+    atoms, rotates at an angular velocity $\omega$.
+    % 
+  }\label{fig:torus}
+\end{figure}
+% 
+Assuming the pipe of radius $R$ is filled with liquid helium, and
+rotates with angular velocity $\omega$, one can then obtain the
+(temperature-dependent) orbital angular momentum of the system $L(T)$
+by minimizing the effective free energy~\cite{leggett2006quantum}
+%
+\begin{equation}\label{eq:HF-angularmom}
+  L(T) = I\left(f_n(T)\omega + f_s(T)n_w\omega_0\right)
+\end{equation}
+% 
+Apart from the already defined quantities, we have introduced the
+moment of inertia $I = N_0mR^2$, and defined the quantum unit of
+angular velocity, $\omega_0 \equiv \hbar/(mR^2)$. Finally, $n_w$ is the
+nearest integer to $\omega/\omega_0$, expressed as
+%
+\begin{equation}\label{eq:nearest-integer}
+  n_w = \text{int} \left[\frac{\omega}{\omega_0} + \frac{1}{2}\right]
+\end{equation}
+% 
+One needs to compare Eq.~\eqref{eq:HF-angularmom} with the angular
+momentum of a normal liquid under the same circumstances, which is
+given by $L = I \omega = N_0 \hbar \omega/\omega_0$. Keeping this in
+mind, we can now introduce the two qualitatively different
+experiments.
+
+
+\paragraph{Persistent currents}
+%
+% protocol
+%
+The first experiment starts by rotating the torus at a large angular
+velocity $\Omega \gg \omega_0$, on the high-temperature side of the
+$\lambda$-point. Once the fluid equilibrates with the motion of the
+container walls, we then cool the system through $T_{\lambda}$,
+maintaining the same angular velocity $\Omega$. Finally, we stop the
+container from rotating, and measure the angular momentum.
+%
+% observation
+%
+After a short while, proportional to the viscosity of the normal
+component, its velocity $\bm{v}_n$ becomes zero. However, the
+superfluid part of the liquid experiences no friction with the pipe
+walls, and will therefore continue circulating indefinately! Since we
+are not dealing with the ground state of the system, but with an
+excited state with astronomical lifetime, we call this phenomenon
+\textit{metastability of supercurrents} (``persistent currents'' is
+another commonly found term).
+%
+% explanation
+%
+However, metastability of superflow is not a generic consequence of
+the BEC state, since the free energy of a generic BEC system does not
+itself limit in any way the relaxation of the circulating
+currents. The underlying mechanism is one of topological origin:
+consider the contour $C$ in Eq.~\eqref{eq:feynman} to run around the
+torus of Fig.~\ref{fig:torus}. The current in the ring will be
+proportional to the circulation Eq.~\eqref{eq:feynman}. Since the
+latter is quantized, the windinding number $n_w$ is conserved, hence
+so is the (super)current!\footnote{This argument does not apply to
+  spinor condensates, however.} 
+%
+% vortices
+%
+Similar arguments explain the existence of so-called topological
+defects in superfluid systems. Such defects are singularities of the
+condensate wavefunction, for instance, vortex lines (or rings, if the
+line closes in on itself) associated with the superfluid
+component. The conservation laws presented above make the vortex a
+highly stable configuration, as opposed to the case of a normal fluid,
+where it is short-lived. In this sense, the circulating currents which
+constitute the vortex are "persistent", corresponding to metastable
+supercurrents. Furthermoe, a superfluid system cannot sustain bulk
+vorticity due to Eq.~\eqref{eq:vorticity}, and the vortices are
+quantized according to Eq.~\eqref{eq:feynman}.
+
+In the final state with the container at rest, $\omega = 0$, so the
+first term of Eq.~\eqref{eq:HF-angularmom} dissapears. The second term
+survives, as the system cannot change its winding number. In the limit
+of large $n_w$ the angular momentum will then be approximately given
+by $L(T) \simeq f_s(T) I \Omega$. We see that one can reversibly
+increase (or decrease) the angular momentum $L$ by varying the
+temperature (provided, of course, that it is always kept below
+$T_{\lambda}$).
+%
+% Landau criterion
+%
+Since the superfluid circulates despite any roughness of the container
+walls, we can reasonably expect that an object moving though a
+stationary fluid also experiences reduced friction. This led to a
+series of experiments with charged ions being accelerated at various
+speeds by an applied external electric field~\cite{Meyer1961,
+  Allum1977}. It was seen that, in accordance with the Landau
+criterion presented in Sec.~\ref{sec:cherenkov-emission}, there exists
+a critical speed below which the ions experience reduced viscosity
+(and actually no viscosity at all in the $T=0$ limit).
+
+
+\paragraph{HF effect}
+We now turn to the second experiment, which many consider to be
+\textit{the most fundamental defining property of superfluidity}. The
+effect was first predicted by Fritz London and then observed by
+G. Hess and W. Fairbank in 1967 in the context of liquid helium, hence
+the name Hess-Fairbank (HF) effect.
+%
+% protocol
+%
+As before, we cool the sample while rotating with a lower angular
+velocity $\omega \ll \Omega$. We wait for the system to equilibrate,
+and then measure the angular momentum, this time without stopping the
+rotation of the container.
+%
+% observation
+%
+The value of $L$ will be given by Eq.~\eqref{eq:HF-angularmom},
+instead of the classical $I \omega$ (that is why the HF effect is also
+called nonclassical rotational inertia, NCRI).
+%
+We can now distinguish two different regimes. The first one, for
+$\omega < \frac{1}{2}\omega_0$, implies $n_w = 0$, therefore
+$L(T) = f_n(T)I\omega$, so the superfluid component contributes
+nothing to the current. At $T=0$, $f_n(T) \rightarrow 0$ and we get
+the spectacular result that the liquid completely ceases to rotate
+along with the container!
+%
+In the general case, the second term of Eq.~\eqref{eq:HF-angularmom}
+survives. If we again consider the zero-temperature limit, and plot
+the angular momentum $L(0) = I\omega_0 n_w$ versus angular velocity
+$\omega \geq \frac{1}{2}\omega_0$, we get a series of plateaus of
+width $\omega_0$ at positions
+$L = N_0 \hbar n_w = N_0 \hbar,\, 2N_0 \hbar$, and so on. The centers
+of these plateaus all fall on the ``classical'' line
+$L = N_0\hbar \omega/\omega_0$.
+%
+% explanation
+%
+A hand-waving explanation, for the simplest case of a noninteracting
+atomic gas, goes as follows. In a noncondensed system rotating with
+angular velocity $\omega$, the effective single-particle energies are
+shifted by an amount $\hbar\omega \ell_{n_w}$, with $\ell_{n_w}$ the
+angular momentum quantum number of state $n_w$. The Bose-Einstein
+function then redistributes the particles to accomodate this shift,
+producing a ``classical'' angular momentum. In a BEC however, all
+$N_0$ atoms must be in the same state $n_w$, and posess the same value
+of $\ell_{n_w}$. Their only allowed contribution to $L$ is then
+$N_0(n_w\hbar)$. For small $\omega$, the condensate is in the
+$n_w = 0$ state, and so it does not rotate with the container! This
+argument can be formalized, so one can show the HF effect to be
+impossible inside the framework of classical statistical mechanics,
+much like the Bohr-Van Leeuwen theorem shows magnetism to be a purely
+quantum phenomenon. Note that, while the HF effect can be (at least
+hand-wavingly) explained without including interactions, these are
+crucial to any theory of metastable currents.
+
+
+\paragraph{Meissner effect}
+As already explained in the introductory paragraph of this Section,
+there is a deep underlying connection between superfluidity in a
+neutral system and superconductivity in a charged one. In fact, the
+analog of the HF effect in a charged system is the well-known Meissner
+effect.
+%
+We now consider the same topology of Fig.~\ref{fig:torus}, and replace
+the container by a crystal lattice and the liquid helium (or atomic
+gas for that matter) by the electrons inside this lattice. If we now
+keep the crystal at rest and produce a tangential vector potential
+$\bm{A}(\rv) = A\hat{\phi}$, this will generate a flux
+$\Phi = \oint \bm{A}(\rv)\cdot d\bm{l}$ inside the conducting ring (usually
+called an ``Aharonov-Bohm'' flux). The definition of the
+``superfluid'' velocity Eq.~\eqref{eq:supervelocity} now needs to be
+revised according to the gauge-coupling recipe, which consists of
+replacing the canonical momentum $\bm{p}$ by the kinematic one:
+$\bm{p} \rightarrow \bm{p} - e\bm{A}(\rv)$. As a result, we get
+%
+\begin{equation}\label{eq:superconducting-velocity}
+  \bm{v}_s(\rv) = \frac{\hbar}{2m}\left(\bm{\nabla}\chi(\rv) -
+    \frac{2e\bm{A}(\rv)}{\hbar}\right)
+\end{equation}
+% 
+where the factors of 2 appear because the macroscopic wavefunction is
+now that of the center of mass of a Cooper-pair of electrons, so $m$
+and $e$ are both multiplied by 2. The resulting Onsager-Feynman
+quantization Eq.~\eqref{eq:feynman} then becomes
+%
+\begin{equation}\label{eq:superconducting-feynman}
+  \oint_C \bm{v}_s(\rv) \cdot d\bm{l} = \frac{\hbar}{2m} \left(2\pi n_w -
+    \frac{\Phi}{\Phi_0}\right)
+\end{equation}
+% 
+where $\Phi_0 \equiv h/(2e)$ is the \textit{flux quantum}. If the
+(mass) supercurrent is given, as before, by
+$\bm{j}_s = \rho_s \bm{v}_s$, then this new quantization condition
+results in a non-zero current even for $n_w = 0$. Indeed, for
+$\Phi < \frac{1}{2} \Phi_0$ (compare to the regime
+$\omega < \frac{1}{2}\omega_0$ discussed for the HF effect), the
+$n_w = 0$ state is realized and the electrical current $\bm{j}_e$ is
+given by
+%
+\begin{equation}\label{eq:diamagnet}
+  \bm{j}_e(\rv) = \frac{2e}{2m}\bm{j}_s = - \frac{e^2}{m^2}\rho_s(T) \bm{A}(\rv)
+\end{equation}
+%
+This proves that, while in a normal conductor the flux $\Phi$ would
+not generate any circulating current, a superconducting ring would
+respond with a diamagnetic (note the minus sign in
+Eq.~\eqref{eq:diamagnet}) electrical current proportional\footnote{The
+  proportionality constant is called the susceptibility.} to the
+vector potential $\bm{A}$. Coupling this with Maxwell's equations
+immediately results in the well-known Meissner effect, namely the
+expulsion of an applied magnetic field inside a superconducting
+sample.
+
+
+\paragraph{Synthetic gauge field}
+We now proceed to a closer analysis of the connection between the
+charged and neutral case. The Hamiltonian $H$ for a particle of charge
+$q$ and mass $m$, moving in a vector potential $\bm{A}$, and in the
+presence of an external potential $V$, is given by
+Eq.~\eqref{eq:charged-ham}. In our problem, $V$ is imposed by the
+toroidal geometry of the container, which is for now assumed to be
+stationary in the inertial frame of the stars. On the other hand, the
+Hamiltonian $H^{\prime}$, of a neutral particle with the same mass,
+but this time in the frame that rotates with the container at an
+angular velocity $\bm{\omega} = \omega\hat{z}$ is shown in
+Eq.~\eqref{eq:neutral-ham},
+%
+\begin{align}
+    H  = \frac{1}{2m}(\bm{p} - q\bm{A}(\rv))^2 & + V(\rv)\label{eq:charged-ham}\\
+    H^{\prime}  = \frac{1}{2m}(\bm{p}^{\prime}-m\bm{\omega}\times
+    \rv^{\prime})^2 & + V(\rv^{\prime}) - \frac{1}{2}m(\bm{\omega}\times
+    \rv^{\prime})^2\label{eq:neutral-ham}
+\end{align}
+%
+with $\rv^{\prime}$ being the coordinate (and $\bm{p}^{\prime}$ the
+canonical momentum) in the rotating frame. Making use of the
+cylindrical symmetry, one can decompose $\rv$ as $(r,\,z,\,\theta)$,
+and therefore $\rv^{\prime} = (r,\,z,\,\theta-\omega t)$.
+%
+We now see that a neutral system in the rotating frame, apart from a
+centrifugal term $- \frac{1}{2}m(\bm{\omega}\times \rv^{\prime})^2$,
+is formally identical to a charged system in the rest frame, with the
+correspondence $q\bm{A}(\rv) \leftrightarrow m\bm{\omega}\times
+\rv$. This connection can be used to make a neutral particle
+experience an ``effective'' electromagnetic vector potential. Its
+gauge-coupling to this potential is what eventually led to the
+celebrated concept of \textit{synthetic gauge field}.
+%
+In fact, such artificial, rotation-induced, gauge fields have already
+been proposed in the context of ultracold atomic gases, in order to
+asess their normal and superfluid
+fractions~\cite{Cooper2010,Carusotto2011,John2011}.
+
+
+\paragraph{BEC Experiments}
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.5\linewidth]{hole}
+  \caption{
+    % 
+    Scanning a blue-detuned laser beam with velocity $v$, though the
+    cigar-shaped atomic condensate, creates a density hole larger than the
+    healing length. The friction acting on this hole can then be used to asess
+    the Landau critical velocity. From Ref.~\cite{Raman_1999}.
+    % 
+  }\label{fig:hole}
+\end{figure}
+% 
+This naturally leads us to the topic of experimental evidence for
+superfluid behaviour. The answer, however, will not be a clear-cut
+one, as we have seen that it actually depends on which aspects of
+superfluidity one is interested in, such as NCRI, persistent currents,
+quantized vortices or reduced friction on impurities. Historically,
+liquid ${}^4$He-II was the weapon of choice for exploring such
+physics, however, new systems such as ultracold gases and, more
+recently, microcavity polaritons (the subject of
+Chapter~\ref{cha:polaritons}) have also entered the picture. In the
+case of liquid helium, superfluidity is relatively easy to detect,
+while BEC can only be asessed through circumstantial evidence (such as
+neutron scattering), as strong interactions oppose any large density
+changes. Ultracold gases, on the other hand, present a spectacular BEC
+onset that can be observed in the density profile, while superfluidity
+proves somewhat more mysterious.
+%
+Regarding metastable supercurrents in a simply connected geometry,
+Chevy and coworkers~\cite{Chevy2000} succeded in stirring an atomic
+condensate, and then measuring its angular momentum using the
+precession of certain collective modes.  Other studies were also shown
+to produce a metastable single-vortex state (and even vortex lattices)
+that persist, despite not being the ground state of the
+system. Interferometric measurements are commonly employed to see the
+circulation around these vortex cores.  However, the lifetime of the
+vortices is limited by how long it takes before they escape the
+magnetic trap. To circumvent this limitation, persistent currents in
+multiply connected geometries (such as toroidal traps) were also
+investigated, for instance in Refs.~\cite{Ryu2007}
+and~\cite{Ramanathan2011}.
+% 
+As far as the Landau criterion is concerned, an experiment similar to
+the one accelerating charged ions through liquid helium was reported
+in Ref.~\cite{Chikkatur_2000}. The authors used a Raman laser to
+transfer a fraction of the condensed atoms into a different
+(hyperfine) state. As a result, those atoms no longer experienced any
+magnetic trapping, but only the effect of gravity. The mobility of the
+free-falling atoms was then computed, revealing information about the
+friction~\cite{Astrakharchik_2004} acting on them.  A fairly sharp
+transition with a sudden increase in friction was observed, at
+velocities close to the local speed of sound.
+%
+In the opposite limit of macroscopic ``impurities'' (large compared to
+the healing length), Ref.~\cite{Onofrio_2000} details the use of a
+blue-detuned laser beam, in order to create a density hole which is
+then moved around the atomic condensate (see Fig.~\ref{fig:hole}).  By
+measuring the density difference immediately ahead and behind the
+hole, one can deduce the frictional force acting on it. This
+experiment resulted in a critical velocity about ten times smaller
+than the speed of sound, presumably due to vortex creation by the
+macroscopic defect.
+
 
 \section{Optical lattices}
 \label{sec:optical-lattice}
-
-\section{Synthetic gauge fields}
-\label{sec:gauge-field}
 
 \section{Harper-Hofstadter model}
 \label{sec:HH-atoms}
