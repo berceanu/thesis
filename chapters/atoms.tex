@@ -568,6 +568,8 @@ c_s$. From Ref.~\cite{9783319002651}.
     % 
 }\label{fig:bogo-cherenkov}
 \end{figure}
+% TODO: compare to shallowest water dispersion, see Fig.8(f) of
+% swimming ducks pdf
 
 Using Eq.~\eqref{eq:atom-MF}, the GP Hamiltonian becomes
 $H_{\text{GP}} = -\frac{\nabla^2}{2m} - \frac{k_0^2}{2m}$ and the
@@ -1152,12 +1154,13 @@ a critical speed below which the ions experience reduced viscosity
 (and actually no viscosity at all in the $T=0$ limit).
 
 
+
 \paragraph{HF effect}
-We now turn to the second experiment, which many consider to be
-\textit{the most fundamental defining property of superfluidity}. The
-effect was first predicted by Fritz London and then observed by
-G. Hess and W. Fairbank in 1967 in the context of liquid helium, hence
-the name Hess-Fairbank (HF) effect.
+We now turn to the second experiment, which is arguably one of the
+fundamental defining properties of superfluidity. The effect was first
+predicted by Fritz London and then observed by G. Hess and W. Fairbank
+in 1967 in the context of liquid helium, hence the name Hess-Fairbank
+(HF) effect.
 %
 % protocol
 %
@@ -1326,16 +1329,16 @@ superfluid behaviour. The answer, however, will not be a clear-cut
 one, as we have seen that it actually depends on which aspects of
 superfluidity one is interested in, such as NCRI, persistent currents,
 quantized vortices or reduced friction on impurities. Historically,
-liquid ${}^4$He-II was the weapon of choice for exploring such
-physics, however, new systems such as ultracold gases and, more
-recently, microcavity polaritons (the subject of
-Chapter~\ref{cha:polaritons}) have also entered the picture. In the
-case of liquid helium, superfluidity is relatively easy to detect,
-while BEC can only be asessed through circumstantial evidence (such as
-neutron scattering), as strong interactions oppose any large density
-changes. Ultracold gases, on the other hand, present a spectacular BEC
-onset that can be observed in the density profile, while superfluidity
-proves somewhat more mysterious.
+liquid ${}^4$He-II was the default system for exploring such physics,
+however, new systems such as ultracold gases and, more recently,
+microcavity polaritons (the subject of Chapter~\ref{cha:polaritons})
+have also entered the picture. In the case of liquid helium,
+superfluidity is relatively easy to detect, while BEC can only be
+asessed through circumstantial evidence (such as neutron scattering),
+as strong interactions oppose any large density changes. Ultracold
+gases, on the other hand, present a spectacular BEC onset that can be
+observed in the density profile, while superfluidity proves somewhat
+more mysterious.
 %
 Regarding metastable supercurrents in a simply connected geometry,
 Chevy and coworkers~\cite{Chevy2000} succeded in stirring an atomic
@@ -1375,9 +1378,66 @@ macroscopic defect.
 
 \section{Optical lattices}
 \label{sec:optical-lattice}
+% goal: 600 words
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.7\linewidth]{1Dlattice}
+  \caption{
+    % 
+    1D optical lattice created by counterpropagating laser beams. From Ref.~\cite{RevModPhys.78.179}.
+    % 
+  }\label{fig:label}
+\end{figure}
+% 
+
 
 \section{Harper-Hofstadter model}
-\label{sec:HH-atoms}
+\label{sec:hh-atoms}
+% goal: 1800 words
+% TODO: check notation in figures and main text corresponds to Landau chapter
+It was recently realized in the context of ultracold gases, see
+Refs.~\cite{aidelsburger2013hh,miyake2013hh}.
+%
+\begin{equation}\label{eq:hh-ham}
+  \mathcal{H}_0 = -J\sum_{m,n}(e^{i
+    \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} +e^{i
+    \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{H.c.}
+\end{equation}
+% 
+Diagonalization is presented in detail in
+Ref.~\cite{jain2007composite}.
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.5\linewidth]{lattice}
+  \caption{
+    % 
+    2D lattice of the Harper-Hofstadter model.
+    % 
+  }\label{fig:hh-lattice}
+\end{figure}
+% 
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.7\linewidth]{butterfly}
+  \caption{
+    % 
+    Hofstadter's butterfly. % TODO: add reference
+    % 
+  }\label{fig:butterfly}
+\end{figure}
+% 
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=\linewidth]{bands}
+  \caption{
+    % 
+    Energy bands of the Harper-Hofstadter Hamiltonian Eq.~\eqref{eq:hh-ham}.
+    % TODO: define WB and $\Delta E$ in the text
+    % 
+  }\label{fig:hh-energy-levels}
+\end{figure}
+% 
+
 
 %%% Local Variables:
 %%% mode: latex
