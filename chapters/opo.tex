@@ -12,12 +12,6 @@
 \chapter{Polariton superfluidity in the OPO regime}
 \label{cha:opo}
 
-% TODO: As no restoring force opposes a global rotation of the
-% signal-idler phases, the generator of such rotations is an
-% eigenvector of L with eigenvalue 0.
-
-
-
 \section{Introduction}
 %
 Microcavity polaritons, which are the quasiparticles resulting from
@@ -29,7 +23,8 @@ from the excitonic components, polaritons continuously injected by an
 external laser into a pump state with suitable wavevector and energy
 can undergo coherent stimulated scattering into two conjugate
 states~\cite{Ciuti_2000,Ciuti_2001,Ciuti_2003}, namely the signal and
-the idler, a process known as optical parametric oscillator (OPO).
+the idler, a process known as optical parametric oscillator (OPO) and
+described in detail in Sec.~\ref{sec:opo}.
 %
 Since their first
 realisation~\cite{Stevenson_2000,Savvidis_2000,Savvidis_2000_b,Baumberg_2000,Saba_2001},
@@ -136,11 +131,12 @@ experimental observations.
 \section{Model}
 \label{sec:model-opo}
 
-The dynamics of polaritons in the OPO regime and their hydrodynamic
-properties when scattering against a defect can be described via a
-classical driven-dissipative non-linear Gross-Pitaevskii equation
-(GPE) for the coupled exciton and cavity fields $\psi_{X,C}
-(\vt{r},t)$~\cite{Whittaker_2005,Carusotto_2013}:
+As explained in Chapter~\ref{cha:polaritons}, the dynamics of
+polaritons in the OPO regime and their hydrodynamic properties when
+scattering against a defect can be described via a classical
+driven-dissipative non-linear Gross-Pitaevskii equation (GPE) for the
+coupled exciton and cavity fields
+$\psi_{X,C} (\vt{r},t)$~\cite{Whittaker_2005,Carusotto_2013}:
 %
 \begin{equation}
   i\partial_t \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix} =
@@ -150,8 +146,12 @@ classical driven-dissipative non-linear Gross-Pitaevskii equation
 \end{equation}
 %
 The dispersive $X$- and $C$-fields decay at a rate $\gamma_{X,C}$ and
-are coupled by the Rabi splitting $\Omega_R$, while the nonlinearity
-is regulated by the exciton coupling strength $g_X$:
+are coupled by the Rabi splitting\footnote{Note that, while in
+  Chapter~\ref{cha:polaritons} the splitting between the upper and
+  lower polariton branches at zero momentum was $2\Omega_R$, in this
+  Chapter it is taken to be equal to the Rabi splitting $\Omega_R$.}
+$\Omega_R$, while the nonlinearity is regulated by the exciton
+coupling strength $g_X$:
 %
 \begin{equation}
   \hat{H} = \begin{pmatrix} \omega^{X}(-i\nabla) - i
@@ -188,15 +188,17 @@ presented later.
 %
 To further simplify our analysis, we assume here that the UP
 dispersion does not get populated by parametric scattering processes
-and thus, by means of the Hopfield coefficients $2X_{\vt{k}}^2,
-2C_{\vt{k}}^2 = 1 \pm (\omega_{\vt{k}}^{C} -
+and thus, by means of the Hopfield coefficients
+$2X_{\vt{k}}^2, 2C_{\vt{k}}^2 = 1 \pm (\omega_{\vt{k}}^{C} -
 \omega_{\vt{k}}^{X})/\sqrt{(\omega_{\vt{k}}^{C} -
   \omega_{\vt{k}}^{X})^2 + \Omega_R^2}$, we project the
 GPE~\eqref{eq:gpequ} onto the LP
-component~\cite{Ciuti_2001,Wouters_2007_b} $\psi_{\vt{k}}^{} =
-X_{\vt{k}} \psi_{X,\vt{k}} + C_{\vt{k}} \psi_{C,\vt{k}}$,
-where $\psi(\vt{r},t) = \sum_{\vt{k}} e^{i\vt{k}\cdot \vt{r}}
-\psi_{\vt{k}}^{} (t)$:
+component~\cite{Ciuti_2001,Wouters_2007_b}
+$\psi_{\vt{k}}^{} = X_{\vt{k}} \psi_{X,\vt{k}} + C_{\vt{k}}
+\psi_{C,\vt{k}}$, where
+$\psi(\vt{r},t) = \sum_{\vt{k}} e^{i\vt{k}\cdot \vt{r}}
+\psi_{\vt{k}}^{} (t)$. As detailed in Sec.~\ref{sec:mean-field}, we
+obtain Eq.~\eqref{eq:mom-GPE}:
 %
 \begin{multline}
   i\partial_t \psi_{\vt{k}}^{} = \left[\omega_{\vt{k}}^{LP} -
@@ -253,7 +255,8 @@ In the limit where the homogeneously pumped system is only weakly
 perturbed by the external potential $V_d(\vt{r})$, we apply a
 linear-response analysis~\cite{Astrakharchik_2004}: The LP field is
 expanded around the mean-field terms for the three $n=1,2,3=s,p,i$ OPO
-states~\cite{Whittaker_2005},
+states~\cite{Whittaker_2005} (see Eqs.~\eqref{eq:3-state-ansatz}
+and~\eqref{eq:pump-fluctuations})
 %
 \begin{equation}
   \psi_{\tilde{\vt{k}}}^{} = \sum_{n=1}^3 e^{-i \omega_n t}
@@ -263,17 +266,18 @@ states~\cite{Whittaker_2005},
 \label{eq:expan}
 \end{equation}
 %
-where $\tilde{\vt{k}} = \vt{k} - \vt{k}_n$. Eq.~\eqref{eq:efflp}
-is expanded linearly in both the fluctuation terms,
-$u_{n,\tilde{\vt{k}}}^{}$ and $v_{n,\tilde{\vt{k}}}^{}$, as well
-as the defect potential.  At zeroth order, the three complex uniform
+where $\tilde{\vt{k}} = \vt{k} - \vt{k}_n$. Eq.~\eqref{eq:efflp} is
+expanded linearly in both the fluctuation terms,
+$u_{n,\tilde{\vt{k}}}^{}$ and $v_{n,\tilde{\vt{k}}}^{}$, as well as
+the defect potential.  At zeroth order, the three complex uniform
 mean-field equations can be solved to obtain the dependence of the
-signal, pump and idler energy blueshifts, $\epsilon_n = g_X
-X^2_{\vt{k}_n} |\psi_{n}^{}|^2$ on the system
-parameters~\cite{Wouters_2007_b}. A typical behaviour of
-$\epsilon_n$ as a function of the rescaled pump intensity $I_p = g_X
-C_{\vt{k}_p}^2 f_p^2/X_{\vt{k}_p}^2$ in the optical limiter regime
-is plotted in the left panel of Fig.~\ref{fig:spect}.
+signal, pump and idler energy blueshifts,
+$\epsilon_n = g_X X^2_{\vt{k}_n} |\psi_{n}^{}|^2$ on the system
+parameters~\cite{Wouters_2007_b}. A typical behaviour of $\epsilon_n$
+as a function of the rescaled pump intensity
+$I_p = g_X C_{\vt{k}_p}^2 f_p^2/X_{\vt{k}_p}^2$ in the optical limiter
+regime is plotted in the left panel of Fig.~\ref{fig:spect} (compare
+to Fig.~\ref{fig:spi} of Sec.~\ref{sec:opo}).
 %
 At first order, one obtains six coupled equations diagonal in momentum
 space~\cite{Wouters_2007}
@@ -284,15 +288,24 @@ space~\cite{Wouters_2007}
 \label{eq:fluct}
 \end{equation}
 %
-for the six-component vector $\vt{w}_{\tilde{\vt{k}}} =
-(u_{n,\tilde{\vt{k}}}^{} , v_{n,\tilde{\vt{k}}}^{})^{T}$ and for
-the potential part, $\bm{\Psi}_d = (\psi_n^{} C_{\vt{k}_n}
-C_{\vt{k} + \vt{k}_n} V_d(\vt{k}),-\psi_n^* C_{\vt{k}_n}
-C_{\vt{k}_n - \vt{k}} V_d(-\vt{k}))^{T}$. In ~\eqref{eq:fluct}
-we have only kept the terms oscillating at the frequencies $\omega_n
-\pm \omega$ and neglected the other terms in the expansion (i.e.,
-$2\omega_n - \omega_m \pm \omega$), which are oscillating at
-frequencies far from the LP band, and thus with negligible amplitudes.
+for the six-component vector
+$\vt{w}_{\tilde{\vt{k}}} = (u_{n,\tilde{\vt{k}}}^{} ,
+v_{n,\tilde{\vt{k}}}^{})^{T}$ and for the potential part,
+$\bm{\Psi}_d = (\psi_n^{} C_{\vt{k}_n} C_{\vt{k} + \vt{k}_n}
+V_d(\vt{k}),-\psi_n^* C_{\vt{k}_n} C_{\vt{k}_n - \vt{k}}
+V_d(-\vt{k}))^{T}$. To understand the origin of the factor $1/2$ in
+Eq.~\eqref{eq:fluct}, it is sufficient to consider one component only,
+and start from Eq.~\eqref{eq:mfield} used in Sec.~\ref{sec:linea}. The
+connection becomes clear once we write the fluctuation part as
+$\delta\psi(\rv,t) = \frac{1}{2}\left\{\delta\psi(\rv,t)
+  +\left[\delta\psi^{\star}(\rv,t)\right]^{\star}\right\}$ and compare
+it to Eq.~\eqref{eq:pump-fluctuations} of Sec.~\ref{sec:eq-state}.
+
+In ~\eqref{eq:fluct} we have only kept the terms oscillating at the
+frequencies $\omega_n \pm \omega$ and neglected the other terms in the
+expansion (i.e., $2\omega_n - \omega_m \pm \omega$), which are
+oscillating at frequencies far from the LP band, and thus with
+negligible amplitudes.
 %
 In the particlelike and the holelike channels, the Bogoliubov matrix
 determining the spectrum of excitations can be written
@@ -361,7 +374,15 @@ where $+$ ($-$) corresponds to the $u$ ($v$) particlelike (holelike)
 branch.
 %
 The OPO solution is stable (shaded area in Fig.~\ref{fig:spect}) as
-far as $\Im[\omega_{n,(u,v),\tilde{\vt{k}}}] < 0$.
+far as $\Im[\omega_{n,(u,v),\tilde{\vt{k}}}] < 0$. Note also that,
+owing to the $U(1)$ symmetry of the OPO equations of motion (see
+Sec.~\ref{sec:opo}), no restoring force would oppose a rotation of the
+signal-idler phases, meaning that the generator of such global
+rotations,
+$(i\psi_s,0,-i\psi_i,-i\psi_{s}^{\star},0,i\psi_{i}^{\star})$, is an
+eigenvector of $\mathcal{L}_{\tilde{\vt{k}} = 0}$ with eigenvalue
+$0$~\cite{Wouters_2007}.
+
 
 The shape of the patterns, or Cherenkov-like waves, resulting from the
 elastic scattering of the OPO 3-fluids against the static ($\omega=0$)
@@ -719,8 +740,8 @@ a full numerical approach.
 \subsection{Full numerics}
 \label{subsec:detun}
 The classical driven-dissipative non-linear Gross-Pitaevskii equation
-(GPE) for the coupled exciton and cavity fields $\psi_{X,C}
-(\vt{r},t)$
+(GPE) for the coupled exciton and cavity fields
+$\psi_{X,C} (\vt{r},t)$ (as given in Sec.~\ref{sec:model-opo})
 %
 \begin{equation}
   i\partial_t \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix} =
@@ -1159,10 +1180,10 @@ linear-response formalism in Chapter~\ref{cha:opo}, resulting in
 Figs.~\ref{fig:spect}, \ref{fig:ereal}, \ref{fig:bogol},
 \ref{fig:ksp07}, \ref{fig:ksm04}, \ref{fig:range},
 and~\ref{fig:uncou}. The figures are plotted using the
-\textsc{matplotlib} library, and the 3 coupled nonlinear equations of
-state describing the OPO regime are solved using \textsc{PHCpack}, a
-general-purpose solver for polynomial systems by homotopy continuation
-methods.
+\textsc{matplotlib} library v1.4.3, and the 3 coupled nonlinear
+equations of state describing the OPO regime are solved using
+\textsc{PHCpack} v2.3.86, a general-purpose solver for polynomial
+systems, based on homotopy continuation methods.
 %
 \input{anc/scripts/source_code_opo}
 \end{subappendices}

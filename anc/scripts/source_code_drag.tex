@@ -1,0 +1,117 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PY{k}{using} \PY{n}{PyPlot}
+\PY{k}{import} \PY{n}{DSP}\PY{p}{:} \PY{n}{fftshift}\PY{p}{,} \PY{n}{fftfreq}
+\PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{sider}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{n}\PY{p}{)}
+    \PY{n}{Δ} \PY{o}{=} \PY{l+m+mi}{2}\PY{n}{l}\PY{o}{/}\PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}
+    \PY{o}{\PYZhy{}}\PY{n}{l}\PY{p}{:}\PY{n}{Δ}\PY{p}{:}\PY{n}{l}
+\PY{k}{end}
+\PY{n}{sidek}\PY{p}{(}\PY{n}{l}\PY{p}{,} \PY{n}{n}\PY{p}{)} \PY{o}{=} \PY{l+m+mi}{2}\PY{n+nb}{pi}\PY{o}{*}\PY{n}{fftshift}\PY{p}{(}\PY{n}{fftfreq}\PY{p}{(}\PY{n}{n}\PY{p}{,} \PY{p}{(}\PY{n}{n}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2}\PY{n}{l}\PY{p}{)}\PY{p}{)}
+\PY{n}{ε}\PY{p}{(}\PY{n}{ky}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{kx}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{Δp}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{n}{kx}\PY{o}{\PYZca{}}\PY{l+m+mi}{2} \PY{o}{+} \PY{n}{ky}\PY{o}{\PYZca{}}\PY{l+m+mi}{2}\PY{p}{)}\PY{o}{/}\PY{l+m+mi}{2} \PY{o}{\PYZhy{}} \PY{n}{Δp}
+\PY{n}{λ1}\PY{p}{(}\PY{n}{ky}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{kx}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{vp}\PY{p}{,} \PY{n}{Δp}\PY{p}{,} \PY{n}{κ}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{ky}\PY{o}{*}\PY{n}{vp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{kx}\PY{o}{*}\PY{n}{vp}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+           \PY{o}{\PYZhy{}}\PY{n+nb}{im}\PY{o}{*}\PY{n}{κ} \PY{o}{+} \PY{n}{sqrt}\PY{p}{(}\PY{n}{ε}\PY{p}{(}\PY{n}{ky}\PY{p}{,} \PY{n}{kx}\PY{p}{,} \PY{n}{Δp}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{ε}\PY{p}{(}\PY{n}{ky}\PY{p}{,} \PY{n}{kx}\PY{p}{,} \PY{n}{Δp}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{0.}\PY{o}{*}\PY{n+nb}{im}\PY{p}{)}\PY{p}{)}
+\PY{n}{λ2}\PY{p}{(}\PY{n}{ky}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{kx}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{vp}\PY{p}{,} \PY{n}{Δp}\PY{p}{,} \PY{n}{κ}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{p}{(}\PY{n}{ky}\PY{o}{*}\PY{n}{vp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{kx}\PY{o}{*}\PY{n}{vp}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+           \PY{o}{\PYZhy{}}\PY{n+nb}{im}\PY{o}{*}\PY{n}{κ} \PY{o}{\PYZhy{}} \PY{n}{sqrt}\PY{p}{(}\PY{n}{ε}\PY{p}{(}\PY{n}{ky}\PY{p}{,} \PY{n}{kx}\PY{p}{,} \PY{n}{Δp}\PY{p}{)}\PY{o}{*}\PY{p}{(}\PY{n}{ε}\PY{p}{(}\PY{n}{ky}\PY{p}{,} \PY{n}{kx}\PY{p}{,} \PY{n}{Δp}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{2}\PY{p}{)} \PY{o}{+} \PY{l+m+mf}{0.}\PY{o}{*}\PY{n+nb}{im}\PY{p}{)}\PY{p}{)}
+\PY{n}{ψtmom}\PY{p}{(}\PY{n}{ky}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{kx}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{gv}\PY{p}{,} \PY{n}{vp}\PY{p}{,} \PY{n}{Δp}\PY{p}{,} \PY{n}{κ}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{n}{gv}\PY{o}{*}\PY{p}{(}\PY{n}{ε}\PY{p}{(}\PY{n}{ky}\PY{p}{,} \PY{n}{kx}\PY{p}{,} \PY{n}{Δp}\PY{p}{)}
+                                    \PY{o}{\PYZhy{}}\PY{p}{(}\PY{n}{ky}\PY{o}{*}\PY{n}{vp}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+} \PY{n}{kx}\PY{o}{*}\PY{n}{vp}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)} \PY{o}{+} \PY{n+nb}{im}\PY{o}{*}\PY{n}{κ}\PY{p}{)}\PY{o}{/}
+                     \PY{p}{(}\PY{n}{λ1}\PY{p}{(}\PY{n}{ky}\PY{p}{,} \PY{n}{kx}\PY{p}{,} \PY{n}{vp}\PY{p}{,} \PY{n}{Δp}\PY{p}{,} \PY{n}{κ}\PY{p}{)}\PY{o}{*}\PY{n}{λ2}\PY{p}{(}\PY{n}{ky}\PY{p}{,} \PY{n}{kx}\PY{p}{,} \PY{n}{vp}\PY{p}{,} \PY{n}{Δp}\PY{p}{,} \PY{n}{κ}\PY{p}{)}\PY{p}{)}\PY{p}{)}
+\PY{k}{type}\PY{n+nc}{ }\PY{n+nc}{System}
+    \PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int} \PY{c}{\PYZsh{} nx = ny = N}
+    \PY{n}{gv}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{L}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64} \PY{c}{\PYZsh{} lx = ly = L}
+    \PY{n}{v}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{Δ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{ψk}\PY{p}{:}\PY{p}{:}\PY{n}{Matrix}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}
+    \PY{n}{ψr}\PY{p}{:}\PY{p}{:}\PY{n}{Matrix}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}
+    \PY{n}{k}\PY{p}{:}\PY{p}{:}\PY{n}{FloatRange}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}
+    \PY{n}{r}\PY{p}{:}\PY{p}{:}\PY{n}{FloatRange}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}
+\PY{k}{end}
+\PY{k}{function}\PY{n+nf}{ }\PY{n+nf}{System}\PY{p}{(}\PY{n}{N}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int}\PY{p}{,} \PY{n}{gv}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{L}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{v}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,}
+                \PY{n}{Δ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)}
+    \PY{n}{r} \PY{o}{=} \PY{n}{sider}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{N}\PY{p}{)}
+    \PY{n}{k} \PY{o}{=} \PY{n}{sidek}\PY{p}{(}\PY{n}{L}\PY{p}{,}\PY{n}{N}\PY{p}{)}
+    \PY{n}{ψmom} \PY{o}{=} \PY{n}{Array}\PY{p}{(}\PY{n}{Complex}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{n}{N}\PY{p}{,}\PY{n}{N}\PY{p}{)}
+    \PY{n}{ψmom} \PY{o}{=} \PY{p}{[}\PY{n}{ψtmom}\PY{p}{(}\PY{n}{momy}\PY{p}{,} \PY{n}{momx}\PY{p}{,} \PY{n}{gv}\PY{p}{,} \PY{p}{(}\PY{l+m+mf}{0.}\PY{p}{,}\PY{n}{v}\PY{p}{)}\PY{p}{,} \PY{n}{Δ}\PY{p}{,} \PY{n}{κ}\PY{p}{)} \PY{k}{for} \PY{n}{momx} \PY{k}{in} \PY{n}{k}\PY{p}{,}
+            \PY{n}{momy} \PY{k}{in} \PY{n}{k}\PY{p}{]}
+    \PY{n}{ψmom\PYZus{}cp} \PY{o}{=} \PY{n}{copy}\PY{p}{(}\PY{n}{ψmom}\PY{p}{)}
+    \PY{c}{\PYZsh{}add constant part to wavefunction at k = 0}
+    \PY{n}{ψmom\PYZus{}cp}\PY{p}{[}\PY{n}{N}\PY{o}{/}\PY{l+m+mi}{2}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{N}\PY{o}{/}\PY{l+m+mi}{2}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{]} \PY{o}{+}\PY{o}{=} \PY{n}{sqrt}\PY{p}{(}\PY{n}{N}\PY{o}{*}\PY{n}{N}\PY{p}{)}
+    \PY{k}{return} \PY{n}{System}\PY{p}{(}\PY{n}{N}\PY{p}{,} \PY{n}{gv}\PY{p}{,} \PY{n}{L}\PY{p}{,} \PY{n}{v}\PY{p}{,} \PY{n}{Δ}\PY{p}{,} \PY{n}{κ}\PY{p}{,} \PY{n}{abs2}\PY{p}{(}\PY{n}{transpose}\PY{p}{(}\PY{n}{ψmom}\PY{p}{)}\PY{p}{)}\PY{p}{,}
+            \PY{n}{abs2}\PY{p}{(}\PY{n}{transpose}\PY{p}{(}\PY{n}{fftshift}\PY{p}{(}\PY{n}{ifft}\PY{p}{(}\PY{n}{sqrt}\PY{p}{(}\PY{n}{N}\PY{o}{*}\PY{n}{N}\PY{p}{)}\PY{o}{*}\PY{n}{ψmom\PYZus{}cp}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{)}\PY{p}{,}\PY{n}{k}\PY{p}{,}\PY{n}{r}\PY{p}{)}
+\PY{k}{end}
+\PY{n}{System}\PY{p}{(}\PY{n}{L}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{v}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{Δ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{,} \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}\PY{p}{)} \PY{o}{=}
+    \PY{n}{System}\PY{p}{(}\PY{l+m+mi}{512}\PY{p}{,} \PY{l+m+mf}{0.01}\PY{p}{,} \PY{n}{L}\PY{p}{,} \PY{n}{v}\PY{p}{,} \PY{n}{Δ}\PY{p}{,} \PY{n}{κ}\PY{p}{)}
+\PY{k}{type}\PY{n+nc}{ }\PY{n+nc}{Param}
+    \PY{n}{Δ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{L}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{v}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Float64}
+    \PY{n}{zrangek}\PY{p}{:}\PY{p}{:}\PY{p}{(}\PY{k+kt}{Float64}\PY{p}{,}\PY{k+kt}{Float64}\PY{p}{)}
+    \PY{n}{zranger}\PY{p}{:}\PY{p}{:}\PY{p}{(}\PY{k+kt}{Float64}\PY{p}{,}\PY{k+kt}{Float64}\PY{p}{)}
+\PY{k}{end}
+\PY{k}{type}\PY{n+nc}{ }\PY{n+nc}{ParamV}
+    \PY{n}{V}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{n}{Param}\PY{p}{\PYZcb{}}
+\PY{k}{end}
+\PY{n}{ParamV}\PY{p}{(}\PY{n}{Δ}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{n}{κ}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{,}\PY{n}{L}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{,}
+       \PY{n}{v}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{k+kt}{Float64}\PY{p}{\PYZcb{}}\PY{p}{,} \PY{n}{zrangek}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{p}{(}\PY{k+kt}{Float64}\PY{p}{,}\PY{k+kt}{Float64}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{p}{,}
+       \PY{n}{zranger}\PY{p}{:}\PY{p}{:}\PY{n}{Vector}\PY{p}{\PYZob{}}\PY{p}{(}\PY{k+kt}{Float64}\PY{p}{,}\PY{k+kt}{Float64}\PY{p}{)}\PY{p}{\PYZcb{}}\PY{p}{)} \PY{o}{=}
+           \PY{n}{ParamV}\PY{p}{(}\PY{p}{[}\PY{n}{Param}\PY{p}{(}\PY{n}{Δ0}\PY{p}{,}\PY{n}{κ0}\PY{p}{,}\PY{n}{L0}\PY{p}{,}\PY{n}{v0}\PY{p}{,}\PY{n}{zrangek0}\PY{p}{,}\PY{n}{zranger0}\PY{p}{)} \PY{k}{for}
+                   \PY{p}{(}\PY{n}{Δ0}\PY{p}{,}\PY{n}{κ0}\PY{p}{,}\PY{n}{L0}\PY{p}{,}\PY{n}{v0}\PY{p}{,}\PY{n}{zrangek0}\PY{p}{,}\PY{n}{zranger0}\PY{p}{)} \PY{k}{in}
+                   \PY{n}{zip}\PY{p}{(}\PY{n}{Δ}\PY{p}{,}\PY{n}{κ}\PY{p}{,}\PY{n}{L}\PY{p}{,}\PY{n}{v}\PY{p}{,}\PY{n}{zrangek}\PY{p}{,}\PY{n}{zranger}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{k}{import} \PY{n}{Base}\PY{o}{.}\PY{n}{getindex}\PY{p}{,} \PY{n}{Base}\PY{o}{.}\PY{n}{length}\PY{p}{,} \PY{n}{Base}\PY{o}{.}\PY{n}{start}\PY{p}{,} \PY{n}{Base}\PY{o}{.}\PY{n}{next}
+\PY{n}{getindex}\PY{p}{(}\PY{n}{pv}\PY{p}{:}\PY{p}{:}\PY{n}{ParamV}\PY{p}{,}\PY{n}{i}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int64}\PY{p}{)} \PY{o}{=} \PY{n}{pv}\PY{o}{.}\PY{n}{V}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+\PY{n}{length}\PY{p}{(}\PY{n}{pv}\PY{p}{:}\PY{p}{:}\PY{n}{ParamV}\PY{p}{)} \PY{o}{=} \PY{n}{length}\PY{p}{(}\PY{n}{pv}\PY{o}{.}\PY{n}{V}\PY{p}{)}
+\PY{n}{start}\PY{p}{(}\PY{n}{pv}\PY{p}{:}\PY{p}{:}\PY{n}{ParamV}\PY{p}{)} \PY{o}{=} \PY{l+m+mi}{1}
+\PY{n}{next}\PY{p}{(}\PY{n}{pv}\PY{p}{:}\PY{p}{:}\PY{n}{ParamV}\PY{p}{,}\PY{n}{i}\PY{p}{:}\PY{p}{:}\PY{k+kt}{Int64}\PY{p}{)} \PY{o}{=} \PY{p}{(}\PY{n}{pv}\PY{o}{.}\PY{n}{V}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{,}\PY{n}{i}\PY{o}{+}\PY{l+m+mi}{1}\PY{p}{)}
+\PY{c}{\PYZsh{} nondiffusive spectra}
+\PY{n}{pnond} \PY{o}{=} \PY{n}{ParamV}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mf}{0.3472}\PY{p}{,} \PY{o}{\PYZhy{}}\PY{o}{.}\PY{l+m+mi}{25}\PY{p}{,} \PY{l+m+mf}{0.}\PY{p}{]}\PY{p}{,}
+               \PY{o}{.}\PY{l+m+mi}{03}\PY{o}{*}\PY{n}{ones}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,}
+               \PY{l+m+mi}{100}\PY{o}{*}\PY{n}{ones}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,}
+               \PY{l+m+mf}{1.5}\PY{o}{*}\PY{n}{ones}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{,}
+               \PY{p}{[}\PY{p}{(}\PY{l+m+mf}{0.}\PY{p}{,}\PY{o}{.}\PY{l+m+mi}{04}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mf}{0.}\PY{p}{,}\PY{o}{.}\PY{l+m+mi}{03}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{l+m+mf}{0.}\PY{p}{,}\PY{o}{.}\PY{l+m+mi}{01}\PY{p}{)}\PY{p}{]}\PY{p}{,}
+               \PY{p}{[}\PY{p}{(}\PY{o}{.}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mf}{1.4}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{o}{.}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mf}{1.4}\PY{p}{)}\PY{p}{,}\PY{p}{(}\PY{o}{.}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mf}{1.3}\PY{p}{)}\PY{p}{]}\PY{p}{)}
+\PY{n}{snond} \PY{o}{=} \PY{p}{[}\PY{n}{System}\PY{p}{(}\PY{n}{p}\PY{o}{.}\PY{n}{L}\PY{p}{,} \PY{n}{p}\PY{o}{.}\PY{n}{v}\PY{p}{,} \PY{n}{p}\PY{o}{.}\PY{n}{Δ}\PY{p}{,} \PY{n}{p}\PY{o}{.}\PY{n}{κ}\PY{p}{)} \PY{k}{for} \PY{n}{p} \PY{k}{in} \PY{n}{pnond}\PY{p}{]}
+\PY{c}{\PYZsh{}\PYZsh{} Plotting \PYZsh{}\PYZsh{}}
+\PY{n}{fig}\PY{p}{,} \PY{n}{axes} \PY{o}{=} \PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{subplots}\PY{p}{]}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,} \PY{l+m+mi}{6}\PY{p}{)}\PY{p}{)}
+\PY{k}{for} \PY{n}{i} \PY{o}{=} \PY{l+m+mi}{1}\PY{p}{:}\PY{l+m+mi}{3} \PY{c}{\PYZsh{} loop over columns}
+    \PY{c}{\PYZsh{} top row}
+    \PY{n}{ax} \PY{o}{=} \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{n}{i}\PY{p}{]}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{imshow}\PY{p}{]}\PY{p}{(}\PY{n}{clamp}\PY{p}{(}\PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{ψk}\PY{p}{,}
+                      \PY{n}{pnond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{zrangek}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{pnond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{zrangek}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                \PY{n}{origin}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{upper}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{ColorMap}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{gist\PYZus{}heat\PYZus{}r}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{,}
+                \PY{n}{interpolation}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{none}\PY{l+s}{\PYZdq{}}\PY{p}{,}
+                \PY{n}{extent}\PY{o}{=}\PY{p}{[}\PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{k}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{k}\PY{p}{[}\PY{k}{end}\PY{p}{]}\PY{p}{,}
+                        \PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{k}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{k}\PY{p}{[}\PY{k}{end}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}xlabel}\PY{p}{]}\PY{p}{(}\PY{l+s}{L\PYZdq{}}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{delta k\PYZus{}x[m c\PYZus{}s]}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}xticks}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}yticks}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}xlim}\PY{p}{]}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}ylim}\PY{p}{]}\PY{p}{(}\PY{o}{\PYZhy{}}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+    \PY{k}{if} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{1} \PY{c}{\PYZsh{} leftmost panel}
+        \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}ylabel}\PY{p}{]}\PY{p}{(}\PY{l+s}{L\PYZdq{}}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{\PYZbs{}}\PY{l+s}{delta k\PYZus{}y[m c\PYZus{}s]}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+    \PY{k}{else}
+        \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}yticklabels}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}
+    \PY{k}{end}
+    \PY{c}{\PYZsh{} bottom row}
+    \PY{n}{ax} \PY{o}{=} \PY{n}{axes}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{n}{i}\PY{p}{]}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{imshow}\PY{p}{]}\PY{p}{(}\PY{n}{clamp}\PY{p}{(}\PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{ψr}\PY{p}{,}
+                      \PY{n}{pnond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{zranger}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{pnond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{zranger}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{]}\PY{p}{)}\PY{p}{,}
+                \PY{n}{origin}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{upper}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{ColorMap}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{gist\PYZus{}heat\PYZus{}r}\PY{l+s}{\PYZdq{}}\PY{p}{)}\PY{p}{,}
+                \PY{n}{interpolation}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{none}\PY{l+s}{\PYZdq{}}\PY{p}{,}
+                \PY{n}{extent}\PY{o}{=}\PY{p}{[}\PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{r}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{r}\PY{p}{[}\PY{k}{end}\PY{p}{]}\PY{p}{,}
+                        \PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{r}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}\PY{p}{,} \PY{n}{snond}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{o}{.}\PY{n}{r}\PY{p}{[}\PY{k}{end}\PY{p}{]}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}xlabel}\PY{p}{]}\PY{p}{(}\PY{l+s}{L\PYZdq{}}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{x [(m c\PYZus{}s)\PYZca{}\PYZob{}\PYZhy{}1\PYZcb{}]}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}xticks}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}yticks}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}xlim}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{20}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{]}\PY{p}{)}
+    \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}ylim}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mi}{15}\PY{p}{]}\PY{p}{)}
+    \PY{k}{if} \PY{n}{i} \PY{o}{==} \PY{l+m+mi}{1} \PY{c}{\PYZsh{} leftmost panel}
+        \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}ylabel}\PY{p}{]}\PY{p}{(}\PY{l+s}{L\PYZdq{}}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{y [(m c\PYZus{}s)\PYZca{}\PYZob{}\PYZhy{}1\PYZcb{}]}\PY{l+s+si}{\PYZdl{}}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+    \PY{k}{else}
+        \PY{n}{ax}\PY{p}{[}\PY{p}{:}\PY{n}{set\PYZus{}yticklabels}\PY{p}{]}\PY{p}{(}\PY{p}{[}\PY{p}{]}\PY{p}{)}
+    \PY{k}{end}
+\PY{k}{end}
+\PY{n}{fig}\PY{p}{[}\PY{p}{:}\PY{n}{savefig}\PY{p}{]}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{nond.pdf}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{transparent}\PY{o}{=}\PY{n}{true}\PY{p}{,}
+              \PY{n}{pad\PYZus{}inches}\PY{o}{=}\PY{l+m+mf}{0.0}\PY{p}{,} \PY{n}{bbox\PYZus{}inches}\PY{o}{=}\PY{l+s}{\PYZdq{}}\PY{l+s}{tight}\PY{l+s}{\PYZdq{}}\PY{p}{)}
+\PY{n}{plt}\PY{p}{[}\PY{p}{:}\PY{n}{close}\PY{p}{]}\PY{p}{(}\PY{n}{fig}\PY{p}{)}
+\end{Verbatim}

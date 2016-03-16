@@ -521,15 +521,20 @@ previous notation, this corresponds to
   \phi_0(\rv) = \psi_0 \exp \left( i \bm{k_0} \rv \right)
 \end{equation}
 % 
-and a chemical potential $\mu = k_0^2/(2m) + g \rho_0$. Since we
-have no trap, $U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} reduces to
+and a chemical potential $\mu = k_0^2/(2m) + g \rho_0$. Since we have
+no trap, $U_0(\rv)=0$, and Eq.~\eqref{eq:GP-atoms} produces the
+equation of state
 %
 \begin{equation}\label{eq:atom-MF}
   \omega_0 - \left( \frac{k_0^2}{2m} + g \rho_0 \right) = 0
 \end{equation}
 % 
 where we have introduced the condensate density
-$\rho_0 \equiv N_0 \abs{\phi_0}^2$.  
+$\rho_0 \equiv N_0 \abs{\phi_0}^2$. Since the global phase of the
+wavefunction $\phi_0$ can be arbitrarily chosen without physical
+consequences, it is important to note that Eq.~\eqref{eq:atom-MF}
+posesses a $U(1)$ gauge symmetry under global rotations of the
+condensate phase.
 
 We now introduce a weak perturbation in the form of a localized defect
 potential $\delta U(\rv, t) = V_d(\rv)$, which can represent for
@@ -568,8 +573,6 @@ c_s$. From Ref.~\cite{9783319002651}.
     % 
 }\label{fig:bogo-cherenkov}
 \end{figure}
-% TODO: compare to shallowest water dispersion, see Fig.8(f) of
-% swimming ducks pdf
 
 Using Eq.~\eqref{eq:atom-MF}, the GP Hamiltonian becomes
 $H_{\text{GP}} = -\frac{\nabla^2}{2m} - \frac{k_0^2}{2m}$ and the
@@ -606,7 +609,7 @@ definitions above, one can easily obtain the commutator
 \begin{equation}\label{eq:trans-commutator}
   \left[ \hat{\bm{k}},\, \hat{T}(\bm{k_0}) \right] = -\bm{k_0}\hat{T}(\bm{k_0}) 
 \end{equation}
-% 
+% n
 This allows us to rewrite the following expressions
 \begin{align}\label{eq:products}
   \begin{split}
@@ -624,8 +627,8 @@ operator
   \hat{\mathcal{T}}(\bm{k_0}) = \mat{\hat{T}(\bm{k_0})}{0}{0}{\hat{T}^{\dagger}(\bm{k_0})}
 \end{equation}
 % 
-such that a unitary transformation of our operator $\Lca$ now restores translational
-symmetry. Indeed, one can see that
+such that a unitary transformation of our operator $\Lca$ now restores
+translational symmetry. Indeed, one can see that
 %
 \begin{equation}\label{eq:translated-L}
   \hat{\mathcal{T}} \hat{\Lca} \hat{\mathcal{T}}^{\dagger} = \mat{\frac{\left(\kop + \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0}{g N_0 \psi_0^2}{- g N_0 \psi_0^{\star 2}}{-\left[\frac{\left(\kop - \bm{k_0}\right)^2}{2m} - \frac{k_0^2}{2m} + g\rho_0 \right]}
@@ -642,9 +645,13 @@ equation corresponding to Eq.~\eqref{eq:translated-L} as
 % 
 where we have recovered the matrix representation of
 Eq.~\eqref{eq:LGP}, and introduced the notation
-$\omega_\sigma(\kv) = \bm{v}_0 \kv + \epsilon_\sigma(k)$. Here
-$\sigma = \pm$ labels the 2 different eigenmodes, and we defined the
-condensate speed $\bm{v}_0 \equiv \frac{\kv_0}{m}$.
+%
+\begin{equation}\label{eq:boosted-bogoliubov}
+  \omega_\sigma(\kv) = \bm{v}_0 \kv + \epsilon_\sigma(k)
+\end{equation}
+% 
+Here $\sigma = \pm$ labels the 2 different eigenmodes, and we defined
+the condensate speed $\bm{v}_0 \equiv \frac{\kv_0}{m}$.
 
 Notice that the $k=0$ mode has only one eigenvector. However, one can
 safely exclude it as this mode does not imply energy or momentum
@@ -656,8 +663,8 @@ excitation spectrum
   \epsilon_\sigma(k) = \sigma \left[\frac{k^2}{2m}\left(\frac{k^2}{2m} + 2 g \rho_0 \right) \right]^{\frac{1}{2}}
 \end{equation}
 % 
-with $\sigma = \pm$. Here $k$ represents the momentum of the
-quasiparticle excitation with respect to the momentum $k_0$ of the
+with $\sigma = \pm$, as before. Here $k$ represents the momentum of
+the quasiparticle excitation with respect to the momentum $k_0$ of the
 condensate. Note that the complex amplitudes $U_\sigma(k)$ and
 $V_\sigma(k)$ only depend on the absolute value of $\kv$, while the
 (real) spectrum of Eq.~\eqref{eq:translated-L}, $\omega_\sigma(\kv)$,
@@ -907,12 +914,26 @@ the context of atomic condensates, as well as for microcavity
 polaritons (the topic of Chapter~\ref{cha:polaritons}), where it goes
 by the name of Rayleigh scattering ring~\cite{Ciuti_2005}.
 
-
-
-% TODO: U(1) symmetry of the MF eq                                    
-% TODO: no macroscopic curent is flowing across the BEC in the gs
-% TODO: Goldstone mode (zero sound)
-
+Before closing this Section, it is worth making the connection between
+the Cherenkov waves shown in the bottom panels of
+Fig.~\ref{fig:bogo-cherenkov} and the more mundane example of surface
+waves created at the interface between a fluid layer and a gas. We
+first need to define the \textit{capillary length}
+$\ell_{\gamma} = \sqrt{\gamma/(g\rho)}$, with $\gamma$ the surface
+tension of the fluid-gas interface, $g$ the gravitational constant
+(not to be confused with the interaction coupling constant
+Eq.~\eqref{eq:g-constant}), and $\rho$ the fluid density. Now, if the
+height $h$ of the fluid layer in question is smaller than
+$\sqrt{3} \ell_{\gamma}$, the fluid dispersion is dominated by
+capillary effects, and its form is similar to
+Eq.~\eqref{eq:bogoliubov} (see Ref.~\cite{9783319002651}). But we have
+just seen that the form of the dispersion (more precisely, its
+intersection with the $\bm{v}_0\kv$ plane) determines the shape of the
+ougoing waves. This means that, for very shallow fluids, we will
+observe similar wavefronts to the ones of
+Fig.~\ref{fig:bogo-cherenkov}. More concretely, for the water-air
+interface, a thickness of $h = 1$ millimeter and a speed of
+$v_0 = 14$ cm/s should do the trick!
 
 \section{Superfluidity}
 \label{sec:superfluid-atom}
@@ -987,23 +1008,25 @@ each associated with its own mass current and flow energy.
 \paragraph{Superfluid velocity}
 We now look at the $N_0$ atoms condensed in the state $\phi_0$, in
 order to investigate the origin of the superfluid velocity
-$\bm{v}_s$. One can express the condesate wavefunction in the form
+$\bm{v}_s$. One can express the condesate wavefunction in the Madelung
+form
 %
 \begin{equation}\label{eq:label}
-  \phi_0 (\rv, t) = \sqrt{\frac{\rho_s(\rv,t)}{N_0(t)}} e^{i\chi(\rv,t)}
+  \phi_0 (\rv, t) = \sqrt{\frac{\rho_s(\rv,t)}{N_0(t)}} e^{i\theta(\rv,t)}
 \end{equation}
 % 
 with $\rho_s = N_0\abs{\phi_0}^2$ being the particle
 density\footnote{We again emphasize that, in general, the superfluid
   density $\rho_s$ is \textbf{not} equal to the density of condensed atoms.}
-and $\chi$ the condensate phase, both real functions.
+and $\theta$ the condensate phase, both real functions.
 %
 The quantum mechanical definition of the current density of the
-condensate yields\footnote{We explicitly re-introduced $\hbar$ in the
-  equations of this Section to show their quantum nature.}
+condensate yields (see Appendix~\ref{app:field-theory})\footnote{We
+  explicitly re-introduced $\hbar$ in the equations of this Section to
+  show their quantum nature.}
 \begin{align}\label{eq:bec-current}
   \bm{j}_s(\rv,t) & = N_0(t)\frac{\hbar}{2mi}\left[\phi_0^{\star}(\rv,t)\bm{\nabla}\phi_0(\rv,t) - \phi_0(\rv,t)\bm{\nabla}\phi_0^{\star}(\rv,t)\right]\\
-& = N_0(t) \abs{\phi_0(\rv,t)}^2 \frac{\hbar}{m} \bm{\nabla}\chi(\rv,t)
+& = N_0(t) \abs{\phi_0(\rv,t)}^2 \frac{\hbar}{m} \bm{\nabla}\theta(\rv,t)
 \end{align}
 with $m$, as before, representing the particle mass. The ratio
 $\bm{v}_s \equiv \bm{j}_s/\rho_s$ will then be the condensate velocity
@@ -1011,7 +1034,7 @@ $\bm{v}_s \equiv \bm{j}_s/\rho_s$ will then be the condensate velocity
 historical reasons detailed above)
 %
 \begin{equation}\label{eq:supervelocity}
-  \bm{v}_s(\rv,t) = \frac{\hbar}{m} \bm{\nabla}\chi(\rv,t)
+  \bm{v}_s(\rv,t) = \frac{\hbar}{m} \bm{\nabla}\theta(\rv,t)
 \end{equation}
 % 
 
@@ -1232,7 +1255,7 @@ replacing the canonical momentum $\bm{p}$ by the kinematic one:
 $\bm{p} \rightarrow \bm{p} - e\bm{A}(\rv)$. As a result, we get
 %
 \begin{equation}\label{eq:superconducting-velocity}
-  \bm{v}_s(\rv) = \frac{\hbar}{2m}\left(\bm{\nabla}\chi(\rv) -
+  \bm{v}_s(\rv) = \frac{\hbar}{2m}\left(\bm{\nabla}\theta(\rv) -
     \frac{2e\bm{A}(\rv)}{\hbar}\right)
 \end{equation}
 % 
@@ -1313,13 +1336,14 @@ fractions~\cite{Cooper2010,Carusotto2011,John2011}.
 \paragraph{BEC Experiments}
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=.5\linewidth]{hole}
+  \includegraphics[width=.8\linewidth]{hole}
   \caption{
     % 
     Scanning a blue-detuned laser beam with velocity $v$, though the
-    cigar-shaped atomic condensate, creates a density hole larger than the
-    healing length. The friction acting on this hole can then be used to asess
-    the Landau critical velocity. From Ref.~\cite{Raman_1999}.
+    cigar-shaped atomic condensate (left panel), creates a density hole
+    (right panel) larger than the healing length. The friction acting on
+    this hole can then be used to asess the Landau critical velocity. From
+    Ref.~\cite{Raman_1999}.
     % 
   }\label{fig:hole}
 \end{figure}
@@ -1345,8 +1369,10 @@ Chevy and coworkers~\cite{Chevy2000} succeded in stirring an atomic
 condensate, and then measuring its angular momentum using the
 precession of certain collective modes.  Other studies were also shown
 to produce a metastable single-vortex state (and even vortex lattices)
-that persist, despite not being the ground state of the
-system. Interferometric measurements are commonly employed to see the
+that persist, despite not being the ground state of the system (in
+fact, it can be shown that the atomic BEC ground state is
+characterised by the absence of any macroscopic current flow).
+Interferometric measurements are commonly employed to see the
 circulation around these vortex cores.  However, the lifetime of the
 vortices is limited by how long it takes before they escape the
 magnetic trap. To circumvent this limitation, persistent currents in
@@ -1376,68 +1402,172 @@ than the speed of sound, presumably due to vortex creation by the
 macroscopic defect.
 
 
-\section{Optical lattices}
-\label{sec:optical-lattice}
-% goal: 600 words
-%
-\begin{figure}[tb]\centering
-  \includegraphics[width=.7\linewidth]{1Dlattice}
-  \caption{
-    % 
-    1D optical lattice created by counterpropagating laser beams. From Ref.~\cite{RevModPhys.78.179}.
-    % 
-  }\label{fig:label}
-\end{figure}
-% 
+% \section{Optical lattices}
+% \label{sec:optical-lattice}
+% % goal: 600 words
+% %
+% \begin{figure}[tb]\centering
+%   \includegraphics[width=.7\linewidth]{1Dlattice}
+%   \caption{
+%     % 
+%     1D optical lattice created by counterpropagating laser beams. From Ref.~\cite{RevModPhys.78.179}.
+%     % 
+%   }\label{fig:label}
+% \end{figure}
+% % 
 
+% % TODO: check implementation of HH in aidelsburger2013hh, miyake2013hh.
 
-\section{Harper-Hofstadter model}
-\label{sec:hh-atoms}
-% goal: 1800 words
-% TODO: check notation in figures and main text corresponds to Landau chapter
-It was recently realized in the context of ultracold gases, see
-Refs.~\cite{aidelsburger2013hh,miyake2013hh}.
+% \section{Harper-Hofstadter model}
+% \label{sec:hh-atoms}
+% % goal: 1800 words
+% % TODO: check notation in figures and main text corresponds to Landau chapter
+% It was recently realized in the context of ultracold gases, see
+% Refs.~\cite{aidelsburger2013hh,miyake2013hh}.
+% %
+% \begin{equation}\label{eq:hh-ham}
+%   \mathcal{H}_0 = -J\sum_{m,n}(e^{i
+%     \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} +e^{i
+%     \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{H.c.}
+% \end{equation}
+% % 
+% Diagonalization is presented in detail in
+% Ref.~\cite{jain2007composite}.
+% %
+% \begin{figure}[tb]\centering
+%   \includegraphics[width=.5\linewidth]{lattice}
+%   \caption{
+%     % 
+%     2D lattice of the Harper-Hofstadter model.
+%     % 
+%   }\label{fig:hh-lattice}
+% \end{figure}
+% % 
+% %
+% \begin{figure}[tb]\centering
+%   \includegraphics[width=.7\linewidth]{butterfly}
+%   \caption{
+%     % 
+%     Hofstadter's butterfly. 
+%     % TODO: add reference
+%     % 
+%   }\label{fig:butterfly}
+% \end{figure}
+% % 
+% %
+% \begin{figure}[tb]\centering
+%   \includegraphics[width=\linewidth]{bands}
+%   \caption{
+%     % 
+%     Energy bands of the Harper-Hofstadter Hamiltonian Eq.~\eqref{eq:hh-ham}.
+%     % TODO: define BW and $\Delta E$ in the text
+%     % 
+%   }\label{fig:hh-energy-levels}
+% \end{figure}
+% % 
+
+\begin{subappendices}
+\section{Conservation laws for the GP field}
+\label{app:field-theory}
 %
-\begin{equation}\label{eq:hh-ham}
-  \mathcal{H}_0 = -J\sum_{m,n}(e^{i
-    \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} +e^{i
-    \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{H.c.}
+In this Appendix we use (classical) field theory to derive the
+conservation laws associated with the time-dependent Gross-Pitaevskii
+Eq.~\eqref{eq:TDGP}. We start by recasting the TDGP using Einstein's
+summation convention, with the notation $\bm{x} \equiv (x_1, x_2,
+x_3)$ and $\partial_k \equiv \frac{\partial}{\partial x_k}$ ($k =
+1,2,3$)
+%
+\begin{equation}\label{eq:GP-field}
+    i\hbar\partial_t\phi_0(\bm{x},t) = 
+  \left[-\frac{\hbar^2}{2m}\partial_k\partial_k + U(\bm{x},t) + g N_0 |\phi_0(\bm{x},t)|^2\right]\phi_0(\bm{x},t)
 \end{equation}
 % 
-Diagonalization is presented in detail in
-Ref.~\cite{jain2007composite}.
+This equation can be deduced by extremalization of the action
+$S = \int dt \int d\bm{x} \,L$, where the Lagrangian density
+$L = L[\p, \pa \p, \ps, \pa \ps, \xv, t]$ is given by
 %
-\begin{figure}[tb]\centering
-  \includegraphics[width=.5\linewidth]{lattice}
-  \caption{
-    % 
-    2D lattice of the Harper-Hofstadter model.
-    % 
-  }\label{fig:hh-lattice}
-\end{figure}
+\begin{equation}\label{eq:GP-action}
+  L = -N_0\left[-\hbar \imag\left(\p \pa_t \ps\right) + 
+\frac{\hbar^2}{2m}\pa_k\p\pa_k\ps + U\abs{\p}^2 + \frac{g}{2}N_0\abs{\p}^4 \right]
+\end{equation}
 % 
+For compactness, let $x_4 = i c t$,\footnote{$c$ is the speed of
+  light, but it is just a constant for our purposes, and will drop out
+  from all final results.}  and we can define the canonical
+energy-momentum tensor, following the usual field-theory
+prescription~\cite{wentzel2003quantum}
 %
-\begin{figure}[tb]\centering
-  \includegraphics[width=.7\linewidth]{butterfly}
-  \caption{
-    % 
-    Hofstadter's butterfly. % TODO: add reference
-    % 
-  }\label{fig:butterfly}
-\end{figure}
+\begin{equation}\label{eq:en-mom-tensor}
+  T_{\mu \nu} = - \pa_{\nu} \p \frac{\pa L}{\pa (\pa_{\mu} \p)} - \pa_{\nu} \ps \frac{\pa L}{\pa (\pa_{\mu} \ps)} + L \delta_{\mu \nu}
+\end{equation}
 % 
+where the indices $\mu,\,\nu$ run from 1 to 4. As the complex scalar
+field $\ps$ (and $\p$) satisfy the Euler-Lagrange equations resulting
+in Eq.~\eqref{eq:GP-field} (and its complex conjugate), we have
 %
-\begin{figure}[tb]\centering
-  \includegraphics[width=\linewidth]{bands}
-  \caption{
-    % 
-    Energy bands of the Harper-Hofstadter Hamiltonian Eq.~\eqref{eq:hh-ham}.
-    % TODO: define WB and $\Delta E$ in the text
-    % 
-  }\label{fig:hh-energy-levels}
-\end{figure}
+\begin{equation}\label{eq:conservation-laws}
+  \pa_{\mu} T_{\mu\nu} = \pa_{\nu} L
+\end{equation}
 % 
+from which energy and momentum conservation immediately
+follow.\footnote{Conservation of angular momentum imposes the
+  additional requirement that $T_{\mu\nu} = T_{\nu\mu}$.}
+%
+To see this explicitly, we consider separately the case $\nu = 4$ and
+split Eq.~\eqref{eq:conservation-laws} into
+%
+\begin{align}
+  \pa_t T_{4 4} + i c \pa_{k} T_{k 4} & = \pa_t L\label{energy-cons}\\
+  \pa_t T_{4 l} + i c \pa_{k} T_{k l} & = i c \pa_{l} L\label{mom-cons}
+\end{align}
+%
+Direct subsitution into Eq.~\eqref{eq:en-mom-tensor} shows that
+$T_{4 4} = -H$, where the energy density $H$ is given by
+%
+\begin{equation}\label{eq:en-density}
+  H = N_0\left[
+\frac{\hbar^2}{2m}\pa_k\p\pa_k\ps + U\abs{\p}^2 + \frac{g}{2}N_0\abs{\p}^4 \right]
+\end{equation}
+% 
+while $T_{k 4} = \frac{i}{c}S_k$, with the energy current density
+(energy source)
+%
+\begin{equation}\label{eq:energy-source}
+  S_k = -\frac{N_0\hbar^2}{2m}\left(\pa_t\p\pa_k\ps + \text{c.c}\right)
+\end{equation}
+% 
+Regarding Eq.~\eqref{mom-cons}, we get $T_{4 l} = i c J_l$, with the
+current density (compare to Eq.~\eqref{eq:bec-current})
+\begin{equation}\label{eq:current}
+  J_l = N_0\hbar\imag(\ps \pa_l \p)
+\end{equation}
+and the stress (or momentum flux) tensor $\Pi_{kl} \equiv T_{kl}$
+%
+\begin{multline}\label{eq:label}
+  \Pi_{kl} = \frac{N_0\hbar^2}{2m}\left(\pa_k\p\pa_l\ps +
+    \pa_k\ps\pa_l\p\right)\\ + \delta_{kl}\left[\frac{g}{2}N_0\abs{\p}^4 -
+    \frac{N_0\hbar^2}{4m}\left(2\pa_i\p\pa_i\ps + \p\pa_i\pa_i\ps +
+      \ps\pa_i\pa_i\p\right)\right]
+\end{multline}
+% 
+Combining all the above, one can rewrite
+Eq.~\eqref{eq:conservation-laws} as
+%
+\begin{align}
+  \pa_t H + \pa_{k} S_k & = - \pa_t L\\
+  \pa_t J_l  + \pa_{k} \Pi_{k l} & = -N_0\abs{\p}^2 \pa_{l} U
+\end{align}
+%
+Total momentum of the field $P = \int d\xv J_l$, ... (work in progress)
+% TODO: express in hydrodynamic form
+% TODO: integrate in 2D and 3D and use divergence theorem
+% TODO: steady state
+% TODO: link to drag chapter
+% TODO: also explain drag as expectation value
+% TODO: compute S_k
+% TODO: check units
 
+\end{subappendices}
 
 %%% Local Variables:
 %%% mode: latex

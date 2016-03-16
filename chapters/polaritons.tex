@@ -201,8 +201,14 @@ $u_{\kv}$ and $p_{\kv}$, with eigenenergies
   \includegraphics[width=.5\linewidth]{polariton_dispersion}
   \caption{
     % 
-    Dispersion relation for the two polaritonic branches (UP, LP) as a function of emission angle $\theta$ of photons outside the cavity, which is directly related to the momentum $\kv$ of polaritons inside the cavity. The exciton and cavity photon dispersions are depicted with dashed (red) lines. Due to their light mass, the polaritons have a very sharp dispersion  compared to excitons. Also note the typical anticrossing form characteristic of Hermitian coupling.
-From Ref.~\cite{Keeling_2007}.
+    Dispersion relation for the two polaritonic branches (UP, LP) as a
+    function of emission angle $\theta$ of photons outside the cavity,
+    which is directly related to the momentum $\kv$ of polaritons inside
+    the cavity. The exciton and cavity photon dispersions are depicted
+    with dashed (red) lines. Due to their light mass, the polaritons have
+    a very sharp dispersion compared to excitons. Also note the typical
+    anticrossing form characteristic of Hermitian coupling.  From
+    Ref.~\cite{Keeling_2007}.
     % 
 }\label{fig:polariton-dispersion}
 \end{figure}
@@ -215,7 +221,8 @@ where the $\pm$ signs refer to the UP and LP branches and the Hopfield
 coefficients appearing in Eq.~\eqref{eq:hopfield-trans} are
 \begin{align}
   X_k & =\left[1 + \left(\frac{\Omega_R}{\omega_{\text{LP}}(k) - \omega_C(k)}\right)^2\right]^{-1/2}\label{eq:hopfield-X}\\
-  C_k & =-\left[1 + \left(\frac{\omega_{\text{LP}}(k) - \omega_C(k)}{\Omega_R}\right)^2\right]^{-1/2}
+  C_k & =-\left[1 + \left(\frac{\omega_{\text{LP}}(k) -
+        \omega_C(k)}{\Omega_R}\right)^2\right]^{-1/2}\label{eq:hopfield-C}
 \end{align}
 The two branches of the polaritonic dispersion relation are shown in
 Fig.~\ref{fig:polariton-dispersion}, together with the dispersions of
@@ -750,8 +757,9 @@ as we will discuss at large in Sec.~\ref{sec:opo}.
   \includegraphics[width=\linewidth]{swing}
   \caption{
     % 
-    A swing driven by a person.
-    % TODO: complete caption and surrounding text (with reference to swing article), add reference.
+    The driving (pumping) of a swing by a person, using the standing
+    position, shown as an (albeit contrived) example of a degenerate
+    parametric amplifier. From Ref.~\cite{yamamoto2004fundamentals}.
     % 
   }\label{fig:opo-swing}
 \end{figure}
@@ -799,12 +807,24 @@ quadratic dispersion: in the atomic case for instance, one must employ
 the use of an optical lattice in order to deform the dispersion and
 promote parametric amplification~\cite{Campbell2006}. 
 
-A schematic depiction of the parametric scattering process with the
-signal state located at zero momentum and the pump close to the
-inflection point of the LP dispersion is shown in
+While this may all seem far-removed from everyday experience, we
+remind the reader that parametric amplifiers and oscillators are
+commonly found in mechanical (as well as electronic) systems. For
+instance, one can consider a person on a swing in the standing
+position, as shown in Fig.~\ref{fig:opo-swing} (and described in
+detail in Ref.~\cite{case1996pumping}). In this particular example, we
+are dealing with a degenerate parametric amplifier, as the signal and
+idler have the same frequency and are represented by the swing. The
+person driving the swing then acts as the pump, and one can see that
+his (or hers) up-down motion has a periodicity which is twice that of
+the swing, therefore $\omega_p = 2\omega_s$ in this case.
+
+A schematic depiction of the polariton parametric scattering process
+with the signal state located at zero momentum and the pump close to
+the inflection point of the LP dispersion is shown in
 Fig.~\ref{fig:parametric-scattering}. It is clear that for a given
-signal wavevector, Eq.~\eqref{eq:conservations} then uniquely determines
-the pump and idler states.
+signal wavevector, Eq.~\eqref{eq:conservations} then uniquely
+determines the pump and idler states.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.5\linewidth]{opo}
@@ -1081,6 +1101,47 @@ between nonlinearities, dissipation and parametric gain. Note that we
 are not refering here to the uniform flow caused by the signal being
 at finite momentum $\kv_s$, as in fact this dominant current is
 substracted from the plot.
+
+\paragraph{OPO superfluidity}
+While still on the topic of persistent currents, we can make the
+connection to Sec.~\ref{sec:superfluid-atom}, and discuss
+superfluid-related phenomena in the OPO regime. A prime example of
+this is the stability of quantized vortices, reported by Sanvitto and
+coworkers in Ref.~\cite{Sanvitto_2010}. They used a pulsed, narrow
+probe beam in a Gauss-Laguerre state in order to imprint a finite
+angular momentum on the OPO condensate previously created by means of
+a wide pump spot. In a similar fashion to the rotating BEC experiments
+performed with ultracold gases, the system responded by forming a
+quantized vortex, which eventually drifted out of the condensate, due
+to the simply-connected geometry. The vortex was visible in both the
+signal and idler state, and its lifetime was much longer than the
+average polariton lifetime.  In a similar direction,
+Ref.~\cite{Marchetti_2010} presented a theoretical study predicting
+the formation of spontaneous quantized vortices in the OPO regime,
+provided the pump spot is spatially narrow. These vortices were shown
+to drift to their stable equilibrium positions, caried by the
+nontrivial OPO currents discussed in the previous paragraph. Further
+work by Tosi et al.~\cite{Tosi_2011} investigated the appearance and
+dynamics of vortex-antivortex pairs created by a pulsed probe, much
+narrower than the pump spot. It was shown that, while both vortices
+and antivortices form along the edge of the probe laser, they form at
+different relative positions, as determined by the steady-state
+currents. We will deepen our investigation of OPO superfluidity in
+Chapter~\ref{cha:opo}, where we look at the flow of the signal, pump
+and idler states against a small defect.
+%
+Finally, departing somewhat from the OPO regime, it was
+shown in Ref.~\cite{Keeling_2011_prl} that, despite not strictly
+obeying the Landau criterion, the superfluid density of incoherently
+pumped polaritons need not vanish. However, due to their
+nonequilibrium nature, the normal fraction would remain finite even at
+zero temperature. Last but not least, the same publication proposes
+using artificial gauge fields (generated by applying a real magnetic
+field in an anti-Helmholtz configuration) for measuring the superfluid
+and normal components of the system.
+
+
+
 
 %%% Local Variables:
 %%% mode: latex
