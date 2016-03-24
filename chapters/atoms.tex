@@ -609,7 +609,7 @@ definitions above, one can easily obtain the commutator
 \begin{equation}\label{eq:trans-commutator}
   \left[ \hat{\bm{k}},\, \hat{T}(\bm{k_0}) \right] = -\bm{k_0}\hat{T}(\bm{k_0}) 
 \end{equation}
-% n
+%
 This allows us to rewrite the following expressions
 \begin{align}\label{eq:products}
   \begin{split}
@@ -712,7 +712,7 @@ velocity\footnote{The sound velocity here is measured in the
   mc^2_s = g \rho_0
 \end{equation}
 % 
-The \textit{Landau criterion} for superfluidity~\cite{9780198507192}
+The \textit{Landau criterion} for superfluidity~\cite{Landau:213304}
 determines the maximum velocity at which a weak impurity can travel
 through the condensate without dissipating energy. In order for it to
 dissipate energy, such an impurity must be able to create
@@ -871,27 +871,28 @@ domains of the dispersion Eq.~\eqref{eq:bogoliubov}.
 
 The linear region of $\Gamma$, close to the origin, is characterised
 by essentially the same physics as the Cherenkov effect in
-non-dispersive media. We remind the reader that the Charenkov effect
-consists in the emission of electromagnetic radiation by a charged
-particle moving relativistically through a dielectric medium at a
-velocity higher than the (phase) velocity of light in that medium. The
-emission is concentrated into a \textit{Cherenkov cone} in momentum
-space, of aperture $2\theta$, where
-$\cos\theta = c/v$.~\cite{jelley1958vcerenkov} The higher the particle
-speed $v$ with respect to the speed of light $c$, the wider the angle
-$\theta$ between the emission and the direction of motion. The
-Cherenkov cone is depicted by the dashed lines in the middle panels of
-Fig.~\ref{fig:bogo-cherenkov}, and the angle $\theta$ in our case is
-of course given by $\cos\theta = c_s/v_0$. Due to the momentum-space
-singularity at the origin, the group velocity has a jump, defining a
-whole region of space where no phonons are emitted. This corresponds
-in real-space to the so-called \textit{Mach cone}, named in analogy to
-the cone that is created by a super-sonic aircraft (since we are
-dealing with terminology, it is worth noting that the ratio $v_0/c_s$
-goes by the name of \textit{Mach number}). The Mach cone is depicted
-by dashed lines in the bottom panels of Fig.~\ref{fig:bogo-cherenkov}:
-as its aperture $2\phi$ is quantified by $\sin\phi = c_s/v_0$, that
-means that, the faster the fluid, the narrower the cone will be.
+non-dispersive media~\cite{Landau:712712}. We remind the reader that
+the Charenkov effect consists in the emission of electromagnetic
+radiation by a charged particle moving relativistically through a
+dielectric medium at a velocity higher than the (phase) velocity of
+light in that medium. The emission is concentrated into a
+\textit{Cherenkov cone} in momentum space, of aperture $2\theta$,
+where $\cos\theta = c/v$.~\cite{jelley1958vcerenkov} The higher the
+particle speed $v$ with respect to the speed of light $c$, the wider
+the angle $\theta$ between the emission and the direction of
+motion. The Cherenkov cone is depicted by the dashed lines in the
+middle panels of Fig.~\ref{fig:bogo-cherenkov}, and the angle $\theta$
+in our case is of course given by $\cos\theta = c_s/v_0$. Due to the
+momentum-space singularity at the origin, the group velocity has a
+jump, defining a whole region of space where no phonons are
+emitted. This corresponds in real-space to the so-called \textit{Mach
+  cone}, named in analogy to the cone that is created by a super-sonic
+aircraft (since we are dealing with terminology, it is worth noting
+that the ratio $v_0/c_s$ goes by the name of \textit{Mach
+  number}). The Mach cone is depicted by dashed lines in the bottom
+panels of Fig.~\ref{fig:bogo-cherenkov}: as its aperture $2\phi$ is
+quantified by $\sin\phi = c_s/v_0$, that means that, the faster the
+fluid, the narrower the cone will be.
 
 The high-momentum, rounded region of $\Gamma$, which corresponds to
 the single-particle-like dispersion, has no equivalent in Cherenkov
@@ -971,19 +972,20 @@ observations of Kapitza can in fact be broken down into such
 
 \paragraph{Two-fluid model}
 A great leap in the understanding of superfluidity was made with the
-help of Lev Landau's phenomenological \textit{two-fluid model}. In a
-nutshell, one can think of the problem in terms of two liquids, one
-formed by the condesate occupying the single-particle state $\phi_0$
-and flowing without friction, and the other behaving as a normal
-fluid. To be fair, it must be said that Landau actually opposed the
-whole notion of BEC, and formulated his model without it. We must also
-note that the superfluid and normal components in He-II are not the
-condensed and noncondensed atoms, as the whole liquid is superfluid at
-zero temperature, while only around 10\% of the atoms are in the BEC
-state. That being said, the model describes He-II in thermodynamic
-equilibrium by introducing two independent velocities ($\bm{v}_s$ and
-$\bm{v}_n$), and associated densities ($\rho_s$ and $\rho_n$), which
-are temperature-dependent. One can then express the total mass current
+help of Lev Landau's phenomenological \textit{two-fluid
+  model}~\cite{Landau:111625}. In a nutshell, one can think of the
+problem in terms of two liquids, one formed by the condesate occupying
+the single-particle state $\phi_0$ and flowing without friction, and
+the other behaving as a normal fluid. To be fair, it must be said that
+Landau actually opposed the whole notion of BEC, and formulated his
+model without it. We must also note that the superfluid and normal
+components in He-II are not the condensed and noncondensed atoms, as
+the whole liquid is superfluid at zero temperature, while only around
+10\% of the atoms are in the BEC state. That being said, the model
+describes He-II in thermodynamic equilibrium by introducing two
+independent velocities ($\bm{v}_s$ and $\bm{v}_n$), and associated
+densities ($\rho_s$ and $\rho_n$), which are
+temperature-dependent. One can then express the total mass current
 density $\bm{J} = \bm{j}_s + \bm{j}_n$ and kinetic energy of flow
 $Q = Q_s + Q_n$ as~\cite{leggett2006quantum}
 \begin{align}
@@ -1009,32 +1011,34 @@ each associated with its own mass current and flow energy.
 We now look at the $N_0$ atoms condensed in the state $\phi_0$, in
 order to investigate the origin of the superfluid velocity
 $\bm{v}_s$. One can express the condesate wavefunction in the Madelung
-form
+form\footnote{We explicitly re-introduced $\hbar$ in the equations of
+this Section to show their quantum nature.}
 %
-\begin{equation}\label{eq:label}
-  \phi_0 (\rv, t) = \sqrt{\frac{\rho_s(\rv,t)}{N_0(t)}} e^{i\theta(\rv,t)}
+\begin{equation}\label{eq:madelung}
+  \phi_0 (\rv, t) = \sqrt{\frac{\rho_s(\rv,t)}{N_0(t)}} e^{\frac{i}{\hbar}\theta(\rv,t)}
 \end{equation}
 % 
 with $\rho_s = N_0\abs{\phi_0}^2$ being the particle
 density\footnote{We again emphasize that, in general, the superfluid
-  density $\rho_s$ is \textbf{not} equal to the density of condensed atoms.}
-and $\theta$ the condensate phase, both real functions.
+  density $\rho_s$ is \textbf{not} equal to the density of condensed
+  atoms.}  and $\theta$ the phase (in dimensions of an action), both
+real functions.
 %
-The quantum mechanical definition of the current density of the
-condensate yields (see Appendix~\ref{app:field-theory})\footnote{We
-  explicitly re-introduced $\hbar$ in the equations of this Section to
-  show their quantum nature.}
+The quantum mechanical definition of the probability current density
+of the condensate yields (see Appendix~\ref{app:field-theory})
+%
 \begin{align}\label{eq:bec-current}
-  \bm{j}_s(\rv,t) & = N_0(t)\frac{\hbar}{2mi}\left[\phi_0^{\star}(\rv,t)\bm{\nabla}\phi_0(\rv,t) - \phi_0(\rv,t)\bm{\nabla}\phi_0^{\star}(\rv,t)\right]\\
-& = N_0(t) \abs{\phi_0(\rv,t)}^2 \frac{\hbar}{m} \bm{\nabla}\theta(\rv,t)
+  \bm{j}_s(\rv,t) & = N_0(t)\frac{\hbar}{2im}\left[\phi_0^{\star}(\rv,t)\bm{\nabla}\phi_0(\rv,t) - \phi_0(\rv,t)\bm{\nabla}\phi_0^{\star}(\rv,t)\right]\\
+& = N_0(t) \abs{\phi_0(\rv,t)}^2 \frac{1}{m} \bm{\nabla}\theta(\rv,t)
 \end{align}
+%
 with $m$, as before, representing the particle mass. The ratio
 $\bm{v}_s \equiv \bm{j}_s/\rho_s$ will then be the condensate velocity
 (called \textit{superfluid velocity} in the literature for the
 historical reasons detailed above)
 %
 \begin{equation}\label{eq:supervelocity}
-  \bm{v}_s(\rv,t) = \frac{\hbar}{m} \bm{\nabla}\theta(\rv,t)
+  \bm{v}_s(\rv,t) = \frac{1}{m} \bm{\nabla}\theta(\rv,t)
 \end{equation}
 % 
 
@@ -1054,7 +1058,7 @@ the condition that $\phi_0$ be single-valued then gives the famous
 \textit{Onsager-Feynman quantization}
 %
 \begin{equation}\label{eq:feynman}
-  \oint_C \bm{v}_s(\rv,t) \cdot d\bm{l} = \frac{2\pi \hbar}{m} n_w
+  \oint_C \bm{v}_s(\rv,t) \cdot d\bm{l} = \frac{\hbar}{m} 2\pi n_w
 \end{equation}
 % 
 with $n_w = 0, \pm 1, \pm 2, \dots$ being the \textit{windinding
@@ -1255,8 +1259,8 @@ replacing the canonical momentum $\bm{p}$ by the kinematic one:
 $\bm{p} \rightarrow \bm{p} - e\bm{A}(\rv)$. As a result, we get
 %
 \begin{equation}\label{eq:superconducting-velocity}
-  \bm{v}_s(\rv) = \frac{\hbar}{2m}\left(\bm{\nabla}\theta(\rv) -
-    \frac{2e\bm{A}(\rv)}{\hbar}\right)
+  \bm{v}_s(\rv) = \frac{1}{2m}\left(\bm{\nabla}\theta(\rv) -
+    2e\bm{A}(\rv)\right)
 \end{equation}
 % 
 where the factors of 2 appear because the macroscopic wavefunction is
@@ -1396,75 +1400,75 @@ the healing length), Ref.~\cite{Onofrio_2000} details the use of a
 blue-detuned laser beam, in order to create a density hole which is
 then moved around the atomic condensate (see Fig.~\ref{fig:hole}).  By
 measuring the density difference immediately ahead and behind the
-hole, one can deduce the frictional force acting on it. This
-experiment resulted in a critical velocity about ten times smaller
-than the speed of sound, presumably due to vortex creation by the
-macroscopic defect.
+hole, one can deduce the frictional force acting on it (see
+Appendix~\ref{app:field-theory}). This experiment resulted in a
+critical velocity about ten times smaller than the speed of sound,
+presumably due to vortex creation by the macroscopic defect.
 
 
-% \section{Optical lattices}
-% \label{sec:optical-lattice}
-% % goal: 600 words
-% %
-% \begin{figure}[tb]\centering
-%   \includegraphics[width=.7\linewidth]{1Dlattice}
-%   \caption{
-%     % 
-%     1D optical lattice created by counterpropagating laser beams. From Ref.~\cite{RevModPhys.78.179}.
-%     % 
-%   }\label{fig:label}
-% \end{figure}
-% % 
+\section{Optical lattices}
+\label{sec:optical-lattice}
+% goal: 600 words
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.7\linewidth]{1Dlattice}
+  \caption{
+    % 
+    1D optical lattice created by counterpropagating laser beams. From Ref.~\cite{RevModPhys.78.179}.
+    % 
+  }\label{fig:label}
+\end{figure}
+% 
 
-% % TODO: check implementation of HH in aidelsburger2013hh, miyake2013hh.
+% TODO: check implementation of HH in aidelsburger2013hh, miyake2013hh.
 
-% \section{Harper-Hofstadter model}
-% \label{sec:hh-atoms}
-% % goal: 1800 words
-% % TODO: check notation in figures and main text corresponds to Landau chapter
-% It was recently realized in the context of ultracold gases, see
-% Refs.~\cite{aidelsburger2013hh,miyake2013hh}.
-% %
-% \begin{equation}\label{eq:hh-ham}
-%   \mathcal{H}_0 = -J\sum_{m,n}(e^{i
-%     \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} +e^{i
-%     \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{H.c.}
-% \end{equation}
-% % 
-% Diagonalization is presented in detail in
-% Ref.~\cite{jain2007composite}.
-% %
-% \begin{figure}[tb]\centering
-%   \includegraphics[width=.5\linewidth]{lattice}
-%   \caption{
-%     % 
-%     2D lattice of the Harper-Hofstadter model.
-%     % 
-%   }\label{fig:hh-lattice}
-% \end{figure}
-% % 
-% %
-% \begin{figure}[tb]\centering
-%   \includegraphics[width=.7\linewidth]{butterfly}
-%   \caption{
-%     % 
-%     Hofstadter's butterfly. 
-%     % TODO: add reference
-%     % 
-%   }\label{fig:butterfly}
-% \end{figure}
-% % 
-% %
-% \begin{figure}[tb]\centering
-%   \includegraphics[width=\linewidth]{bands}
-%   \caption{
-%     % 
-%     Energy bands of the Harper-Hofstadter Hamiltonian Eq.~\eqref{eq:hh-ham}.
-%     % TODO: define BW and $\Delta E$ in the text
-%     % 
-%   }\label{fig:hh-energy-levels}
-% \end{figure}
-% % 
+\section{Harper-Hofstadter model}
+\label{sec:hh-atoms}
+% goal: 1800 words
+% TODO: check notation in figures and main text corresponds to Landau chapter
+It was recently realized in the context of ultracold gases, see
+Refs.~\cite{aidelsburger2013hh,miyake2013hh}.
+%
+\begin{equation}\label{eq:hh-ham}
+  \mathcal{H}_0 = -J\sum_{m,n}(e^{i
+    \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} +e^{i
+    \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{H.c.}
+\end{equation}
+% 
+Diagonalization is presented in detail in
+Ref.~\cite{jain2007composite}.
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.5\linewidth]{lattice}
+  \caption{
+    % 
+    2D lattice of the Harper-Hofstadter model.
+    % 
+  }\label{fig:hh-lattice}
+\end{figure}
+% 
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.7\linewidth]{butterfly}
+  \caption{
+    % 
+    Hofstadter's butterfly. 
+    % TODO: add reference
+    % 
+  }\label{fig:butterfly}
+\end{figure}
+% 
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=\linewidth]{bands}
+  \caption{
+    % 
+    Energy bands of the Harper-Hofstadter Hamiltonian Eq.~\eqref{eq:hh-ham}.
+    % TODO: define BW and $\Delta E$ in the text
+    % 
+  }\label{fig:hh-energy-levels}
+\end{figure}
+% 
 
 \begin{subappendices}
 \section{Conservation laws for the GP field}
@@ -1487,23 +1491,24 @@ $S = \int dt \int d\bm{x} \,L$, where the Lagrangian density
 $L = L[\p, \pa \p, \ps, \pa \ps, \xv, t]$ is given by
 %
 \begin{equation}\label{eq:GP-action}
-  L = -N_0\left[-\hbar \imag\left(\p \pa_t \ps\right) + 
+  L = -N_0\left[\hbar \imag\left(\ps \pa_t \p\right) + 
 \frac{\hbar^2}{2m}\pa_k\p\pa_k\ps + U\abs{\p}^2 + \frac{g}{2}N_0\abs{\p}^4 \right]
 \end{equation}
 % 
 For compactness, let $x_4 = i c t$,\footnote{$c$ is the speed of
   light, but it is just a constant for our purposes, and will drop out
   from all final results.}  and we can define the canonical
-energy-momentum tensor, following the usual field-theory
-prescription~\cite{wentzel2003quantum}
+energy-momentum tensor~\cite{Landau:101807}, following the usual
+field-theory prescription~\cite{wentzel2003quantum}
 %
 \begin{equation}\label{eq:en-mom-tensor}
   T_{\mu \nu} = - \pa_{\nu} \p \frac{\pa L}{\pa (\pa_{\mu} \p)} - \pa_{\nu} \ps \frac{\pa L}{\pa (\pa_{\mu} \ps)} + L \delta_{\mu \nu}
 \end{equation}
 % 
 where the indices $\mu,\,\nu$ run from 1 to 4. As the complex scalar
-field $\ps$ (and $\p$) satisfy the Euler-Lagrange equations resulting
-in Eq.~\eqref{eq:GP-field} (and its complex conjugate), we have
+field $\ps$ (and $\p$) satisfy the Euler-Lagrange
+equations~\cite{Landau:101804} resulting in Eq.~\eqref{eq:GP-field}
+(and its complex conjugate), we have
 %
 \begin{equation}\label{eq:conservation-laws}
   \pa_{\mu} T_{\mu\nu} = \pa_{\nu} L
@@ -1513,8 +1518,8 @@ from which energy and momentum conservation immediately
 follow.\footnote{Conservation of angular momentum imposes the
   additional requirement that $T_{\mu\nu} = T_{\nu\mu}$.}
 %
-To see this explicitly, we consider separately the case $\nu = 4$ and
-split Eq.~\eqref{eq:conservation-laws} into
+To see this explicitly, we split the temporal and spatial parts of
+Eq.~\eqref{eq:conservation-laws} to obtain
 %
 \begin{align}
   \pa_t T_{4 4} + i c \pa_{k} T_{k 4} & = \pa_t L\label{energy-cons}\\
@@ -1525,47 +1530,82 @@ Direct subsitution into Eq.~\eqref{eq:en-mom-tensor} shows that
 $T_{4 4} = -H$, where the energy density $H$ is given by
 %
 \begin{equation}\label{eq:en-density}
-  H = N_0\left[
-\frac{\hbar^2}{2m}\pa_k\p\pa_k\ps + U\abs{\p}^2 + \frac{g}{2}N_0\abs{\p}^4 \right]
+  H = N_0\left(
+\frac{\hbar^2}{2m}\pa_k\p\pa_k\ps + U\abs{\p}^2 + \frac{g}{2}N_0\abs{\p}^4 \right)
 \end{equation}
 % 
-while $T_{k 4} = \frac{i}{c}S_k$, with the energy current density
-(energy source)
+while $T_{k 4} = \frac{i}{c}S_k$, with the energy flux density
 %
 \begin{equation}\label{eq:energy-source}
-  S_k = -\frac{N_0\hbar^2}{2m}\left(\pa_t\p\pa_k\ps + \text{c.c}\right)
+  S_k = -\frac{N_0\hbar^2}{m}\real\left(\pa_t\ps\pa_k\p\right)
 \end{equation}
 % 
-Regarding Eq.~\eqref{mom-cons}, we get $T_{4 l} = i c J_l$, with the
+Regarding Eq.~\eqref{mom-cons}, we get $T_{4 l} = i c J_l$, with the mass
 current density (compare to Eq.~\eqref{eq:bec-current})
 \begin{equation}\label{eq:current}
-  J_l = N_0\hbar\imag(\ps \pa_l \p)
+  J_l = N_0\hbar\imag\left(\ps \pa_l \p\right)
 \end{equation}
-and the stress (or momentum flux) tensor $\Pi_{kl} \equiv T_{kl}$
+and the momentum flux density tensor $\Pi_{kl} \equiv T_{kl}$
 %
-\begin{multline}\label{eq:label}
-  \Pi_{kl} = \frac{N_0\hbar^2}{2m}\left(\pa_k\p\pa_l\ps +
-    \pa_k\ps\pa_l\p\right)\\ + \delta_{kl}\left[\frac{g}{2}N_0\abs{\p}^4 -
-    \frac{N_0\hbar^2}{4m}\left(2\pa_i\p\pa_i\ps + \p\pa_i\pa_i\ps +
-      \ps\pa_i\pa_i\p\right)\right]
-\end{multline}
+\begin{equation}
+  \Pi_{kl} = \frac{N_0\hbar^2}{m}\real\left(\pa_l\ps\pa_k\p\right) + \delta_{kl}\left(\frac{g}{2}N_0^2\abs{\p}^4 -
+    \frac{N_0\hbar^2}{4m}\pa_i\pa_i\abs{\p}^2\right)
+\end{equation}
 % 
 Combining all the above, one can rewrite
 Eq.~\eqref{eq:conservation-laws} as
 %
 \begin{align}
-  \pa_t H + \pa_{k} S_k & = - \pa_t L\\
-  \pa_t J_l  + \pa_{k} \Pi_{k l} & = -N_0\abs{\p}^2 \pa_{l} U
+  \pa_t H + \pa_{k} S_k & = N_0\abs{\p}^2 \pa_{t} U\\
+  \pa_t J_l  + \pa_{k} \Pi_{k l} & = -N_0\abs{\p}^2 \pa_{l} U\label{eq:mom-cons-pi}
 \end{align}
 %
-Total momentum of the field $P = \int d\xv J_l$, ... (work in progress)
-% TODO: express in hydrodynamic form
-% TODO: integrate in 2D and 3D and use divergence theorem
-% TODO: steady state
-% TODO: link to drag chapter
-% TODO: also explain drag as expectation value
-% TODO: compute S_k
-% TODO: check units
+We now focus on Eq.~\eqref{eq:mom-cons-pi}, which shows momentum
+conservation. For a more transparent physical interpretation, one can
+make use of the Madelung transformation Eq.~\eqref{eq:madelung} and
+integrate over a volume $V$, obtaining
+%
+\begin{equation}\label{eq:gauss}
+  \pa_t P_l  + \oint_S \Pi_{k l} \hat{n}_k d S  = -\int_{V}  \rho \pa_{l} U dV
+\end{equation}
+% 
+where we made use of the divergence theorem for tensor
+fields~\cite{the_brick} in order to express the volume integral as an
+integral over the surface $S$ which encloses $V$. Here $\bm{\hat{n}}$
+is the outward-pointing unit normal to $S$ at each point, and we also
+introduced the total momentum of the field,
+$\bm{P} = m \int_{V} \rho \bm{v}\, dV$ (with $\bm{v}$ the velocity
+Eq.~\eqref{eq:supervelocity}). The hydrodynamic form of the momentum
+flux density then reads
+%
+\begin{equation}\label{eq:pressure}
+  \Pi_{k l} = \frac{\hbar^2}{4m\rho} \pa_k\rho \pa_l\rho + m\rho v_k v_l + p\delta_{k l}
+\end{equation}
+% 
+with the pressure
+$p \equiv \frac{g}{2}\rho^2 - \frac{\hbar^2}{4m} \nabla^2 \rho$. We
+can now write Eq.~\eqref{eq:gauss} in vector form
+%
+\begin{equation}\label{eq:vectorial-flow}
+  \oint_S \left[ p \bm{\hat{n}} + m\rho \bm{v} \left(\bm{v} \cdot \bm{\hat{n}}\right) + \frac{\hbar^2}{4m\rho}\bm{\nabla}\rho \left(\bm{\nabla}\rho \cdot \bm{\hat{n}}\right)  \right] d S  = -\int_{V}  \rho \bm{\nabla} U dV - \pa_t \bm{P}
+\end{equation}
+% 
+and see that the vector between square brackets is the amount of
+momentum per unit time and area ``flowing'' through a surface
+orthogonal to $\bm{\hat{n}}$.
+
+If we now consider a stationary regime (so that the last term of
+Eq.~\eqref{eq:vectorial-flow} drops out), and assume the potential $U$
+describes some fixed obstacle (such as a cylinder) inside $V$, then by
+definition~\cite{Landau:111625} the ``drag'' force acting on a surface
+element of the obstacle is the momentum flux though this element. The
+total force, of course, will be given by the surface integral of the
+momentum flux, or equivalently, by the volume integral of the
+potential gradient. While in conservative systems this drag is caused
+by pressure gradients across the obstacle~\cite{PhysRevLett.82.5186},
+nonconservative ones such as the resonantly pumped polariton fluid of
+Chapter~\ref{cha:drag} also have a viscous contribution to the
+momentum flux tensor, similar to Navier-Stokes physics.
 
 \end{subappendices}
 
