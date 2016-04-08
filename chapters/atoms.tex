@@ -1587,7 +1587,7 @@ $p \equiv \frac{g}{2}\rho^2 - \frac{\hbar^2}{4m} \nabla^2 \rho$. We
 can now write Eq.~\eqref{eq:gauss} in vector form
 %
 \begin{equation}\label{eq:vectorial-flow}
-  \oint_S \left[ p \bm{\hat{n}} + m\rho \bm{v} \left(\bm{v} \cdot \bm{\hat{n}}\right) + \frac{\hbar^2}{4m\rho}\bm{\nabla}\rho \left(\bm{\nabla}\rho \cdot \bm{\hat{n}}\right)  \right] d S  = -\int_{V}  \rho \bm{\nabla} U dV - \pa_t \bm{P}
+  \int_{V}  \rho \bm{\nabla} U dV = - \oint_S \left[ p \bm{\hat{n}} + m\rho \bm{v} \left(\bm{v} \cdot \bm{\hat{n}}\right) + \frac{\hbar^2}{4m\rho}\bm{\nabla}\rho \left(\bm{\nabla}\rho \cdot \bm{\hat{n}}\right)  \right] d S - \pa_t \bm{P}
 \end{equation}
 % 
 and see that the vector between square brackets is the amount of
@@ -1601,11 +1601,12 @@ definition~\cite{Landau:111625} the ``drag'' force acting on a surface
 element of the obstacle is the momentum flux though this element. The
 total force, of course, will be given by the surface integral of the
 momentum flux, or equivalently, by the volume integral of the
-potential gradient. While in conservative systems this drag is caused
-by pressure gradients across the obstacle~\cite{PhysRevLett.82.5186},
-nonconservative ones such as the resonantly pumped polariton fluid of
-Chapter~\ref{cha:drag} also have a viscous contribution to the
-momentum flux tensor, similar to Navier-Stokes physics.
+potential gradient in Eq.~\eqref{eq:vectorial-flow}. While in
+conservative systems this drag is caused by pressure gradients across
+the obstacle~\cite{PhysRevLett.82.5186}, nonconservative ones such as
+the resonantly pumped polariton fluid of Chapter~\ref{cha:drag} also
+have a viscous contribution to the momentum flux tensor, giving rise
+to Navier-Stokes-type physics.
 
 \end{subappendices}
 
