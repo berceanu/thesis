@@ -1251,11 +1251,12 @@ the container by a crystal lattice and the liquid helium (or atomic
 gas for that matter) by the electrons inside this lattice. If we now
 keep the crystal at rest and produce a tangential vector potential
 $\bm{A}(\rv) = A\hat{\phi}$, this will generate a flux
-$\Phi = \oint \bm{A}(\rv)\cdot d\bm{l}$ inside the conducting ring (usually
-called an ``Aharonov-Bohm'' flux). The definition of the
-``superfluid'' velocity Eq.~\eqref{eq:supervelocity} now needs to be
-revised according to the gauge-coupling recipe, which consists of
-replacing the canonical momentum $\bm{p}$ by the kinematic one:
+$\Phi = \oint \bm{A}(\rv)\cdot d\bm{l}$ inside the conducting ring
+(usually called an ``Aharonov-Bohm''
+flux). The definition of the ``superfluid''
+velocity Eq.~\eqref{eq:supervelocity} now needs to be revised
+according to the gauge-coupling recipe, which consists of replacing
+the canonical momentum $\bm{p}$ by the kinematic one:
 $\bm{p} \rightarrow \bm{p} - e\bm{A}(\rv)$. As a result, we get
 %
 \begin{equation}\label{eq:superconducting-velocity}
@@ -1273,8 +1274,8 @@ quantization Eq.~\eqref{eq:feynman} then becomes
     \frac{\Phi}{\Phi_0}\right)
 \end{equation}
 % 
-where $\Phi_0 \equiv h/(2e)$ is the \textit{flux quantum}. If the
-(mass) supercurrent is given, as before, by
+where $\Phi_0 \equiv h/(2e)$ is the \textit{superconducting flux
+  quantum}. If the (mass) supercurrent is given, as before, by
 $\bm{j}_s = \rho_s \bm{v}_s$, then this new quantization condition
 results in a non-zero current even for $n_w = 0$. Indeed, for
 $\Phi < \frac{1}{2} \Phi_0$ (compare to the regime
@@ -1408,67 +1409,534 @@ presumably due to vortex creation by the macroscopic defect.
 
 \section{Optical lattices}
 \label{sec:optical-lattice}
-% goal: 600 words
-%
-\begin{figure}[tb]\centering
-  \includegraphics[width=.7\linewidth]{1Dlattice}
-  \caption{
-    % 
-    1D optical lattice created by counterpropagating laser beams. From Ref.~\cite{RevModPhys.78.179}.
-    % 
-  }\label{fig:label}
-\end{figure}
-% 
 
-% TODO: check implementation of HH in aidelsburger2013hh, miyake2013hh.
+\paragraph{Laser trapping}
+An electric dipole moment $\bm{\mathcal{P}}$ placed in an external
+electric field $\bm{\mathcal{E}}(\rv)$ aquires an energy
+$\mathcal{V}(\rv) = -\bm{\mathcal{P}}\cdot \bm{\mathcal{E}}(\rv)$. If
+an atom is placed in a light field, the oscillating electric field of
+the latter induces an electric dipole moment
+$\bm{\mathcal{P}} = \alpha \epsilon_0 \bm{\mathcal{E}}$ on the atom,
+with $\epsilon_0$ the free-space permittivity and $\alpha$ the atomic
+polarizability~\cite{feynman1979lectures}. Integrating, we obtain the
+interaction energy of the atom with the field as
+$\mathcal{V}(\rv) = -\frac{1}{2}\alpha \epsilon_0
+\mathcal{E}^2(\rv)$. A classical model of the atom as a conducting
+sphere of radius $r$ yields a polarizability of $4\pi r^3$. In
+practice however, atomic transitions complicate this simple picture,
+as the polarizability $\alpha$ depends on the driving frequency of the
+light field. In the framework of the Drude
+model~\cite{ziman1972principles}, one has
+%
+\begin{equation}\label{eq:polarizability}
+  \alpha(\omega) = \frac{\alpha(0)\omega_0^2}{\omega_0^2 - \omega^2 - i \frac{\omega}{\tau}}
+\end{equation}
+% 
+with the resonant frequency $\omega_0$, damping time $\tau$ and
+$\alpha(0) > 0$ the static polarizability. The frequency-dependent
+interaction energy $\mathcal{V}(\omega)$ thus obtained is sometimes
+called the \textit{ac Stark effect}~\cite{Cohen-Tannoudji:101392}. If
+the light frequency is smaller than that of the atomic resonance
+$\omega < \omega_0$, the induced dipole is in phase with the electric
+field, as $\Re[\alpha(\omega)] > 0$, and the force on the atom will
+point in the direction of the square-field maxima (the situation is of
+course reversed if instead $\omega > \omega_0$). This effect was first
+used in Ref.~\cite{PhysRevLett.80.2027} to trap a BEC of sodium atoms
+using a focused infrared laser beam (the dominant transition of Na is
+the familiar $s \rightarrow p$ yellow emission). Interestingly, the
+same physics can be used to create an optical lattice, as explained
+below.
+
+\paragraph{Optical lattice}
+Consider a (plane wave) laser beam propagating along the $x$ axis,
+with an associated electric field
+$\bm{\mathcal{E}}(x,t) = \bm{\mathcal{E}}_0 \cos (k_x x - \omega t)$,
+which reflects from a mirror situated at $x=0$. The interference
+between the reflected and original beam produces a standing wave
+$\bm{\mathcal{E}}_0[\cos(k_x x - \omega t) - \cos(k_x x + \omega t)]$,
+with an intensity
+$\abs{\mathcal{E}(x,t)}^2 = 4 \abs{\mathcal{E}_0}^2 \sin^2(k_x
+x)\sin^2(\omega t)$. This results in an effective periodic lattice for
+the atoms, with lattice spacing $b = \lambda_x/2$, where
+$\lambda_x = 2\pi/k_x$. Such a one-dimensional lattice was first
+demonstrated in Ref.~\cite{Anderson1686}. By tuning the strength of
+the laser field, one can adjust the lattice depth, and by changing the
+laser wavelength, one can modify the lattice constant. Adding more
+laser beams can produce two- or even three-dimensional lattices, in a
+variety of different geometries. For example, the simplest way to
+create a 2D square lattice would be to superimpose a second lattice in
+the $\hat{\bm{y}}$ direction, producing an optical potential of depth
+$V_0$:
+%
+\begin{equation}\label{eq:square-potential}
+  \mathcal{V}(x,y) = V_0[\sin^2(\pi x/b) + \sin^2(\pi y/b)]
+\end{equation}
+% 
+The beam along $y$ should be orthogonally polarized with respect to
+the one along $x$, in order to avoid interference effects.
+
+\paragraph{Band structure}
+The eigen-problem of a particle moving in a periodic potential given
+by Eq.~\eqref{eq:square-potential} is well-known in the context of
+solid-state band theory~\cite{ziman1972principles}, as the electrons
+inside a solid also move in such a potential, produced in that case by
+the crystal ions. The energy eigenstates are the Bloch waves
+$\psi_{\gamma,\kv}(\rv) = e^{i\kv\cdot\rv} u_{\gamma,\kv}(\rv)$, where
+$\hbar \kv$ is the \textit{quasimomentum}, restricted to the first
+Brillouin zone (BZ)
+$\left(-\frac{\pi}{b}, \frac{\pi}{b}\right) \times
+\left(-\frac{\pi}{b}, \frac{\pi}{b}\right)$ and $\gamma = 0,1,\dots$
+represents the \textit{band index}. The functions
+$u_{\gamma,\kv}(\rv)$ are periodic in both the $\hat{\bm{x}}$ and
+$\hat{\bm{y}}$ direction, with period $b$. To see how these bands
+arise, one can expand both the wavefunction $\psi_{\gamma,\kv}$ as
+well as the potential $\mathcal{V}$ in a Fourier series, making use of
+their periodicity. Inserting this expansion into the time-independent
+Schr\"odinger equation, we get a linear system of equations for the
+Fourier coefficients. For fixed $\kv$, we obtain
+different\footnote{Truncating the Fourier expansion to a finite number
+  of terms $n$ results in $2n+1$ bands.} eigenenergies,
+$E_{\gamma}(\kv)$. These eigenenergies form bands (called \text{Bloch
+  bands}) when $\kv$ is varied inside the BZ. Each band as a certain
+width in energy (unsurprisingly called the bandwidth) and consecutive
+bands are separated by gaps, meaning certain energies are not
+allowed. Furthermore, each eigenenergy has an associated
+eigenfunction, completely determined by the set of Fourier
+coefficients with index $\gamma$. The solution of course depends on
+the value of $V_0$, and we can distinguish two limiting cases,
+depending on the ratio of the bandwidths to the energy gaps. In the
+weak-potential limit, the bandgaps are much smaller than the
+bandwidths, and the eigenenergies have a pronounced dependence on
+quasimomentum. The opposite limit, which is the one we want to focus
+on, is the regime of deep lattices, also called the
+\textit{tight-binding} (TB) limit. The band dispersion is now flatter
+compared to the previous case, and the bandwidth/gap ratio is much
+smaller.
+
+\paragraph{Tight binding}
+For low temperatures in the TB limit, only the lowest energy band
+$\gamma = 0$ is occupied, so we subsequently drop the band
+index. Since the potential wells are so deep, the lowest band is
+adequately described by considering localized wavefunctions at each
+well, i.e. at the minima of Eq.~\eqref{eq:square-potential}. Suppose
+now that a function $w(\rv)$ exists such that the Bloch waves are
+given by
+%
+\begin{equation}\label{eq:wanier}
+  \psi_{\kv} (\rv) = \mathcal{N} \sum_{m,n} e^{i\kv \cdot \rv_{m,n}} w(\rv - \rv_{m,n})
+\end{equation}
+% 
+where $\mathcal{N}$ is a normalization factor and
+$\bm{r}_{m,n} = m b \hat{\bm{x}} + n b \hat{\bm{y}}$ are the well
+positions. Eq.~\eqref{eq:wanier} represents a wave,
+$e^{i\kv \cdot \rv_{m,n}}$, whose phase and amplitude at each well is
+given by the localized function $w$, called the \textit{Wannier
+  function}~\cite{ziman1972principles}. It can be shown that Wannier
+functions centered at different wells are orthogonal to each other and
+form a complete basis. The Wannier functions are thus a unitary
+transformation of the Bloch functions, suitable for the case when
+particle dynamics is described by inter-well tunneling (hopping)
+between nearest-neighbour wells. 
+
+In the case of a BEC, when the number of ultracold atoms per lattice
+well is small, the ``discrete structure'' of the condensate becomes
+relevant and we must replace the GP description Eq.~\eqref{eq:TDGP} we
+have used so far with a lattice model, such as the Bose-Hubbard
+model~\cite{PhysRevB.40.546}, as suggested in
+Ref.~\cite{Jaksch3108}. For a condensate confined in the optical
+potential Eq.~\eqref{eq:square-potential}, with an additional harmonic
+trap $U(\rv)$, the spinless Bose-Hubbard Hamiltonian in 2D can be
+written as~\cite{zwerger2003}
+%
+\begin{equation}\label{eq:BH-ham}
+  \mathcal{H}\sub{BH} = \mathcal{H}_0 + \frac{U}{2}\sum_{m,n} \hat{n}_{m,n}(\hat{n}_{m,n} - 1) + \sum_{m,n} \epsilon_{m,n} \hat{n}_{m,n}
+\end{equation}
+% 
+where $U \propto g$ is the on-site interaction strength and
+$\epsilon_{m,n} \propto U(\rv_{m,n})$ is the energy offset due to the
+harmonic trap. Futhermore,
+$\hat{n}_{m,n} = \hat{a}_{m,n}^{\dagger} \hat{a}_{m,n}$ denotes the
+number operator for site $(m,n)$ and $\hat{a}_{m,n}^{\dagger}$
+($\hat{a}_{m,n}$) is the bosonic creation (destruction) operator for
+that site. Finally, the kinetic part
+%
+\begin{equation}\label{eq:kinetic-part}
+  \mathcal{H}_0 = -J \sum_{m,n} \left(\hat{a}^{\dagger}_{m+1,n}\hat{a}_{m,n} + \hat{a}^{\dagger}_{m,n+1}\hat{a}_{m,n}\right) + \text{H.c.}
+\end{equation}
+% 
+can be diagonalized to yield the Bloch dispersion
+%
+\begin{equation}\label{eq:tb-dispersion}
+  E(\kv) = -2J\left[\cos(k_x b) + \cos(k_y b)\right]
+\end{equation}
+% 
+where the tunneling amplitude $J$ is an exponentially decreasing
+function of $V_0$~\cite{zwerger2003}. The characteristic tunneling
+energy scale is given by the bandwidth, which in this case is $8J$.
+
+Hamiltonian Eq.~\eqref{eq:BH-ham} supports a zero-temperature quantum
+phase transition between a superfluid and a Mott-insulating phase, at
+a critical value of the ratio $U/J$. This transition was
+experimentally observed for the case of a bosonic BEC in a 3D optical
+lattice, as reported in Ref.~\cite{greiner2002quantum}. Increasing the
+lattice depth $V_0$, the authors went from a gapless, superfluid
+regime dominated by the kinetic term Eq.~\eqref{eq:kinetic-part} to a
+gapped Mott-insulator state, where the atoms are localized and the
+on-site interaction term in Eq.~\eqref{eq:BH-ham} is dominant.
 
 \section{Harper-Hofstadter model}
 \label{sec:hh-atoms}
-% goal: 1800 words
-% TODO: check notation in figures and main text corresponds to Landau chapter
-It was recently realized in the context of ultracold gases, see
-Refs.~\cite{aidelsburger2013hh,miyake2013hh}.
+\paragraph{Landau levels}
+In Sec.~\ref{sec:optical-lattice} we introduced the quantized Bloch
+bands, characterising particles in a periodic potential. A similar
+quantization also occurs in the case of a charged particle moving
+perpendicular to a constant uniform magnetic field, and the allowed
+energy bands are called \textit{Landau
+  levels}~\cite{Landau:101810}. In a magnetic field
+$\bm{B} = B \hat{\bm{z}}$, the relevant energy and length scales for a
+particle with charge $e$ and mass $m$ are set by the \textit{cyclotron
+  frequency} $\omega_c = eB/m$ and \textit{magnetic length}
+$l\sub{m} = \sqrt{\hbar/eB}$, respectively. In this Section we want to
+explore the fate of the Bloch bands in presence of a magnetic
+field. Alternatively, one could also start from a Landau quantized
+system and perturb it via a weak periodic
+potential~\cite{PhysRev.180.633,PhysRevB.46.12606}, the two approaches
+having distinct validity ranges.
+
+\paragraph{Hofstadter butterfly}
+One of the simplest TB models for Bloch electrons in uniform magnetic
+fields is the \textit{Harper-Hofstadter
+  model}~\cite{harper1955magnetic,hofstadter1976butterfly}. Its
+relevant dimensionless parameter is the ratio of flux $\Phi$ through a
+lattice cell to one \textit{Dirac flux quantum}\footnote{As opposed to
+  the superconducting flux quantum of Sec.~\ref{sec:superfluid-atom}.}
+$\Phi_0=h/e$
 %
-\begin{equation}\label{eq:hh-ham}
-  \mathcal{H}_0 = -J\sum_{m,n}(e^{i
-    \phi_{m,n}^x}\hat{a}_{m+1,n}^{\dagger}\hat{a}_{m,n} +e^{i
-    \phi_{m,n}^y}\hat{a}_{m,n+1}^{\dagger}\hat{a}_{m,n}) + \text{H.c.}
+\begin{equation}\label{eq:alpha}
+  \alpha = \frac{\Phi}{\Phi_0} = \frac{eBb^2}{h}
 \end{equation}
 % 
-Diagonalization is presented in detail in
-Ref.~\cite{jain2007composite}.
+Physically, $\alpha$ reflects\footnote{Not to be confused with the
+  atomic polarizability, also denoted by $\alpha$.} the
+commensurability of the lattice period $b$ and the magnetic length
+$l\sub{m}$, as it can be recast in the form
+$\alpha = \frac{1}{2\pi}\left(b/l\sub{m}\right)^2$.  The resulting
+single-particle energy spectrum of the model depends on the
+rationality of $\alpha$. If $\alpha = p/q$, for $p$ and $q$ co-prime
+integers, the Bloch band splits into $q$ distinct magnetic
+subbands. For $\alpha$ irrational, the spectrum consists instead of an
+infinite number of energy levels, forming a Cantor set. The union of
+all allowed energies as a function of $\alpha$ forms a self-similar
+fractal, shown in Fig.~\ref{fig:butterfly} and known as
+\textit{Hofstadter’s butterfly}~\cite{hofstadter1976butterfly}. In the
+continuum limit ($b \rightarrow 0$, with fixed $B$), $\alpha \ll 1$
+and the bands group into clusters that can be identified with the
+Landau fan predicted in the absence of a lattice potential.
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=.5\linewidth]{lattice}
+  \includegraphics[width=\linewidth]{hhbutterfly}
   \caption{
     % 
-    2D lattice of the Harper-Hofstadter model.
-    % 
-  }\label{fig:hh-lattice}
-\end{figure}
-% 
-%
-\begin{figure}[tb]\centering
-  \includegraphics[width=.7\linewidth]{butterfly}
-  \caption{
-    % 
-    Hofstadter's butterfly. 
-    % TODO: add reference
+    Hofstadter's butterfly, representing the internal structure of the
+    lowest Bloch band in a uniform magnetic field. For rational values of $\alpha
+    = p/q$, the spectrum has $q$ magnetic subbands, which become
+    increasingly narrow as $q$ gets larger. Adapted from
+    Ref.~\cite{hofstadter1976butterfly}.
     % 
   }\label{fig:butterfly}
 \end{figure}
 % 
+
+\paragraph{HH experiments}
+Solid-state experiments in the Hofstadter regime are notoriously
+difficult, since the inter-atomic spacing of a crystal lattice is a
+few {\AA}ngstr\"oms, and achieving a comparable magnetic length would
+require a field of about $10^4$ Tesla. Signatures of the Hofstadter
+bands have instead been seen in artificial superlattices with
+periodicities of tens of
+nanometers~\cite{dean2013hofstadter,yu2014hierarchy}. In the context
+of neutral ultracold atoms, synthetic gauge potentials paved the way
+for the exploration of similar
+physics~\cite{dalibardrmp2011,goldman_repprog_2014}. For instance,
+rotating a harmonically trapped condensate with a high angular
+velocity (comparable to the radial trap frequency) allowed BEC
+experiments~\cite{PhysRevLett.92.040404} to enter the lowest Landau
+level (LLL) regime. Rotating 2D optical lattices have also been
+realized~\cite{PhysRevLett.104.050404}, but the first implementation
+of the Harper-Hofstadter (HH) model with ultracold
+atoms~\cite{aidelsburger2013hh,miyake2013hh} employed a different
+method~\cite{goldman_repprog_2014} of generating the artificial
+magnetic field, namely \textit{laser-assisted
+  tunneling}~\cite{1367-2630-5-1-356} based on a linear superlattice
+potential~\cite{1367-2630-12-3-033007}. In a nutshell, tunneling
+between lattice sites required atoms to absorb and emit photons
+produced by external lasers. The interaction with said lasers
+generated a net phase change equivalent to the flux of a magnetic
+field. The total phase accumulated by an atom when performing a loop
+around a lattice cell (plaquette) was $\sim \pi/2$ in these
+experiments.
+
+\paragraph{Aharonov-Bohm phase}
+In quantum mechanics, the phase of the wavefunction of a charged
+particle moving between positions $\rv_1$ and $\rv_2$ is changed by
+the presence of a magnetic field $\bm{B} = \bm{\nabla} \times \bm{A}$
+by~\cite{feynman1979lectures}
+%
+\begin{equation}\label{eq:AB-phase}
+  \phi_{12} = \frac{e}{\hbar}\int_{{\rv}_{1}}^{{\rv}_{2}} d\rv \cdot \bm{A}(\rv)
+\end{equation}
+% 
+where the integral is taken along an oriented path from point ``1'' to
+point ``2''. Therefore, $\phi_{21} = -\phi_{12}$ and, if we consider a
+smooth closed integration contour $\mathcal{C}$ instead of two
+separate points, the total phase change (or \textit{Aharonov-Bohm
+  phase}) along $\mathcal{C}$ is
+%
+\begin{equation}\label{eq:AB-closed}
+  \phi_{\mathcal{C}} = \frac{e}{\hbar}\int_{\mathcal{S}}
+  d^2 \rv \cdot \bm{\nabla} \times
+  \bm{A}(\rv) = 2\pi \frac{\Phi_B}{\Phi_0}
+\end{equation}
+% 
+where $\Phi_B$ is the magnetic flux through a smooth surface
+$\mathcal{S}$ bounded by the curve $\mathcal{C}$ with positive
+orientation, according to Stoke's theorem.
+
+\paragraph{Peierls phases}
+On the 2D square lattice in Fig.~\ref{fig:hh-lattice}, one can define
+the magnetic phases
+$\phi_{m,n} = \left(\phi^{x}_{m,n},\phi^{y}_{m,n}\right)$ along the
+$\hat{\bm{x}}$ and $\hat{\bm{y}}$ directions in a similar manner, as
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=\linewidth]{bands}
+  \includegraphics[width=.4\linewidth]{lattice}
   \caption{
     % 
-    Energy bands of the Harper-Hofstadter Hamiltonian Eq.~\eqref{eq:hh-ham}.
-    % TODO: define BW and $\Delta E$ in the text
+    2D square lattice pierced by a homogeneous static magnetic field
+    $\bm{B} = B\hat{\bm{z}}$. The lattice constant is $b$, and the curved
+    arrows indicate the field-induced hopping phases.
+    % 
+  }\label{fig:hh-lattice}
+\end{figure}
+%
+\begin{align}
+  \phi^{x}_{m,n} &= \frac{e}{\hbar}\int_{{\rv}_{m,n}}^{{\rv}_{m+1,n}} d\rv \cdot \bm{A}(\rv) &
+  \phi^{y}_{m,n} &= \frac{e}{\hbar}\int_{{\rv}_{m,n}}^{{\rv}_{m,n+1}} d\rv \cdot \bm{A}(\rv)
+\end{align}
+where the integrals are now taken along the links joining neighbouring
+sites. Using Eq.~\eqref{eq:AB-closed}, the flux $\Phi$ through a
+plaquette can be related to the total phase $\phi_{\square}$
+accumulated on a contour enclosing the plaquette in a counterclockwise
+sense
+%
+\begin{equation}\label{eq:lattice-curl}
+  \phi_{\square} \equiv \sum_{\circlearrowleft
+    \square} \phi_{m,n} =  \phi^x_{m,n} + \phi^y_{m+1,n} - \phi^x_{m,n+1} - \phi^y_{m,n} = 2\pi \alpha 
+\end{equation}
+% 
+Note that $\phi_{\square}$ is gauge-independent, unlike the
+\textit{Peierls phases} $\phi_{m,n}$.
+
+
+
+\paragraph{HH Hamiltonian}
+To obtain the HH Hamiltonian, we introduce a static uniform magnetic
+field into the single-band Bose-Hubbard model Eq.~\eqref{eq:BH-ham} of
+Sec.~\ref{sec:optical-lattice}. We follow Hofstadter's original
+treatment, and neglect on-site interactions\footnote{For a treatment
+  that includes interactions in the Bogoliubov approximation, see
+  Ref.~\cite{PhysRevA.83.013612}.}, as well as the harmonic
+trapping. The kinetic term Eq.~\eqref{eq:kinetic-part} is then
+modified according to Peierls' substitution~\cite{peierls1933} to
+include the hopping phases $\phi_{m,n}$
+%
+\begin{equation}\label{eq:HH-hamiltonian}
+  \mathcal{H}_0 = -J \sum_{m,n} \left(e^{i\phi^x_{m,n}}\hat{a}^{\dagger}_{m+1,n}\hat{a}_{m,n} + e^{i\phi^{y}_{m,n}}\hat{a}^{\dagger}_{m,n+1}\hat{a}_{m,n}\right) + \text{H.c.}
+\end{equation}
+% 
+These phases act to ``frustrate'' the hopping, such that for
+noninteger $\alpha$ it is impossible to minimize the kinetic energy
+simultaneously on all lattice links~\cite{moessner2001}. The
+Hamiltonian is no longer invariant under translations by a single
+lattice site in any direction, because fixing a gauge for the vector
+potential $\bm{A}(\rv)$ reduces the physical symmetry of the
+lattice. In fact, it can be shown~\cite{jain2007composite} that a
+translation of $\bm{A}$ is equivalent to a gauge transformation,
+suggesting that new translation operators that would commute with
+Eq.~\eqref{eq:HH-hamiltonian} can be constructed as a combination of
+translation and gauge transformation.
+
+
+\paragraph{Magnetic translation operators}
+We define the \textit{magnetic translation operators} (MTOs)
+~\cite{zak1964group,zak1964representations} as
+
+%
+\begin{align}
+  \tx &= \sum_{m,n} \hat{a}^{\dagger}_{m+1,n}\hat{a}_{m,n}e^{i\theta^x_{m,n}} &
+  \ty &= \sum_{m,n} \hat{a}^{\dagger}_{m,n+1}\hat{a}_{m,n}e^{i\theta^y_{m,n}}
+\end{align}
+%
+where the phases $\theta_{m,n}$ are to be determined by imposing
+$\left[\hat{T}, \mathcal{H}_0 \right] = 0$, leading
+to~\cite{bernevig2013topological}
+%
+\begin{align}
+  \theta^x_{m,n} &= \phi^x_{m,n} + 2\pi\alpha n &
+  \theta^y_{m,n} &= \phi^y_{m,n} - 2\pi\alpha m 
+\end{align}
+% 
+While the specific form of the MTOs depends on the choice of gauge,
+their commutator is gauge independent
+%
+\begin{equation}\label{eq:TxTy}
+  \tx \ty = \ty \tx  e^{i2\pi\alpha} 
+\end{equation}
+% 
+and vanishes only if $\alpha$ is an integer, a situation equivalent to
+the zero-field case. In order to proceed, we point out that
+Eq.~\eqref{eq:TxTy} has a transparent physical interpretation. If we
+act on the single-particle state
+$\ket{m,n} = \hat{a}^{\dagger}_{m,n}\ket{0}$
+%
+\begin{equation}\label{eq:translation-loop}
+  \ty^{\dagger} \tx^{\dagger} \ty \tx \ket{m,n} = e^{-i2\pi\alpha} \ket{m,n}
+\end{equation}
+%
+we see that performing a counterclockwise loop around a unit cell
+results in the accumulation of a phase proportional to the flux inside
+the cell. This can be generalized to a macrocell containing
+$r \times s$ original lattice cells, to deduce that
+%
+\begin{equation}
+  \tx^r\ty^s = \ty^s\tx^re^{i(rs)2\pi\alpha}
+\end{equation}
+% 
+For $\alpha = p/q$ the commutator $\left[\tx^r, \ty^s\right]$ vanishes
+if $p (rs)/q$ is an integer. The smallest possible macrocell is given
+by $rs = q$ and is called the \textit{magnetic unit cell}. For this
+choice of unit cell, $\{\tx^r, \ty^s, \mathcal{H}_0\}$ form a complete
+set of commuting operators, so we can find simultaneous eigenstates,
+labeled by the quasimomentum $\hbar\kv^0$ which is now restricted to
+the \textit{magnetic Brillouin zone} (MBZ)
+$\left(-\frac{\pi}{rb}, \frac{\pi}{rb}\right) \times
+\left(-\frac{\pi}{sb}, \frac{\pi}{sb}\right)$.
+
+
+\paragraph{HH spectrum}
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=\linewidth]{hhgapwidth}
+  \caption{
+    % 
+    \emph{Top panels:} Single-particle energy spectrum (left)
+    $E_n(k_x^0=0,k_y)$ of the HH Hamiltonian Eq.~\eqref{eq:HH-hamiltonian}
+    for $\alpha = 1/7$ and dispersion of the two lowest bands, $E_0(\kv)$
+    (middle) and $E_1(\kv)$ (right) in (part of) the MBZ.  \emph{Bottom
+      panel:} Energy gap (continuous line) $\Delta E =
+    \left<E_1(\vt{k})\right>_{\vt{k}} - \left<E_0(\vt{k})\right>_{\vt{k}}$
+    (here $\left<\cdot\right>_{\vt{k}}$ denotes an average over the MBZ)
+    and bandwidth of $E_0(\kv)$ (dashed line, $\times 10$) for $p =
+    1$. The dotted vertical line marks the location of the $q = 7$ case
+    shown above.
     % 
   }\label{fig:hh-energy-levels}
 \end{figure}
 % 
+To obtain the spectrum of $\mathcal{H}_0$, we need to solve its
+associated Schr\"odinger equation,
+$\mathcal{H}_0\ket{\psi} = E\ket{\psi}$. We expand the eigenstates
+$\ket{\psi}$ in the single-particle basis
+$\ket{\psi} = \sum_{m,n} \psi_{m,n} \ket{m,n}$ and obtain an equation
+for the coefficients $\psi_{m,n}$
+%
+\begin{multline}\label{eq:HH-schrodinger}
+  -J \big(e^{-i\phi^x_{m,n}}\psi_{m+1,n}+e^{i\phi^x_{m-1,n}}\psi_{m-1,n}\\
+  {} + e^{-i\phi^y_{m,n}}\psi_{m,n+1} + e^{i\phi^y_{m,n-1}}\psi_{m,n-1}\big) = E\psi_{m,n}
+\end{multline}
+% 
+We fix the Landau gauge $\bm{A}(x,y)=Bx\hat{\bm{y}}$ for simplicity,
+so $\phi_{m,n} = (0,2\pi\alpha m)$ and we choose the magnetic unit
+cell\footnote{In the symmetric gauge, the magnetic unit cell is
+  larger, containing $2q \times 2q$ sites.}
+$r \times s = q \times 1$, for which the commuting MTOs read
+%
+\begin{align}
+  \hat{T}^q_x &= \sum_{m,n} \hat{a}^{\dagger}_{m+q,n} \hat{a}_{m,n} &
+  \hat{T}_y &= \sum_{m,n} \hat{a}^{\dagger}_{m,n+1} \hat{a}_{m,n}
+\end{align}
+%
+justifying the plane wave ansatz\footnote{Here $k_y$ is defined in the
+  full BZ.}  $\psi_{m,n} = e^{ik_ynb}e^{ik_x^0mb} \psi_m$ subject to
+the periodic boundary conditions $\psi_{m+q} = \psi_m$. Substituting
+this ansatz into Eq.~\eqref{eq:HH-schrodinger} yields the
+\textit{Harper equation}~\cite{Harper_1955}
+%
+\begin{equation}\label{eq:Harper}
+  -J\left[e^{-ik_x^0 b} \psi_{m-1} + 2\cos\left(k_yb - 2\pi\alpha m\right)\psi_m + e^{ik_x^0 b}\psi_{m+1}\right] = E\psi_m
+\end{equation}
+% 
+Calculating the single-particle spectrum of
+Eq.~\eqref{eq:HH-hamiltonian} is therefore equivalent to solving the
+eigenvalue equation
+$\sum_{m^{\prime}=0}^{q-1} H_{mm^{\prime}}\psi_{m^{\prime}} =
+E\psi_m$, $m=0,\dots,q-1$ for the $q \times q$ matrix $H$ defined
+as\footnote{If $q = 2$, $m+1 \bmod q = m-1 \bmod q$ and
+  $H_{01} = H_{10} = -2J\cos (k_x^0b)$.}
+%
+\begin{equation}\label{eq:Hmatrix}
+  H_{mm^{\prime}}(k_x^0,k_y) = -J\times\begin{cases}
+    e^{-ik_x^0 b} & \text{if $m^{\prime} = m-1 \bmod q$}\\
+    2\cos\left(k_yb - 2\pi\alpha m\right) & \text{if $m^{\prime} = m$}\\
+    e^{ik_x^0 b}  & \text{if $m^{\prime} = m+1 \bmod q$}\\
+    0 & \text{otherwise}
+  \end{cases}
+\end{equation}
+%
+For integer $\alpha$ we recover the lowest Bloch band
+Eq.~\eqref{eq:tb-dispersion}, while for $\alpha = p/q$ this band
+splits into $q$ bands with dispersion $E_n(k_x^0,k_y)$, $n =
+0,\dots,q-1$. 
+
+\paragraph{Spectrum discussion}
+In the top-left panel of Fig.~\ref{fig:hh-energy-levels} we show an
+example of the spectrum computed by diagonalizing $H$ for
+$\alpha = 1/7$. The $E=0$ level is at the centre of the middle band,
+and there are $q-1$ gaps separating the bands. For even values of $q$,
+the spectrum is symmetric with respect to $E=0$ and the two central
+bands touch at zero energy. Around these degeneracy points, the
+dispersion is linear~\cite{PhysRevB.39.11943}, while in all other
+cases it is quadratic near its minimum. The $\alpha=1/2$ case is
+particularly interesting by analogy to graphene-related
+physics~\cite{RevModPhys.81.109}, as there are two inequivalent
+``Dirac points'' and the Hamiltonian preserves time-reversal
+symmetry. Inspecting the middle and right panels we note that, despite
+the reduced symmetry of $\mathcal{H}_0$, the dispersion has the full
+$C_4$ rotational symmetry of the underlying square lattice. One can
+formally define rotation and reflection operators which, together with
+the MTOs, constitute the full \textit{projective symmetry
+  group}~\cite{PhysRevB.65.165113}.  The bottom panel of
+Fig.~\ref{fig:hh-energy-levels} shows the evolution of the lowest
+energy gap $\Delta E$, as well as the bandwidth $BW$ of the lowest
+band as function of $q$ (for the case $\alpha = 1/q$). The lowest band
+gets flatter, as the continuum ($q \rightarrow \infty$) LLL
+eigenstates are the solutions of the lowest band of the HH
+model~\cite{bernevig2013topological}, and $\Delta E$ decreases like
+$\sim 1/q$, as the number of gaps is $\sim q-1$ (excluding the band
+bottom and band top).
+
+
+\paragraph{HH topology}
+The energy bands of the HH model are topologically nontrivial, as
+characterized by their non-zero \textit{Chern numbers} -- topological
+invariants that are linked to the quantization of the Hall
+conductivity in the integer quantum Hall (QH)
+effect~\cite{thouless}. In fact, solutions of the Harper equation
+Eq.~\eqref{eq:Harper} were also studied in connection with the QH
+effect~\cite{PhysRevB.39.11943}. We make use of these topological
+properties in Chapter~\ref{cha:landau}, where we consider the HH model
+in the presence of an external harmonic trap.
+
 
 \begin{subappendices}
 \section{Conservation laws for the GP field}
