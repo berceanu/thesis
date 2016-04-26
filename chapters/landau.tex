@@ -609,7 +609,8 @@ parameters are chosen to highlight the key features of different
 pumping schemes; we will present numerical results for a more
 realistic experimental system in Section \ref{sec:experiment}.  The
 numerical code was written in \textsc{Julia}~\cite{bezanson2014julia}
-and is available in appendix~\ref{sec:source-code-landau}.
+and is available online, as supplemental material to
+Ref.~\cite{Berceanu2016}.
 
 The intensity spectrum of the steady-state as a function of pump
 frequency is shown in Fig.~\ref{fig:pumping_schemes}, where we compare
@@ -967,28 +968,6 @@ dynamical features. In the longer run, when the synthetic gauge field
 is combined with strong interactions, one can hope to observe the
 hallmarks of fractional quantum Hall
 physics~\cite{umucalilar2012fractional,hafezi2013non}.
-
-\begin{subappendices}
-
-  \section{Source code}\label{sec:source-code-landau}
-  %
-  This appendix contains \textsc{Julia} 0.3 source code for the
-numerical simulations used to produce the figures appearing in
-Chapter~\ref{cha:landau}. Sec.~\ref{subsec:bp} contains the main
-program module, defining the functions used in simulations, while
-Sec.~\ref{subsec:hh} contains the module for constructing and
-diagonalizing the Harper-Hofstadter Hamiltonian.
-  %
-The figures are plotted using the \textsc{matplotlib} \textsc{Python}
-library v1.4.3, as follows: Sec.~\ref{subsec:nonabelian} contains the
-code for Fig.~\ref{fig:zpe}; Sec.~\ref{subsec:selection} produces
-Figs.~\ref{fig:pumping_schemes}, \ref{fig:delta_real_sp},
-and~\ref{fig:hom_mom_sp}; Sec.~\ref{subsec:torus-edge} produces
-Figs.\ref{fig:torus_edge} and~\ref{fig:moving_trap} and finally,
-Sec.~\ref{subsec:experimental} produces Fig.~\ref{fig:exp}.
-  %
-  \input{anc/scripts/source_code_landau}
-\end{subappendices}
 
 %%% Local Variables:
 %%% mode: latex
