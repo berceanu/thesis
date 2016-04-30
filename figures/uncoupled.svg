@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1136.0945"
+   height="954.95483"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="uncoupled.svg"
+   inkscape:export-filename="/home/berceanu/cuarta4wiki.underlay/plots/uncoupled.png"
+   inkscape:export-xdpi="150"
+   inkscape:export-ydpi="150">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.68222554"
+     inkscape:cx="356.17062"
+     inkscape:cy="492.48004"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="1914"
+     inkscape:window-height="1074"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(23.594437,-323.85895)">
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/./fig_real_diag_ks_-0_400_s.png"
+       xlink:href="./fig_real_diag_ks_-0_400_s.png"
+       y="323.85895"
+       x="-23.594437"
+       id="image3463"
+       height="307.22592"
+       width="450" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/./fig_real_diag_ks_0_000_p.png"
+       xlink:href="./fig_real_diag_ks_0_000_p.png"
+       y="619.62933"
+       x="420.45279"
+       id="image3787"
+       height="305.41403"
+       width="350" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/./fig_real_diag_ks_0_700_s.png"
+       xlink:href="./fig_real_diag_ks_0_700_s.png"
+       y="323.85895"
+       x="762.50006"
+       id="image4112"
+       height="284.8837"
+       width="350" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/./fig_real_diag_ks_0_700_i.png"
+       xlink:href="./fig_real_diag_ks_0_700_i.png"
+       y="914.69495"
+       x="762.50006"
+       id="image4242"
+       height="364.11887"
+       width="350" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/fig_real_diag_ks_0_000_s.png"
+       xlink:href="fig_real_diag_ks_0_000_s.png"
+       width="350"
+       height="309.35483"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeSpeed"
+       id="image3904"
+       x="426.40558"
+       y="323.85895" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/fig_real_diag_ks_0_700_p.png"
+       xlink:href="fig_real_diag_ks_0_700_p.png"
+       width="350"
+       height="293.52441"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeSpeed"
+       id="image3950"
+       x="762.50006"
+       y="617.08484" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/./fig_real_diag_ks_0_000_i.png"
+       xlink:href="./fig_real_diag_ks_0_000_i.png"
+       y="919.85303"
+       x="420.45279"
+       id="image3871"
+       height="306.06381"
+       width="350" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/fig_real_diag_xaxis.png"
+       xlink:href="fig_real_diag_xaxis.png"
+       width="273.69995"
+       height="69.546707"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeSpeed"
+       id="image4012"
+       x="426.45279"
+       y="1209.2671" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/./fig_real_diag_ks_-0_400_p.png"
+       xlink:href="./fig_real_diag_ks_-0_400_p.png"
+       y="619.62939"
+       x="69.579399"
+       id="image3560"
+       height="305.414"
+       width="350" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/fig_real_diag_yaxis.png"
+       xlink:href="fig_real_diag_yaxis.png"
+       width="99.173836"
+       height="274.23068"
+       preserveAspectRatio="none"
+       style="image-rendering:optimizeSpeed"
+       id="image4074"
+       x="-23.594437"
+       y="637.62939" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/./fig_real_diag_ks_-0_400_i.png"
+       xlink:href="./fig_real_diag_ks_-0_400_i.png"
+       y="920.20111"
+       x="69.20723"
+       id="image3657"
+       height="305.414"
+       width="350" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/fig_real_diag_yaxis.png"
+       xlink:href="fig_real_diag_yaxis.png"
+       y="937.03644"
+       x="-23.594437"
+       id="image4077"
+       style="image-rendering:optimizeSpeed"
+       preserveAspectRatio="none"
+       height="274.23068"
+       width="99.173836" />
+    <image
+       sodipodi:absref="/home/berceanu/Development/thesis/figures/fig_real_diag_xaxis.png"
+       xlink:href="fig_real_diag_xaxis.png"
+       y="1209.2671"
+       x="75.579391"
+       id="image4099"
+       style="image-rendering:optimizeSpeed"
+       preserveAspectRatio="none"
+       height="69.546707"
+       width="273.69995" />
+  </g>
+</svg>
