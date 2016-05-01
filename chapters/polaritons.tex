@@ -637,7 +637,27 @@ unlike the more complicated case of incoherent pumping where one
 generally also needs a phenomenological description of the various
 relaxation processes~\cite{Keeling_2007}.
 
-
+Before moving on, we note that one can also describe the dynamics of
+polaritons scattering against a defect using the two-component
+GPE~\cite{Whittaker_2005,Carusotto_2013} for the coupled exciton and
+cavity fields $\psi_{X,C} (\vt{r},t)$:
+%
+\begin{equation}\label{eq:2-component-GPE}
+  i\partial_t \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix} =
+  \hat{H} \begin{pmatrix} \psi_X \\ \psi_C \end{pmatrix}
+  + \begin{pmatrix} 0 \\ \mathcal{F}(\vt{r},t) \end{pmatrix} \; ,
+\end{equation}
+%
+where
+%
+\begin{equation}
+  \hat{H} = \begin{pmatrix} \omega_{X}(-i\nabla) - i
+    \frac{\gamma_X}{2} + g_X |\psi_X|^2 & \Omega_R \\ \Omega_R &
+    \omega_C(-i\nabla) - i \frac{\gamma_C}{2} + \tilde{V}_d \end{pmatrix} \; .
+\end{equation}
+%
+Eq.~\eqref{eq:2-component-GPE} is usually solved numerically, as we
+shall see in Chapter~\ref{cha:opo}.
 
 \section{Equation of state}
 \label{sec:eq-state}
@@ -668,11 +688,18 @@ the oscillation frequency of the condensate wavefunction is fixed by
 the pump frequency $\omega_p$. In Chapter~\ref{cha:drag}, we will
 compare the main features of the quasiparticle excitation spectrum for
 polaritons to equilibrium systems like cold atomic gases in the BEC
-regime.
-Another important consequence of this phase-locking is that experiments concerning
-topological phase defects such as vortices and solitons should be
-performed with a finite size pump, leaving the condensate phase
-unbound outside of the pump spot. 
+regime. Furthermore, a locked phase clearly prevents the formation of
+phase dislocations, such as vortices and solitons. For this reason, it
+has been suggested~\cite{Pigeon_2011} and experimentally
+realised~\cite{Amo_2011} that the defect can be located just outside
+the pump spot, leaving the condensate phase unbound and allowing
+hydrodynamic nucleation of vortices, vortex-antivortex pairs, arrays
+of vortices, and solitons to be observed when the fluid collides with
+the extended defect. Similarly, nucleation of vortices in the wake of
+the obstacle has been observed in pulsed experiments
+~\cite{Nardin_2011,Sanvitto_2011}.
+
+
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.9\linewidth]{bistable}

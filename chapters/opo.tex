@@ -161,8 +161,8 @@ component~\cite{Ciuti_2001,Wouters_2007_b}
 $\psi_{\vt{k}}^{} = X_{\vt{k}} \psi_{X,\vt{k}} + C_{\vt{k}}
 \psi_{C,\vt{k}}$, where
 $\psi(\vt{r},t) = \sum_{\vt{k}} e^{i\vt{k}\cdot \vt{r}}
-\psi_{\vt{k}}^{} (t)$. As detailed in Sec.~\ref{sec:mean-field}, we
-obtain Eq.~\eqref{eq:mom-GPE}:
+\psi_{\vt{k}}^{} (t)$. As explained in detail in
+Sec.~\ref{sec:mean-field}, we obtain Eq.~\eqref{eq:mom-GPE}:
 %
 \begin{multline}
   i\partial_t \psi_{\vt{k}}^{} = \left[\omega_{\vt{k}}^{LP} -
@@ -180,8 +180,8 @@ is the effective LP decay rate, the interaction strength is given by
 $g_{\vt{k}, \vt{k}_1, \vt{k}_2}=g_X X_{\vt{k}} X_{\vt{k}_1 +
   \vt{k}_2-\vt{k}} X_{\vt{k}_1} X_{\vt{k}_2}$, and the pumping term is
 given by $\tilde{f}_p(t)= C_{\vt{k}_p} f_p e^{-i\omega_p t}$. Note
-that the problematic dependence on the exciton-exciton interaction
-strength $g_X$ can be removed by rescaling both the LP field
+that the dependence on the exciton-exciton interaction strength $g_X$
+can be removed by rescaling both the LP field
 $\sqrt{g_X}\psi_{\kv}(t) \rightarrow \psi_{\kv}(t)$ and the pump
 strength $\sqrt{g_X}f_p \rightarrow f_p$, something we will do later
 on to all effects, working in terms of energy blueshifts and the
@@ -204,12 +204,13 @@ rescaled pump intensity.
 \end{figure}
 %
 \paragraph{Linear response ansatz}
-In the limit where the homogeneously pumped system is only weakly
-perturbed by the external potential $V_d(\vt{r})$, we apply a
-linear-response analysis~\cite{Astrakharchik_2004}: The LP field is
-expanded around the mean-field terms for the three $n=1,2,3=s,p,i$ OPO
-states~\cite{Whittaker_2005} (see Eqs.~\eqref{eq:3-state-ansatz}
-and~\eqref{eq:pump-fluctuations})
+As already explained in Sec.~\ref{sec:opo}, in the limit where the
+homogeneously pumped system is only weakly perturbed by the external
+potential $V_d(\vt{r})$, we apply a linear-response
+analysis~\cite{Astrakharchik_2004}: The LP field is expanded around
+the mean-field terms for the three $n=1,2,3=s,p,i$ OPO
+states~\cite{Whittaker_2005} (see Eqs.~\eqref{eq:pump-fluctuations}
+and~\eqref{eq:3-state-ansatz})
 %
 \begin{equation}
   \psi_{\tilde{\vt{k}}}^{} = \sum_{n=1}^3 e^{-i \omega_n t}
@@ -229,8 +230,7 @@ $\epsilon_n = g_X X^2_{\vt{k}_n} |\psi_{n}^{}|^2$ on the system
 parameters~\cite{Wouters_2007_b}. A typical behaviour of $\epsilon_n$
 as a function of the rescaled pump intensity
 $I_p = g_X C_{\vt{k}_p}^2 f_p^2/X_{\vt{k}_p}^2$ in the optical limiter
-regime is plotted in the left panel of Fig.~\ref{fig:spect} (compare
-to Fig.~\ref{fig:spi} of Sec.~\ref{sec:opo}).
+regime is plotted in the left panel of Fig.~\ref{fig:spect}.
 %
 At first order, one obtains six coupled equations diagonal in momentum
 space~\cite{Wouters_2007}
@@ -276,11 +276,10 @@ where the three OPO states components are
 \begin{align}
   (M_{\vt{k}}^{})_{mn} &= \left[\omega^{LP}_{\vt{k}_m + \vt{k}}
     - \omega_m - i\frac{\gamma_{\vt{k}_m + \vt{k}}}{2}\right]
-  \delta_{m,n} \\
-%
-  \nonumber & + 2\sum_{q,t=1}^3
+  \delta_{m,n}
+   + 2\sum_{q,t=1}^3
   g_{\vt{k}_m+\vt{k},\vt{k}_n+\vt{k},\vt{k}_t} \psi_q^*
-  \psi_t^{} \delta_{m+q,n+t}\\
+  \psi_t^{} \delta_{m+q,n+t}\nonumber\\
 %
   (Q_{\vt{k}}^{})_{mn} &= \sum_{q,t=1}^3
   g_{\vt{k}_m+\vt{k},\vt{k}_q,\vt{k}_t} \psi_q^{} \psi_t^{}
@@ -356,8 +355,9 @@ they do not appear to be relevant here, note that the presence of a
 non-vanishing imaginary part of the excitation spectrum
 $\Im[\omega_{n,(u,v),\tilde{\vt{k}}}]\neq 0$ introduces some
 complications: Even in the absence of any Rayleigh ring, the drag
-force can be non-vanishing and the standard Landau criterion may fail
-to identify a critical velocity~\cite{Wouters_2010}.
+force can be non-vanishing (as we saw in Chapter~\ref{cha:drag} for
+the pump-only case) and the standard Landau criterion may fail to
+identify a critical velocity~\cite{Wouters_2010}.
 %
 The modulations propagate with a direction
 $\hat{\eta}_{n,(u,v),\tilde{\vt{k}}}$ orthogonal to each curve
@@ -577,7 +577,7 @@ wavelength modulations and only very weakly the pump one.
 \subsection{Discussion}
 %
 \begin{figure}[tb]\centering
-\includegraphics[width=.9\linewidth]{uncoupled}
+\includegraphics[width=.7\linewidth]{uncoupled}
 % ~/notebooks/OPODrag/opodrag.py
 \caption{Real space profiles of three uncoupled signal, pump and idler
   fluids. The rescaled profiles $|\psi (\vt{r},\omega_n)|^2/|\psi_n|^2$

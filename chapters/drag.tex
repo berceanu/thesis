@@ -23,7 +23,8 @@ coincides with the speed of sound $c_s$. Clearly, this is strictly
 correct only for vanishingly small
 perturbations~\cite{Astrakharchik_2004}, while for a defect with
 finite size and strength, the critical velocity can be smaller than
-$c_s$~\cite{Onofrio_2000,Ianeselli_2006}.
+$c_s$~\cite{Onofrio_2000,Ianeselli_2006}, due to vortex creation by
+the macroscopic defect.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.8\linewidth]{alberto}
@@ -49,9 +50,9 @@ the Landau criterion has to be
 questioned~\cite{Szyma_ska_2006,Wouters_2010,Cancellieri_2010}. In the
 particular case of coherently driven polaritons in the pump-only
 configuration, it has been predicted~\cite{Carusotto_2004,Ciuti_2005},
-and later observed~\cite{Amo_2009} (see Fig.~\ref{fig:alberto}), that
-scattering is suppressed at either strong enough pump powers or small
-enough flow velocities. Yet, on closer scrutiny, it has been shown
+and later observed~\cite{Amo_2009}, that scattering is suppressed at
+either strong enough pump powers or small enough flow velocities (see
+Fig.~\ref{fig:alberto}). Yet, on closer scrutiny, it has been shown
 that, despite the apparent validity of the Landau criterion, the
 system always experiences a residual drag force, even in the limit of
 asymptotically large densities~\cite{Cancellieri_2010} or small
@@ -69,20 +70,21 @@ residual drag force, which, in agreement with
 Ref.~\cite{Cancellieri_2010}, lies in the polariton lifetime only, can
 be demonstrated even within a linear response approximation.
 
-More specifically, we apply the linear response theory of
-Sec.~\ref{sec:linear-response} to analytically evaluate the drag force
-exerted by the coherently driven polariton fluid in the pump-only
-configuration on a point-like defect. To simplify the formalism, we
-restrict our analysis to the case of resonant pumping close to the
-bottom of the lower polariton dispersion, where the dispersion is
-quadratic. Here, the properties of the collective excitation spectrum
-have been shown to be uniquely determined by three parameters
-only~\cite{Ciuti_2005}: the fluid velocity $v_p$, the
-interaction-renormalised pump detuning $\Delta_p$, and the polariton
-lifetime $\kappa$. In particular, the sign of the detuning $\Delta_p$
-determines three qualitatively different types of spectra: linear for
-$\Delta_p= 0$, diffusive-like for $\Delta_p> 0$, and gapped for
-$\Delta_p< 0$.
+More specifically, we apply the linear response theory described in
+Sec.~\ref{sec:linear-response} for the case of an equilibrium
+condensate and extended here to a driven-dissipative fluid in order to
+analytically evaluate the drag force exerted by the coherently driven
+polariton fluid in the pump-only configuration on a point-like
+defect. To simplify the formalism, we restrict our analysis to the
+case of resonant pumping close to the bottom of the lower polariton
+dispersion, where the dispersion is quadratic. Here, the properties of
+the collective excitation spectrum have been shown to be uniquely
+determined by three parameters only~\cite{Ciuti_2005}: the fluid
+velocity $v_p$, the interaction-renormalised pump detuning $\Delta_p$,
+and the polariton lifetime $\kappa$. In particular, the sign of the
+detuning $\Delta_p$ determines three qualitatively different types of
+spectra: linear for $\Delta_p= 0$, diffusive-like for $\Delta_p> 0$,
+and gapped for $\Delta_p< 0$.
 
 For both cases of linear and diffusive spectra, we find a
 qualitatively similar behaviour of the drag force as a function of the
@@ -123,8 +125,9 @@ asymmetric perturbation induced in the fluid by the defect in the
 direction of the fluid velocity.
 
 This Chapter is structured as follows: In Sec.~\ref{sec:linea} we
-briefly introduce the linear response approximation. We classify the
-three types of collective excitation spectra in the simplified case of
+briefly review the linear approximation scheme and extend it to the
+case of a resonantly pumped polariton fluid. We classify the three
+types of collective excitation spectra in the simplified case of
 excitation close to the bottom of the LP dispersion in
 Sec.~\ref{sec:spect}. In Sec.~\ref{sec:drag} we derive the drag force
 and characterise the crossover from the subsonic to the supersonic
@@ -141,10 +144,10 @@ Sec.~\ref{sec:concl}.
 As explained in Chapter~\ref{cha:polaritons}, the description of
 cavity polaritons resonantly excited by an external laser is usually
 formulated in terms of a classical non-linear Schr\"odinger equation
-(or Gross-Pitaevskii equation)~\cite{Ciuti_2003} for the LP field
-$\psi_{LP}(\bm{r}, t)$ (see Eq.~\eqref{eq:rspace-GPE}, with the
-substitutions $\tilde{\psi} \rightarrow \psi_{LP}$,
-$\gamma/2 \rightarrow \kappa$, and $\tilde{V}_d \rightarrow V$):
+(or Gross-Pitaevskii equation) for the LP field $\psi_{LP}(\bm{r}, t)$
+(see Eq.~\eqref{eq:rspace-GPE}, with the substitutions
+$\tilde{\psi} \rightarrow \psi_{LP}$, $\gamma/2 \rightarrow \kappa$,
+and $\tilde{V}_d \rightarrow V$):
 %
 \begin{equation}
   i \partial_t \psi_{LP} = [\omega_{LP}(-i\nabla) - i\kappa +
@@ -155,8 +158,7 @@ $\gamma/2 \rightarrow \kappa$, and $\tilde{V}_d \rightarrow V$):
 The LP dispersion is expressed in terms of the photon
 $\omega_C(\bm{k}) = \omega_C^0 + \frac{\bm{k}^2}{2m_C}$ and exciton
 $\omega_X^0$ energies, the photon mass $m_C$, and the Rabi splitting
-$\Omega_R$~\cite{9780199228942} (see
-Eq.~\eqref{eq:polariton-dispersion}):
+$\Omega_R$ (see Eq.~\eqref{eq:polariton-dispersion}):
 %
 \begin{equation}
   \omega_{LP}(\bm{k}) = \frac{1}{2} \left[\omega_C(\bm{k}) +
@@ -180,22 +182,23 @@ Eq.~\eqref{eq:pwpump}):
 \end{equation}
 %
 Note that, as discussed in
-Secs.~\ref{sec:lower-polaritons}--~\ref{sec:mean-field},
+Secs.~\ref{sec:lower-polaritons}--\ref{sec:mean-field},
 Eq.~\eqref{eq:basic} is a simplified description of the polariton
 system. It implies that the interaction nonlinearities are small
-enough not to mix the lower and upper polariton branches. Moreover,
-starting from a formulation in terms of coupled exciton and photon
-fields, the polariton lifetime would be momentum dependent and,
-similarly, the polariton-polariton interaction strength $g$ is not
-contact-like as instead assumed in Eq.~\eqref{eq:basic}. However, as
-shown in Appendix~\ref{app:full}, these simplifications do not affect
-our results qualitatively, rather, they allow us to write them in
-terms of simpler expressions. Furthermore, we have checked that,
-whenever the system is excited near the bottom of the lower polariton
-dispersion, the results for the drag force reported in
-Sec.~\ref{sec:drag} coincide with the ones obtained by using an exact
-photon-exciton coupled field description, as the one employed in
-Chapter~\ref{cha:opo} (in particular, see Eq.~\eqref{eq:gpequ}).
+enough not to mix the lower and upper polariton branches and that we
+pump far from the UP dispersion. Moreover, starting from a formulation
+in terms of coupled exciton and photon fields, the polariton lifetime
+would be momentum dependent and, similarly, the polariton-polariton
+interaction strength $g$ is not contact-like as instead assumed in
+Eq.~\eqref{eq:basic}. However, as shown in Appendix~\ref{app:full},
+these simplifications do not affect our results qualitatively, rather,
+they allow us to write them in terms of simpler
+expressions. Furthermore, we have checked that, whenever the system is
+excited near the bottom of the lower polariton dispersion, the results
+for the drag force reported in Sec.~\ref{sec:drag} coincide with the
+ones obtained using the photon-exciton coupled field description
+Eq.~\eqref{eq:2-component-GPE} introduced in
+Chapter~\ref{cha:polaritons}.
 
 The potential $V(\bm{r})$ in Eq.~\eqref{eq:dispe} describes a
 defect, which can be either naturally present in the cavity
@@ -245,14 +248,13 @@ Eq.~\eqref{eq:ourL} for the atomic case):
 \end{equation}
 %
 with $\widetilde{\omega_{LP}} = \omega_{LP}-\omega_p + 2g
-|\psi_0|^2$. We are not interested here in solving the complex cubic
-mean-field equation for $\psi_0$ (see Eq.~\eqref{eq:pump-mf} for
-$\psi_p$), as this has been widely studied~\cite{9780199228942} and
-was already discussed in Sec.~\ref{sec:eq-state}. Rather, we want to
-study the response of the system to the presence of the defect and how
-different behaviours of the onset of dissipation can be described in
-terms of the different excitation spectra one can get for polaritons
-resonantly pumped close to the bottom of the LP dispersion.
+|\psi_0|^2$. We solved the complex cubic mean-field
+equation~\eqref{eq:pump-mf} for $\psi_0$ in
+Sec.~\ref{sec:eq-state}. Here, we want to study the response of the
+system to the presence of the defect and how different behaviours of
+the onset of dissipation can be described in terms of the different
+excitation spectra one can get for polaritons resonantly pumped close
+to the bottom of the LP dispersion.
 
 % mathematica nb -> dat file -> gnuplot gpi script -> eps file -> inkscape svg -> pdf file
 \begin{figure}[tb]\centering
@@ -400,12 +402,11 @@ $\delta k_x \simeq 0.2-0.8$~$\mu$m${}^{-1}$.
 The spectrum~\eqref{eq:spect} can be classified according to the sign
 of the interaction-renormalised pump detuning
 $\Delta_p$~\cite{Carusotto_2004,Ciuti_2005} --- see
-Fig.~\ref{fig:spect_pmp_only}.
-
-For $\Delta_p<0$ (panels [a,b]), the real part of the spectrum lacks
-the sonic behaviour at small $\delta \kv$, and shows a \emph{gap} that
-increases with $\abs{\Delta_p}$, while the imaginary part is
-determined by the polariton lifetime $\kappa$ only.
+Fig.~\ref{fig:spect_pmp_only}. For $\Delta_p<0$ (panels [a,b]), the
+real part of the spectrum lacks the sonic behaviour at small
+$\delta \kv$, and shows a \emph{gap} that increases with
+$\abs{\Delta_p}$, while the imaginary part is determined by the
+polariton lifetime $\kappa$ only.
 %
 If one applies the Landau criterion for the real part
 of the spectrum only, then one finds a critical velocity
@@ -501,7 +502,7 @@ We note that spectra [e]--[h] have no correspondence in equilibrium
 systems, because a finite polariton lifetime $\kappa$ is needed in
 order to insure stability, $\Im[\omega^{\pm}(\bm{k})]<0$. Following
 the literature~\cite{Carusotto_2013}, we refer to these spectra as
-\emph{diffusive}.
+\emph{diffusive-like}.
 %
 We also note that, for these spectra, even if considering only the
 real part of the collective excitation spectrum, as soon as the fluid
@@ -608,7 +609,7 @@ lifetime $\kappa'=\kappa/(g |\psi_0|^2)$ in the (a) subcritical regime
 ($v_p=0.2 c_s$) and (b) supercritical regime ($v_p=1.9 c_s$). In both
 cases we have fixed $\Delta_p=-0.3g|\Psi_0|^2$ ($v^c \simeq 1.46 c_s$)
 but these results are qualitatively similar for any other value of the
-pump detuning. We plot in the insets the normalised real-space
+pump detuning. We plot in the right panels the normalised real-space
 wavefunction $|\psi_{LP}(\bm{r})|^2/|\psi_0|^2$ for two specific
 values of $\kappa'=0.2$ and $\kappa'=0.8$.
 %
@@ -776,9 +777,9 @@ nonresonantly pumped polariton superfluids. We have also seen that the
 absence of a long-range wake does not imply the absence of
 dissipation, as a residual drag force due to the finite polariton
 lifetime is always present in the system. In this sense, one can say
-that we are not dealing with strict superfluidity.
+that we are not dealing with superfluid behaviour in a strict sense.
 
-
+\begin{subappendices}
 \section{GP equation for the LP branch}
 \label{app:full}
 %
@@ -853,7 +854,7 @@ expansion of $X_{\delta \bm{k} \pm \bm{k}_p}^2$, this would result in
 a renormalisation of the fluid velocity $\bm{v}_p$ in the
 expression~\eqref{eq:spect} which takes into account the blue-shift of
 the LP dispersion due to the interaction.
-
+\end{subappendices}
 
 
 %%% Local Variables:
