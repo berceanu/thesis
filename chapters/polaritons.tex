@@ -9,12 +9,12 @@
 
 Consider the following (simplified) physical system, at zero
 temperature: we have an optical planar microcavity containing photons
-confined along the growth direction $z$ by its (identical) metalic
-mirrors, separated by a distance $l_z$. At position $z_{\text{QW}}$,
-the cavity contains a 2D quantum well (QW), which is a thin
-semiconductor layer sandwitched in between another alloy acting as a
-barrier. The setup is shown in Fig.~\ref{fig:cavity-polaritons} (for
-an in-depth introduction to the physics of semiconductor
+confined along the growth direction (say $z$) by its (identical)
+metalic mirrors, separated by a distance $l_z$. At position
+$z_{\text{QW}}$, the cavity contains a 2D quantum well (QW), which is
+a thin semiconductor layer sandwitched in between another alloy acting
+as a barrier. The setup is shown in Fig.~\ref{fig:cavity-polaritons}
+(for an in-depth introduction to the physics of semiconductor
 microcavities, see Ref.~\cite{9780199228942}). The photons create
 electron-hole hydrogenlike bound pairs (excitons) confined by the
 barrier inside the QW. Exactly describing the system of electrons,
@@ -63,7 +63,7 @@ photonic field corresponding to the $N = 5$ mode as a standing wave,
 representing the measurable electric field inside the cavity. This
 field can be expressed in terms of photonic operators by
 $E(\kv,z)a_{\kv} +$ H.c., where the photon mode wavefunction
-$E(\kv,z)$ has the sinusoidal shape~\cite{Carusotto_2013}
+$E(\kv,z)$ has the sinusoidal shape~\cite{9780199228942}
 %
 \begin{equation}\label{eq:electric-field}
   E(\kv,z) \propto \sqrt{\omega_C(k)/l_z} \sin \left(k_z z\right)
@@ -72,12 +72,11 @@ $E(\kv,z)$ has the sinusoidal shape~\cite{Carusotto_2013}
 
 
 The cavity photon dispersion for each of these modes is therefore
-$\omega_C(k) = v \sqrt{k^2 + k_z^2}$, with $v$ the speed of light in
-the semiconductor. Expanding the square root for $k \ll k_z$, one gets
-$\omega_C(k) \approx \omega_C(0) + k^2/(2m_{C})$. We see that cavity
+$\omega_C(k) = c/n \sqrt{k^2 + k_z^2}$, with $c/n$ the speed of light
+in the semiconductor. Expanding the square root for $k \ll k_z$, one
+gets $\omega_C(k) \approx c/n k_z + k^2/(2m_{C})$. We see that cavity
 photons, as opposed to free-space photons, have a quadratic dispersion
-with an effective mass $m_C$ related to the cutoff frequency $\omega_C(0)$
-by $m_{C} v^2 = \omega_C(0)$. For typical cavities used in
+with an effective mass $m_C = nk_z/c$. For typical cavities used in
 experiments, $m_{C}$ is of the order of $10^{-5}$ (free) electron
 masses $m_e^0$ (see Tab.~\ref{tab:GaAs-params}).
 
@@ -90,11 +89,14 @@ $\varepsilon^c_{k} = \varepsilon_g/2 + k^2/(2m_e)$ and
 $\varepsilon^v_{k} = - \varepsilon_g/2 - k^2/(2m_h)$, with
 $\varepsilon_g$ the semiconductor bandgap and $m_e$ and $m_h$ the
 effective masses for electrons and (heavy) holes. Excitons have a
-typical extension $\lambda_X = \frac{\epsilon}{2\mu e^2}$ called the
-(2D) exciton Bohr radius, with $\epsilon$ the static dielectric
-constant, $e$ the electron charge and $\mu^{-1} = m_e^{-1} + m_h^{-1}$
-their reduced mass. Their binding energy is called the exciton
-Rydberg, defined as $\Ry_X = \frac{e^2}{\epsilon \lambda_X}$.
+typical ``extension'' $\lambda_X = \frac{\epsilon}{2\mu e^2}$ (see
+Tab.~\ref{tab:GaAs-params} for typical values for a GaAs-based
+microcavity) called the (2D) exciton Bohr radius, with $\epsilon$ the
+static dielectric constant, $e$ the electron charge and
+$\mu^{-1} = m_e^{-1} + m_h^{-1}$ their reduced mass. Their binding
+energy is called the exciton Rydberg, defined as
+$\Ry_X = \frac{e^2}{\epsilon \lambda_X}$ (see
+Tab.~\ref{tab:GaAs-params}).
 
 We further define $c_{\kv}^{\dagger}$ and $v_{\kv}$ as the operators which
 create an electron in the empty conduction band, respectively a hole
@@ -105,7 +107,8 @@ rules
   \left\{c_{\kv}, c_{\kv^{\prime}}\right\} & = \left\{c_{\kv}^{\dagger}, c_{\kv^{\prime}}^{\dagger}\right\} = 0
 \end{align}
 and similar for $v_{\kv}$. We can therefore write the electronic
-Hamiltonian in terms of these new operators as~\cite{Keeling_2007}
+Hamiltonian in terms of these new operators
+as~\cite{yamamoto1999mesoscopic}
 %
 \begin{equation}\label{eq:coulomb-hamiltonian}
   H_{\text{el}} = \sum_{\kv} \left( \varepsilon^c_k c_{\kv}^{\dagger} c_{\kv} + \varepsilon^v_k v_{\kv}^{\dagger} v_{\kv} \right) + \frac{1}{2}\sum_{\bm{q}} V_q \left( \rho^e_{\bm{q}} \rho^e_{-\bm{q}} + \rho^h_{\bm{q}} \rho^h_{-\bm{q}} -2 \rho^e_{\bm{q}} \rho^h_{-\bm{q}}\right)
@@ -150,8 +153,8 @@ larger than $\lambda_X$, one can assume excitons to behave esentially
 as (composite) bosons~\cite{deveaud2003electron}, and therefore
 describe them using the Bose creation and annihilation operators
 $b_{\kv}^{\dagger}$ and $b_{\kv}$. Making an Usui
-transformation~\cite{Usui1960} and truncating the interaction terms at
-fourth order results in the following three-part effective
+transformation~\cite{PhysRevB.61.13856} and truncating the interaction
+terms at fourth order results in the following three-part effective
 Hamiltonian~\cite{Ciuti_2003}
 %
 \begin{equation}\label{eq:total-ham}
@@ -183,8 +186,9 @@ of the rotating-wave approximation, neglecting antiresonant terms
 which do not conserve the number of excitations, such as
 $b_{\kv}a_{\kv}$ and $b_{\kv}^{\dagger}a_{\kv}^{\dagger}$. This is
 justified so long as $\Omega_R \ll \omega_C(0),\, \omega_X(0)$, which
-is normally the case, as can be seen by inspecting
-Tab.~\ref{tab:GaAs-params}.
+is normally the case, as can be seen in Tab.~\ref{tab:GaAs-params},
+which reports typical parameters of a GaAs-based microcavity with
+embedded QWs.
 
 Eq.~\eqref{eq:polariton-ham} can be diagonalized by means of a unitary
 transformation of the form~\cite{Hopfield1958}
@@ -235,28 +239,24 @@ $M = m_e + m_h$ of the order of the electron mass and
 $\omega_X(0) = \varepsilon_g - \Ry_X$. Since, as we have already
 noted, $M$ is several orders of magnitude larger than the cavity
 photon mass $m_{C}$, one can in practice neglect the momentum
-dependence of the excitonic dispersion, considering it as
-flat. Furthermore, we can agree to measure energies starting from
-$\omega_X(0)$ and denote the detuning between exciton and photon bands
-as $\delta \equiv \omega_C(0) - \omega_X(0)$. For zero detuning
-($\delta = 0$), the splitting between the two polariton branches is
-$2\Omega_R$. In order to tune $\delta$ in experiments, one tipically
-builds the cavity mirrors with a wedge~\cite{Weisbuch1992}.
+dependence of the excitonic dispersion, considering it as flat
+compared to the cavity photon one. Furthermore, we can measure
+energies starting from $\omega_X(0)$ and denote the detuning between
+exciton and photon bands as $\delta \equiv \omega_C(0) -
+\omega_X(0)$. For zero detuning ($\delta = 0$), the splitting between
+the two polariton branches is $2\Omega_R$. In order to tune $\delta$
+in experiments, one tipically builds the cavity mirrors with a
+wedge~\cite{Weisbuch1992}.
 
 
 
 $H_{\text{XX}}$ quantifies the effective repulsive exciton-exciton
 interaction, with a momentum dependent strength
 $U_{\kv - \kv^{\prime},\bm{q}}$ that can be calculated from the
-Coulomb exchange term in the Born approximation.  Notice that the
-form of this interaction corresponds to Feynman diagrams with
-4-legged vertices in quantum field theory language, implying binary
-collision with momentum conservation: two excitons in the planewave
-states $\ket{\kv}$ and $\ket{\kv^{\prime}}$ scatter into the new
-states $\ket{\bm{\kv+\bm{q}}}$ and $\ket{\bm{\kv^{\prime}-\bm{q}}}$.
-A further approximation that one can make for wave vectors much
-smaller than $\lambda_X^{-1}$ is to reduce
-$U_{\kv - \kv^{\prime},\bm{q}}$ to a contact potential
+Coulomb exchange term in the Born approximation~\cite{Ciuti1998}.  A
+further approximation that one can make for wave vectors much smaller
+than $\lambda_X^{-1}$ is to reduce $U_{\kv - \kv^{\prime},\bm{q}}$ to
+a contact potential
 $g_X \equiv \frac{1}{2} U_{\bm{0},\bm{0}} =
 \frac{6e^2\lambda_X}{2A\epsilon}$, as shown in
 Ref.~\cite{Ciuti1998}. As a result, $g_X$ physically represents the
@@ -276,16 +276,16 @@ Hamiltonian Eq.~\eqref{eq:total-ham} (see Tab.~\ref{tab:GaAs-params}).
 
 Before concluding this Section, one should mention the validity
 limitations of the weakly interacting boson model for polaritons
-reviewed here. Its derivation, by means of the Usui transformation,
-implies an expansion of the original fermionic operators of
-Eq.~\eqref{eq:coulomb-hamiltonian} in powers of bosonic operators,
-having as small parameter the number of excitons per Bohr radius
-$\lambda_X$. Truncating this series at fourth order results in an
-upper bound on the exciton density of around $1/\lambda_X^2$. At
-higher densities, an electron-hole plasma-like state is formed, with a
-a qualitatively different behaviour~\cite{COMBESCOT2008}.  We see that
-this model is particularly useful for the case when the dominant
-interaction is the Coulomb repulsion between the excitons.
+reviewed here. Its derivation implies an expansion of the original
+fermionic operators of Eq.~\eqref{eq:coulomb-hamiltonian} in powers of
+bosonic operators, having as small parameter the number of excitons
+per Bohr radius $\lambda_X$. Truncating this series at fourth order
+results in an upper bound on the exciton density of around
+$1/\lambda_X^2$. At higher densities, an electron-hole plasma-like
+state is formed, with a a qualitatively different
+behaviour~\cite{COMBESCOT2008}.  We see that this model is
+particularly useful for the case when the dominant interaction is the
+Coulomb repulsion between the excitons.
 
 \section{Lower polaritons}
 \label{sec:lower-polaritons}
@@ -334,11 +334,12 @@ if we neglect the flat exciton dispersion in the limit $M \gg
 m_C$. For zero detuning, we see that $m_{\text{LP}} = 2m_C$ and the
 light and matter content of lower polaritons are each equal to $1/2$.
 
-As long as the interesting physics is limited to small wavevectors
-$\kv$, close to the bottom of the LP branch, one can safely
-approximate the LP dispersion as being parabolic, by expanding
-Eq.~\eqref{eq:polariton-dispersion} in a Taylor series around
-$\kv = 0$ and truncating at second order. We obtain the expression
+As long as the interesting physics is limited to small (compared to
+$\sqrt{m_{\text{LP}}\Omega_R}$) wavevectors $\kv$, close to the bottom
+of the LP branch, one can safely approximate the LP dispersion as
+being parabolic, by expanding Eq.~\eqref{eq:polariton-dispersion} in a
+Taylor series around $\kv = 0$ and truncating at second order. We
+obtain the expression
 %
 \begin{equation}\label{eq:parabolic-disp}
   \omega_{\text{LP}}(k) \simeq \omega_{\text{LP}}(0) + \frac{k^2}{2m_{\text{LP}}}
@@ -355,7 +356,7 @@ by limiting ourselves to the LP branch with a quadratic dispersion.
 We have so far assumed that the mirrors at the two ends of the optical
 cavity in Fig.~\ref{fig:cavity-polaritons} are perfect. In reality of
 course, this is not the case, and photons continuously escape from the
-cavity. In other words, dissipation is a built-in feature of this
+cavity. In other words, decay is a built-in feature of this
 system and, rather than being a hindrance, it is actually useful as it
 allows one to extract information about the system. By looking at
 the near-field (far-field) emission from the cavity, one can measure
@@ -376,19 +377,20 @@ point the interested reader to the excelent review in
 Ref.~\cite{Carusotto_2013} (and references therein) for details.
 
 Resonant pumping is done by means of a continuous-wave coherent laser
-beam which is transmitted through one of the mirrors. The coherence of
-the beam is then inherited by the polariton fluid.  As already
-mentioned, conservation of in-plane momentum and photon frequency
-dictates that a laser wave coming in at an angle $\theta$ and
-frequency $\omega$ resonantly excites a microcavity mode with
-wavevector $k_{\parallel} = \frac{\omega}{c}\sin(\theta)$ (see
+beam which is transmitted through one of the mirrors, at energies and
+momenta close to the LP or UP. The coherence of the beam is then
+inherited by the polariton fluid.  As already mentioned, conservation
+of in-plane momentum and photon frequency dictates that a laser wave
+coming in at an angle $\theta$ and frequency $\omega$ resonantly
+excites a microcavity mode with wavevector
+$k = \frac{\omega}{c}\sin(\theta)$ (see
 Fig.~\ref{fig:cavity-polaritons}). As a result, we see that, besides
 balancing the losses, the pump can also be used to tune the system to
 a particular desired state, injecting polaritons of a given momentum
 and energy. In the following we will consider that the pumping is done
 quasi-resonantly, close to the bottom of the LP branch, by using a
 homogeneous planewave pump of amplitude $f_p$, wavevector $\kv_p$,
-frequency $\omega_p$ and circular polarization
+frequency $\omega_p$
 \begin{equation}\label{eq:pwpump}
   \mathcal{F}(\bm{r},t) = f_p \exp{\left[i (\bm{k}_p \cdot \bm{r} -
     \omega_p t)\right]}
@@ -396,15 +398,16 @@ frequency $\omega_p$ and circular polarization
 
 Depending on the pump parameters (specifically the pumping angle,
 which in turn determines $k_p$), one can distinguish two qualitatively
-different regimes: the pump-only state where where the only stable
-configuration of the system is the mode at $k_p$ and the regime where
-polaritons at $k_p$ undergo stimulated scattering and populate two
-other modes. Indeed, if the pumping angle is such that the wavevector
-it excites lies close to the inflection point of the LP dispersion,
-the system can enter a new regime called \textit{optical parametric
-  oscillator} (see Sec.~\ref{sec:opo} for details about OPO).
+different regimes: 1) the pump-only state where the only stable
+configuration of the system is the mode at $k_p$ and 2) the regime
+where polaritons at $k_p$ undergo stimulated scattering and populate
+two other modes. Indeed, if the pumping angle is such that the
+wavevector it excites lies above the inflection point of the LP
+dispersion, the system can enter a new regime called \textit{optical
+  parametric oscillator} (see Sec.~\ref{sec:opo} for details about
+OPO).
 
-To quantitatively account for the driving and dissipation, one can use
+To quantitatively account for the driving and decay, one can use
 the input-output formalism that was extended to planar microcavities
 in Ref.~\cite{Ciuti2006}. As far as photonic losses are concerned, we
 must first note that, apart from the radiative decay channels already
@@ -412,24 +415,14 @@ mentioned, there is also a nonradiative contribution due to photon
 absorbtion inside the cavity. The total cavity photon decay rate
 $\gamma_C$ can therefore be expressed as the sum
 $\gamma_C^{\text{rad}} + \gamma_C^{\text{nrad}}$, where the radiative
-decay rate
+decay rate is~\cite{burstein2012confined,Carusotto_2013}
 %
 \begin{equation}\label{eq:rad-decay}
-  \gamma_C^{\text{rad}}(\kv) = -2 \eta(\kv)\kappa(\kv)
+  \gamma_C^{\text{rad}}(\kv) = \frac{ct^2}{2l_z}
 \end{equation}
 % 
-is a function of the input (output) coefficients $\eta$ ($\kappa$)
-that can generally be computed via the transfer matrix
-method~\cite{burstein2012confined}. For the simple case of normal
-incidence and mirror transmittivity $t \ll 1$, these coefficients are
-given by~\cite{Carusotto_2013}
-\begin{align}
-  \begin{split}
-    \eta(\kv) & =(c t/2l_z) \sqrt{l_z/\pi\omega_C(\kv)}\\
-    \kappa(\kv) & =-t\,\sqrt{\pi \omega_C(\kv) / l_z}  
-  \end{split}
-\end{align}
-with $c$ the speed of light in vacuum.
+for normal incidence, where $c$ is the speed of light in vacuum and $t$
+the mirror transmittivity.
 
 The excitons from the QW are of course also subject to decay
 processes. While their radiative decay can only take place via one of
@@ -467,19 +460,16 @@ $\ell_{C} = (m_{C}\Omega_R)^{-1/2}$ on the order of microns (see
 Tab.~\ref{tab:GaAs-params}) and therefore can disrupt the polariton
 density profile. Photonic disorder is normally caused by the presence
 of imperfections inherent to the growth process of the cavity
-mirrors. These defects act as scattering centers for the polaritons,
-and can be included in the Hamiltonian as an additional external
-scalar potential. The simplest example is that of a spatially
-localized defect of strength $g_V$ located at positon $\rv_0$, which
-can be approximated by the potential
+mirrors. These defects (as well as any layer mismatch) act as
+scattering centers for the polaritons, and can be included in the
+Hamiltonian as an additional external scalar potential. The simplest
+example is that of a spatially localized defect of strength $g_V$
+located at positon $\rv_0$, which can be approximated by the potential
 %
 \begin{equation}\label{eq:defect-pot}
   \tilde{V}_d(\rv) = g_V \delta^2(\rv - \rv_0)
 \end{equation}
 % 
-
-\section{Realistic systems}
-\label{sec:realistic}
 
 To get a more quantitative idea of the physics involved, it is worth
 describing realistic samples typically used in state-of-the-art
@@ -489,15 +479,15 @@ reflectors (DBRs), which are alternating dielectric layers of
 thickness $\lambda/4$ and different refractive indices, achieving a
 total reflectivity of over $99.9$\%~\cite{9780199228942}. 
 
-Multiple CdTe or GaAs QWs a few nanometers thick are placed inside the
-cavity of length $l_z = 2\lambda \sim 1~\mu$m, at the antinodes
-(maxima) of the photonic electric field, in order to maximize the
-coupling between excitons and photons (see Eq.~\eqref{eq:omega-R},
-which shows maximum coupling for $E(z_{\text{QW}}) =
-E_{\text{max}}$). When $N$ distinct QWs are placed in the cavity at
-the electric field maxima, the light-matter coupling $\Omega_R$ is
-enhanced by a factor $\sqrt{N}$. Furthermore, the cavity cutoff
-frequency $\omega_C(0)$ is normally chosen close to the exciton
+Multiple CdTe (or GaAs, GaN, ZnO) QWs a few nanometers thick are
+placed inside the cavity of length $l_z = 2\lambda \sim 1~\mu$m, at
+the antinodes (maxima) of the photonic electric field, in order to
+maximize the coupling between excitons and photons (see
+Eq.~\eqref{eq:omega-R}, which shows maximum coupling for
+$E(z_{\text{QW}}) = E_{\text{max}}$). When $N$ distinct QWs are placed
+in the cavity at the electric field maxima, the light-matter coupling
+$\Omega_R$ is enhanced by a factor $\sqrt{N}$. Furthermore, the cavity
+cutoff frequency $\omega_C(0)$ is normally chosen close to the exciton
 frequency $\omega_X(0)$.
 
 Typical values of the relevant parameters for GaAs-based
@@ -516,9 +506,12 @@ microcavities are shown in Tab.~\ref{tab:GaAs-params}.
     $g_X \simeq 5\times10^{-3}$~meV($\mu$m)$^2$ &  $A \sim 10^4~\mu$m$^2$\\
     $\rho_{\text{sat}} \simeq 2842~$($\mu$m)$^{-2}$ &  $l_z \sim 1~\mu$m\\ \bottomrule
   \end{tabular}
-  \caption{Typical parameters of a microcavity containing GaAs QWs. Left column shows properties of the QW, while the right one refers to the microcavity. For these values, the ratio between saturation and
-    Coulomb interaction is small,
-    $\Omega_R/(g_X \rho_{\text{sat}}) \simeq 0.1$. From Ref.~\cite{9783642241857}.}
+  \caption{Typical parameters of a GaAs-based microcavity with
+    embedded QWs. Left column shows properties of a QW, while the
+    right one refers to the microcavity. For these values, the ratio
+    between saturation and Coulomb interaction is small,
+    $\Omega_R/(g_X \rho_{\text{sat}}) \simeq 0.1$. From
+    Ref.~\cite{9783642241857}.}
   \label{tab:GaAs-params}
 \end{table}
 %
@@ -530,9 +523,10 @@ microcavities are shown in Tab.~\ref{tab:GaAs-params}.
 As it turns out, a useful approach for tackling the
 hydrodynamics-related problems that we will encounter in the following
 Chapters is the so-called mean-field approximation. In the context of
-weakly interacting Bose gases, this approach leads to the celebrated
-Gross-Pitaevskii equation~\cite{9780198507192}, and in our case it
-will lead to its driven-dissipative counterpart.
+conservative, weakly interacting Bose gases at thermal equilibrium,
+this approach leads to the celebrated Gross-Pitaevskii
+equation~\cite{9780198507192}, and in our case it will lead to its
+driven-dissipative counterpart.
 
 If the Rabi energy is larger than the pump detuning from the bottom of
 the LP branch $\omega_p - \omega_{\text{LP}}(0)$ and also larger than
@@ -662,23 +656,27 @@ shall see in Chapter~\ref{cha:opo}.
 \section{Equation of state}
 \label{sec:eq-state}
 
-Given that we drive the system with the coherent continuous-wave pump Eq.~\eqref{eq:pwpump}, we can look for stationary state solutions with similar oscillatory behaviour, namely
+Because we drive the system with the coherent plane-wave continuous
+pump Eq.~\eqref{eq:pwpump}, we can look for stationary state solutions
+with similar oscillatory behaviour
 %
 \begin{equation}\label{eq:pump-ansatz}
   \psi(\rv,t) = \psi_p e^{i (\kv_p \cdot \rv- \omega_p t)}
 \end{equation}
 % 
-Inserting this ansatz into Eq.~\eqref{eq:mom-GPE} (without the defect
-potential term), we obtain the equation of state for lower polaritons,
-employing the simplified notation $\gamma_p \equiv \gamma(\kv_p)$,
-$C_p \equiv C(\kv_p)$, $X_p \equiv X(\kv_p)$ and
-$\omega^p_{\text{LP}} \equiv \omega_{\text{LP}}(\kv_p)$
+In absence of an external potential, inserting this ansatz into
+Eq.~\eqref{eq:mom-GPE}, we obtain the equation of state for lower
+polaritons
 %
 \begin{equation}\label{eq:pump-mf}
   \left[ \omega_p - \omega^p_{\text{LP}} - g_X X_p^4 \abs{\psi_p}^2 + \frac{i}{2}\gamma_p\right]\psi_p = C_p f_p
 \end{equation}
 % 
-One immediately notices that, unlike the case of the atomic mean-field
+where we employ the simplified notation
+$\gamma_p \equiv \gamma(\kv_p)$, $C_p \equiv C(\kv_p)$,
+$X_p \equiv X(\kv_p)$ and
+$\omega^p_{\text{LP}} \equiv \omega_{\text{LP}}(\kv_p)$. One
+immediately notices that, unlike the case of the atomic mean-field
 Eq.~\eqref{eq:atom-MF}, the phase of the polariton field amplitude
 $\psi_p$ is set by the pump, therefore explicitly breaking the $U(1)$
 gauge symmetry associated with global rotations of the condensate
@@ -753,7 +751,7 @@ this, one must consider small perturbations of wave-vector $\kv$ of
 the form
 %
 \begin{equation}\label{eq:pump-fluctuations}
-  \delta \psi(\rv,t) =  u_p e^{i [(\kv_p + \delta\kv) \cdot \rv - (\omega_p + \omega) t ]}  + v_p^{\star}e^{i[ (\kv_p - \delta\kv) \cdot \rv- (\omega_p - \omega) t]}
+  \delta \psi(\rv,t) = \sum_{\kv,\omega} \left\{ u_p e^{i [(\kv_p + \delta\kv) \cdot \rv - (\omega_p + \omega) t ]}  + v_p^{\star}e^{i[ (\kv_p - \delta\kv) \cdot \rv- (\omega_p - \omega) t]} \right\}
 \end{equation}
 % 
 where $\delta\kv \equiv \kv - \kv_p$. Substituting this into
@@ -762,8 +760,8 @@ $u_p$ and $v_p$, we obtain an eigenvalue problem from which the two
 (complex) eigenvalues $\omega$ can be determined in a straightforward
 manner. 
 
-Dynamical stability is then ensured iff
-$\Im\left[\omega(\kv)\right] < 0$ for all wave-vectors $\kv$.  We can
+Dynamical stability is then ensured when
+$\Im\left[\omega(\kv)\right] < 0$ for any wave-vector $\kv$.  We can
 therefore distinguish two main types of instabilities, depending on
 the value of $\delta\kv$: for $\delta\kv =0$ (the degenerate case),
 the system shows a \textit{Kerr single-mode} (or pump-only)
@@ -913,7 +911,7 @@ form~\cite{Ciuti_2000,Whittaker2001,Whittaker_2005,Gippius2004}
 where energy and momentum conservation dictate that
 $\omega_i = 2\omega_p - \omega_s$ and $\kv_i = 2\kv_p - \kv_s$. As
 before, we insert this ansatz into Eq.~\eqref{eq:mom-GPE} and we
-obtain three couplex (complex) equations of motion for $\psi_{s,p,i}$
+obtain three coupled complex nonlinear equations for $\psi_{s,p,i}$
 which determine the dynamics of the signal, pump and idler. It is
 important to note that these equations become closed only if we
 neglect the multiple scattering processes mentioned at the start of
@@ -931,7 +929,7 @@ to be performed by adding small fluctuations on top of the (now) three
 coupled states, in a manner similar to
 Eq.~\eqref{eq:pump-fluctuations}, following
 Ref.~\cite{Wouters_2007}. The complete treatment will be presented in
-Chapter~\ref{cha:opo}.  
+Chapter~\ref{cha:opo}.
 
 Before moving on, it is worth noting that a limitation of the ansatz
 Eq.~\eqref{eq:3-state-ansatz} is that it does not allow solving the
@@ -1048,11 +1046,12 @@ absence of a singularity of the Goldstone branch around the
 $\Delta k = 0$ point.
 
 Further insight into OPO physics for realistic experimental conditions
-can be gained by numerically solving the full 2-component GP equation
-for the coupled exciton and cavity photon fields, as first done in
-Ref.~\cite{Whittaker_2005_c}.  A similar approach, reviewed in detail in
-Ref.~\cite{9783642241857}, will be employed in Chapter~\ref{cha:opo},
-where we study multicomponent superfluidity in the OPO regime.
+can be gained by numerically solving the full 2-component GP
+equation~\eqref{eq:2-component-GPE} for the coupled exciton and cavity
+photon fields, as first done in Ref.~\cite{Whittaker_2005_c}.  A
+similar approach, reviewed in detail in Ref.~\cite{9783642241857},
+will be employed in Chapter~\ref{cha:opo}, where we study
+multicomponent superfluidity in the OPO regime.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.8\linewidth]{marchetti_threshold_comp}
@@ -1098,12 +1097,12 @@ the stimulated scattering rate exceeds the losses, while the
 B\'{e}nard cells form when the temperature gradient (playing the role
 of pumping) exceeds the viscosity (dissipation). In these simulations,
 the pump (and hence also signal and idler) wavevectors are oriented
-along the $\hat{x}$ direction, so the fringes appear along the
-$\hat{y}$ axis. They are however usually not visible, due to the time
-integration of the photonic emission in most experimental setups. Seen
-in this new light, the OPO phase transition has an associated
-Goldstone mode that would correspond to a rigid translation of the
-spatial stripe pattern.
+along the $\hat{x}$ direction, $\kv_p = (\kv_p, 0)$, so the fringes
+appear along the $\hat{y}$ axis. They are however usually not visible
+in experiments, due to the time integration of the photonic emission
+in most experimental setups. Seen in this new light, the OPO phase
+transition has an associated Goldstone mode that would correspond to a
+rigid translation of the spatial stripe pattern.
 
 The photonic component of the OPO spectrum is shown in the middle
 pannel of Fig.~\ref{fig:marchetti}. Integrating the spectrum over all

@@ -11,12 +11,14 @@ polyglot Satyendra Nath Bose) considered what would happen to a
 non-interacting bosonic gas of non-relativistic particles in the
 thermodynamic limit, as one lowers the temperature. He predicted the
 phenomenon we now call \textit{Bose-Einstein condensation} (BEC),
-namely a phase transition, below a critical temperature $T_c$, to a
-new state of matter, in which a finite fraction of all the particles
-would occupy the same single-particle state. In particular, if we take
-$N$ neutral particles in a cubic box of volume $L^3$, then they would
-predominantly occupy the zero-wavevector state $\kv = 0$, and the
-critical temperature would be~\cite{9780198507192}
+namely a phase transition to a new state of matter, in which a finite
+fraction of all the particles would occupy the same single-particle
+state. The transition occurs at fixed density below a critical
+temperature $T_c$ or, alternatively, at fixed temperature, above a
+critical density. In particular, if we take $N$ neutral particles in a
+cubic box of volume $L^3$, then they would predominantly occupy the
+zero-wavevector state $\kv = 0$, and the critical temperature would
+be~\cite{9780198507192}
 %
 \begin{equation}\label{eq:Tc3D}
   T_c \simeq 3.31 \frac{\rho^{2/3}\hbar^2}{m k_B}
@@ -25,47 +27,42 @@ critical temperature would be~\cite{9780198507192}
 with the density $\rho = N/L^3$ and $m$, $k_B$ being the particle
 mass and Boltzmann's constant, respectively.
 
-At its core, BEC is a statistical phenomenon, steming from the
-indistinguishability of elementary particles in quantum field theory,
-coupled to the ``spin-statistics'' theorem, which sets a constraint on
-the symmetry of the many-body wavefunction regarding the interchange
-of its arguments. In fact, one can hand-wavingly deduce the
-temperature below which quantum degeneracy would start playing a role
-in a many-body system, by arguing that the thermal de Broglie
-wavelength should be comparable to or greater than the inter-particle
-distance (which in our case is $\rho^{-1/3}$ on
-average)~\cite{Leggett_1999}. Apart from the numerical prefactor, we
-get the same answer as Eq.~\eqref{eq:Tc3D}. While one may argue that
-elementary massive bosons do not exist, it is worth emphasizing that
-indistinguishability only plays a role when there is a finite
-probability for exchange processes to occur between the particles. In
-that sense, all odd-isotope alkali atoms under relevant experimental
-conditions (see below) effectively behave as bosons: their many-body
-wavefunction is symmetric under the exchange of any two such atoms.
+At its core, BEC is a paradigm of quantum statistical mechanics,
+stemming from the indistinguishability of elementary particles and the
+Bose-Einstein statistics that they obey. One can hand-wavingly deduce
+the critical temperature (or critical density) where quantum
+degeneracy would start playing a role in a many-body system, by
+arguing that the thermal de Broglie wavelength should be comparable to
+or greater than the inter-particle distance (which in our case is
+$\rho^{-1/3}$ on average)~\cite{Leggett_1999}. Apart from the
+numerical prefactor, we get the same answer as
+Eq.~\eqref{eq:Tc3D}. While one may argue that elementary massive
+bosons do not exist, it is worth emphasizing that indistinguishability
+only plays a role when there is a finite probability for exchange
+processes to occur between the particles. In that sense, all
+odd-isotope alkali atoms under relevant experimental conditions (see
+below) effectively behave as bosons: their many-body wavefunction is
+symmetric under the exchange of any two such atoms.
 
 \paragraph{BEC in interacting system}
 Interestingly enough, BEC was considered by many at the time to be a
 pathological behaviour of the non-interacting gas, which would resolve
 once interactions were properly accounted for. In fact, it is well
-known that the ideal Bose gas has infinite compresibility. Since most
-experimental systems found in nature are interacting ones, one needs
-to explore the notion of BEC in an interacting system. In order to
-proceed however, we must first introduce the key concept of
-\textit{single-particle density matrix}.
+known that the ideal Bose gas has infinite compresibility.  This
+pathology is cured by introducing a weak repulsive interaction between
+bosons, a regime where BEC survives, as we will see next.
 
 \paragraph{One-body density matrix}
-Following Leggett, we characterise each of the $N$
-particles\footnote{The particles are assumed to be spinless, for
-  simplicity; the extension to particles posessing a nontrivial
-  internal degree of freedom is straightforward.} by a position vector
-$\rv_i$, with the label $i$ running from 1 to $N$. Any pure state $s$
-of the (now interacting) system -- which can be also subjected to an
-external potential -- can be described at time $t$ by the many-body
-wavefunction $\Psi_s(\rv_1,\rv_2,\dots,\rv_N,t)$. Therefore, the most
-general state of the system (also called \textit{mixed state}) can be
-written as a superposition of pure orthonormal states $s$ with
-different weights $p_s$. The single-particle density matrix
-$\hat{\rho}_1(\rv,\rv^{\prime},t)$ then represents the probability
+Following Leggett, we characterise each of the $N$ particles (assumed
+spinless, for simplicity) by a position vector $\rv_i$, with the label
+$i$ running from 1 to $N$. Any pure state $s$ of the (now interacting)
+system -- which can be also subjected to an external potential -- can
+be described at time $t$ by the many-body wavefunction
+$\Psi_s(\rv_1,\rv_2,\dots,\rv_N,t)$. Therefore, the most general state
+of the system (also called \textit{mixed state}) can be written as a
+superposition of pure orthonormal states $s$ with different weights
+$p_s$. The \textit{single-particle density matrix}
+$\hat{\rho}_1(\rv,\rv^{\prime},t)$ represents the probability
 amplitude, at time $t$, of finding a specific particle at position
 $\rv$, multiplied by the amplitude of finding it at $\rv^{\prime}$,
 and averaged over the positions of all the other particles:
@@ -111,17 +108,17 @@ $\psi(\rv,t) = \sqrt{N_0(t)}\phi_0(\rv,t)$. We see that, while
 $\phi_0$ is normalized to 1, $\psi$ will be normalized to $N_0(t)$.
 
 \paragraph{No-go theorem for lower dimensionality}
-Before moving on to relevant experimental results, it is worth
-mentioning the existence of a ``no-go'' theorem, due to Hohenberg,
-stating that, in the thermodynamic limit, BEC cannot occur at a finite
-temperature in any system moving freely in space in less than three
-dimensions, irespective of the existence and/or sign of the
-interparticle interactions. Note that this theorem, however, only
-applies under equilibrium conditions, the nonequilibrium case still
-being an open question.  Furthermore, there is no general proof that a
-realistic system of interacting bosonic particles must show BEC, even
-at zero temperature -- the solid phase of ${}^4$He constitutes an
-obvious counter-example.
+It is worth mentioning the existence of a theorem due to
+Hohenberg~\cite{PhysRev.158.383}, stating that, in the thermodynamic
+limit, BEC cannot occur at a finite temperature in any system moving
+freely in space in less than three dimensions, irespective of the
+existence and/or sign of the interparticle interactions, as thermal
+fluctuations would destroy the condensate. Note that this theorem,
+however, only applies under equilibrium conditions, the nonequilibrium
+case still being an open question.  Furthermore, there is no general
+proof that a realistic system of interacting bosonic particles must
+show BEC, even at zero temperature -- the solid phase of ${}^4$He
+constitutes an obvious counter-example.
 
 \paragraph{Experimental proof}
 Most gases, with the notable exception of ${}^4$He, are solids at the
@@ -129,8 +126,10 @@ densities and temperatures predicted by Eq.~\eqref{eq:Tc3D}. That is
 why it took no less than 70 years between Einstein's original paper
 and the first experimental observation of BEC in an atomic gas. In
 1995, the group of Eric Cornell and Carl Wieman succesfully condensed
-a cloud of ${}^{87}$Rb atoms, by first bringing the system to a very
-low density, and then cooling it fast enough to prevent any
+a cloud of ${}^{87}$Rb atoms~\cite{Anderson198} (closely followed by
+the group of Wolfgang Ketterle at MIT with ${}^{23}$Na
+atoms~\cite{PhysRevLett.75.3969}), by first bringing the system to a
+very low density, and then cooling it fast enough to prevent any
 recombination processes that would have lead to the formation of the
 solid phase. While other odd-isotope alkali elements, especially
 ${}^{23}$Na or ${}^{7}$Li, are also routinely used in experiments, the
@@ -242,7 +241,7 @@ wavefunction $\Psi$ in the symmetrized form
   \Psi(\rv_1,\rv_2,\dots,\rv_N,t) = \prod_{i = 1}^{N} \phi_0(\rv_i,t)
 \end{equation}
 % 
-As explained in Sec.~\ref{sec:BEC}, the single-particle state $\phi_0$
+As mentioned in Sec.~\ref{sec:BEC}, the single-particle state $\phi_0$
 (now occupied by all the bosons) obeys a Schr\"{o}dinger-like
 equation, to which we must add the energy of the effective binary
 interactions. In mean-field, these interactions contribute the
@@ -260,7 +259,7 @@ where we have also included an external potential $U(\rv,t)$, normally
 used to model harmonic trapping of the gas. Note that
 Eq.~\eqref{eq:TDGP} is valid for physics occuring over distances much
 larger than the scattering length $a_s$, which in turn must be smaller
-than the typical extension of $U(\rv,t)$.
+than the typical range $r_0$ of the potential $U(\rv,t)$.
 
 \paragraph{Caveats of TDGP}
 Eq.~\eqref{eq:TDGP} is the time-dependent Gross-Pitaevskii (TDGP)
@@ -356,24 +355,7 @@ where we have introduced the linear operator
 \end{equation}
 % 
 and the source term $S(\rv,t)=\delta U(\rv,t)\phi_0(\rv)$.  Note that
-$\Lca_{\text{GP}}$ is not a Hermitian operator! The presence of the minus
-sign in the second line is due to the fact that the particles obey
-Bose statistics, as this is not present in the BCS theory.
-
-The standard method of determining the time evolution of $\delta\phi$
-is to expand it in the basis formed by the eigenvectors of
-$\Lca_{\text{GP}}$. There is a subtlety involved here, however, as in
-the general case $\Lca_{\text{GP}}$ is not diagonalizable. It usually
-has too few eigenvectors to span the whole functional
-space\footnote{We are referring to the $L^2 \times L^2$ space, with
-  $L^2$ being the space of square-integrable complex functions.}.
-The solution to this problem, detailed in Ref.~\cite{Castin_1998},
-is to work in the subspace orthogonal to $\ket{\phi_0}$. It can be
-shown that the component of the solution along $\ket{\phi_0}$ only
-results in a change of phase of the total condensate wavefunction. For
-the problems of interest in the rest of this manuscript, however, the
-dimension of the space parallel to $\ket{\phi_0}$ that we must project
-out is of order 1.
+$\Lca_{\text{GP}}$ is a non-Hermitian operator!
 
 We now consider the eigenvalue equation for the operator $\Lca_{\text{GP}}$
 %
@@ -466,20 +448,19 @@ as\footnote{The modes in the ``$0$'' family do not appear in this
 \end{multline}
 % 
 There is now a further symmetry of $\Lca_{\text{GP}}$ that we can
-exploit in our problem, a sort of time-reversal ``spin''-flip (or
-particle-hole) symmetry, namely
+exploit in our problem, a sort of time-reversal ``spin''-flip
+symmetry, namely
 %
 \begin{equation}\label{eq:symmetry-2}
    \Theta \Lca_{\text{GP}} \Theta^{\dagger} = -\Lca_{\text{GP}}
 \end{equation}
 %
-where $\Theta = \sigma_1 \mathcal{K}$, with $\sigma_1 = \mat{0}{1}{1}{0}$
-the first Pauli matrix and $\mathcal{K}$ the complex conjugation
-antilinear operator.
-
-This results in a duality between the ``$+$'' family with eigenvectors
-$(u_k, v_k)$ and energy $\epsilon_k$ and the ``$-$'' family with
-eigenvectors $(v_{-k}^{\star}, u_{-k}^{\star})$ and energy
+where $\Theta = \sigma_1 \mathcal{K}$, with
+$\sigma_1 = \mat{0}{1}{1}{0}$ the first Pauli matrix and $\mathcal{K}$
+the complex conjugation antilinear operator. This results in a
+duality between the ``$+$'' family with eigenvectors $(u_k, v_k)$ and
+energy $\epsilon_k$ and the ``$-$'' family with eigenvectors
+$(v_{-k}^{\star}, u_{-k}^{\star})$ and energy
 $-\epsilon_{-k}^{\star}$.
 
 We can now finally project Eq.~\eqref{eq:GP-atoms-system} onto the
@@ -510,15 +491,15 @@ where we introduced
 
 
 We now turn to applying the formalism developed in
-Sec.~\ref{sec:linear-response} to a concrete physical example,
-inspired by Ref.~\cite{Carusotto_2006}. Consider a 2-dimensional
-Bose-Einstein atomic condensate in a state with well-defined momentum,
-described by the plane wave
-$\psi_0 \exp \left( i \bm{k_0} \rv - \omega_0 t \right)$. Using our
-previous notation, this corresponds to
+Sec.~\ref{sec:linear-response} to a concrete physical example, namely
+a flowing condensate scattering against a static
+defect~\cite{Carusotto_2006}. The BEC\footnote{We integrate all
+  density profiles along the $z$ direction, resulting in an effective
+  2-dimensional description.} is therefore in a state with
+well-defined momentum, described by the plane wave
 %
 \begin{equation}\label{eq:atom-initial}
-  \phi_0(\rv) = \psi_0 \exp \left( i \bm{k_0} \rv \right)
+  \phi_0(\rv, t) = \psi_0 \exp \left( i \bm{k}_0 \rv - \omega_0 t \right)
 \end{equation}
 % 
 and a chemical potential $\mu = k_0^2/(2m) + g \rho_0$. Since we have
@@ -530,15 +511,11 @@ equation of state
 \end{equation}
 % 
 where we have introduced the condensate density
-$\rho_0 \equiv N_0 \abs{\phi_0}^2$. Since the global phase of the
-wavefunction $\phi_0$ can be arbitrarily chosen without physical
-consequences, it is important to note that Eq.~\eqref{eq:atom-MF}
-posesses a $U(1)$ gauge symmetry under global rotations of the
-condensate phase.
+$\rho_0 \equiv N_0 \abs{\phi_0}^2$. 
 
-We now introduce a weak perturbation in the form of a localized defect
-potential $\delta U(\rv, t) = V_d(\rv)$, which can represent for
-instance a laser spot depleting a small area of the condensate, as
+We now introduce a weak perturbation in the form of a static localized
+defect potential $\delta U(\rv, t) = V_d(\rv)$, which can represent
+for instance a laser spot depleting a small area of the condensate, as
 shown in Fig.~\ref{fig:mach-number}.
 %
 \begin{figure}[tb]\centering
@@ -590,10 +567,9 @@ the generator of the spatial translation group. Luckily, however, we
 can restore translational invariance by a simple unitary
 transformation, as shown below.
 
-First, a brief reminder of basic quantum mechanics. Using the standard
-commutation relations, one can show that, for a constant wavevector
-$\bm{k_0}$, the unitary operator\footnote{The hat symbol denotes
-  operators in the relevant Hilbert space.}
+Using the standard commutation relations, one can show that, for a
+constant wavevector $\bm{k_0}$, the unitary operator\footnote{The hat
+  symbol denotes operators in the relevant Hilbert space.}
 %
 \begin{equation}\label{eq:trans-oper}
   \hat{T}(\bm{k_0}) = \exp \left( -i \bm{k_0} \hat{\rv} \right)
@@ -724,22 +700,23 @@ and momentum then results in a critical velocity
 \end{equation}
 % 
 below which no dissipation can occur. In our case, this velocity is
-precisely equal to the speed of sound, $v_c =
-c_s$. Furthermore, the two situations, the one of a particle moving
-through the condensate, or of the condensate moving against a fixed
-defect, are physically equivalent, being connected by a Galilean
-transformation. We can therefore conclude that we must have
-$v_0 \geq c_s$ in order to observe any propagating
-perturbation. Before moving on, it is worth noting that the Landau
-criterion has some asociated caveats. The first one is that we are
-completely neglecting the nucleation of vortices by a macroscopic
-defect with a size comparable to the healing length, which would lower
-the effective critical velocity. Vortices would furthermore also break
-the translational invariance along the transverse directions, an
-invariance that we already made use of. The second caveat is that
-quantum fluctuations are also neglected. As seen in
-Ref.~\cite{Astrakharchik_2004}, they could lead to nonzero dissipation
-even at sub-sonic speeds.
+precisely equal to the speed of sound, $v_c = c_s$. Furthermore, the
+two situations, the one of a particle moving through the condensate,
+or of the condensate moving against a fixed defect, are physically
+equivalent, being connected by a Galilean transformation. We can
+therefore conclude that we must have $v_0 \geq c_s$ in order to
+observe any propagating perturbation, otherwise for $v_0 < c_s$ the
+superfluid will remain unperturbed. Before moving on, it is worth
+noting that the Landau criterion has some asociated caveats.  One is
+assuming that the only excitations are density excitations,
+phonons. Thus one is, for example, neglecting the nucleation of
+vortices by a macroscopic defect with a size comparable to the healing
+length, which would lower the effective critical velocity. Vortices
+would furthermore also break the translational invariance along the
+transverse directions, an invariance that we already made use of. The
+second caveat is that quantum fluctuations are also neglected. As seen
+in Ref.~\cite{Astrakharchik_2004}, they could lead to nonzero
+dissipation even at sub-sonic speeds.
 
 The second domain of interest is the one of large momenta,
 $k\xi \gg 1$. Looking at Eq.~\eqref{eq:right-eigen}, one notices that
@@ -800,7 +777,7 @@ Furthermore, in case the Hamiltonian doesn't contain any time-reversal
 symmetry-breaking terms, one can chose $U(k)$ and $V(k)$ to be real
 quantities, without loss of generality.
 
-It is now a trivial matter to solve the linearized evolution equation
+It is now straightforward to solve the linearized evolution equation
 Eq.~\eqref{eq:GP-atoms-system}. In particular, for a localized static
 defect potential $V_d(\rv) = g_V \delta^2(\rv)$, quasiparticle modes
 at all wavevectors $k$ are excited.\footnote{If one wishes to
@@ -818,7 +795,7 @@ $\omega(\kv)$ in the denominator, hence the dominant modes will be the
 ones that satisfy $\omega(\kv) = 0$.
 
 \paragraph{Landau causality rule}
-We must also touch on the subject of \textit{adiabatic switching} at
+We must also mention the subject of \textit{adiabatic switching} at
 this point. Adiabatic switching is neccesary to causally distinguish
 the past from the future, making sure that the time $t = -\infty$ is
 prior to that of the occurence of any cause (in our case the defect)
@@ -830,26 +807,24 @@ $\epsilon(k) \rightarrow \epsilon(k) - i0^{+}$. This corresponds to a
 weak damping of the plane wave solution and ensures that no Bogoliubov
 excitations were present at $t = - \infty$.
 
+\paragraph{Geometrical construction}
 We show the defect-induced perturbation of the condensate density in
 the bottom row of Fig.~\ref{fig:bogo-cherenkov}, for two distinct
 values of the condensate speed $v_0$. Rather than giving its full
 analytical expression, it is more instructive to present a geometrical
 construction, detailed in Ref.~\cite{9783319002651}, that can shed
-light on the main features of the condensate response. 
-
-\paragraph{Geometrical construction}
-We have already identified the importance of the poles of
-$\omega(\kv)$; the solutions of $\epsilon(k) + \bm{v}_0 \kv = 0$ can
-be visualized if one plots the intersection of the Bogoliubov
-dispersion surface $\epsilon(k)$ with the $\bm{v}_0 \kv$ plane. The
-locus of this intersection is a closed curve that we will denote by
-$\Gamma$ and that is plotted in the middle row of
+light on the main features of the condensate response.  We have
+already identified the importance of the poles of $\omega(\kv)$; the
+solutions of $\epsilon(k) + \bm{v}_0 \kv = 0$ can be visualized if one
+plots the intersection of the Bogoliubov dispersion surface
+$\epsilon(k)$ with the $\bm{v}_0 \kv$ plane. The locus of this
+intersection is a closed curve that we will denote by $\Gamma$ and
+that is plotted in the middle row of
 Fig.~\ref{fig:bogo-cherenkov}. Making the connection with the Landau
-criterion presented earlier, we can identify two regimes. 
-
-For small velocities $v_0 < c_s$ we have the \textit{sub-sonic}
-regime, where $\Gamma$ is a single point at the origin. Consequently,
-one can observe superfluid-like behaviour with no propagating density
+criterion presented earlier, we can identify two regimes.  For small
+velocities $v_0 < c_s$ we have the \textit{sub-sonic} regime, where
+$\Gamma$ is a single point at the origin. Consequently, one can
+observe superfluid-like behaviour with no propagating density
 modulation. The modulation will stay localized in the vecinity of the
 defect, and, in the Galilean-equivalent problem of a particle moving
 through the condensate, it would renormalize the particle
@@ -871,76 +846,73 @@ domains of the dispersion Eq.~\eqref{eq:bogoliubov}.
 
 The linear region of $\Gamma$, close to the origin, is characterised
 by essentially the same physics as the Cherenkov effect in
-non-dispersive media~\cite{Landau:712712}. We remind the reader that
-the Charenkov effect consists in the emission of electromagnetic
-radiation by a charged particle moving relativistically through a
-dielectric medium at a velocity higher than the (phase) velocity of
-light in that medium. The emission is concentrated into a
-\textit{Cherenkov cone} in momentum space, of aperture $2\theta$,
-where $\cos\theta = c/v$.~\cite{jelley1958vcerenkov} The higher the
-particle speed $v$ with respect to the speed of light $c$, the wider
-the angle $\theta$ between the emission and the direction of
-motion. The Cherenkov cone is depicted by the dashed lines in the
-middle panels of Fig.~\ref{fig:bogo-cherenkov}, and the angle $\theta$
-in our case is of course given by $\cos\theta = c_s/v_0$. Due to the
-momentum-space singularity at the origin, the group velocity has a
-jump, defining a whole region of space where no phonons are
-emitted. This corresponds in real-space to the so-called \textit{Mach
-  cone}, named in analogy to the cone that is created by a super-sonic
-aircraft (since we are dealing with terminology, it is worth noting
-that the ratio $v_0/c_s$ goes by the name of \textit{Mach
-  number}). The Mach cone is depicted by dashed lines in the bottom
-panels of Fig.~\ref{fig:bogo-cherenkov}: as its aperture $2\phi$ is
-quantified by $\sin\phi = c_s/v_0$, that means that, the faster the
-fluid, the narrower the cone will be.
+non-dispersive media~\cite{Landau:712712}. The Charenkov effect
+consists in the emission of electromagnetic radiation by a charged
+particle moving relativistically through a dielectric medium at a
+velocity higher than the (phase) velocity of light in that medium. The
+emission is concentrated into a \textit{Cherenkov cone} in momentum
+space, of aperture $2\theta$, where
+$\cos\theta = c/v$.~\cite{jelley1958vcerenkov} The higher the particle
+speed $v$ with respect to the speed of light $c$, the wider the angle
+$\theta$ between the emission and the direction of motion. The
+Cherenkov cone is depicted by the dashed lines in the middle panels of
+Fig.~\ref{fig:bogo-cherenkov}, and the angle $\theta$ in our case is
+of course given by $\cos\theta = c_s/v_0$. Due to the momentum-space
+singularity at the origin, the group velocity has a jump, defining a
+whole region of space where no phonons are emitted. This corresponds
+in real-space to the so-called \textit{Mach cone}, named in analogy to
+the cone that is created by a super-sonic aircraft (since we are
+dealing with terminology, it is worth noting that the ratio $v_0/c_s$
+goes by the name of \textit{Mach number}). The Mach cone is depicted
+by dashed lines in the bottom panels of Fig.~\ref{fig:bogo-cherenkov}:
+as its aperture $2\phi$ is quantified by $\sin\phi = c_s/v_0$, that
+means that, the faster the fluid, the narrower the cone will be.
 
 The high-momentum, rounded region of $\Gamma$, which corresponds to
-the single-particle-like dispersion, has no equivalent in Cherenkov
-physics. It is responsible for the hyperbolic-like
+the quadratic single-particle-like dispersion, has no equivalent in
+Cherenkov physics. It is responsible for the hyperbolic-like
 wavefronts\footnote{The wavefronts are actually parabolic in the
   non-interacting limit of $g=0$.}, emitted in the positive
-$\hat{\bm{x}}$ direction. The physical origin of these rounded waves
-lies in the interference between the coherent matter wave of the BEC
-and the wave scattered off the defect. It it worth noting that the
-curve $\Gamma$ also helps one determine the spacing between the
-emitted wavefronts, which is inversely proportional to the value of
-the momentum at the particular point on $\Gamma$ that corresponds to
-the wave propagation direction. In practice, we see for example that
-the spacing along $y = 0$, in the positive $\hat{\bm{x}}$ direction,
-is wider in the left-bottom panel than in the right one.
+$\hat{\bm{x}}$ direction (upstream). The physical origin of these
+rounded waves lies in the interference between the coherent matter
+wave of the BEC and the wave scattered off the defect. It it worth
+noting that the curve $\Gamma$ also helps one determine the spacing
+between the emitted wavefronts, which is inversely proportional to the
+value of the momentum at the particular point on $\Gamma$ that
+corresponds to the wave propagation direction. In practice, we see for
+example that the spacing along $y = 0$, in the positive $\hat{\bm{x}}$
+direction, is wider in the left-bottom panel than in the right one.
 
 Aside from being just a useful geometrical construction, the locus
 $\Gamma$ can actually be observed in scattering experiments, both in
 the context of atomic condensates, as well as for microcavity
-polaritons (the topic of Chapter~\ref{cha:polaritons}), where it goes
-by the name of Rayleigh scattering ring~\cite{Ciuti_2005}.
+polaritons (Chapter~\ref{cha:polaritons}), where it takes
+the name of Rayleigh scattering ring.
 
 Before closing this Section, it is worth making the connection between
 the Cherenkov waves shown in the bottom panels of
 Fig.~\ref{fig:bogo-cherenkov} and the more mundane example of surface
 waves created at the interface between a fluid layer and a gas. We
 first need to define the \textit{capillary length}
-$\ell_{\gamma} = \sqrt{\gamma/(g\rho)}$, with $\gamma$ the surface
-tension of the fluid-gas interface, $g$ the gravitational constant
-(not to be confused with the interaction coupling constant
-Eq.~\eqref{eq:g-constant}), and $\rho$ the fluid density. Now, if the
-height $h$ of the fluid layer in question is smaller than
-$\sqrt{3} \ell_{\gamma}$, the fluid dispersion is dominated by
-capillary effects, and its form is similar to
-Eq.~\eqref{eq:bogoliubov} (see Ref.~\cite{9783319002651}). But we have
-just seen that the form of the dispersion (more precisely, its
+$\ell_{\gamma} = \sqrt{\gamma/(G\rho)}$, with $\gamma$ the surface
+tension of the fluid-gas interface, $G$ the gravitational constant,
+and $\rho$ the fluid density. Now, if the height $h$ of the fluid
+layer in question is smaller than $\sqrt{3} \ell_{\gamma}$, the fluid
+dispersion is dominated by capillary effects, and its form is similar
+to Eq.~\eqref{eq:bogoliubov} (see Ref.~\cite{9783319002651}). But we
+have just seen that the form of the dispersion (more precisely, its
 intersection with the $\bm{v}_0\kv$ plane) determines the shape of the
 ougoing waves. This means that, for very shallow fluids, we will
 observe similar wavefronts to the ones of
 Fig.~\ref{fig:bogo-cherenkov}. More concretely, for the water-air
-interface, a thickness of $h = 1$ millimeter and a speed of
-$v_0 = 14$ cm/s should do the trick!
+interface, a thickness of $h = 1$ millimeter and a speed of $v_0 = 14$
+cm/s should do the trick!
 
 \section{Superfluidity}
 \label{sec:superfluid-atom}
 
 \paragraph{Short history}
-The story of superfluidity is intrinsically linked to that of helium,
+The history of superfluidity is intrinsically linked to that of helium,
 the liquefaction of which was first achieved in 1908 by
 Kammerlingh-Onnes. This ushered in a new era of low-temperature
 physics, and it was soon realized that the thermal expansion
@@ -1068,7 +1040,7 @@ the irrotational flow is quantized, with the quantum of circulation
 being $h/m = 0.997 \times 10^{-3}$ cm$^2/$s.
 
 \paragraph{Two effects intro}
-We are now in a position to discuss the two elementary ingredients
+We are now in the position to discuss the two elementary ingredients
 which together account for the original obsevation of superfluidity by
 Kapitza. Following Ref.~\cite{Leggett_1999}, we consider a multiply
 connected geometry in the form of a hollow cylindrical pipe with solid
@@ -1091,7 +1063,7 @@ rotates with angular velocity $\omega$, one can then obtain the
 by minimizing the effective free energy~\cite{leggett2006quantum}
 %
 \begin{equation}\label{eq:HF-angularmom}
-  L(T) = I\left(f_n(T)\omega + f_s(T)n_w\omega_0\right)
+  L(T) = I\left[f_n(T)\omega + f_s(T)n_w\omega_0\right]
 \end{equation}
 % 
 Apart from the already defined quantities, we have introduced the
@@ -1134,16 +1106,13 @@ another commonly found term).
 %
 % explanation
 %
-However, metastability of superflow is not a generic consequence of
-the BEC state, since the free energy of a generic BEC system does not
-itself limit in any way the relaxation of the circulating
-currents. The underlying mechanism is one of topological origin:
+However, metastability of superflow is not a direct consequence of the
+BEC state -- the underlying mechanism is one of topological origin:
 consider the contour $C$ in Eq.~\eqref{eq:feynman} to run around the
 torus of Fig.~\ref{fig:torus}. The current in the ring will be
 proportional to the circulation Eq.~\eqref{eq:feynman}. Since the
 latter is quantized, the windinding number $n_w$ is conserved, hence
-so is the (super)current!\footnote{This argument does not apply to
-  spinor condensates, however.} 
+so is the (super)current!
 %
 % vortices
 %
