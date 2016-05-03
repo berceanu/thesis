@@ -84,17 +84,13 @@ $\psi_{X,C} (\vt{r},t)$~\cite{Whittaker_2005,Carusotto_2013}:
 \end{equation}
 %
 The dispersive $X$- and $C$-fields decay at a rate $\gamma_{X,C}$ and
-are coupled by the Rabi splitting\footnote{Note that, while in
-  Chapter~\ref{cha:polaritons} the splitting between the upper and
-  lower polariton branches at zero momentum was $2\Omega_R$, in this
-  Chapter it is taken to be equal to the Rabi splitting $\Omega_R$.}
-$\Omega_R$, while the nonlinearity is regulated by the exciton
-coupling strength $g_X$:
+are coupled by the Rabi splitting $\Omega_R$, while the nonlinearity
+is regulated by the exciton coupling strength $g_X$:
 %
 \begin{equation}
-  \hat{H} = \begin{pmatrix} \omega^{X}(-i\nabla) - i
-    \frac{\gamma_X}{2} + g_X |\psi_X|^2 & \Omega_R/2 \\ \Omega_R/2 &
-    \omega^C(-i\nabla) - i \frac{\gamma_C}{2} + V_d \end{pmatrix} \;
+  \hat{H} = \begin{pmatrix} \omega_{X}(-i\nabla) - i
+    \frac{\gamma_X}{2} + g_X |\psi_X|^2 & \Omega_R \\ \Omega_R &
+    \omega_C(-i\nabla) - i \frac{\gamma_C}{2} + V_d \end{pmatrix} \;
   .
 \end{equation}
 %
@@ -104,10 +100,7 @@ or a localized laser field~\cite{Amo_2009,Amo_2010,Zajac_2012}.
 %
 In the conservative, homogeneous, and linear regime [$\gamma_{X,C}=0=
 V_d (\vt{r})= g_X$], the eigenvalues of $\hat{H}$ are given by the
-LP and UP energies, $2
-\omega_{\vt{k}}^{LP,UP} = \omega_{\vt{k}}^{C} +
-\omega_{\vt{k}}^{X} \mp \sqrt{(\omega_{\vt{k}}^{C} -
-  \omega_{\vt{k}}^{X})^2 + \Omega_R^2}$.
+LP and UP energies Eq.~\eqref{eq:polariton-dispersion}.
 %
 The cavity is driven by a continuous-wave laser field $F_p(\vt{r},t)
 = \mathcal{F}_p(\vt{r}) e^{i (\vt{k}_p \cdot \vt{r} - \omega_p
@@ -127,8 +120,8 @@ idler $(\omega_i, \vt{k}_i)$ states.
   energy blueshifts $\epsilon_{n=s,p,i}$ (in units of $\gamma_p =
   \gamma_{\vt{k}_p}$) vs the rescaled pump intensity $I_p$ (in
   units of $\gamma_p^3$) in the optical limiter regime. Parameters are
-  $\Omega_R=5$~meV, zero cavity-exciton detuning, $\gamma_X = \gamma_C
-  = 0.12$~meV, $\omega_p - \omega_0^X = -1.25$~meV, $k_p=1.6{\mu
+  $\Omega_R=2.5$~meV, zero cavity-exciton detuning, $\gamma_X = \gamma_C
+  = 0.12$~meV, $\omega_p - \omega_X(0) = -1.25$~meV, $k_p=1.6{\mu
     m}^{-1}$, $k_s \simeq 0$, and $k_i=3.2{\mu m}^{-1}$.  The shaded
   area is stable OPO region, while the vertical dashed line
   corresponds to the pump power value chosen for plotting the right
@@ -153,9 +146,7 @@ presented in Sec.~\ref{sec:numerical-analysis}.
 To further simplify our analysis, we assume here that the UP
 dispersion does not get populated by parametric scattering processes
 and thus, by means of the Hopfield coefficients
-$2X_{\vt{k}}^2, 2C_{\vt{k}}^2 = 1 \pm (\omega_{\vt{k}}^{C} -
-\omega_{\vt{k}}^{X})/\sqrt{(\omega_{\vt{k}}^{C} -
-  \omega_{\vt{k}}^{X})^2 + \Omega_R^2}$, we project the
+Eqs.~\eqref{eq:hopfield-X} and~\eqref{eq:hopfield-C}, we project the
 GPE~\eqref{eq:gpequ} onto the LP
 component~\cite{Ciuti_2001,Wouters_2007_b}
 $\psi_{\vt{k}}^{} = X_{\vt{k}} \psi_{X,\vt{k}} + C_{\vt{k}}
@@ -165,7 +156,7 @@ $\psi(\vt{r},t) = \sum_{\vt{k}} e^{i\vt{k}\cdot \vt{r}}
 Sec.~\ref{sec:mean-field}, we obtain Eq.~\eqref{eq:mom-GPE}:
 %
 \begin{multline}
-  i\partial_t \psi_{\vt{k}}^{} = \left[\omega_{\vt{k}}^{LP} -
+  i\partial_t \psi_{\vt{k}}^{} = \left[\omega\sub{LP}({\vt{k}}) -
     i\frac{\gamma_{\vt{k}}}{2}\right]\psi_{\vt{k}}^{} +
   C_{\vt{k}} \sum_{\vt{q}} C_{\vt{q}} V_d(\vt{k} - \vt{q})
   \psi_{\vt{q}}^{}\\ + \sum_{\vt{k}_1, \vt{k}_2} g_{\vt{k},
@@ -274,7 +265,7 @@ as~\cite{Wouters_2007}
 where the three OPO states components are
 %
 \begin{align}
-  (M_{\vt{k}}^{})_{mn} &= \left[\omega^{LP}_{\vt{k}_m + \vt{k}}
+  (M_{\vt{k}}^{})_{mn} &= \left[\omega_{LP}({\vt{k}_m + \vt{k}})
     - \omega_m - i\frac{\gamma_{\vt{k}_m + \vt{k}}}{2}\right]
   \delta_{m,n}
    + 2\sum_{q,t=1}^3
@@ -295,7 +286,7 @@ where the three OPO states components are
 \caption{Linear response of the three OPO states to a static
   $\delta$-defect for $k_s = -0.4$ [column (a)], $0.0$ [column (b)] and
   $0.7$~$\mu$m$^{-1}$ [column (c)]. The parameters are given in
-  Fig.~\ref{fig:spect}, and $g_d = 0.5 \gamma_p~\mu$m$^2$.  \emph{Column
+  Fig.~\ref{fig:spect}, and $g_V = 0.5 \gamma_p~\mu$m$^2$.  \emph{Column
     (a):} Top row is the analogue of Fig.~\ref{fig:spect}, for negative
   signal momentum. The three bottom rows show the rescaled emission in
   real $|\psi (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear
@@ -326,8 +317,8 @@ large momenta, one recovers the LP dispersions shifted by the three
 states' energies and momenta, i.e.,
 %
 \begin{equation}
-  \lim_{\tilde{k} \gg \sqrt{2m_C \Omega_R}} \omega_{n,(u,v),\tilde{\vt{k}}} = \pm
-  (\omega^{LP}_{\vt{k} - \vt{k}_n} - \omega_n)\; ,
+  \lim_{\tilde{k} \gg \sqrt{4m_C \Omega_R}} \omega_{n,(u,v),\tilde{\vt{k}}} = \pm
+  (\omega_{LP}({\vt{k} - \vt{k}_n}) - \omega_n)\; ,
 \label{eq:large}
 \end{equation}
 %
@@ -392,7 +383,7 @@ $|\psi_{\tilde{\vt{k}}} (\omega_n)|^2= |\psi_{n}^{}
 v^*_{n,-\tilde{\vt{k}}}|^2$.
 %
 We have chosen here a $\delta$-like defect potential,
-$V_d(\vt{k}) = g_d$, but we have checked that our results do not
+$V_d(\vt{k}) = g_V$, but we have checked that our results do not
 depend on the specific shape of the defect potential: In particular,
 we have also considered the response to defects with smooth
 Gaussian-like profiles, whose effect is only to partially weaken the
@@ -447,7 +438,7 @@ excitations, only one of the rings $\Gamma_{n,(u,v),
 with the interaction blueshifted LP dispersion,
 %
 \begin{equation}
-  \bar{\omega}_{\vt{k}}^{LP} = \omega_{\vt{k}}^{LP} + 2 
+  \bar{\omega}_{LP}({\vt{k}}) = \omega_{LP}({\vt{k}}) + 2 
   X_{\vt{k}}^2 \sum_{n=1}^3  \epsilon_n\; ,
 \label{eq:blues}
 \end{equation}
@@ -542,7 +533,7 @@ numerical approach, but that instead we can easily analize within the
 linear-response theory.
 %
 In particular, we have left fixed the pumping conditions
-$k_p=1.6$~$\mu$m$^{-1}$ and $\omega_p-\omega_X^0=-1.25$~meV and
+$k_p=1.6$~$\mu$m$^{-1}$ and $\omega_p-\omega_X(0)=-1.25$~meV and
 considered two opposite situations.
 
 In the first case, the signal has a finite and positive momentum
@@ -655,12 +646,12 @@ scattering.
 \caption{OPO spectrum obtained by full numerics. Left
   panel: Photonic component of the OPO spectrum in presence of a
   point-like defect, $|\psi_C(k_x,0,\omega)|^2$ (logarithmic scale),
-  as a function of the rescaled energy $\omega - \omega_0^X$ versus
+  as a function of the rescaled energy $\omega - \omega_X(0)$ versus
   the $x$-component of momentum $k_x$ (cut at $k_y=0$) for a top-hat
   pump (see text for the space profile and parameter values), with
   intensity $f_p=1.23 f_p^{\text{th}}$ above the OPO threshold, pump
   wave-vector $k_p=1.6$~$\mu$m$^{-1}$ in the $x$-direction and
-  $\omega_p-\omega_X^0=-0.44$~meV. The symbols indicate the signal
+  $\omega_p-\omega_X(0)=-0.44$~meV. The symbols indicate the signal
   ([blue] upper triangle), pump ([red] circle), and idler ([green]
   lower triangle) energies, as well as the two momenta $k_x$ on each
   state Rayleigh ring at $k_y=0$. Note that the logarithmic scale
@@ -670,7 +661,7 @@ scattering.
   plotted as a shaded grey region, while the bare UP dispersion as a
   (black) dot-dashed line. Right panel: Momentum integrated spectrum,
   $\sum_{\vt{k}} |\psi_C(\vt{k},\omega)|^2$ (linear scale) as a
-  function of the rescaled energy $\omega - \omega_0^X$, where it can
+  function of the rescaled energy $\omega - \omega_X(0)$, where it can
   be clearly appreciated that the emission is $\delta$-like in
   energy.}
 \label{fig:spectGP}
@@ -693,21 +684,20 @@ The same approach has been already used in the literature, for a
 review, see Refs.~\cite{Marchetti_2010,9783642241857}).
 
 As for the system parameters, we have considered a LP dispersion at
-zero photon-exciton detuning, $\omega^C_0 = \omega^X_0$, a
-dispersionless excitonic spectrum, $\omega^X_{\vt{k}} = \omega^X_0$
-and a quadratic dispersion for photons $\omega^C_{\vt{k}} =
-\omega^C_0 + k^2/2m_C$, with the photon mass $m_C=2.3 \times 10^{-5}
-m_e$, where $m_e$ is the bare electron mass. The LP dispersion, $2
-\omega_{\vt{k}}^{LP} = \omega_{\vt{k}}^{C} + \omega_{\vt{k}}^{X}
-- \sqrt{(\omega_{\vt{k}}^{C} - \omega_{\vt{k}}^{X})^2 +
-  \Omega_R^2}$ is characterised by a Rabi splitting $\Omega_R =
-4.4$~meV. Furthermore, the exciton and cavity decay rates are fixed to
+zero photon-exciton detuning, $\omega_C(0) = \omega_X(0)$, a
+dispersionless excitonic spectrum, $\omega_X({\vt{k}}) = \omega_X(0)$
+and a quadratic dispersion for photons
+$\omega_C({\vt{k}}) = \omega_C(0) + k^2/2m_C$, with the photon mass
+$m_C=2.3 \times 10^{-5} m_e$, where $m_e$ is the bare electron
+mass. The LP dispersion Eq.~\eqref{eq:polariton-dispersion} is
+characterised by a Rabi splitting $\Omega_R = 2.2$~meV. Furthermore,
+the exciton and cavity decay rates are fixed to
 $\gamma_X=\gamma_C=0.53$~meV.
 %
 For the defect we choose a $\delta$-like potential
 %
 \begin{equation}
-  V_d(\vt{r}) = g_d \delta(\vt{r} - \vt{r}_0)\; ,
+  V_d(\vt{r}) = g_V \delta(\vt{r} - \vt{r}_0)\; ,
 \end{equation}
 %
 where its location $\vt{r}_0$ is fixed at one of the $N \times N$
@@ -724,7 +714,7 @@ We have thus chosen the defect location so that it lies in the
 smoothest and most homogeneous part of the OPO profiles.
 
 Also we have checked that our results do not qualitatively depend on
-the strength $g_d$ (nor on the sign) of the defect potential, as far
+the strength $g_V$ (nor on the sign) of the defect potential, as far
 as this does not exceed a critical value above which it destabilises
 the OPO steady-state regime.
 %
@@ -737,7 +727,7 @@ f_p^\text{th} = 0.053$~meV/$\mu$m and parameters $r_0 = 8.68~\mu$m,
 $\sigma_p = 34.72~\mu$m.
 %
 We pump at $k_p=1.6$~$\mu$m$^{-1}$ in the $x$-direction, $\vt{k}_p =
-(k_p,0)$, and at $\omega_p-\omega_X^0=-0.44$~meV, i.e., roughly
+(k_p,0)$, and at $\omega_p-\omega_X(0)=-0.44$~meV, i.e., roughly
 $0.5$~meV above the bare LP dispersion. By increasing the pump
 strength $f_p$, we find the threshold $f_p^{\text{th}}$ above which
 OPO switches on, leading to two conjugate signal and idler states.
@@ -746,8 +736,8 @@ We then fix the pump strength just above this threshold ($f_p=1.23
 f_p^{\text{th}}$), where we find a steady state OPO solution which is
 stable (see Ref.~\cite{9783642241857} for further details). In
 absence of the defect, this condition corresponds to a signal state at
-$k_s=-0.2$~$\mu$m$^{-1}$ and $\omega_s-\omega_0^X = -1.64$~meV and an
-idler at $k_i=3.4$~$\mu$m$^{-1}$ and $\omega_i-\omega_0^X =
+$k_s=-0.2$~$\mu$m$^{-1}$ and $\omega_s-\omega_X(0) = -1.64$~meV and an
+idler at $k_i=3.4$~$\mu$m$^{-1}$ and $\omega_i-\omega_X(0) =
 0.76$~meV. 
 %
 It is interesting to note that already very close to the lower pump
@@ -766,7 +756,7 @@ $\vt{k}$ and energies $\omega$ can be evaluated numerically.
 We plot on the left panel of Fig.~\ref{fig:spectGP} a cut at $k_y=0$
 of the photonic component of the OPO spectrum in presence of a
 point-like defect, $|\psi_C(k_x,0,\omega)|^2$, as a function of the
-rescaled energy $\omega - \omega_0^X$ versus the $x$-component of
+rescaled energy $\omega - \omega_X(0)$ versus the $x$-component of
 momentum $k_x$ (cut at $k_y=0$). In the right panel we plot instead
 the corresponding momentum integrated spectrum, $\sum_{\vt{k}}
 |\psi_C(\vt{k},\omega)|^2$.
@@ -811,7 +801,7 @@ homogeneous OPO case~\cite{9783642241857}.
 \caption{Real space signal, pump and idler OPO one-dimensional
   filtered profiles derived from finite size numerics with and without
   a defect. Rescaled OPO filtered emissions along the $y=0$ direction,
-  $|\psi_C(x,y=0,\omega_n)|^2 \frac{\Omega_R}{2g_X}$, obtained by
+  $|\psi_C(x,y=0,\omega_n)|^2 \frac{\Omega_R}{g_X}$, obtained by
   numerically solving the GPE Eq.~\eqref{eq:gpequ} of
   Sec.~\ref{sec:model-opo}. While the dashed lines represent the
   filtered emissions of signal (top panel), pump (middle) and idler
@@ -898,14 +888,14 @@ sample into the OPO regime --- details on the sample can be found in
 Refs.~\cite{Ballarini_2013,Dominici_2014}.
 %%
 The polariton dispersion is characterised by a Rabi splitting
-$\Omega_R=5.4$~meV and the exciton energy is
-$\omega_0^{X}=1485.26$~meV, while the cavity-exciton detuning is
+$\Omega_R=2.7$~meV and the exciton energy is
+$\omega_X(0)=1485.26$~meV, while the cavity-exciton detuning is
 slightly negative, $-1$~meV. The pump is at $k_p=0.89~\mu$m$^{-1}$ and
-$\omega_p - \omega_0^{X}=-2.43$~meV, and, at pump powers $1.5$-times
+$\omega_p - \omega_{X}(0)=-2.43$~meV, and, at pump powers $1.5$-times
 above threshold, an OPO appears, with signal at small wavevector
-$k_s=0.21~\mu$m$^{-1}$ and $\omega_s - \omega_0^{X}=-2.95$~meV, and
+$k_s=0.21~\mu$m$^{-1}$ and $\omega_s - \omega_{X}(0)=-2.95$~meV, and
 idler at $k_i=1.57~\mu$m$^{-1}$ and
-$\omega_i - \omega_0^{X}=-1.91$~meV.
+$\omega_i - \omega_{X}(0)=-1.91$~meV.
 %
 The defect used in the sample is a localized inhomogeneity naturally
 present in the cavity mirror. Note that the exact location of the
