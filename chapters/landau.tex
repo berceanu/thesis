@@ -13,25 +13,42 @@
 \chapter{Landau levels in driven-dissipative cavity arrays}
 \label{cha:landau}
 
+In 1984, Michael Berry showed that the adiabatic evolution of energy
+eigenfunctions with respect to a time-dependent Hamiltonian contains a
+phase of geometrical origin, commonly known today by the name of
+"Berry's phase" \cite{Berry_1984}.  Although Berry's seminal paper gave
+the example of a spinor's evolution under slowly changing magnetic
+field, geometric phases \cite{shapere1989geometric} with similar
+origin have been encountered in a plethora of physical contexts,
+ranging from hydrodynamics to quantum field theory, the quantum Hall
+effect and topological insulators.
+
+In a condensed matter context, the eigenstates of electrons in a
+periodic lattice can be labeled by a band index $n$ and the crystal
+momentum $\kv$. The Berry-phase physics arising when adiabatically
+transitioning between neighbouring wavevectors was appreciated only
+recently. This phenomenon can explain properties such as electric
+polarization, anomalous Hall conductivity or the quantization of
+conductance in the integer quantum Hall effect.
+
 In the presence of a (synthetic) gauge field, the eigenstates making
 up an energy band can have nontrivial geometrical properties, as
-encoded in the Berry connection and Berry curvature defined
-below~\cite{berry, xiao2010berryreview}. Understanding the geometry of
-eigenstates in a band is of great importance, not least because the
-integral of the Berry curvature over the 2D Brillouin zone (BZ) gives
-the first Chern number: the topological invariant responsible for the
-integer quantum Hall effect~\cite{thouless}. Consequently, there has
-been much work in recent years to develop new techniques with which to
-probe the properties of energy bands in photonics and ultracold
-gases. For example, the Berry curvature can be measured in the
-semiclassical dynamics of a wavepacket in an optical
-lattice~\cite{dudarev,1chang, price, cominotti, dauphin,
-aidelsburger2015measuring, jotzu2014experimental} or in photon
-transport in a cavity array~\cite{ozawa2014qhe}. In all these cases,
-the physics can be most naturally understood by recognising that the
-Berry curvature acts like a magnetic field in momentum
-space~\cite{berry, bliokh2005spin, PhysRevD.12.3845,
-cooper2012designing}.
+encoded in the Berry connection and Berry curvature~\cite{berry,
+  xiao2010berryreview}. Understanding the geometry of eigenstates in a
+band is of great importance, not least because the integral of the
+Berry curvature over the 2D Brillouin zone (BZ) gives the first Chern
+number: the topological invariant responsible for the integer quantum
+Hall effect~\cite{thouless}. Consequently, there has been much work in
+recent years to develop new techniques with which to probe the
+properties of energy bands in photonics and ultracold gases. For
+example, the Berry curvature can be measured in the semiclassical
+dynamics of a wavepacket in an optical lattice~\cite{dudarev,1chang,
+  price, cominotti, dauphin, aidelsburger2015measuring,
+  jotzu2014experimental} or in photon transport in a cavity
+array~\cite{ozawa2014qhe}. In all these cases, the physics can be most
+naturally understood by recognising that the Berry curvature acts like
+a magnetic field in momentum space~\cite{berry, bliokh2005spin,
+  PhysRevD.12.3845, cooper2012designing}.
 
 The analogy between Berry curvature and magnetism is most powerful
 when a geometrical energy band is subjected to an additional weak
@@ -543,15 +560,16 @@ form~\cite{price2014magnetic}:
 %
 where $\psi_n(\vt{p}_\mathrm{MBZ})$ is the wave function coefficient
 in the MBZ, while $\psi(\vt{p}_\mathrm{BZ})$ is that in the original
-BZ. In this expression, $j$ is an integer, while $\vt{G} = (2\pi/q)
-\hat{\vt{p}}_x $ is the magnetic reciprocal lattice vector, where the
-factor of $q$ is due to the enlarged magnetic unit cell. We note that
-for other magnetic gauges or for other choices of the magnetic unit
-cell, this transformation will in general be more complicated. In this
-sense, we call this choice of magnetic unit cell, a ``natural" choice
-when the Harper-Hofstadter Hamiltonian is in the Landau gauge.  In the
-rest of the article, we denote the momentum in the original BZ as
-$\mathbf{p}$, and that in the MBZ as $\mathbf{p}^0$.
+BZ. In this expression, $j$ is an integer, while
+$\vt{G} = (2\pi/q) \hat{\vt{p}}_x $ is the magnetic reciprocal lattice
+vector, where the factor of $q$ is due to the enlarged magnetic unit
+cell. We note that for other magnetic gauges or for other choices of
+the magnetic unit cell, this transformation will in general be more
+complicated. In this sense, we call this choice of magnetic unit cell,
+a ``natural" choice when the Harper-Hofstadter Hamiltonian is in the
+Landau gauge.  In the rest of the Chapter, we denote the momentum in
+the original BZ as $\mathbf{p}$, and that in the MBZ as
+$\mathbf{p}^0$.
 
 \section{Results and discussion}
 \label{sec:results}

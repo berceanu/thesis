@@ -1,283 +1,256 @@
-\chapter{Introduction}
+\chapter*{Preface}
+\markboth{Preface}{}
+\addcontentsline{toc}{part}{Preface}
 
-%%
-Microcavity polaritons, which are the quasiparticles resulting from
-the coherent strong coupling between quantum well excitons and cavity
-photons~\cite{9780199228942}, have unique mixed matter-light
-properties that none of their constituents display on its own.
-%%
-Because of their energy dispersion and their strong nonlinearity
-inherited from the excitonic components, polaritons continuously
-injected by an external laser into a pump state with suitable
-wavevector and energy can undergo coherent stimulated scattering into
-two conjugate states~\cite{Ciuti_2000,Ciuti_2001,Ciuti_2003}, namely
-the signal and the idler, a process known as optical parametric
-oscillator (OPO) and described in detail in Sec.~\ref{sec:opo}.
+\paragraph{How birds fly together}
+Systems far from thermal equilibrium frequently show novel features
+when compared to their equilibrium counterparts. As an everyday
+example, consider a group of birds displaying long-range ordered
+behaviour, manifested by forming a flock under certain
+conditions. This behaviour can be modeled by introducing a time step
+rule, such that each individual bird in a group determines its next
+direction on each time step by averaging the directions of its
+neighbours and adding some random noise on top of
+that~\cite{Toner1995}. It can be shown that, in the limit of the
+velocity going to zero, the model reduces to the XY model in two
+dimensions, where the spin is represented by the bird velocity. Since
+the 2D XY model does not spontaneously break the symmetry at any
+finite temperature (as justified by the Mermin-Wagner theorem), one
+can show that the appearance of the long-range ordered phase is a
+direct consequence of nonequilibrium aspects of the model. In a
+nutshell, the neighbours of one particular bird will be different at
+different times, depending on the velocity field. This gives rise to a
+time-dependent variable-ranged interaction, which can stabilize the
+ordered phase.
+
+\paragraph{Driven-dissipative systems}
+Non-equilibrium driven-dissipative photonic systems, such as
+polaritons in semiconductor microcavities or arrays of coupled optical
+resonators, have recently attracted a lot of interest due to the
+possibility of observing quantum phenomena which normally require very
+low temperatures and/or intense magnetic fields and are traditionally
+restricted to the domain of solid-state systems or ultracold atomic
+gases. Besides being highly tunable, these optical systems facilitate
+direct experimental access to observables such as the wavefunction or
+energy spectrum, all at room temperature. In particular, microcavity
+polaritons have allowed the observation of collective hydrodynamic
+phenomena, ranging from frictionless flow around a small defect to the
+formation of quantized vortices and dark solitons at the surface of
+large impenetrable obstacles~\cite{Carusotto_2013}, while
+ring-resonator arrays coupled to artificial magnetic fields have
+recently allowed engineering topological edge states robust to
+disorder~\cite{hafezi2013imaging}.
+
+
+\paragraph{Polaritons}
+Microcavity polaritons are quasiparticles resulting from the strong
+coupling of cavity photons and quantum well excitons~\cite{bastard,
+  deveaud2003electron}, and have the prerogative of being both easy to
+manipulate, via an external laser, and detect, via the light escaping
+from the cavity~\cite{9780199228942}. The finite polariton lifetime
+establishes the system as intrinsically out of equilibrium: an
+external pump is needed to continuously replenish the cavity of
+polaritons, that quickly, on a scale of tens of picoseconds,
+escape. The pumping can be done resonantly, close to the polariton
+energy dipersion, or non-resonantly.
+
+\paragraph{Incoherent pumping: polariton BEC}
+The landmark observation~\cite{Kasprzak_2006} of polariton
+condensation in 2006, as shown in Fig.~\ref{fig:polBEC}, was achieved
+using a non-resonant experimental setup. In the experiments, the
+system was incoherently excited by a laser beam tuned at a very high
+energy. Relaxation of the excess energy~\cite{RevModPhys.82.1489,
+  Keeling_2007} lead to a population of the cavity polariton states
+and, above a certain laser power threshold, to Bose-Einstein
+condensation into the lowest polariton state.
 %
-Since their first realisation~\cite{Stevenson_2000, Savvidis_2000,
-Savvidis_2000_b, Baumberg_2000, Saba_2001}, the interest in
-microcavity optical parametric phenomena has involved several fields
-of fundamental and applicative research~\cite{Edamatsu_2004,
-Savasta_2005, Lanco_2006, Abbarchi_2011, Ardizzone_2012, Xie_2012,
-Lecomte_2013}.
+\begin{figure}[tb]\centering
+  \includegraphics[width=.7\linewidth]{polBEC_cond}
+  \caption{
+    % 
+    Experimental observation of polariton Bose-Einstein
+    condensation. A sharp and intense peak corresponding to the lowest
+    momentum state is formed in the center of the far-field emission [top
+    panels], with increasing pump power (left to right). The
+    corresponding energy-resolved emission [bottom panels] show that
+    above the condensation threshold, the emission comes almost entirely
+    from the lowest energy state situated at the bottom of the polariton
+    dispersion. From Ref.~\cite{Kasprzak_2006}.
+    % 
+  }\label{fig:polBEC}
+\end{figure}
 %
-Recently, considerable resources have been invested in exploring the
-fundamental properties of parametric processes, including the
-possibility of macroscopic phase coherence and superfluid
-behaviour~\cite{Carusotto_2013}.  In spite of the coherent nature of
-the driving laser pump, the OPO process belongs to the class of
-non-equilibrium phase transitions in which a $U(1)$ phase symmetry is
-spontaneously broken~\cite{Wouters_2007}
-(Chapter~\ref{cha:polaritons}).  While the phase of the pumped mode is
-locked to the incident laser, the phases of the signal and idler are
-free to be simultaneously rotated in opposite directions.  Because of
-this phase freedom, recent experiments~\cite{Sanvitto_2010} have
-tested the OPO superfluid properties by exploring the physics of the
-signal-idler order parameter, demonstrating the existence and
-metastability of vortex configurations. As the order parameter
-involves both signal and idler, their phase windings have opposite
-signs~\cite{Sanvitto_2010,Marchetti_2010,9783642241857}. Crucially,
-this causes both OPO fluids to display quantized flow metastability
-simultaneously.
+
+\paragraph{Coherent pumping: OPO}
+Due to their energy dispersion and strong nonlinearity inherited from
+the excitonic component, polaritons resonantly injected by the
+external laser into the pump state with a suitable wavevector and
+energy can undergo coherent stimulated scattering into two conjugate
+states~\cite{Ciuti_2000,Ciuti_2001,Ciuti_2003}, called the signal and
+the idler, in a process known as optical parametric oscillator
+(OPO). Since their first realisation~\cite{Stevenson_2000,
+  Savvidis_2000, Savvidis_2000_b, Baumberg_2000, Saba_2001}, the
+interest in microcavity optical parametric phenomena has involved
+several fields of fundamental and applicative
+research~\cite{Edamatsu_2004, Savasta_2005, Lanco_2006, Abbarchi_2011,
+  Ardizzone_2012, Xie_2012, Lecomte_2013}. 
+
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.8\linewidth]{hafezi}
+  \includegraphics[width=.8\linewidth]{polaritopo}
+  \caption{
+    % 
+    \emph{Top panels:} Simulated (right panel) and observed (left panel)
+    edge state propagation in a ring-resonator array.  The light enters
+    from one corner and exits from the other, as signaled by the
+    arrows. Adapted from Ref.~\cite{hafezi2013imaging}.  \emph{Bottom
+      panels:} Simulated edge state propagation in a polariton system.
+    Intensities of the exciton (left panel) and photon (right panel)
+    fields obtained when pumping a lattice at the center of its lower
+    edge. From Ref.~\cite{PhysRevX.5.031001}.
+    % 
+  }\label{fig:topolariton}
+\end{figure}
+%
+\paragraph{Superfluidity}
+The superfluid properties of a resonantly pumped polariton quantum
+fluid, both in the pump-only configuration (without parametric
+scattering) as well as the OPO regime, have been actively investigated
+experimentally, as well as theoretically~\cite{Carusotto_2013}. In
+particular, a supression of scattering in the pump-only case was
+observed~\cite{Amo_2009} below a critical velocity, similar to what
+has been predicted by the Landau criterion for equilibrium superfluid
+condensates.
 %
 While in equilibrium condensates different aspects of superfluidity
 are typically closely related~\cite{Leggett_1999}, this is no longer
-true in a non-equilibrium context such as for microcavity
-polaritons~\cite{Carusotto_2013}.  In particular, those aspects of
-superfluidity related to frictionless flow around defects are expected
-to be much more involved in OPO condensates than for any other
-investigated polariton condensates, such as for the case of incoherent
-pumping~\cite{Kasprzak_2006,Wouters_2010}, and single-state resonantly
-pumped microcavities~\cite{Amo_2009}.  Independent of the pumping
-scheme, the driving and the polariton finite lifetime prompt questions
-about the meaning of superfluid behaviour, when the spectrum of
-collective excitations is complex rather than real, raising conceptual
-interrogatives about the applicability of a Landau
-criterion~\cite{Wouters_2010}.  However, an additional complexity
-characterises the OPO regime, i.e., the simultaneous presence of three
-oscillation frequencies and momenta for pump, signal and idler
-correspondingly increases up to 12 (or 6, depending on the
-approximation used to describe the system) the number of collective
-excitation branches~\cite{Wouters_2007}. Note that from the
-experimental point of view, pioneering experiments~\cite{Amo_2009_b}
-have observed a ballistic nonspreading propagation of signal/idler
-polariton wavepackets in a triggered-OPO configuration.  However,
-given the complexity of the dynamics as well as the nonlinear
-interactions involved in this time-dependent
-configuration~\cite{Szyma_ska_2010}, a theoretical understanding of
-these observations is not yet complete.
+true in a non-equilibrium context.  Independent of the pumping scheme,
+the driving and the polariton finite lifetime force one to reconsider
+the meaning of superfluid behaviour, when the spectrum of collective
+excitations is complex rather than real, raising question about the
+applicability of a Landau criterion~\cite{Wouters_2010}.
 %
-Out of equilibrium quantum fluids such as polaritons in semiconductor
-microcavities are the subject of an intensive study. Microcavity
-polaritons, the quasiparticles presented in
-Chapter~\ref{cha:polaritons}, result from the strong coupling of
-cavity photons and quantum well excitons, and have the prerogative of
-being easy to both manipulate, via an external laser, and detect, via
-the light escaping from the cavity~\cite{9780199228942}. In
-particular, resonant excitation allows the accurate tuning of the
-fluid properties, such as its density and current. However, the
-polariton lifetime being finite establishes the system as
-intrinsically out of equilibrium: An external pump is needed to
-continuously replenish the cavity of polaritons, that quickly, on a
-scale of tens of picoseconds, escape.
+An additional complexity characterises the OPO regime, namely, the
+simultaneous presence of three oscillation frequencies and momenta for
+pump, signal and idler correspondingly increases up to 12 (or 6,
+depending on the approximation used to describe the system) the number
+of collective excitation branches~\cite{Wouters_2007}. Note that from
+the experimental point of view, pioneering
+experiments~\cite{Amo_2009_b} have observed a ballistic nonspreading
+propagation of signal/idler polariton wavepackets in a triggered-OPO
+configuration, as well as demonstrating the existence and
+metastability of vortex configurations~\cite{Sanvitto_2010} in the
+signal and idler.
+ 
+
+\paragraph{Topology in polaritons}
+Very recently, the polariton community started to explore topological
+effects in polariton lattices~\cite{PhysRevB.93.020502,
+  PhysRevB.91.161413, PhysRevLett.114.116401, PhysRevB.93.085438,
+  PhysRevX.5.031001}. The idea is to break time reversal symmetry by
+the application of a strong external magnetic field, giving rise to
+energy bands with nontrivial topology. In particular,
+Ref.~\cite{PhysRevX.5.031001} proposes an exciton-photon coupling with
+a winding phase in momentum space, giving rise to polaritonic bands
+with chiral edge modes that allow unidirectional propagation,
+protected against backscattering. The bottom panels of
+Fig.~\ref{fig:topolariton} show the exciton and photon fields
+traveling together as a unique polaritonic counter-clockwise chiral
+edge mode. In this context, dissipation in the form of photon losses
+provides a coupling to the outside continuum of modes and, as such,
+can be used to detect or inject edge modes.
 %
-Recently, the superfluid properties of a resonantly pumped polariton
-quantum fluid in the pump-only configuration --- i.e., where no other
-states aside the pump one are occupied by, for example, parametric
-scattering (as in the OPO regime) --- have been actively investigated
-both experimentally and theoretically~\cite{Carusotto_2004,
-  Ciuti_2005, Amo_2009, Cancellieri_2010, Pigeon_2011, Amo_2011,
-  Nardin_2011, Sanvitto_2011}. This pumping scheme, differently from
-other cases, such as the resonant OPO regime (treated in
-Chapter~\ref{cha:opo}) and the incoherent pumping scheme, creates a
-polariton fluid that, inside the pump spot, is not characterised by a
-free phase. In contrast, the phase of the pump state is locked to the
-one of the external pumping laser. Nevertheless, it has been
-predicted~\cite{Carusotto_2004,Ciuti_2005} and
-observed~\cite{Amo_2009} that scattering can be suppressed below a
-critical velocity, where the system displays superfluid behaviour,
-similar to what has been predicted by the Landau criterion for
-equilibrium superfluid condensates (Chapter~\ref{cha:cold-gases}).
-
-% TODO: make sure I cite all the papers in tribunal.org
-%%
+It would be interesting to study the feasability of coupled
+micropillars for this type of physics, in view of the recent
+experimental findings of a linear graphene-like
+dispersion~\cite{Jacqmin_2014} as well as edge
+states~\cite{polaritonedge} in honeycomb micropillar lattices.  
 %
-
-In 1984, Michael Berry showed that the adiabatic evolution of energy
-eigenfunctions with respect to a time-dependent Hamiltonian contains a
-phase of geometrical origin, commonly known today by the name of
-"Berry's phase" \cite{Berry_1984}.  Although Berry's seminal paper gave
-the example of a spinor's evolution under slowly changing magnetic
-field, geometric phases \cite{shapere1989geometric} with similar
-origin have been encountered in a plethora of physical contexts,
-ranging from hydrodynamics to quantum field theory, the quantum Hall
-effect and topological insulators.
-
-In a condensed matter context, the eigenstates of electrons in a
-periodic lattice can be labeled by a band index $n$ and the crystal
-momentum $k$. The Berry-phase physics arising when adiabatically
-transitioning between neighbouring wavevectors was appreciated only
-recently. This phenomenon can explain properties such as electric
-polarization, anomalous Hall conductivity or the quantization of
-conductance in the integer quantum Hall effect.
-
-Because the Berry phase in momentum space is not a gauge-invariant
-quantity itself, one has to define the Berry connection and its curl,
-the Berry curvature.  Drawing a parallel to classical electrodynamics,
-the Berry phase plays the role of the Aharonov-Bohm phase, while the
-Berry connection and curvature correspond to the vector potential and
-magnetic field, respectively.  As shown by Thouless et
-al. \cite{Thouless_1982}, integrating the Berry curvature over the
-Brillouin zone gives a topological invariant known as a Chern number,
-which quantifies the Hall conductance.
-
-Considering the Berry curvature to be an effective momentum space
-magnetic field has been previously used in a semiclassical context,
-for instance in order to explain the spin-Hall effect in p-type
-semiconductors \cite{murakami2003dissipationless}.
-
-Investigations along these lines are presently very active 
-in both contexts of ultracold atoms and of polaritons. In particular,
-Price and coworkers \cite{Price_2014} have shown in an
-ultracold atom context that the same interpretation of the Berry
-curvature also works in a fully quantum picture. The model considered
-in \cite{Price_2014} is that of a particle described by the
-Harper-Hofstadter(HH) Hamiltonian on a 2D lattice in the presence of
-an external harmonic trapping potential.  The authors show that the
-eigenspectrum of such a system can be understood as the Landau levels
-of a particle moving in constant magnetic field on the surface of a
-torus. This is a prime example of the physical consequences arising
-from the topology of the Brillouin zone.
-
-My work so far, part of which was done in an ongoing collaboration
-between Universidad Autonoma de Madrid and the BEC Center in Trento,
-focused on the superfluid properties of cavity exciton-polaritons
-\cite{Berceanu_2012,Tosi_2011}. It would be therefore natural to use the
-aquired expertise and search for a possible implementation of the
-topological concepts introduced in \cite{Price_2014} for
-atomic systems to polariton systems.  In fact, energy bands with
-nontrivial topology have been recently realised in such systems
-\cite{Jacqmin_2014}, using arrays of coupled micropillars. There are
-several challenges to this approach, however, coming from the
-driven-dissipative nature of such systems and the presence of optical
-nonlinearities, not included in the HH model.
-
-
-I focus on the implications of \cite{Price_2014} for linear
-optical systems. On one hand, I will consider systems of microcavity
-polaritons on which I have acquired a good expertise in the last
-years.  On the other hand, I will try to extend these ideas to novel
-optical systems such as arrays of Si-based coupled ring resonators for
-which there is an active experimental interest. With a proper design
-of the resonator array \cite{hafezi2013imaging}, this latter system has been
-demonstrated to be accurately described by the HH model with a strong
-and uniform artificial gauge field piercing the lattice. As a further
-addition, the harmonic trapping potential, which plays the role of
-kinetic energy in momentum space, can easily be implemented as a
-modulation of the resonator size.  I will start investigating how the
-topological concepts are affected by the optical nonlinearities.
-
-\section*{Contents of this thesis}
-
-
-
-
-
-
-
-
-
-
-\paragraph{History of the subject}
-
-
-\paragraph{original contribution}
-
-\paragraph{Motivation for the layman}
-\paragraph{Motivation for physicists}
-\paragraph{Personal motivation}
-
-
-\paragraph{Physicist view of the world}
-% Planet with no ice paradigm
-
-\paragraph{Connection to everyday world}
-% Children on swing, swimming ducks, symmetry breaking
-
-\paragraph{Applications}
-% Quote about newborn child
-% Faraday quote about electricity
-% economic and social motivation of science
-% polariton devices
-% connection between superfluidity and superconductivity, high Tc
-% fundamental understanding
-%  - symmetry breaking: higgs boson, electroweak interaction (see layman book)
-
-The source code is available online~\cite{SourceCode}.
-
-\paragraph{How birds fly together}
-Consider a group of birds displaying long-range ordered behaviour,
-manifested by forming a flock under certain conditions. This behaviour
-has been modeled in Ref.~\cite{Toner1995}, where a time step rule is
-introduced, such that each individual bird in a group determines its
-next direction on each time step by averaging the directions of its
-neighbours and adding some random noise on top of that. It is shown
-that, in the limit of the velocity going to zero, the model reduces to
-the XY model in two dimensions, where the spin is represented by the
-bird velocity. Since the 2D XY model does not spontaneously break the
-symmetry at any finite temperature (as justified by the Mermin-Wagner
-theorem), Ref.~\cite{Toner1995} goes on to show that the appearance of
-the long-range ordered phase is a direct consequence of nonequilibrium
-aspects of the model. In a nutshell, the neighbours of one particular
-bird will be different at different times, depending on the velocity
-field. This gives rise to a time-dependent variable-ranged
-interaction, which can stabilize the ordered phase.
-%
-A planar system of electrons in a strong magnetic field is the
-archetypal model for studying phenomena such as the integer and
-fractional quantum Hall effects. With recent advances in creating
-synthetic gauge fields, however, new horizons have opened up for
-simulating such topological phases of matter also with neutral
-particles, such as photons~\cite{hafezi2014synthetic} or ultracold
+On the other hand, topologically protected edge states have already
+been experimentaly observed~\cite{hafezi2013imaging} in the case of
+silicon-based optical resonator arrays (see top panels of
+Fig.~\ref{fig:topolariton}), due to recent advances in creating
+synthetic gauge fields, which have opened new horizons for simulating
+topological phases of matter also with neutral particles, such as
+photons~\cite{hafezi2014synthetic} (or ultracold
 atoms~\cite{dalibardrmp2011, goldman_repprog_2014,
-Goldman_arxiv_2015}.  Rather than simply replicating previous
+  Goldman_arxiv_2015}). Rather than simply replicating previous
 measurements, experiments with synthetic gauge fields allow for
 unprecedented access to properties such as the eigenstates or
 eigenspectrum, while the tunability and controllability of these
 experiments offer the prospect of simulating novel physics.
 
 
-\paragraph{Ducks on a lake emit Cherenkov radiation}
-% Parallel between ducks on a lake and content of thesis
-
+\subsection*{Contents of this thesis}
 \paragraph{Thesis layout}
-The thesis is split in two parts: part I is a review of the physical
-systems and technical concepts relevant to part II. Part II is the
-actual work I did during my 5 years of PhD, which resulted in 3
-publications (chapters 4,5,6). It is hard to find a unified theme for
-these 3 papers, as 2 of them concern collective behaviour and
-hydrodynamical phenomena and the third is essentially single-particle
-physics in some limit where topological concepts are relevant. In any
-case, one can argue that Bose-Einstein condensation is definately not
-the main theme of my thesis: it is not essential to ch. 4, as the
-coherence there is given by the laser; OPO is also not a BEC, it is
-more similar to a Rayleigh-Bénard instability (or at most a BKT
-transition if one considers the equilibrium limit); and last but not
-least, BEC is completely irrelevant to ch. 6. So the only reason to
-even mention BEC is that a lot of polariton experiments were inspired
-by cold atom physics, where of course BEC plays a central role.
+This manuscript is split in two parts: part I is a detailed review of
+the basic concepts, including both the theoretical formalism, as well
+as the relevant experiments, necessary for understanding part II,
+which presents the three main works published as part of my PhD
+(Chapters~\ref{cha:drag},~\ref{cha:opo} and~\ref{cha:landau}). The two
+systems chosen for ilustrating the basic physical concepts are
+ultracold atomic gases (Chapter~\ref{cha:cold-gases}) and microcavity
+exciton-polaritons (Chapter~\ref{cha:polaritons}). We now give a brief
+description of the content of each of the chapters.
 
+In Chapter~\ref{cha:cold-gases}, we describe the phenomenon of
+Bose-Einstein condensation, and introduce the Gross-Pitaevskii
+equation which is extended in Chapter~\ref{cha:polaritons} to the case
+of polariton condensates. We then review the linear response of a
+moving atomic condensate to a weak stationary defect, leading to
+discussion on superfluidity. This scattering problem is the
+equilibrium conterpart of the problems studied in
+Chapters~\ref{cha:drag} and~\ref{cha:opo} in the context of polaritons
+in the resonantly pumped and optical parametric oscillator regimes,
+respectively. Finally, we introduce the Harper-Hofstadter model, which
+is the backbone of Chapter~\ref{cha:landau}.
 
-% chapter descriptions
+In Chapter~\ref{cha:polaritons}, we introduce microcavity
+exciton-polaritons, and their theoretical description in terms of a
+driven-dissipative Gross-Pitaevskii equation. We discuss both the
+resonantly pumped system which is used in Chapter~\ref{cha:drag}, as
+well as the optical parametric oscillator of Chapter~\ref{cha:opo},
+and we make the connection to the superfluid-related phenomena
+previously introduced in Chapter~\ref{cha:cold-gases}.
 
-A possible suggestion to link topology and polaritons is to go through
-the works of Malpuech and Bardyn that have studied topological effects
-in polariton lattices, where HH-like physics is obtained by breaking
-time-reversal with a strong external magnetic field that lifts the
-degeneracy between $\sigma_+$ and $\sigma_-$ polarized states of each
-lattice site.
+In Chapter~\ref{cha:drag}, we study the scattering of a resonantly
+pumped polariton condensate against a static defect of the
+microcavity, for the simplified case of small fluid velocities, when
+the polariton dispersion can be considered quadratic. After discussing
+the effects of dissipation on the Bogoliubov excitation spectra, we
+find that the finite polariton lifetime also affects the drag exerted
+by the condensate on the defect. In particular, we show that there is
+a nonzero drag force, entirely due to the out-of-equilibrium nature of
+the system, even in the ``superfluid regime''. Finally, we
+characterise the behaviour of the drag as a function of the condensate
+velocity and polariton lifetime.
 
+In Chapter~\ref{cha:opo}, we present a theoretical and experimental
+study of the same scattering problem, now in the context of an optical
+parametric oscillator consisting of three coupled condensates: the
+pump, the signal and the idler. Apart from using the linear response
+analysis first introduced in Chapter~\ref{cha:cold-gases} and then
+extended to the case of a pump-only condensate in
+Chapter~\ref{cha:drag}, we also numerically solve the full
+driven-dissipative Gross-Pitaevskii equation. We show that, while the
+modulation patterns are present in all three condensates, their
+relative amplitudes depend on various factors. In particular, for the
+typical experimental conditions that favour parametric scattering, the
+signal has undetectable modulations, while the pump and idler show the
+same response.
 
+In Chapter~\ref{cha:landau}, we add a harmonic trap to the
+Harper-Hofstadter lattice model of Chapter~\ref{cha:cold-gases}. We
+discuss how the eigenstates of the new Hamiltonian can be seen as
+momentum-space Landau levels, by making use of the nontrivial topology
+of the Harper-Hofstadter energy bands. We then extend the model to
+include driving and dissipation, and finally present a proposal for
+the physical implementation of the model in state-of-the-art
+driven-dissipative photonic systems.
+
+The source code belonging to Chapters~\ref{cha:drag},~\ref{cha:opo}
+and~\ref{cha:landau} is available online~\cite{SourceCode}.
 
 
 %%% Local Variables:

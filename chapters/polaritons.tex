@@ -1,6 +1,53 @@
 \chapter{Microcavity exciton-polaritons}
 \label{cha:polaritons}
 
+In Chapter~\ref{cha:cold-gases} we have seen, among other things, that
+interactions are essential for the appearance of superfluidity, and
+the existence of a BEC is not sufficient. We now want to explore
+similar physics in the context of nonlinear optical systems, as their
+nonlinear polarization is able to mediate appreciable interactions
+between photons~\cite{Boyd}. One way to achieve the strong
+interactions necessary for collective fluid-like behavior of the
+many-photon system is by coupling the photons with matter degrees of
+freedom, resulting in new quasiparticles called
+\textit{polaritons}~\cite{Hopfield1958}.
+
+The connection between BEC and spontaneous coherence effects in
+nonlinear optical systems became apparent starting with the
+experiments on exciton-polaritons in semiconductor
+microcavities~\cite{Baumberg_2000, Stevenson_2000, Baas2006,
+  Kasprzak_2006}. However, the steady state in such devices typically
+results from a dynamical balance between driving and dissipation, in
+contrast to the thermal equilibrium achieved in ultracold atomic
+gases~\cite{Carusotto_2013}.
+
+In this Chapter we review the physics of microcavity exciton
+polaritons, with an emphasis on their hydrodynamics properties, and in
+particular the new effects that their non-equilibrium nature
+introduces.
+
+\paragraph{Chapter organization}
+This Chapter is organized as follows: we start from a microscopic
+description of a semiconductor microcavity (Sec.~\ref{sec:model-sys})
+in terms of electrons, holes and cavity photons
+(Sec.~\ref{sec:microscopic}), before switching to a higher level
+weakly-interacting Bose model for polaritons in
+Sections~\ref{sec:effective} and~\ref{sec:lower-polaritons}. We
+discuss various ways of pumping the system, as well as the important
+roles played by decay (Sec.~\ref{sec:pumping}) and disorder
+(Sec.~\ref{sec:disorder}), leading to a driven-dissipative
+Gross-Pitaevskii equation at the mean-field level
+(Sec.~\ref{sec:mean-field}). We investigate the optical limiter and
+bistable regimes of resonantly pumped polariton condensates, by means
+of a single-state (pump only) ansatz (Sec.~\ref{sec:eq-state}) for the
+polaritonic GP equation. Finally, we consider a three-state solution,
+the optical parametric oscillator regime (Sec.~\ref{sec:opo}) obtained
+by parametric scattering of pump polaritons into the signal and idler
+states. In Section~\ref{sec:opo}, we also review some
+superfluid-related phenomena in an OPO context, such as quantized
+vortices, and the $U(1)$ symmetry breaking resulting in a Goldstone
+mode of the OPO Bogoliubov spectrum.
+
 
 \section{Model system}
 \label{sec:model-sys}
@@ -779,7 +826,7 @@ as we will discuss at large in Sec.~\ref{sec:opo}.
 \label{sec:opo}
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=\linewidth]{swing}
+  \includegraphics[width=.7\linewidth]{swing}
   \caption{
     % 
     The driving (pumping) of a swing by a person, using the standing
@@ -1007,21 +1054,20 @@ yet been fully elucidated, although it seems that BKT-like physics has
 been both predicted~\cite{Szyma_ska_2006} and
 observed~\cite{Roumpos2012} under incoherent pumping.
 
-As we have seen, the breaking of the $U(1)$ symmetry in an atomic gas
-below the BEC critical point is related to the appearance of a soft
-Goldstone mode in the form of zero sound. Similar physics arises below
-the Curie temperature in a ferromagnet, where the magnon excitations
-(spin waves) are the corresponding Goldstone bosons due to the
-spontaneous breaking of the initial rotational symmetry. Since the
-resonantly pumped polariton system above threshold spontaneously
-breaks a $U(1)$ symmetry, Goldtone's theorem predicts a massless mode
-corresponding in this case to a spatial twist of the signal-idler
-phases. Indeed, such a mode has been identified in
-Ref.~\cite{Wouters_2007} by calculating the quasiparticle excitation
-spectrum on top of the three-state OPO anzatz
-Eq.~\eqref{eq:3-state-ansatz}. The Bogoliubov spectrum in question is
-shown in Fig.~\ref{fig:goldstone}, and the Goldstone mode represented
-by the solid heavy line labeled ``G''.
+The breaking of the $U(1)$ symmetry in an atomic gas below the BEC
+critical point is related to the appearance of a soft Goldstone mode
+in the form of zero sound. Similar physics arises below the Curie
+temperature in a ferromagnet, where the magnon excitations (spin
+waves) are the corresponding Goldstone bosons due to the spontaneous
+breaking of the initial rotational symmetry. Since the resonantly
+pumped polariton system above threshold spontaneously breaks a $U(1)$
+symmetry, Goldtone's theorem predicts a massless mode corresponding in
+this case to a spatial twist of the signal-idler phases. Indeed, such
+a mode has been identified in Ref.~\cite{Wouters_2007} by calculating
+the quasiparticle excitation spectrum on top of the three-state OPO
+anzatz Eq.~\eqref{eq:3-state-ansatz}. The Bogoliubov spectrum in
+question is shown in Fig.~\ref{fig:goldstone}, and the Goldstone mode
+represented by the solid heavy line labeled ``G''.
 %
 \begin{figure}[tb]\centering
   \includegraphics[width=.9\linewidth]{response-ev}
@@ -1054,9 +1100,9 @@ will be employed in Chapter~\ref{cha:opo}, where we study
 multicomponent superfluidity in the OPO regime.
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=.8\linewidth]{marchetti_threshold_comp}
-  \includegraphics[width=.8\linewidth]{marchetti_spectrum_comp_review}
-  \includegraphics[width=.8\linewidth]{marchetti_comp_OPO_figure_review_clean}
+  \includegraphics[width=.6\linewidth]{marchetti_threshold_comp}
+  \includegraphics[width=.6\linewidth]{marchetti_spectrum_comp_review}
+  \includegraphics[width=.6\linewidth]{marchetti_comp_OPO_figure_review_clean}
   \caption{
     %
     \emph{Top panels:} Integrated photon emission intensities for the signal $s$ (red dots), pump $p$ (blue squares) and idler $i$ (green triangles) as a function of the renormalized pump intensity (left) and real-space signal emission corresponding to positions 1-4, including random photonic disorder, shown as contour lines (right). Note the OPO phase transition is a gradual one, with the signal first switching on in the center, increasing to maximum size and finally switching off for large pump intensities.
@@ -1139,9 +1185,23 @@ angular momentum on the OPO condensate previously created by means of
 a wide pump spot. In a similar fashion to the rotating BEC experiments
 performed with ultracold gases, the system responded by forming a
 quantized vortex, which eventually drifted out of the condensate, due
-to the simply-connected geometry. The vortex was visible in both the
-signal and idler state, and its lifetime was much longer than the
-average polariton lifetime.  In a similar direction,
+to the simply-connected geometry (see
+Fig.~\ref{fig:opo-metastable-vortex}). The vortex was visible in both
+the signal and idler state, and its lifetime was much longer than the
+average polariton lifetime.
+%
+\begin{figure}[tb]\centering
+  \includegraphics[width=.6\linewidth]{sanvitto_metastable_vortex}
+  \caption{
+    % 
+    Snapshots of the time evolution of the phase (upper row) and the
+    density (bottom row) of an OPO polariton condensate triggered by a
+    pulsed probe carrying a $m=1$ vortex. From Ref.~\cite{Sanvitto_2010}.
+    % 
+  }\label{fig:opo-metastable-vortex}
+\end{figure}
+% 
+In a similar direction,
 Ref.~\cite{Marchetti_2010} presented a theoretical study predicting
 the formation of spontaneous quantized vortices in the OPO regime,
 provided the pump spot is spatially narrow. These vortices were shown
