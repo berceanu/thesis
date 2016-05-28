@@ -59,8 +59,8 @@
      id="layer1"
      transform="translate(0,-783.0447)">
     <image
-       sodipodi:absref="/home/berceanu/Development/thesis/figures/ks0_0.png"
-       xlink:href="ks0_0.png"
+       sodipodi:absref="./ks0_0.png"
+       xlink:href="./ks0_0.png"
        y="840.36224"
        x="146.88301"
        id="image3614"
@@ -69,8 +69,8 @@
        height="212"
        width="141.99875" />
     <image
-       sodipodi:absref="/home/berceanu/Development/thesis/figures/3d0_7.png"
-       xlink:href="3d0_7.png"
+       sodipodi:absref="./3d0_7.png"
+       xlink:href="./3d0_7.png"
        y="783.04468"
        x="237.76477"
        id="image3676"
@@ -79,8 +79,8 @@
        height="79.039703"
        width="200" />
     <image
-       sodipodi:absref="/home/berceanu/Development/thesis/figures/ks-0_4.png"
-       xlink:href="ks-0_4.png"
+       sodipodi:absref="./ks-0_4.png"
+       xlink:href="./ks-0_4.png"
        y="879.06622"
        x="0"
        id="image3738"
@@ -89,8 +89,8 @@
        height="173.29601"
        width="145" />
     <image
-       sodipodi:absref="/home/berceanu/Development/thesis/figures/ks0_7.png"
-       xlink:href="ks0_7.png"
+       sodipodi:absref="./ks0_7.png"
+       xlink:href="./ks0_7.png"
        y="878.17126"
        x="290.76477"
        id="image3800"
@@ -99,8 +99,8 @@
        height="174.19098"
        width="145" />
     <image
-       sodipodi:absref="/home/berceanu/Development/thesis/figures/3d-0_4.png"
-       xlink:href="3d-0_4.png"
+       sodipodi:absref="./3d-0_4.png"
+       xlink:href="./3d-0_4.png"
        y="783.04468"
        x="0"
        id="image3568"
