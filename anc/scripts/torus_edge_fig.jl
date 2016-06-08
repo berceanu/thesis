@@ -7,7 +7,7 @@ const N = 45
 const q = 11
 const κ = 0.02
 const γ = 0.001
-const ν = [-3.45:0.001:-0.47]
+const ν = collect(-3.45:0.001:-0.47)
 prm = (1/q,γ,κ);
 const r = 11 # points in MBZ
 # Nk should be an odd multiple of q

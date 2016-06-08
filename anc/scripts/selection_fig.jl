@@ -8,7 +8,7 @@ const N = 45
 const q = 11
 const κ = 0.02
 const γ = 0.001
-const ν = linspace(-3.45,-2.47,981)
+const ν = collect(linspace(-3.45,-2.47,981))
 const r = 11 # points in MBZ
 # Nk should be an odd multiple of q
 const Nk = r*q # zero-padded system size = no of k points
@@ -17,7 +17,7 @@ const x = -l:l
 const δk = 2π/Nk # resolution in mom space
 const k = x * δk
 # full plot range, both in x and y
-const xm = [-div(N-1,2):div(N-1,2)]
+const xm = collect(-div(N-1,2):div(N-1,2))
 # zoom in
 const edge = 10
 const st = findin(xm, -edge)[1]
@@ -71,7 +71,7 @@ A = spzeros(Complex{Float64}, N^2,N^2);
 for j=1:100
     P=randpmp(j)
     for (i,ω) in enumerate(ν)
-        BP.buildham_landau!(A, N,1/q,κ,γ, ω)
+        BP.buildham_landau!(A, N,1/q,κ,γ,ω)
         intvec[i] += sum(abs2(A\P))
     end
 end

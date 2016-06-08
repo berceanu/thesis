@@ -34,8 +34,8 @@ function er(q::Int,p::Int,N::Int,κ::Float64)
 end
 # average over MBZ of the non-abelian correction to the
 #    1(st) band for p=1 for certain trap
-δE(q::Int,κ::Float64) = δE(1,q,1, linspace(-π/q, π/q, 20),
-   linspace(-π, π, 20), κ)
+δE(q::Int,κ::Float64) = δE(1,q,1, collect(linspace(-π/q, π/q, 20)),
+   collect(linspace(-π, π, 20)), κ)
 # the average (over specified points) non-abelian energy
 #    correction to n(th) band
 δE(n::Int,q::Int,p::Int, px::Array{Float64, 1},py::Array{Float64,
@@ -106,22 +106,22 @@ for i = 1:4
     ηL[:,i] = HH.ηlev(qs,0.02, i-1,i)
 end
 # matplotlib parameters
-matplotlib["rcParams"][:update](["axes.labelsize" => 22,
-                                 "axes.titlesize" => 20,
-                                 "font.size" => 18,
-                                 "legend.fontsize" => 14,
-                                 "axes.linewidth" => 1.5,
-                                 "font.family" => "serif",
-                                 "font.serif" => "Computer
-                                    Modern Roman",
-                                 "xtick.labelsize" => 20,
-                                 "xtick.major.size" => 5.5,
-                                 "xtick.major.width" => 1.5,
-                                 "ytick.labelsize" => 20,
-                                 "ytick.major.size" => 5.5,
-                                 "ytick.major.width" => 1.5,
-                                 "text.usetex" => true,
-                                 "figure.autolayout" => true])
+matplotlib["rcParams"][:update](Dict("axes.labelsize" => 22,
+                                     "axes.titlesize" => 20,
+                                     "font.size" => 18,
+                                     "legend.fontsize" => 14,
+                                     "axes.linewidth" => 1.5,
+                                     "font.family" => "serif",
+                                     "font.serif" => "Computer
+                                        Modern Roman",
+                                     "xtick.labelsize" => 20,
+                                     "xtick.major.size" => 5.5,
+                                     "xtick.major.width" => 1.5,
+                                     "ytick.labelsize" => 20,
+                                     "ytick.major.size" => 5.5,
+                                     "ytick.major.width" => 1.5,
+                                     "text.usetex" => true))
+
 ## checking δE(k_x,k_y) flat for q = 5
 # system parameters
 q = 5
@@ -156,8 +156,7 @@ cbar[:set_ticklabels]([L"$5.378 \times 10^{-3}$",
 cbar[:set_label](L"$\delta E(5,0.02)$",
    rotation=0,labelpad=-20,y=.5)
 cbar[:solids][:set_edgecolor]("face")
-fig[:savefig]("../../figures/correction_mbz.pdf", transparent=true,
-   pad_inches=0.0, bbox_inches="tight")
+fig[:savefig]("../../figures/correction_mbz.pdf", transparent=true, pad_inches=0.0)
 plt[:close](fig)
 # various line types
 lines = ["-","--","-.",":"]
@@ -184,6 +183,5 @@ for (i, ax) in enumerate(axes)
     end
     ax[:set_xlim](qs[1], qs[end])
 end
-fig[:savefig]("../../figures/nonabcorr.pdf", transparent=true,
-   pad_inches=0.0, bbox_inches="tight")
+fig[:savefig]("../../figures/nonabcorr.pdf", transparent=true, pad_inches=0.0)
 plt[:close](fig)

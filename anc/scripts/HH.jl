@@ -77,10 +77,10 @@ function ηzpe(M::SparseMatrixCSC{Complex{Float64},Int}, p::Int,
     er = real(eigs(M, nev=1, which=:SR, ritzvec=false)[1][1])
     return 4π*α/κ * (er - et)
 end
-ηzpe(q::Int, κs::Vector{Float64}) = vec(ηzpe([q], κs))
-ηzpe(qs::UnitRange{Int}, κ::Float64) = ηzpe([qs], κ)
-ηzpe(qs::Vector{Int}, κ::Float64) = vec(ηzpe(qs, [κ]))
-ηzpe(qs::UnitRange{Int}, κs::Vector{Float64}) = ηzpe([qs], κs)
+ηzpe(q::Int, κs::Vector{Float64}) = vec(ηzpe(collect(q), κs))
+ηzpe(qs::UnitRange{Int}, κ::Float64) = ηzpe(collect(qs), κ)
+ηzpe(qs::Vector{Int}, κ::Float64) = vec(ηzpe(qs, collect(κ)))
+ηzpe(qs::UnitRange{Int}, κs::Vector{Float64}) = ηzpe(collect(qs), κs)
 function ηzpe(qs::Vector{Int}, κs::Vector{Float64})
     N=15
     A = spzeros(Complex{Float64}, N^2,N^2)

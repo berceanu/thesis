@@ -10,8 +10,8 @@ WaveFunction(S::SparseMatrixCSC{Complex{Float64},Int64},
              ω::Float64,P::Vector{Complex{Float64}}) =
                 WaveFunction(S,ω,P,:landau)
 WaveFunction(S::SparseMatrixCSC{Complex{Float64},Int64},
-             ω::Float64,P::Vector{Complex{Float64}},gauge::Symbol)
-                 = WaveFunction(S,ω,P,gauge,1/11,0.001,0.02,0.,0.)
+             ω::Float64,P::Vector{Complex{Float64}},gauge::Symbol) =
+                WaveFunction(S,ω,P,gauge,1/11,0.001,0.02,0.,0.)
 WaveFunction(S::SparseMatrixCSC{Complex{Float64},Int64},
              ω::Float64,P::Vector{Complex{Float64}},gauge::Symbol,
              α::Float64,γ::Float64,κ::Float64) =
@@ -154,6 +154,9 @@ macro hambody(fself, fleft, fright, fup, fdown)
         end
     end
 end
+buildham_landau!(S::SparseMatrixCSC{Complex{Float64},Int},
+                 N::Int,α::Float64,κ::Float64,γ::Float64,ω::Float64) =
+                     buildham_landau!(S,N,α,κ,γ,ω, 0.,0.)
 function buildham_landau!(S::SparseMatrixCSC{Complex{Float64},Int},
    N::Int,α::Float64,κ::Float64,γ::Float64,ω::Float64, m₀::Float64,
    n₀::Float64)
@@ -272,8 +275,8 @@ function gausspmp(N::Int; A=1., seed=0, σ=1., n0=0, m0=0)
     x0=m0
     y0=n0
     f = zeros(Complex{Float64}, N,N)
-    m = [-div(N-1,2):div(N-1,2)]
-    n = [div(N-1,2):-1:-div(N-1,2)]
+    m = collect(-div(N-1,2):div(N-1,2))
+    n = collect(div(N-1,2):-1:-div(N-1,2))
     for c in 1:N, l in 1:N
         x = m[c]
         y = n[l]

@@ -42,7 +42,7 @@ sω2=-1.0
 dδ=0.001
 #spectral range
 ν =  sω1:dδ:sω2
-sp = BP.Spectrum([ν], P, :landau, 1/q, sγ, sκ)
+sp = BP.Spectrum(collect(ν), P, :landau, 1/q, sγ, sκ)
 # no pumping or dissipation
 state = BP.getstate(exexp, η)
 ψrex = abs2(state)
