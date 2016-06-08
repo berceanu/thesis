@@ -55,15 +55,15 @@ when a geometrical energy band is subjected to an additional weak
 harmonic potential~\cite{price2014magnetic}. Then, in the effective
 momentum-space Hamiltonian, a harmonic potential acts like the kinetic
 energy of a particle in real space. Just as the physical momentum
-$\vt{p}-\vt{A}(\rv)$ is the sum of the canonical momentum $\vt{p}$ and
+$\vt{k}-\vt{A}(\rv)$ is the sum of the canonical momentum $\vt{k}$ and
 the magnetic vector potential $\vt{A} (\rv)$ in the magnetic
-Hamiltonian, so the physical position $\vt{r}+\mathcal{A}_{n,n}(\pv)$,
+Hamiltonian, so the physical position $\vt{r}+\mathcal{A}_{n,n}(\kv)$,
 is given by the canonical position $\vt{r}$ and the Berry connection
-$\mathcal{A}_{n,n}(\pv)$ of band $n$ in the effective
+$\mathcal{A}_{n,n}(\kv)$ of band $n$ in the effective
 Hamiltonian~\cite{adams1959energy,nagaosa,
 murakami2003dissipationless, bliokh2005spin, fujita,
 bliokh2005topological,gosselin2006semiclassical}. The Berry curvature,
-$\Omega_n (\pv)= \nabla \times \mathcal{A}_{n,n}(\pv)$, is then like a
+$\Omega_n (\kv)= \nabla \times \mathcal{A}_{n,n}(\kv)$, is then like a
 momentum-space magnetic field. For certain models, this analogy leads
 to a clear analytical understanding of single-particle
 dynamics~\cite{price2014magnetic, ozawa2014momhh, price2015sporbit,
@@ -103,7 +103,7 @@ that are otherwise inaccessible.  Firstly, the spectroscopic
 measurements discussed here are sensitive to the absolute energy of a
 state. From this, we show how to extract the energy shift due to the
 off-diagonal matrix elements of the Berry connection
-$\mathcal{A}_{n,n'}(\pv)$ relating eigenstates in different bands $n$
+$\mathcal{A}_{n,n'}(\kv)$ relating eigenstates in different bands $n$
 and $n'$. Only very recently has the first measurement of such effects
 been reported in ultracold atomic
 gases~\cite{Grusdt2014nonabelian,tracy2015arxiv}, and the approach
@@ -200,17 +200,17 @@ space~\cite{price2014magnetic}. Throughout the following discussion,
 we assume that the trap is centered at the origin $(m_0, n_0)= (0,0)$.
 
 We begin from the eigenstates of the Harper-Hofstadter model
-$\mathcal{H}_0\ket{\chi_{n,\vt{p}}} = E_n (\pv)
-\ket{\chi_{n,\vt{p}}}$, where $E_n (\pv) $ is the energy dispersion of
-band $n$ at crystal momentum $\vt{p}$. As the spatially-dependent
+$\mathcal{H}_0\ket{\chi_{n,\vt{k}}} = E_n (\kv)
+\ket{\chi_{n,\vt{k}}}$, where $E_n (\kv)$ is the energy dispersion of
+band $n$ at crystal momentum $\vt{k}$. As the spatially-dependent
 hopping phases in $\mathcal{H}_0$ break translational invariance, new
 magnetic translation operators must be introduced to define a larger
 magnetic unit cell, containing an integer number of magnetic flux
 quanta~\cite{zak1964group, zak1964representations, 1chang}. Then
 translational symmetry is restored and Bloch's theorem can be applied
-to write the eigenstates as $\ket{\chi_{n,\vt{p}}} =
-\frac{1}{\sqrt{N}} e^{i\vt{p}\cdot \vt{r}} \ket{u_{n,\vt{p}}}$, where
-$\ket{u_{n,\vt{p}}}$ is the periodic Bloch function and $N$ is the
+to write the eigenstates as $\ket{\chi_{n,\vt{k}}} =
+\frac{1}{\sqrt{N}} e^{i\vt{k}\cdot \vt{r}} \ket{u_{n,\vt{k}}}$, where
+$\ket{u_{n,\vt{k}}}$ is the periodic Bloch function and $N$ is the
 number of lattice sites. Thanks to the new larger unit cell, the
 crystal momentum and the periodic Bloch functions here are defined in
 the smaller magnetic Brillouin zone (MBZ). For example, hereafter, we
@@ -222,20 +222,20 @@ the MBZ is $q$ times smaller than the original BZ.
 Adding the harmonic trap breaks all translational symmetry of the
 lattice, but we can use the eigenstates of $\mathcal{H}_0$ as a basis
 in which to expand the new wave function $\ket{\psi} =
-\sum_n\sum_{\vt{p}} \psi_n(\vt{p})
-\ket{\chi_{n,\vt{p}}}$. Substituting this expansion into the full
+\sum_n\sum_{\vt{k}} \psi_n(\vt{k})
+\ket{\chi_{n,\vt{k}}}$. Substituting this expansion into the full
 Schr\"{o}dinger equation $i \partial_t \ket{\psi} = \mathcal{H}
 \ket{\psi}$, it can be shown that the expansion coefficients
-$\psi_n(\vt{p})$ satisfy~\cite{price2014magnetic}:
+$\psi_n(\vt{k})$ satisfy~\cite{price2014magnetic}:
 %
-\begin{multline} i \partial_t \psi_n(\vt{p}) = E_n(\vt{p}) +
+\begin{multline} i \partial_t \psi_n(\vt{k}) = E_n(\vt{k}) +
 \frac{\kappa}{2}\sum_{n^{'},n^{''}}\left(\delta_{n,n^{'}}i
-\nabla_{\vt{p}} + \mathcal{A}_{n,n^{'}}(\vt{p})\right)\times \\ \times
-\left(\delta_{n^{'},n^{''}}i\nabla_{\vt{p}} +
-\mathcal{A}_{n^{'},n^{''}}(\vt{p})\right) \psi_{n^{''}}(\vt{p})
+\nabla_{\vt{k}} + \mathcal{A}_{n,n^{'}}(\vt{k})\right)\times \\ \times
+\left(\delta_{n^{'},n^{''}}i\nabla_{\vt{k}} +
+\mathcal{A}_{n^{'},n^{''}}(\vt{k})\right) \psi_{n^{''}}(\vt{k})
 , \label{eq:first}
-\end{multline} where $\mathcal{A}_{n,n^{'}}(\vt{p}) =
-i\bra{u_{n,\vt{p}}}\nabla_{\vt{p}}\ket{u_{n^{'},\vt{p}}}$ is the
+\end{multline} where $\mathcal{A}_{n,n^{'}}(\vt{k}) =
+i\bra{u_{n,\vt{k}}}\nabla_{\vt{k}}\ket{u_{n^{'},\vt{k}}}$ is the
 matrix-valued Berry connection.
 
 To proceed, we consider the harmonic trap to be sufficiently weak
@@ -245,15 +245,15 @@ coefficient $\psi_n$ is non-negligible and that the external trap does
 not significantly mix different energy bands. Then Eq.~\eqref{eq:first}
 reduces to
 %
-\begin{equation} i \partial_t \psi_n(\vt{p}) = \widetilde{\mathcal{H}}
-\psi_n(\vt{p}) ,
+\begin{equation} i \partial_t \psi_n(\vt{k}) = \widetilde{\mathcal{H}}
+\psi_n(\vt{k}) ,
 \end{equation} where we have introduced the effective momentum-space
 Hamiltonian
 %
 \begin{equation}\label{eq:dual} \widetilde{\mathcal{H}} =
-\frac{\kappa}{2} [i\nabla_{\mathbf{p}} + \mathcal{A}_{n,
-n}(\mathbf{p})]^2 + E_n(\mathbf{p}) + \frac{\kappa}{2}\sum_{n^{'}\neq
-n} \abs{\mathcal{A}_{n,n^{'}}(\vt{p})}^2.
+\frac{\kappa}{2} [i\nabla_{\mathbf{k}} + \mathcal{A}_{n,
+n}(\mathbf{k})]^2 + E_n(\mathbf{k}) + \frac{\kappa}{2}\sum_{n^{'}\neq
+n} \abs{\mathcal{A}_{n,n^{'}}(\vt{k})}^2.
 \end{equation}
 %
 For the moment we focus on the first two terms; we discuss the role of
@@ -270,16 +270,16 @@ electromagnetic field {\em in real space}:
 %
 In this analogy, the role of the particle mass $M$ is played by
 $\kappa^{-1}$, while the scalar potential $ \Phi(\rv)$ is replaced by
-the energy band dispersion $E_n(\mathbf{p})$ and the magnetic vector
+the energy band dispersion $E_n(\mathbf{k})$ and the magnetic vector
 potential $\vt{A}(\vt{r})$ by the intra-band Berry connection
-$\mathcal{A}_{n, n}(\mathbf{p})$. We note that both the magnetic
+$\mathcal{A}_{n, n}(\mathbf{k})$. We note that both the magnetic
 vector potential and the Berry connection are gauge-dependent
 quantities. We hereafter refer to the gauge choice for the Berry
 connection as the Berry gauge, and the gauge choice for a real-space
 magnetic vector potential as the magnetic gauge. From the Berry
 connection, we can also define the geometrical Berry curvature
-$\Omega_{n}(\mathbf{p}) =\nabla \times \mathcal{A}_{n,
-n}(\mathbf{p})$, which acts like a momentum-space magnetic field
+$\Omega_{n}(\mathbf{k}) =\nabla \times \mathcal{A}_{n,
+n}(\mathbf{k})$, which acts like a momentum-space magnetic field
 $B(\vt{r})$.
 
 The topology of momentum space also plays a crucial role here, as the
@@ -299,9 +299,9 @@ Claassen_prl_2015}. We will focus on the flat-band limit in which the
 bandwidth is much smaller than the trapping energy; for the energy
 bands of $\mathcal{H}_0$ with $\alpha = 1/q$, this assumption improves
 as $\kappa$ decreases or as $q$ increases. In this limit, we can
-firstly approximate $\Omega_{n}(\mathbf{p}) \approx \Omega_n$, so that
+firstly approximate $\Omega_{n}(\mathbf{k}) \approx \Omega_n$, so that
 the first term is analogous to the kinetic energy of a particle in a
-uniform magnetic field. Secondly, we can approximate $E_n(\vt{p})
+uniform magnetic field. Secondly, we can approximate $E_n(\vt{k})
 \approx E_n$ so that the second term of $\widetilde{\mathcal{H}}$ is
 just a constant energy shift. Hence, the corresponding eigenstates can
 be understood as toroidal Landau levels in momentum space. We note
@@ -338,9 +338,9 @@ for the bands with $\mathcal{C}_n = -1$, the eigenstates can be
 written as~\cite{price2014magnetic}
 %
 \begin{align}\label{eq:chi}
-\begin{split} \chi_\beta (\vt{p}) &= \mathcal{N}_\beta^{l_{\Omega_n}}
-\sum_{j = - \infty}^{\infty} e^{- i p_y j } e^{ - ( p_x + j
-l_{\Omega_n}^2 ) ^2 / 2 l_{\Omega_n}^2}\\ &\quad \times H_\beta ( p_x
+\begin{split} \chi_\beta (\vt{k}) &= \mathcal{N}_\beta^{l_{\Omega_n}}
+\sum_{j = - \infty}^{\infty} e^{- i k_y j } e^{ - ( k_x + j
+l_{\Omega_n}^2 ) ^2 / 2 l_{\Omega_n}^2}\\ &\quad \times H_\beta ( k_x
 / l_{\Omega_n} + j l_{\Omega_n}) ,
 \end{split}\\ \mathcal{N}_\beta^{l_{\Omega_n}} &= \left(
 \frac{\sqrt{2/q}} {2^\beta\beta! \times 2 \pi l_{\Omega_n}^2}
@@ -350,8 +350,8 @@ l_{\Omega_n}^2 ) ^2 / 2 l_{\Omega_n}^2}\\ &\quad \times H_\beta ( p_x
 where $H_\beta$ are the Hermite polynomials and $l_{\Omega_n} =
 \sqrt{1/|\Omega_n|}$ is the analogue of the magnetic length. Here we
 have taken the Berry gauge to have a Landau form
-$\mathcal{A}_n(\mathbf{p}) = \Omega_n p_x \hat{\vt{p}}_y$ parallel to
-the $\hat{\vt{p}}_y$ unit vector in momentum space. We have also
+$\mathcal{A}_n(\mathbf{k}) = \Omega_n k_x \hat{\vt{k}}_y$ parallel to
+the $\hat{\vt{k}}_y$ unit vector in momentum space. We have also
 assumed that the MBZ is of length $2 \pi$ in one momentum direction,
 and $2 \pi / q$ in the other direction, corresponding to a magnetic
 unit cell of $q$ plaquettes containing one flux quantum. While this
@@ -366,12 +366,12 @@ phases in $\mathcal{H}_0$ are in the Landau magnetic gauge $\phi = (0,
 We now study the effects of the last term in the momentum-space
 Hamiltonian Eq.~\eqref{eq:dual} which comes from the off-diagonal matrix
 elements of the Berry connection~\cite{berry}:
-\begin{align} \delta E_n(\vt{p}) &\equiv
+\begin{align} \delta E_n(\vt{k}) &\equiv
 \frac{\kappa}{2}\sum_{n^{'}\neq n}
-\abs{\mathcal{A}_{n,n^{'}}(\vt{p})}^2 \notag \\ &=
+\abs{\mathcal{A}_{n,n^{'}}(\vt{k})}^2 \notag \\ &=
 \frac{\kappa}{2}\sum_{n^{'}\neq n}
-\frac{\abs{\bra{u_{n,\vt{p}}}\nabla_{\vt{p}}\mathcal{H}_0(\vt{p})\ket{u_{n^{'},\vt{p}}}}^2}{\left[E_{n^{'}}(\vt{p})
-- E_{n}(\vt{p})\right]^2}.
+\frac{\abs{\bra{u_{n,\vt{k}}}\nabla_{\vt{k}}\mathcal{H}_0(\vt{k})\ket{u_{n^{'},\vt{k}}}}^2}{\left[E_{n^{'}}(\vt{k})
+- E_{n}(\vt{k})\right]^2}.
   \label{eq:shift}
 \end{align} This can be recognised as a momentum-space counterpart of
 the real-space geometrical scalar potential previously studied in
@@ -382,7 +382,7 @@ spatially-dependent optical fields to dress the atoms.
  
 In the flat-band limit, we have checked numerically that we can
 approximate the momentum-space geometrical scalar potential as $\delta
-E_n(\vt{p}) \approx \delta E_n$ and so this contributes only a uniform
+E_n(\vt{k}) \approx \delta E_n$ and so this contributes only a uniform
 constant energy shift. This term was not considered in previous
 works~\cite{price2014magnetic, ozawa2014momhh}, as these works focused
 on systems such as ultracold atomic gases, where the absolute energy
@@ -420,13 +420,13 @@ Considering first the ``zero-point energy" error $\eta_{\text{zpe}}$,
 the analytical energy of the $n=0, \beta=0$ Landau level is given from
 Eq.~\eqref{eq:ladders} by:
 %
-\begin{equation} E_{\text{an}} = \left<E_0(\vt{p})\right>_{\vt{p}} +
+\begin{equation} E_{\text{an}} = \left<E_0(\vt{k})\right>_{\vt{k}} +
 \frac{1}{2}\frac{\kappa}{2\pi\alpha} ,
 \end{equation}
 %
 where we have used that $|\Omega_n| = \frac{1}{2\pi\alpha}$ and where
 we calculate the uniform energy shift
-$E_0=\left<E_0(\vt{p})\right>_{\vt{p}}$ as the average band-energy
+$E_0=\left<E_0(\vt{k})\right>_{\vt{k}}$ as the average band-energy
 over the MBZ. This definition generalises our flat-band approximation
 to account for the non-zero bandwidth of the lowest band.
 
@@ -447,7 +447,7 @@ calculate this shift numerically from the eigenstates of the
 Harper-Hofstadter model, and we incorporate it into a second parameter
 \begin{equation} \eta_{\text{zpe}}^{\text{nab}} =
 \frac{4\pi\alpha}{\kappa}(E_{\text{ex}} - E_{\text{an}} - \left<\delta
-E_0(\vt{p})\right>_{\vt{p}}).
+E_0(\vt{k})\right>_{\vt{k}}).
 \end{equation} This is plotted as a solid line in the top panel of
 Fig.~\ref{fig:zpe}. As can be seen, this shift dramatically reduces
 the error in the zero point energy at large $q$. We also calculate
@@ -554,22 +554,22 @@ appropriate transformation takes a particularly simple
 form~\cite{price2014magnetic}:
 %
 \begin{equation} \label{eq:trans} \sum_n
-\abs{\psi_n(\vt{p}_\mathrm{MBZ})}^2 = \sum_j
-\abs{\psi(\vt{p}_\mathrm{BZ} = \vt{p}_\mathrm{MBZ}- j\vt{G})}^2 ,
+\abs{\psi_n(\vt{k}_\mathrm{MBZ})}^2 = \sum_j
+\abs{\psi(\vt{k}_\mathrm{BZ} = \vt{k}_\mathrm{MBZ}- j\vt{G})}^2 ,
 \end{equation}
 %
-where $\psi_n(\vt{p}_\mathrm{MBZ})$ is the wave function coefficient
-in the MBZ, while $\psi(\vt{p}_\mathrm{BZ})$ is that in the original
+where $\psi_n(\vt{k}_\mathrm{MBZ})$ is the wave function coefficient
+in the MBZ, while $\psi(\vt{k}_\mathrm{BZ})$ is that in the original
 BZ. In this expression, $j$ is an integer, while
-$\vt{G} = (2\pi/q) \hat{\vt{p}}_x $ is the magnetic reciprocal lattice
+$\vt{G} = (2\pi/q) \hat{\vt{k}}_x $ is the magnetic reciprocal lattice
 vector, where the factor of $q$ is due to the enlarged magnetic unit
 cell. We note that for other magnetic gauges or for other choices of
 the magnetic unit cell, this transformation will in general be more
 complicated. In this sense, we call this choice of magnetic unit cell,
 a ``natural" choice when the Harper-Hofstadter Hamiltonian is in the
 Landau gauge.  In the rest of the Chapter, we denote the momentum in
-the original BZ as $\mathbf{p}$, and that in the MBZ as
-$\mathbf{p}^0$.
+the original BZ as $\mathbf{k}$, and that in the MBZ as
+$\mathbf{k}^0$.
 
 \section{Results and discussion}
 \label{sec:results}
@@ -648,7 +648,7 @@ Fig.~\ref{fig:delta_real_sp}). Analytically, we can predict how the
 ring radius scales with energy by remembering that the term
 $(\beta + 1/2) \kappa |\Omega_n|$ in Eq.~\eqref{eq:ladders} is the
 momentum-space kinetic energy $\frac{\kappa}{2}r^2$ where
-$r = i\nabla_{\mathbf{p}} + \mathcal{A}_{0, 0}(\mathbf{p})$ is the
+$r = i\nabla_{\mathbf{k}} + \mathcal{A}_{0, 0}(\mathbf{k})$ is the
 physical position operator in the lowest band. From this, we deduce
 that $r^2 \approx \frac{1}{\pi} q \beta$, as can be confirmed
 numerically. Therefore, if one pumps an off-center site, there will
@@ -689,7 +689,7 @@ $\beta$. To see this, we note that, in the symmetric gauge, the
 real-space wavefunctions have a phase which winds around the ring as
 $e^{i\beta \phi}$ where $\phi$ is the polar angle around the
 ring. This phase-winding sets the radius of the rings in momentum
-space as $p^2 \approx \pi \frac{\beta}{q}$; a scaling that can be
+space as $k^2 \approx \pi \frac{\beta}{q}$; a scaling that can be
 confirmed numerically and seen in Fig.~\ref{fig:hom_mom_sp}, bottom
 panel. (The white spot close to the edges of the rings in these
 figures is due to destructive interference with the pump.)  As the
@@ -807,8 +807,8 @@ Fig.~\ref{fig:pumping_schemes}.}
     resonance with the desired mode (black dotted line in the top
     panel).  The $\delta$-like pump at (0,5) is visible as a dark
     square in the left panel.  \emph{Bottom row}: Slice along the
-    $p_x^0 = 0$ line in the MBZ (solid black line), compared to the
-    analytical prediction of Eq.~\eqref{eq:chi}, $|\chi_7(0,p_y)|^2$
+    $k_x^0 = 0$ line in the MBZ (solid black line), compared to the
+    analytical prediction of Eq.~\eqref{eq:chi}, $|\chi_7(0,k_y)|^2$
     (blue dotted line) and to the population over bands for the
     nondissipative system (dashed orange line).}
   \label{fig:exp}
@@ -897,7 +897,7 @@ We find very good qualitative agreement between the numerical results
 in the MBZ and the analytical toroidal Landau level Eq.~\eqref{eq:chi}
 with $\beta=7$, as expected. We can make a quantitative comparison with
 this analytical eigenstate by taking a slice along the dash-dotted
-vertical lines ($p_x^0 = 0$) in the right column of rows 2 and 3;
+vertical lines ($k_x^0 = 0$) in the right column of rows 2 and 3;
 these cuts are shown in the bottom panel of Fig.~\ref{fig:exp} along
 with a dotted blue curve indicating the analytical eigenstate. As can
 be seen, there is excellent agreement between the numerics without
