@@ -232,8 +232,7 @@ $\psi_n(\vt{k})$ satisfy~\cite{price2014magnetic}:
 \frac{\kappa}{2}\sum_{n^{'},n^{''}}\left(\delta_{n,n^{'}}i
 \nabla_{\vt{k}} + \mathcal{A}_{n,n^{'}}(\vt{k})\right)\times \\ \times
 \left(\delta_{n^{'},n^{''}}i\nabla_{\vt{k}} +
-\mathcal{A}_{n^{'},n^{''}}(\vt{k})\right) \psi_{n^{''}}(\vt{k})
-, \label{eq:first}
+\mathcal{A}_{n^{'},n^{''}}(\vt{k})\right) \psi_{n^{''}}(\vt{k}) \label{eq:first}
 \end{multline} where $\mathcal{A}_{n,n^{'}}(\vt{k}) =
 i\bra{u_{n,\vt{k}}}\nabla_{\vt{k}}\ket{u_{n^{'},\vt{k}}}$ is the
 matrix-valued Berry connection.
@@ -246,14 +245,14 @@ not significantly mix different energy bands. Then Eq.~\eqref{eq:first}
 reduces to
 %
 \begin{equation} i \partial_t \psi_n(\vt{k}) = \widetilde{\mathcal{H}}
-\psi_n(\vt{k}) ,
+\psi_n(\vt{k})
 \end{equation} where we have introduced the effective momentum-space
 Hamiltonian
 %
 \begin{equation}\label{eq:dual} \widetilde{\mathcal{H}} =
 \frac{\kappa}{2} [i\nabla_{\mathbf{k}} + \mathcal{A}_{n,
 n}(\mathbf{k})]^2 + E_n(\mathbf{k}) + \frac{\kappa}{2}\sum_{n^{'}\neq
-n} \abs{\mathcal{A}_{n,n^{'}}(\vt{k})}^2.
+n} \abs{\mathcal{A}_{n,n^{'}}(\vt{k})}^2
 \end{equation}
 %
 For the moment we focus on the first two terms; we discuss the role of
@@ -265,7 +264,7 @@ electromagnetic field {\em in real space}:
 %
 \begin{equation}\label{eq:mag} \mathcal{H}'=
 \frac{\left[-i\nabla_{\vt{r}} - \vt{A}(\vt{r})\right]^2}{2M} +
-\Phi(\rv).
+\Phi(\rv)
 \end{equation}
 %
 In this analogy, the role of the particle mass $M$ is played by
@@ -314,7 +313,7 @@ As shown in Ref.~\cite{price2014magnetic}, the momentum-space toroidal
 Landau levels form semi-infinite ladders of states:
 %
 \begin{equation}\label{eq:ladders} \epsilon_{n,\beta} = E_n +
-\left(\beta + \frac{1}{2}\right) \kappa |\Omega_n| ,
+\left(\beta + \frac{1}{2}\right) \kappa |\Omega_n|
 \end{equation} where we have introduced the Landau level quantum
 number~\cite{Landau:101810} $\beta = 0,1,2,\dots$, and where $\kappa
 |\Omega_n|$ can be
@@ -341,10 +340,10 @@ written as~\cite{price2014magnetic}
 \begin{split} \chi_\beta (\vt{k}) &= \mathcal{N}_\beta^{l_{\Omega_n}}
 \sum_{j = - \infty}^{\infty} e^{- i k_y j } e^{ - ( k_x + j
 l_{\Omega_n}^2 ) ^2 / 2 l_{\Omega_n}^2}\\ &\quad \times H_\beta ( k_x
-/ l_{\Omega_n} + j l_{\Omega_n}) ,
+/ l_{\Omega_n} + j l_{\Omega_n})
 \end{split}\\ \mathcal{N}_\beta^{l_{\Omega_n}} &= \left(
 \frac{\sqrt{2/q}} {2^\beta\beta! \times 2 \pi l_{\Omega_n}^2}
-\right)^{1/2} ,
+\right)^{1/2}
 \end{align}
 % 
 where $H_\beta$ are the Hermite polynomials and $l_{\Omega_n} =
@@ -371,7 +370,7 @@ elements of the Berry connection~\cite{berry}:
 \abs{\mathcal{A}_{n,n^{'}}(\vt{k})}^2 \notag \\ &=
 \frac{\kappa}{2}\sum_{n^{'}\neq n}
 \frac{\abs{\bra{u_{n,\vt{k}}}\nabla_{\vt{k}}\mathcal{H}_0(\vt{k})\ket{u_{n^{'},\vt{k}}}}^2}{\left[E_{n^{'}}(\vt{k})
-- E_{n}(\vt{k})\right]^2}.
+- E_{n}(\vt{k})\right]^2}
   \label{eq:shift}
 \end{align} This can be recognised as a momentum-space counterpart of
 the real-space geometrical scalar potential previously studied in
@@ -421,7 +420,7 @@ the analytical energy of the $n=0, \beta=0$ Landau level is given from
 Eq.~\eqref{eq:ladders} by:
 %
 \begin{equation} E_{\text{an}} = \left<E_0(\vt{k})\right>_{\vt{k}} +
-\frac{1}{2}\frac{\kappa}{2\pi\alpha} ,
+\frac{1}{2}\frac{\kappa}{2\pi\alpha}
 \end{equation}
 %
 where we have used that $|\Omega_n| = \frac{1}{2\pi\alpha}$ and where
@@ -432,7 +431,7 @@ to account for the non-zero bandwidth of the lowest band.
 
 We then define the dimensionless parameter $\eta_{\text{zpe}}$ as
 \begin{equation} \eta_{\text{zpe}} = \frac{4\pi\alpha}{\kappa}
-(E_{\text{ex}} -E_{\text{an}}).
+(E_{\text{ex}} -E_{\text{an}})
 \end{equation} This dimensionless error is plotted with a dashed line
 as a function of $q$ for $\kappa=0.02 J$ in the top panel of
 Fig.~\ref{fig:zpe}. At small $q$, there is a large bandgap between the
@@ -447,7 +446,7 @@ calculate this shift numerically from the eigenstates of the
 Harper-Hofstadter model, and we incorporate it into a second parameter
 \begin{equation} \eta_{\text{zpe}}^{\text{nab}} =
 \frac{4\pi\alpha}{\kappa}(E_{\text{ex}} - E_{\text{an}} - \left<\delta
-E_0(\vt{k})\right>_{\vt{k}}).
+E_0(\vt{k})\right>_{\vt{k}})
 \end{equation} This is plotted as a solid line in the top panel of
 Fig.~\ref{fig:zpe}. As can be seen, this shift dramatically reduces
 the error in the zero point energy at large $q$. We also calculate
@@ -480,7 +479,7 @@ trap strength, considering $\beta = 0,1$ (solid curve), $\beta = 1,2$
 We turn now to the level-spacing error $\eta_{\text{lev}}$. This can
 be expressed as
 \begin{equation} \eta_{\text{lev}} = \frac{2\pi \alpha}{\kappa}
-[E_{\text{ex}}(\beta) - E_{\text{ex}}(\beta - 1)] -1,
+[E_{\text{ex}}(\beta) - E_{\text{ex}}(\beta - 1)] -1
 \end{equation} where we have used that the analytical level spacing
 from Eq.~\eqref{eq:ladders} is simply $\kappa / 2\pi \alpha$.  We plot
 the level-spacing error in the bottom panel of Fig.~\ref{fig:zpe} for
@@ -555,7 +554,7 @@ form~\cite{price2014magnetic}:
 %
 \begin{equation} \label{eq:trans} \sum_n
 \abs{\psi_n(\vt{k}_\mathrm{MBZ})}^2 = \sum_j
-\abs{\psi(\vt{k}_\mathrm{BZ} = \vt{k}_\mathrm{MBZ}- j\vt{G})}^2 ,
+\abs{\psi(\vt{k}_\mathrm{BZ} = \vt{k}_\mathrm{MBZ}- j\vt{G})}^2
 \end{equation}
 %
 where $\psi_n(\vt{k}_\mathrm{MBZ})$ is the wave function coefficient

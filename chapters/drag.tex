@@ -149,7 +149,7 @@ formulated in terms of a classical non-linear Schr\"odinger equation
 %
 \begin{equation}
   i \partial_t \psi_{LP} = [\omega_{LP}(-i\nabla) - i\gamma/2 +
-    V_d(\bm{r}) + g_X |\psi_{LP}|^2]\psi_{LP} + \mathcal{F}(\bm{r},t)\; .
+    V_d(\bm{r}) + g_X |\psi_{LP}|^2]\psi_{LP} + \mathcal{F}(\bm{r},t)
 \label{eq:basic}
 \end{equation}
 %
@@ -161,7 +161,7 @@ $\Omega_R$ (see Eq.~\eqref{eq:polariton-dispersion}):
 \begin{equation}
   \omega_{LP}(\bm{k}) = \frac{1}{2} \left[\omega_C(\bm{k}) +
     \omega_X(0)\right]  - \frac{1}{2} \sqrt{\left[\omega_C(\bm{k}) -
-    \omega_X(0) \right]^2 + 4\Omega_R^2} \; .
+    \omega_X(0) \right]^2 + 4\Omega_R^2}
 \label{eq:dispe}
 \end{equation}
 %
@@ -173,7 +173,7 @@ $\bm{k}_p = (k_p,0)$) and frequency $\omega_p$ (see
 Eq.~\eqref{eq:pwpump}):
 \begin{equation}
   \mathcal{F}(\bm{r},t) = f_p e^{i (\bm{k}_p \cdot \bm{r} -
-    \omega_p t)} \; .
+    \omega_p t)}
 \end{equation}
 %
 Note that, as discussed in
@@ -211,7 +211,7 @@ Eq.~\eqref{eq:ansatz-atoms}):
 %
 \begin{equation}
   \psi_{LP} (\bm{r},t) = e^{-i \omega_p t} \left[e^{i \bm{k}_p
-      \cdot \bm{r}} \psi_p + \delta \psi (\bm{r},t)\right] \; .
+      \cdot \bm{r}} \psi_p + \delta \psi (\bm{r},t)\right]
 \label{eq:mfield}
 \end{equation}
 %
@@ -227,7 +227,7 @@ Eq.~\eqref{eq:GP-atoms-system}):
     \psi \\ \delta \psi^* \end{pmatrix} + V_d(\bm{r}) \begin{pmatrix}
     \psi_p e^{i \bm{k}_p \cdot \bm{r}} \\ -\psi_p^{\star} e^{-i
       \bm{k}_p \cdot \bm{r}}
-    \end{pmatrix}\; ,
+    \end{pmatrix}
 \label{eq:linre}
 \end{equation}
 %
@@ -239,7 +239,7 @@ Eq.~\eqref{eq:ourL} for the atomic case):
    (-i\nabla) - i \gamma/2 & g_X \psi_p^2 e^{2 i \bm{k}_p \cdot
      \bm{r}} \\ -g_X {\psi_p^{\star}}^2 e^{-2 i \bm{k}_p \cdot
      \bm{r}}& - \widetilde{\omega_{LP}}(-i \nabla) -
-   i\gamma/2 \end{pmatrix}\; ,
+   i\gamma/2 \end{pmatrix}
 \end{equation}
 %
 with $\widetilde{\omega_{LP}} = \omega_{LP}-\omega_p + 2g_X
@@ -320,7 +320,7 @@ Sec.~\ref{sec:cherenkov-emission} (see Eq.~\eqref{eq:translated-L})
     \widetilde{\omega_{LP}} (\delta \bm{k}+\bm{k}_p) - i \gamma/2 &
     g_X \psi_p^2 \\ -g_X {\psi_p^{\star}}^2 & -
     \widetilde{\omega_{LP}}(\delta \bm{k}-\bm{k}_p) -
-    i\gamma/2 \end{pmatrix}\; ,
+    i\gamma/2 \end{pmatrix}
 \label{eq:opell}
 \end{equation}
 %
@@ -332,7 +332,7 @@ bottom of the LP dispersion, that can be approximated as parabolic
 \begin{equation}
   \omega_{LP} (\delta \bm{k} \pm \bm{k}_p) \simeq \omega_{LP}(0) +
   \frac{k_p^2}{2m\sub{LP}} + \frac{\delta \bm{k}^2}{2m\sub{LP}} \pm \delta \bm{k}
-  \cdot \bm{v}_p \; ,
+  \cdot \bm{v}_p
 \end{equation}
 %
 where $\bm{v}_p=\bm{k}_p/m\sub{LP}$ is the fluid velocity, and
@@ -361,7 +361,7 @@ Eq.~\eqref{eq:boosted-bogoliubov}):
 \begin{equation}
   \omega_{\pm} (\bm{k}) = \delta \bm{k}\cdot \bm{v}_p - i\gamma/2
   \pm \sqrt{\varepsilon(\delta \bm{k}) \left[\varepsilon(\delta
-      \bm{k}) + 2g_X|\psi_p|^2\right]} \; ,
+      \bm{k}) + 2g_X|\psi_p|^2\right]}
 \label{eq:spect}
 \end{equation}
 %
@@ -407,7 +407,7 @@ of the spectrum only, then one finds a critical velocity
 %
 \begin{equation}
   \frac{v^c}{c_s} = \sqrt{1 + |\Delta_p'| +
-    \sqrt{|\Delta_p'|(|\Delta_p'| + 2)}} > 1\; ,
+    \sqrt{|\Delta_p'|(|\Delta_p'| + 2)}} > 1
 \label{eq:criti}
 \end{equation}
 %
@@ -541,7 +541,7 @@ can be evaluated starting from Eq.~\eqref{eq:linre}:
     \psi_s^*(\bm{r}) \end{pmatrix} =
   \hat{\mathcal{L}}^{-1} \begin{pmatrix} V_d(\bm{r}) e^{i \bm{k}_p
       \cdot \bm{r}} \psi_p \\ -V_d(\bm{r}) e^{-i \bm{k}_p \cdot
-      \bm{r}} \psi_p^{\star} \end{pmatrix} \; .
+      \bm{r}} \psi_p^{\star} \end{pmatrix}
 \end{equation*}
 %
 For a point-like defect, this can be written in momentum space as:
@@ -550,7 +550,7 @@ For a point-like defect, this can be written in momentum space as:
   \delta \psi_s (\bm{k} + \bm{k}_p) = \frac{-g_V \psi_p
     (\varepsilon(\bm{k}) - \bm{k} \cdot \bm{v}_p +
     i\gamma/2)}{\varepsilon(\bm{k}) [\varepsilon(\bm{k}) +
-      2g_X|\psi_p|^2] - (\bm{k} \cdot \bm{v}_p - i\gamma/2)^2} \; ,
+      2g_X|\psi_p|^2] - (\bm{k} \cdot \bm{v}_p - i\gamma/2)^2}
 \end{equation*}
 %
 while the other component $\delta \psi_s^* (\bm{k}_p - \bm{k})$ can be
@@ -561,7 +561,7 @@ $-\bm{\nabla}V_d(\bm{r})$ over the condensate
 wavefunction~\cite{Pavloff2002}:
 %
 \begin{equation}
-  \bm{F}_d = - \int d\bm{r} |\psi_{LP}(\bm{r},t)|^2 \bm{\nabla}V_d(\bm{r}) \; ,
+  \bm{F}_d = - \int d\bm{r} |\psi_{LP}(\bm{r},t)|^2 \bm{\nabla}V_d(\bm{r})
 \end{equation}
 %
 This definition is justified for conservative systems in
@@ -575,7 +575,6 @@ the steady state linear response regime, we obtain:
 %
   = 2g_V^2|\psi_p|^2 \int \frac{d\bm{k}}{(2\pi)^2} \frac{i\bm{k}
     \varepsilon(\bm{k})}{\omega_{+} (\bm{k})\omega_{-} (\bm{k})}
-  \; .
     \label{eq:dragf}
 \end{multline}
 %
@@ -617,7 +616,7 @@ dimensions~\cite{Astrakharchik_2004}:
 %
 \begin{equation}
   \frac{F_d}{(m\sub{LP}c_s)^3 g_V^2/g_X}=\frac{(v_p/c_s)^2 - 1}{v_p/c_s}
-  \Theta(v_p - c_s)\; ,
+  \Theta(v_p - c_s)
 \label{eq:drag0}
 \end{equation}
 %
@@ -698,7 +697,7 @@ Eq.~\eqref{eq:criti}:
 %
 \begin{equation}
   \frac{F_d}{(m\sub{LP}c_s)^3 g_V^2/g_X}=\frac{(v_p/c_s)^2 - 1}{v_p/c_s}
-  \Theta(v_p - v^c)\; .
+  \Theta(v_p - v^c)
 \end{equation}
 %
 Therefore now the drag experiences a jump for $v_p=v^c$, rather than a
@@ -733,7 +732,7 @@ expression~\eqref{eq:dragf}:
 \begin{equation*}
     \frac{F_d}{(m\sub{LP}c_s)^3 g_V^2/g_X} \mathop{\simeq}\limits_{\gamma \to 0} \frac{2 c_s}{\pi
       v_p} \left( \frac{1}{ \sqrt{1-(v_p/c_s)^2}} - 1 \right)
-    \frac{\gamma}{2g_X |\psi_p|^2} \; .
+    \frac{\gamma}{2g_X |\psi_p|^2}
 \end{equation*}
 %
 The residual drag in the subsonic regime is an effect of the
@@ -793,7 +792,7 @@ $\psi_{LP}(\bm{r},t) = \sum_{\bm{k}} e^{i\bm{k}\cdot \bm{r}}
 %
   \sum_{\bm{k}_1, \bm{k}_2} g_{\bm{k}, \bm{k}_1, \bm{k}_2}
   \psi^*_{LP,\bm{k}_1 + \bm{k}_2-\bm{k}} \psi_{LP,\bm{k}_1}
-  \psi_{LP,\bm{k}_2} + C_{\kv} \sum_{\bm{k}_1} V_{d,{\bm{k} - \bm{k}_1}} \psi_{LP,\bm{k}_1} C_{\kv_1}\; ,
+  \psi_{LP,\bm{k}_2} + C_{\kv} \sum_{\bm{k}_1} V_{d,{\bm{k} - \bm{k}_1}} \psi_{LP,\bm{k}_1} C_{\kv_1}
 \end{multline}
 %
 where $\gamma(\kv)=\gamma_X X^2_{\kv} + \gamma_C C^2_{\kv}$ is the effective LP
@@ -829,7 +828,7 @@ space analogous to~\eqref{eq:opell} reads as:
     \\ - g_X X_{\kv_p}^2 X_{\delta \bm{k}+\bm{k}_p} X_{\delta
       \bm{k}-\bm{k}_p}{\psi_p^{\star}}^2 & -
     \widetilde{\omega_{LP}}(\delta \bm{k}-\bm{k}_p) -
-    i\gamma(\delta \bm{k}-\bm{k}_p)/2 \end{pmatrix}\; ,
+    i\gamma(\delta \bm{k}-\bm{k}_p)/2 \end{pmatrix}
 \label{eq:opel2}
 \end{equation}
 %
