@@ -292,30 +292,6 @@ where the three OPO states components are
   g_{\vt{k}_m+\vt{k},\vt{k}_q,\vt{k}_t} \psi_q^{} \psi_t^{}
   \delta_{m+n,q+t}
 \end{align}
-%%
-%%
-\begin{figure}[tb]
-\centering
-\includegraphics[width=\linewidth]{linresp}
-% ~/notebooks/julia/april/linresp_waves.ipynb
-% ~/notebooks/OPODrag/opodrag.py
-\caption{Linear response of the three OPO states to a static
-  $\delta$-defect for $k_s = -0.4$ [column (a)], $0.0$ [column (b)] and
-  $0.7$~$\mu$m$^{-1}$ [column (c)]. The parameters are given in
-  Fig.~\ref{fig:spect}, and $g_V = 0.5 \gamma_p~\mu$m$^2$.  \emph{Column
-    (a):} Top row is the analogue of Fig.~\ref{fig:spect}, for negative
-  signal momentum. The three bottom rows show the rescaled emission in
-  real $|\psi (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear
-  scale) and momentum space $|\psi_{\tilde{\vt{k}}} (\omega_n)|^2$
-  (right panels in logarithmic scale) filtered at the energies of the
-  signal (top), pump (middle) and idler (bottom).  \emph{Column (c):} Same
-  as column (a), for a positive signal momentum.  \emph{Column (b):}
-  Vanishing signal momentum; the corresponding mean-field blueshifts and
-  Rayleigh rings are plotted in Fig.~\ref{fig:spect}. The inset shows
-  the Gaussian-filtered (see main text) signal emission.}
-\label{fig:ereal}
-\end{figure}
-%
 
 \paragraph{OPO spectrum}
 In absence of a defect potential ($\bm{\Psi}_d =0$),
@@ -416,15 +392,38 @@ momentum is automatically selected (typically close to the bottom of
 the LP band) by parametric scattering processes. The reason why
 parametric scattering processes select a signal with a momentum close
 to zero, already very close to the lower pump thresold for OPO, is
-still awaiting an explaination. In particular, this cannot be
-addressed within a spatially homogeneous approximation where the three
-mean-field solutions for pump, signal, and idler states are described
-by plane waves. However, one can show~\cite{Whittaker_2005} that,
-within the same mean-field approximation scheme, when increasing the
-pump power towards the upper threshold for OPO, the blue-shift of the
-LP polariton dispersion due to the increasing mean-field polariton
-density, causes the signal momentum to converge towards zero
-$\vt{k}_s \rightarrow 0$.  
+still awaiting an explaination.
+%
+\includepdf{linresp}
+%
+\begin{figure}[t]
+  % ~/notebooks/julia/april/linresp_waves.ipynb
+  % ~/notebooks/OPODrag/opodrag.py
+  \caption{Linear response of the three OPO states to a static
+  $\delta$-defect for $k_s = -0.4$ [column (a)], $0.0$ [column (b)] and
+  $0.7$~$\mu$m$^{-1}$ [column (c)]. The parameters are given in
+  Fig.~\ref{fig:spect}, and $g_V = 0.5 \gamma_p~\mu$m$^2$.  \emph{Column
+    (a):} Top row is the analogue of Fig.~\ref{fig:spect}, for negative
+  signal momentum. The three bottom rows show the rescaled emission in
+  real $|\psi (\vt{r},\omega_n)|^2/|\psi_n|^2$ (left panels in linear
+  scale) and momentum space $|\psi_{\tilde{\vt{k}}} (\omega_n)|^2$
+  (right panels in logarithmic scale) filtered at the energies of the
+  signal (top), pump (middle) and idler (bottom).  \emph{Column (c):} Same
+  as column (a), for a positive signal momentum.  \emph{Column (b):}
+  Vanishing signal momentum; the corresponding mean-field blueshifts and
+  Rayleigh rings are plotted in Fig.~\ref{fig:spect}. The inset shows
+  the Gaussian-filtered (see main text) signal emission.}% Continued caption
+\label{fig:ereal}
+\end{figure}
+%
+In particular, this cannot be addressed within a spatially homogeneous
+approximation where the three mean-field solutions for pump, signal,
+and idler states are described by plane waves. However, one can
+show~\cite{Whittaker_2005} that, within the same mean-field
+approximation scheme, when increasing the pump power towards the upper
+threshold for OPO, the blue-shift of the LP polariton dispersion due
+to the increasing mean-field polariton density, causes the signal
+momentum to converge towards zero $\vt{k}_s \rightarrow 0$.
 
 In the following, we take advantage of the broad range of possible
 choices for $\kv_s$ (and thus $\kv_i$) at mean-field
@@ -580,11 +579,10 @@ Rayleigh rings (note that because the signal is at negative momentum,
 its modulations have an opposite direction compared to the ones of
 pump and idler), while in the signal we can mostly see the signal long
 wavelength modulations and only very weakly the pump one.
-
-\subsection{Discussion}
 %
-\begin{figure}[tb]\centering
-\includegraphics[width=.7\linewidth]{uncoupled}
+\afterpage{\clearpage}
+\begin{figure}[p]\centering
+\includegraphics[width=\linewidth]{uncoupled}
 % ~/notebooks/OPODrag/opodrag.py
 \caption{Real space profiles of three uncoupled signal, pump and idler
   fluids. The rescaled profiles $|\psi (\vt{r},\omega_n)|^2/|\psi_n|^2$
@@ -601,6 +599,8 @@ wavelength modulations and only very weakly the pump one.
 \label{fig:uncou}
 \end{figure}
 %
+
+\subsection{Discussion}
 We can compare the different modulation strengths of the three OPO
 profiles by looking at the color bars plotted next to the profiles. In
 order to better compare them on the same plot, we show in
@@ -884,8 +884,9 @@ Gaussian filtering.
 \label{sec:daniele-experiments}
 
 %
-\begin{figure}[tb]\centering
-  \includegraphics[width=.5\linewidth]{exp_waves.pdf}
+\afterpage{\clearpage}
+\begin{figure}[p]\centering
+  \includegraphics[width=.7\linewidth]{exp_waves.pdf}
   % ~/notebooks/julia/april/extract_exp_waves.ipynb
   \caption{Experimental OPO spectrum (lower panel) and filtered
     emissions of signal (top), pump (middle), and idler (bottom) in

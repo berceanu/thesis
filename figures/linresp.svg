@@ -10,9 +10,9 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="12.29825cm"
-   height="7.60074cm"
-   viewBox="0 0 435.76477 269.31755"
+   width="170.00008mm"
+   height="240.00002mm"
+   viewBox="0 0 602.36242 850.39372"
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
@@ -29,17 +29,17 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2.376123"
-     inkscape:cx="211.00017"
-     inkscape:cy="146.56232"
+     inkscape:zoom="1.0254073"
+     inkscape:cx="301.18124"
+     inkscape:cy="425.19688"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
-     units="cm"
-     inkscape:window-width="1914"
-     inkscape:window-height="1074"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
+     units="mm"
+     inkscape:window-width="956"
+     inkscape:window-height="1041"
+     inkscape:window-x="960"
+     inkscape:window-y="18"
      inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
@@ -49,7 +49,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -57,92 +57,96 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(0,-783.0447)">
-    <image
-       sodipodi:absref="./ks0_0.png"
-       xlink:href="./ks0_0.png"
-       y="840.36224"
-       x="146.88301"
-       id="image3614"
-       style="image-rendering:optimizeSpeed"
-       preserveAspectRatio="none"
-       height="212"
-       width="141.99875" />
-    <image
-       sodipodi:absref="./3d0_7.png"
-       xlink:href="./3d0_7.png"
-       y="783.04468"
-       x="237.76477"
-       id="image3676"
-       style="image-rendering:optimizeSpeed"
-       preserveAspectRatio="none"
-       height="79.039703"
-       width="200" />
-    <image
-       sodipodi:absref="./ks-0_4.png"
-       xlink:href="./ks-0_4.png"
-       y="879.06622"
-       x="0"
-       id="image3738"
-       style="image-rendering:optimizeSpeed"
-       preserveAspectRatio="none"
-       height="173.29601"
-       width="145" />
-    <image
-       sodipodi:absref="./ks0_7.png"
-       xlink:href="./ks0_7.png"
-       y="878.17126"
-       x="290.76477"
-       id="image3800"
-       style="image-rendering:optimizeSpeed"
-       preserveAspectRatio="none"
-       height="174.19098"
-       width="145" />
-    <image
-       sodipodi:absref="./3d-0_4.png"
-       xlink:href="./3d-0_4.png"
-       y="783.04468"
-       x="0"
-       id="image3568"
-       style="image-rendering:optimizeSpeed"
-       preserveAspectRatio="none"
-       height="77.584625"
-       width="200" />
-    <flowRoot
-       xml:space="preserve"
-       id="flowRoot3381"
-       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(140.8817,785.04468)"><flowRegion
-         id="flowRegion3383"><rect
-           id="rect3385"
-           width="23.146954"
-           height="21.884398"
-           x="-67.336578"
-           y="72.358055" /></flowRegion><flowPara
-         id="flowPara3387"
-         style="font-size:15px">(a)</flowPara></flowRoot>    <flowRoot
-       transform="translate(274.60187,747.59627)"
-       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       id="flowRoot3389"
-       xml:space="preserve"><flowRegion
-         id="flowRegion3391"><rect
-           y="72.358055"
-           x="-67.336578"
-           height="21.884398"
-           width="23.146954"
-           id="rect3393" /></flowRegion><flowPara
-         style="font-size:15px"
-         id="flowPara3395">(b)</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
-       id="flowRoot3397"
-       style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       transform="translate(404.64888,785.04468)"><flowRegion
-         id="flowRegion3399"><rect
-           id="rect3401"
-           width="23.146954"
-           height="21.884398"
-           x="-67.336578"
-           y="72.358055" /></flowRegion><flowPara
-         id="flowPara3403"
-         style="font-size:15px">(c)</flowPara></flowRoot>  </g>
+     transform="translate(0,-201.9686)">
+    <g
+       id="g4571"
+       transform="matrix(0,-1.5990323,1.5990323,0,-1166.2563,977.16548)">
+      <image
+         sodipodi:absref="/home/berceanu/Development/thesis/figures/./ks0_0.png"
+         xlink:href="./ks0_0.png"
+         y="840.36224"
+         x="146.88301"
+         id="image3614"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         height="212"
+         width="141.99875" />
+      <image
+         sodipodi:absref="/home/berceanu/Development/thesis/figures/./3d0_7.png"
+         xlink:href="./3d0_7.png"
+         y="783.04468"
+         x="237.76477"
+         id="image3676"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         height="79.039703"
+         width="200" />
+      <image
+         sodipodi:absref="/home/berceanu/Development/thesis/figures/./ks-0_4.png"
+         xlink:href="./ks-0_4.png"
+         y="879.06622"
+         x="0"
+         id="image3738"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         height="173.29601"
+         width="145" />
+      <image
+         sodipodi:absref="/home/berceanu/Development/thesis/figures/./ks0_7.png"
+         xlink:href="./ks0_7.png"
+         y="878.17126"
+         x="290.76477"
+         id="image3800"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         height="174.19098"
+         width="145" />
+      <image
+         sodipodi:absref="/home/berceanu/Development/thesis/figures/./3d-0_4.png"
+         xlink:href="./3d-0_4.png"
+         y="783.04468"
+         x="0"
+         id="image3568"
+         style="image-rendering:optimizeSpeed"
+         preserveAspectRatio="none"
+         height="77.584625"
+         width="200" />
+      <flowRoot
+         transform="translate(140.8817,785.04468)"
+         style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="flowRoot3381"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3383"><rect
+             y="72.358055"
+             x="-67.336578"
+             height="21.884398"
+             width="23.146954"
+             id="rect3385" /></flowRegion><flowPara
+           style="font-size:15px"
+           id="flowPara3387">(a)</flowPara></flowRoot>      <flowRoot
+         xml:space="preserve"
+         id="flowRoot3389"
+         style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         transform="translate(274.60187,747.59627)"><flowRegion
+           id="flowRegion3391"><rect
+             id="rect3393"
+             width="23.146954"
+             height="21.884398"
+             x="-67.336578"
+             y="72.358055" /></flowRegion><flowPara
+           id="flowPara3395"
+           style="font-size:15px">(b)</flowPara></flowRoot>      <flowRoot
+         transform="translate(404.64888,785.04468)"
+         style="font-style:normal;font-weight:normal;font-size:22.5px;line-height:125%;font-family:Sans;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         id="flowRoot3397"
+         xml:space="preserve"><flowRegion
+           id="flowRegion3399"><rect
+             y="72.358055"
+             x="-67.336578"
+             height="21.884398"
+             width="23.146954"
+             id="rect3401" /></flowRegion><flowPara
+           style="font-size:15px"
+           id="flowPara3403">(c)</flowPara></flowRoot>    </g>
+  </g>
 </svg>

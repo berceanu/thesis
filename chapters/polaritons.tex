@@ -73,7 +73,7 @@ use a series of approximations and construct an effective theory that
 is more physical.
 %
 \begin{figure}[tb]\centering
-  \includegraphics[width=.8\linewidth]{cavity}
+  \includegraphics[width=\linewidth]{cavity}
   \caption{
     % 
     Pictorial representation of microcavity polaritons, as electron-hole pairs (excitons) inside a semiconductor quantum well (QW), 
@@ -1109,7 +1109,30 @@ represented by the solid heavy line labeled ``G''.
     %
   }\label{fig:goldstone}
 \end{figure}
-% 
+%
+\afterpage{\clearpage}
+\begin{figure}[p] % <--- only p
+  \centering
+    \includegraphics[width=\linewidth]{marchetti_threshold_comp}
+    \includegraphics[width=\linewidth]{marchetti_spectrum_comp_review}
+    \includegraphics[width=\linewidth]{marchetti_comp_OPO_figure_review_clean}
+  \caption{
+    %
+    \emph{Top panels:} Integrated photon emission intensities for the
+    signal $s$ (red dots), pump $p$ (blue squares) and idler $i$ (green
+    triangles) as a function of the renormalized pump intensity (left) and
+    real-space signal emission corresponding to positions 1-4, including
+    random photonic disorder, shown as contour lines (right).
+    \emph{Middle panels:} Photonic component of the OPO spectrum (log
+    scale) as a function of energy and momentum (left) and integrated in
+    momentum (right). Note that the emission is $\delta$-like in energy.
+    \emph{Bottom panels:} Full photonic emission (left) and filtered
+    real-space emission of signal, pump and idler (last 3 panels). From
+    Ref.~\cite{9783642241857}.
+    % 
+  }\label{fig:marchetti}
+\end{figure}
+%
 Note that both the real and imaginary parts of the frequency of this
 gapless mode tend to zero in the long wavelength limit
 $\Delta k \rightarrow 0$. Close to this point, the real part has a
@@ -1130,21 +1153,6 @@ photon fields, as first done in Ref.~\cite{Whittaker_2005_c}.  A
 similar approach, reviewed in detail in Ref.~\cite{9783642241857},
 will be employed in Chapter~\ref{cha:opo}, where we study
 multicomponent superfluidity in the OPO regime.
-%
-\begin{figure}[tb]\centering
-  \includegraphics[width=.6\linewidth]{marchetti_threshold_comp}
-  \includegraphics[width=.6\linewidth]{marchetti_spectrum_comp_review}
-  \includegraphics[width=.6\linewidth]{marchetti_comp_OPO_figure_review_clean}
-  \caption{
-    %
-    \emph{Top panels:} Integrated photon emission intensities for the signal $s$ (red dots), pump $p$ (blue squares) and idler $i$ (green triangles) as a function of the renormalized pump intensity (left) and real-space signal emission corresponding to positions 1-4, including random photonic disorder, shown as contour lines (right). Note the OPO phase transition is a gradual one, with the signal first switching on in the center, increasing to maximum size and finally switching off for large pump intensities.
-    \emph{Middle panels:} Photonic component of the OPO spectrum (log scale) as a function of energy and momentum (left) and integrated in momentum (right). Note that the emission is $\delta$-like in energy.
-    \emph{Bottom panels:} Full photonic emission (left) and filtered real-space emission of signal, pump and idler (last 3 panels). Note the vertical interference fringes caused by the coherent superposition of the 3 states. The arrows in the second panel indicate the complex currents due to  finite size effects.
-    From Ref.~\cite{9783642241857}.
-    % 
-  }\label{fig:marchetti}
-\end{figure}
-%
 Using a continuous wave pump with a top-hat profile, one injects
 polaritons at a specific wavevector, close to the inflection point of
 the LP dispersion. Above a certain threshold pump power, random
@@ -1207,6 +1215,19 @@ at finite momentum $\kv_s$, as in fact this dominant current is
 substracted from the plot.
 
 \paragraph{OPO superfluidity}
+%
+\begin{figure}[H]\centering
+  \includegraphics[width=\linewidth]{sanvitto_metastable_vortex}
+  \caption{
+    % 
+    Snapshots of the time evolution of the phase (upper row) and the
+    density (bottom row) of an OPO polariton condensate triggered by a
+    pulsed probe carrying a $m=1$ vortex. From Ref.~\cite{Sanvitto_2010}.
+    % 
+  }\label{fig:opo-metastable-vortex}
+\end{figure}
+% 
+
 While still on the topic of persistent currents, we can make the
 connection to Sec.~\ref{sec:superfluid-atom}, and discuss
 superfluid-related phenomena in the OPO regime. A prime example of
@@ -1221,18 +1242,6 @@ to the simply-connected geometry (see
 Fig.~\ref{fig:opo-metastable-vortex}). The vortex was visible in both
 the signal and idler state, and its lifetime was much longer than the
 average polariton lifetime.
-%
-\begin{figure}[tb]\centering
-  \includegraphics[width=.6\linewidth]{sanvitto_metastable_vortex}
-  \caption{
-    % 
-    Snapshots of the time evolution of the phase (upper row) and the
-    density (bottom row) of an OPO polariton condensate triggered by a
-    pulsed probe carrying a $m=1$ vortex. From Ref.~\cite{Sanvitto_2010}.
-    % 
-  }\label{fig:opo-metastable-vortex}
-\end{figure}
-% 
 In a similar direction,
 Ref.~\cite{Marchetti_2010} presented a theoretical study predicting
 the formation of spontaneous quantized vortices in the OPO regime,
